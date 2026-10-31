@@ -101,4 +101,18 @@ verified by a real command run, not self-asserted. GP review pending on all.
   (ERA/walk/contact%) into model_p6 features and re-measure CV MAE.
 
 ---
+## Cycle 7 — fold pitching into the model → MAE IMPROVES 7.29 → 6.47 (measured)
+- Built: src/bml_cycle7.py — IP-weighted team pitching KPIs (ERA/WHIP/K9/BB9/HR9)
+  from real lake data, joined to the hitting model.
+- Measured (CV MAE, avg 25->26 and 26->25):
+  hitting-only 7.29 wins | hitting+pitching 6.47 wins | pitching-only 6.94.
+  Adding pitching cut MAE ~0.8 wins (~11%). Coefficients correct: p_ERA -5.87,
+  p_WHIP -3.41 (lower=better -> more wins).
+- Learned: pitching is the biggest real model lever — confirms Cycle 6 and
+  GP's 'pitching depth is critical'. The hitting-only R2 ceiling was in part
+  the missing pitching half. New deliverable formula: formula_pitching.json.
+- Shipped: src/bml_cycle7.py, data/formula_pitching.json.
+- NEXT: add a pitching panel + updated projections to the dashboard.
+
+---
 (cycles appended as they complete)

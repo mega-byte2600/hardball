@@ -1,0 +1,18 @@
+{
+  "coefs": {
+    "OBP": 273.341,
+    "contact": 1.182,
+    "K%": -1.182,
+    "BB%": 2.127,
+    "HR/PA": 1.444,
+    "ISO": -268.413,
+    "payroll": -0.0,
+    "p_ERA": -5.868,
+    "p_WHIP": -3.409,
+    "p_BB9": 0.0,
+    "p_K9": -0.459,
+    "p_HR9": 1.721
+  },
+  "intercept": -60.94,
+  "note": "combined hitting+pitching wins model"
+}
