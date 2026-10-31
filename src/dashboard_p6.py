@@ -266,6 +266,36 @@ def panel_runs():
     return fig
 
 
+def panel_sensitivity():
+    """What-if: elasticity table rendered as visible bars (real numbers)."""
+    rv = os.path.join(DATA, "robust_validation.json")
+    if not os.path.exists(rv):
+        return None
+    d = json.load(open(rv))
+    elas = d.get("elasticity", {})
+    if not elas:
+        return None
+    # Sort by |wins moved|, keep a readable shock label
+    items = sorted(elas.items(), key=lambda kv: -abs(kv[1]["dWins"]))
+    labels, dW, colors = [], [], []
+    legend = {"contact": "+1% contact →", "HR/PA": "+1 HR per 100 PA →",
+              "OBP": "+.010 OBP →", "K%": "+1% K-rate →", "BB%": "+1% BB →",
+              "ISO": "+.010 ISO →", "RD": "+25 net runs →",
+              "PythE": "+5 Pythag wins →", "payroll": "+$25M payroll →"}
+    for feat, v in items:
+        labels.append(legend.get(feat, feat))
+        dW.append(v["dWins"])
+        colors.append("#1b5e20" if v["dWins"] >= 0 else "#d50032")
+    fig = go.Figure(go.Bar(x=dW, y=labels, orientation="h",
+                           marker=dict(color=colors),
+                           text=[f"{v:+.2f}" for v in dW], textposition="outside"))
+    fig.update_layout(title="What-if: how many wins a lever moves (measured elasticity)",
+                      xaxis_title="Marginal wins under a realistic unit move",
+                      template="plotly_white", height=420, margin=dict(l=200),
+                      xaxis_range=[min(dW) - 0.6, max(dW) + 1.2])
+    return fig
+
+
 def build():
     df = kpi_mod.kpi_frame()
     df["group"] = "OTHER"
@@ -281,6 +311,7 @@ def build():
     fig7 = panel_health()
     fig8 = panel_roster()
     fig9 = panel_runs()
+    fig10 = panel_sensitivity()
 
     # Self-contained offline demo: inline plotly so no internet needed at the
     # Winter Meetings. Caches the bundle next to the dashboard if present.
@@ -310,6 +341,8 @@ def build():
     if fig9 is not None:
         html = (fig9.to_html(full_html=False, include_plotlyjs=False) +
                 "<br> " + html)
+    if fig10 is not None:
+        html = html + "<br> " + fig10.to_html(full_html=False, include_plotlyjs=False)
 
     page = f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P6)</title>
 <style>body{{font-family:system-ui,sans-serif;margin:0;background:#f6f7f9;color:#14213d}}

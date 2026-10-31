@@ -1,0 +1,37 @@
+{
+  "n_rows": 58,
+  "n_features": 8,
+  "models": {
+    "LinearRegression": {
+      "mae_mean": 4.3,
+      "mae_2sd": 1.47,
+      "r2_mean": 0.701
+    },
+    "Ridge(alpha=1)": {
+      "mae_mean": 4.16,
+      "mae_2sd": 1.32,
+      "r2_mean": 0.724
+    },
+    "RandForest(depth3)": {
+      "mae_mean": 4.89,
+      "mae_2sd": 1.55,
+      "r2_mean": 0.622
+    },
+    "GradBoost(depth2)": {
+      "mae_mean": 5.14,
+      "mae_2sd": 1.93,
+      "r2_mean": 0.573
+    },
+    "MLP(1x8) neural": {
+      "mae_mean": 5112.9,
+      "mae_2sd": 846.18,
+      "r2_mean": -308445.272
+    },
+    "Poly-Ridge(deg2)": {
+      "mae_mean": 8.48,
+      "mae_2sd": 14.59,
+      "r2_mean": -3.156
+    }
+  },
+  "best_by_mae": "Ridge(alpha=1)"
+}

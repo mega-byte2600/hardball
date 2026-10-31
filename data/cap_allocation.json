@@ -1,0 +1,15 @@
+{
+  "cap_2027": 245300000,
+  "floor_2027": 171200000,
+  "payroll_real": {
+    "CLE": 74500000.0,
+    "TB": 95600000.0,
+    "MIL": 146700000.0,
+    "LAD": 339000000.0,
+    "NYM": 346700000.0,
+    "NYY": 312000000.0
+  },
+  "winning_cheap_avg_payroll": 105.6,
+  "rich_avg_payroll": 332.6,
+  "message": "A cap-constrained team does not buy wins with dollars (payroll coef ~ 0 after KPIs). It spends the SAME or less but on winning-cheap KPIs -> clear owner value: cap-era levels the playing field for disciplined spenders."
+}
