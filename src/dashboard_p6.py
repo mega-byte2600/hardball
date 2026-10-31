@@ -1,9 +1,10 @@
 """P6: HARDBALL demo dashboard (Plotly HTML).
 
-Thirteen panels on real data (payroll-vs-wins, KPI signature, cap projections,
+Fourteen panels on real data (payroll-vs-wins, KPI signature, cap projections,
 25-year durability, 2027 Marcel projections, pitching, health/availability,
 cap roster, run differential, sensitivity, plus the CarpeData panels:
-Marcel-vs-Steamer benchmark, Savant trait check, MiLB pipeline index).
+Marcel-vs-Steamer benchmark, Savant trait check, MiLB pipeline index,
+and the 2027 free-agent shopping list).
 Serves as a self-contained HTML file the GP can open at the Winter Meetings.
 
 Build must work from a clean clone: every panel reads committed data
@@ -465,6 +466,39 @@ def panel_pipeline():
     return fig
 
 
+def panel_shopping():
+    """Cycle 25: the 2027 free-agent shopping list — Steamer WAR vs the
+    prior contract's AAV (a last-price anchor, never a predicted price)."""
+    fj = os.path.join(DATA, "fa_shopping_2027.json")
+    if not os.path.exists(fj):
+        return None
+    d = json.load(open(fj))
+    top = d.get("top25_by_war", [])[:15]
+    if not top:
+        return None
+    top = sorted(top, key=lambda r: r["steamer_war"])
+    names = [f"{r['name']} ({r['pos']}, {r['prev_team']})" for r in top]
+    vals = [r["steamer_war"] for r in top]
+    colors = ["green" if r["fits_indiv_max_at_prior_aav"] else "#d50032" for r in top]
+    labels = [(f"{r['steamer_war']:.1f} WAR · prior AAV ${r['prev_aav']/1e6:.1f}M"
+               if r["prev_aav"] else f"{r['steamer_war']:.1f} WAR") for r in top]
+    fig = go.Figure(go.Bar(
+        x=vals, y=names, orientation="h", marker=dict(color=colors),
+        text=labels, textposition="outside"))
+    best = d.get("top15_value_war_per_10m", [])
+    best_txt = "; ".join(f"{r['name']} {r['war_per_10m_prior_aav']}" for r in best[:3])
+    fig.update_layout(
+        title=("The shopping list: top 2027 free agents by projected WAR (Cycle 25)<br>"
+               f"<sub>Green = prior AAV fits the 15% individual max ($36.8M) at last price. Prior AAV is an anchor, "
+               f"not a predicted 2027 price. Best value (WAR per $10M of prior AAV): {best_txt}. "
+               f"Sources: Spotrac FA class + 2026 salaries (24/30 team pages pulled; 6 rate-limited, logged), "
+               f"FanGraphs Steamer WAR.</sub>"),
+        xaxis_title="Steamer projected 2027 WAR",
+        template="plotly_white", height=560, margin=dict(l=230),
+        xaxis_range=[0, max(vals) * 1.45])
+    return fig
+
+
 def build():
     os.makedirs(os.path.join(REPO, "dashboard"), exist_ok=True)
     try:
@@ -489,6 +523,7 @@ def build():
     fig11 = panel_benchmark()
     fig12 = panel_savant()
     fig13 = panel_pipeline()
+    fig14 = panel_shopping()
 
     # Self-contained offline demo: inline plotly so no internet needed at the
     # Winter Meetings. Caches the bundle next to the dashboard if present.
@@ -516,7 +551,7 @@ def build():
                 "<br> " + html)
     if fig10 is not None:
         html = html + "<br> " + fig10.to_html(full_html=False, include_plotlyjs=False)
-    for fig in (fig11, fig12, fig13):
+    for fig in (fig11, fig12, fig13, fig14):
         if fig is not None:
             html += "<br> " + fig.to_html(full_html=False, include_plotlyjs=False)
 
@@ -597,8 +632,12 @@ The hitter Marcel is the Cycle 21 backtested configuration (3 seasons, 5-4-3, pl
 age adjustment whose slope was fitted on 2025-2026 backtest residuals — the original
 aging step was a stub that adjusted nothing). Cycle 20 tested Savant trait adjustments
 and rejected them out-of-sample; Cycle 22 benchmarks the result against Steamer
-(hitters agree closely; the pitcher Marcel runs ~0.32 ERA optimistic — an open,
-disclosed gap, not a hidden one).
+(hitters agree closely). Cycle 24 backtested the pitcher Marcel against actuals,
+found the same optimism there (bias −0.21 ERA), and adopted the tested fix
+(3 seasons + fitted age term): pooled bias vs actuals fell to −0.08, and the
+residual gap vs Steamer narrowed to −0.25 ERA with the pitcher pool widening
+76 → 102. Cycle 25 wires real Spotrac salaries + the 2027 FA class so the cap
+math runs on contract figures, with prior AAV labeled as a last-price anchor.
 <b>Honest limits:</b> ~45% of same-year win variance sits outside run differential
 (defense, luck, leverage); the cap figures are the owners' proposed 2027 numbers
 (CBA expires Dec 1 2026), not law. Not a guarantee of performance.<br><br>
