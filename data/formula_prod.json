@@ -1,0 +1,30 @@
+{
+  "features": [
+    "OBP",
+    "contact",
+    "K%",
+    "BB%",
+    "HR/PA",
+    "ISO",
+    "payroll",
+    "RD",
+    "PythE"
+  ],
+  "coefs": {
+    "OBP": 38.8508,
+    "contact": 0.5059,
+    "K%": -0.506,
+    "BB%": 0.0305,
+    "HR/PA": 1.1712,
+    "ISO": -271.4125,
+    "payroll": -0.0,
+    "RD": 0.0088,
+    "PythE": 0.531
+  },
+  "intercept": 5.68,
+  "cv_mae": 4.3,
+  "cv_r2": 0.764,
+  "pythag_exponent": 2.718281828459045,
+  "cap_2027": 245300000,
+  "floor_2027": 171200000
+}

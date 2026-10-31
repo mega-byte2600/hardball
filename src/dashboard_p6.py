@@ -236,6 +236,36 @@ def panel_roster():
     return fig
 
 
+def panel_runs():
+    """The top quant lever: run differential vs wins (2026), MLB-themed."""
+    runs = os.path.join(DATA, "runs_panel.json")
+    if not os.path.exists(runs):
+        return None
+    d = pd.read_json(runs)
+    d26 = d[d["season"] == 2026].dropna(subset=["RD", "wins"])
+    def grp(team):
+        if team in WIN_CHEAP: return "#1b5e20"
+        if team in CHEAP_MEDIOCRE: return "#e65100"
+        return "#1565c0"
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=d26["RD"], y=d26["wins"], mode="markers+text",
+                             marker=dict(color=[grp(t) for t in d26["team"]], size=13),
+                             text=[f"<b>{t}</b>" for t in d26["team"]],
+                             textposition="top center", name="2026 teams"))
+    # fit line (ordinal least squares) to show the run->win relation
+    import numpy as _np
+    b, a = _np.polyfit(d26["RD"].values, d26["wins"].values, 1)
+    xs = _np.linspace(d26["RD"].min(), d26["RD"].max(), 50)
+    fig.add_trace(go.Scatter(x=xs, y=a + b * xs, mode="lines",
+                             line=dict(color="#d50032", dash="dash", width=2),
+                             name=f"fit: wins ≈ {a:.0f} + {b:.2f}·RunDiff (R² see source)"))
+    fig.update_layout(title="The top lever — run differential → wins (2026, real)",
+                      xaxis_title="Run differential (scored − allowed)",
+                      yaxis_title="Wins", template="plotly_white", height=420,
+                      xaxis_range=[-150, 350])
+    return fig
+
+
 def build():
     df = kpi_mod.kpi_frame()
     df["group"] = "OTHER"
@@ -250,6 +280,7 @@ def build():
     fig6 = panel_pitching()
     fig7 = panel_health()
     fig8 = panel_roster()
+    fig9 = panel_runs()
 
     # Self-contained offline demo: inline plotly so no internet needed at the
     # Winter Meetings. Caches the bundle next to the dashboard if present.
@@ -276,6 +307,9 @@ def build():
     for fig in (fig7, fig8):
         if fig is not None:
             html += "<br> " + fig.to_html(full_html=False, include_plotlyjs=False)
+    if fig9 is not None:
+        html = (fig9.to_html(full_html=False, include_plotlyjs=False) +
+                "<br> " + html)
 
     page = f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P6)</title>
 <style>body{{font-family:system-ui,sans-serif;margin:0;background:#f6f7f9;color:#14213d}}
