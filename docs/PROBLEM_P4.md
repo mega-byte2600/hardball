@@ -60,7 +60,8 @@ counter-case (does it actually win?).
   cross-validated. NO Kaggle.
 
 ## Positioning vs demo date
-The CBA expires Dec 1 = the Winter Meetings. The demo is *the* timely,
+The CBA expires Dec 1 2026; the GP needs the demo READY Dec 3 (Winter
+Meetings run Dec 6-11). The demo is *the* timely,
 revenue-relevant artifact: owners arriving need a cap-era strategy, and
 HARDBALL hands them the construction formula with real 2025-26 evidence.
 
