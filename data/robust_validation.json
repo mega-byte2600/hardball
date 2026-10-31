@@ -1,0 +1,57 @@
+{
+  "repeated_kfold": {
+    "mae_mean": 4.1,
+    "mae_2sd": 1.47,
+    "r2_mean": 0.723
+  },
+  "naive_baseline_mae": 8.78,
+  "elasticity": {
+    "OBP": {
+      "shock": 0.01,
+      "dWins": 0.389
+    },
+    "contact": {
+      "shock": 1.0,
+      "dWins": 0.506
+    },
+    "K%": {
+      "shock": 1.0,
+      "dWins": -0.506
+    },
+    "BB%": {
+      "shock": 1.0,
+      "dWins": 0.03
+    },
+    "HR/PA": {
+      "shock": 1.0,
+      "dWins": 1.171
+    },
+    "ISO": {
+      "shock": 0.01,
+      "dWins": -2.714
+    },
+    "payroll": {
+      "shock": 25000000,
+      "dWins": -0.26
+    },
+    "RD": {
+      "shock": 25.0,
+      "dWins": 0.22
+    },
+    "PythE": {
+      "shock": 5.0,
+      "dWins": 2.655
+    }
+  },
+  "permutation_importance": {
+    "OBP": 0.0053,
+    "contact": 0.0252,
+    "K%": 0.0201,
+    "BB%": 0.0003,
+    "HR/PA": 0.3949,
+    "ISO": 0.2433,
+    "payroll": 0.0097,
+    "RD": 0.0208,
+    "PythE": 0.9489
+  }
+}

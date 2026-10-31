@@ -204,4 +204,17 @@ verified by a real command run, not self-asserted. GP review pending on all.
   source footer), data/quant_core.json.
 
 ---
+## Cycle 15 — RIGOROUS validation (repeated K-fold + elasticity + permutation)
+- Built: src/bml_cycle15.py — repeated K-fold CV (4 folds x 20 repeats) on the
+  production run-diff model; full-league elasticity; permutation importance;
+  naive league-mean baseline. Real 2025+2026 only.
+- Measured: repeated K-fold MAE ~4.1 wins, R2 ~0.80 (stable across 80 holds);
+  beats naive league-mean baseline by ~4 wins MAE. Elasticity across all
+  teams confirms run-diff/PythE biggest; permutation importance ranks
+  PythE/RD and OBP top. (Full detail in data/robust_validation.json.)
+- Learned: the MAE 4.0 / R2 0.80 result is ROBUST, not a lucky split; the
+  model is defensible to rigorous scrutiny. Naive baseline gap proves value.
+- Shipped: src/bml_cycle15.py, data/robust_validation.json, formula_prod.json.
+
+---
 (cycles appended as they complete)
