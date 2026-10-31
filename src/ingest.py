@@ -47,15 +47,18 @@ def init_schema():
     c = conn.cursor()
     c.executescript(
         """
-        CREATE TABLE IF NOT EXISTS players (
+        DROP TABLE IF EXISTS stat_lines;
+        DROP TABLE IF EXISTS players;
+        CREATE TABLE players (
             player_id INTEGER PRIMARY KEY,
             full_name TEXT, first TEXT, last TEXT,
             position TEXT, team_id INTEGER, team_name TEXT
         );
-        CREATE TABLE IF NOT EXISTS stat_lines (
+        CREATE TABLE stat_lines (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             season INTEGER, group_name TEXT, player_id INTEGER,
-            team_id INTEGER, stat_json TEXT, source TEXT DEFAULT 'mlb',
+            name TEXT, team TEXT, team_id INTEGER,
+            stat_json TEXT, source TEXT DEFAULT 'mlb',
             pulled_at TEXT
         );
         """
@@ -97,10 +100,16 @@ def load_qualified(season: int, group: str, sort_stat: str, order: str = "desc",
     conn = _connect()
     for _, r in df.iterrows():
         conn.execute(
-            "INSERT INTO stat_lines (season, group_name, player_id, team_id, stat_json, source, pulled_at)"
-            " VALUES (?,?,?,?,?,?,?)",
-            (r["season"], r["group"], r["player_id"], r["team_id"],
-             r["stat_json"], source, str(date.today())),
+            "INSERT INTO stat_lines (season, group_name, player_id, name, team, team_id, stat_json, source, pulled_at)"
+            " VALUES (?,?,?,?,?,?,?,?,?)",
+            (r["season"], r["group"], r["player_id"], r["name"], r["team"],
+             r["team_id"], r["stat_json"], source, str(date.today())),
+        )
+        # Upsert into players table too
+        conn.execute(
+            "INSERT OR REPLACE INTO players (player_id, full_name, team_id, team_name)"
+            " VALUES (?,?,?,?)",
+            (r["player_id"], r["name"], r["team_id"], r["team"]),
         )
     conn.commit()
     conn.close()
