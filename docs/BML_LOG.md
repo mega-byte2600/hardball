@@ -185,4 +185,23 @@ verified by a real command run, not self-asserted. GP review pending on all.
 - Shipped: src/bml_cycle12.py, data/roster_2027.json.
 
 ---
+## Cycle 13 — QUANT CORE (linear + logistic + sensitivity + Euler). Major win.
+- Built: src/quant_core.py — the hardcore-math layer GP asked for. 1) linear
+  wins model; 2) logistic (>=90-win title bar); 3) sensitivity/elasticity;
+  4) Euler e as Pythag exponent + logit link. Added run differential (RS/RA
+  from standings) — the previously-missing strongest lever.
+- Measured (real 2025+2026, cross-validated both splits):
+  raw-KPI linear: MAE 7.29, R2 0.39
+  +RunDiff:       MAE 4.24, R2 0.78
+  +PythE:         MAE 4.00, R2 0.80   <- about 2x better
+  Logistic (>=90w, base rate 21%): AUC 0.95-0.97 on run-diff alone.
+  Sensitivity (MIL profile): +5 pyth-wins -> +2.8 wins.
+- Learned: run differential is THE missing lever — the old model's R2 0.39
+  ceiling was exactly the run-to-win nexus it ignored. Euler is the correct
+  transform for both the Pythag exponent and the logit. Next: make the
+  committed production model use this, and add a runs panel to the dashboard.
+- Shipped: src/quant_core.py, src/dashboard_p6.py (MLB crest + quant box +
+  source footer), data/quant_core.json.
+
+---
 (cycles appended as they complete)
