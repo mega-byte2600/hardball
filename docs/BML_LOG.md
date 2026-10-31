@@ -25,4 +25,19 @@ verified by a real command run, not self-asserted. GP review pending on all.
 - Shipped: src/bml_cycle1.py pushed (commit pending).
 
 ---
+## Cycle 2 — does team health (injury proxy) improve the wins model? → NO (honest negative)
+- Built: src/bml_cycle2.py — pulled all player transactions 2025+2026 (17,968 +
+  17,188 = 35k events archived to data/raw/), built team-season health proxy
+  (IL placements + rehab assignments), joined to the hitting model.
+- Measured: hitting-only CV MAE 7.29 wins vs hitting+health 7.31 — essentially
+  flat, slightly worse. Health added NO predictive signal at team level.
+- Learned: the literature says injury matters CONTEXT-SPECIFICALLY (oblique
+  hurts hitters not pitchers; labral repair kills pitcher innings) — a blunt
+  team-count of IL placements washes that out. Health belongs as a PLAYER-level
+  projection adjustment (weighted by position/severity/recovery), not a
+  team-wins feature. This is a validated negative result (Lean: learning what
+  doesn't work). Raw 35k-event transaction archive retained for future use.
+- Shipped: src/bml_cycle2.py, data/health_2025_2026.json, raw transactions.
+
+---
 (cycles appended as they complete)
