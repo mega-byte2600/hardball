@@ -403,11 +403,16 @@ site.web.api.espn.com</span> (131 players cross-checked: HR counts match exactly
 721 team-seasons 2000-2024 + live 2026 opening-day figures). <b>Injury/health:</b> MLB
 transactions feed (35,000+ events 2025-2026, IL days per player). <b>MLB color/look:</b> league
 branding only, for presentation.<br>
-<b>Model:</b> linear regression (wins ~ OBP, contact, K%, BB%, HR/PA + run differential),
-cross-validated (train 2025 / test 2026 and reverse), MAE 4.0, R² 0.80. Logistic (≥90-win bar)
-AUC 0.95-0.97. Pythagorean exponent uses Euler's e. <b>Honest limits:</b> explains the run→win
-link strongly but ~20% variance remains (defense, luck, leverage); the cap figures are the owners'
-proposed 2027 numbers (CBA expires Dec 1 2026), not law. Not a guarantee of performance.<br><br>
+<b>Model:</b> linear regression on the 2011-2026 panel (509 team-seasons, 450 complete):
+same-year run differential → wins R² ≈ 0.55 — a diagnostic link, not a forecast.
+KPI-only next-season forecasting is weak (out-of-sample MAE ≈ 14 wins, worse than the
+naive baseline; see BML Cycles 18-19 in the repo audit trail) — an earlier 2-year-window
+estimate (MAE 4.0 / R² 0.80) was retracted for exactly that reason and is not claimed here.
+The actionable layer is player-level: Marcel weighted-average projections with
+injury-availability caps, priced against the cap. Pythagorean exponent uses Euler's e.
+<b>Honest limits:</b> ~45% of same-year win variance sits outside run differential
+(defense, luck, leverage); the cap figures are the owners' proposed 2027 numbers
+(CBA expires Dec 1 2026), not law. Not a guarantee of performance.<br><br>
 <b>Project repo:</b> github.com/mega-byte2600/hardball (private) · audit trail in docs/BML_LOG.md
 </div>
 </div></body></html>"""
