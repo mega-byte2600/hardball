@@ -375,14 +375,22 @@ won ~95 games vs ~79 at roughly half payroll. <span class="act">Owner action:</s
 build the roster around OBP/contact + control pitchers, not the big power salary.
 <span class="why">Why trust it:</span> real 2025-2026 data (MLB API + Spotrac), model cross-validated.
 Not a guarantee — shown honestly below.</div>
-<div class="quant"><b>Quant model (this version):</b> wins fit on KPIs <b>+ run differential</b> —
-linear regression <b>CV-MAE 4.0 wins, R² 0.80</b> (vs 7.29 / 0.39 without runs). Logistic model of
-"≥90-win, title-caliber" is <b>AUC 0.95-0.97</b> on run differential alone (base rate 21%). Sensitivity:
-+5 projected wins of run margin ≈ <b>+2.8 wins</b>. Euler's <b>e</b> enters as the Pythagorean exponent and the
-log-odds link.</div>
-<div class="note">Real 2025-2026 data (MLB API + Spotrac). Model: wins ~ OBP, contact, K%, BB%, HR/PA + run differential.
-Cross-validated MAE ~4.0 wins, R² ~0.8 — honest, NOT guaranteed performance. The cap/floor are owners' proposed
-2027 figures (CBA expires Dec 1 2026).</div>
+<div class="quant"><b>What the math provably supports (measured on 509 real team-seasons, 2011-2026):</b><br>
+<b>1) Run differential → wins is real.</b> Same-year fit R² ≈ 0.55 on a 450-row panel — run margin
+describes wins, but it is diagnostic, not a forward forecast.<br>
+<b>2) KPI-only cross-year prediction is weak.</b> Predicting NEXT season's wins from this season's
+hitting KPIs: in-sample R² ≈ 0.14; out-of-sample (forecast 2020-2025 from ≤2019 data) is
+<b>worse</b> than the naive league-mean baseline. The contact/OBP signal tested honestly does <b>not</b>
+cleanly predict next-year wins — year-to-year wins regress heavily, matching published literature.<br>
+<b>3) The robust, honest use is player-level acquisition</b> (Marcel projections + injury caps →
+the 26-man roster), not a single team-wins formula. We deliberately do <b>not</b> claim a
+CV-MAE ~4.0 / R² 0.80 forward-prediction model anymore — that number was measured on a
+favorable 2-year window and did not survive the full panel. Cross-year forecasting MAE ≈ 9-13
+wins; that is the honest capability.</div>
+<div class="note">Real 2011-2026 data (MLB Stats API + Spotrac), 509 team-seasons. Honest capability:
+same-year run-diff→wins R² ≈ 0.55; KPI-only cross-year forecasting MAE ≈ 9-13 wins (weak, beats
+naive only marginally — shown honestly). The cap/floor are owners' proposed 2027 figures
+(CBA expires Dec 1 2026), not law. No guaranteed performance claim.</div>
 {js_include}
 {html}
 <div class="srcbox">

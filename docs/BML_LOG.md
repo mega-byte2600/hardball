@@ -218,3 +218,22 @@ verified by a real command run, not self-asserted. GP review pending on all.
 
 ---
 (cycles appended as they complete)
+
+---
+## Cycle 18-19 — the PANEL TRUTH (honest negative, re-validated on 509 team-seasons)
+- Built: src/panel_builder.py pulls 2011-2026 team hitting + standings + payroll
+  from MLB Stats API (cached to data/raw/panel/, no refetch) -> data/panel_2011_2026.csv
+  (509 raw rows, 450 complete).
+- Cycle 18 (src/bml_cycle18_refit.py): refit the same model on 450 rows. Result:
+  repeated K-fold MAE 7.69 +/- 1.25, R2 0.534. The old quoted "R2 0.80 / MAE 4.0"
+  DID NOT SURVIVE the full panel — it was a favorable 2-year window. OBP coeff
+  flipped NEGATIVE once more data + run-diff in model (collinearity: RD ~ contains OBP).
+- Cycle 19 (src/bml_cycle19_lagged.py): the honest use-case spec — predict NEXT
+  season's wins from this season's KPIs. In-sample R2 0.136; OOS forecast
+  2020-2025 from <=2019 train: MAE 14.05, R2 -0.89 (WORSE than naive 9.76).
+  Grouped CV: R2 -6.1, MAE 13.0 vs naive 12.7. Cross-year KPI forecasting is weak.
+- LEARNED (the real finding): the contact/OBP thesis does NOT cleanly predict
+  NEXT-YEAR wins. Same-year run-diff->wins is real (R2 ~0.55) but diagnostic,
+  not a forward forecast. What survives is PLAYER-LEVEL acquisition (Marcel +
+  injury caps -> roster), not a team-wins formula. Retracted the inflated R2 0.80
+  claim from dashboard/docs. This is a proper negative result, logged honestly.

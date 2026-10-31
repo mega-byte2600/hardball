@@ -1,0 +1,38 @@
+{
+  "n_seasons": 16,
+  "n_rows": 450,
+  "features": [
+    "OBP",
+    "contact",
+    "K%",
+    "BB%",
+    "HR/PA",
+    "payroll",
+    "RD"
+  ],
+  "ridge_cv": {
+    "mae_mean": 7.69,
+    "r2_mean": 0.534
+  },
+  "naive_baseline_mae": 12.83,
+  "wc_out_of_sample": {
+    "TB": {
+      "n": 16,
+      "mae": 10.24,
+      "actual_avg": 84.0,
+      "pred_avg": 76.7
+    },
+    "MIL": {
+      "n": 16,
+      "mae": 11.05,
+      "actual_avg": 83.9,
+      "pred_avg": 77.5
+    },
+    "CLE": {
+      "n": 16,
+      "mae": 9.68,
+      "actual_avg": 83.4,
+      "pred_avg": 78.1
+    }
+  }
+}
