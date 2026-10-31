@@ -1,0 +1,9 @@
+# HARDBALL — pinned dependencies (audit G3, 2026-10-31)
+# Versions verified end-to-end on Python 3.12: ingest, KPI snapshots,
+# model fit, and the offline clean-clone dashboard build all pass on these.
+numpy==2.5.4
+pandas==3.1.0
+scipy==1.18.1
+scikit-learn==1.9.1
+plotly==7.1.0
+requests==2.34.2
