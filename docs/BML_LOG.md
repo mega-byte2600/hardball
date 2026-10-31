@@ -288,3 +288,35 @@ name-string joins are retired in this work (the AZ/ARI failure class).
 - Dashboard: 10 -> 13 panels (benchmark scatter, Savant trait check,
   pipeline index), each traceable to its source; clean-clone offline
   build re-verified (13 panels, no lake, network blocked).
+
+---
+## Cycles 24-25 + P7 packaging — SOLUTIONS (2026-10-31)
+- Cycle 24 (src/bml_cycle24.py) — PITCHER BIAS, ROOT-CAUSED: judged the
+  shipped pitcher Marcel against ACTUALS (not just Steamer): bias -0.208
+  ERA pooled — the optimism was ours, not Steamer's conservatism.
+  Variants as per Cycle 21: 3-season MAE .715, + cross-fitted age term
+  .711 with bias collapsing to -0.078. Age slope is NEGATIVE and large
+  (ERA -0.0355/yr from 27): old arms are where the optimism lived
+  (age >=32 band bias -0.301). ADOPTED into cycle11: explicit 3-season
+  window + pooled fitted age slopes. Pool widened 76 -> 102 pitchers
+  (Burnes/Ragans/Lopez/Eovaldi now covered); re-benchmarked vs Steamer:
+  ERA bias -0.324 -> -0.250, MAD .556 -> .524 (r dipped .663 -> .636 —
+  the added arms are harder cases). Residual gap disclosed on dashboard.
+- Cycle 25 (src/bml_cycle25.py) — REAL SALARIES + FA SHOPPING LIST
+  (Cycle 16's declared dependency, finally wired): Spotrac team payroll
+  pages -> data/salaries_2026.json (927 rows, 864 id-matched via the
+  Steamer+lake registry, accent-folded); Spotrac 2027 FA page (251
+  players, 231 with Steamer WAR) -> data/fa_shopping_2027.json. Top of
+  the class: Skubal 5.66 WAR (prior AAV $32.0M, Spotrac market est
+  $39.5M); best value: Rasmussen 8.79 WAR per $10M of prior AAV,
+  Brandon Lowe 5.81, Trevor Rogers 4.91. Prior AAV is labeled a
+  last-price anchor everywhere, never a predicted price. Spotrac
+  rate-limited 6 team pages mid-pull (ARI/BOS/CHC/MIL/TB/TEX — 500s
+  then 403): coverage is 24/30 teams, logged in the JSON metadata;
+  the script's cache makes any later rerun complete just the missing
+  six. USA TODAY salaries returned 402 — tried, blocked, logged.
+  Dashboard panel 14 ships the shopping list.
+- P7 packaging: README.md (quickstart + honesty rules + repo map),
+  EXEC_SUMMARY rewritten to the current state (was: 5 panels and the
+  retracted formula family), dashboard now 14 panels; clean-clone
+  offline build re-verified (14 panels, no lake, network blocked).
