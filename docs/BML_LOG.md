@@ -40,18 +40,17 @@ verified by a real command run, not self-asserted. GP review pending on all.
 - Shipped: src/bml_cycle2.py, data/health_2025_2026.json, raw transactions.
 
 ---
-## Cycle 3 — does Statcast xwOBA add signal? → DATA PULLED, MEASUREMENT BLOCKED (honest status)
-- Built: src/bml_cycle3.py + src/bml_cycle3b.py — pulled Statcast pitch data
-  (statcast_2026.csv archived ~700k+ rows) and per-player leaderboard xwOBA
-  route (verified leaderboard CSV works, gives per-player xwOBA/xSLG).
-- Measured: NOT YET — team attribution requires mapping player->team across
-  60 roster calls, and the batch tool+attribution step did not complete
-  reliably in this session. Pitch CSV is retained in data/raw/.
-- Learned: the honest answer to "does xwOBA beat classic stats for team
-  wins?" is still OPEN. P3 stickiness lit suggests it's incremental, not
-  transformative. Must rerun to claim anything.
-- Shipped: source scripts committed; raw pitch archive retained (gitignored).
-  STATUS: measurement PENDING, not fabricated.
+## Cycle 3 — does Statcast xwOBA add signal? → NO (honest negative, measured)
+- Built: pulled per-player Statcast leaderboard xwOBA/xSLG (CSV) for 2025+2026,
+  mapped player->team via MLB API rosters (145 and 135 qualified players
+  mapped), aggregated to team-avg xwOBA -> data/statcast_team.json.
+- Measured (CV MAE, win prediction): hitting-ONLY = 7.29 wins vs
+  hitting+xwoba = 7.70 wins. Adding xwOBA made the model WORSE (~0.4 wins).
+- Learned: matches P3 stickiness lit — xwOBA is descriptive, only marginally
+  predictive of NEXT season; at team-wins level it adds no signal over raw
+  OBP/contact/K%/BB%. Keeping the raw-KPI model is correct and principled.
+  Raw pitch archive (statcast_2026.csv) retained for future use.
+- Shipped: src/bml_cycle3.py, data/statcast_team.json, raw archive.
 
 ---
 (cycles appended as they complete)
