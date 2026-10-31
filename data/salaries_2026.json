@@ -1,0 +1,7452 @@
+{
+ "metadata": {
+  "source": "Spotrac team payroll pages (2026), pulled 2026-10-31",
+  "field": "Payroll Salary column",
+  "rows": 927,
+  "id_matched": 864,
+  "team_failures": [
+   {
+    "team": "ARI",
+    "error": "500 Server Error: Internal Server Error for url: https://www.spotrac.com/mlb/arizona-diamondbacks/payroll/"
+   },
+   {
+    "team": "BOS",
+    "error": "500 Server Error: Internal Server Error for url: https://www.spotrac.com/mlb/boston-red-sox/payroll/"
+   },
+   {
+    "team": "CHC",
+    "error": "500 Server Error: Internal Server Error for url: https://www.spotrac.com/mlb/chicago-cubs/payroll/"
+   },
+   {
+    "team": "MIL",
+    "error": "500 Server Error: Internal Server Error for url: https://www.spotrac.com/mlb/milwaukee-brewers/payroll/"
+   },
+   {
+    "team": "TB",
+    "error": "500 Server Error: Internal Server Error for url: https://www.spotrac.com/mlb/tampa-bay-rays/payroll/"
+   },
+   {
+    "team": "TEX",
+    "error": "500 Server Error: Internal Server Error for url: https://www.spotrac.com/mlb/texas-rangers/payroll/"
+   }
+  ]
+ },
+ "players": [
+  {
+   "name": "Luis Severino",
+   "player_id": 622663,
+   "team": "ATH",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 22000000
+  },
+  {
+   "name": "Brent Rooker",
+   "player_id": 667670,
+   "team": "ATH",
+   "pos": "DH",
+   "status": "Arbitration 3",
+   "salary_2026": 14000000
+  },
+  {
+   "name": "Shea Langeliers",
+   "player_id": 669127,
+   "team": "ATH",
+   "pos": "C",
+   "status": "Arbitration 2",
+   "salary_2026": 7500000
+  },
+  {
+   "name": "Tyler Soderstrom",
+   "player_id": 691016,
+   "team": "ATH",
+   "pos": "LF",
+   "status": "Arbitration 1 Bypassed",
+   "salary_2026": 6428571
+  },
+  {
+   "name": "Lawrence Butler",
+   "player_id": 671732,
+   "team": "ATH",
+   "pos": "RF",
+   "status": "Arbitration 1 Bypassed",
+   "salary_2026": 5428571
+  },
+  {
+   "name": "Jacob Wilson",
+   "player_id": 805779,
+   "team": "ATH",
+   "pos": "SS",
+   "status": "Pre-Arbitration Bypassed",
+   "salary_2026": 2928571
+  },
+  {
+   "name": "Zack Gelof",
+   "player_id": 680869,
+   "team": "ATH",
+   "pos": "2B",
+   "status": "Arbitration 1",
+   "salary_2026": 2300000
+  },
+  {
+   "name": "Hogan Harris",
+   "player_id": 663687,
+   "team": "ATH",
+   "pos": "RP",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 2000000
+  },
+  {
+   "name": "Elvis Alvarado",
+   "player_id": 665660,
+   "team": "ATH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Mason Barnett",
+   "player_id": 686930,
+   "team": "ATH",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brady Basso",
+   "player_id": 669620,
+   "team": "ATH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Hunter Bigge",
+   "player_id": 685801,
+   "team": "ATH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Scott Blewett",
+   "player_id": 656240,
+   "team": "ATH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Henry Bolte",
+   "player_id": 703607,
+   "team": "ATH",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Denzel Clarke",
+   "player_id": 672016,
+   "team": "ATH",
+   "pos": "CF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Carlos Cortes",
+   "player_id": 666126,
+   "team": "ATH",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Nate Eaton",
+   "player_id": 681987,
+   "team": "ATH",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "J.T. Ginn",
+   "player_id": 669372,
+   "team": "ATH",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Darell Hernaiz",
+   "player_id": 687231,
+   "team": "ATH",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Gunnar Hoglund",
+   "player_id": 680684,
+   "team": "ATH",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Seth Johnson",
+   "player_id": 686751,
+   "team": "ATH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Hayden Juenger",
+   "player_id": 696522,
+   "team": "ATH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Gage Jump",
+   "player_id": 695611,
+   "team": "ATH",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Joshua Kuroda-Grauer",
+   "player_id": 811965,
+   "team": "ATH",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Nick Kurtz",
+   "player_id": 701762,
+   "team": "ATH",
+   "pos": "1B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jacob Lopez",
+   "player_id": 682052,
+   "team": "ATH",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Luis Medina",
+   "player_id": 665622,
+   "team": "ATH",
+   "pos": "RP",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Luis Morales",
+   "player_id": 806960,
+   "team": "ATH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Kade Morris",
+   "player_id": 695034,
+   "team": "ATH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Max Muncy",
+   "player_id": null,
+   "team": "ATH",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Braden Nett",
+   "player_id": 804556,
+   "team": "ATH",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jack Perkins",
+   "player_id": 678022,
+   "team": "ATH",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Joe Rock",
+   "player_id": 697812,
+   "team": "ATH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Drew Rom",
+   "player_id": 680723,
+   "team": "ATH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Chris Roycroft",
+   "player_id": 688297,
+   "team": "ATH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Justin Sterner",
+   "player_id": 686993,
+   "team": "ATH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Yunior Tur",
+   "player_id": 814305,
+   "team": "ATH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Donnie Walton",
+   "player_id": null,
+   "team": "ATH",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Tommy White",
+   "player_id": 695720,
+   "team": "ATH",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Alika Williams",
+   "player_id": 675961,
+   "team": "ATH",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Chris Sale",
+   "player_id": 519242,
+   "team": "ATL",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 27000000
+  },
+  {
+   "name": "Austin Riley",
+   "player_id": 663586,
+   "team": "ATL",
+   "pos": "3B",
+   "status": "Veteran",
+   "salary_2026": 22000000
+  },
+  {
+   "name": "Matt Olson",
+   "player_id": 621566,
+   "team": "ATL",
+   "pos": "1B",
+   "status": "Veteran",
+   "salary_2026": 22000000
+  },
+  {
+   "name": "Spencer Strider",
+   "player_id": 675911,
+   "team": "ATL",
+   "pos": "SP",
+   "status": "Arbitration 3 Bypassed",
+   "salary_2026": 22000000
+  },
+  {
+   "name": "Jr. Ronald Acu\u00f1a Jr.",
+   "player_id": null,
+   "team": "ATL",
+   "pos": "RF",
+   "status": "Veteran",
+   "salary_2026": 17000000
+  },
+  {
+   "name": "Robert Suarez",
+   "player_id": 663158,
+   "team": "ATL",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 16000000
+  },
+  {
+   "name": "Jurickson Profar",
+   "player_id": 595777,
+   "team": "ATL",
+   "pos": "LF",
+   "status": "Veteran",
+   "salary_2026": 15000000
+  },
+  {
+   "name": "Sean Murphy",
+   "player_id": 669221,
+   "team": "ATL",
+   "pos": "C",
+   "status": "Veteran",
+   "salary_2026": 15000000
+  },
+  {
+   "name": "Mike Yastrzemski",
+   "player_id": 573262,
+   "team": "ATL",
+   "pos": "LF",
+   "status": "Veteran",
+   "salary_2026": 10000000
+  },
+  {
+   "name": "II Michael Harris II",
+   "player_id": null,
+   "team": "ATL",
+   "pos": "CF",
+   "status": "Arbitration 3 Bypassed",
+   "salary_2026": 9000000
+  },
+  {
+   "name": "Reynaldo L\u00f3pez",
+   "player_id": 625643,
+   "team": "ATL",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 8000000
+  },
+  {
+   "name": "Ozzie Albies",
+   "player_id": 645277,
+   "team": "ATL",
+   "pos": "2B",
+   "status": "Veteran",
+   "salary_2026": 7000000
+  },
+  {
+   "name": "Dylan Lee",
+   "player_id": 669276,
+   "team": "ATL",
+   "pos": "RP",
+   "status": "Arbitration 3 (S2)",
+   "salary_2026": 4500000
+  },
+  {
+   "name": "Bryce Elder",
+   "player_id": 693821,
+   "team": "ATL",
+   "pos": "SP",
+   "status": "Arbitration 1",
+   "salary_2026": 3000000
+  },
+  {
+   "name": "Drake Baldwin",
+   "player_id": 686948,
+   "team": "ATL",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Blake Burkhalter",
+   "player_id": 686628,
+   "team": "ATL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Dylan Dodd",
+   "player_id": 689266,
+   "team": "ATL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Didier Fuentes",
+   "player_id": 800311,
+   "team": "ATL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Michael Grove",
+   "player_id": 675627,
+   "team": "ATL",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brewer Hicklen",
+   "player_id": 676551,
+   "team": "ATL",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Grant Holmes",
+   "player_id": 656550,
+   "team": "ATL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jim Jarvis",
+   "player_id": 805347,
+   "team": "ATL",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "James Karinchak",
+   "player_id": 675916,
+   "team": "ATL",
+   "pos": "RP",
+   "status": "Arbitration 3",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ray Kerr",
+   "player_id": 678061,
+   "team": "ATL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Victor Mederos",
+   "player_id": 682989,
+   "team": "ATL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Owen Murphy",
+   "player_id": 702566,
+   "team": "ATL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Rolddy Mu\u00f1oz",
+   "player_id": 691548,
+   "team": "ATL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "JR Ritchie",
+   "player_id": 702275,
+   "team": "ATL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Spencer Schwellenbach",
+   "player_id": 680885,
+   "team": "ATL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "AJ Smith-Shawver",
+   "player_id": 700363,
+   "team": "ATL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Tyler Uberstine",
+   "player_id": 700413,
+   "team": "ATL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Hurston Waldrep",
+   "player_id": 694462,
+   "team": "ATL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Joey Wentz",
+   "player_id": 666214,
+   "team": "ATL",
+   "pos": "SP",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brett Wisely",
+   "player_id": 689172,
+   "team": "ATL",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Danny Young",
+   "player_id": 664849,
+   "team": "ATL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Pete Alonso",
+   "player_id": 624413,
+   "team": "BAL",
+   "pos": "1B",
+   "status": "Veteran",
+   "salary_2026": 33500000
+  },
+  {
+   "name": "Jr. Luis Robert Jr.",
+   "player_id": null,
+   "team": "BAL",
+   "pos": "CF",
+   "status": "Club",
+   "salary_2026": 20000000
+  },
+  {
+   "name": "Tyler O'Neill",
+   "player_id": 641933,
+   "team": "BAL",
+   "pos": "RF",
+   "status": "Veteran",
+   "salary_2026": 16500000
+  },
+  {
+   "name": "Ryan Helsley",
+   "player_id": 664854,
+   "team": "BAL",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 14000000
+  },
+  {
+   "name": "Gunnar Henderson",
+   "player_id": 683002,
+   "team": "BAL",
+   "pos": "SS",
+   "status": "Arbitration 2",
+   "salary_2026": 10500000
+  },
+  {
+   "name": "Kyle Bradish",
+   "player_id": 680694,
+   "team": "BAL",
+   "pos": "SP",
+   "status": "Arbitration 3 Bypassed",
+   "salary_2026": 10000000
+  },
+  {
+   "name": "Shane Baz",
+   "player_id": 669358,
+   "team": "BAL",
+   "pos": "SP",
+   "status": "Arbitration 3 Bypassed",
+   "salary_2026": 7800000
+  },
+  {
+   "name": "Ryan Mountcastle",
+   "player_id": 663624,
+   "team": "BAL",
+   "pos": "1B",
+   "status": "Veteran",
+   "salary_2026": 7500000
+  },
+  {
+   "name": "Leody Taveras",
+   "player_id": 665750,
+   "team": "BAL",
+   "pos": "CF",
+   "status": "Arbitration 3",
+   "salary_2026": 4500000
+  },
+  {
+   "name": "Colton Cowser",
+   "player_id": 681297,
+   "team": "BAL",
+   "pos": "CF",
+   "status": "Arbitration 1",
+   "salary_2026": 3000000
+  },
+  {
+   "name": "Yennier Cano",
+   "player_id": 666974,
+   "team": "BAL",
+   "pos": "RP",
+   "status": "Arbitration 2 Bypassed",
+   "salary_2026": 2750000
+  },
+  {
+   "name": "F\u00e9lix Bautista",
+   "player_id": 642585,
+   "team": "BAL",
+   "pos": "RP",
+   "status": "Arbitration 3",
+   "salary_2026": 2250000
+  },
+  {
+   "name": "Samuel Basallo",
+   "player_id": 694212,
+   "team": "BAL",
+   "pos": "C",
+   "status": "Pre-Arbitration Bypassed",
+   "salary_2026": 1625000
+  },
+  {
+   "name": "Blaze Alexander",
+   "player_id": 677942,
+   "team": "BAL",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Dylan Beavers",
+   "player_id": 687637,
+   "team": "BAL",
+   "pos": "RF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Leon Luis De Leon",
+   "player_id": null,
+   "team": "BAL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Christian Encarnacion-Strand",
+   "player_id": 687952,
+   "team": "BAL",
+   "pos": "1B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Cameron Foster",
+   "player_id": 671382,
+   "team": "BAL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Christian Franklin",
+   "player_id": 681047,
+   "team": "BAL",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Rico Garcia",
+   "player_id": 670329,
+   "team": "BAL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Trey Gibson",
+   "player_id": 694346,
+   "team": "BAL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Codi Heuer",
+   "player_id": 676051,
+   "team": "BAL",
+   "pos": "RP",
+   "status": "Arbitration 2",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Rece Hinds",
+   "player_id": 677956,
+   "team": "BAL",
+   "pos": "RF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Yaramil Hiraldo",
+   "player_id": 682274,
+   "team": "BAL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jackson Holliday",
+   "player_id": 702616,
+   "team": "BAL",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Alex Hoppe",
+   "player_id": 695380,
+   "team": "BAL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jeremiah Jackson",
+   "player_id": 669236,
+   "team": "BAL",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Heston Kjerstad",
+   "player_id": 677008,
+   "team": "BAL",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Coby Mayo",
+   "player_id": 691723,
+   "team": "BAL",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Carlos Narvaez",
+   "player_id": 665966,
+   "team": "BAL",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Anthony Nunez",
+   "player_id": 689296,
+   "team": "BAL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Cade Povich",
+   "player_id": 700249,
+   "team": "BAL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Yohel Pozo",
+   "player_id": 650968,
+   "team": "BAL",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Cam Sanders",
+   "player_id": 676742,
+   "team": "BAL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Colin Selby",
+   "player_id": 681882,
+   "team": "BAL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Albert Suarez",
+   "player_id": 544150,
+   "team": "BAL",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Reed Trimble",
+   "player_id": 701655,
+   "team": "BAL",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Josh Walker",
+   "player_id": 677020,
+   "team": "BAL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jordan Westburg",
+   "player_id": 676059,
+   "team": "BAL",
+   "pos": "2B",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Grant Wolfram",
+   "player_id": 664991,
+   "team": "BAL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brandon Young",
+   "player_id": 687064,
+   "team": "BAL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Yosver Zulueta",
+   "player_id": 691172,
+   "team": "BAL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Luis Castillo",
+   "player_id": null,
+   "team": "CHW",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 24150000
+  },
+  {
+   "name": "Munetaka Murakami",
+   "player_id": 808959,
+   "team": "CHW",
+   "pos": "1B",
+   "status": "Veteran",
+   "salary_2026": 17500000
+  },
+  {
+   "name": "Luisangel Acuna",
+   "player_id": 682668,
+   "team": "CHW",
+   "pos": "CF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brooks Baldwin",
+   "player_id": 681460,
+   "team": "CHW",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Prelander Berroa",
+   "player_id": 672860,
+   "team": "CHW",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ky Bush",
+   "player_id": 681066,
+   "team": "CHW",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jonathan Cannon",
+   "player_id": 686563,
+   "team": "CHW",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jordan Leasure",
+   "player_id": 673929,
+   "team": "CHW",
+   "pos": "RP",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Tanner McDougal",
+   "player_id": 701780,
+   "team": "CHW",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Junior Perez",
+   "player_id": 678577,
+   "team": "CHW",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Tristan Peters",
+   "player_id": 671976,
+   "team": "CHW",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Edgar Quero",
+   "player_id": 700337,
+   "team": "CHW",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Drew Romo",
+   "player_id": 691011,
+   "team": "CHW",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Shane Smith",
+   "player_id": 681343,
+   "team": "CHW",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Hagen Smith",
+   "player_id": 696146,
+   "team": "CHW",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Drew Thorpe",
+   "player_id": 689672,
+   "team": "CHW",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Mike Vasil",
+   "player_id": 678024,
+   "team": "CHW",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Eugenio Suarez",
+   "player_id": 553993,
+   "team": "CIN",
+   "pos": "3B",
+   "status": "Veteran",
+   "salary_2026": 16000000
+  },
+  {
+   "name": "Hunter Greene",
+   "player_id": 668881,
+   "team": "CIN",
+   "pos": "SP",
+   "status": "Arbitration 3 Bypassed",
+   "salary_2026": 15333333
+  },
+  {
+   "name": "Emilio Pagan",
+   "player_id": 641941,
+   "team": "CIN",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 10000000
+  },
+  {
+   "name": "Pierce Johnson",
+   "player_id": 572955,
+   "team": "CIN",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 8000000
+  },
+  {
+   "name": "Ke'Bryan Hayes",
+   "player_id": 663647,
+   "team": "CIN",
+   "pos": "3B",
+   "status": "Veteran",
+   "salary_2026": 7000000
+  },
+  {
+   "name": "Nick Lodolo",
+   "player_id": 666157,
+   "team": "CIN",
+   "pos": "SP",
+   "status": "Arbitration 3",
+   "salary_2026": 6750000
+  },
+  {
+   "name": "La Cruz Elly De La Cruz",
+   "player_id": null,
+   "team": "CIN",
+   "pos": "SS",
+   "status": "Arbitration 1",
+   "salary_2026": 6600000
+  },
+  {
+   "name": "Andrew Abbott",
+   "player_id": 671096,
+   "team": "CIN",
+   "pos": "SP",
+   "status": "Arbitration 1",
+   "salary_2026": 5800000
+  },
+  {
+   "name": "Jose Trevino",
+   "player_id": 624431,
+   "team": "CIN",
+   "pos": "C",
+   "status": "Veteran",
+   "salary_2026": 5250000
+  },
+  {
+   "name": "Spencer Steer",
+   "player_id": 668715,
+   "team": "CIN",
+   "pos": "LF",
+   "status": "Arbitration 2",
+   "salary_2026": 4750000
+  },
+  {
+   "name": "JJ Bleday",
+   "player_id": 668709,
+   "team": "CIN",
+   "pos": "LF",
+   "status": "Arbitration 2",
+   "salary_2026": 3000000
+  },
+  {
+   "name": "Matt McLain",
+   "player_id": 680574,
+   "team": "CIN",
+   "pos": "2B",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 3000000
+  },
+  {
+   "name": "Chase Burns",
+   "player_id": 695505,
+   "team": "CIN",
+   "pos": "SP",
+   "status": "Pre-Arbitration Bypassed",
+   "salary_2026": 2785714
+  },
+  {
+   "name": "Tony Santillan",
+   "player_id": 663574,
+   "team": "CIN",
+   "pos": "RP",
+   "status": "Arbitration 2",
+   "salary_2026": 1800000
+  },
+  {
+   "name": "Graham Ashcraft",
+   "player_id": 668933,
+   "team": "CIN",
+   "pos": "RP",
+   "status": "Arbitration 2",
+   "salary_2026": 1750000
+  },
+  {
+   "name": "Dane Myers",
+   "player_id": 667472,
+   "team": "CIN",
+   "pos": "OF",
+   "status": "Arbitration 1",
+   "salary_2026": 1300000
+  },
+  {
+   "name": "Edwin Arroyo",
+   "player_id": 695490,
+   "team": "CIN",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Leonardo Balcazar",
+   "player_id": null,
+   "team": "CIN",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Will Banfield",
+   "player_id": 677943,
+   "team": "CIN",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Juan Brito",
+   "player_id": 682877,
+   "team": "CIN",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Oswaldo Cabrera",
+   "player_id": 665828,
+   "team": "CIN",
+   "pos": "3B",
+   "status": "Arbitration 2",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Blake Dunn",
+   "player_id": 694362,
+   "team": "CIN",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jose Franco",
+   "player_id": 683742,
+   "team": "CIN",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Julian Garcia",
+   "player_id": 670062,
+   "team": "CIN",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Carlos Jorge",
+   "player_id": 699115,
+   "team": "CIN",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Rhett Lowder",
+   "player_id": 695076,
+   "team": "CIN",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Noelvi Marte",
+   "player_id": 682622,
+   "team": "CIN",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Zach Maxwell",
+   "player_id": 687209,
+   "team": "CIN",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Zach McCambley",
+   "player_id": 685112,
+   "team": "CIN",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Luis Mey",
+   "player_id": 682825,
+   "team": "CIN",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Chase Petty",
+   "player_id": 695534,
+   "team": "CIN",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Connor Phillips",
+   "player_id": 683175,
+   "team": "CIN",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Hector Rodriguez",
+   "player_id": 699302,
+   "team": "CIN",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Chase Solesky",
+   "player_id": 686678,
+   "team": "CIN",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Carson Spiers",
+   "player_id": 686730,
+   "team": "CIN",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Sal Stewart",
+   "player_id": 701398,
+   "team": "CIN",
+   "pos": "1B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Tejay Antone",
+   "player_id": 622088,
+   "team": "CIN",
+   "pos": "RP",
+   "status": "Arbitration 3",
+   "salary_2026": 900000
+  },
+  {
+   "name": "Brandon Williamson",
+   "player_id": 682227,
+   "team": "CIN",
+   "pos": "SP",
+   "status": "Arbitration 1",
+   "salary_2026": 850000
+  },
+  {
+   "name": "Jos\u00e9 Ram\u00edrez",
+   "player_id": 608070,
+   "team": "CLE",
+   "pos": "3B",
+   "status": "Veteran",
+   "salary_2026": 25000000
+  },
+  {
+   "name": "Steven Kwan",
+   "player_id": 680757,
+   "team": "CLE",
+   "pos": "LF",
+   "status": "Arbitration 3",
+   "salary_2026": 10600000
+  },
+  {
+   "name": "Emmanuel Clase",
+   "player_id": 661403,
+   "team": "CLE",
+   "pos": "RP",
+   "status": "Club",
+   "salary_2026": 10000000
+  },
+  {
+   "name": "Jo Adell",
+   "player_id": 666176,
+   "team": "CLE",
+   "pos": "RF",
+   "status": "Arbitration 3",
+   "salary_2026": 7800000
+  },
+  {
+   "name": "Tanner Bibee",
+   "player_id": 676440,
+   "team": "CLE",
+   "pos": "SP",
+   "status": "Arbitration 2 Bypassed",
+   "salary_2026": 7400000
+  },
+  {
+   "name": "Gavin Williams",
+   "player_id": 668909,
+   "team": "CLE",
+   "pos": "SP",
+   "status": "Arbitration 1",
+   "salary_2026": 6750000
+  },
+  {
+   "name": "Cade Smith",
+   "player_id": null,
+   "team": "CLE",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 3000000
+  },
+  {
+   "name": "Colin Holderman",
+   "player_id": 670059,
+   "team": "CLE",
+   "pos": "RP",
+   "status": "Arbitration 2",
+   "salary_2026": 2350000
+  },
+  {
+   "name": "Patrick Bailey",
+   "player_id": 672275,
+   "team": "CLE",
+   "pos": "C",
+   "status": "Arbitration 1",
+   "salary_2026": 2100000
+  },
+  {
+   "name": "Matt Festa",
+   "player_id": 670036,
+   "team": "CLE",
+   "pos": "RP",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 2100000
+  },
+  {
+   "name": "Brayan Rocchio",
+   "player_id": 677587,
+   "team": "CLE",
+   "pos": "2B",
+   "status": "Arbitration 1",
+   "salary_2026": 1750000
+  },
+  {
+   "name": "Hunter Gaddis",
+   "player_id": 683769,
+   "team": "CLE",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 1500000
+  },
+  {
+   "name": "David Fry",
+   "player_id": 681807,
+   "team": "CLE",
+   "pos": "C",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 1375000
+  },
+  {
+   "name": "Franco Aleman",
+   "player_id": 680916,
+   "team": "CLE",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Logan Allen",
+   "player_id": null,
+   "team": "CLE",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Travis Bazzana",
+   "player_id": 683953,
+   "team": "CLE",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Joey Cantillo",
+   "player_id": 676282,
+   "team": "CLE",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Slade Cecconi",
+   "player_id": 677944,
+   "team": "CLE",
+   "pos": "RP",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Chase DeLauter",
+   "player_id": 800050,
+   "team": "CLE",
+   "pos": "RF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Daniel Espino",
+   "player_id": 682982,
+   "team": "CLE",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Angel Genao",
+   "player_id": 694197,
+   "team": "CLE",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Yorman G\u00f3mez",
+   "player_id": 691414,
+   "team": "CLE",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Petey Halpin",
+   "player_id": 690984,
+   "team": "CLE",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Tim Herrin",
+   "player_id": 682120,
+   "team": "CLE",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Cooper Ingle",
+   "player_id": 694876,
+   "team": "CLE",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "C.J. Kayfus",
+   "player_id": null,
+   "team": "CLE",
+   "pos": "1B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Kyle Manzardo",
+   "player_id": 700932,
+   "team": "CLE",
+   "pos": "1B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Angel Martinez",
+   "player_id": 682657,
+   "team": "CLE",
+   "pos": "CF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Parker Messick",
+   "player_id": 800048,
+   "team": "CLE",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Blake Perkins",
+   "player_id": 663368,
+   "team": "CLE",
+   "pos": "RF",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Austin Peterson",
+   "player_id": 804926,
+   "team": "CLE",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Erik Sabrowski",
+   "player_id": 681870,
+   "team": "CLE",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Daniel Schneemann",
+   "player_id": 682177,
+   "team": "CLE",
+   "pos": "CF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Milan Tolentino",
+   "player_id": 675455,
+   "team": "CLE",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Andrew Walters",
+   "player_id": 689958,
+   "team": "CLE",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Khalil Watson",
+   "player_id": null,
+   "team": "CLE",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Craig Yoho",
+   "player_id": 684974,
+   "team": "CLE",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Kris Bryant",
+   "player_id": 592178,
+   "team": "COL",
+   "pos": "OF",
+   "status": "Veteran",
+   "salary_2026": 27000000
+  },
+  {
+   "name": "Ezequiel Tovar",
+   "player_id": 678662,
+   "team": "COL",
+   "pos": "SS",
+   "status": "Arbitration 2 Bypassed",
+   "salary_2026": 8214286
+  },
+  {
+   "name": "Willi Castro",
+   "player_id": 650489,
+   "team": "COL",
+   "pos": "2B",
+   "status": "Veteran",
+   "salary_2026": 7300000
+  },
+  {
+   "name": "Mickey Moniak",
+   "player_id": 666160,
+   "team": "COL",
+   "pos": "CF",
+   "status": "Arbitration 3 Bypassed",
+   "salary_2026": 7250000
+  },
+  {
+   "name": "Jimmy Herget",
+   "player_id": 623474,
+   "team": "COL",
+   "pos": "RP",
+   "status": "Arbitration 3",
+   "salary_2026": 4000000
+  },
+  {
+   "name": "Jake McCarthy",
+   "player_id": 664983,
+   "team": "COL",
+   "pos": "LF",
+   "status": "Arbitration 2",
+   "salary_2026": 4000000
+  },
+  {
+   "name": "Hunter Goodman",
+   "player_id": 696100,
+   "team": "COL",
+   "pos": "C",
+   "status": "Arbitration 1",
+   "salary_2026": 3100000
+  },
+  {
+   "name": "Brennan Bernardino",
+   "player_id": 657514,
+   "team": "COL",
+   "pos": "RP",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 2500000
+  },
+  {
+   "name": "Ryan Feltner",
+   "player_id": 663372,
+   "team": "COL",
+   "pos": "SP",
+   "status": "Arbitration 3 (S2)",
+   "salary_2026": 2200000
+  },
+  {
+   "name": "Blake Adams",
+   "player_id": 687060,
+   "team": "COL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Mason Adams",
+   "player_id": 690279,
+   "team": "COL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Zach Agnos",
+   "player_id": 688642,
+   "team": "COL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Adael Amador",
+   "player_id": 691182,
+   "team": "COL",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jordan Beck",
+   "player_id": 687597,
+   "team": "COL",
+   "pos": "RF",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "McCade Brown",
+   "player_id": 685326,
+   "team": "COL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Cole Carrigg",
+   "player_id": 694249,
+   "team": "COL",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Blas Castano",
+   "player_id": 680604,
+   "team": "COL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Eiberson Castellano",
+   "player_id": 682769,
+   "team": "COL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jeff Criswell",
+   "player_id": 676105,
+   "team": "COL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Chase Dollander",
+   "player_id": 801403,
+   "team": "COL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Nick Frasso",
+   "player_id": 693308,
+   "team": "COL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Braxton Fulford",
+   "player_id": 690924,
+   "team": "COL",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Tanner Gordon",
+   "player_id": 685299,
+   "team": "COL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Hayden Harris",
+   "player_id": 802686,
+   "team": "COL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Welinton Herrera",
+   "player_id": 700327,
+   "team": "COL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jaden Hill",
+   "player_id": 677955,
+   "team": "COL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Gabriel Hughes",
+   "player_id": 687312,
+   "team": "COL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Troy Johnston",
+   "player_id": 687859,
+   "team": "COL",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Kyle Karros",
+   "player_id": 691720,
+   "team": "COL",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Mark Manfredi",
+   "player_id": 815081,
+   "team": "COL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Juan Mejia",
+   "player_id": 675848,
+   "team": "COL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Connor Norby",
+   "player_id": 681393,
+   "team": "COL",
+   "pos": "1B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Pierson Ohl",
+   "player_id": 701487,
+   "team": "COL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "RJ Petit",
+   "player_id": 696275,
+   "team": "COL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ryan Ritter",
+   "player_id": 690022,
+   "team": "COL",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "T.J. Rumfield",
+   "player_id": null,
+   "team": "COL",
+   "pos": "1B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "TJ Shook",
+   "player_id": 669298,
+   "team": "COL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Chad Stevens",
+   "player_id": 677060,
+   "team": "COL",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brett Sullivan",
+   "player_id": 664954,
+   "team": "COL",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Sean Sullivan",
+   "player_id": null,
+   "team": "COL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Sterlin Thompson",
+   "player_id": 694514,
+   "team": "COL",
+   "pos": "RF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Zac Veen",
+   "player_id": 691728,
+   "team": "COL",
+   "pos": "LF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Framber Valdez",
+   "player_id": 664285,
+   "team": "DET",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 42826679
+  },
+  {
+   "name": "Javier B\u00e1ez",
+   "player_id": 595879,
+   "team": "DET",
+   "pos": "SS",
+   "status": "Veteran",
+   "salary_2026": 24000000
+  },
+  {
+   "name": "Kenley Jansen",
+   "player_id": 445276,
+   "team": "DET",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 12000000
+  },
+  {
+   "name": "Drew Anderson",
+   "player_id": 623454,
+   "team": "DET",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 10000000
+  },
+  {
+   "name": "Riley Greene",
+   "player_id": 682985,
+   "team": "DET",
+   "pos": "LF",
+   "status": "Arbitration 2",
+   "salary_2026": 8900000
+  },
+  {
+   "name": "Kyle Finnegan",
+   "player_id": 640448,
+   "team": "DET",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 8000000
+  },
+  {
+   "name": "Spencer Torkelson",
+   "player_id": 679529,
+   "team": "DET",
+   "pos": "1B",
+   "status": "Arbitration 2",
+   "salary_2026": 7900000
+  },
+  {
+   "name": "Colt Keith",
+   "player_id": 690993,
+   "team": "DET",
+   "pos": "2B",
+   "status": "Arbitration 1 Bypassed",
+   "salary_2026": 4333333
+  },
+  {
+   "name": "Kerry Carpenter",
+   "player_id": 681481,
+   "team": "DET",
+   "pos": "RF",
+   "status": "Arbitration 2",
+   "salary_2026": 4250000
+  },
+  {
+   "name": "Zach McKinstry",
+   "player_id": 656716,
+   "team": "DET",
+   "pos": "2B",
+   "status": "Arbitration 3",
+   "salary_2026": 4250000
+  },
+  {
+   "name": "Will Vest",
+   "player_id": 676684,
+   "team": "DET",
+   "pos": "RP",
+   "status": "Arbitration 3",
+   "salary_2026": 3950000
+  },
+  {
+   "name": "Tyler Holton",
+   "player_id": 663947,
+   "team": "DET",
+   "pos": "RP",
+   "status": "Arbitration 2",
+   "salary_2026": 3500000
+  },
+  {
+   "name": "Matt Vierling",
+   "player_id": 663837,
+   "team": "DET",
+   "pos": "OF",
+   "status": "Arbitration 3",
+   "salary_2026": 3255000
+  },
+  {
+   "name": "Kevin McGonigle",
+   "player_id": 805808,
+   "team": "DET",
+   "pos": "SS",
+   "status": "Pre-Arbitration Bypassed",
+   "salary_2026": 2750000
+  },
+  {
+   "name": "Beau Brieske",
+   "player_id": 689225,
+   "team": "DET",
+   "pos": "RP",
+   "status": "Arbitration 3 (S2)",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brett Callahan",
+   "player_id": 814430,
+   "team": "DET",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Tsung-Che Cheng",
+   "player_id": 691907,
+   "team": "DET",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Max Clark",
+   "player_id": 703601,
+   "team": "DET",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jesus Enmanuel De Jesus",
+   "player_id": null,
+   "team": "DET",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Yilber Diaz",
+   "player_id": 700270,
+   "team": "DET",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Dillon Dingler",
+   "player_id": 693307,
+   "team": "DET",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Sawyer Gipson-Long",
+   "player_id": 687830,
+   "team": "DET",
+   "pos": "SP",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brenan Hanifee",
+   "player_id": 669724,
+   "team": "DET",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Bailey Horn",
+   "player_id": 690544,
+   "team": "DET",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brant Hurter",
+   "player_id": 676428,
+   "team": "DET",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jackson Jobe",
+   "player_id": 695549,
+   "team": "DET",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Corey Julks",
+   "player_id": 667452,
+   "team": "DET",
+   "pos": "CF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jace Jung",
+   "player_id": 690291,
+   "team": "DET",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Hao-Yu Lee",
+   "player_id": 701678,
+   "team": "DET",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Thayron Liranzo",
+   "player_id": 699073,
+   "team": "DET",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ty Madden",
+   "player_id": 680744,
+   "team": "DET",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ben Malgeri",
+   "player_id": 701162,
+   "team": "DET",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Parker Meadows",
+   "player_id": 678009,
+   "team": "DET",
+   "pos": "CF",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Troy Melton",
+   "player_id": 675512,
+   "team": "DET",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jake Miller",
+   "player_id": null,
+   "team": "DET",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Keider Montero",
+   "player_id": 672456,
+   "team": "DET",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Reese Olson",
+   "player_id": 681857,
+   "team": "DET",
+   "pos": "SP",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "John Peck",
+   "player_id": 807726,
+   "team": "DET",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Wenceel Perez",
+   "player_id": 672761,
+   "team": "DET",
+   "pos": "CF",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "River Ryan",
+   "player_id": 689981,
+   "team": "DET",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Andrew Sears",
+   "player_id": 808825,
+   "team": "DET",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Drew Sommers",
+   "player_id": 805427,
+   "team": "DET",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Trey Sweeney",
+   "player_id": 700242,
+   "team": "DET",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Eduardo Valencia",
+   "player_id": 680664,
+   "team": "DET",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jacob Waguespack",
+   "player_id": 621097,
+   "team": "DET",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jose Altuve",
+   "player_id": 514888,
+   "team": "HOU",
+   "pos": "2B",
+   "status": "Veteran",
+   "salary_2026": 33000000
+  },
+  {
+   "name": "Yordan Alvarez",
+   "player_id": 670541,
+   "team": "HOU",
+   "pos": "DH",
+   "status": "Veteran",
+   "salary_2026": 26833333
+  },
+  {
+   "name": "Cristian Javier",
+   "player_id": 664299,
+   "team": "HOU",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 21400000
+  },
+  {
+   "name": "Carlos Correa",
+   "player_id": 621043,
+   "team": "HOU",
+   "pos": "3B",
+   "status": "Veteran",
+   "salary_2026": 31833333
+  },
+  {
+   "name": "Christian Walker",
+   "player_id": 572233,
+   "team": "HOU",
+   "pos": "1B",
+   "status": "Veteran",
+   "salary_2026": 20000000
+  },
+  {
+   "name": "Josh Hader",
+   "player_id": 623352,
+   "team": "HOU",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 19000000
+  },
+  {
+   "name": "Tatsuya Imai",
+   "player_id": 837227,
+   "team": "HOU",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 18666667
+  },
+  {
+   "name": "Jeremy Pena",
+   "player_id": 665161,
+   "team": "HOU",
+   "pos": "SS",
+   "status": "Arbitration 3",
+   "salary_2026": 17500000
+  },
+  {
+   "name": "Isaac Paredes",
+   "player_id": 670623,
+   "team": "HOU",
+   "pos": "3B",
+   "status": "Arbitration 4 (S2)",
+   "salary_2026": 13600000
+  },
+  {
+   "name": "Isaac Paredes",
+   "player_id": 670623,
+   "team": "HOU",
+   "pos": "3B",
+   "status": "Arbitration 4 (S2)",
+   "salary_2026": 13350000
+  },
+  {
+   "name": "Hunter Brown",
+   "player_id": 686613,
+   "team": "HOU",
+   "pos": "SP",
+   "status": "Arbitration 2",
+   "salary_2026": 10750000
+  },
+  {
+   "name": "Yainer Diaz",
+   "player_id": 673237,
+   "team": "HOU",
+   "pos": "C",
+   "status": "Arbitration 2",
+   "salary_2026": 5750000
+  },
+  {
+   "name": "Jake Meyers",
+   "player_id": 676694,
+   "team": "HOU",
+   "pos": "CF",
+   "status": "Arbitration 3",
+   "salary_2026": 5300000
+  },
+  {
+   "name": "Peter Lambert",
+   "player_id": 663567,
+   "team": "HOU",
+   "pos": "SP",
+   "status": "Arbitration 3",
+   "salary_2026": 4500000
+  },
+  {
+   "name": "Nick Allen",
+   "player_id": 669397,
+   "team": "HOU",
+   "pos": "SS",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 1350000
+  },
+  {
+   "name": "Jorge Barrosa",
+   "player_id": 678489,
+   "team": "HOU",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "A.J. Blubaugh",
+   "player_id": null,
+   "team": "HOU",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Michael Burrows",
+   "player_id": null,
+   "team": "HOU",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jr. Zach Cole Jr.",
+   "player_id": null,
+   "team": "HOU",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Raynel Delgado",
+   "player_id": 669384,
+   "team": "HOU",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Zach Dezenzo",
+   "player_id": 701305,
+   "team": "HOU",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Josh Hendrickson",
+   "player_id": 681973,
+   "team": "HOU",
+   "pos": "P",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Bryan King",
+   "player_id": 687911,
+   "team": "HOU",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Joey Loperfido",
+   "player_id": 694388,
+   "team": "HOU",
+   "pos": "LF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brice Matthews",
+   "player_id": 694728,
+   "team": "HOU",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ethan Pecko",
+   "player_id": 814490,
+   "team": "HOU",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Colin Price",
+   "player_id": null,
+   "team": "HOU",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Alimber Santa",
+   "player_id": 695001,
+   "team": "HOU",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Cam Smith",
+   "player_id": 701358,
+   "team": "HOU",
+   "pos": "RF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Lucas Spence",
+   "player_id": 828599,
+   "team": "HOU",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Kai-Wei Teng",
+   "player_id": 678906,
+   "team": "HOU",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Miguel Ullola",
+   "player_id": 699044,
+   "team": "HOU",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Logan VanWey",
+   "player_id": 701121,
+   "team": "HOU",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brandon Walter",
+   "player_id": 687888,
+   "team": "HOU",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Hayden Wesneski",
+   "player_id": 669713,
+   "team": "HOU",
+   "pos": "SP",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 975000
+  },
+  {
+   "name": "Taylor Trammell",
+   "player_id": 666211,
+   "team": "HOU",
+   "pos": "OF",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 900000
+  },
+  {
+   "name": "Ronel Blanco",
+   "player_id": 669854,
+   "team": "HOU",
+   "pos": "SP",
+   "status": "Arbitration 1",
+   "salary_2026": 850000
+  },
+  {
+   "name": "Bennett Sousa",
+   "player_id": 656986,
+   "team": "HOU",
+   "pos": "RP",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 850000
+  },
+  {
+   "name": "Seth Lugo",
+   "player_id": 607625,
+   "team": "KC",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 21500000
+  },
+  {
+   "name": "Jr. Bobby Witt Jr.",
+   "player_id": null,
+   "team": "KC",
+   "pos": "SS",
+   "status": "Arbitration 3 Bypassed",
+   "salary_2026": 20111111
+  },
+  {
+   "name": "Michael Wacha",
+   "player_id": 608379,
+   "team": "KC",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 14000000
+  },
+  {
+   "name": "Salvador Perez",
+   "player_id": 521692,
+   "team": "KC",
+   "pos": "C",
+   "status": "Veteran",
+   "salary_2026": 12500000
+  },
+  {
+   "name": "Cole Ragans",
+   "player_id": 666142,
+   "team": "KC",
+   "pos": "SP",
+   "status": "Arbitration 2 Bypassed",
+   "salary_2026": 7583333
+  },
+  {
+   "name": "Maikel Garcia",
+   "player_id": 672580,
+   "team": "KC",
+   "pos": "3B",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 7260000
+  },
+  {
+   "name": "Vinnie Pasquantino",
+   "player_id": 686469,
+   "team": "KC",
+   "pos": "1B",
+   "status": "Arbitration 2",
+   "salary_2026": 7100000
+  },
+  {
+   "name": "Kyle Isbel",
+   "player_id": 664728,
+   "team": "KC",
+   "pos": "CF",
+   "status": "Arbitration 3",
+   "salary_2026": 3300000
+  },
+  {
+   "name": "Michael Massey",
+   "player_id": 686681,
+   "team": "KC",
+   "pos": "2B",
+   "status": "Arbitration 2",
+   "salary_2026": 3150000
+  },
+  {
+   "name": "Randy Dobnak",
+   "player_id": 677976,
+   "team": "KC",
+   "pos": "SP",
+   "status": "Arbitration 4",
+   "salary_2026": 2500000
+  },
+  {
+   "name": "Tony Gonsolin",
+   "player_id": 664062,
+   "team": "KC",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 2500000
+  },
+  {
+   "name": "Daniel Lynch",
+   "player_id": null,
+   "team": "KC",
+   "pos": "RP",
+   "status": "Arbitration 2",
+   "salary_2026": 2400000
+  },
+  {
+   "name": "Nick Mears",
+   "player_id": 683232,
+   "team": "KC",
+   "pos": "RP",
+   "status": "Arbitration 3",
+   "salary_2026": 1900000
+  },
+  {
+   "name": "Nate Pearson",
+   "player_id": 663878,
+   "team": "KC",
+   "pos": "RP",
+   "status": "Arbitration 3",
+   "salary_2026": 1350000
+  },
+  {
+   "name": "Luinder Avila",
+   "player_id": 679883,
+   "team": "KC",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ryan Bergert",
+   "player_id": 686701,
+   "team": "KC",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Spencer Bivens",
+   "player_id": 702352,
+   "team": "KC",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jac Caglianone",
+   "player_id": 695506,
+   "team": "KC",
+   "pos": "RF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Noah Cameron",
+   "player_id": 702070,
+   "team": "KC",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Isaac Collins",
+   "player_id": 686555,
+   "team": "KC",
+   "pos": "LF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Steven Cruz",
+   "player_id": null,
+   "team": "KC",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jos\u00e9 Cuas",
+   "player_id": 621016,
+   "team": "KC",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Carlos Duran",
+   "player_id": 679922,
+   "team": "KC",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Lucas Erceg",
+   "player_id": 668674,
+   "team": "KC",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Anthony Gose",
+   "player_id": 543238,
+   "team": "KC",
+   "pos": "RP",
+   "status": "Arbitration 2",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Nolan Hoffman",
+   "player_id": 676510,
+   "team": "KC",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Carter Jensen",
+   "player_id": 695600,
+   "team": "KC",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Stephen Kolek",
+   "player_id": 663568,
+   "team": "KC",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ben Kudrna",
+   "player_id": 695667,
+   "team": "KC",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Nick Loftin",
+   "player_id": 679845,
+   "team": "KC",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Matthew Lugo",
+   "player_id": 683090,
+   "team": "KC",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "John Rave",
+   "player_id": 670231,
+   "team": "KC",
+   "pos": "CF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Mitch Spence",
+   "player_id": 687765,
+   "team": "KC",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Connor Thomas",
+   "player_id": 671162,
+   "team": "KC",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Tyler Tolbert",
+   "player_id": 686475,
+   "team": "KC",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Beck Way",
+   "player_id": 694360,
+   "team": "KC",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Steven Zobac",
+   "player_id": 686632,
+   "team": "KC",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "James McArthur",
+   "player_id": 663704,
+   "team": "KC",
+   "pos": "SP",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 850000
+  },
+  {
+   "name": "Mike Trout",
+   "player_id": 545361,
+   "team": "LAA",
+   "pos": "RF",
+   "status": "Veteran",
+   "salary_2026": 37116667
+  },
+  {
+   "name": "Yusei Kikuchi",
+   "player_id": 579328,
+   "team": "LAA",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 21225000
+  },
+  {
+   "name": "Zach Neto",
+   "player_id": 687263,
+   "team": "LAA",
+   "pos": "SS",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 6600000
+  },
+  {
+   "name": "Reid Detmers",
+   "player_id": 672282,
+   "team": "LAA",
+   "pos": "SP",
+   "status": "Arbitration 3 (S2)",
+   "salary_2026": 5500000
+  },
+  {
+   "name": "Josh Lowe",
+   "player_id": 666139,
+   "team": "LAA",
+   "pos": "LF",
+   "status": "Arbitration 2",
+   "salary_2026": 2600000
+  },
+  {
+   "name": "Jose Siri",
+   "player_id": 642350,
+   "team": "LAA",
+   "pos": "CF",
+   "status": "Arbitration 2",
+   "salary_2026": 2200000
+  },
+  {
+   "name": "Nolan Schanuel",
+   "player_id": 694384,
+   "team": "LAA",
+   "pos": "1B",
+   "status": "Arbitration 1",
+   "salary_2026": 1500000
+  },
+  {
+   "name": "Tyler Heineman",
+   "player_id": 623168,
+   "team": "LAA",
+   "pos": "C",
+   "status": "Arbitration 2",
+   "salary_2026": 1250000
+  },
+  {
+   "name": "Samuel Aldegheri",
+   "player_id": null,
+   "team": "LAA",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Alvarez Nacho",
+   "player_id": null,
+   "team": "LAA",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Sam Bachman",
+   "player_id": 696147,
+   "team": "LAA",
+   "pos": "RP",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Mois\u00e9s Ballesteros",
+   "player_id": 694208,
+   "team": "LAA",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Gustavo Campero",
+   "player_id": 672569,
+   "team": "LAA",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Caden Dana",
+   "player_id": 702674,
+   "team": "LAA",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Mitch Farris",
+   "player_id": 815083,
+   "team": "LAA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jose Fermin",
+   "player_id": 665877,
+   "team": "LAA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Vaughn Grissom",
+   "player_id": 687093,
+   "team": "LAA",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Denzer Guzman",
+   "player_id": 694203,
+   "team": "LAA",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ryan Johnson",
+   "player_id": null,
+   "team": "LAA",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ben Joyce",
+   "player_id": 690829,
+   "team": "LAA",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brett Kerry",
+   "player_id": 695049,
+   "team": "LAA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "George Klassen",
+   "player_id": 691946,
+   "team": "LAA",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jack Kochanowicz",
+   "player_id": 686799,
+   "team": "LAA",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Trevor Martin",
+   "player_id": 694680,
+   "team": "LAA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Wade Meckler",
+   "player_id": 685133,
+   "team": "LAA",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Christian Moore",
+   "player_id": 695681,
+   "team": "LAA",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Luke Murphy",
+   "player_id": 684665,
+   "team": "LAA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jr. Samy Natera Jr.",
+   "player_id": null,
+   "team": "LAA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Oswald Peraza",
+   "player_id": 672724,
+   "team": "LAA",
+   "pos": "2B",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Nicolo Pinazzi",
+   "player_id": 695950,
+   "team": "LAA",
+   "pos": "P",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Logan Porter",
+   "player_id": 682515,
+   "team": "LAA",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Grayson Rodriguez",
+   "player_id": 680570,
+   "team": "LAA",
+   "pos": "SP",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Tayler Saucedo",
+   "player_id": 642048,
+   "team": "LAA",
+   "pos": "RP",
+   "status": "Arbitration 2",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Bryce Teodosio",
+   "player_id": 669326,
+   "team": "LAA",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Walbert Urena",
+   "player_id": 700712,
+   "team": "LAA",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ryan Watson",
+   "player_id": null,
+   "team": "LAA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Blake Weiman",
+   "player_id": 676620,
+   "team": "LAA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Kyle Tucker",
+   "player_id": 663656,
+   "team": "LAD",
+   "pos": "RF",
+   "status": "Veteran",
+   "salary_2026": 55000000
+  },
+  {
+   "name": "Tyler Glasnow",
+   "player_id": 607192,
+   "team": "LAD",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 32500000
+  },
+  {
+   "name": "Yoshinobu Yamamoto",
+   "player_id": 808967,
+   "team": "LAD",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 34333333
+  },
+  {
+   "name": "Shohei Ohtani",
+   "player_id": 660271,
+   "team": "LAD",
+   "pos": "SP  /DH",
+   "status": "Veteran",
+   "salary_2026": 70000000
+  },
+  {
+   "name": "Blake Snell",
+   "player_id": 605483,
+   "team": "LAD",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 36400000
+  },
+  {
+   "name": "Mookie Betts",
+   "player_id": 605141,
+   "team": "LAD",
+   "pos": "SS",
+   "status": "Veteran",
+   "salary_2026": 30000000
+  },
+  {
+   "name": "Freddie Freeman",
+   "player_id": 518692,
+   "team": "LAD",
+   "pos": "1B",
+   "status": "Veteran",
+   "salary_2026": 27000000
+  },
+  {
+   "name": "Edwin Diaz",
+   "player_id": null,
+   "team": "LAD",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 26000000
+  },
+  {
+   "name": "Teoscar Hernandez",
+   "player_id": 606192,
+   "team": "LAD",
+   "pos": "LF",
+   "status": "Veteran",
+   "salary_2026": 22166668
+  },
+  {
+   "name": "Tanner Scott",
+   "player_id": 656945,
+   "team": "LAD",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 20000000
+  },
+  {
+   "name": "Will Smith",
+   "player_id": null,
+   "team": "LAD",
+   "pos": "C",
+   "status": "Veteran",
+   "salary_2026": 16000000
+  },
+  {
+   "name": "Tommy Edman",
+   "player_id": 669242,
+   "team": "LAD",
+   "pos": "CF",
+   "status": "Veteran",
+   "salary_2026": 15650000
+  },
+  {
+   "name": "Max Muncy",
+   "player_id": null,
+   "team": "LAD",
+   "pos": "3B",
+   "status": "Veteran",
+   "salary_2026": 7000000
+  },
+  {
+   "name": "Hyeseong Kim",
+   "player_id": 808975,
+   "team": "LAD",
+   "pos": "2B",
+   "status": "Veteran",
+   "salary_2026": 4083334
+  },
+  {
+   "name": "Alex Call",
+   "player_id": 669743,
+   "team": "LAD",
+   "pos": "LF",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 2550000
+  },
+  {
+   "name": "Andy Pages",
+   "player_id": 681624,
+   "team": "LAD",
+   "pos": "CF",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 2100000
+  },
+  {
+   "name": "Brock Stewart",
+   "player_id": 592779,
+   "team": "LAD",
+   "pos": "RP",
+   "status": "Arbitration 3",
+   "salary_2026": 1300000
+  },
+  {
+   "name": "Emmet Sheehan",
+   "player_id": 686218,
+   "team": "LAD",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 1100000
+  },
+  {
+   "name": "Eliezer Alfonzo",
+   "player_id": null,
+   "team": "LAD",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ben Casparius",
+   "player_id": 676508,
+   "team": "LAD",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jake Cousins",
+   "player_id": 664776,
+   "team": "LAD",
+   "pos": "RP",
+   "status": "Arbitration 2",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Paula Josue De Paula",
+   "player_id": null,
+   "team": "LAD",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jack Dreyer",
+   "player_id": 676263,
+   "team": "LAD",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Hunter Feduccia",
+   "player_id": 676439,
+   "team": "LAD",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Alex Freeland",
+   "player_id": 690976,
+   "team": "LAD",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Paul Gervase",
+   "player_id": 801434,
+   "team": "LAD",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Seth Halvorsen",
+   "player_id": 678020,
+   "team": "LAD",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Edgardo Henriquez",
+   "player_id": 683618,
+   "team": "LAD",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Kyle Hurt",
+   "player_id": 669165,
+   "team": "LAD",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Will Klein",
+   "player_id": 694361,
+   "team": "LAD",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Landon Knack",
+   "player_id": 689017,
+   "team": "LAD",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ronan Kopp",
+   "player_id": 691947,
+   "team": "LAD",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Bobby Miller",
+   "player_id": 676272,
+   "team": "LAD",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Dalton Rushing",
+   "player_id": 687221,
+   "team": "LAD",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Roki Sasaki",
+   "player_id": 808963,
+   "team": "LAD",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Gavin Stone",
+   "player_id": 694813,
+   "team": "LAD",
+   "pos": "SP",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Justin Wrobleski",
+   "player_id": 680736,
+   "team": "LAD",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Sandy Alcantara",
+   "player_id": 645261,
+   "team": "MIA",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 21000000
+  },
+  {
+   "name": "Max Meyer",
+   "player_id": 676974,
+   "team": "MIA",
+   "pos": "SP",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 5100000
+  },
+  {
+   "name": "Anthony Bender",
+   "player_id": 669622,
+   "team": "MIA",
+   "pos": "RP",
+   "status": "Arbitration 4 (S2)",
+   "salary_2026": 4750000
+  },
+  {
+   "name": "Xavier Edwards",
+   "player_id": 669364,
+   "team": "MIA",
+   "pos": "2B",
+   "status": "Arbitration 1",
+   "salary_2026": 4300000
+  },
+  {
+   "name": "Calvin Faucher",
+   "player_id": 676534,
+   "team": "MIA",
+   "pos": "RP",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 3700000
+  },
+  {
+   "name": "Otto Lopez",
+   "player_id": 672640,
+   "team": "MIA",
+   "pos": "SS",
+   "status": "Arbitration 1",
+   "salary_2026": 2600000
+  },
+  {
+   "name": "Kyle Stowers",
+   "player_id": 669065,
+   "team": "MIA",
+   "pos": "RF",
+   "status": "Arbitration 1",
+   "salary_2026": 2250000
+  },
+  {
+   "name": "Eury P\u00e9rez",
+   "player_id": 691587,
+   "team": "MIA",
+   "pos": "SP",
+   "status": "Arbitration 1",
+   "salary_2026": 1900000
+  },
+  {
+   "name": "Esteury Ruiz",
+   "player_id": 665923,
+   "team": "MIA",
+   "pos": "CF",
+   "status": "Arbitration 1",
+   "salary_2026": 1750000
+  },
+  {
+   "name": "Victor Vodnik",
+   "player_id": 680767,
+   "team": "MIA",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 1300000
+  },
+  {
+   "name": "Maximo Acosta",
+   "player_id": 691185,
+   "team": "MIA",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brandan Bidois",
+   "player_id": 684049,
+   "team": "MIA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Bradley Blalock",
+   "player_id": 687134,
+   "team": "MIA",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Owen Caissie",
+   "player_id": 683357,
+   "team": "MIA",
+   "pos": "RF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Griffin Conine",
+   "player_id": 665052,
+   "team": "MIA",
+   "pos": "LF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Los Santos Deyvison De Los Santos",
+   "player_id": null,
+   "team": "MIA",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Josh Ekness",
+   "player_id": 694795,
+   "team": "MIA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Daxton Fulton",
+   "player_id": null,
+   "team": "MIA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Cade Gibson",
+   "player_id": 806188,
+   "team": "MIA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ryan Gusto",
+   "player_id": 687473,
+   "team": "MIA",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ronny Henriquez",
+   "player_id": 678692,
+   "team": "MIA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Heriberto Hernandez",
+   "player_id": 681715,
+   "team": "MIA",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Janson Junk",
+   "player_id": 676083,
+   "team": "MIA",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "William Kempner",
+   "player_id": 687531,
+   "team": "MIA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Joe Mack",
+   "player_id": 691788,
+   "team": "MIA",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jakob Marsee",
+   "player_id": 805300,
+   "team": "MIA",
+   "pos": "CF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Adam Mazur",
+   "player_id": 800049,
+   "team": "MIA",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Pat Monteverde",
+   "player_id": null,
+   "team": "MIA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Andrew Nardi",
+   "player_id": 677053,
+   "team": "MIA",
+   "pos": "RP",
+   "status": "Arbitration 2",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Graham Pauley",
+   "player_id": 688363,
+   "team": "MIA",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Michael Petersen",
+   "player_id": 656848,
+   "team": "MIA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Tyler Phillips",
+   "player_id": 663969,
+   "team": "MIA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jack Ralston",
+   "player_id": 667652,
+   "team": "MIA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Agustin Ramirez",
+   "player_id": 682663,
+   "team": "MIA",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Javier Sanoja",
+   "player_id": 691594,
+   "team": "MIA",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jared Serna",
+   "player_id": 691858,
+   "team": "MIA",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Robby Snelling",
+   "player_id": 702281,
+   "team": "MIA",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Josh White",
+   "player_id": 687985,
+   "team": "MIA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Pablo L\u00f3pez",
+   "player_id": 641154,
+   "team": "MIN",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 21750000
+  },
+  {
+   "name": "Byron Buxton",
+   "player_id": 621439,
+   "team": "MIN",
+   "pos": "CF",
+   "status": "Veteran",
+   "salary_2026": 15142857
+  },
+  {
+   "name": "Joe Ryan",
+   "player_id": 657746,
+   "team": "MIN",
+   "pos": "SP",
+   "status": "Arbitration 3",
+   "salary_2026": 10800000
+  },
+  {
+   "name": "Dean Kremer",
+   "player_id": 665152,
+   "team": "MIN",
+   "pos": "SP",
+   "status": "Arbitration 3",
+   "salary_2026": 8900000
+  },
+  {
+   "name": "Jeff Hoffman",
+   "player_id": 656546,
+   "team": "MIN",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 12666667
+  },
+  {
+   "name": "Victor Caratini",
+   "player_id": 605170,
+   "team": "MIN",
+   "pos": "C",
+   "status": "Veteran",
+   "salary_2026": 6500000
+  },
+  {
+   "name": "Bailey Ober",
+   "player_id": 641927,
+   "team": "MIN",
+   "pos": "SP",
+   "status": "Arbitration 3",
+   "salary_2026": 6500000
+  },
+  {
+   "name": "Trevor Larnach",
+   "player_id": 663616,
+   "team": "MIN",
+   "pos": "LF",
+   "status": "Arbitration 3",
+   "salary_2026": 6250000
+  },
+  {
+   "name": "Royce Lewis",
+   "player_id": 668904,
+   "team": "MIN",
+   "pos": "3B",
+   "status": "Arbitration 3 (S2)",
+   "salary_2026": 5700000
+  },
+  {
+   "name": "Tommy Nance",
+   "player_id": 667297,
+   "team": "MIN",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 2100000
+  },
+  {
+   "name": "Kody Clemens",
+   "player_id": 665019,
+   "team": "MIN",
+   "pos": "1B",
+   "status": "Arbitration 1",
+   "salary_2026": 1750000
+  },
+  {
+   "name": "Taj Bradley",
+   "player_id": 671737,
+   "team": "MIN",
+   "pos": "SP",
+   "status": "Arbitration 1",
+   "salary_2026": 1500000
+  },
+  {
+   "name": "Cole Sands",
+   "player_id": 663485,
+   "team": "MIN",
+   "pos": "RP",
+   "status": "Arbitration 2",
+   "salary_2026": 1100000
+  },
+  {
+   "name": "Mick Abel",
+   "player_id": 690953,
+   "team": "MIN",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Garrett Acton",
+   "player_id": 670183,
+   "team": "MIN",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Travis Adams",
+   "player_id": 701519,
+   "team": "MIN",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jack Anderson",
+   "player_id": 681252,
+   "team": "MIN",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Kaelen Culpepper",
+   "player_id": 701785,
+   "team": "MIN",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "David Festa",
+   "player_id": 701581,
+   "team": "MIN",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Kody Funderburk",
+   "player_id": 681892,
+   "team": "MIN",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Yoendrys Gomez",
+   "player_id": 672782,
+   "team": "MIN",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Gabriel Gonzalez",
+   "player_id": 694224,
+   "team": "MIN",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Walker Jenkins",
+   "player_id": 805805,
+   "team": "MIN",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Luke Keaschall",
+   "player_id": 807712,
+   "team": "MIN",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ryan Kreidler",
+   "player_id": 668952,
+   "team": "MIN",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brooks Lee",
+   "player_id": 686797,
+   "team": "MIN",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Austin Martin",
+   "player_id": 668885,
+   "team": "MIN",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Zebby Matthews",
+   "player_id": 805673,
+   "team": "MIN",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Hendry Mendez",
+   "player_id": 694230,
+   "team": "MIN",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Andrew Morris",
+   "player_id": 702193,
+   "team": "MIN",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Eric Orze",
+   "player_id": 679358,
+   "team": "MIN",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Mike Paredes",
+   "player_id": 702474,
+   "team": "MIN",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Connor Prielipp",
+   "player_id": 687570,
+   "team": "MIN",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Marco Raya",
+   "player_id": 694397,
+   "team": "MIN",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Alan Roden",
+   "player_id": 702176,
+   "team": "MIN",
+   "pos": "RF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Emmanuel Rodriguez",
+   "player_id": 691181,
+   "team": "MIN",
+   "pos": "CF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Kendry Rojas",
+   "player_id": 696070,
+   "team": "MIN",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ben Ross",
+   "player_id": 805346,
+   "team": "MIN",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Matt Wallner",
+   "player_id": 670242,
+   "team": "MIN",
+   "pos": "RF",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Juan Soto",
+   "player_id": 665742,
+   "team": "NYM",
+   "pos": "LF",
+   "status": "Veteran",
+   "salary_2026": 57500000
+  },
+  {
+   "name": "Bo Bichette",
+   "player_id": 666182,
+   "team": "NYM",
+   "pos": "3B",
+   "status": "Veteran",
+   "salary_2026": 42000000
+  },
+  {
+   "name": "Francisco Lindor",
+   "player_id": 596019,
+   "team": "NYM",
+   "pos": "SS",
+   "status": "Veteran",
+   "salary_2026": 34100000
+  },
+  {
+   "name": "Marcus Semien",
+   "player_id": 543760,
+   "team": "NYM",
+   "pos": "2B",
+   "status": "Veteran",
+   "salary_2026": 26000000
+  },
+  {
+   "name": "Jorge Polanco",
+   "player_id": 593871,
+   "team": "NYM",
+   "pos": "1B",
+   "status": "Veteran",
+   "salary_2026": 23000000
+  },
+  {
+   "name": "Sean Manaea",
+   "player_id": 640455,
+   "team": "NYM",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 25000000
+  },
+  {
+   "name": "Kodai Senga",
+   "player_id": 673540,
+   "team": "NYM",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 15000000
+  },
+  {
+   "name": "Devin Williams",
+   "player_id": 642207,
+   "team": "NYM",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 17000000
+  },
+  {
+   "name": "Francisco Alvarez",
+   "player_id": 682626,
+   "team": "NYM",
+   "pos": "C",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 5200000
+  },
+  {
+   "name": "Luis Torrens",
+   "player_id": 620443,
+   "team": "NYM",
+   "pos": "C",
+   "status": "Veteran",
+   "salary_2026": 4750000
+  },
+  {
+   "name": "Mark Vientos",
+   "player_id": 668901,
+   "team": "NYM",
+   "pos": "3B",
+   "status": "Arbitration 1",
+   "salary_2026": 3900000
+  },
+  {
+   "name": "Ronny Mauricio",
+   "player_id": 677595,
+   "team": "NYM",
+   "pos": "SS",
+   "status": "Arbitration 1",
+   "salary_2026": 3400000
+  },
+  {
+   "name": "Brett Baty",
+   "player_id": 683146,
+   "team": "NYM",
+   "pos": "2B",
+   "status": "Arbitration 1",
+   "salary_2026": 2500000
+  },
+  {
+   "name": "Tylor Megill",
+   "player_id": 656731,
+   "team": "NYM",
+   "pos": "SP",
+   "status": "Arbitration 3",
+   "salary_2026": 2500000
+  },
+  {
+   "name": "Reed Garrett",
+   "player_id": 657585,
+   "team": "NYM",
+   "pos": "RP",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 1300000
+  },
+  {
+   "name": "Robert Stock",
+   "player_id": 476594,
+   "team": "NYM",
+   "pos": "SP",
+   "status": "Arbitration 1",
+   "salary_2026": 1100000
+  },
+  {
+   "name": "Austin Warren",
+   "player_id": 681810,
+   "team": "NYM",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 1100000
+  },
+  {
+   "name": "Philip Abner",
+   "player_id": 691769,
+   "team": "NYM",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Carson Benge",
+   "player_id": 701807,
+   "team": "NYM",
+   "pos": "RF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Christian Cairo",
+   "player_id": 686551,
+   "team": "NYM",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Daniel Duarte",
+   "player_id": 650960,
+   "team": "NYM",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "A.J. Ewing",
+   "player_id": 805999,
+   "team": "NYM",
+   "pos": "CF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Justin Hagenman",
+   "player_id": 663795,
+   "team": "NYM",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Nathan Lavender",
+   "player_id": null,
+   "team": "NYM",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Chayce McDermott",
+   "player_id": 694646,
+   "team": "NYM",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Nolan McLean",
+   "player_id": 690997,
+   "team": "NYM",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Nick Morabito",
+   "player_id": 703492,
+   "team": "NYM",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Christopher Morel",
+   "player_id": 666624,
+   "team": "NYM",
+   "pos": "1B",
+   "status": "Arbitration 2",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Tobias Myers",
+   "player_id": 668964,
+   "team": "NYM",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Dedniel Nunez",
+   "player_id": 673380,
+   "team": "NYM",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Kyren Paris",
+   "player_id": 677347,
+   "team": "NYM",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Cionel Perez",
+   "player_id": 672335,
+   "team": "NYM",
+   "pos": "RP",
+   "status": "Arbitration 3",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jonathan Pintaro",
+   "player_id": 702752,
+   "team": "NYM",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Dylan Ross",
+   "player_id": 697811,
+   "team": "NYM",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Christian Scott",
+   "player_id": 681035,
+   "team": "NYM",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Hayden Senger",
+   "player_id": 663584,
+   "team": "NYM",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Zac Thornton",
+   "player_id": 804267,
+   "team": "NYM",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jonah Tong",
+   "player_id": 804636,
+   "team": "NYM",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Eric Wagaman",
+   "player_id": 676572,
+   "team": "NYM",
+   "pos": "1B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jack Weisenburger",
+   "player_id": 674073,
+   "team": "NYM",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Cameron Weston",
+   "player_id": 687721,
+   "team": "NYM",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jefry Yan",
+   "player_id": 642376,
+   "team": "NYM",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jared Young",
+   "player_id": 676724,
+   "team": "NYM",
+   "pos": "1B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Cody Bellinger",
+   "player_id": 641355,
+   "team": "NYY",
+   "pos": "LF",
+   "status": "Veteran",
+   "salary_2026": 36500000
+  },
+  {
+   "name": "Aaron Judge",
+   "player_id": 592450,
+   "team": "NYY",
+   "pos": "RF",
+   "status": "Veteran",
+   "salary_2026": 40000000
+  },
+  {
+   "name": "Gerrit Cole",
+   "player_id": 543037,
+   "team": "NYY",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 36000000
+  },
+  {
+   "name": "Max Fried",
+   "player_id": 608331,
+   "team": "NYY",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 31500000
+  },
+  {
+   "name": "Carlos Rodon",
+   "player_id": 607074,
+   "team": "NYY",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 27833333
+  },
+  {
+   "name": "Ryan McMahon",
+   "player_id": 641857,
+   "team": "NYY",
+   "pos": "3B",
+   "status": "Veteran",
+   "salary_2026": 16000000
+  },
+  {
+   "name": "Giancarlo Stanton",
+   "player_id": 519317,
+   "team": "NYY",
+   "pos": "DH",
+   "status": "Veteran",
+   "salary_2026": 25000000
+  },
+  {
+   "name": "Luis Garcia",
+   "player_id": 472610,
+   "team": "NYY",
+   "pos": "1B",
+   "status": "Arbitration 4 (S2)",
+   "salary_2026": 11000000
+  },
+  {
+   "name": "Ryan Weathers",
+   "player_id": 677960,
+   "team": "NYY",
+   "pos": "SP",
+   "status": "Arbitration 2",
+   "salary_2026": 9900000
+  },
+  {
+   "name": "Clarke Schmidt",
+   "player_id": 657376,
+   "team": "NYY",
+   "pos": "SP",
+   "status": "Arbitration 4 (S2)",
+   "salary_2026": 9000000
+  },
+  {
+   "name": "Luis Gil",
+   "player_id": 661563,
+   "team": "NYY",
+   "pos": "SP",
+   "status": "Arbitration 2",
+   "salary_2026": 5600000
+  },
+  {
+   "name": "Anthony Volpe",
+   "player_id": 683011,
+   "team": "NYY",
+   "pos": "SS",
+   "status": "Arbitration 2",
+   "salary_2026": 4500000
+  },
+  {
+   "name": "Jos\u00e9 Caballero",
+   "player_id": 676609,
+   "team": "NYY",
+   "pos": "SS",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 4000000
+  },
+  {
+   "name": "Heliot Ramos",
+   "player_id": 671218,
+   "team": "NYY",
+   "pos": "LF",
+   "status": "Arbitration 1",
+   "salary_2026": 3600000
+  },
+  {
+   "name": "Austin Wells",
+   "player_id": 669224,
+   "team": "NYY",
+   "pos": "C",
+   "status": "Arbitration 1",
+   "salary_2026": 2500000
+  },
+  {
+   "name": "Fernando Cruz",
+   "player_id": null,
+   "team": "NYY",
+   "pos": "RP",
+   "status": "Arbitration 2",
+   "salary_2026": 1450000
+  },
+  {
+   "name": "Brendan Beck",
+   "player_id": 694341,
+   "team": "NYY",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Kervin Castro",
+   "player_id": 665645,
+   "team": "NYY",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Angel Chivilli",
+   "player_id": 683409,
+   "team": "NYY",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Los Santos Yerry De Los Santos",
+   "player_id": null,
+   "team": "NYY",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jasson Dom\u00ednguez",
+   "player_id": 691176,
+   "team": "NYY",
+   "pos": "LF",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "J.C. Escarra",
+   "player_id": 641555,
+   "team": "NYY",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Bradley Hanner",
+   "player_id": 690440,
+   "team": "NYY",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brent Headrick",
+   "player_id": 687396,
+   "team": "NYY",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Spencer Jones",
+   "player_id": 682987,
+   "team": "NYY",
+   "pos": "RF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jr. George Lombard Jr.",
+   "player_id": null,
+   "team": "NYY",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ben Rice",
+   "player_id": 700250,
+   "team": "NYY",
+   "pos": "1B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Elmer Rodriguez",
+   "player_id": 695684,
+   "team": "NYY",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ali Sanchez",
+   "player_id": 645305,
+   "team": "NYY",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Cam Schlittler",
+   "player_id": 693645,
+   "team": "NYY",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Max Schuemann",
+   "player_id": 680474,
+   "team": "NYY",
+   "pos": "SS",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Will Warren",
+   "player_id": 701542,
+   "team": "NYY",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Zack Wheeler",
+   "player_id": 554430,
+   "team": "PHI",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 42000000
+  },
+  {
+   "name": "Kyle Schwarber",
+   "player_id": 656941,
+   "team": "PHI",
+   "pos": "DH",
+   "status": "Veteran",
+   "salary_2026": 33000000
+  },
+  {
+   "name": "Bryce Harper",
+   "player_id": 547180,
+   "team": "PHI",
+   "pos": "1B",
+   "status": "Veteran",
+   "salary_2026": 27538462
+  },
+  {
+   "name": "Trea Turner",
+   "player_id": 607208,
+   "team": "PHI",
+   "pos": "SS",
+   "status": "Veteran",
+   "salary_2026": 27272727
+  },
+  {
+   "name": "Jes\u00fas Luzardo",
+   "player_id": 666200,
+   "team": "PHI",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 27000000
+  },
+  {
+   "name": "Aaron Nola",
+   "player_id": 605400,
+   "team": "PHI",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 24571428
+  },
+  {
+   "name": "J.T. Realmuto",
+   "player_id": 592663,
+   "team": "PHI",
+   "pos": "C",
+   "status": "Veteran",
+   "salary_2026": 15000000
+  },
+  {
+   "name": "Brad Keller",
+   "player_id": 641745,
+   "team": "PHI",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 13000000
+  },
+  {
+   "name": "Bryson Stott",
+   "player_id": 681082,
+   "team": "PHI",
+   "pos": "2B",
+   "status": "Arbitration 3",
+   "salary_2026": 12500000
+  },
+  {
+   "name": "Jhoan Duran",
+   "player_id": 661395,
+   "team": "PHI",
+   "pos": "RP",
+   "status": "Arbitration 3",
+   "salary_2026": 11400000
+  },
+  {
+   "name": "Brandon Marsh",
+   "player_id": 669016,
+   "team": "PHI",
+   "pos": "LF",
+   "status": "Arbitration 3",
+   "salary_2026": 11000000
+  },
+  {
+   "name": "Cristopher Sanchez",
+   "player_id": 650911,
+   "team": "PHI",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 7000000
+  },
+  {
+   "name": "Tim Mayza",
+   "player_id": 641835,
+   "team": "PHI",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 2750000
+  },
+  {
+   "name": "Derek Hill",
+   "player_id": 656537,
+   "team": "PHI",
+   "pos": "CF",
+   "status": "Arbitration 2",
+   "salary_2026": 2250000
+  },
+  {
+   "name": "Rafael March\u00e1n",
+   "player_id": 665561,
+   "team": "PHI",
+   "pos": "C",
+   "status": "Arbitration 2",
+   "salary_2026": 1800000
+  },
+  {
+   "name": "La Cruz Bryan De La Cruz",
+   "player_id": null,
+   "team": "PHI",
+   "pos": "RF",
+   "status": "Arbitration 1",
+   "salary_2026": 1250000
+  },
+  {
+   "name": "Tanner Banks",
+   "player_id": 621383,
+   "team": "PHI",
+   "pos": "RP",
+   "status": "Arbitration 2",
+   "salary_2026": 1200000
+  },
+  {
+   "name": "Kyle Backhus",
+   "player_id": 679775,
+   "team": "PHI",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jonathan Bowlan",
+   "player_id": 680742,
+   "team": "PHI",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Moises Chace",
+   "player_id": 691330,
+   "team": "PHI",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Justin Crawford",
+   "player_id": 702222,
+   "team": "PHI",
+   "pos": "CF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Andrew Hoffman",
+   "player_id": null,
+   "team": "PHI",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Grant Holman",
+   "player_id": 680880,
+   "team": "PHI",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Otto Kemp",
+   "player_id": 805249,
+   "team": "PHI",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Orion Kerkering",
+   "player_id": 689147,
+   "team": "PHI",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Caleb Kilian",
+   "player_id": 668873,
+   "team": "PHI",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Max Lazar",
+   "player_id": 676661,
+   "team": "PHI",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Alexander McFarlane",
+   "player_id": null,
+   "team": "PHI",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Kameron Misner",
+   "player_id": 670224,
+   "team": "PHI",
+   "pos": "CF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Andrew Painter",
+   "player_id": 691725,
+   "team": "PHI",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Alan Rangel",
+   "player_id": 660604,
+   "team": "PHI",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Felix Reyes",
+   "player_id": 694025,
+   "team": "PHI",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jr. Gabriel Rincones Jr.",
+   "player_id": null,
+   "team": "PHI",
+   "pos": "RF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Johan Rojas",
+   "player_id": 679032,
+   "team": "PHI",
+   "pos": "CF",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Chase Shugart",
+   "player_id": 663767,
+   "team": "PHI",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Colby Thomas",
+   "player_id": 687515,
+   "team": "PHI",
+   "pos": "RF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Mitch Keller",
+   "player_id": 656605,
+   "team": "PIT",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 18411500
+  },
+  {
+   "name": "Bryan Reynolds",
+   "player_id": 668804,
+   "team": "PIT",
+   "pos": "LF",
+   "status": "Veteran",
+   "salary_2026": 15250000
+  },
+  {
+   "name": "Ryan O'Hearn",
+   "player_id": 656811,
+   "team": "PIT",
+   "pos": "RF",
+   "status": "Veteran",
+   "salary_2026": 15000000
+  },
+  {
+   "name": "Paul Skenes",
+   "player_id": 694973,
+   "team": "PIT",
+   "pos": "SP",
+   "status": "Arbitration 1",
+   "salary_2026": 8200000
+  },
+  {
+   "name": "Oneil Cruz",
+   "player_id": 665833,
+   "team": "PIT",
+   "pos": "CF",
+   "status": "Arbitration 2",
+   "salary_2026": 6000000
+  },
+  {
+   "name": "Jared Jones",
+   "player_id": null,
+   "team": "PIT",
+   "pos": "SP",
+   "status": "Arbitration 1",
+   "salary_2026": 5100000
+  },
+  {
+   "name": "Luke Weaver",
+   "player_id": 596133,
+   "team": "PIT",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 12500000
+  },
+  {
+   "name": "Yohan Ramirez",
+   "player_id": 670990,
+   "team": "PIT",
+   "pos": "RP",
+   "status": "Arbitration 2",
+   "salary_2026": 3700000
+  },
+  {
+   "name": "Konnor Griffin",
+   "player_id": 804606,
+   "team": "PIT",
+   "pos": "SS",
+   "status": "Pre-Arbitration Bypassed",
+   "salary_2026": 3333333
+  },
+  {
+   "name": "Nick Gonzales",
+   "player_id": 693304,
+   "team": "PIT",
+   "pos": "3B",
+   "status": "Arbitration 1",
+   "salary_2026": 3200000
+  },
+  {
+   "name": "Jared Triolo",
+   "player_id": 669707,
+   "team": "PIT",
+   "pos": "SS",
+   "status": "Arbitration 1",
+   "salary_2026": 2100000
+  },
+  {
+   "name": "Carmen Mlodzinski",
+   "player_id": 669387,
+   "team": "PIT",
+   "pos": "SP",
+   "status": "Arbitration 1",
+   "salary_2026": 2000000
+  },
+  {
+   "name": "Henry Davis",
+   "player_id": 680779,
+   "team": "PIT",
+   "pos": "C",
+   "status": "Arbitration 1",
+   "salary_2026": 1900000
+  },
+  {
+   "name": "Spencer Horwitz",
+   "player_id": 687462,
+   "team": "PIT",
+   "pos": "1B",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 1850000
+  },
+  {
+   "name": "Endy Rodr\u00edguez",
+   "player_id": 682848,
+   "team": "PIT",
+   "pos": "1B",
+   "status": "Arbitration 1",
+   "salary_2026": 1500000
+  },
+  {
+   "name": "Braxton Ashcraft",
+   "player_id": 677952,
+   "team": "PIT",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Lake Bachar",
+   "player_id": 669199,
+   "team": "PIT",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Hunter Barco",
+   "player_id": 682995,
+   "team": "PIT",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jack Brannigan",
+   "player_id": 687394,
+   "team": "PIT",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Tyler Callihan",
+   "player_id": 682997,
+   "team": "PIT",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Bubba Chandler",
+   "player_id": 696149,
+   "team": "PIT",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Billy Cook",
+   "player_id": 695257,
+   "team": "PIT",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Khristian Curtis",
+   "player_id": 694753,
+   "team": "PIT",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Wilber Dotel",
+   "player_id": 696062,
+   "team": "PIT",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brandon Eisert",
+   "player_id": 685126,
+   "team": "PIT",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Rafael Flores",
+   "player_id": 821012,
+   "team": "PIT",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jhostynxon Garcia",
+   "player_id": 691373,
+   "team": "PIT",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jacob Gonzalez",
+   "player_id": 694378,
+   "team": "PIT",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Thomas Harrington",
+   "player_id": 802419,
+   "team": "PIT",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Robert Hassell",
+   "player_id": null,
+   "team": "PIT",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Antwone Kelly",
+   "player_id": 699008,
+   "team": "PIT",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jake Mangum",
+   "player_id": 663968,
+   "team": "PIT",
+   "pos": "CF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Isaac Mattson",
+   "player_id": 676755,
+   "team": "PIT",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Mason Montgomery",
+   "player_id": 682254,
+   "team": "PIT",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Noah Murdock",
+   "player_id": 668716,
+   "team": "PIT",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ronny Simon",
+   "player_id": 682927,
+   "team": "PIT",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Evan Sisk",
+   "player_id": 681895,
+   "team": "PIT",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Esmerlyn Valdez",
+   "player_id": 699013,
+   "team": "PIT",
+   "pos": "RF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Nick Yorke",
+   "player_id": 694377,
+   "team": "PIT",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Manny Machado",
+   "player_id": 592518,
+   "team": "SD",
+   "pos": "3B",
+   "status": "Veteran",
+   "salary_2026": 39090909
+  },
+  {
+   "name": "Jr. Fernando Tatis Jr.",
+   "player_id": null,
+   "team": "SD",
+   "pos": "RF",
+   "status": "Veteran",
+   "salary_2026": 25714286
+  },
+  {
+   "name": "Xander Bogaerts",
+   "player_id": 593428,
+   "team": "SD",
+   "pos": "SS",
+   "status": "Veteran",
+   "salary_2026": 25454545
+  },
+  {
+   "name": "Joe Musgrove",
+   "player_id": 605397,
+   "team": "SD",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 20000000
+  },
+  {
+   "name": "Yu Darvish",
+   "player_id": 506433,
+   "team": "SD",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 15000000
+  },
+  {
+   "name": "Nick Pivetta",
+   "player_id": 601713,
+   "team": "SD",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 14000000
+  },
+  {
+   "name": "Jake Cronenworth",
+   "player_id": 630105,
+   "team": "SD",
+   "pos": "2B",
+   "status": "Veteran",
+   "salary_2026": 12285714
+  },
+  {
+   "name": "Jackson Merrill",
+   "player_id": 701538,
+   "team": "SD",
+   "pos": "CF",
+   "status": "Arbitration 1 Bypassed",
+   "salary_2026": 8111111
+  },
+  {
+   "name": "Miguel Andujar",
+   "player_id": 609280,
+   "team": "SD",
+   "pos": "OF",
+   "status": "Veteran",
+   "salary_2026": 8000000
+  },
+  {
+   "name": "Lucas Giolito",
+   "player_id": 608337,
+   "team": "SD",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 8000000
+  },
+  {
+   "name": "Mason Miller",
+   "player_id": null,
+   "team": "SD",
+   "pos": "RP",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 7800000
+  },
+  {
+   "name": "Yuki Matsui",
+   "player_id": 673513,
+   "team": "SD",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 6500000
+  },
+  {
+   "name": "Gavin Sheets",
+   "player_id": 657757,
+   "team": "SD",
+   "pos": "1B",
+   "status": "Arbitration 3",
+   "salary_2026": 5500000
+  },
+  {
+   "name": "Griffin Canning",
+   "player_id": 656288,
+   "team": "SD",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 5000000
+  },
+  {
+   "name": "Wandy Peralta",
+   "player_id": 593974,
+   "team": "SD",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 4450000
+  },
+  {
+   "name": "Sung Mun Song",
+   "player_id": null,
+   "team": "SD",
+   "pos": "INF",
+   "status": "Veteran",
+   "salary_2026": 3250000
+  },
+  {
+   "name": "JP Sears",
+   "player_id": 676664,
+   "team": "SD",
+   "pos": "SP",
+   "status": "Arbitration 2",
+   "salary_2026": 2750000
+  },
+  {
+   "name": "Luis Campusano",
+   "player_id": 669134,
+   "team": "SD",
+   "pos": "C",
+   "status": "Arbitration 3 (S2)",
+   "salary_2026": 2600000
+  },
+  {
+   "name": "Freddy Fermin",
+   "player_id": 666023,
+   "team": "SD",
+   "pos": "C",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 2500000
+  },
+  {
+   "name": "Kyle Hart",
+   "player_id": 606996,
+   "team": "SD",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 2500000
+  },
+  {
+   "name": "Jeremiah Estrada",
+   "player_id": 669093,
+   "team": "SD",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 2200000
+  },
+  {
+   "name": "Jase Bowen",
+   "player_id": 687749,
+   "team": "SD",
+   "pos": "CF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jhony Brito",
+   "player_id": 666745,
+   "team": "SD",
+   "pos": "RP",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Rodolfo Dur\u00e1n",
+   "player_id": 660710,
+   "team": "SD",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Dustin Harris",
+   "player_id": 687957,
+   "team": "SD",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Garrett Hawkins",
+   "player_id": 678184,
+   "team": "SD",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Bryan Hoeing",
+   "player_id": 663773,
+   "team": "SD",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Mason McCoy",
+   "player_id": 669200,
+   "team": "SD",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "David Morgan",
+   "player_id": 688158,
+   "team": "SD",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Bradgley Rodriguez",
+   "player_id": 699134,
+   "team": "SD",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ethan Salas",
+   "player_id": 806956,
+   "team": "SD",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Hunter Stratton",
+   "player_id": 676702,
+   "team": "SD",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Samad Taylor",
+   "player_id": 669392,
+   "team": "SD",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Randy Vasquez",
+   "player_id": 681190,
+   "team": "SD",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Will Wagner",
+   "player_id": 695238,
+   "team": "SD",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Gage Workman",
+   "player_id": 669398,
+   "team": "SD",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Julio Rodriguez",
+   "player_id": 680588,
+   "team": "SEA",
+   "pos": "CF",
+   "status": "Arbitration 3 Bypassed",
+   "salary_2026": 20185714
+  },
+  {
+   "name": "Josh Naylor",
+   "player_id": 647304,
+   "team": "SEA",
+   "pos": "1B",
+   "status": "Veteran",
+   "salary_2026": 17300000
+  },
+  {
+   "name": "Logan Gilbert",
+   "player_id": 669302,
+   "team": "SEA",
+   "pos": "SP",
+   "status": "Arbitration 4 (S2)",
+   "salary_2026": 15000000
+  },
+  {
+   "name": "Cal Raleigh",
+   "player_id": 663728,
+   "team": "SEA",
+   "pos": "C",
+   "status": "Arbitration 3 Bypassed",
+   "salary_2026": 13666667
+  },
+  {
+   "name": "Seranthony Dominguez",
+   "player_id": 622554,
+   "team": "SEA",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 10500000
+  },
+  {
+   "name": "George Kirby",
+   "player_id": 669923,
+   "team": "SEA",
+   "pos": "SP",
+   "status": "Arbitration 3 (S2)",
+   "salary_2026": 9500000
+  },
+  {
+   "name": "Andres Munoz",
+   "player_id": 662253,
+   "team": "SEA",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 9000000
+  },
+  {
+   "name": "Brendan Donovan",
+   "player_id": 680977,
+   "team": "SEA",
+   "pos": "3B",
+   "status": "Arbitration 3",
+   "salary_2026": 6500000
+  },
+  {
+   "name": "Gabe Speier",
+   "player_id": 642100,
+   "team": "SEA",
+   "pos": "RP",
+   "status": "Arbitration 3",
+   "salary_2026": 5000000
+  },
+  {
+   "name": "Bryan Woo",
+   "player_id": 693433,
+   "team": "SEA",
+   "pos": "SP",
+   "status": "Arbitration 1",
+   "salary_2026": 4250000
+  },
+  {
+   "name": "Bryce Miller",
+   "player_id": 682243,
+   "team": "SEA",
+   "pos": "SP",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 4200000
+  },
+  {
+   "name": "Luke Raley",
+   "player_id": 670042,
+   "team": "SEA",
+   "pos": "RF",
+   "status": "Arbitration 2",
+   "salary_2026": 3250000
+  },
+  {
+   "name": "Matt Brash",
+   "player_id": 666374,
+   "team": "SEA",
+   "pos": "RP",
+   "status": "Arbitration 2",
+   "salary_2026": 3250000
+  },
+  {
+   "name": "Colt Emerson",
+   "player_id": 806068,
+   "team": "SEA",
+   "pos": "SS",
+   "status": "Pre-Arbitration Bypassed",
+   "salary_2026": 3000000
+  },
+  {
+   "name": "Dominic Canzone",
+   "player_id": 686527,
+   "team": "SEA",
+   "pos": "RF",
+   "status": "Arbitration 1",
+   "salary_2026": 2850000
+  },
+  {
+   "name": "Jos\u00e9 Ferrer",
+   "player_id": null,
+   "team": "SEA",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 2000000
+  },
+  {
+   "name": "Eduard Bazardo",
+   "player_id": 660825,
+   "team": "SEA",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 1900000
+  },
+  {
+   "name": "Kade Anderson",
+   "player_id": 807739,
+   "team": "SEA",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Michael Arroyo",
+   "player_id": 703197,
+   "team": "SEA",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ryan Bliss",
+   "player_id": 669208,
+   "team": "SEA",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Cooper Criswell",
+   "player_id": 681867,
+   "team": "SEA",
+   "pos": "RP",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Nick Davila",
+   "player_id": 689546,
+   "team": "SEA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brennen Davis",
+   "player_id": 680695,
+   "team": "SEA",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Logan Evans",
+   "player_id": 688138,
+   "team": "SEA",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Emerson Hancock",
+   "player_id": 676106,
+   "team": "SEA",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Willie MacIver",
+   "player_id": 680862,
+   "team": "SEA",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Grant McCray",
+   "player_id": 687529,
+   "team": "SEA",
+   "pos": "CF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Lazaro Montes",
+   "player_id": 703155,
+   "team": "SEA",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Robinson Ortiz",
+   "player_id": 673662,
+   "team": "SEA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jhonny Pereda",
+   "player_id": 640902,
+   "team": "SEA",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Leonardo Rivas",
+   "player_id": null,
+   "team": "SEA",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brock Rodden",
+   "player_id": 801126,
+   "team": "SEA",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Michael Rucker",
+   "player_id": 621074,
+   "team": "SEA",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Josh Simpson",
+   "player_id": 681006,
+   "team": "SEA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Troy Taylor",
+   "player_id": 700187,
+   "team": "SEA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Michael Toglia",
+   "player_id": 669911,
+   "team": "SEA",
+   "pos": "1B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Carlos Vargas",
+   "player_id": 672841,
+   "team": "SEA",
+   "pos": "RP",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Troy Watson",
+   "player_id": 681890,
+   "team": "SEA",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Cole Wilcox",
+   "player_id": 677961,
+   "team": "SEA",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Will Wilson",
+   "player_id": 669717,
+   "team": "SEA",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Weston Wilson",
+   "player_id": 642215,
+   "team": "SEA",
+   "pos": "1B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Patrick Wisdom",
+   "player_id": 621550,
+   "team": "SEA",
+   "pos": "3B",
+   "status": "Arbitration 2",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Cole Young",
+   "player_id": 702284,
+   "team": "SEA",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Rafael Devers",
+   "player_id": 646240,
+   "team": "SF",
+   "pos": "3B",
+   "status": "Veteran",
+   "salary_2026": 32818182
+  },
+  {
+   "name": "Willy Adames",
+   "player_id": 642715,
+   "team": "SF",
+   "pos": "SS",
+   "status": "Veteran",
+   "salary_2026": 31142857
+  },
+  {
+   "name": "Matt Chapman",
+   "player_id": 656305,
+   "team": "SF",
+   "pos": "3B",
+   "status": "Veteran",
+   "salary_2026": 25166667
+  },
+  {
+   "name": "Jung Hoo Lee",
+   "player_id": 808982,
+   "team": "SF",
+   "pos": "RF",
+   "status": "Veteran",
+   "salary_2026": 23250000
+  },
+  {
+   "name": "Logan Webb",
+   "player_id": 657277,
+   "team": "SF",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 23000000
+  },
+  {
+   "name": "Harrison Bader",
+   "player_id": 664056,
+   "team": "SF",
+   "pos": "CF",
+   "status": "Veteran",
+   "salary_2026": 13000000
+  },
+  {
+   "name": "Adrian Houser",
+   "player_id": 605288,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 11000000
+  },
+  {
+   "name": "Camilo Doval",
+   "player_id": 666808,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Arbitration 3",
+   "salary_2026": 6100000
+  },
+  {
+   "name": "Sam Hentges",
+   "player_id": 656529,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Arbitration 3",
+   "salary_2026": 2800000
+  },
+  {
+   "name": "Casey Schmitt",
+   "player_id": 669477,
+   "team": "SF",
+   "pos": "1B",
+   "status": "Arbitration 1",
+   "salary_2026": 2000000
+  },
+  {
+   "name": "Ryan Walker",
+   "player_id": 676254,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Arbitration 1",
+   "salary_2026": 1500000
+  },
+  {
+   "name": "Scott Bandura",
+   "player_id": 814154,
+   "team": "SF",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Tristan Beck",
+   "player_id": 663941,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Victor Bericoto",
+   "player_id": 682674,
+   "team": "SF",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Hayden Birdsong",
+   "player_id": 806185,
+   "team": "SF",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jose Butto",
+   "player_id": 676130,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Drew Cavanaugh",
+   "player_id": 701852,
+   "team": "SF",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jonah Cox",
+   "player_id": 813841,
+   "team": "SF",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Bo Davidson",
+   "player_id": 815589,
+   "team": "SF",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Duncan Davitt",
+   "player_id": 701474,
+   "team": "SF",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Bryce Eldridge",
+   "player_id": 805811,
+   "team": "SF",
+   "pos": "1B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Nate Furman",
+   "player_id": 801501,
+   "team": "SF",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Drew Gilbert",
+   "player_id": 687551,
+   "team": "SF",
+   "pos": "CF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brett Harris",
+   "player_id": 695391,
+   "team": "SF",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Trent Harris",
+   "player_id": 805345,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Turner Hill",
+   "player_id": 806367,
+   "team": "SF",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Christian Koss",
+   "player_id": 683766,
+   "team": "SF",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Joel Kuhnel",
+   "player_id": 669270,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Seth Lonsway",
+   "player_id": 675920,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Yunior Marte",
+   "player_id": null,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Marcelo Mayer",
+   "player_id": 691785,
+   "team": "SF",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Trevor McDonald",
+   "player_id": 686790,
+   "team": "SF",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Miguel Mendez",
+   "player_id": 700280,
+   "team": "SF",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Anthony Molina",
+   "player_id": 683627,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Zach Morgan",
+   "player_id": 681439,
+   "team": "SF",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Joel Peguero",
+   "player_id": 666711,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Cesar Perdomo",
+   "player_id": 702885,
+   "team": "SF",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jesus Rodriguez",
+   "player_id": 683679,
+   "team": "SF",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Randy Rodriguez",
+   "player_id": 678495,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Landen Roupp",
+   "player_id": 694738,
+   "team": "SF",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Reiver Sanmartin",
+   "player_id": 665665,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Carson Seymour",
+   "player_id": 693313,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Dylan Smith",
+   "player_id": 681916,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Daniel Susac",
+   "player_id": 691740,
+   "team": "SF",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Blade Tidwell",
+   "player_id": 694918,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Carson Whisenhunt",
+   "player_id": 687931,
+   "team": "SF",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Shay Whitcomb",
+   "player_id": 694376,
+   "team": "SF",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Rowan Wick",
+   "player_id": 592858,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Arbitration 2",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Matt Wilkinson",
+   "player_id": 683363,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Keaton Winn",
+   "player_id": 676775,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Rowan Wick",
+   "player_id": 592858,
+   "team": "SF",
+   "pos": "RP",
+   "status": "Arbitration 2",
+   "salary_2026": 800000
+  },
+  {
+   "name": "Andre Pallante",
+   "player_id": 669467,
+   "team": "STL",
+   "pos": "SP",
+   "status": "Arbitration 3 (S2)",
+   "salary_2026": 7600000
+  },
+  {
+   "name": "Alec Burleson",
+   "player_id": 676475,
+   "team": "STL",
+   "pos": "1B",
+   "status": "Arbitration 2",
+   "salary_2026": 7500000
+  },
+  {
+   "name": "Ryne Stanek",
+   "player_id": 592773,
+   "team": "STL",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 6000000
+  },
+  {
+   "name": "Iv\u00e1n Herrera",
+   "player_id": 671056,
+   "team": "STL",
+   "pos": "C",
+   "status": "Arbitration 1",
+   "salary_2026": 4600000
+  },
+  {
+   "name": "Kyle Leahy",
+   "player_id": 681517,
+   "team": "STL",
+   "pos": "SP",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 3900000
+  },
+  {
+   "name": "Nolan Gorman",
+   "player_id": 669357,
+   "team": "STL",
+   "pos": "3B",
+   "status": "Arbitration 2",
+   "salary_2026": 3750000
+  },
+  {
+   "name": "Matthew Liberatore",
+   "player_id": 669461,
+   "team": "STL",
+   "pos": "SP",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 3600000
+  },
+  {
+   "name": "Jordan Walker",
+   "player_id": 691023,
+   "team": "STL",
+   "pos": "RF",
+   "status": "Arbitration 1",
+   "salary_2026": 3500000
+  },
+  {
+   "name": "JJ Wetherholt",
+   "player_id": 802139,
+   "team": "STL",
+   "pos": "2B",
+   "status": "Pre-Arbitration Bypassed",
+   "salary_2026": 2750000
+  },
+  {
+   "name": "Masyn Winn",
+   "player_id": 691026,
+   "team": "STL",
+   "pos": "SS",
+   "status": "Arbitration 1",
+   "salary_2026": 2000000
+  },
+  {
+   "name": "Pedro Pages",
+   "player_id": 686780,
+   "team": "STL",
+   "pos": "C",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 1250000
+  },
+  {
+   "name": "Joshua Baez",
+   "player_id": 695491,
+   "team": "STL",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Leonardo Bernal",
+   "player_id": null,
+   "team": "STL",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Justin Bruihl",
+   "player_id": 677865,
+   "team": "STL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Nathan Church",
+   "player_id": 701675,
+   "team": "STL",
+   "pos": "LF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "III Jimmy Crooks III",
+   "player_id": null,
+   "team": "STL",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Hunter Dobbins",
+   "player_id": null,
+   "team": "STL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jose Fermin",
+   "player_id": 665877,
+   "team": "STL",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ryan Fernandez",
+   "player_id": 681676,
+   "team": "STL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Richard Fitts",
+   "player_id": 690916,
+   "team": "STL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Luis Gastelum",
+   "player_id": 703725,
+   "team": "STL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Gordon Graceffo",
+   "player_id": 700669,
+   "team": "STL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Chase Hampton",
+   "player_id": 694633,
+   "team": "STL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Cooper Hjerpe",
+   "player_id": 687309,
+   "team": "STL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Blaze Jordan",
+   "player_id": 691458,
+   "team": "STL",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Quinn Mathews",
+   "player_id": 687273,
+   "team": "STL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brycen Mautz",
+   "player_id": 802408,
+   "team": "STL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Michael McGreevy",
+   "player_id": 700241,
+   "team": "STL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Riley O'Brien",
+   "player_id": 676617,
+   "team": "STL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Everson Pereira",
+   "player_id": 677592,
+   "team": "STL",
+   "pos": "RF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "C\u00e9sar Prieto",
+   "player_id": 693409,
+   "team": "STL",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Max Rajcic",
+   "player_id": 691008,
+   "team": "STL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Hancel Rincon",
+   "player_id": 684516,
+   "team": "STL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Tekoah Roby",
+   "player_id": 694358,
+   "team": "STL",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Thomas Saggese",
+   "player_id": 695336,
+   "team": "STL",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "II Victor Scott II",
+   "player_id": null,
+   "team": "STL",
+   "pos": "CF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "George Soriano",
+   "player_id": 666277,
+   "team": "STL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Matt Svanson",
+   "player_id": 694335,
+   "team": "STL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Bryan Torres",
+   "player_id": 663494,
+   "team": "STL",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Cade Winquest",
+   "player_id": 685464,
+   "team": "STL",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jr. Vladimir Guerrero Jr.",
+   "player_id": null,
+   "team": "TOR",
+   "pos": "1B",
+   "status": "Veteran",
+   "salary_2026": 40214286
+  },
+  {
+   "name": "Dylan Cease",
+   "player_id": 656302,
+   "team": "TOR",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 33285714
+  },
+  {
+   "name": "Jos\u00e9 Berr\u00edos",
+   "player_id": 621244,
+   "team": "TOR",
+   "pos": "SP",
+   "status": "early-termination",
+   "salary_2026": 24000000
+  },
+  {
+   "name": "Andres Gimenez",
+   "player_id": 665926,
+   "team": "TOR",
+   "pos": "SS",
+   "status": "Veteran",
+   "salary_2026": 23571429
+  },
+  {
+   "name": "Anthony Santander",
+   "player_id": 623993,
+   "team": "TOR",
+   "pos": "LF",
+   "status": "Veteran",
+   "salary_2026": 19200000
+  },
+  {
+   "name": "Kazuma Okamoto",
+   "player_id": 672960,
+   "team": "TOR",
+   "pos": "3B",
+   "status": "Veteran",
+   "salary_2026": 17250000
+  },
+  {
+   "name": "Tyler Rogers",
+   "player_id": 643511,
+   "team": "TOR",
+   "pos": "RP",
+   "status": "Veteran",
+   "salary_2026": 13666667
+  },
+  {
+   "name": "Alejandro Kirk",
+   "player_id": 672386,
+   "team": "TOR",
+   "pos": "C",
+   "status": "Veteran",
+   "salary_2026": 12325000
+  },
+  {
+   "name": "Cody Ponce",
+   "player_id": 664074,
+   "team": "TOR",
+   "pos": "SP",
+   "status": "Veteran",
+   "salary_2026": 12000000
+  },
+  {
+   "name": "Myles Straw",
+   "player_id": 664702,
+   "team": "TOR",
+   "pos": "CF",
+   "status": "Club",
+   "salary_2026": 8000000
+  },
+  {
+   "name": "Ernie Clement",
+   "player_id": 676391,
+   "team": "TOR",
+   "pos": "2B",
+   "status": "Arbitration 3 (S2)",
+   "salary_2026": 7600000
+  },
+  {
+   "name": "Jose Soriano",
+   "player_id": 667755,
+   "team": "TOR",
+   "pos": "SP",
+   "status": "Arbitration 2",
+   "salary_2026": 6600000
+  },
+  {
+   "name": "Josh H. Smith",
+   "player_id": null,
+   "team": "TOR",
+   "pos": "2B",
+   "status": "Arbitration 2",
+   "salary_2026": 3800000
+  },
+  {
+   "name": "Louie Varland",
+   "player_id": null,
+   "team": "TOR",
+   "pos": "RP",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 3000000
+  },
+  {
+   "name": "Nathan Lukes",
+   "player_id": 664770,
+   "team": "TOR",
+   "pos": "CF",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 2900000
+  },
+  {
+   "name": "Spencer Arrighetti",
+   "player_id": 681293,
+   "team": "TOR",
+   "pos": "SP",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 1500000
+  },
+  {
+   "name": "Davis Schneider",
+   "player_id": 676914,
+   "team": "TOR",
+   "pos": "3B",
+   "status": "Arbitration 1",
+   "salary_2026": 1250000
+  },
+  {
+   "name": "Addison Barger",
+   "player_id": 680718,
+   "team": "TOR",
+   "pos": "RF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brett Bateman",
+   "player_id": 703520,
+   "team": "TOR",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jake Bloss",
+   "player_id": 814005,
+   "team": "TOR",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brendan Cellucci",
+   "player_id": 676454,
+   "team": "TOR",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jonatan Clase",
+   "player_id": 682729,
+   "team": "TOR",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Chad Dallas",
+   "player_id": 689149,
+   "team": "TOR",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Braydon Fisher",
+   "player_id": 680755,
+   "team": "TOR",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Mason Fluharty",
+   "player_id": 689254,
+   "team": "TOR",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Bowden Francis",
+   "player_id": 670102,
+   "team": "TOR",
+   "pos": "SP",
+   "status": "Arbitration 1",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Sean Keys",
+   "player_id": 815873,
+   "team": "TOR",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "John Klein",
+   "player_id": 804619,
+   "team": "TOR",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Chase Lee",
+   "player_id": 695445,
+   "team": "TOR",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brendon Little",
+   "player_id": 663893,
+   "team": "TOR",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Charles McAdoo",
+   "player_id": 807727,
+   "team": "TOR",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Spencer Miles",
+   "player_id": 693686,
+   "team": "TOR",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Yohendrick Pinango",
+   "player_id": 682818,
+   "team": "TOR",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jos\u00e9 Rodr\u00edguez",
+   "player_id": null,
+   "team": "TOR",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Shawn Ross",
+   "player_id": 676566,
+   "team": "TOR",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ricky Tiedemann",
+   "player_id": 694357,
+   "team": "TOR",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brandon Valenzuela",
+   "player_id": 678218,
+   "team": "TOR",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Eyk CJ Van Eyk",
+   "player_id": null,
+   "team": "TOR",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Trey Yesavage",
+   "player_id": 702056,
+   "team": "TOR",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "CJ Abrams",
+   "player_id": 682928,
+   "team": "WSH",
+   "pos": "SS",
+   "status": "Arbitration 2",
+   "salary_2026": 11100000
+  },
+  {
+   "name": "Keibert Ruiz",
+   "player_id": 660688,
+   "team": "WSH",
+   "pos": "C",
+   "status": "Arbitration 3 Bypassed",
+   "salary_2026": 5375000
+  },
+  {
+   "name": "Cade Cavalli",
+   "player_id": 676917,
+   "team": "WSH",
+   "pos": "SP",
+   "status": "Arbitration 2 Bypassed",
+   "salary_2026": 5000000
+  },
+  {
+   "name": "Jake Irvin",
+   "player_id": 663623,
+   "team": "WSH",
+   "pos": "SP",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 3600000
+  },
+  {
+   "name": "Jacob Young",
+   "player_id": 696285,
+   "team": "WSH",
+   "pos": "CF",
+   "status": "Arbitration 1",
+   "salary_2026": 2000000
+  },
+  {
+   "name": "Richard Lovelady",
+   "player_id": 663992,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Arbitration 2",
+   "salary_2026": 1750000
+  },
+  {
+   "name": "Josiah Gray",
+   "player_id": 680686,
+   "team": "WSH",
+   "pos": "SP",
+   "status": "Arbitration 3",
+   "salary_2026": 1500000
+  },
+  {
+   "name": "Jake Bird",
+   "player_id": 656234,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Arbitration 2",
+   "salary_2026": 1250000
+  },
+  {
+   "name": "Mitchell Parker",
+   "player_id": 680730,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Arbitration 1 (S2)",
+   "salary_2026": 1250000
+  },
+  {
+   "name": "Andrew Alvarez",
+   "player_id": 674841,
+   "team": "WSH",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Clayton Beeter",
+   "player_id": 690925,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Andres Chaparro",
+   "player_id": 665953,
+   "team": "WSH",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Riley Cornelio",
+   "player_id": 683000,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Dylan Crews",
+   "player_id": 686611,
+   "team": "WSH",
+   "pos": "RF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Yovanny Cruz",
+   "player_id": 672442,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Will Dion",
+   "player_id": 702021,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Connelly Early",
+   "player_id": 813349,
+   "team": "WSH",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Harry Ford",
+   "player_id": 695670,
+   "team": "WSH",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "DJ Herz",
+   "player_id": 687792,
+   "team": "WSH",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brady House",
+   "player_id": 691781,
+   "team": "WSH",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jackson Kent",
+   "player_id": 800600,
+   "team": "WSH",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Daylen Lile",
+   "player_id": 695734,
+   "team": "WSH",
+   "pos": "RF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Brad Lord",
+   "player_id": 695418,
+   "team": "WSH",
+   "pos": "SP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Drew Millas",
+   "player_id": 686452,
+   "team": "WSH",
+   "pos": "C",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Yohandy Morales",
+   "player_id": 691002,
+   "team": "WSH",
+   "pos": "3B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Kyle Nicolas",
+   "player_id": 693312,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Nasim Nunez",
+   "player_id": 683083,
+   "team": "WSH",
+   "pos": "2B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Abimelec Ortiz",
+   "player_id": 694673,
+   "team": "WSH",
+   "pos": "1B",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Carson Palmquist",
+   "player_id": 687223,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Luis Perales",
+   "player_id": 691384,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Andrew Pinckney",
+   "player_id": 687605,
+   "team": "WSH",
+   "pos": "OF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "P.J. Poulin",
+   "player_id": null,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Orlando Ribalta",
+   "player_id": 687377,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Braxton Roxby",
+   "player_id": 694820,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Paxton Schultz",
+   "player_id": 687606,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jared Simpson",
+   "player_id": 688692,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jack Sinclair",
+   "player_id": 695378,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jos\u00e9 Tena",
+   "player_id": 677588,
+   "team": "WSH",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Erik Tolman",
+   "player_id": 680899,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Gus Varland",
+   "player_id": 681402,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Jorbit Vivas",
+   "player_id": 678391,
+   "team": "WSH",
+   "pos": "SS",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Ken Waldichuk",
+   "player_id": 686610,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Arbitration 2 (S2)",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Matt Waldron",
+   "player_id": 663362,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "James Wood",
+   "player_id": 695578,
+   "team": "WSH",
+   "pos": "LF",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  },
+  {
+   "name": "Eddy Yean",
+   "player_id": 678868,
+   "team": "WSH",
+   "pos": "RP",
+   "status": "Pre-Arbitration",
+   "salary_2026": 1000000
+  }
+ ]
+}
