@@ -21,7 +21,10 @@ LAKE = os.path.join(DATA, "mlb_lake.db")
 
 TEAM = {
     "New York Yankees": "NYY", "Houston Astros": "HOU", "New York Mets": "NYM",
-    "Milwaukee Brewers": "MIL", "Tampa Bay Rays": "TB", "Arizona Diamondbacks": "AZ",
+    "Milwaukee Brewers": "MIL", "Tampa Bay Rays": "TB",
+    # KPI/model team code is ARI (payroll convention, see G4) — "AZ" here
+    # silently dropped Arizona from the pitching merge.
+    "Arizona Diamondbacks": "ARI",
     "Detroit Tigers": "DET", "Los Angeles Dodgers": "LAD",
     "Cleveland Guardians": "CLE", "Miami Marlins": "MIA",
     "Chicago White Sox": "CHW", "St. Louis Cardinals": "STL",
@@ -47,7 +50,10 @@ def team_pitching():
         rows.append({"season": season, "name": name, "team": team,
                      "IP": s.get("inningsPitched"), "ERA": s.get("era"),
                      "WHIP": s.get("whip"), "K": s.get("strikeOuts"),
-                     "BB": s.get("walks"), "HR": s.get("homeRuns"),
+                     # MLB API field is baseOnBalls — "walks" is always null,
+                     # which made p_BB9 a constant 0.0 in formula_pitching.json
+                     # (audit G12, fixed 2026-10-31).
+                     "BB": s.get("baseOnBalls"), "HR": s.get("homeRuns"),
                      "BF": s.get("battersFaced") or s.get("battersFaced")})
     con.close()
     df = pd.DataFrame(rows)

@@ -64,17 +64,28 @@ contain the corrected values. The error was caught when a duplicate
 command-result delivery contradicted an earlier readout — the snapshot
 file itself is now the verified source.
 
-**Same bug elsewhere on main (new finding G12, NOT fixed in this PR):**
-`src/bml_cycle7.py` and `src/bml_cycle11.py` also read `"walks"`.
-Consequences already sitting in committed data: `formula_pitching.json`
-has p_BB9 coefficient 0.0 (constant-zero feature — Cycle 7's headline
-result rests on ERA/WHIP/K9/HR9 and is not overturned, but its BB/9
-term never existed), and `data/projections_2027_pitchers.json` has
-proj_BB9 = 0.0 for all 76 pitchers. Cycle 6's published BB/9 numbers
-were correct because it used the API's own `walksPer9Inn` field.
-Fix = same one-line key change in both scripts + regenerate
-formula_pitching.json and the pitcher projections; recommend a
-follow-up commit, in this PR or the next.
+**Same bug elsewhere on main (new finding G12) — FIXED in this PR**
+(user approved adding it, 2026-10-31): `src/bml_cycle7.py` and
+`src/bml_cycle11.py` also read `"walks"`. Both now read `baseOnBalls`;
+cycle7's Arizona team-map entry was also corrected AZ → ARI so its
+pitching merge no longer drops Arizona (same class as G4). Outputs
+regenerated from the lake + a fresh transactions pull (2025: 17,968
+events, exactly the BML log count; 2026: 17,196 vs 17,188 published —
+8 late transactions, no output changed at printed precision):
+- `formula_pitching.json`: p_BB9 coef 0.0 → **1.624** (real feature now;
+  note it is not independently interpretable beside p_WHIP, which
+  contains walks — collinearity). Cycle 7 re-measured on the corrected
+  code + G3 feature set: hitting-only CV MAE 6.98, hitting+pitching
+  **6.60**, pitching-only 7.37 — pitching still adds signal, the
+  Cycle 7 conclusion holds (published 6.47 used the old feature set
+  and the dead BB/9 term).
+- `projections_2027_pitchers.json`: same 76 pitchers, **only proj_BB9
+  changed** (0.0 → 1.5–4.1, 25 distinct values); every other field
+  byte-identical, including Chris Sale's IL-capped 60.0 health IP and
+  Misiorowski top at 1.81 ERA. `roster_2027.json` carries no BB/9
+  field and its inputs are unchanged, so it needs no regeneration.
+Cycle 6's published BB/9 numbers were always correct — it used the
+API's own `walksPer9Inn` field.
 
 ## Not in this branch (audit remainder)
 G6 (2019 MAE 51.9 anomaly in lagged_forecast.json), G7 (BML log entries

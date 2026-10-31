@@ -38,7 +38,10 @@ def load_pitchers():
             continue
         rows.append({"season": season, "name": name, "team": team, "IP": ip,
                      "ERA": _num(s.get("era")), "WHIP": _num(s.get("whip")),
-                     "K": _num(s.get("strikeOuts")), "BB": _num(s.get("walks")),
+                     # MLB API field is baseOnBalls — "walks" is always null,
+                     # which made proj_BB9 = 0.0 for all 76 pitchers in the
+                     # committed projections (audit G12, fixed 2026-10-31).
+                     "K": _num(s.get("strikeOuts")), "BB": _num(s.get("baseOnBalls")),
                      "HR": _num(s.get("homeRuns"))})
     con.close()
     return pd.DataFrame(rows)
