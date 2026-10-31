@@ -124,6 +124,11 @@ def panel_player_proj():
     colors = [grp(t) for t in top["team"]]
     fig = go.Figure(go.Bar(x=top["name"], y=top["proj_OBP"], marker_color=colors,
                            text=[f"{v:.3f}" for v in top["proj_OBP"]], textposition="outside"))
+    for label, c in [("Green = winning-cheap (MIL/TB/CLE)", "#1b5e20"),
+                     ("Orange = cheap-mediocre (MIA/CHW/STL)", "#e65100"),
+                     ("Blue = other", "#1565c0")]:
+        fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
+                                 marker=dict(color=c, size=10), name=label))
     fig.update_layout(title="2027 projected hitters by OBP (Marcel, real lake data) — "
                             "green = winning-cheap team",
                       xaxis_title="", yaxis_title="Projected OBP",
@@ -199,6 +204,16 @@ def panel_health():
         x=top["name"], y=top["pa_penalty_pct"],
         marker_color=[grp(t) for t in top["team"]],
         text=[f"-{v:.0f}% PA" for v in top["pa_penalty_pct"]], textposition="outside"))
+    # Explicit legend so the reader knows what each color means
+    fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
+                             marker=dict(color="#1b5e20", size=10),
+                             name="Green = winning-cheap team (MIL/TB/CLE)"))
+    fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
+                             marker=dict(color="#e65100", size=10),
+                             name="Orange = cheap-mediocre team (MIA/CHW/STL)"))
+    fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
+                             marker=dict(color="#1565c0", size=10),
+                             name="Blue = other team"))
     fig.update_layout(title="2027 health risk (IL-based PA cap, 2025-26 real injury data) — "
                             "playtime you should NOT count on",
                       xaxis_title="", yaxis_title="Projected PA reduction (%)",
@@ -233,6 +248,13 @@ def panel_roster():
     fig.update_layout(title="Proposed 26-man winning-cheap roster (13H/13P, real projections) — "
                             "green = winning-cheap source team; green bars recur by design",
                       template="plotly_white", height=460)
+    # legend for the green/blue color meaning
+    fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
+                             marker=dict(color="#1b5e20", size=10),
+                             name="Green = winning-cheap source team (MIL/TB/CLE)"))
+    fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
+                             marker=dict(color="#1565c0", size=10),
+                             name="Blue = other team"))
     return fig
 
 
@@ -259,6 +281,12 @@ def panel_runs():
     fig.add_trace(go.Scatter(x=xs, y=a + b * xs, mode="lines",
                              line=dict(color="#d50032", dash="dash", width=2),
                              name=f"fit: wins ≈ {a:.0f} + {b:.2f}·RunDiff (R² see source)"))
+    # legend for point colors
+    for label, c in [("Green = winning-cheap (MIL/TB/CLE)", "#1b5e20"),
+                     ("Orange = cheap-mediocre (MIA/CHW/STL)", "#e65100"),
+                     ("Blue = other", "#1565c0")]:
+        fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
+                                 marker=dict(color=c, size=10), name=label))
     fig.update_layout(title="The top lever — run differential → wins (2026, real)",
                       xaxis_title="Run differential (scored − allowed)",
                       yaxis_title="Wins", template="plotly_white", height=420,
@@ -346,6 +374,41 @@ def build():
     fig10 = panel_sensitivity()
     fig11 = panel_skill_persistence()
 
+    # Number every figure in display order and make each easy to reference.
+    fig_panels = [f for f in (fig11, fig9, fig1, fig2, fig3, fig4, fig5,
+                              fig6, fig7, fig8, fig10) if f is not None]
+
+    def _number(figs):
+        """Executive polish for every figure + 'Figure N — ' prefix.
+
+        One uniform style so all 11 charts read as one professional set:
+        light white theme (no grey default), navy text, subtle gridlines,
+        consistent legend either hidden (when self-explanatory) or a clean
+        top-right key, generous height. Applied identically to every figure.
+        """
+        out = []
+        for i, fig in enumerate(figs, 1):
+            old = fig.layout.title.text or ""
+            fig.update_layout(title_text=f"<b>Figure {i}</b> — {old}")
+            # Uniform professional theme (applied to all)
+            fig.update_layout(
+                template="plotly_white",
+                font=dict(family="system-ui, sans-serif", size=13, color="#14213d"),
+                title_font=dict(size=15, color="#14213d"),
+                title_x=0.0, title_xanchor="left",
+                paper_bgcolor="white", plot_bgcolor="white",
+                margin=dict(l=70, r=30, t=90, b=50),
+                height=max(fig.layout.height or 420, 420),
+                legend=dict(orientation="h", yanchor="bottom", y=1.02,
+                            xanchor="right", x=1, font=dict(size=11),
+                            bgcolor="rgba(255,255,255,0.7)"),
+                xaxis=dict(gridcolor="#e8ecf3", zerolinecolor="#d6dcea"),
+                yaxis=dict(gridcolor="#e8ecf3", zerolinecolor="#d6dcea"))
+            out.append(fig)
+        return out
+
+    numbered = _number(fig_panels)
+
     # Self-contained offline demo: inline plotly so no internet needed at the
     # Winter Meetings. Caches the bundle next to the dashboard if present.
     bundle = os.path.join(REPO, "dashboard", "plotly.min.js")
@@ -362,23 +425,8 @@ def build():
             f.write(plotly_js)
         js_include = f"<script>{plotly_js}</script>"
 
-    html = (fig1.to_html(full_html=False, include_plotlyjs=False) +
-            "<br> " + fig2.to_html(full_html=False, include_plotlyjs=False) +
-            "<br> " + fig3.to_html(full_html=False, include_plotlyjs=False) +
-            "<br> " + fig4.to_html(full_html=False, include_plotlyjs=False) +
-            "<br> " + fig5.to_html(full_html=False, include_plotlyjs=False) +
-            "<br> " + fig6.to_html(full_html=False, include_plotlyjs=False))
-    for fig in (fig7, fig8):
-        if fig is not None:
-            html += "<br> " + fig.to_html(full_html=False, include_plotlyjs=False)
-    if fig9 is not None:
-        html = (fig9.to_html(full_html=False, include_plotlyjs=False) +
-                "<br> " + html)
-    if fig10 is not None:
-        html = html + "<br> " + fig10.to_html(full_html=False, include_plotlyjs=False)
-    if fig11 is not None:
-        html = (fig11.to_html(full_html=False, include_plotlyjs=False) +
-                "<br> " + html)
+    html = "".join(fig.to_html(full_html=False, include_plotlyjs=False)
+                   + "<br>" for fig in numbered)
 
     page = f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P6)</title>
 <style>body{{font-family:system-ui,sans-serif;margin:0;background:#f6f7f9;color:#14213d}}
@@ -396,6 +444,9 @@ def build():
 .srcbox{{background:#14213d;color:#dbe4f3;border-radius:8px;padding:16px 20px;margin:30px 0 8px;font-size:13px;line-height:1.5}}
 .srcbox b{{color:#fff}}
 .src{{color:#8ab6ff;font-family:ui-monospace,monospace}}
+.keybox{{background:#f0f4fa;border:1px solid #c4d3ea;border-radius:6px;padding:10px 14px;margin:14px 0;font-size:12.5px;line-height:1.9}}
+.k{{margin-right:16px;display:inline-block}}
+.sw{{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}}
 </style></head>
 <body>
 <div class="crest">
@@ -427,6 +478,12 @@ wins; that is the honest capability.</div>
 same-year run-diff→wins R² ≈ 0.55; KPI-only cross-year forecasting MAE ≈ 9-13 wins (weak, beats
 naive only marginally — shown honestly). The cap/floor are owners' proposed 2027 figures
 (CBA expires Dec 1 2026), not law. No guaranteed performance claim.</div>
+<div class="keybox"><b>COLOR KEY (used on every chart below):</b>
+<span class="k"><span class="sw" style="background:#1b5e20"></span> green = <b>winning-cheap</b> (MIL · TB · CLE — the target teams: &gt;85 wins at low payroll)</span>
+<span class="k"><span class="sw" style="background:#e65100"></span> orange = <b>cheap-mediocre</b> (MIA · CHW · STL — the trap: frugal but ~78 wins)</span>
+<span class="k"><span class="sw" style="background:#1565c0"></span> blue = <b>other</b> (all remaining teams)</span>
+<span class="k"><span class="sw" style="background:#d50032"></span> red = cap line / negative signal</span>
+<span class="k"><span class="sw" style="background:#0d47a1"></span> navy = many-color charts (retention, sensitivity)</span></div>
 {js_include}
 {html}
 <div class="srcbox">
