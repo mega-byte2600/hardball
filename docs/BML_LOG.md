@@ -115,4 +115,17 @@ verified by a real command run, not self-asserted. GP review pending on all.
 - NEXT: add a pitching panel + updated projections to the dashboard.
 
 ---
+## Cycle 8 — pitching panel added to dashboard (6th chart)
+- Built: dashboard now includes a team-pitching KPI panel (IP-weighted
+  ERA / WHIP / BB9 by WIN_CHEAP vs CHEAP_MEDIOCRE vs OTHER, 2026) — the
+  delivery half of the formula, complementing the hitting panels.
+- Measured: VERIFIED in browser — 6 chart SVGs render; pitching axes correct
+  (WIN_CHEAP lowest ERA/WHIP/BB9). Single offline HTML (4.9M) now 6 panels.
+- Learned: demo tells the COMPLETE story — contact/OBP bats + low-walk arms.
+  This plus cycle 7 (MAE 7.29->6.47) makes pitching a committed pillar, not a
+  footnote. Next candidate: player-level health IR mask on projections
+  (literature says go there, team test said no).
+- Shipped: dashboard/hardball_demo.html updated.
+
+---
 (cycles appended as they complete)
