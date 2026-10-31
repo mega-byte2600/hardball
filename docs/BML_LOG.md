@@ -145,4 +145,16 @@ verified by a real command run, not self-asserted. GP review pending on all.
 - NEXT: (optional) add an availability panel to dashboard.
 
 ---
+## Cycle 10 — health/availability panel (7th chart) completes the 3-pillar demo
+- Built: dashboard health panel — top-10 players by IL-based PA penalty
+  (Judge -49%, Polanco -58%, Buxton/Lewis capped) from real 2025-26 injury
+  data (Cycle 9 output).
+- Measured: VERIFIED in browser — 7 chart SVGs render. Demo now shows ALL
+  THREE pillars GP flagged as key: contact/OBP bats (panels 2,5), low-walk
+  arms (panel 6), availability (panel 7).
+- Learned: the demo is now the complete winning-cheap formula, all derived
+  from real data + literature, offline single-file, honest caveats visible.
+- Shipped: dashboard/hardball_demo.html (7 panels).
+
+---
 (cycles appended as they complete)
