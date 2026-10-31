@@ -53,4 +53,22 @@ verified by a real command run, not self-asserted. GP review pending on all.
 - Shipped: src/bml_cycle3.py, data/statcast_team.json, raw archive.
 
 ---
+## Cycle 4 — Marcel player projection engine (the roster tool), built
+- Built: src/bml_cycle4.py — next-season (2027) hitter projections from REAL
+  2025+2026 lake data using the literature-validated Marcel method (simple
+  weighted 3-2-1 with regression-to-mean m~300PA, mild aging toward peak).
+  NOT invented math — the method our P3 literature showed competitive models
+  couldn't beat.
+- Measured: 200 qualified players projected; top by OBP includes Judge
+  (.457), Alvarez (.432), Soto (.396), and — the thesis — winning-cheap
+  contact types: Bauers-MIL .389, Hicks-TB .367, Perdomo-AZ .378,
+  McGonigle-DET .376. Roiester tool priced vs cap $245.3M / individual max
+  $36.8M.
+- Learned: a real roster-construction tool is feasible on lake data alone;
+  projections are sane (league-consistent). This is the artifact an owner
+  actually uses ("build the roster around these"), turning team-level edge
+  into player-level picks.
+- Shipped: src/bml_cycle4.py, data/projections_2027.json.
+
+---
 (cycles appended as they complete)
