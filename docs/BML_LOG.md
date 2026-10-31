@@ -71,4 +71,18 @@ verified by a real command run, not self-asserted. GP review pending on all.
 - Shipped: src/bml_cycle4.py, data/projections_2027.json.
 
 ---
+## Cycle 5 — dashboard +2 panels: 25yr durability proof + 2027 projections
+- Built: data/efficiency_2000_2024.csv (from Cycle 1) + data/projections_2027.json
+  (from Cycle 4) wired into dashboard as panel 4 (durability, two-bar layout:
+  wins/$100M AND wins by quartile) and panel 5 (2027 Marcel top-15 OBP,
+  winning-cheap teams green-coded).
+- Measured: VERIFIED in browser — 5 chart SVGs render, titles + data correct
+  (Q1 $58M→152/$100M vs Q4 63; cheap wins per $ not wins 76 vs 87; Judge
+  .457/Alvarez .432/Soto .396 top projections).
+- Learned: the demo now answers "is this one lucky season?" visually (25-year
+  durability) and shows the actionable artifact (player projections), keeping
+  the honest caveat visible. Single offline HTML, 5 panels.
+- Shipped: dashboard updated, data CSVs committed. Commit a8b5a7f (pending).
+
+---
 (cycles appended as they complete)
