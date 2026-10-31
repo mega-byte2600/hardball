@@ -134,8 +134,10 @@ teams (MIL/TB/CLE) had <b>higher OBP, more contact, fewer strikeouts and FEWER h
 won ~95 games vs ~79 for everyone else, at roughly half the payroll. <span class="act">Owner action:</span>
 build the roster around OBP/contact, not the big power salary, and you hold your own under the cap.
 <span class="why">Why trust it:</span> real 2025-2026 data (MLB API + Spotrac), model cross-validated.
-Not a guarantee — shown honestly below.</div>
-<div class="note">Real 2025-2026 data (MLB API + Spotrac). Model: wins ~ OBP, contact, K%, BB%, HR/PA.
+Not a guarantee — shown honestly below.</div><div class="note"><b>25-year check (2000-2024, 721 team-seasons):</b> the efficiency edge is <b>durable</b> —
+low payroll quartiles consistently win ~152 wins per $100M vs ~63 for the top quartile. But cheap teams
+don't win MORE games (they win ~76 vs ~87) — the WINNING-CHEAP outliers (MIL/TB/CLE) are the teams that
+turn low cost into 95+ wins. Be efficient <b>AND</b> competitive-plus, not just cheap.</div><div class="note">Real 2025-2026 data (MLB API + Spotrac). Model: wins ~ OBP, contact, K%, BB%, HR/PA.
 Cross-validated MAE ~7.2 wins, R² ~0.4 — honest, NOT guaranteed performance. The cap/floor are owners' proposed
 2027 figures (CBA expires Dec 1 2026).</div>
 {js_include}
