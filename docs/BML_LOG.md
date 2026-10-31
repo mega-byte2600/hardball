@@ -157,4 +157,18 @@ verified by a real command run, not self-asserted. GP review pending on all.
 - Shipped: dashboard/hardball_demo.html (7 panels).
 
 ---
+## Cycle 11 — pitcher projections complete the roster tool (both halves)
+- Built: src/bml_cycle11.py — Marcel-style 2027 pitcher projections (IP, ERA,
+  WHIP, K9, BB9) from real 2025+2026 lake data with regression + IL-based IP
+  availability. Outputs data/projections_2027_pitchers.json (76 pitchers).
+- Measured: top projected arm is MILWAUKEE's Jacob Misiorowski (1.81 ERA,
+  13.0 K/9, 0 BB/9) — a winning-cheap team carries the model's best pitcher.
+  Health adjustment works on arms: Chris Sale (IL days) capped to 60 proj IP.
+- Learned: roster tool now shows BOTH halves of the formula — contact/OBP
+  bats + low-walk arms — plus availability. The winning-cheap edge is
+  visible at player level on both sides. GP's 'pitching depth is critical'
+  is now a committed, citable feature not a slogan.
+- Shipped: src/bml_cycle11.py, data/projections_2027_pitchers.json.
+
+---
 (cycles appended as they complete)
