@@ -118,12 +118,23 @@ def build():
 
     page = f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P6)</title>
 <style>body{{font-family:system-ui,sans-serif;margin:24px;background:#fafafa;color:#111}}
-h1{{color:#1b2733}} h2{{color:#333}} .hd{{max-width:900px;margin:0 auto}}
+h1{{color:#1b2733}} h2{{color:#333}} .hd{{max-width:960px;margin:0 auto}}
 .note{{background:#fff8e1;border-left:4px solid #f9a825;padding:10px 14px;margin:14px 0}}
+.bottomline{{background:#e8f5e9;border-left:4px solid #2e7d32;border-radius:6px;padding:14px 18px;margin:14px 0;font-size:15px}}
+.act{{background:#2e7d32;color:#fff;padding:2px 8px;border-radius:4px;font-weight:bold}}
+.why{{color:#1b5e20;font-weight:bold}}
 .tag{{background:#0d47a1;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px}}</style></head>
 <body><div class="hd">
 <h1>HARDBALL <span class="tag">P6 MVP · Winter Meetings 2026</span></h1>
 <h2>Cap-Era Moneyball: win while cheap — buy contact + OBP, price it against the <b>$245.3M</b> cap</h2>
+<div class="bottomline">
+<b>BOTTOM LINE (read this first):</b> The data shows a team can win at a mid-tier payroll by
+spending on <b>contact + getting on base (OBP)</b>, not on power/homers. In 2026 the winning-cheap
+teams (MIL/TB/CLE) had <b>higher OBP, more contact, fewer strikeouts and FEWER homeruns</b> — yet
+won ~95 games vs ~79 for everyone else, at roughly half the payroll. <span class="act">Owner action:</span>
+build the roster around OBP/contact, not the big power salary, and you hold your own under the cap.
+<span class="why">Why trust it:</span> real 2025-2026 data (MLB API + Spotrac), model cross-validated.
+Not a guarantee — shown honestly below.</div>
 <div class="note">Real 2025-2026 data (MLB API + Spotrac). Model: wins ~ OBP, contact, K%, BB%, HR/PA.
 Cross-validated MAE ~7.2 wins, R² ~0.4 — honest, NOT guaranteed performance. The cap/floor are owners' proposed
 2027 figures (CBA expires Dec 1 2026).</div>
