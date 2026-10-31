@@ -1,14 +1,23 @@
 """BML Cycle 4: Marcel-correct player projection engine (the roster tool).
 
-Builds next-season (2027) hitter projections from REAL 2025+2026 lake data,
+Builds next-season (2027) hitter projections from REAL lake data,
 following the Marcel methodology the P3 literature validated (the simple
-weighted-average projection that competitive Bayesian aging models could not
-meaningfully beat; optimal regression m~1, peak ages 24-27).
+weighted-average projection that competitive Bayesian aging models could
+not meaningfully beat; optimal regression m~1, peak ages 24-27).
 
 Method (Tango's Marcel / 3-year weighted):
-  3-season weights 5-4-3 (here 2026 levered 5, 2025 levered 4; only 2 seasons
-  of lake data, so weights 5:4 on what we have), regression-to-mean m seasons
-  of league PA, aging increment (small), then rate projection.
+  3-season weights 5-4-3 over 2026/2025/2024 (the window is EXPLICIT —
+  the lake now holds 2023+ too, and seasons outside the map never enter
+  a projection), regression-to-mean m seasons of league PA, then a
+  real-age adjustment. The original aging step was a dead stub (a
+  hardcoded dict returning 0 for everyone); Cycle 21 backtested the
+  alternatives on 2025+2026 and the age term earned its place
+  out-of-sample in both directions (pooled OBP MAE .0226 -> .0220,
+  SLG .0468 -> .0453), while the 3rd season itself was a wash
+  (.0227 -> .0226) kept for Marcel fidelity and coverage. Slopes below
+  were fit on the pooled Cycle 21 backtest residuals (n=196
+  player-seasons): proj += slope * (27 - age_in_target_season), age
+  from the lake's own per-season stat payloads.
 Outputs: data/projections_2027.json + a cap-priced roster worksheet so an
 owner can see projected production vs the $245.3M cap / 15% individual max.
 
@@ -24,6 +33,12 @@ import pandas as pd
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(REPO, "data")
 LAKE = os.path.join(DATA, "mlb_lake.db")
+
+# Age-adjustment slopes fitted in Cycle 21 (see docstring); per year of
+# age away from 27, applied to the projected rate for the target season.
+AGE_SLOPE = {"OBP": 0.00158, "SLG": 0.00390}
+TARGET_SEASON = 2027
+SEASON_WEIGHTS = {2026: 5, 2025: 4, 2024: 3}
 
 # League averages for regression target (2026 approximate, from real data)
 LEAGUE = {"OBP": 0.317, "SLG": 0.400, "BA": 0.244, "K%" : 22.4, "BB%": 8.7}
@@ -48,7 +63,7 @@ def load_hitter_lines() -> pd.DataFrame:
         rows.append({"season": season, "player_id": pid, "name": name, "team": team,
                      "PA": pa, "BA": s.get("avg"), "OBP": s.get("obp"),
                      "SLG": s.get("slg"), "BB": s.get("baseOnBalls"),
-                     "SO": s.get("strikeOuts")})
+                     "SO": s.get("strikeOuts"), "age": s.get("age")})
     con.close()
     df = pd.DataFrame(rows)
     for c in ["BA", "OBP", "SLG", "BB", "SO"]:
@@ -58,12 +73,14 @@ def load_hitter_lines() -> pd.DataFrame:
 
 
 def project(df: pd.DataFrame) -> pd.DataFrame:
-    """Marcel-style rate projection with regression + mild aging."""
+    """Marcel-style rate projection: 5-4-3 regression + fitted age term."""
     out = []
     for pid, g in df.groupby("player_id"):
-        # season weights: 2026=5, 2025=4 (versus classic 3-2-1 for 3 seasons)
-        g = g.copy()
-        g["w"] = g["season"].map({2026: 5, 2025: 4}).fillna(3)
+        # explicit 3-season window — seasons outside the map never enter
+        g = g[g["season"].isin(SEASON_WEIGHTS)].copy()
+        if g.empty:
+            continue
+        g["w"] = g["season"].map(SEASON_WEIGHTS)
         tot_pa = (g["PA"] * g["w"]).sum()
         if tot_pa < 2000:
             continue  # insufficient history
@@ -79,8 +96,13 @@ def project(df: pd.DataFrame) -> pd.DataFrame:
         ba = rate("BA", LEAGUE["BA"])
         kw = (g["SO"] * g["w"]).sum() / (g["PA"] * g["w"]).sum() * 100
         bbw = (g["BB"] * g["w"]).sum() / (g["PA"] * g["w"]).sum() * 100
-        # mild aging toward peak (assume peak 26-27; tiny + for <26, - for >30)
-        ages = {"Ohtani 660271": 0}.get(name, 0)
+        # real-age adjustment (Cycle 21): age in the target season from
+        # the lake's own per-season age (latest known age + gap forward)
+        known = g.dropna(subset=["age"]).sort_values("season")
+        if not known.empty:
+            age_target = known["age"].iloc[-1] + (TARGET_SEASON - known["season"].iloc[-1])
+            obp += AGE_SLOPE["OBP"] * (27 - age_target)
+            slg += AGE_SLOPE["SLG"] * (27 - age_target)
         out.append({"player_id": pid, "name": name, "team": team,
                     "proj_PA": AVG_PA, "proj_BA": round(ba, 3),
                     "proj_OBP": round(obp, 3), "proj_SLG": round(slg, 3),

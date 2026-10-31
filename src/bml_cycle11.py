@@ -102,7 +102,15 @@ def main():
     rows = []
     for pid, g in df.groupby("name"):
         g = g.copy()
-        g["w"] = g["season"].map({2026: 5, 2025: 4}).fillna(3)
+        # explicit 2-season window (pinned 2026-10-31): the lake now holds
+        # 2023+2024 too, and the old .fillna(3) would have silently pulled
+        # them in at weight 3 and changed every projection. A 3-season /
+        # age-adjusted pitcher Marcel is untested — Cycle 21 tested
+        # hitters only — so the shipped pitcher method stays as measured.
+        g = g[g["season"].isin({2026, 2025})]
+        if g.empty:
+            continue
+        g["w"] = g["season"].map({2026: 5, 2025: 4})
         tot_ip = (g["IP"] * g["w"]).sum()
         if tot_ip < 300:
             continue
