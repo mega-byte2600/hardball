@@ -1,9 +1,10 @@
 """P6: HARDBALL demo dashboard (Plotly HTML).
 
-Ten panels on real data (payroll-vs-wins, KPI signature, cap projections,
+Thirteen panels on real data (payroll-vs-wins, KPI signature, cap projections,
 25-year durability, 2027 Marcel projections, pitching, health/availability,
-cap roster, run differential, sensitivity). Serves as a self-contained
-HTML file the GP can open at the Winter Meetings.
+cap roster, run differential, sensitivity, plus the CarpeData panels:
+Marcel-vs-Steamer benchmark, Savant trait check, MiLB pipeline index).
+Serves as a self-contained HTML file the GP can open at the Winter Meetings.
 
 Build must work from a clean clone: every panel reads committed data
 snapshots under data/ first. The SQLite lake (gitignored) and the live
@@ -356,6 +357,114 @@ def panel_sensitivity():
     return fig
 
 
+def panel_benchmark():
+    """CarpeData: our Marcel vs FanGraphs Steamer 2027 (Cycle 22).
+
+    Paired by MLBAM player_id == xMLBAMID only. Stats box comes from
+    data/fg_benchmark_2027.json so the panel can never drift from the
+    measured benchmark."""
+    pj = os.path.join(DATA, "projections_2027.json")
+    sj = os.path.join(DATA, "fg_steamer_2027_bat.json")
+    bj = os.path.join(DATA, "fg_benchmark_2027.json")
+    if not all(os.path.exists(p) for p in (pj, sj, bj)):
+        return None
+    proj = {r["player_id"]: r for r in json.load(open(pj))}
+    bench = json.load(open(bj))
+    xs, ys, names = [], [], []
+    for r in json.load(open(sj)):
+        mid = r.get("xMLBAMID")
+        if mid in proj and r.get("OBP") is not None:
+            xs.append(r["OBP"])
+            ys.append(proj[mid]["proj_OBP"])
+            names.append(proj[mid]["name"])
+    if not xs:
+        return None
+    h, p = bench["hitters"], bench["pitchers"]
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=[0.26, 0.46], y=[0.26, 0.46], mode="lines",
+                             line=dict(dash="dash", color="gray"),
+                             name="Perfect agreement"))
+    fig.add_trace(go.Scatter(
+        x=xs, y=ys, mode="markers", name="2027 hitters",
+        marker=dict(color="#1d3557", size=8, opacity=0.75),
+        text=names, hovertemplate="%{text}<br>Steamer OBP %{x:.3f}<br>Marcel OBP %{y:.3f}<extra></extra>"))
+    fig.update_layout(
+        title=(f"The benchmark: our Marcel vs FanGraphs Steamer 2027 — OBP r = "
+               f"{h['obp']['pearson_r']}, mean |diff| {h['obp']['mean_abs_diff']}, "
+               f"top-25 overlap {h['top25_obp_overlap']['overlap_n']}/25<br>"
+               f"<sub>Pitchers run optimistic vs Steamer (ERA bias "
+               f"{p['era']['mean_signed_diff_marcel_minus_steamer']:+.2f}) — flagged, not hidden. "
+               f"Agreement stats, not accuracy: no 2027 outcomes exist yet. Source: FanGraphs API, pulled 2026-10-31.</sub>"),
+        xaxis_title="Steamer projected OBP", yaxis_title="Our Marcel projected OBP",
+        template="plotly_white", height=540)
+    return fig
+
+
+def panel_savant():
+    """CarpeData: Savant trait stability vs incremental value (Cycle 20)."""
+    tj = os.path.join(DATA, "savant_test.json")
+    if not os.path.exists(tj):
+        return None
+    t = json.load(open(tj))
+    stab = t.get("q2_trait_stability", {})
+    labels = [("avg bat speed", "bat_speed"), ("EV50 (batted-ball quality)", "ev50"),
+              ("barrel %", "barrel_pct"), ("squared-up rate", "squared_up"),
+              ("actual OBP (outcome)", "outcome_OBP"), ("actual SLG (outcome)", "outcome_SLG")]
+    names, vals, colors = [], [], []
+    for label, key in labels:
+        if key in stab:
+            names.append(label)
+            vals.append(stab[key]["mean_r"])
+            colors.append("#8ab6ff" if key.startswith("outcome") else "#1d3557")
+    if not vals:
+        return None
+    fig = go.Figure(go.Bar(
+        x=vals, y=names, orientation="h", marker=dict(color=colors),
+        text=[f"r = {v:.2f}" for v in vals], textposition="outside"))
+    fig.update_layout(
+        title=("Savant traits are rock-stable year-to-year (dark) — far more than outcomes (light)<br>"
+               "<sub>But Cycle 20 tested them honestly: adding bat speed / barrels / xwOBA luck to Marcel made "
+               "out-of-sample projections WORSE. Marcel's outcome history already prices the traits — so Savant "
+               "is shown here as diagnostics, not sold as a projection input. Source: Baseball Savant, 2024-2026.</sub>"),
+        xaxis_title="Year-to-year correlation (player level)", xaxis_range=[0, 1.12],
+        template="plotly_white", height=430, margin=dict(l=210))
+    return fig
+
+
+def panel_pipeline():
+    """CarpeData: MiLB upper-minors pipeline index by org (Cycle 23)."""
+    pj = os.path.join(DATA, "pipeline_2026.json")
+    if not os.path.exists(pj):
+        return None
+    orgs = json.load(open(pj)).get("orgs", [])
+    if not orgs:
+        return None
+    orgs = sorted(orgs, key=lambda o: o["index_avg100"])
+    names = [f"{o['org_abbr']} — {o['n_hitters']}H / {o['n_pitchers']}P" for o in orgs]
+    vals = [o["index_avg100"] for o in orgs]
+    colors = ["green" if o["org_abbr"] in WIN_CHEAP else
+              "orange" if o["org_abbr"] in CHEAP_MEDIOCRE else "steelblue" for o in orgs]
+    hover = [f"{o['org_name']}<br>index {o['index_avg100']} (league avg = 100)<br>"
+             f"under-26 AAA/AA: {o['n_hitters']} hitters (wtd OPS {o['wtd_ops']}), "
+             f"{o['n_pitchers']} pitchers (wtd ERA {o['wtd_era']})<br>"
+             f"top hitter: {o['top_hitter']['name']} · top pitcher: {o['top_pitcher']['name']}"
+             for o in orgs]
+    fig = go.Figure(go.Bar(
+        x=vals, y=names, orientation="h", marker=dict(color=colors),
+        text=[f"{v:.0f}" for v in vals], textposition="outside",
+        hovertext=hover, hoverinfo="text"))
+    fig.add_vline(x=100, line_dash="dash", line_color="red",
+                  annotation_text="League average = 100")
+    fig.update_layout(
+        title=("The pipeline behind winning-cheap: under-26 upper-minors depth, 2026 (Cycle 23)<br>"
+               "<sub>Qualified AAA/AA hitters (≥150 PA) and pitchers (≥40 IP), age from real birthdates, "
+               "volume × quality vs league. Green = winning-cheap orgs. Upper minors only — near-MLB depth, "
+               "not total farm quality. Source: MLB Stats API minor-league endpoints.</sub>"),
+        xaxis_title="Pipeline index (average org = 100)",
+        template="plotly_white", height=640, margin=dict(l=170))
+    return fig
+
+
 def build():
     os.makedirs(os.path.join(REPO, "dashboard"), exist_ok=True)
     try:
@@ -377,6 +486,9 @@ def build():
     fig8 = panel_roster()
     fig9 = panel_runs()
     fig10 = panel_sensitivity()
+    fig11 = panel_benchmark()
+    fig12 = panel_savant()
+    fig13 = panel_pipeline()
 
     # Self-contained offline demo: inline plotly so no internet needed at the
     # Winter Meetings. Caches the bundle next to the dashboard if present.
@@ -404,6 +516,9 @@ def build():
                 "<br> " + html)
     if fig10 is not None:
         html = html + "<br> " + fig10.to_html(full_html=False, include_plotlyjs=False)
+    for fig in (fig11, fig12, fig13):
+        if fig is not None:
+            html += "<br> " + fig.to_html(full_html=False, include_plotlyjs=False)
 
     page = f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P6)</title>
 <style>body{{font-family:system-ui,sans-serif;margin:0;background:#f6f7f9;color:#14213d}}
@@ -464,6 +579,13 @@ site.web.api.espn.com</span> (131 players cross-checked: HR counts match exactly
 721 team-seasons 2000-2024 + live 2026 opening-day figures). <b>Injury/health:</b> MLB
 transactions feed (35,000+ events 2025-2026, IL days per player). <b>MLB color/look:</b> league
 branding only, for presentation.<br>
+<b>CarpeData layer (added 2026-10-31, all keyless):</b> <span class="src">Baseball Savant</span>
+leaderboards by player_id — expected stats (xwOBA), batted ball (EV/barrels), bat tracking
+2024-2026, sprint speed, arm strength; <span class="src">FanGraphs API</span> — Steamer 2027
+projections (the benchmark panel; ZiPS returned empty via the API and is not claimed) and the
+player-ID crosswalk; <span class="src">MLB Stats API</span> minor-league endpoints (AAA/AA)
++ people endpoint (real birthdates) for the pipeline panel. Every connected source was
+tested before use — kept-vs-dropped with reasons in docs/CARPE_SCORECARD.md.<br>
 <b>Model:</b> linear regression on the 2011-2026 panel (509 team-seasons, 450 complete):
 same-year run differential → wins R² ≈ 0.55 — a diagnostic link, not a forecast.
 KPI-only next-season forecasting is weak (out-of-sample MAE ≈ 14 wins, worse than the
@@ -471,6 +593,12 @@ naive baseline; see BML Cycles 18-19 in the repo audit trail) — an earlier 2-y
 estimate (MAE 4.0 / R² 0.80) was retracted for exactly that reason and is not claimed here.
 The actionable layer is player-level: Marcel weighted-average projections with
 injury-availability caps, priced against the cap. Pythagorean exponent uses Euler's e.
+The hitter Marcel is the Cycle 21 backtested configuration (3 seasons, 5-4-3, plus an
+age adjustment whose slope was fitted on 2025-2026 backtest residuals — the original
+aging step was a stub that adjusted nothing). Cycle 20 tested Savant trait adjustments
+and rejected them out-of-sample; Cycle 22 benchmarks the result against Steamer
+(hitters agree closely; the pitcher Marcel runs ~0.32 ERA optimistic — an open,
+disclosed gap, not a hidden one).
 <b>Honest limits:</b> ~45% of same-year win variance sits outside run differential
 (defense, luck, leverage); the cap figures are the owners' proposed 2027 numbers
 (CBA expires Dec 1 2026), not law. Not a guarantee of performance.<br><br>
