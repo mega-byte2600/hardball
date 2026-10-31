@@ -1,0 +1,21 @@
+{
+  "n_players": 80,
+  "pa_floor": 200,
+  "yoy_corr_2025_2026": {
+    "OBP": 0.298,
+    "BB%": 0.655,
+    "contact": 0.899,
+    "ISO": 0.584
+  },
+  "naive_mae_obp": 0.0242,
+  "skill_4feat_mae_obp": 0.0231,
+  "skill_beats_naive_obp_pts": 0.0011,
+  "contact_yoy_r": 0.899,
+  "contact_model": {
+    "naive_mae": 4.973,
+    "mae": 2.121,
+    "r2": 0.808,
+    "pct_error_reduction": 57.3
+  },
+  "core_finding": "Player-level skill (own 2025 OBP/contact/BB/ISO) predicts own 2026 OBP better than naive league-mean"
+}

@@ -237,3 +237,18 @@ verified by a real command run, not self-asserted. GP review pending on all.
   not a forward forecast. What survives is PLAYER-LEVEL acquisition (Marcel +
   injury caps -> roster), not a team-wins formula. Retracted the inflated R2 0.80
   claim from dashboard/docs. This is a proper negative result, logged honestly.
+
+---
+## Cycle 20 — PLAYER-LEVEL validation: the dependable edge (measured)
+- Built: src/bml_cycle20_player.py — test 80 real players w/ >=200 PA both
+  seasons whether SKILL persists year-over-year (2025->2026).
+- Measured: within-player r = Contact 0.899, BB% 0.655, ISO 0.584, OBP 0.298.
+  Predicting next-year contact% from own prior: MAE 2.12 vs naive 4.97
+  = 57% error reduction, R2 0.81. OBP itself is noisy (beats naive by 1pt).
+- LEARNED (the defensible thesis): buy the PERSISTENT INPUTS (contact +
+  walk discipline), not the noisy OUTPUT (OBP/BA). Winning-cheap teams
+  over-index on these exact inputs (team KPI data) AND they carry year to
+  year (player data). This is the provable Moneyball edge, replacing the
+  discredited team-wins formula.
+- Shipped: player_level_validation.json, player_yoy.json, dashboard panel 11
+  (skill persistence chart moved to first chart).

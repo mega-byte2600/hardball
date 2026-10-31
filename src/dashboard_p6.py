@@ -296,6 +296,38 @@ def panel_sensitivity():
     return fig
 
 
+def panel_skill_persistence():
+    """Centerpiece: the measurable edge. Input skills persist; OBP is noisy."""
+    v = os.path.join(DATA, "player_level_validation.json")
+    if not os.path.exists(v):
+        return None
+    d = json.load(open(v))
+    yoy = d.get("yoy_corr_2025_2026", {})
+    labels = {"contact": "Contact %", "BB%": "Walk %", "ISO": "Power (ISO)",
+              "OBP": "On-base %", "K%": "K %"}
+    order = ["contact", "BB%", "ISO", "OBP"]
+    fig = go.Figure()
+    names, r, cols = [], [], []
+    for k in order:
+        if k in yoy:
+            names.append(labels.get(k, k)); r.append(yoy[k])
+            cols.append("#1b5e20" if yoy[k] >= 0.6 else "#e65100" if yoy[k] >= 0.4 else "#1565c0")
+    fig.add_trace(go.Bar(y=names, x=r, orientation="h", marker_color=cols,
+                         text=[f"{v:.2f}" for v in r], textposition="outside"))
+    fig.update_layout(title="The measurable edge: input SKILLS persist year-to-year (2025→2026, real)",
+                      xaxis_title="Year-over-year persistence (r)",
+                      xaxis_range=[0, 1.1], template="plotly_white", height=360,
+                      margin=dict(l=140),
+                      annotations=[dict(x=0.98, y=len(order)-0.5, xref="x", yref="y",
+                                        showarrow=False, text="▲ contact carries",
+                                        font=dict(color="#1b5e20", size=12))])
+    # add a sub-annotation line about the edge
+    fig.add_annotation(x=0.98, y=-0.6, xref="x", yref="y", showarrow=False,
+                       text="Buy the persistent inputs (contact+walks), not the noisy output (OBP/BA)",
+                       font=dict(size=12, color="#14213d"))
+    return fig
+
+
 def build():
     df = kpi_mod.kpi_frame()
     df["group"] = "OTHER"
@@ -312,6 +344,7 @@ def build():
     fig8 = panel_roster()
     fig9 = panel_runs()
     fig10 = panel_sensitivity()
+    fig11 = panel_skill_persistence()
 
     # Self-contained offline demo: inline plotly so no internet needed at the
     # Winter Meetings. Caches the bundle next to the dashboard if present.
@@ -343,6 +376,9 @@ def build():
                 "<br> " + html)
     if fig10 is not None:
         html = html + "<br> " + fig10.to_html(full_html=False, include_plotlyjs=False)
+    if fig11 is not None:
+        html = (fig11.to_html(full_html=False, include_plotlyjs=False) +
+                "<br> " + html)
 
     page = f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P6)</title>
 <style>body{{font-family:system-ui,sans-serif;margin:0;background:#f6f7f9;color:#14213d}}
