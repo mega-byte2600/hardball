@@ -1,0 +1,21 @@
+{
+  "season": 2026,
+  "source": "mlb_lake.db stat_lines pitching (MLB Stats API via src/ingest.py), IP>=30, IP-weighted",
+  "groups": {
+    "CHEAP_MEDIOCRE": {
+      "ERA": 3.7524,
+      "WHIP": 1.2436,
+      "BB/9": 0.0
+    },
+    "OTHER": {
+      "ERA": 3.6027,
+      "WHIP": 1.192,
+      "BB/9": 0.0
+    },
+    "WIN_CHEAP": {
+      "ERA": 3.287,
+      "WHIP": 1.0916,
+      "BB/9": 0.0
+    }
+  }
+}

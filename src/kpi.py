@@ -123,6 +123,21 @@ def kpi_frame():
     return merged
 
 
+def kpi_frame_from_snapshots() -> pd.DataFrame:
+    """Load the committed data/kpi_<season>.json snapshots (written by
+    analyze() from the live frame). Deterministic and offline — this is
+    the default dataset for builds and model fits; kpi_frame() (live MLB
+    API fetch) is the refresh path that regenerates the snapshots."""
+    frames = []
+    for season in (2025, 2026):
+        path = os.path.join(DATA, f"kpi_{season}.json")
+        if os.path.exists(path):
+            frames.append(pd.read_json(path))
+    if not frames:
+        raise FileNotFoundError("no committed data/kpi_*.json snapshots found")
+    return pd.concat(frames, ignore_index=True)
+
+
 def analyze(df: pd.DataFrame, year: int):
     d = df[df["season"] == year].copy().dropna(subset=["payroll", "wins"])
     d["group"] = "OTHER"

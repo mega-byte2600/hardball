@@ -1,15 +1,17 @@
 """P6: HARDBALL demo dashboard (Plotly HTML).
 
-Three panels on real 2026 data:
- 1. Payroll vs Wins scatter — the efficiency story (winning-cheap ellipse).
- 2. KPI comparison: winning-cheap vs cheap-mediocre vs other (OBP, contact,
-    K%, BB%, HR/PA).
- 3. Cap-constrained projections: proj wins vs payroll vs 2027 cap
-    ($245.3M cap / $171.2M floor).
-Serves as a self-contained HTML file the GP can open at the Winter Meetings.
+Ten panels on real data (payroll-vs-wins, KPI signature, cap projections,
+25-year durability, 2027 Marcel projections, pitching, health/availability,
+cap roster, run differential, sensitivity). Serves as a self-contained
+HTML file the GP can open at the Winter Meetings.
+
+Build must work from a clean clone: every panel reads committed data
+snapshots under data/ first. The SQLite lake (gitignored) and the live
+MLB API are refresh paths, never build requirements.
 """
 import json
 import os
+import sys
 
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
@@ -131,10 +133,23 @@ def panel_player_proj():
     return fig
 
 
-def panel_pitching():
-    """Winning-cheap pitching signature: IP-weighted ERA/WHIP/BBy per group (2026)."""
-    import subprocess, json as J
-    # table-level re-aggregation inline from lake (clean, no module import cycle)
+def pitching_group_table():
+    """IP-weighted pitching KPIs by group (2026), or None if no source.
+
+    Source order: committed snapshot data/team_pitching.json first (so a
+    clean clone builds offline), then the local lake if it exists.
+    Regenerate the snapshot with: python src/dashboard_p6.py --snapshot-pitching
+    (requires the lake; see src/ingest.py).
+    """
+    snap = os.path.join(DATA, "team_pitching.json")
+    if os.path.exists(snap):
+        with open(snap) as f:
+            payload = json.load(f)
+        g = pd.DataFrame(payload["groups"]).T
+        return g[["ERA", "WHIP", "BB/9"]]
+    db = os.path.join(DATA, "mlb_lake.db")
+    if not os.path.exists(db):
+        return None
     import sqlite3
     TEAM = {"New York Yankees":"NYY","Houston Astros":"HOU","New York Mets":"NYM",
       "Milwaukee Brewers":"MIL","Tampa Bay Rays":"TB","Arizona Diamondbacks":"AZ",
@@ -146,13 +161,17 @@ def panel_pitching():
       "Baltimore Orioles":"BAL","Los Angeles Angels":"LAA","Chicago Cubs":"CHC",
       "Cincinnati Reds":"CIN","Colorado Rockies":"COL","Kansas City Royals":"KC",
       "Pittsburgh Pirates":"PIT","Washington Nationals":"WSH","Oakland Athletics":"ATH"}
-    con = sqlite3.connect(os.path.join(DATA, "mlb_lake.db"))
-    rows = []
-    for season, team, sjson in con.execute("SELECT season,team,stat_json FROM stat_lines WHERE group_name='pitching'"):
-        s = J.loads(sjson)
-        rows.append({"season": season, "code": TEAM.get(team, team), "IP": s.get("inningsPitched"),
-                     "ERA": s.get("era"), "WHIP": s.get("whip"), "BB": s.get("walks")})
-    con.close()
+    con = sqlite3.connect(db)
+    try:
+        rows = []
+        for season, team, sjson in con.execute("SELECT season,team,stat_json FROM stat_lines WHERE group_name='pitching'"):
+            s = json.loads(sjson)
+            rows.append({"season": season, "code": TEAM.get(team, team), "IP": s.get("inningsPitched"),
+                         "ERA": s.get("era"), "WHIP": s.get("whip"), "BB": s.get("walks")})
+    except sqlite3.OperationalError:
+        return None
+    finally:
+        con.close()
     d = pd.DataFrame(rows)
     for c in ["IP", "ERA", "WHIP", "BB"]:
         d[c] = pd.to_numeric(d[c], errors="coerce")
@@ -161,10 +180,47 @@ def panel_pitching():
     d.loc[d["code"].isin(WIN_CHEAP), "grp"] = "WIN_CHEAP"
     d.loc[d["code"].isin(CHEAP_MEDIOCRE), "grp"] = "CHEAP_MEDIOCRE"
     d = d[d["season"] == 2026]
-    g = d.groupby("grp").apply(lambda x: pd.Series({
+    if d.empty:
+        return None
+    return d.groupby("grp").apply(lambda x: pd.Series({
         "ERA": (x["ERA"]*x["IP"]).sum()/x["IP"].sum(),
         "WHIP": (x["WHIP"]*x["IP"]).sum()/x["IP"].sum(),
         "BB/9": (x["BB"]*9/x["IP"]).sum()/len(x)}), include_groups=False)
+
+
+def write_pitching_snapshot():
+    """Write data/team_pitching.json from the lake (refresh path only)."""
+    db = os.path.join(DATA, "mlb_lake.db")
+    if not os.path.exists(db):
+        raise SystemExit("lake not found — run src/ingest.py first")
+    # Force the lake path by temporarily hiding the snapshot, if any.
+    snap = os.path.join(DATA, "team_pitching.json")
+    stash = snap + ".bak"
+    if os.path.exists(snap):
+        os.replace(snap, stash)
+    try:
+        g = pitching_group_table()
+    finally:
+        if os.path.exists(stash):
+            os.replace(stash, snap)
+    if g is None:
+        raise SystemExit("no pitching rows in lake — run src/ingest.py first")
+    payload = {
+        "season": 2026,
+        "source": "mlb_lake.db stat_lines pitching (MLB Stats API via src/ingest.py), IP>=30, IP-weighted",
+        "groups": {grp: {m: round(float(g.loc[grp, m]), 4) for m in ["ERA", "WHIP", "BB/9"]}
+                   for grp in g.index},
+    }
+    with open(snap, "w") as f:
+        json.dump(payload, f, indent=2)
+    print(f"wrote {snap}: {payload['groups']}")
+
+
+def panel_pitching():
+    """Winning-cheap pitching signature: IP-weighted ERA/WHIP/BB9 per group (2026)."""
+    g = pitching_group_table()
+    if g is None:
+        return None
     metrics = ["ERA", "WHIP", "BB/9"]
     labels = {"ERA":"ERA","WHIP":"WHIP","BB/9":"BB per 9 IP"}
     fig = make_subplots(rows=1, cols=3, subplot_titles=[labels[m] for m in metrics])
@@ -297,7 +353,12 @@ def panel_sensitivity():
 
 
 def build():
-    df = kpi_mod.kpi_frame()
+    os.makedirs(os.path.join(REPO, "dashboard"), exist_ok=True)
+    try:
+        df = kpi_mod.kpi_frame()
+    except Exception as e:  # offline / clean clone: committed snapshots suffice
+        print(f"kpi live fetch failed ({e}); using committed data/kpi_*.json snapshots")
+        df = kpi_mod.kpi_frame_from_snapshots()
     df["group"] = "OTHER"
     df.loc[df["team"].isin(WIN_CHEAP), "group"] = "WIN_CHEAP"
     df.loc[df["team"].isin(CHEAP_MEDIOCRE), "group"] = "CHEAP_MEDIOCRE"
@@ -319,23 +380,19 @@ def build():
     if os.path.exists(bundle):
         with open(bundle) as f:
             plotly_js = f.read()
-        js_include = f"<script>{plotly_js}</script>"
-    else:  # fallback: fetch once, cache
-        import urllib.request
-        url = "https://cdn.plot.ly/plotly-4.1.1.min.js"
-        with urllib.request.urlopen(url, timeout=60) as r:
-            plotly_js = r.read().decode()
+    else:  # use the JS bundled with the installed plotly package (offline-safe)
+        from plotly.offline import get_plotlyjs
+        plotly_js = get_plotlyjs()
         with open(bundle, "w") as f:
             f.write(plotly_js)
-        js_include = f"<script>{plotly_js}</script>"
+    js_include = f"<script>{plotly_js}</script>"
 
     html = (fig1.to_html(full_html=False, include_plotlyjs=False) +
             "<br> " + fig2.to_html(full_html=False, include_plotlyjs=False) +
             "<br> " + fig3.to_html(full_html=False, include_plotlyjs=False) +
             "<br> " + fig4.to_html(full_html=False, include_plotlyjs=False) +
-            "<br> " + fig5.to_html(full_html=False, include_plotlyjs=False) +
-            "<br> " + fig6.to_html(full_html=False, include_plotlyjs=False))
-    for fig in (fig7, fig8):
+            "<br> " + fig5.to_html(full_html=False, include_plotlyjs=False))
+    for fig in (fig6, fig7, fig8):
         if fig is not None:
             html += "<br> " + fig.to_html(full_html=False, include_plotlyjs=False)
     if fig9 is not None:
@@ -425,4 +482,7 @@ injury-availability caps, priced against the cap. Pythagorean exponent uses Eule
 
 if __name__ == "__main__":
     import pandas as pd  # noqa
-    build()
+    if "--snapshot-pitching" in sys.argv:
+        write_pitching_snapshot()
+    else:
+        build()
