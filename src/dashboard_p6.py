@@ -131,6 +131,53 @@ def panel_player_proj():
     return fig
 
 
+def panel_pitching():
+    """Winning-cheap pitching signature: IP-weighted ERA/WHIP/BBy per group (2026)."""
+    import subprocess, json as J
+    # table-level re-aggregation inline from lake (clean, no module import cycle)
+    import sqlite3
+    TEAM = {"New York Yankees":"NYY","Houston Astros":"HOU","New York Mets":"NYM",
+      "Milwaukee Brewers":"MIL","Tampa Bay Rays":"TB","Arizona Diamondbacks":"AZ",
+      "Detroit Tigers":"DET","Los Angeles Dodgers":"LAD","Cleveland Guardians":"CLE",
+      "Miami Marlins":"MIA","Chicago White Sox":"CHW","St. Louis Cardinals":"STL",
+      "Texas Rangers":"TEX","Seattle Mariners":"SEA","San Francisco Giants":"SF",
+      "Boston Red Sox":"BOS","Philadelphia Phillies":"PHI","Atlanta Braves":"ATL",
+      "San Diego Padres":"SD","Toronto Blue Jays":"TOR","Minnesota Twins":"MIN",
+      "Baltimore Orioles":"BAL","Los Angeles Angels":"LAA","Chicago Cubs":"CHC",
+      "Cincinnati Reds":"CIN","Colorado Rockies":"COL","Kansas City Royals":"KC",
+      "Pittsburgh Pirates":"PIT","Washington Nationals":"WSH","Oakland Athletics":"ATH"}
+    con = sqlite3.connect(os.path.join(DATA, "mlb_lake.db"))
+    rows = []
+    for season, team, sjson in con.execute("SELECT season,team,stat_json FROM stat_lines WHERE group_name='pitching'"):
+        s = J.loads(sjson)
+        rows.append({"season": season, "code": TEAM.get(team, team), "IP": s.get("inningsPitched"),
+                     "ERA": s.get("era"), "WHIP": s.get("whip"), "BB": s.get("walks")})
+    con.close()
+    d = pd.DataFrame(rows)
+    for c in ["IP", "ERA", "WHIP", "BB"]:
+        d[c] = pd.to_numeric(d[c], errors="coerce")
+    d = d.dropna(subset=["IP", "ERA"])[d["IP"] >= 30]
+    d["grp"] = "OTHER"
+    d.loc[d["code"].isin(WIN_CHEAP), "grp"] = "WIN_CHEAP"
+    d.loc[d["code"].isin(CHEAP_MEDIOCRE), "grp"] = "CHEAP_MEDIOCRE"
+    d = d[d["season"] == 2026]
+    g = d.groupby("grp").apply(lambda x: pd.Series({
+        "ERA": (x["ERA"]*x["IP"]).sum()/x["IP"].sum(),
+        "WHIP": (x["WHIP"]*x["IP"]).sum()/x["IP"].sum(),
+        "BB/9": (x["BB"]*9/x["IP"]).sum()/len(x)}), include_groups=False)
+    metrics = ["ERA", "WHIP", "BB/9"]
+    labels = {"ERA":"ERA","WHIP":"WHIP","BB/9":"BB per 9 IP"}
+    fig = make_subplots(rows=1, cols=3, subplot_titles=[labels[m] for m in metrics])
+    colors = {"WIN_CHEAP":"#1b5e20","CHEAP_MEDIOCRE":"#e65100","OTHER":"#1565c0"}
+    for i, m in enumerate(metrics, start=1):
+        for grp in ["WIN_CHEAP","CHEAP_MEDIOCRE","OTHER"]:
+            fig.add_trace(go.Bar(x=[grp], y=[g.loc[grp, m]], marker_color=colors[grp],
+                                 showlegend=(i==1), name=grp), row=1, col=i)
+    fig.update_layout(title="2026 — Pitching is the other winning-cheap half: low-BB, low-WHIP, elite ERA",
+                      template="plotly_white", height=420)
+    return fig
+
+
 def build():
     df = kpi_mod.kpi_frame()
     df["group"] = "OTHER"
@@ -142,6 +189,7 @@ def build():
     fig3 = panel_projections()
     fig4 = panel_durability()
     fig5 = panel_player_proj()
+    fig6 = panel_pitching()
 
     # Self-contained offline demo: inline plotly so no internet needed at the
     # Winter Meetings. Caches the bundle next to the dashboard if present.
@@ -163,7 +211,8 @@ def build():
             "<br> " + fig2.to_html(full_html=False, include_plotlyjs=False) +
             "<br> " + fig3.to_html(full_html=False, include_plotlyjs=False) +
             "<br> " + fig4.to_html(full_html=False, include_plotlyjs=False) +
-            "<br> " + fig5.to_html(full_html=False, include_plotlyjs=False))
+            "<br> " + fig5.to_html(full_html=False, include_plotlyjs=False) +
+            "<br> " + fig6.to_html(full_html=False, include_plotlyjs=False))
 
     page = f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P6)</title>
 <style>body{{font-family:system-ui,sans-serif;margin:24px;background:#fafafa;color:#111}}
