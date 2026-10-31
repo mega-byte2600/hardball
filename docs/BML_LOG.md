@@ -128,4 +128,21 @@ verified by a real command run, not self-asserted. GP review pending on all.
 - Shipped: dashboard/hardball_demo.html updated.
 
 ---
+## Cycle 9 — player-level health applied to 2027 projections (works)
+- Built: src/bml_cycle9.py — matched per-player IL days from 35k archived
+  transactions to the 200-player Marcel projections; converts IL days to a
+  PA-availability penalty on projected playing time.
+- Measured: 136 players had IL days; median PA penalty 5.5%; 20 players
+  limited >=25%. Sane captures: Judge 180 IL days -> 253 projected PA (vs
+  naive 500), Polanco 210 -> 212, Soto 40 -> 445. Byron Buxton/Royce Lewis
+  (known-fragile) correctly capped.
+- Learned: this is the health lever working at the level the literature
+  requires (player, context-specific) — the team-level test (Cycle 2) failed
+  for exactly this reason. Availability-adjusted projections are a real,
+  citable upgrade over naive 500-PA. This is the health pillar as the GP
+  flagged it, finally applied.
+- Shipped: src/bml_cycle9.py, data/projections_2027_health.json.
+- NEXT: (optional) add an availability panel to dashboard.
+
+---
 (cycles appended as they complete)
