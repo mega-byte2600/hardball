@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Data — raw pulls and the lake DB are local artifacts, not source
+data/raw/
+data/mlb_lake.db
+
+# OS
+.DS_Store
