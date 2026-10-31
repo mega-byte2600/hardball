@@ -171,4 +171,18 @@ verified by a real command run, not self-asserted. GP review pending on all.
 - Shipped: src/bml_cycle11.py, data/projections_2027_pitchers.json.
 
 ---
+## Cycle 12 — cap-constrained roster builder (the decision artifact)
+- Built: src/bml_cycle12.py — assembles a 26-man winning-cheap roster (13H+13P)
+  from the health-adjusted hitter + pitcher projections, priced against the
+  cap ($245.3M) and 15% individual max ($36.8M). Outputs data/roster_2027.json.
+- Measured: on pure talent value the roster keeps selecting winning-cheap
+  players — Turang(MIL), Díaz(TB), Kwan(CLE) in bats; Misiorowski(MIL),
+  Rasmussen(TB), Messick(CLE) in arms. The formula produces the roster.
+- Learned: the demo now closes the full loop — data -> formula -> player picks
+  -> roster under cap. HONEST LIMIT stated on output: lake has no per-player
+  salaries, so this is TALENT selection under the cap constraint, not a dollar
+  answer (owners price real contracts against the same numbers).
+- Shipped: src/bml_cycle12.py, data/roster_2027.json.
+
+---
 (cycles appended as they complete)
