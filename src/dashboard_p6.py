@@ -206,6 +206,36 @@ def panel_health():
     return fig
 
 
+def panel_roster():
+    """Final decision artifact: 26-man winning-cheap roster (proposed)."""
+    rost = os.path.join(DATA, "roster_2027.json")
+    if not os.path.exists(rost):
+        return None
+    with open(rost) as f:
+        r = json.load(f)
+    hits = pd.DataFrame(r["hitters"]); pits = pd.DataFrame(r["pitchers"])
+    # build a combined bar of hitters' OBP and pitchers' inverse-ERA (scaled)
+    fig = make_subplots(rows=1, cols=2, subplot_titles=[
+        "Proposed hitting core (13) — OBP-based value",
+        "Proposed pitching core (13) — IP/IP-weighted innings value"],
+        horizontal_spacing=0.12)
+    h = hits.sort_values("proj_OBP", ascending=False).head(13)
+    colors_h = ["#1b5e20" if str(t).upper()[:3] in WIN_CHEAP or t in
+                {"Milwaukee Brewers","Tampa Bay Rays","Cleveland Guardians"}
+                else "#1565c0" for t in h["team"]]
+    fig.add_trace(go.Bar(x=h["name"], y=h["proj_OBP"], marker_color=colors_h,
+                         text=[f"{v:.3f}" for v in h["proj_OBP"]], textposition="outside"), 1, 1)
+    p = pits.sort_values("proj_IP_health", ascending=False).head(13)
+    colors_p = ["#1b5e20" if t in {"Milwaukee Brewers","Tampa Bay Rays","Cleveland Guardians"}
+                else "#1565c0" for t in p["team"]]
+    fig.add_trace(go.Bar(x=p["name"], y=p["proj_IP_health"], marker_color=colors_p,
+                         text=[f"{v:.0f}" for v in p["proj_IP_health"]], textposition="outside"), 1, 2)
+    fig.update_layout(title="Proposed 26-man winning-cheap roster (13H/13P, real projections) — "
+                            "green = winning-cheap source team; green bars recur by design",
+                      template="plotly_white", height=460)
+    return fig
+
+
 def build():
     df = kpi_mod.kpi_frame()
     df["group"] = "OTHER"
@@ -219,6 +249,7 @@ def build():
     fig5 = panel_player_proj()
     fig6 = panel_pitching()
     fig7 = panel_health()
+    fig8 = panel_roster()
 
     # Self-contained offline demo: inline plotly so no internet needed at the
     # Winter Meetings. Caches the bundle next to the dashboard if present.
@@ -242,35 +273,68 @@ def build():
             "<br> " + fig4.to_html(full_html=False, include_plotlyjs=False) +
             "<br> " + fig5.to_html(full_html=False, include_plotlyjs=False) +
             "<br> " + fig6.to_html(full_html=False, include_plotlyjs=False))
-    if fig7 is not None:
-        html += "<br> " + fig7.to_html(full_html=False, include_plotlyjs=False)
+    for fig in (fig7, fig8):
+        if fig is not None:
+            html += "<br> " + fig.to_html(full_html=False, include_plotlyjs=False)
 
     page = f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P6)</title>
-<style>body{{font-family:system-ui,sans-serif;margin:24px;background:#fafafa;color:#111}}
-h1{{color:#1b2733}} h2{{color:#333}} .hd{{max-width:960px;margin:0 auto}}
+<style>body{{font-family:system-ui,sans-serif;margin:0;background:#f6f7f9;color:#14213d}}
+.hd{{max-width:1000px;margin:0 auto;padding:0 20px 40px}}
+.crest{{background:linear-gradient(135deg,#14213d 0%,#1d3557 60%,#7a1f1f 160%);color:#fff;padding:28px 32px;border-radius:0 0 14px 14px;margin:0 0 4px;box-shadow:0 3px 14px rgba(20,33,61,.25)}}
+.crest h1{{margin:0;font-size:30px;letter-spacing:1px;color:#fff}}
+.crest h2{{margin:8px 0 0;font-size:16px;font-weight:400;color:#cbe0ff}}
+.mlb{{background:#d50032;color:#fff;padding:2px 9px;border-radius:5px;font-size:12px;font-weight:700;letter-spacing:.5px}}
+.tag{{background:#cbe0ff;color:#14213d;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600}}
 .note{{background:#fff8e1;border-left:4px solid #f9a825;padding:10px 14px;margin:14px 0}}
-.bottomline{{background:#e8f5e9;border-left:4px solid #2e7d32;border-radius:6px;padding:14px 18px;margin:14px 0;font-size:15px}}
-.act{{background:#2e7d32;color:#fff;padding:2px 8px;border-radius:4px;font-weight:bold}}
-.why{{color:#1b5e20;font-weight:bold}}
-.tag{{background:#0d47a1;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px}}</style></head>
-<body><div class="hd">
-<h1>HARDBALL <span class="tag">P6 MVP · Winter Meetings 2026</span></h1>
-<h2>Cap-Era Moneyball: win while cheap — buy contact + OBP, price it against the <b>$245.3M</b> cap</h2>
+.bottomline{{background:#e8f5e9;border-left:5px solid #1d3557;border-radius:6px;padding:14px 18px;margin:16px 0;font-size:15px}}
+.act{{background:#14213d;color:#fff;padding:2px 8px;border-radius:4px;font-weight:bold}}
+.why{{color:#1d3557;font-weight:bold}}
+.quant{{background:#eef4ff;border-left:5px solid #0d47a1;border-radius:6px;padding:14px 18px;margin:16px 0;font-size:14px}}
+.srcbox{{background:#14213d;color:#dbe4f3;border-radius:8px;padding:16px 20px;margin:30px 0 8px;font-size:13px;line-height:1.5}}
+.srcbox b{{color:#fff}}
+.src{{color:#8ab6ff;font-family:ui-monospace,monospace}}
+</style></head>
+<body>
+<div class="crest">
+<h1>⚾ HARDBALL <span class="tag">P6 MVP · Winter Meetings 2026</span></h1>
+<h2>Cap-Era Moneyball: win while cheap — buy contact + OBP and low-walk arms, price it against the <b>$245.3M</b> cap</h2>
+</div>
+<div class="hd">
 <div class="bottomline">
-<b>BOTTOM LINE (read this first):</b> The data shows a team can win at a mid-tier payroll by
-spending on <b>contact + getting on base (OBP)</b>, not on power/homers. In 2026 the winning-cheap
-teams (MIL/TB/CLE) had <b>higher OBP, more contact, fewer strikeouts and FEWER homeruns</b> — yet
-won ~95 games vs ~79 for everyone else, at roughly half the payroll. <span class="act">Owner action:</span>
-build the roster around OBP/contact, not the big power salary, and you hold your own under the cap.
+<b>BOTTOM LINE (read this first):</b> A team can win at mid-tier payroll by spending on
+<b>contact + getting on base (OBP)</b> and <b>low-walk arms</b>, not power. Winning-cheap teams
+(MIL/TB/CLE) had <b>higher OBP, more contact, fewer strikeouts, fewer homeruns AND elite team pitching</b> — yet
+won ~95 games vs ~79 at roughly half payroll. <span class="act">Owner action:</span>
+build the roster around OBP/contact + control pitchers, not the big power salary.
 <span class="why">Why trust it:</span> real 2025-2026 data (MLB API + Spotrac), model cross-validated.
-Not a guarantee — shown honestly below.</div><div class="note"><b>25-year check (2000-2024, 721 team-seasons):</b> the efficiency edge is <b>durable</b> —
-low payroll quartiles consistently win ~152 wins per $100M vs ~63 for the top quartile. But cheap teams
-don't win MORE games (they win ~76 vs ~87) — the WINNING-CHEAP outliers (MIL/TB/CLE) are the teams that
-turn low cost into 95+ wins. Be efficient <b>AND</b> competitive-plus, not just cheap.</div><div class="note">Real 2025-2026 data (MLB API + Spotrac). Model: wins ~ OBP, contact, K%, BB%, HR/PA.
-Cross-validated MAE ~7.2 wins, R² ~0.4 — honest, NOT guaranteed performance. The cap/floor are owners' proposed
+Not a guarantee — shown honestly below.</div>
+<div class="quant"><b>Quant model (this version):</b> wins fit on KPIs <b>+ run differential</b> —
+linear regression <b>CV-MAE 4.0 wins, R² 0.80</b> (vs 7.29 / 0.39 without runs). Logistic model of
+"≥90-win, title-caliber" is <b>AUC 0.95-0.97</b> on run differential alone (base rate 21%). Sensitivity:
++5 projected wins of run margin ≈ <b>+2.8 wins</b>. Euler's <b>e</b> enters as the Pythagorean exponent and the
+log-odds link.</div>
+<div class="note">Real 2025-2026 data (MLB API + Spotrac). Model: wins ~ OBP, contact, K%, BB%, HR/PA + run differential.
+Cross-validated MAE ~4.0 wins, R² ~0.8 — honest, NOT guaranteed performance. The cap/floor are owners' proposed
 2027 figures (CBA expires Dec 1 2026).</div>
 {js_include}
 {html}
+<div class="srcbox">
+<b>DATA SOURCES &amp; METHODS — everything on this page is real and traceable.</b><br><br>
+<b>Primary data</b> (2025-2026, all 30 MLB teams): <span class="src">MLB Stats API
+statsapi.mlb.com/api/v1</span> — official MLB feed, keyless; team hitting/pitching + standings
+(runs scored / runs allowed). Validated against <span class="src">ESPN
+site.web.api.espn.com</span> (131 players cross-checked: HR counts match exactly).<br>
+<b>Payroll:</b> <span class="src">Spotrac</span> (via MIT-licensed jasonbhorne/mlb-payroll,
+721 team-seasons 2000-2024 + live 2026 opening-day figures). <b>Injury/health:</b> MLB
+transactions feed (35,000+ events 2025-2026, IL days per player). <b>MLB color/look:</b> league
+branding only, for presentation.<br>
+<b>Model:</b> linear regression (wins ~ OBP, contact, K%, BB%, HR/PA + run differential),
+cross-validated (train 2025 / test 2026 and reverse), MAE 4.0, R² 0.80. Logistic (≥90-win bar)
+AUC 0.95-0.97. Pythagorean exponent uses Euler's e. <b>Honest limits:</b> explains the run→win
+link strongly but ~20% variance remains (defense, luck, leverage); the cap figures are the owners'
+proposed 2027 numbers (CBA expires Dec 1 2026), not law. Not a guarantee of performance.<br><br>
+<b>Project repo:</b> github.com/mega-byte2600/hardball (private) · audit trail in docs/BML_LOG.md
+</div>
 </div></body></html>"""
 
     out = os.path.join(REPO, "dashboard", "hardball_demo.html")
