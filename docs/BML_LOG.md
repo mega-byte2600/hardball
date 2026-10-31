@@ -40,4 +40,18 @@ verified by a real command run, not self-asserted. GP review pending on all.
 - Shipped: src/bml_cycle2.py, data/health_2025_2026.json, raw transactions.
 
 ---
+## Cycle 3 — does Statcast xwOBA add signal? → DATA PULLED, MEASUREMENT BLOCKED (honest status)
+- Built: src/bml_cycle3.py + src/bml_cycle3b.py — pulled Statcast pitch data
+  (statcast_2026.csv archived ~700k+ rows) and per-player leaderboard xwOBA
+  route (verified leaderboard CSV works, gives per-player xwOBA/xSLG).
+- Measured: NOT YET — team attribution requires mapping player->team across
+  60 roster calls, and the batch tool+attribution step did not complete
+  reliably in this session. Pitch CSV is retained in data/raw/.
+- Learned: the honest answer to "does xwOBA beat classic stats for team
+  wins?" is still OPEN. P3 stickiness lit suggests it's incremental, not
+  transformative. Must rerun to claim anything.
+- Shipped: source scripts committed; raw pitch archive retained (gitignored).
+  STATUS: measurement PENDING, not fabricated.
+
+---
 (cycles appended as they complete)
