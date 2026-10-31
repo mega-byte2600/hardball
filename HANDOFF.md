@@ -51,6 +51,31 @@ outside the repo). One bonus fix (G5) is included and flagged in its commit.
 - The G2 footer text is the only demo-copy change; no panel, chart, or
   bottom-line copy was altered.
 
+## Correction (2026-10-31, post-push — commit after 7ef9cea)
+The G1 pitching snapshot as first committed carried BB/9 = 0.0 for every
+group, and the original claim that it matched Cycle 6 was wrong for BB/9
+(ERA/WHIP did match). Root cause is a pre-existing repo bug, not the
+snapshot mechanism: the panel code read `s.get("walks")`, but the MLB API
+pitching field is `baseOnBalls` — walks were always null, so BB/9 was
+always 0. Fixed in `pitching_group_table()` and the snapshot regenerated
+and read back from disk: WIN_CHEAP BB/9 **2.3674** (Cycle 6: 2.37),
+CHEAP_MEDIOCRE 2.7674, OTHER 2.8375; rebuilt dashboard HTML verified to
+contain the corrected values. The error was caught when a duplicate
+command-result delivery contradicted an earlier readout — the snapshot
+file itself is now the verified source.
+
+**Same bug elsewhere on main (new finding G12, NOT fixed in this PR):**
+`src/bml_cycle7.py` and `src/bml_cycle11.py` also read `"walks"`.
+Consequences already sitting in committed data: `formula_pitching.json`
+has p_BB9 coefficient 0.0 (constant-zero feature — Cycle 7's headline
+result rests on ERA/WHIP/K9/HR9 and is not overturned, but its BB/9
+term never existed), and `data/projections_2027_pitchers.json` has
+proj_BB9 = 0.0 for all 76 pitchers. Cycle 6's published BB/9 numbers
+were correct because it used the API's own `walksPer9Inn` field.
+Fix = same one-line key change in both scripts + regenerate
+formula_pitching.json and the pitcher projections; recommend a
+follow-up commit, in this PR or the next.
+
 ## Not in this branch (audit remainder)
 G6 (2019 MAE 51.9 anomaly in lagged_forecast.json), G7 (BML log entries
 for cycles 14/16/17), G8 (formula_prod.json superseded metrics),

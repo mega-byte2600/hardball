@@ -167,7 +167,11 @@ def pitching_group_table():
         for season, team, sjson in con.execute("SELECT season,team,stat_json FROM stat_lines WHERE group_name='pitching'"):
             s = json.loads(sjson)
             rows.append({"season": season, "code": TEAM.get(team, team), "IP": s.get("inningsPitched"),
-                         "ERA": s.get("era"), "WHIP": s.get("whip"), "BB": s.get("walks")})
+                         "ERA": s.get("era"), "WHIP": s.get("whip"),
+                         # MLB API field is baseOnBalls — the original code read
+                         # "walks" (always null), so BB/9 silently computed as 0.0
+                         # for every group. Fixed 2026-10-31 (audit follow-up).
+                         "BB": s.get("baseOnBalls")})
     except sqlite3.OperationalError:
         return None
     finally:
