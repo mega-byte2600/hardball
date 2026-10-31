@@ -178,6 +178,34 @@ def panel_pitching():
     return fig
 
 
+def panel_health():
+    """Health pillar: top players by IL-based PA penalty (2027 projections)."""
+    ile = os.path.join(DATA, "projections_2027_health.json")
+    if not os.path.exists(ile):
+        return None
+    proj = pd.read_json(ile)
+    top = proj.nlargest(10, "pa_penalty_pct")
+    def grp(team):
+        t = (str(team) or "").upper()
+        ab = {"NEW YORK YANKEES":"NYY","HOUSTON ASTROS":"HOU","NEW YORK METS":"NYM",
+              "MILWAUKEE BREWERS":"MIL","TAMPA BAY RAYS":"TB","ARIZONA DIAMONDBACKS":"AZ",
+              "DETROIT TIGERS":"DET","LOS ANGELES DODGERS":"LAD","MINNESOTA TWINS":"MIN",
+              "SEATTLE MARINERS":"SEA","ST. LOUIS CARDINALS":"STL","ATLANTA BRAVES":"ATL",
+              "PITTSBURGH PIRATES":"PIT","CHICAGO WHITE SOX":"CHW"}.get(t.upper(), (t or "")[:3])
+        if ab in WIN_CHEAP: return "#1b5e20"
+        if ab in CHEAP_MEDIOCRE: return "#e65100"
+        return "#1565c0"
+    fig = go.Figure(go.Bar(
+        x=top["name"], y=top["pa_penalty_pct"],
+        marker_color=[grp(t) for t in top["team"]],
+        text=[f"-{v:.0f}% PA" for v in top["pa_penalty_pct"]], textposition="outside"))
+    fig.update_layout(title="2027 health risk (IL-based PA cap, 2025-26 real injury data) — "
+                            "playtime you should NOT count on",
+                      xaxis_title="", yaxis_title="Projected PA reduction (%)",
+                      template="plotly_white", height=400)
+    return fig
+
+
 def build():
     df = kpi_mod.kpi_frame()
     df["group"] = "OTHER"
@@ -190,6 +218,7 @@ def build():
     fig4 = panel_durability()
     fig5 = panel_player_proj()
     fig6 = panel_pitching()
+    fig7 = panel_health()
 
     # Self-contained offline demo: inline plotly so no internet needed at the
     # Winter Meetings. Caches the bundle next to the dashboard if present.
@@ -213,6 +242,8 @@ def build():
             "<br> " + fig4.to_html(full_html=False, include_plotlyjs=False) +
             "<br> " + fig5.to_html(full_html=False, include_plotlyjs=False) +
             "<br> " + fig6.to_html(full_html=False, include_plotlyjs=False))
+    if fig7 is not None:
+        html += "<br> " + fig7.to_html(full_html=False, include_plotlyjs=False)
 
     page = f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P6)</title>
 <style>body{{font-family:system-ui,sans-serif;margin:24px;background:#fafafa;color:#111}}
