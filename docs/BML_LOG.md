@@ -85,4 +85,20 @@ verified by a real command run, not self-asserted. GP review pending on all.
 - Shipped: dashboard updated, data CSVs committed. Commit a8b5a7f (pending).
 
 ---
+## Cycle 6 — pitching: do winning-cheap teams win on arms too? → YES (2026, real)
+- Built: src/bml_cycle6_pitching.py — measured 2025+2026 pitching stat-lines
+  (98 pitcher-seasons IP>=40) from the lake, IP-weighted, by group.
+- Measured (2026): WIN_CHEAP ERA 3.29 vs 3.60 (rest of league), WHIP 1.09 vs
+  1.19, BB/9 2.37 vs 2.82, K/9 ~9 (avg). The winning-cheap pitching was ELITE,
+  notably low-walk — mirrors the contact/OBP identity on the arms side.
+  2025: smaller edge (mostly K/9 9.22) — honest counter-evidence again.
+- Learned: the winning-cheap formula is TWO halves that rhyme —
+  contact/OBP bats + low-walk/prevent-run arms. And: the hitter-only model's
+  R2 ceiling ~0.4 ≈ the missing pitching half of MLB wins. Building a pitching
+  feature layer is the highest-value improvement to the demo (explains the
+  ~60% of wins the hitters don't). GP nailed 'pitching depth is critical'.
+- Shipped: src/bml_cycle6_pitching.py. NEXT: fold team pitching KPIs
+  (ERA/walk/contact%) into model_p6 features and re-measure CV MAE.
+
+---
 (cycles appended as they complete)
