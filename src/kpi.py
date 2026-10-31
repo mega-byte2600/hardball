@@ -41,6 +41,9 @@ def team_code_map(season=2026) -> dict:
     m[114] = "CLE"  # Guardians
     m[145] = "CHW"  # White Sox
     m[133] = "ATH"  # Athletics
+    m[109] = "ARI"  # Diamondbacks — MLB API says "AZ", payroll says "ARI";
+    # without this remap Arizona silently dropped out of the KPI merge
+    # (29 of 30 teams in the 2025/2026 snapshots before this fix).
     return m
 
 
