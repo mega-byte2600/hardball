@@ -86,6 +86,51 @@ def panel_projections(proj_fname="projections_2026.json"):
     return fig
 
 
+def panel_durability():
+    """25-year (2000-2024) payroll-quartile efficiency: win per $100M by quartile."""
+    d = pd.read_csv(os.path.join(DATA, "efficiency_2000_2024.csv"))
+    d["qt"] = d.groupby("yearID")["payroll"].transform(
+        lambda x: pd.qcut(x.rank(method="first"), 4, labels=False))
+    agg = d.groupby("qt").agg(win100=("wins_per_100m", "mean"),
+                              wins=("wins", "mean"),
+                              lab=("payroll", "mean"))
+    labels = [f"Q{i+1} (lowest ${agg['lab'][g]/1e6:.0f}M)" for i, g in enumerate([0,1,2,3])]
+    fig = make_subplots(rows=1, cols=2, subplot_titles=[
+        "Wins per $100M by payroll quartile (2000-2024)",
+        "Wins by payroll quartile (2000-2024)"])
+    colors = ["#2e7d32", "#8bc34a", "#ef6c00", "#1565c0"]
+    fig.add_trace(go.Bar(x=labels, y=agg["win100"].values, marker_color=colors,
+                         text=[f"{v:.0f}" for v in agg["win100"]], textposition="outside"), 1, 1)
+    fig.add_trace(go.Bar(x=labels, y=agg["wins"].values, marker_color=colors,
+                         text=[f"{v:.0f}" for v in agg["wins"]], textposition="outside"), 1, 2)
+    fig.update_layout(title="25-year proof (2000-2024, 721 team-seasons): efficiency is durable — "
+                             "BUT cheap wins per $, not wins (winning-cheap = both)",
+                      template="plotly_white", height=420)
+    return fig
+
+
+def panel_player_proj():
+    """2027 Marcel projections: top hitters by OBP, colored by team group."""
+    proj = pd.read_json(os.path.join(DATA, "projections_2027.json"))
+    top = proj.sort_values("proj_OBP", ascending=False).head(15)
+    def grp(team):
+        t = (str(team) or "").upper()
+        ab = {"NEW YORK YANKEES":"NYY","HOUSTON ASTROS":"HOU","NEW YORK METS":"NYM",
+              "MILWAUKEE BREWERS":"MIL","TAMPA BAY RAYS":"TB","ARIZONA DIAMONDBACKS":"AZ",
+              "DETROIT TIGERS":"DET","LOS ANGELES DODGERS":"LAD"}.get(t.upper(), (t or "")[:3])
+        if ab in WIN_CHEAP: return "green"
+        if ab in CHEAP_MEDIOCRE: return "orange"
+        return "steelblue"
+    colors = [grp(t) for t in top["team"]]
+    fig = go.Figure(go.Bar(x=top["name"], y=top["proj_OBP"], marker_color=colors,
+                           text=[f"{v:.3f}" for v in top["proj_OBP"]], textposition="outside"))
+    fig.update_layout(title="2027 projected hitters by OBP (Marcel, real lake data) — "
+                            "green = winning-cheap team",
+                      xaxis_title="", yaxis_title="Projected OBP",
+                      template="plotly_white", height=440)
+    return fig
+
+
 def build():
     df = kpi_mod.kpi_frame()
     df["group"] = "OTHER"
@@ -95,6 +140,8 @@ def build():
     fig1 = panel_payroll_wins(df, 2026)
     fig2 = panel_kpi(df, 2026)
     fig3 = panel_projections()
+    fig4 = panel_durability()
+    fig5 = panel_player_proj()
 
     # Self-contained offline demo: inline plotly so no internet needed at the
     # Winter Meetings. Caches the bundle next to the dashboard if present.
@@ -114,7 +161,9 @@ def build():
 
     html = (fig1.to_html(full_html=False, include_plotlyjs=False) +
             "<br> " + fig2.to_html(full_html=False, include_plotlyjs=False) +
-            "<br> " + fig3.to_html(full_html=False, include_plotlyjs=False))
+            "<br> " + fig3.to_html(full_html=False, include_plotlyjs=False) +
+            "<br> " + fig4.to_html(full_html=False, include_plotlyjs=False) +
+            "<br> " + fig5.to_html(full_html=False, include_plotlyjs=False))
 
     page = f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P6)</title>
 <style>body{{font-family:system-ui,sans-serif;margin:24px;background:#fafafa;color:#111}}
