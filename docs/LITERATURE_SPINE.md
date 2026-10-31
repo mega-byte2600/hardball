@@ -111,6 +111,44 @@ grounded-citations ledger (`~/.hermes/cache/citations/ledger.json`).
   descriptors; whether they add year-over-year *predictive* value on top of
   xwOBA is the empirically-testable question for P6 (test, don't assume).
 
+## 5. Injury / recovery (health variable — injury is a data source, not just a variable)
+
+The MLB Stats API exposes injury data (`teams/{id}/injuries`, league-wide
+`injuries`, transactions) — so injury history is a *pulled, real data source*
+we can join to projections, not a hypothetical.
+
+### Hitters absorb injury impact; pitchers absorb workload impact
+- **Oblique strains (2026)** — the injury with the biggest single published
+  hitter-performance bite: hitters declined SLG .43->.38, OBP .323->.303,
+  OPS .749->.686, BABIP .307->.280, avg exit velo 83.3->82.3, hard-hit
+  25.3%->23.0%, OPS+ 103->92 (all p<.001). Pitchers: only K/9 declined
+  (9.13->8.44). Time-to-return had no effect. Rehabilitation should restore
+  *rotational power* in hitters. [21]
+- **Shoulder labral repair** — a pitcher offramp: pitchers returned to MLB
+  43.6% vs position players 92.9%, and took >200 days longer (493 vs 285).
+  Returning pitchers were at <50% of preinjury fWAR their first season back;
+  IP dropped 95.7->43.1; Stuff+ stayed depressed into season 2. [22] health
+  flag for elite pitchers, not speed).
+- **UCL (systematic review, 18 studies n=2887)** — RTP 80-91%; recovery
+  ~11.6 months professionally; velocity is the strongest predictor of UCL
+  tears. [24]
+
+### Injury risk itself is modelable
+- ML ensemble predicted next-season MLB injury with AUC 0.76 (position
+  players) / 0.65 (pitchers) from age + injury history + performance. Injury
+  risk is a legitimate projection input, not noise. [23]
+- Workload (ACWR): acute:chronic ratio spikes >1.27 raised throwing-injury
+  risk ~15x in a tracked cohort; chronic load >11.3 elevated risk. Pitch
+  *count* alone is poor; velocity + intensity + age matter. [25][26]
+
+### What this adds to HARDBALL
+The market prices last season's *outcomes* but under-prices *recovery risk*
+(Tommy John arms, hitters post-oblique). A 2027 projection that flags a
+player as "past value masked by: injury history, position-specific recovery
+curve, workload" is a genuinely underpriced variable — Moneyball-compliant.
+Concretely: injury history + injury type + recovery timeline as features in
+the projection layer, joinable from the MLB injuries endpoint.
+
 ## Journals targeted (and why)
 
 | Journal / venue | Why |
@@ -166,3 +204,9 @@ grounded-citations ledger (`~/.hermes/cache/citations/ledger.json`).
 [18] https://mitsloan.mit.edu/shared/ods/documents?PublicationDocumentID=10724 — RBP: Prediction with Transparency - Offensive Value in Baseball (Czasonis/Kritzman, MIT/Cambridge Sports Analytics, Nov 2025)
 [19] https://arxiv.org/pdf/2109.05280 — Learning to Describe Player Form in the MLB (Heaton & Mitra, SSAC 2022 finalist)
 [20] https://news.mit.edu/2025/five-ways-to-succeed-sports-analytics-0313 — MIT News: Five ways to succeed in sports analytics (Lewis on Moneyball, Bill James runs created)
+[21] https://www.tandfonline.com/doi/full/10.1080/00913847.2026.2723859 — Oblique strains in MLB: hitter performance decline (2026)
+[22] https://pmc.ncbi.nlm.nih.gov/articles/PMC12953945 — RTP + performance after shoulder labral repair MLB (pitcher vs position)
+[23] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7672741/pdf/10.1177_2325967120963046.pdf — ML predicts next-season MLB injury: AUC 0.76 pos/0.65 pit (2020)
+[24] https://pmc.ncbi.nlm.nih.gov/articles/PMC12853774 — UCL injury mechanisms + RTP criteria systematic review
+[25] https://ijspt.org/wp-content/uploads/2024/01/4-Dowling-1.pdf — Workload comparison interval throwing programs, ACWR, >1.27 ~15x risk
+[26] https://pubmed.ncbi.nlm.nih.gov/40021256 — RTP throwing programs (Clin Sports Med 2025)
