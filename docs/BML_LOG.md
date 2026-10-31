@@ -237,3 +237,54 @@ verified by a real command run, not self-asserted. GP review pending on all.
   not a forward forecast. What survives is PLAYER-LEVEL acquisition (Marcel +
   injury caps -> roster), not a team-wins formula. Retracted the inflated R2 0.80
   claim from dashboard/docs. This is a proper negative result, logged honestly.
+
+---
+## Cycles 20-23 — CARPEDATA (every open/free endpoint, tested before trusted)
+Connector: src/carpe.py (keyless). Scorecard: docs/CARPE_SCORECARD.md —
+kept / dropped / unavailable, with reasons. All joins by MLBAM player_id;
+name-string joins are retired in this work (the AZ/ARI failure class).
+
+- Cycle 21 (src/bml_cycle21.py) — MARCEL BACKTEST, run first because it
+  sets the baseline: shipped 2-season (5:4) vs classic 3-season (5-4-3)
+  vs 3-season + age term (slope cross-fitted on the other year's
+  residuals; lake extended to 2023+2024 via the same MLB API). Targets
+  2025+2026, pooled n=196: A OBP MAE .0227 / SLG .0468; B .0226 / .0468
+  (3rd season = a wash, +1 player of coverage); C .0220 / .0453 — the age
+  term improved OOS in both directions. ADOPTED C's structure: cycle4
+  now runs the explicit 3-season window {2026:5, 2025:4, 2024:3} plus
+  pooled fitted age slopes (OBP .00158, SLG .00390 per year from age 27;
+  ages from the lake's own per-season payloads — the old aging step was
+  a hardcoded stub that adjusted nothing). Cascade regenerated (201
+  hitters, +Profar; Judge .457->.444; aging veterans down). Cycle 11
+  (pitchers) PINNED to its explicit 2-season window — untested there —
+  and verified byte-identical after the pin.
+- Cycle 20 (src/bml_cycle20.py) — SAVANT AT PLAYER LEVEL (Cycle 3 tested
+  team level and killed it; player level was untested). Q1: prior xwOBA
+  beats prior actual wOBA at predicting next-year wOBA in all 3 pairs
+  (MAE .0279/.0304, .0256/.0260, .0266/.0286) — xwOBA is the better
+  input. Q2: traits are far more stable than outcomes (YoY r: bat speed
+  .92, EV50 .90, barrel% .80, squared-up .80 vs OBP .30-.57, SLG .36-.59).
+  Q3: as ADJUSTMENTS on top of Marcel, every family failed the
+  both-directions OOS rule — bat tracking worsened both metrics both
+  directions; batted ball split; luck gap gained .0001-.0003 on OBP and
+  split on SLG. ADOPTED: nothing. Stability is not incremental value;
+  Marcel's outcome history already prices the traits. Savant ships as
+  diagnostics (dashboard trait panel), not projection inputs.
+- Cycle 22 (src/bml_cycle22.py) — BENCHMARK vs FanGraphs Steamer 2027
+  (id-joined, 201/201 hitters, 76/76 pitchers): hitters OBP r=.889
+  MAD=.010 bias=-.002; SLG r=.876 MAD=.020; top-25 OBP overlap 18/25.
+  (Pre-adoption Marcel measured r=.856 / overlap 15 — the Cycle 21 age
+  term measurably closed the benchmark gap.) Pitchers: ERA r=.663 but
+  bias -0.324 — the pitcher Marcel is systematically OPTIMISTIC vs the
+  public benchmark; WHIP bias -.093. Disclosed on the dashboard, open
+  item. ZiPS via the FG API returned empty — not included, not claimed.
+- Cycle 23 (src/bml_cycle23_pipeline.py) — MiLB PIPELINE INDEX: AAA/AA
+  under-26 qualified production by org (ages from real birthdates, fail
+  closed; AAA 1.0 / AA 0.85 level weights; volume x quality, avg=100).
+  STL 151, CLE 143, MIL 127, AZ 126, MIA 126; TB #7 at 112 — all three
+  winning-cheap orgs sit top-7 in near-MLB depth, and STL shows a strong
+  pipeline alone doesn't convert. Limitations in the JSON metadata
+  (upper minors only, no park adjustment, player-org units).
+- Dashboard: 10 -> 13 panels (benchmark scatter, Savant trait check,
+  pipeline index), each traceable to its source; clean-clone offline
+  build re-verified (13 panels, no lake, network blocked).
