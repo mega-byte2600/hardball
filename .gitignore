@@ -9,3 +9,10 @@ data/mlb_lake.db
 
 # OS
 .DS_Store
+
+# Generated dashboard artifacts — built from src/dashboard_p6.py.
+# plotly.min.js is vendored chart JS and hardball_demo.html embeds it;
+# neither is source. Regenerate: python src/dashboard_p6.py
+dashboard/plotly.min.js
+dashboard/hardball_demo.html
+
