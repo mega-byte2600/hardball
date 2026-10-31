@@ -1,10 +1,20 @@
 """BML Cycle 11: add PITCHER projections to the roster tool (currently hitter-only).
 
-Builds Marcel-style 2027 pitcher projections from REAL 2025+2026 lake data
+Builds Marcel-style 2027 pitcher projections from REAL lake data
 (IP, ERA, K/9, BB/9, WHIP), regression-to-mean, IP-availability scaling.
 Prometheus FF: completes the roster tool so an owner sees BOTH halves of
 the winning-cheap formula — contact/OBP bats AND low-walk arms.
 Outputs: data/projections_2027_pitchers.json + health-adjusted version.
+
+Method update (Cycle 24, 2026-10-31): the window is the explicit
+3-season {2026:5, 2025:4, 2024:3} plus a real-age adjustment whose
+slopes were fitted on the Cycle 24 backtest residuals (targets
+2025+2026 vs ACTUALS, n=59): ERA -0.03552, WHIP -0.00905 per year of
+age from 27 (older arms project worse than raw Marcel — the shipped
+2-season method was optimistic against reality too, bias -0.208 ERA,
+not just against Steamer; the age term cut pooled bias to -0.078 and
+MAE 0.744 -> 0.711). K/9 and BB/9 keep the plain weighted rates —
+the age term was measured on ERA/WHIP only.
 """
 import json
 import os
@@ -19,6 +29,9 @@ LAKE = os.path.join(DATA, "mlb_lake.db")
 RAW = os.path.join(DATA, "raw")
 
 LEAGUE = {"ERA": 4.00, "WHIP": 1.28, "K9": 8.8, "BB9": 3.1}
+# Age-adjustment slopes fitted in Cycle 24 on backtest residuals (n=59);
+# per year of age away from 27, applied for the 2027 target season.
+AGE_SLOPE = {"ERA": -0.03552, "WHIP": -0.00905}
 IL_DAYS = {"10-day injured list": 10, "60-day": 60, "15-day injured list": 15,
            "10-day": 10, "15-day": 15, "60-day injured list": 60}
 
@@ -42,7 +55,7 @@ def load_pitchers():
                      # which made proj_BB9 = 0.0 for all 76 pitchers in the
                      # committed projections (audit G12, fixed 2026-10-31).
                      "K": _num(s.get("strikeOuts")), "BB": _num(s.get("baseOnBalls")),
-                     "HR": _num(s.get("homeRuns"))})
+                     "HR": _num(s.get("homeRuns")), "age": s.get("age")})
     con.close()
     return pd.DataFrame(rows)
 
@@ -102,21 +115,24 @@ def main():
     rows = []
     for pid, g in df.groupby("name"):
         g = g.copy()
-        # explicit 2-season window (pinned 2026-10-31): the lake now holds
-        # 2023+2024 too, and the old .fillna(3) would have silently pulled
-        # them in at weight 3 and changed every projection. A 3-season /
-        # age-adjusted pitcher Marcel is untested — Cycle 21 tested
-        # hitters only — so the shipped pitcher method stays as measured.
-        g = g[g["season"].isin({2026, 2025})]
+        # explicit 3-season window + fitted age term (Cycle 24 — tested
+        # against actuals, see docstring). Seasons outside the map never
+        # enter; the pre-CarpeData .fillna(3) is gone for good.
+        g = g[g["season"].isin({2026, 2025, 2024})]
         if g.empty:
             continue
-        g["w"] = g["season"].map({2026: 5, 2025: 4})
+        g["w"] = g["season"].map({2026: 5, 2025: 4, 2024: 3})
         tot_ip = (g["IP"] * g["w"]).sum()
         if tot_ip < 300:
             continue
         team = g.sort_values("season")["team"].iloc[-1]
         era = marcel_rate("ERA", g, LEAGUE["ERA"])
         whip = marcel_rate("WHIP", g, LEAGUE["WHIP"])
+        known = g.dropna(subset=["age"]).sort_values("season")
+        if not known.empty:
+            age_target = known["age"].iloc[-1] + (2027 - known["season"].iloc[-1])
+            era += AGE_SLOPE["ERA"] * (27 - age_target)
+            whip += AGE_SLOPE["WHIP"] * (27 - age_target)
         k9 = (g["K"] * g["w"]).sum() / tot_ip * 9
         bb9 = (g["BB"] * g["w"]).sum() / tot_ip * 9
         ip_proj = min(200.0, tot_ip * 0.9)

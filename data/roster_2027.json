@@ -81,79 +81,72 @@
   ],
   "pitchers": [
     {
-      "name": "Cam Schlittler",
-      "team": "New York Yankees",
-      "proj_ERA": 1.96,
-      "proj_IP_health": 200.0,
-      "proj_K9": 11.1
-    },
-    {
       "name": "Jacob Misiorowski",
       "team": "Milwaukee Brewers",
-      "proj_ERA": 1.81,
+      "proj_ERA": 1.74,
       "proj_IP_health": 183.5,
       "proj_K9": 13.0
     },
     {
-      "name": "Tarik Skubal",
-      "team": "Detroit Tigers",
-      "proj_ERA": 2.22,
-      "proj_IP_health": 183.5,
-      "proj_K9": 11.1
-    },
-    {
-      "name": "Yoshinobu Yamamoto",
-      "team": "Los Angeles Dodgers",
-      "proj_ERA": 2.52,
+      "name": "Cam Schlittler",
+      "team": "New York Yankees",
+      "proj_ERA": 1.92,
       "proj_IP_health": 200.0,
-      "proj_K9": 9.5
+      "proj_K9": 11.1
     },
     {
       "name": "Parker Messick",
       "team": "Cleveland Guardians",
-      "proj_ERA": 2.56,
+      "proj_ERA": 2.5300000000000002,
       "proj_IP_health": 200.0,
       "proj_K9": 9.3
     },
     {
+      "name": "Yoshinobu Yamamoto",
+      "team": "Los Angeles Dodgers",
+      "proj_ERA": 2.55,
+      "proj_IP_health": 200.0,
+      "proj_K9": 9.5
+    },
+    {
+      "name": "Tarik Skubal",
+      "team": "Detroit Tigers",
+      "proj_ERA": 2.4,
+      "proj_IP_health": 183.5,
+      "proj_K9": 10.9
+    },
+    {
       "name": "Drew Rasmussen",
       "team": "Tampa Bay Rays",
-      "proj_ERA": 2.67,
+      "proj_ERA": 2.8200000000000003,
       "proj_IP_health": 200.0,
       "proj_K9": 9.1
     },
     {
-      "name": "Cristopher S\u00e1nchez",
-      "team": "Philadelphia Phillies",
-      "proj_ERA": 2.73,
-      "proj_IP_health": 200.0,
-      "proj_K9": 9.8
-    },
-    {
       "name": "Paul Skenes",
       "team": "Pittsburgh Pirates",
-      "proj_ERA": 3.0,
+      "proj_ERA": 2.93,
       "proj_IP_health": 200.0,
       "proj_K9": 10.4
     },
     {
-      "name": "Eduardo Rodriguez",
-      "team": "Arizona Diamondbacks",
-      "proj_ERA": 2.89,
-      "proj_IP_health": 183.5,
-      "proj_K9": 6.8
+      "name": "Cristopher S\u00e1nchez",
+      "team": "Philadelphia Phillies",
+      "proj_ERA": 2.99,
+      "proj_IP_health": 200.0,
+      "proj_K9": 9.3
     },
     {
       "name": "Nolan McLean",
       "team": "New York Mets",
-      "proj_ERA": 3.16,
+      "proj_ERA": 3.09,
       "proj_IP_health": 200.0,
       "proj_K9": 9.7
     },
     {
       "name": "Cade Cavalli",
       "team": "Washington Nationals",
-      "proj_ERA": 3.02,
+      "proj_ERA": 3.06,
       "proj_IP_health": 183.5,
       "proj_K9": 10.6
     },
@@ -165,11 +158,18 @@
       "proj_K9": 9.7
     },
     {
-      "name": "Max Fried",
-      "team": "New York Yankees",
-      "proj_ERA": 2.86,
-      "proj_IP_health": 167.0,
-      "proj_K9": 8.7
+      "name": "Eduardo Rodriguez",
+      "team": "Arizona Diamondbacks",
+      "proj_ERA": 3.14,
+      "proj_IP_health": 183.5,
+      "proj_K9": 6.8
+    },
+    {
+      "name": "Gavin Williams",
+      "team": "Cleveland Guardians",
+      "proj_ERA": 3.45,
+      "proj_IP_health": 200.0,
+      "proj_K9": 10.9
     }
   ],
   "cap": 245300000,

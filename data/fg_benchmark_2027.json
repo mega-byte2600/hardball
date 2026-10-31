@@ -346,31 +346,24 @@
     }
   },
   "pitchers": {
-    "marcel_n": 76,
+    "marcel_n": 102,
     "steamer_n_with_id": 5167,
-    "matched_n": 76,
+    "matched_n": 102,
     "id_resolution": "projections_2027_pitchers.json carries no player_id; ids resolved through the lake players registry, unique name->id mapping required",
     "unresolved_or_unmatched": [],
     "era": {
-      "n": 76,
-      "pearson_r": 0.663,
-      "mean_abs_diff": 0.556,
-      "mean_signed_diff_marcel_minus_steamer": -0.324
+      "n": 102,
+      "pearson_r": 0.636,
+      "mean_abs_diff": 0.524,
+      "mean_signed_diff_marcel_minus_steamer": -0.25
     },
     "whip": {
-      "n": 76,
-      "pearson_r": 0.715,
-      "mean_abs_diff": 0.115,
-      "mean_signed_diff_marcel_minus_steamer": -0.093
+      "n": 102,
+      "pearson_r": 0.717,
+      "mean_abs_diff": 0.1,
+      "mean_signed_diff_marcel_minus_steamer": -0.074
     },
     "biggest_disagreements_era": [
-      {
-        "player_id": 593958,
-        "name": "Eduardo Rodriguez",
-        "marcel": 2.89,
-        "steamer": 4.48357,
-        "diff_marcel_minus_steamer": -1.594
-      },
       {
         "player_id": 680730,
         "name": "Mitchell Parker",
@@ -379,132 +372,139 @@
         "diff_marcel_minus_steamer": 1.558
       },
       {
+        "player_id": 607200,
+        "name": "Erick Fedde",
+        "marcel": 3.55,
+        "steamer": 5.08778,
+        "diff_marcel_minus_steamer": -1.538
+      },
+      {
+        "player_id": 669203,
+        "name": "Corbin Burnes",
+        "marcel": 3.1,
+        "steamer": 4.63679,
+        "diff_marcel_minus_steamer": -1.537
+      },
+      {
         "player_id": 693645,
         "name": "Cam Schlittler",
-        "marcel": 1.96,
+        "marcel": 1.92,
         "steamer": 3.31939,
-        "diff_marcel_minus_steamer": -1.359
+        "diff_marcel_minus_steamer": -1.399
       },
       {
-        "player_id": 641793,
-        "name": "Zack Littell",
-        "marcel": 3.81,
-        "steamer": 5.13837,
-        "diff_marcel_minus_steamer": -1.328
+        "player_id": 571578,
+        "name": "Patrick Corbin",
+        "marcel": 5.97,
+        "steamer": 4.605,
+        "diff_marcel_minus_steamer": 1.365
       },
       {
-        "player_id": 592662,
-        "name": "Robbie Ray",
-        "marcel": 3.62,
-        "steamer": 4.85394,
-        "diff_marcel_minus_steamer": -1.234
+        "player_id": 593958,
+        "name": "Eduardo Rodriguez",
+        "marcel": 3.14,
+        "steamer": 4.48357,
+        "diff_marcel_minus_steamer": -1.344
       },
       {
-        "player_id": 686613,
-        "name": "Hunter Brown",
-        "marcel": 2.44,
-        "steamer": 3.65059,
-        "diff_marcel_minus_steamer": -1.211
+        "player_id": 669854,
+        "name": "Ronel Blanco",
+        "marcel": 3.02,
+        "steamer": 4.31687,
+        "diff_marcel_minus_steamer": -1.297
       },
       {
-        "player_id": 601713,
-        "name": "Nick Pivetta",
-        "marcel": 2.87,
-        "steamer": 4.05257,
-        "diff_marcel_minus_steamer": -1.183
+        "player_id": 592791,
+        "name": "Jameson Taillon",
+        "marcel": 3.56,
+        "steamer": 4.81644,
+        "diff_marcel_minus_steamer": -1.256
       },
       {
         "player_id": 694819,
         "name": "Jacob Misiorowski",
-        "marcel": 1.81,
+        "marcel": 1.74,
         "steamer": 2.93937,
-        "diff_marcel_minus_steamer": -1.129
+        "diff_marcel_minus_steamer": -1.199
       },
       {
-        "player_id": 607074,
-        "name": "Carlos Rod\u00f3n",
-        "marcel": 3.09,
-        "steamer": 4.16662,
-        "diff_marcel_minus_steamer": -1.077
-      },
-      {
-        "player_id": 622491,
-        "name": "Luis Castillo",
-        "marcel": 3.54,
-        "steamer": 4.57765,
-        "diff_marcel_minus_steamer": -1.038
+        "player_id": 641793,
+        "name": "Zack Littell",
+        "marcel": 3.95,
+        "steamer": 5.13837,
+        "diff_marcel_minus_steamer": -1.188
       }
     ],
     "biggest_disagreements_whip": [
       {
-        "player_id": 641793,
-        "name": "Zack Littell",
-        "marcel": 1.1,
-        "steamer": 1.40127,
-        "diff_marcel_minus_steamer": -0.301
-      },
-      {
         "player_id": 694819,
         "name": "Jacob Misiorowski",
-        "marcel": 0.8,
+        "marcel": 0.78,
         "steamer": 1.09789,
-        "diff_marcel_minus_steamer": -0.298
+        "diff_marcel_minus_steamer": -0.318
+      },
+      {
+        "player_id": 641927,
+        "name": "Bailey Ober",
+        "marcel": 1.04,
+        "steamer": 1.34965,
+        "diff_marcel_minus_steamer": -0.31
+      },
+      {
+        "player_id": 607200,
+        "name": "Erick Fedde",
+        "marcel": 1.22,
+        "steamer": 1.49124,
+        "diff_marcel_minus_steamer": -0.271
       },
       {
         "player_id": 808967,
         "name": "Yoshinobu Yamamoto",
-        "marcel": 0.92,
+        "marcel": 0.93,
         "steamer": 1.19266,
-        "diff_marcel_minus_steamer": -0.273
+        "diff_marcel_minus_steamer": -0.263
       },
       {
-        "player_id": 656876,
-        "name": "Drew Rasmussen",
-        "marcel": 0.91,
-        "steamer": 1.18018,
-        "diff_marcel_minus_steamer": -0.27
+        "player_id": 641793,
+        "name": "Zack Littell",
+        "marcel": 1.14,
+        "steamer": 1.40127,
+        "diff_marcel_minus_steamer": -0.261
       },
       {
-        "player_id": 607074,
-        "name": "Carlos Rod\u00f3n",
-        "marcel": 1.05,
-        "steamer": 1.30627,
-        "diff_marcel_minus_steamer": -0.256
-      },
-      {
-        "player_id": 686613,
-        "name": "Hunter Brown",
-        "marcel": 1.03,
-        "steamer": 1.26868,
-        "diff_marcel_minus_steamer": -0.239
-      },
-      {
-        "player_id": 601713,
-        "name": "Nick Pivetta",
-        "marcel": 0.99,
-        "steamer": 1.22341,
-        "diff_marcel_minus_steamer": -0.233
+        "player_id": 669203,
+        "name": "Corbin Burnes",
+        "marcel": 1.15,
+        "steamer": 1.40749,
+        "diff_marcel_minus_steamer": -0.257
       },
       {
         "player_id": 693645,
         "name": "Cam Schlittler",
-        "marcel": 0.92,
+        "marcel": 0.91,
         "steamer": 1.14898,
-        "diff_marcel_minus_steamer": -0.229
+        "diff_marcel_minus_steamer": -0.239
       },
       {
-        "player_id": 571510,
-        "name": "Matthew Boyd",
-        "marcel": 1.09,
-        "steamer": 1.3064,
-        "diff_marcel_minus_steamer": -0.216
+        "player_id": 682243,
+        "name": "Bryce Miller",
+        "marcel": 0.99,
+        "steamer": 1.22808,
+        "diff_marcel_minus_steamer": -0.238
       },
       {
-        "player_id": 669923,
-        "name": "George Kirby",
-        "marcel": 1.4,
-        "steamer": 1.18365,
-        "diff_marcel_minus_steamer": 0.216
+        "player_id": 656876,
+        "name": "Drew Rasmussen",
+        "marcel": 0.95,
+        "steamer": 1.18018,
+        "diff_marcel_minus_steamer": -0.23
+      },
+      {
+        "player_id": 656427,
+        "name": "Jack Flaherty",
+        "marcel": 1.11,
+        "steamer": 1.31122,
+        "diff_marcel_minus_steamer": -0.201
       }
     ]
   }
