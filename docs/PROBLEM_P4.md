@@ -1,47 +1,70 @@
-# HARDBALL — Problem Definition (P4)
+# HARDBALL — Problem Definition (P4) — REVISED for salary cap
 
-## The problem (as GP framed it)
+## The one-sentence problem
 
-Rank all 30 MLB teams by annual payroll. The top spenders (Dodgers,
-Yankees, Mets) outspend the bottom (Rays, Brewers, Guardians) by a wide
-margin — yet the cheap teams keep producing *more wins per dollar*. The
-market price of *power* is now efficient (everyone chases homeruns/barrels);
-the underpriced resource is **contact + on-base + affordable production**.
+Owners are about to impose a hard salary cap (proposed $245.3M cap / $171.2M
+floor for 2027; CBA expires Dec 1 2026, lockout expected Dec 2 [29][30]),
+force-crashing every team toward a bounded payroll band. The question is no
+longer "does money buy wins" — that's already done, answer known (money
+buys some wins, inefficiently). The question is:
 
-So the demo answer to: **"how do we identify the key metrics, KPIs, data,
-and variables, and derive a formula to help a team copy Brewers/Rays
-success?"** is not "compute more stats." It is a **value+construction
-playbook**: spend like the Rays, win like the Dodgers, by buying the cheap
-winning ingredients instead of the expensive ones.
+  **How does a team maximize wins at a MID-tier, cap-constrained payroll —
+  deploy money like the Rays/Brewers/Guardians, who reach competitive-plus
+  results (85-103 wins) at a fraction of big-market cost?**
 
-Core thesis, to be tested against real data (not asserted):
-  get on base with contact hits — NOT homeruns alone.
+The demo's job: give an owner the *construction playbook* — the KPI set, the
+data, and a formula — to win inside the cap.
 
-## Questions P6 must answer with real data (per team, 2025 + 2026)
+## Why this is NOT redoing what already exists
 
-1. Payroll (total rank + $ per team) vs wins/WAR — the efficiency table.
-2. Which performance KPIs discriminate efficient small-market teams from
-   the field (OBP, K%, BB%, contact rate, hard-hit, HR/PA, BA-on-contact,
-   defensive runs, speed?) — the "variable identification."
-3. Is contact+OBP genuinely cheaper per WAR than power?  (The buy-cheap-
-   ingredients claim — must be shown, not assumed.)
-4. A candidate formula: predicted wins per $100M = f(OBP, contact, K%,
-   BB%, avoided-HR-dependence, defense, ...) — an implementable model.
-5. Player-level: which individual cheap players outperform their payroll
-   (the "undervalued list" the market misprices).
+| Already done (descriptive) | Not yet done (what we build) |
+|---|---|
+| "Does payroll buy wins?" — cost-per-win tables; jasonbhorne/mlb-payroll and many show money->wins is real but weak [27] | **Constraint optimization under a hard cap**: given cap $245M and a 15% individual max, what *mix* of production maximizes wins — not "spend less" but "spend THIS way" |
+| "Small markets can be efficient" — retrospective praise of Rays/Brewers | **A forward-looking formula**: which KPIs discriminate winning-cheap teams from cheap-but-mediocre (MIA/CHW/STL won 80-84 cheap — that's NOT the goal), and how to buy that production |
+| Injury/aging/Statcast academic studies | **A deployable projection + roster-builder**: Marcel baseline + Statcast refinement + health adjustment + payroll-constrained mix — an owner tool, not a study |
 
-## Data requirements (CarpeData, real only)
+The trap we avoid: raw "cheap wins per dollar" rewards cheap mediocrity. Our
+edge is *winning while cheap* — CLE/TB/MIL (85-103 wins) at 1/3 to 1/4 of
+big-three cost. The cap makes this the survivable strategy for ALL 30 teams.
 
-- Team payroll 2025 + 2026 (new source to acquire)
-- Team + player performance (have: MLB API + ESPN; need Statcast layer)
-- Injury/recovery risk (have: MLB API injuries endpoint + literature)
-- All pulled to disk, cross-validated, self-archived. NO Kaggle.
+## Value-add for owners facing the cap (the pitch)
 
-## Guardrail (GP, standing)
-State findings as *capability* ("the formula ranks teams this way, and
-here's the evidence"), never as guaranteed performance. The demo must be
-honest about what the data shows — including if contact-over-power does NOT
-win, so we show the counter-evidence. That honesty is the credibility.
+1. **The cap doesn't just cap rich teams — it raises floor for everyone.**
+   Floor ~$171M means small markets get a budget increase they must not
+   waste. The demo shows where to deploy new dollars for wins (the reverse-
+   Moneyball: don't burn the new floor on one generational bat). [29]
+2. **Rich teams must CUT ~40-50%** (Dodgers CBT ~$433M -> ~$245M). They can't
+   buy their way out. The demo shows which spend is redundant (power-heavy,
+   low-marginal-ROI) vs which underpriced production (contact+OBP, health,
+   cheap WAR) survives a haircut.
+3. **Individual salary caps (15% max, ~$265M FA) break the "one $300M+
+   superstar + depth" model.** Roster construction must shift from concentrated
+   star-dollars to *spread, high-value production* — exactly contact/OBP/
+   defense the cheap winners already prove. [29]
+4. **Moneyball for the cap era**: when all 30 owners chase the same 11-12
+   proven bats under a cap, those bats inflate; the underpriced resource is
+   contact hitters, healthy arms, efficient mid-tier payroll — the
+   Rays/Brewers formula, now every owner's edge.
+
+## Hypothesis to test with real data (not asserted)
+
+Buy contact + OBP + affordable production, not homeruns alone. Under a cap
+the marginal value of a cheap OBP/contact bat exceeds a marginal dollar on a
+power bat. Must be SHOWN from 2025-2026 team + player data, including the
+counter-case (does it actually win?).
+
+## Guardrails (GP standing)
+- Findings stated as *capability* with evidence, never guaranteed performance.
+- Show the counter-evidence honestly (incl. if contact-over-power does NOT win).
+- Real data only (MLB API, ESPN, Spotrac payroll, Statcast), self-archived,
+  cross-validated. NO Kaggle.
+
+## Positioning vs demo date
+The CBA expires Dec 1 = the Winter Meetings. The demo is *the* timely,
+revenue-relevant artifact: owners arriving need a cap-era strategy, and
+HARDBALL hands them the construction formula with real 2025-26 evidence.
 
 ## Status
-P4 defined, in progress. Next: acquire payroll data source.
+P4 REVISED for cap reality. Next: P5 captures the KPI discriminators on real
+team data (which metrics separate winning-cheap from cheap-mediocre), then
+P6 builds the formula + dashboard. [29][30]
