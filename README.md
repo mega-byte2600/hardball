@@ -12,7 +12,7 @@ year to year; OBP is BABIP-luck noise. Winning-cheap teams (MIL/TB/CLE)
 over-index on exactly these inputs and win ~95 games at ~1/3-1/4 big-market cost.
 
 ## What you get
-- **DASHBOARD** — 12 figures, self-contained offline HTML (works without
+- **DASHBOARD** — 20 figures, self-contained offline HTML (works without
   internet at the meeting). See **How to run**.
 - **Data** — 16-season team panel (2011-2026, 509 team-seasons) + player
   projections + injury/IL history. All from public APIs, cached locally.
@@ -48,3 +48,26 @@ mean — this matches published literature and is stated on the dashboard. The
 cap/floor are owners' **proposed** 2027 figures (CBA expires Dec 1 2026), not law.
 
 Private repo. Audit trail in `docs/BML_LOG.md`.
+
+## Integration addendum (2026-10-31) — CarpeData + Boardroom lane merged
+A parallel lane (audit → CarpeData → solutions → finale → Boardroom,
+PRs #1-#5, integrated via PR #6) converged with the main lane on
+2026-10-31. What it adds:
+- **Audit G1–G12 closed**: clean-clone offline dashboard build, BB/9
+  field fix, Arizona code fixes, retracted-metric labeling
+  (formula_prod.json is annotated diagnostic-only), G6 root cause
+  (the 2019 fold predicts the 60-game 2020 season; grouped CV MAE
+  corrected 13.01 → 10.23).
+- **CarpeData**: keyless Baseball Savant + FanGraphs Steamer + MLB
+  minors connectors (src/carpe.py; docs/CARPE_SCORECARD.md). Marcel
+  backtests adopted fitted age terms for hitters AND pitchers
+  (Cycles 21/24); pitcher pool 76 → 102; Steamer benchmark panel.
+- **Real salaries + shopping list** (Cycle 25): Spotrac 2026 salaries
+  (927 rows) and the full 2027 FA class with Steamer WAR.
+- **Boardroom layer** (Cycle 26): animated 16-season payroll film,
+  pick-your-team explorer (all 30 clubs), and budget-scenario rosters
+  — floor $171.2M builds 42.0 WAR vs cap $245.3M at 52.3 WAR.
+- Dashboard is now **20 figures in 8 story sections**; P7 UAT approved
+  at MVP level by the owner 2026-10-31.
+Cycle numbering collided between lanes (two "Cycle 20-24" series) —
+see the integration note in docs/BML_LOG.md.
