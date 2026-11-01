@@ -58,23 +58,36 @@ def panel_payroll_wins(df, year=2026):
 
 
 def panel_kpi(df, year=2026):
+    """Copycat-league KPI signature. Clean: one shared legend, no repeat labels."""
     d = df[df["season"] == year].dropna(subset=["OBP", "contact", "K%", "BB%", "HR/PA"])
     grp = d.groupby("group")[["OBP", "contact", "K%", "BB%", "HR/PA"]].mean()
     metrics = ["OBP", "BB%", "HR/PA", "contact", "K%"]
-    labels = {"OBP": "OBP", "BB%": "BB%", "HR/PA": "HR / 1000 PA", "contact": "Contact %", "K%": "K%"}
-    fig = make_subplots(rows=1, cols=len(metrics), subplot_titles=[labels[m] for m in metrics])
+    labels = {"OBP": "OBP", "BB%": "BB%", "HR/PA": "HR / 1000 PA",
+              "contact": "Contact %", "K%": "K%"}
     colors = {"WIN_CHEAP": "#1b5e20", "CHEAP_MEDIOCRE": "#e65100", "OTHER": "#1565c0"}
+    gname = {"WIN_CHEAP": "Winning-cheap (MIL·TB·CLE)", "CHEAP_MEDIOCRE": "Cheap-mediocre",
+             "OTHER": "Other"}
+    fig = make_subplots(rows=1, cols=len(metrics),
+                        subplot_titles=[labels[m] for m in metrics],
+                        horizontal_spacing=0.10)
     for i, m in enumerate(metrics, start=1):
         for g in ["WIN_CHEAP", "CHEAP_MEDIOCRE", "OTHER"]:
-            fig.add_trace(go.Bar(x=[g], y=[grp.loc[g, m]], marker_color=colors[g],
-                                 showlegend=(i == 1), name=g), row=1, col=i)
-    fig.update_layout(title=f"{year} — Copycat-league KPI signature (winning-cheap dominates contact/OBP)",
-                      template="plotly_white", height=460,
-                      legend=dict(orientation="h", yanchor="bottom", y=1.02,
-                                  xanchor="right", x=1),
-                      barmode="group")
-    # Spread the 5 subplots evenly and angle the group labels so nothing overlaps
-    fig.update_xaxes(tickangle=30 if year else 0)
+            fig.add_trace(go.Bar(x=[gname[g]], y=[grp.loc[g, m]],
+                                 marker_color=colors[g], name=gname[g],
+                                 showlegend=(i == 1),
+                                 text=[f"{grp.loc[g, m]:.3f}" if m in ("OBP",)
+                                       else f"{grp.loc[g, m]:.1f}"],
+                                 textposition="outside",
+                                 hovertemplate=f"{labels[m]}: %{{y:.3f}}<extra>{gname[g]}</extra>"),
+                          row=1, col=i)
+    fig.update_layout(title=f"{year} — Copycat-league KPI signature (winning-cheap leads contact & OBP)",
+                      template="plotly_white", height=440,
+                      barmode="group",
+                      legend=dict(orientation="h", yanchor="bottom", y=1.10,
+                                  xanchor="left", x=0, font=dict(size=11)),
+                      margin=dict(l=40, r=20, t=110, b=40))
+    fig.update_xaxes(showticklabels=False, showgrid=False, zeroline=False)
+    fig.update_yaxes(showgrid=True, gridcolor="#eef1f6")
     return fig
 
 
@@ -99,18 +112,34 @@ def panel_durability():
     agg = d.groupby("qt").agg(win100=("wins_per_100m", "mean"),
                               wins=("wins", "mean"),
                               lab=("payroll", "mean"))
-    labels = [f"Q{i+1} (lowest ${agg['lab'][g]/1e6:.0f}M)" for i, g in enumerate([0,1,2,3])]
+    labels = [f"Q{i+1}" for i in range(4)]
+    qlabs = [f"Q{i+1} (${agg['lab'][g]/1e6:.0f}M)" for i, g in enumerate([0,1,2,3])]
     fig = make_subplots(rows=1, cols=2, subplot_titles=[
-        "Wins per $100M by payroll quartile (2000-2024)",
-        "Wins by payroll quartile (2000-2024)"])
+        "Wins per $100M (payroll quartile, 2000-2024)",
+        "Wins by payroll quartile (2000-2024)"],
+        horizontal_spacing=0.18)
     colors = ["#2e7d32", "#8bc34a", "#ef6c00", "#1565c0"]
     fig.add_trace(go.Bar(x=labels, y=agg["win100"].values, marker_color=colors,
-                         text=[f"{v:.0f}" for v in agg["win100"]], textposition="outside"), 1, 1)
+                         text=[f"{v:.0f}" for v in agg["win100"]], textposition="outside",
+                         name="Wins per $100M",
+                         hovertemplate="%{x}<br>" + "avg payroll %{customdata}<extra></extra>",
+                         customdata=qlabs), 1, 1)
     fig.add_trace(go.Bar(x=labels, y=agg["wins"].values, marker_color=colors,
-                         text=[f"{v:.0f}" for v in agg["wins"]], textposition="outside"), 1, 2)
+                         text=[f"{v:.0f}" for v in agg["wins"]], textposition="outside",
+                         name="Wins",
+                         hovertemplate="%{x}<br>" + "avg payroll %{customdata}<extra></extra>",
+                         customdata=qlabs), 1, 2)
     fig.update_layout(title="25-year proof (2000-2024, 721 team-seasons): efficiency is durable — "
-                             "BUT cheap wins per $, not wins (winning-cheap = both)",
-                      template="plotly_white", height=420)
+                             "but cheap wins per $, not wins (winning-cheap = both)",
+                      template="plotly_white", height=420,
+                      legend_title_text="Q = payroll quartile (1 = lowest $)",
+                      margin=dict(l=50, r=20, t=100, b=40))
+    # color explanation for the quartiles (real average payroll per quartile)
+    for i, c in enumerate(["#2e7d32", "#8bc34a", "#ef6c00", "#1565c0"]):
+        lab = f"Q{i+1} (avg ${agg['lab'][i]/1e6:.0f}M)"
+        fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers", marker=dict(color=c, size=9), name=lab))
+    fig.update_xaxes(showgrid=False)
+    fig.update_yaxes(showgrid=True, gridcolor="#eef1f6")
     return fig
 
 
@@ -234,32 +263,42 @@ def panel_roster():
     with open(rost) as f:
         r = json.load(f)
     hits = pd.DataFrame(r["hitters"]); pits = pd.DataFrame(r["pitchers"])
-    # build a combined bar of hitters' OBP and pitchers' inverse-ERA (scaled)
-    fig = make_subplots(rows=1, cols=2, subplot_titles=[
-        "Proposed hitting core (13) — OBP-based value",
-        "Proposed pitching core (13) — IP/IP-weighted innings value"],
-        horizontal_spacing=0.12)
+    # HORIZONTAL bars so player names stack cleanly (vertical overlapped before)
+    fig = make_subplots(rows=1, cols=2,
+                        subplot_titles=["Proposed hitting core (13) — projected OBP",
+                                        "Proposed pitching core (13) — health-weighted innings"],
+                        horizontal_spacing=0.30)
     h = hits.sort_values("proj_OBP", ascending=False).head(13)
     colors_h = ["#1b5e20" if str(t).upper()[:3] in WIN_CHEAP or t in
                 {"Milwaukee Brewers","Tampa Bay Rays","Cleveland Guardians"}
                 else "#1565c0" for t in h["team"]]
-    fig.add_trace(go.Bar(x=h["name"], y=h["proj_OBP"], marker_color=colors_h,
-                         text=[f"{v:.3f}" for v in h["proj_OBP"]], textposition="outside"), 1, 1)
+    fig.add_trace(go.Bar(y=h["name"], x=h["proj_OBP"], orientation="h",
+                         marker_color=colors_h, name="Projected OBP",
+                         text=[f"{v:.3f}" for v in h["proj_OBP"]], textposition="inside",
+                         insidetextanchor="end"), 1, 1)
     p = pits.sort_values("proj_IP_health", ascending=False).head(13)
     colors_p = ["#1b5e20" if t in {"Milwaukee Brewers","Tampa Bay Rays","Cleveland Guardians"}
                 else "#1565c0" for t in p["team"]]
-    fig.add_trace(go.Bar(x=p["name"], y=p["proj_IP_health"], marker_color=colors_p,
-                         text=[f"{v:.0f}" for v in p["proj_IP_health"]], textposition="outside"), 1, 2)
+    fig.add_trace(go.Bar(y=p["name"], x=p["proj_IP_health"], orientation="h",
+                         marker_color=colors_p, name="Projected IP",
+                         text=[f"{v:.0f}" for v in p["proj_IP_health"]], textposition="inside",
+                         insidetextanchor="end"), 1, 2)
     fig.update_layout(title="Proposed 26-man winning-cheap roster (13H/13P, real projections) — "
-                            "green = winning-cheap source team; green bars recur by design",
-                      template="plotly_white", height=460)
+                            "green = winning-cheap source team; blue = other",
+                      template="plotly_white", height=620,
+                      barmode="overlay", bargap=0.15,
+                      legend=dict(orientation="h", yanchor="bottom", y=1.05,
+                                  xanchor="left", x=0, font=dict(size=11)),
+                      margin=dict(l=120, r=30, t=110, b=40))
+    fig.update_xaxes(showgrid=True, gridcolor="#eef1f6")
+    fig.update_yaxes(showgrid=False, automargin=True)
     # legend for the green/blue color meaning
     fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
                              marker=dict(color="#1b5e20", size=10),
-                             name="Green = winning-cheap source team (MIL/TB/CLE)"))
+                             name="Green = winning-cheap source team (MIL/TB/CLE)", showlegend=True))
     fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
                              marker=dict(color="#1565c0", size=10),
-                             name="Blue = other team"))
+                             name="Blue = other team", showlegend=True))
     return fig
 
 
@@ -275,10 +314,17 @@ def panel_runs():
         if team in CHEAP_MEDIOCRE: return "#e65100"
         return "#1565c0"
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=d26["RD"], y=d26["wins"], mode="markers+text",
-                             marker=dict(color=[grp(t) for t in d26["team"]], size=13),
-                             text=[f"<b>{t}</b>" for t in d26["team"]],
-                             textposition="top center", name="2026 teams"))
+    # Clean: markers only, team names on hover (labels overlapped before)
+    for gname, sel in [("Winning-cheap (MIL·TB·CLE)", d26["team"].isin(WIN_CHEAP)),
+                       ("Cheap-mediocre (MIA·CHW·STL)", d26["team"].isin(CHEAP_MEDIOCRE)),
+                       ("Other", ~d26["team"].isin(WIN_CHEAP | CHEAP_MEDIOCRE))]:
+        sub = d26[sel]
+        fig.add_trace(go.Scatter(
+            x=sub["RD"], y=sub["wins"], mode="markers", name=gname,
+            marker=dict(color=[grp(t) for t in sub["team"]], size=13, line=dict(color="#fff", width=1)),
+            text=[f"<b>{t}</b> — {rd:+.0f} RD, {w} wins" for t, rd, w in
+                  zip(sub["team"], sub["RD"], sub["wins"])],
+            hovertemplate="%{text}<extra></extra>"))
     # fit line (ordinal least squares) to show the run->win relation
     import numpy as _np
     b, a = _np.polyfit(d26["RD"].values, d26["wins"].values, 1)
@@ -286,16 +332,13 @@ def panel_runs():
     fig.add_trace(go.Scatter(x=xs, y=a + b * xs, mode="lines",
                              line=dict(color="#d50032", dash="dash", width=2),
                              name=f"fit: wins ≈ {a:.0f} + {b:.2f}·RunDiff (R² see source)"))
-    # legend for point colors
-    for label, c in [("Green = winning-cheap (MIL/TB/CLE)", "#1b5e20"),
-                     ("Orange = cheap-mediocre (MIA/CHW/STL)", "#e65100"),
-                     ("Blue = other", "#1565c0")]:
-        fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
-                                 marker=dict(color=c, size=10), name=label))
-    fig.update_layout(title="The top lever — run differential → wins (2026, real)",
+    fig.update_layout(title="The top lever — run differential → wins (2026, real); hover any dot for the team",
                       xaxis_title="Run differential (scored − allowed)",
-                      yaxis_title="Wins", template="plotly_white", height=420,
-                      xaxis_range=[-150, 350])
+                      yaxis_title="Wins", template="plotly_white", height=440,
+                      xaxis_range=[-150, 350],
+                      legend=dict(orientation="h", yanchor="bottom", y=1.02,
+                                  xanchor="left", x=0, font=dict(size=11)),
+                      margin=dict(l=60, r=30, t=90, b=50))
     return fig
 
 
@@ -369,13 +412,17 @@ def panel_value_metrics():
     def c(cd):
         return ("#1b5e20" if cd in WIN_CHEAP else
                 "#e65100" if cd in CHEAP_MEDIOCRE else "#1565c0")
+    # HORIZONTAL bars: team codes stack cleanly, no vertical-name collision
     fig = make_subplots(rows=2, cols=1, shared_xaxes=False,
                         subplot_titles=("Hitting value — wRC+ (100 = league avg)",
-                                        "Pitching value — FIP (lower = better)"))
-    fig.add_trace(go.Bar(x=h["team"], y=h["wRC+"], marker_color=[c(t) for t in h["team"]],
+                                        "Pitching value — FIP (lower = better)"),
+                        vertical_spacing=0.16)
+    fig.add_trace(go.Bar(y=h["team"], x=h["wRC+"], orientation="h",
+                         marker_color=[c(t) for t in h["team"]],
                          text=[f"{v:.0f}" for v in h["wRC+"]], textposition="outside",
                          name="wRC+"), 1, 1)
-    fig.add_trace(go.Bar(x=p["team"], y=p["FIP"], marker_color=[c(t) for t in p["team"]],
+    fig.add_trace(go.Bar(y=p["team"], x=p["FIP"], orientation="h",
+                         marker_color=[c(t) for t in p["team"]],
                          text=[f"{v:.2f}" for v in p["FIP"]], textposition="outside",
                          name="FIP"), 2, 1)
     for label, col in [("Green = winning-cheap (MIL/TB/CLE)", "#1b5e20"),
@@ -385,9 +432,12 @@ def panel_value_metrics():
                                  marker=dict(color=col, size=10), name=label))
     fig.update_layout(title="Top value metrics — wOBA/wRC+ & FIP/K-BB% (2026, computed from real box scores). "
                             "WAR itself is proprietary (fWAR/bWAR) & not in the MLB API — these are its inputs.",
-                      template="plotly_white", height=520, showlegend=True)
-    fig.update_yaxes(title_text="wRC+", row=1, col=1, zeroline=True)
-    fig.update_yaxes(title_text="FIP", row=2, col=1, zeroline=True)
+                      template="plotly_white", height=640, showlegend=True,
+                      legend=dict(orientation="h", yanchor="bottom", y=1.02,
+                                  xanchor="right", x=1, font=dict(size=11)),
+                      margin=dict(l=60, r=40, t=100, b=40))
+    fig.update_yaxes(automargin=True)
+    fig.update_xaxes(showgrid=True, gridcolor="#eef1f6", zeroline=True, zerolinecolor="#d7dde8")
     return fig
 
 
