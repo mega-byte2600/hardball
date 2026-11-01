@@ -1,11 +1,12 @@
 """P6: HARDBALL demo dashboard (Plotly HTML) — INTEGRATED build.
 
-Twenty figures on real data: the main lane's 13 (payroll/KPI/
+Twenty-one figures on real data: the main lane's 13 (payroll/KPI/
 projections/durability/players/pitching/health/roster/runs/
 sensitivity + skill persistence, value metrics, cap scenario)
 plus the CarpeData/Boardroom 7 (Steamer benchmark, Savant trait
 check, MiLB pipeline, FA shopping list, animated 16-season
-payroll film, pick-your-team explorer, budget-scenario rosters),
+payroll film, pick-your-team explorer, budget-scenario rosters)
+plus the Cycle 30 forced-seller panel,
 presented in eight story sections with stat cards. Builds from a
 clean clone OFFLINE from committed snapshots (audit G1).
 """
@@ -394,6 +395,62 @@ def panel_cap_scenario():
         height=460, margin=dict(l=60, r=40, t=64, b=96),
         annotations=[dict(x=0.5, y=-0.45, xref="paper", yref="paper", showarrow=False,
                           text="2027 hard cap $245.3M · floor $171.2M · CBA expires Dec 1, 2026",
+                          font=dict(size=11, color="#4a5a72"))])
+    return fig
+
+
+def panel_forced_sellers():
+    """Cycle 30: the forced sellers — the fewest big contracts that
+    arithmetically close each over-cap team's gap. Bar = cumulative
+    salary of the minimal largest-first shed set; diamond = the gap.
+    Arithmetic only, NOT a trade prediction: shedding is assumed to
+    remove the full listed salary. CHC is excluded, not zero — its
+    Spotrac page failed in Cycle 25, so it has no contract rows."""
+    fj = os.path.join(DATA, "forced_sellers_2027.json")
+    if not os.path.exists(fj):
+        return None
+    d = json.load(open(fj))
+    teams = [t for t in d["teams"] if t["covered"]]
+    if not teams:
+        return None
+    teams = sorted(teams, key=lambda t: -t["gap_to_cap"])
+    labels = [t["team"] for t in teams]
+    shed_m = [t["shed_total"] / 1e6 for t in teams]
+    gap_m = [t["gap_to_cap"] / 1e6 for t in teams]
+    bar_text = [f"{t['n_shed']} contract{'s' if t['n_shed'] > 1 else ''} · "
+                f"${t['shed_total']/1e6:.1f}M" for t in teams]
+    hover = ["<br>".join(
+        [f"{t['team']}: gap ${t['gap_to_cap']/1e6:.1f}M"] +
+        [f"{s['name']} ({s['pos']}) ${s['salary_2026']/1e6:.1f}M"
+         for s in t["shed"]]) for t in teams]
+    fig = go.Figure()
+    fig.add_trace(go.Bar(y=labels, x=shed_m, orientation="h",
+                         marker_color="#d50032", text=bar_text,
+                         textposition="outside", hovertext=hover,
+                         hoverinfo="text", name="Shed set"))
+    fig.add_trace(go.Scatter(y=labels, x=gap_m, mode="markers",
+                             marker=dict(symbol="diamond", size=13,
+                                         color="#14213d"),
+                             hovertext=[f"gap ${g:.1f}M" for g in gap_m],
+                             hoverinfo="text", name="Cap gap"))
+    fig.update_layout(
+        title=("Forced sellers — how few big contracts close each "
+               "over-cap gap<br><sub>Arithmetic only, not a trade "
+               "prediction — shedding is assumed to remove the full "
+               "listed salary, and real trades rarely do that · Coverage "
+               "6 of 7 over-cap teams — CHC ($4.0M over) has no contract "
+               "rows because its Spotrac page failed in Cycle 25 · "
+               "Salaries are the Spotrac 2026 Payroll Salary rows as "
+               "committed, gaps are from the cap scenario file</sub>"),
+        xaxis_title="Salary ($M)", template="plotly_white",
+        height=460, margin=dict(l=60, r=40, t=64, b=96),
+        xaxis_range=[0, max(shed_m) * 1.35],
+        annotations=[dict(x=0.5, y=-0.28, xref="paper", yref="paper",
+                          showarrow=False,
+                          text="Every covered team closes its gap by "
+                               "shedding at most 3 contracts; TOR and ATL "
+                               "need just 1 — the cap binds through a "
+                               "handful of deals, not a rebuild",
                           font=dict(size=11, color="#4a5a72"))])
     return fig
 
@@ -834,6 +891,7 @@ def build():
     fig_persist = panel_skill_persistence()
     fig_value = panel_value_metrics()
     fig_capscen = panel_cap_scenario()
+    fig_forced = panel_forced_sellers()
     fig_anim = panel_animation()
     fig_team = panel_team_explorer()
     fig_bench = panel_benchmark()
@@ -852,7 +910,8 @@ def build():
          "contact, more OBP, fewer strikeouts — for 25 straight years.",
          [fig_kpi, fig_dur]),
         ("III", "The Cap", "The owners' proposed 2027 cap, priced team "
-         "by team.", [fig_proj, fig_capscen]),
+         "by team — and what the over-cap clubs must shed to comply.",
+         [fig_proj, fig_capscen, fig_forced]),
         ("IV", "The Players", "Backtested Marcel projections, "
          "health-capped — the actual shopping-grade numbers.",
          [fig_hit, fig_pit, fig_health]),
@@ -1022,9 +1081,9 @@ figures are not yet law. No performance guarantee is implied.</div>
 <span class="k"><b>wOBA / wRC+</b> = overall hitting value, 100 = league average</span>
 <span class="k"><b>FIP</b> = pitching quality (a pitcher's own doing; lower = better)</span>
 <span class="k"><b>K-BB%</b> = strikeouts minus walks = how dominant a pitcher is</span>
-<span class="k"><b>WAR</b> = the famous player-value stat — it's <u>proprietary &amp; absent from our data</u>; we show its real inputs instead (see Figure 18)</span></div>
+<span class="k"><b>WAR</b> = the famous player-value stat — it's <u>proprietary &amp; absent from our data</u>; we show its real inputs instead (see Figure 19)</span></div>
 {js_include}
-<div class="figidx"><b>FIGURE INDEX — the story at a glance (all 20 real-data charts below)</b><br>
+<div class="figidx"><b>FIGURE INDEX — the story at a glance (all 21 real-data charts below)</b><br>
 <span>1</span> Press play: 16 seasons of payroll vs wins &nbsp;·&nbsp;
 <span>2</span> Pick your team &nbsp;·&nbsp;
 <span>3</span> The measurable edge — skills persist (contact r=.90) &nbsp;·&nbsp;
@@ -1034,17 +1093,18 @@ figures are not yet law. No performance guarantee is implied.</div>
 <span>7</span> 25-yr durability &nbsp;·&nbsp;
 <span>8</span> Projected wins at the cap &nbsp;·&nbsp;
 <span>9</span> Cap-era reality &nbsp;·&nbsp;
-<span>10</span> 2027 hitters &nbsp;·&nbsp;
-<span>11</span> Pitching &nbsp;·&nbsp;
-<span>12</span> Health &nbsp;·&nbsp;
-<span>13</span> 2027 roster &nbsp;·&nbsp;
-<span>14</span> What does the money buy (3 budgets) &nbsp;·&nbsp;
-<span>15</span> Sensitivity &nbsp;·&nbsp;
-<span>16</span> Marcel vs Steamer benchmark &nbsp;·&nbsp;
-<span>17</span> Savant trait check &nbsp;·&nbsp;
-<span>18</span> Value metrics &nbsp;·&nbsp;
-<span>19</span> MiLB pipeline index &nbsp;·&nbsp;
-<span>20</span> The 2027 shopping list</div>
+<span>10</span> Forced sellers: the contracts that close each cap gap &nbsp;·&nbsp;
+<span>11</span> 2027 hitters &nbsp;·&nbsp;
+<span>12</span> Pitching &nbsp;·&nbsp;
+<span>13</span> Health &nbsp;·&nbsp;
+<span>14</span> 2027 roster &nbsp;·&nbsp;
+<span>15</span> What does the money buy (3 budgets) &nbsp;·&nbsp;
+<span>16</span> Sensitivity &nbsp;·&nbsp;
+<span>17</span> Marcel vs Steamer benchmark &nbsp;·&nbsp;
+<span>18</span> Savant trait check &nbsp;·&nbsp;
+<span>19</span> Value metrics &nbsp;·&nbsp;
+<span>20</span> MiLB pipeline index &nbsp;·&nbsp;
+<span>21</span> The 2027 shopping list</div>
 {html}
 <div class="srcbox">
 <b>DATA SOURCES &amp; METHODS — everything on this page is real and traceable.</b><br><br>

@@ -12,7 +12,7 @@ year to year; OBP is BABIP-luck noise. Winning-cheap teams (MIL/TB/CLE)
 over-index on exactly these inputs and win ~95 games at ~1/3-1/4 big-market cost.
 
 ## What you get
-- **DASHBOARD** — 20 figures, self-contained offline HTML (works without
+- **DASHBOARD** — 21 figures, self-contained offline HTML (works without
   internet at the meeting). See **How to run**.
 - **Data** — 16-season team panel (2011-2026, 509 team-seasons) + player
   projections + injury/IL history. All from public APIs, cached locally.
@@ -68,7 +68,7 @@ PRs #1-#5, integrated via PR #6) converged with the main lane on
 - **Boardroom layer** (Cycle 26): animated 16-season payroll film,
   pick-your-team explorer (all 30 clubs), and budget-scenario rosters
   — floor $171.2M builds 42.0 WAR vs cap $245.3M at 52.3 WAR.
-- Dashboard is now **20 figures in 8 story sections**; P7 UAT approved
+- Dashboard is now **21 figures in 8 story sections**; P7 UAT approved
   at MVP level by the owner 2026-10-31.
 Cycle numbering collided between lanes (two "Cycle 20-24" series) —
 see the integration note in docs/BML_LOG.md.

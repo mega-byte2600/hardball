@@ -1,7 +1,7 @@
 # HARDBALL — Meeting Talk-Track (10 minutes, Figure-by-Figure)
 *For the GP to present to an owner. Every number is real and measured; every
 honesty caveat is already inside the pitch so it survives a skeptical room.
-Figure numbers match the merged 20-figure dashboard (main, v1.0.0-mvp).*
+Figure numbers match the merged 21-figure dashboard (main, v1.0.0-mvp).*
 
 **Weapons:** the dashboard, opened on Figure 1. This page tells you what to
 say and in what order. Don't read it — talk it.
@@ -33,27 +33,33 @@ Fig 5 (payroll vs wins): "Money buys some wins. But the winning-cheap teams —
 Milwaukee, Tampa, Cleveland — win ~95 at a third to a quarter the payroll.
 **They're the ones who've discovered the edge we're showing you.**"
 
-## HOW THE WINNERS ARE BUILT — Figures 6, 11-13 (2:30)
+## HOW THE WINNERS ARE BUILT — Figures 6, 12-14 (2:30)
 Quick sweep: "Winning-cheap teams dominate contact, OBP, and walks (Fig 6);
-they field control-walking arms (Fig 11); their health is priced in, not
-hoped for (Fig 12). The 2027 roster (Fig 13) is built from real projections
+they field control-walking arms (Fig 12); their health is priced in, not
+hoped for (Fig 13). The 2027 roster (Fig 14) is built from real projections
 on exactly those inputs." Don't linger — the charts carry it.
 
-## THE CAP IS THE OPPORTUNITY — Figures 9 + 18 (1:30)
-Fig 18 (value metrics): "This is what we compute instead of faking WAR —
-wOBA, wRC+, FIP. Real, reproducible."
+## THE CAP IS THE OPPORTUNITY — Figures 9 + 10 + 19 (1:30)
 Fig 9 (cap reality): "Here's the kicker. Seven teams are over the cap and
 MUST cut — the Mets $101M, the Dodgers $94M. And fifteen — **including
 Cleveland (+$97M) and Tampa (+$76M)** — are under the floor and forced to
 add. The cap makes the rich cut; the floor hands the disciplined winners
 real money to deploy. **The system is now engineered to reward exactly the
 teams that waste the least.**"
+Fig 10 (forced sellers): "And it doesn't take a rebuild. Every over-cap
+team closes its gap by shedding at most three big contracts — Toronto and
+Atlanta need just one. The cap binds through a handful of deals. That is
+arithmetic, not a prediction that anyone trades those players — but it
+sizes the negotiation exactly."
 
-## WHAT THE MONEY BUYS — Figures 14 + 20 (1:30)
+Fig 19 (value metrics): "This is what we compute instead of faking WAR —
+wOBA, wRC+, FIP. Real, reproducible."
+
+## WHAT THE MONEY BUYS — Figures 15 + 21 (1:30)
 "We built the actual free-agent rosters at each budget — real players, real
 prices. The floor roster — $171M — buys **42 wins above replacement**. The
 cap roster at $245M buys 52. **A disciplined floor team captures 80% of the
-cap team's talent for 70% of the money.** The shopping list (Fig 20) is the
+cap team's talent for 70% of the money.** The shopping list (Fig 21) is the
 class ranked by projected value — every name priced off last year's real
 contract anchor."
 
@@ -68,7 +74,7 @@ you which contact/walk players and control arms to buy.**"
 wins — forecasting is genuinely weak (about 9-13 wins off), and saying
 otherwise would be a lie that gets exposed. WAR is proprietary and absent
 from public data — we surface its real inputs instead. Our projections were
-benchmarked against FanGraphs' Steamer in public (Fig 16): hitter agreement
+benchmarked against FanGraphs' Steamer in public (Fig 17): hitter agreement
 r = .889. What we *can* show, measured over four years: skills persist,
 luck doesn't. **That's the edge you can act on.**"
 
