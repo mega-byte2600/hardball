@@ -514,6 +514,8 @@ def build():
 .srcbox b{{color:#fff}}
 .src{{color:#8ab6ff;font-family:ui-monospace,monospace}}
 .keybox{{background:#f0f4fa;border:1px solid #c4d3ea;border-radius:6px;padding:10px 14px;margin:14px 0;font-size:12.5px;line-height:1.9}}
+.figidx{{background:#fff;border:1px solid #d6dcea;border-left:4px solid #1d3557;border-radius:6px;padding:10px 14px;margin:14px 0;font-size:12px;line-height:1.8;color:#14213d}}
+.figidx span{{display:inline-block;background:#d50032;color:#fff;border-radius:3px;padding:0 5px;margin:0 2px;font-weight:700;font-size:11px;min-width:14px;text-align:center}}
 .k{{margin-right:16px;display:inline-block}}
 .sw{{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}}
 </style></head>
@@ -554,6 +556,20 @@ naive only marginally — shown honestly). The cap/floor are owners' proposed 20
 <span class="k"><span class="sw" style="background:#d50032"></span> red = cap line / negative signal</span>
 <span class="k"><span class="sw" style="background:#0d47a1"></span> navy = many-color charts (retention, sensitivity)</span></div>
 {js_include}
+<div class="figidx"><b>FIGURE INDEX — the story at a glance (all 13 real-data charts below)</b><br>
+<span>1</span> The measurable edge — skills persist (contact r=.90) &nbsp;·&nbsp;
+<span>2</span> Run differential → wins &nbsp;·&nbsp;
+<span>3</span> Payroll vs wins &nbsp;·&nbsp;
+<span>4</span> KPI signature &nbsp;·&nbsp;
+<span>5</span> Projected wins &nbsp;·&nbsp;
+<span>6</span> 25-yr durability &nbsp;·&nbsp;
+<span>7</span> 2027 hitters &nbsp;·&nbsp;
+<span>8</span> Pitching &nbsp;·&nbsp;
+<span>9</span> Health &nbsp;·&nbsp;
+<span>10</span> 2027 roster &nbsp;·&nbsp;
+<span>11</span> Sensitivity &nbsp;·&nbsp;
+<span>12</span> Value metrics &nbsp;·&nbsp;
+<span>13</span> Cap-era reality</div>
 {html}
 <div class="srcbox">
 <b>DATA SOURCES &amp; METHODS — everything on this page is real and traceable.</b><br><br>
