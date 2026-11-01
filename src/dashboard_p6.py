@@ -1,12 +1,13 @@
-"""P6: HARDBALL demo dashboard (Plotly HTML).
+"""P6: HARDBALL demo dashboard (Plotly HTML) — INTEGRATED build.
 
-Three panels on real 2026 data:
- 1. Payroll vs Wins scatter — the efficiency story (winning-cheap ellipse).
- 2. KPI comparison: winning-cheap vs cheap-mediocre vs other (OBP, contact,
-    K%, BB%, HR/PA).
- 3. Cap-constrained projections: proj wins vs payroll vs 2027 cap
-    ($245.3M cap / $171.2M floor).
-Serves as a self-contained HTML file the GP can open at the Winter Meetings.
+Twenty figures on real data: the main lane's 13 (payroll/KPI/
+projections/durability/players/pitching/health/roster/runs/
+sensitivity + skill persistence, value metrics, cap scenario)
+plus the CarpeData/Boardroom 7 (Steamer benchmark, Savant trait
+check, MiLB pipeline, FA shopping list, animated 16-season
+payroll film, pick-your-team explorer, budget-scenario rosters),
+presented in eight story sections with stat cards. Builds from a
+clean clone OFFLINE from committed snapshots (audit G1).
 """
 import json
 import os
@@ -172,7 +173,7 @@ def panel_pitching():
     # table-level re-aggregation inline from lake (clean, no module import cycle)
     import sqlite3
     TEAM = {"New York Yankees":"NYY","Houston Astros":"HOU","New York Mets":"NYM",
-      "Milwaukee Brewers":"MIL","Tampa Bay Rays":"TB","Arizona Diamondbacks":"AZ",
+      "Milwaukee Brewers":"MIL","Tampa Bay Rays":"TB","Arizona Diamondbacks":"ARI",
       "Detroit Tigers":"DET","Los Angeles Dodgers":"LAD","Cleveland Guardians":"CLE",
       "Miami Marlins":"MIA","Chicago White Sox":"CHW","St. Louis Cardinals":"STL",
       "Texas Rangers":"TEX","Seattle Mariners":"SEA","San Francisco Giants":"SF",
@@ -181,7 +182,11 @@ def panel_pitching():
       "Baltimore Orioles":"BAL","Los Angeles Angels":"LAA","Chicago Cubs":"CHC",
       "Cincinnati Reds":"CIN","Colorado Rockies":"COL","Kansas City Royals":"KC",
       "Pittsburgh Pirates":"PIT","Washington Nationals":"WSH","Oakland Athletics":"ATH"}
-    con = sqlite3.connect(os.path.join(DATA, "mlb_lake.db"))
+    lake = os.path.join(DATA, "mlb_lake.db")
+    if not os.path.exists(lake):
+        return None  # lake is a local build artifact (gitignored); a clean
+        # clone omits this panel instead of crashing (audit G1 class)
+    con = sqlite3.connect(lake)
     rows = []
     for season, team, sjson in con.execute("SELECT season,team,stat_json FROM stat_lines WHERE group_name='pitching'"):
         s = J.loads(sjson)
@@ -512,54 +517,371 @@ def _panel_skill_multipair(multi_path, ci_path):
     return fig
 
 
+def panel_benchmark():
+    """CarpeData: our Marcel vs FanGraphs Steamer 2027 (Cycle 22).
+
+    Paired by MLBAM player_id == xMLBAMID only. Stats box comes from
+    data/fg_benchmark_2027.json so the panel can never drift from the
+    measured benchmark."""
+    pj = os.path.join(DATA, "projections_2027.json")
+    sj = os.path.join(DATA, "fg_steamer_2027_bat.json")
+    bj = os.path.join(DATA, "fg_benchmark_2027.json")
+    if not all(os.path.exists(p) for p in (pj, sj, bj)):
+        return None
+    proj = {r["player_id"]: r for r in json.load(open(pj))}
+    bench = json.load(open(bj))
+    xs, ys, names = [], [], []
+    for r in json.load(open(sj)):
+        mid = r.get("xMLBAMID")
+        if mid in proj and r.get("OBP") is not None:
+            xs.append(r["OBP"])
+            ys.append(proj[mid]["proj_OBP"])
+            names.append(proj[mid]["name"])
+    if not xs:
+        return None
+    h, p = bench["hitters"], bench["pitchers"]
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=[0.26, 0.46], y=[0.26, 0.46], mode="lines",
+                             line=dict(dash="dash", color="gray"),
+                             name="Perfect agreement"))
+    fig.add_trace(go.Scatter(
+        x=xs, y=ys, mode="markers", name="2027 hitters",
+        marker=dict(color="#1d3557", size=8, opacity=0.75),
+        text=names, hovertemplate="%{text}<br>Steamer OBP %{x:.3f}<br>Marcel OBP %{y:.3f}<extra></extra>"))
+    fig.update_layout(
+        title=(f"The benchmark: our Marcel vs FanGraphs Steamer 2027 — OBP r = "
+               f"{h['obp']['pearson_r']}, mean |diff| {h['obp']['mean_abs_diff']}, "
+               f"top-25 overlap {h['top25_obp_overlap']['overlap_n']}/25<br>"
+               f"<sub>Pitchers run optimistic vs Steamer (ERA bias "
+               f"{p['era']['mean_signed_diff_marcel_minus_steamer']:+.2f}) — flagged, not hidden. "
+               f"Agreement stats, not accuracy: no 2027 outcomes exist yet. Source: FanGraphs API, pulled 2026-10-31.</sub>"),
+        xaxis_title="Steamer projected OBP", yaxis_title="Our Marcel projected OBP",
+        template="plotly_white", height=540)
+    return fig
+
+def panel_savant():
+    """CarpeData: Savant trait stability vs incremental value (Cycle 20)."""
+    tj = os.path.join(DATA, "savant_test.json")
+    if not os.path.exists(tj):
+        return None
+    t = json.load(open(tj))
+    stab = t.get("q2_trait_stability", {})
+    labels = [("avg bat speed", "bat_speed"), ("EV50 (batted-ball quality)", "ev50"),
+              ("barrel %", "barrel_pct"), ("squared-up rate", "squared_up"),
+              ("actual OBP (outcome)", "outcome_OBP"), ("actual SLG (outcome)", "outcome_SLG")]
+    names, vals, colors = [], [], []
+    for label, key in labels:
+        if key in stab:
+            names.append(label)
+            vals.append(stab[key]["mean_r"])
+            colors.append("#8ab6ff" if key.startswith("outcome") else "#1d3557")
+    if not vals:
+        return None
+    fig = go.Figure(go.Bar(
+        x=vals, y=names, orientation="h", marker=dict(color=colors),
+        text=[f"r = {v:.2f}" for v in vals], textposition="outside"))
+    fig.update_layout(
+        title=("Savant traits are rock-stable year-to-year (dark) — far more than outcomes (light)<br>"
+               "<sub>But Cycle 20 tested them honestly: adding bat speed / barrels / xwOBA luck to Marcel made "
+               "out-of-sample projections WORSE. Marcel's outcome history already prices the traits — so Savant "
+               "is shown here as diagnostics, not sold as a projection input. Source: Baseball Savant, 2024-2026.</sub>"),
+        xaxis_title="Year-to-year correlation (player level)", xaxis_range=[0, 1.12],
+        template="plotly_white", height=430, margin=dict(l=210))
+    return fig
+
+def panel_pipeline():
+    """CarpeData: MiLB upper-minors pipeline index by org (Cycle 23)."""
+    pj = os.path.join(DATA, "pipeline_2026.json")
+    if not os.path.exists(pj):
+        return None
+    orgs = json.load(open(pj)).get("orgs", [])
+    if not orgs:
+        return None
+    orgs = sorted(orgs, key=lambda o: o["index_avg100"])
+    names = [f"{o['org_abbr']} — {o['n_hitters']}H / {o['n_pitchers']}P" for o in orgs]
+    vals = [o["index_avg100"] for o in orgs]
+    colors = ["green" if o["org_abbr"] in WIN_CHEAP else
+              "orange" if o["org_abbr"] in CHEAP_MEDIOCRE else "steelblue" for o in orgs]
+    hover = [f"{o['org_name']}<br>index {o['index_avg100']} (league avg = 100)<br>"
+             f"under-26 AAA/AA: {o['n_hitters']} hitters (wtd OPS {o['wtd_ops']}), "
+             f"{o['n_pitchers']} pitchers (wtd ERA {o['wtd_era']})<br>"
+             f"top hitter: {o['top_hitter']['name']} · top pitcher: {o['top_pitcher']['name']}"
+             for o in orgs]
+    fig = go.Figure(go.Bar(
+        x=vals, y=names, orientation="h", marker=dict(color=colors),
+        text=[f"{v:.0f}" for v in vals], textposition="outside",
+        hovertext=hover, hoverinfo="text"))
+    fig.add_vline(x=100, line_dash="dash", line_color="red",
+                  annotation_text="League average = 100")
+    fig.update_layout(
+        title=("The pipeline behind winning-cheap: under-26 upper-minors depth, 2026 (Cycle 23)<br>"
+               "<sub>Qualified AAA/AA hitters (≥150 PA) and pitchers (≥40 IP), age from real birthdates, "
+               "volume × quality vs league. Green = winning-cheap orgs. Upper minors only — near-MLB depth, "
+               "not total farm quality. Source: MLB Stats API minor-league endpoints.</sub>"),
+        xaxis_title="Pipeline index (average org = 100)",
+        template="plotly_white", height=640, margin=dict(l=170))
+    return fig
+
+def panel_shopping():
+    """Cycle 25: the 2027 free-agent shopping list — Steamer WAR vs the
+    prior contract's AAV (a last-price anchor, never a predicted price)."""
+    fj = os.path.join(DATA, "fa_shopping_2027.json")
+    if not os.path.exists(fj):
+        return None
+    d = json.load(open(fj))
+    top = d.get("top25_by_war", [])[:15]
+    if not top:
+        return None
+    top = sorted(top, key=lambda r: r["steamer_war"])
+    names = [f"{r['name']} ({r['pos']}, {r['prev_team']})" for r in top]
+    vals = [r["steamer_war"] for r in top]
+    colors = ["green" if r["fits_indiv_max_at_prior_aav"] else "#d50032" for r in top]
+    labels = [(f"{r['steamer_war']:.1f} WAR · prior AAV ${r['prev_aav']/1e6:.1f}M"
+               if r["prev_aav"] else f"{r['steamer_war']:.1f} WAR") for r in top]
+    fig = go.Figure(go.Bar(
+        x=vals, y=names, orientation="h", marker=dict(color=colors),
+        text=labels, textposition="outside"))
+    best = d.get("top15_value_war_per_10m", [])
+    best_txt = "; ".join(f"{r['name']} {r['war_per_10m_prior_aav']}" for r in best[:3])
+    fig.update_layout(
+        title=("The shopping list: top 2027 free agents by projected WAR (Cycle 25)<br>"
+               f"<sub>Green = prior AAV fits the 15% individual max ($36.8M) at last price. Prior AAV is an anchor, "
+               f"not a predicted 2027 price. Best value (WAR per $10M of prior AAV): {best_txt}. "
+               f"Sources: Spotrac FA class + 2026 salaries (24/30 team pages pulled; 6 rate-limited, logged), "
+               f"FanGraphs Steamer WAR.</sub>"),
+        xaxis_title="Steamer projected 2027 WAR",
+        template="plotly_white", height=560, margin=dict(l=230),
+        xaxis_range=[0, max(vals) * 1.45])
+    return fig
+
+def panel_animation():
+    """Cycle 26: 16 seasons of payroll vs wins, animated. Press play —
+    the cap era arrives and the gold dots (MIL/TB/CLE) never move."""
+    p = os.path.join(DATA, "panel_2011_2026.csv")
+    if not os.path.exists(p):
+        return None
+    import pandas as pd
+    d = pd.read_csv(p)
+    for c in ("payroll", "wins"):
+        d[c] = pd.to_numeric(d[c], errors="coerce")
+    d = d.dropna(subset=["payroll", "wins"])
+    d["payroll_m"] = d["payroll"] / 1e6
+    d["eff"] = d["wins"] / d["payroll_m"] * 100  # wins per $100M
+
+    def color(r):
+        if r["team"] in ("MIL", "TB", "CLE"):
+            return "#c9a227"
+        if r["payroll_m"] > 260:
+            return "#d50032"
+        return "#14213d"
+
+    seasons = sorted(d["season"].unique())
+    frames, base = [], None
+    for s in seasons:
+        sub = d[d["season"] == s]
+        tr = go.Scatter(
+            x=sub["payroll_m"], y=sub["wins"], mode="markers+text",
+            text=sub["team"], textposition="top center",
+            marker=dict(size=(sub["eff"] * 9).clip(6, 30),
+                        color=[color(r) for _, r in sub.iterrows()],
+                        opacity=0.82, line=dict(width=1, color="white")),
+            hovertemplate="%{text}: %{y} wins on $%{x:.0f}M<extra></extra>",
+            showlegend=False)
+        if base is None:
+            base = tr
+        frames.append(go.Frame(data=[tr], name=str(s)))
+    fig = go.Figure(data=[base], frames=frames)
+    fig.update_layout(
+        title=("PRESS PLAY: 16 seasons of payroll vs wins (2011–2026)<br>"
+               "<sub>Bubble size = wins per $100M. Gold = the winning-cheap three (MIL/TB/CLE); "
+               "red = $260M+ payrolls. The gold barely moves — that is the whole thesis in motion. "
+               "Source: MLB Stats API panel + Spotrac payrolls (data/panel_2011_2026.csv).</sub>"),
+        xaxis=dict(title="Team payroll ($M)", range=[0, 370]),
+        yaxis=dict(title="Wins", range=[38, 118]),
+        template="plotly_white", height=600,
+        updatemenus=[dict(type="buttons", direction="left", x=0.0, y=-0.14,
+                          buttons=[dict(label="▶ Play", method="animate",
+                                        args=[None, dict(frame=dict(duration=850, redraw=True),
+                                                         fromcurrent=True)]),
+                                   dict(label="❚❚ Pause", method="animate",
+                                        args=[[None], dict(frame=dict(duration=0, redraw=False),
+                                                            mode="immediate")])])],
+        sliders=[dict(steps=[dict(method="animate", label=str(s),
+                                  args=[[str(s)], dict(frame=dict(duration=0, redraw=True),
+                                                       mode="immediate")])
+                              for s in seasons],
+                      x=0.08, len=0.9, y=-0.14,
+                      currentvalue=dict(prefix="Season: "))])
+    return fig
+
+def panel_team_explorer():
+    """Cycle 26: pick your team — its 2026 signature vs the winning-cheap
+    profile, with payroll, cap headroom, and pipeline rank."""
+    fj = os.path.join(DATA, "team_explorer.json")
+    if not os.path.exists(fj):
+        return None
+    d = json.load(open(fj))
+    raw_axes = ["OBP", "contact", "K%", "BB%", "HR/PA_raw"]
+    labels = d["metadata"]["axes"]
+    cheap = d["metadata"]["winning_cheap_idx"]
+    traces, buttons = [], []
+    n = len(d["teams"])
+    for i, t in enumerate(d["teams"]):
+        vals = [t["signature_idx"][c] for c in raw_axes]
+        vals.append(vals[0])
+        traces.append(go.Scatterpolar(
+            r=vals, theta=labels + [labels[0]], fill="toself",
+            name=t["team"], visible=(i == 0),
+            line=dict(color="#14213d", width=2),
+            fillcolor="rgba(20,33,61,0.18)"))
+    cheap_vals = [cheap[l] for l in labels]
+    cheap_vals.append(cheap_vals[0])
+    traces.append(go.Scatterpolar(
+        r=cheap_vals, theta=labels + [labels[0]], name="Winning-cheap profile",
+        line=dict(color="#c9a227", width=3), fill="toself",
+        fillcolor="rgba(201,162,39,0.13)"))
+    traces.append(go.Scatterpolar(
+        r=[100] * 6, theta=labels + [labels[0]], name="League = 100",
+        line=dict(color="#9aa3b2", width=1, dash="dot")))
+    for i, t in enumerate(d["teams"]):
+        vis = [j == i for j in range(n)] + [True, True]
+        title = (f"{t['team']} — {t['wins']} wins · payroll ${t['payroll']/1e6:.0f}M · "
+                 f"cap headroom ${t['cap_headroom_m']:.0f}M · pipeline #{t['pipeline_rank']} "
+                 f"(top prospect: {t['top_prospect']})<br>"
+                 "<sub>Signature indexed to league = 100; higher = more winning-cheap-like on every axis "
+                 "(K% and HR rate inverted). Gold = MIL/TB/CLE average profile. Sources: MLB Stats API 2026 KPIs, "
+                 "Spotrac payroll, Cycle 23 pipeline index. Pick your team:</sub>")
+        buttons.append(dict(label=t["team"], method="update",
+                            args=[{"visible": vis}, {"title": {"text": title}}]))
+    t0 = d["teams"][0]
+    fig = go.Figure(data=traces)
+    fig.update_layout(
+        title=f"{t0['team']} — pick your team<br><sub>Use the dropdown: every club's 2026 signature vs the winning-cheap profile.</sub>",
+        polar=dict(radialaxis=dict(visible=True, range=[55, 135])),
+        updatemenus=[dict(buttons=buttons, direction="down", x=0.0, y=1.12,
+                          showactive=True, active=0)],
+        template="plotly_white", height=560,
+        legend=dict(orientation="h", y=-0.08))
+    return fig
+
+def panel_scenarios():
+    """Cycle 26: what does the money buy? Full 26-man rosters built from
+    the real FA class at the floor, the middle, and the cap."""
+    fj = os.path.join(DATA, "wow_scenarios.json")
+    if not os.path.exists(fj):
+        return None
+    d = json.load(open(fj))
+    traces, buttons = [], []
+    for i, s in enumerate(d["scenarios"]):
+        r = s["roster"]
+        traces.append(go.Table(
+            header=dict(values=["Pos", "Player", "From", "Steamer WAR", "Prior AAV"],
+                        fill_color="#14213d", font=dict(color="white", size=12),
+                        align="left"),
+            cells=dict(values=[[x["pos"] for x in r], [x["name"] for x in r],
+                               [x["prev_team"] for x in r],
+                               [x["war"] for x in r],
+                               [f"${x['prev_aav']/1e6:.1f}M" for x in r]],
+                       fill_color="rgba(244,241,234,0.6)", align="left",
+                       font=dict(size=11.5), height=19),
+            visible=(i == 0)))
+        title = (f"What does the money buy? {s['label']}: {s['total_war']} WAR for "
+                 f"${s['spend']/1e6:.1f}M<br>"
+                 "<sub>A full 26-man roster bought entirely from the real 2027 free-agent class "
+                 "(greedy WAR-per-dollar by position, then upgrades — Cycle 26). Prices are prior-contract "
+                 "AAVs: last-price anchors, not predicted 2027 salaries. The floor roster captures "
+                 "~80% of the cap roster's WAR — the last $73M buys ~10 WAR. Switch budget:</sub>")
+        buttons.append(dict(label=s["label"], method="update",
+                            args=[{"visible": [j == i for j in range(len(d["scenarios"]))]},
+                                  {"title": {"text": title}}]))
+    s0 = d["scenarios"][0]
+    fig = go.Figure(data=traces)
+    fig.update_layout(
+        title=(f"What does the money buy? {s0['label']}: {s0['total_war']} WAR for "
+               f"${s0['spend']/1e6:.1f}M<br><sub>Switch budget below the chart.</sub>"),
+        updatemenus=[dict(buttons=buttons, direction="right", x=0.0, y=-0.03,
+                          showactive=True, active=0)],
+        template="plotly_white", height=700, margin=dict(t=110, b=60))
+    return fig
+
 def build():
-    df = kpi_mod.kpi_frame()
+    os.makedirs(os.path.join(REPO, "dashboard"), exist_ok=True)
+    # G1 (audit): offline fallback — a clean clone with no network must
+    # still build from the committed KPI snapshots.
+    try:
+        df = kpi_mod.kpi_frame()
+    except Exception as e:
+        print(f"kpi live fetch failed ({e}); using committed data/kpi_*.json snapshots")
+        df = kpi_mod.kpi_frame_from_snapshots()
     df["group"] = "OTHER"
     df.loc[df["team"].isin(WIN_CHEAP), "group"] = "WIN_CHEAP"
     df.loc[df["team"].isin(CHEAP_MEDIOCRE), "group"] = "CHEAP_MEDIOCRE"
 
-    fig1 = panel_payroll_wins(df, 2026)
-    fig2 = panel_kpi(df, 2026)
-    fig3 = panel_projections()
-    fig4 = panel_durability()
-    fig5 = panel_player_proj()
-    fig6 = panel_pitching()
-    fig7 = panel_health()
-    fig8 = panel_roster()
-    fig9 = panel_runs()
-    fig10 = panel_sensitivity()
-    fig11 = panel_skill_persistence()
-    fig12 = panel_value_metrics()
-    fig13 = panel_cap_scenario()
+    fig_payroll = panel_payroll_wins(df, 2026)
+    fig_kpi = panel_kpi(df, 2026)
+    fig_proj = panel_projections()
+    fig_dur = panel_durability()
+    fig_hit = panel_player_proj()
+    fig_pit = panel_pitching()
+    fig_health = panel_health()
+    fig_roster = panel_roster()
+    fig_runs = panel_runs()
+    fig_sens = panel_sensitivity()
+    fig_persist = panel_skill_persistence()
+    fig_value = panel_value_metrics()
+    fig_capscen = panel_cap_scenario()
+    fig_anim = panel_animation()
+    fig_team = panel_team_explorer()
+    fig_bench = panel_benchmark()
+    fig_savant = panel_savant()
+    fig_pipe = panel_pipeline()
+    fig_shop = panel_shopping()
+    fig_scen = panel_scenarios()
 
-    # Number every figure in display order and make each easy to reference.
-    fig_panels = [f for f in (fig11, fig9, fig1, fig2, fig3, fig4, fig5,
-                              fig6, fig7, fig8, fig10, fig12, fig13) if f is not None]
+    SECTIONS = [
+        ("★", "The Boardroom", "Sixteen seasons in motion, and every "
+         "club's signature — find yours.", [fig_anim, fig_team]),
+        ("I", "The Proof", "Skills persist, run differential describes "
+         "wins — and payroll alone doesn't buy them.",
+         [fig_persist, fig_runs, fig_payroll]),
+        ("II", "The Signature", "Winning-cheap teams look different: more "
+         "contact, more OBP, fewer strikeouts — for 25 straight years.",
+         [fig_kpi, fig_dur]),
+        ("III", "The Cap", "The owners' proposed 2027 cap, priced team "
+         "by team.", [fig_proj, fig_capscen]),
+        ("IV", "The Players", "Backtested Marcel projections, "
+         "health-capped — the actual shopping-grade numbers.",
+         [fig_hit, fig_pit, fig_health]),
+        ("V", "The Roster", "A 26-man roster that fits the cap, what "
+         "moves the win needle — and what the money buys at three budgets.",
+         [fig_roster, fig_scen, fig_sens]),
+        ("VI", "The Check", "Benchmarked against Steamer, Statcast and "
+         "value metrics — including where we disagree and by how much.",
+         [fig_bench, fig_savant, fig_value]),
+        ("VII", "The Future", "The pipelines feeding the cheap winners, "
+         "and the free-agent list to shop from.", [fig_pipe, fig_shop]),
+    ]
+    flat = [f for _, _, _, figs in SECTIONS for f in figs if f is not None]
 
     def _number(figs):
-        """Executive polish + 'Figure N — ' prefix, applied identically.
+        """Executive polish + 'Figure N — ' prefix (main-lane viz pass).
 
-        One uniform style so all charts read as one professional set. KEY
-        RULE (Few/Tableau): the legend lives BELOW the chart, never in the
-        top strip with the title and subplot subtitles — that collision was
-        causing the crowding on every figure. Title alone on top, legend on
-        one clean row beneath, subtle gridlines, generous margins.
+        Legend BELOW the chart, title alone on top, subtle gridlines.
+        Boardroom panels keep their full titles (their caveats live in
+        them); other titles are shortened as before.
         """
         out = []
         for i, fig in enumerate(figs, 1):
             old = (fig.layout.title.text or "").replace("<b>", "").replace("</b>", "")
-            # strip the old long prose tail from figure titles so they don't
-            # run off / wrap into the plot: keep the first sentence, drop the
-            # data-source addendum (that lives in the source footer anyway).
             short = old
-            if ";" in short:
-                short = short.split(";")[0] + "; see source footer."
-            elif ". " in short:
-                # keep only up to the second period for a readable one-liner
-                parts = short.split(". ")
-                short = ". ".join(parts[:2]) + "."
+            if not (old.startswith("PRESS PLAY") or
+                    old.startswith("What does the money buy")):
+                if ";" in short:
+                    short = short.split(";")[0] + "; see source footer."
+                elif ". " in short:
+                    parts = short.split(". ")
+                    short = ". ".join(parts[:2]) + "."
             fig.update_layout(title_text=f"<b>Figure {i}</b> — {short}")
-            # Uniform professional theme (applied to all)
             fig.update_layout(
                 template="plotly_white",
                 font=dict(family="system-ui, sans-serif", size=13, color="#14213d"),
@@ -568,7 +890,6 @@ def build():
                 paper_bgcolor="white", plot_bgcolor="white",
                 margin=dict(l=70, r=30, t=64, b=96),
                 height=max(fig.layout.height or 420, 420),
-                # legend BELOW the plot, one horizontal row, not colliding
                 legend=dict(orientation="h", yanchor="top", y=-0.32,
                             xanchor="center", x=0.5, font=dict(size=11),
                             bgcolor="rgba(255,255,255,0.7)"),
@@ -577,30 +898,50 @@ def build():
             out.append(fig)
         return out
 
-    numbered = _number(fig_panels)
-
-    # Self-contained offline demo: inline plotly so no internet needed at the
-    # Winter Meetings. Caches the bundle next to the dashboard if present.
+    numbered = iter(_number(flat))
+    # Self-contained offline demo: inline plotly from the installed
+    # package if no cached bundle (never fetch at build time — G1).
     bundle = os.path.join(REPO, "dashboard", "plotly.min.js")
     if os.path.exists(bundle):
         with open(bundle) as f:
             plotly_js = f.read()
-        js_include = f"<script>{plotly_js}</script>"
-    else:  # fallback: fetch once, cache
-        import urllib.request
-        url = "https://cdn.plot.ly/plotly-4.1.1.min.js"
-        with urllib.request.urlopen(url, timeout=60) as r:
-            plotly_js = r.read().decode()
+    else:
+        from plotly.offline import get_plotlyjs
+        plotly_js = get_plotlyjs()
         with open(bundle, "w") as f:
             f.write(plotly_js)
-        js_include = f"<script>{plotly_js}</script>"
+    js_include = f"<script>{plotly_js}</script>"
 
-    html = "".join(fig.to_html(full_html=False, include_plotlyjs=False)
-                   + "<br>" for fig in numbered)
+    def _count(fname):
+        p = os.path.join(DATA, fname)
+        return len(json.load(open(p))) if os.path.exists(p) else 0
+    n_hit = _count("projections_2027.json")
+    n_pit = _count("projections_2027_pitchers.json")
+    cards = (
+        '<div class="cards">'
+        '<div class="card"><div class="num">$245.3M</div><div class="lab">proposed 2027 cap · floor $171.2M</div></div>'
+        '<div class="card"><div class="num">509</div><div class="lab">team-seasons measured, 2011–2026</div></div>'
+        f'<div class="card"><div class="num">{n_hit + n_pit}</div><div class="lab">players projected for 2027 ({n_hit} hitters · {n_pit} pitchers)</div></div>'
+        '<div class="card"><div class="num">r = .889</div><div class="lab">hitter OBP agreement vs Steamer</div></div>'
+        '<div class="card"><div class="num">100%</div><div class="lab">real data — every panel sourced</div></div>'
+        '</div>')
+
+    html = ""
+    for num, name, take, figs in SECTIONS:
+        figs = [f for f in figs if f is not None]
+        if not figs:
+            continue
+        html += (f'<div class="sec"><span class="secnum">{num}</span>'
+                 f'<div><h3>{name}</h3><p>{take}</p></div></div>')
+        for _f in figs:
+            fig = next(numbered)
+            html += ('<div class="panel">' +
+                     fig.to_html(full_html=False, include_plotlyjs=False) +
+                     "</div>")
 
     page = f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P6)</title>
-<style>body{{font-family:system-ui,sans-serif;margin:0;background:#f6f7f9;color:#14213d}}
-.hd{{max-width:1000px;margin:0 auto;padding:0 20px 40px}}
+<style>body{{font-family:system-ui,sans-serif;margin:0;background:#f4f1ea;color:#14213d}}
+.hd{{max-width:1120px;margin:0 auto;padding:0 20px 40px}}
 .crest{{background:linear-gradient(135deg,#14213d 0%,#1d3557 60%,#7a1f1f 160%);color:#fff;padding:28px 32px;border-radius:0 0 14px 14px;margin:0 0 4px;box-shadow:0 3px 14px rgba(20,33,61,.25)}}
 .crest h1{{margin:0;font-size:30px;letter-spacing:1px;color:#fff}}
 .crest h2{{margin:8px 0 0;font-size:16px;font-weight:400;color:#cbe0ff}}
@@ -619,6 +960,15 @@ def build():
 .figidx span{{display:inline-block;background:#d50032;color:#fff;border-radius:3px;padding:0 5px;margin:0 2px;font-weight:700;font-size:11px;min-width:14px;text-align:center}}
 .k{{margin-right:16px;display:inline-block}}
 .sw{{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}}
+.cards{{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 4px}}
+.card{{flex:1 1 160px;background:#fff;border:1px solid #e3dfd2;border-top:4px solid #d50032;border-radius:10px;padding:14px 16px;box-shadow:0 2px 8px rgba(20,33,61,.06)}}
+.card .num{{font-size:26px;font-weight:800;color:#14213d;letter-spacing:.2px}}
+.card .lab{{font-size:12.5px;color:#5a6478;margin-top:3px;line-height:1.35}}
+.sec{{display:flex;gap:14px;align-items:center;background:linear-gradient(90deg,#14213d,#1d3557);color:#fff;border-radius:10px;padding:13px 20px;margin:30px 0 4px;box-shadow:0 2px 10px rgba(20,33,61,.18)}}
+.secnum{{font-size:19px;font-weight:800;color:#c9a227;border:2px solid #c9a227;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}}
+.sec h3{{margin:0;font-size:19px;letter-spacing:.4px}}
+.sec p{{margin:2px 0 0;font-size:13.5px;color:#cbe0ff}}
+.panel{{background:#fff;border:1px solid #e3dfd2;border-radius:12px;padding:16px 18px 8px;margin:14px 0;box-shadow:0 2px 10px rgba(20,33,61,.05)}}
 </style></head>
 <body>
 <div class="crest">
@@ -651,6 +1001,7 @@ is roughly 9-13 wins, and we present that number honestly.</div>
 <div class="note">Data: MLB Stats API + Spotrac, 2011-2026 (509 team-seasons). The 2027 cap
 ($245.3M) and floor ($171.2M) are the owners' proposal; the CBA expires Dec 1, 2026 and the
 figures are not yet law. No performance guarantee is implied.</div>
+{cards}
 <div class="keybox"><b>COLOR KEY (used on every chart below):</b>
 <span class="k"><span class="sw" style="background:#1b5e20"></span> green = <b>winning-cheap</b> (MIL · TB · CLE — the target teams: &gt;85 wins at low payroll)</span>
 <span class="k"><span class="sw" style="background:#e65100"></span> orange = <b>cheap-mediocre</b> (MIA · CHW · STL — the trap: frugal but ~78 wins)</span>
@@ -669,37 +1020,57 @@ figures are not yet law. No performance guarantee is implied.</div>
 <span class="k"><b>K-BB%</b> = strikeouts minus walks = how dominant a pitcher is</span>
 <span class="k"><b>WAR</b> = the famous player-value stat — it's <u>proprietary &amp; absent from our data</u>; we show its real inputs instead (see Figure 12)</span></div>
 {js_include}
-<div class="figidx"><b>FIGURE INDEX — the story at a glance (all 13 real-data charts below)</b><br>
-<span>1</span> The measurable edge — skills persist (contact r=.90) &nbsp;·&nbsp;
-<span>2</span> Run differential → wins &nbsp;·&nbsp;
-<span>3</span> Payroll vs wins &nbsp;·&nbsp;
-<span>4</span> KPI signature &nbsp;·&nbsp;
-<span>5</span> Projected wins &nbsp;·&nbsp;
-<span>6</span> 25-yr durability &nbsp;·&nbsp;
-<span>7</span> 2027 hitters &nbsp;·&nbsp;
-<span>8</span> Pitching &nbsp;·&nbsp;
-<span>9</span> Health &nbsp;·&nbsp;
-<span>10</span> 2027 roster &nbsp;·&nbsp;
-<span>11</span> Sensitivity &nbsp;·&nbsp;
-<span>12</span> Value metrics &nbsp;·&nbsp;
-<span>13</span> Cap-era reality</div>
+<div class="figidx"><b>FIGURE INDEX — the story at a glance (all 20 real-data charts below)</b><br>
+<span>1</span> Press play: 16 seasons of payroll vs wins &nbsp;·&nbsp;
+<span>2</span> Pick your team &nbsp;·&nbsp;
+<span>3</span> The measurable edge — skills persist (contact r=.90) &nbsp;·&nbsp;
+<span>4</span> Run differential → wins &nbsp;·&nbsp;
+<span>5</span> Payroll vs wins &nbsp;·&nbsp;
+<span>6</span> KPI signature &nbsp;·&nbsp;
+<span>7</span> 25-yr durability &nbsp;·&nbsp;
+<span>8</span> Projected wins at the cap &nbsp;·&nbsp;
+<span>9</span> Cap-era reality &nbsp;·&nbsp;
+<span>10</span> 2027 hitters &nbsp;·&nbsp;
+<span>11</span> Pitching &nbsp;·&nbsp;
+<span>12</span> Health &nbsp;·&nbsp;
+<span>13</span> 2027 roster &nbsp;·&nbsp;
+<span>14</span> What does the money buy (3 budgets) &nbsp;·&nbsp;
+<span>15</span> Sensitivity &nbsp;·&nbsp;
+<span>16</span> Marcel vs Steamer benchmark &nbsp;·&nbsp;
+<span>17</span> Savant trait check &nbsp;·&nbsp;
+<span>18</span> Value metrics &nbsp;·&nbsp;
+<span>19</span> MiLB pipeline index &nbsp;·&nbsp;
+<span>20</span> The 2027 shopping list</div>
 {html}
 <div class="srcbox">
 <b>DATA SOURCES &amp; METHODS — everything on this page is real and traceable.</b><br><br>
 <b>Primary data</b> (2025-2026, all 30 MLB teams): <span class="src">MLB Stats API
 statsapi.mlb.com/api/v1</span> — official MLB feed, keyless; team hitting/pitching + standings
 (runs scored / runs allowed). Validated against <span class="src">ESPN
-site.web.api.espn.com</span> (131 players cross-checked: HR counts match exactly).<br>
+site.web.api.espn.com</span> (2025 validation set: 131 players cross-checked, HR counts match exactly).<br>
 <b>Payroll:</b> <span class="src">Spotrac</span> (via MIT-licensed jasonbhorne/mlb-payroll,
-721 team-seasons 2000-2024 + live 2026 opening-day figures). <b>Injury/health:</b> MLB
+721 team-seasons 2000-2024 + live 2026 opening-day figures; per-player 2026 salaries and the
+2027 free-agent class pulled directly from Spotrac team/FA pages — 24 of 30 team pages before
+a rate limit, logged in data/salaries_2026.json). <b>Injury/health:</b> MLB
 transactions feed (35,000+ events 2025-2026, IL days per player). <b>MLB color/look:</b> league
 branding only, for presentation.<br>
-<b>Model:</b> linear regression (wins ~ OBP, contact, K%, BB%, HR/PA + run differential),
-cross-validated (train 2025 / test 2026 and reverse), MAE 4.0, R² 0.80. Logistic (≥90-win bar)
-AUC 0.95-0.97. Pythagorean exponent uses Euler's e. <b>Honest limits:</b> explains the run→win
-link strongly but ~20% variance remains (defense, luck, leverage); the cap figures are the owners'
-proposed 2027 numbers (CBA expires Dec 1 2026), not law. Not a guarantee of performance.<br><br>
+<b>CarpeData layer (2026-10-31, all keyless):</b> <span class="src">Baseball Savant</span>
+leaderboards by player_id — expected stats (xwOBA), batted ball (EV/barrels), bat tracking
+2024-2026, sprint speed, arm strength; <span class="src">FanGraphs API</span> — Steamer 2027
+projections (the benchmark panel; ZiPS returned empty via the API and is not claimed) and the
+player-ID crosswalk; <span class="src">MLB Stats API</span> minor-league endpoints (AAA/AA)
+for the pipeline index. Every source tried is logged kept-vs-dropped in docs/CARPE_SCORECARD.md.<br>
+<b>Models &amp; honest capability:</b> same-year run-differential → wins R² ≈ 0.55 (diagnostic,
+not a forecast — a same-year production formula once recorded CV MAE 4.3 / R² 0.764 on a
+two-season window; on the full 2011-2026 panel it does not generalize, and it is labeled
+diagnostic-only in data/formula_prod.json). KPI-only next-year forecasting: out-of-sample
+MAE ≈ 14.1 wins, worse than the naive baseline; grouped CV MAE 10.2 (a fold predicting the
+60-game 2020 season is excluded as a units mismatch — see BML Cycle 19). Player projections:
+backtested Marcel (3-season 5-4-3 + fitted age terms; Cycles 21/24), health-capped, benchmarked
+against Steamer (hitter OBP r = .889; pitcher ERA bias −0.25 after the Cycle 24 fix, disclosed
+on the panel). The product is player-level acquisition, not a team-wins formula.<br><br>
 <b>Project repo:</b> github.com/mega-byte2600/hardball (private) · audit trail in docs/BML_LOG.md
+(two cycle series converged on 2026-10-31 — see the integration note at the top of the log)
 </div>
 </div></body></html>"""
 
@@ -712,3 +1083,4 @@ proposed 2027 numbers (CBA expires Dec 1 2026), not law. Not a guarantee of perf
 if __name__ == "__main__":
     import pandas as pd  # noqa
     build()
+

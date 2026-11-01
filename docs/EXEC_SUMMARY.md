@@ -54,3 +54,14 @@ P6 MVP ✓  P7 UAT — PENDING until the GP accepts (open the dashboard).
 ## Readiness
 Target **Dec 3, 2026** for final UAT and handoff. Preliminary MVP UAT approved;
 final polish in progress.
+
+## Integration addendum (2026-10-31)
+The parallel CarpeData/Boardroom lane (audit G1–G12, Cycles 20–26
+toby-series) merged with this line of work via PR #6. Net additions:
+Steamer-benchmarked Marcel projections with fitted age terms (hitter
+OBP agreement r = .889; pitcher bias corrected −0.324 → −0.250 ERA),
+real Spotrac salaries + the 2027 FA shopping list, the MiLB pipeline
+index, and the Boardroom panels (animated payroll film, pick-your-team
+explorer, budget-scenario rosters: a floor-budget FA build captures
+~80% of a cap-budget build's WAR). Dashboard: 20 figures. P7 UAT was
+approved at MVP level by the owner on 2026-10-31.

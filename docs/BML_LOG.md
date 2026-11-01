@@ -313,6 +313,7 @@ verified by a real command run, not self-asserted. GP review pending on all.
   wrote load_lake_2022.py to upsert. Fixed int64 json serialization in
   cycle21 + cycle23.
 
+
 ## Cycle 25 — POKA-YOKE novice pass (GP: "someone who knows little about baseball sees and gets it")
 - Root-cause fix first: every figure had the SAME crowded top strip because the shared
   `_number()` helper forced legends to y≈1.02 (above the plot, colliding title + subtitles).
@@ -327,3 +328,167 @@ verified by a real command run, not self-asserted. GP review pending on all.
 - Measured: build clean; browser-verified glossary renders + Figure 4 cues live.
 - Learned: one shared layout bug is the real "why won't it stop overlapping" answer —
   patch the helper, not each figure.
+  [Ported into the integrated dashboard 2026-10-31 — PR #6: glossary box,
+  KPI plain-language cues, and axis wording all carried over.]
+
+---
+## INTEGRATION NOTE — two cycle series converged (2026-10-31)
+On 2026-10-31 two lanes worked this repo in parallel and both numbered
+their cycles from 20. The main lane's Cycles 20-24 (player persistence,
+cap pool deployment) and the toby lane's Cycles 20-26 (CarpeData,
+solutions, Boardroom — appended below) are DIFFERENT work that shares
+numbers. Entries are dated and titled; file names in src/ follow the
+lane that wrote them (e.g. bml_cycle24_deploy.py is main-lane,
+bml_cycle24.py is toby-lane). Nothing was renumbered, so history stays
+traceable to its commits. The toby-lane entries follow.
+
+## Cycles 14 / 16 / 17 — BACKFILLED 2026-10-31 (audit gap G7)
+These three cycles shipped code and data but were never logged. Entries
+reconstructed from the scripts and their committed outputs; Cycle 17's
+output file was missing, so it was re-run on the same data to restore it.
+
+- Cycle 14 (src/bml_cycle14.py) — PRODUCTION FORMULA + RUNS PANEL:
+  promoted the run-differential model to the committed production
+  artifact (data/formula_prod.json; KPIs + ISO + payroll + RD + PythE)
+  and added the run-differential dashboard panel. Its recorded CV
+  (MAE 4.3 / R2 0.764) is a two-season same-year cross-fit — Cycles
+  18-19 later scoped this whole family as diagnostic, not forecast,
+  and formula_prod.json now carries that annotation (G8).
+- Cycle 16 (src/bml_cycle16_alloc.py + bml_cycle16_salary.py) — CAP
+  ALLOCATION + the salary stub: allocation optimizer on real payroll
+  profiles (data/cap_allocation.json: winning-cheap avg payroll $105.6M
+  vs rich $332.6M; payroll coefficient ~0 once KPIs are in — "a
+  cap-constrained team does not buy wins with dollars") plus the
+  sensitivity panel. The salary half honestly reported its missing
+  input (data/salaries_2026.json) for two cycles until Cycle 25
+  supplied it (2026-10-31).
+- Cycle 17 (src/bml_cycle17_ml.py) — MODEL-FAMILY COMPARISON: linear
+  vs Ridge vs shallow RandomForest vs GradientBoosting vs poly-Ridge
+  vs a small MLP, repeated K-fold on the same 58 team-seasons.
+  Restored result (data/model_family_comparison.json, re-run
+  2026-10-31): Linear MAE 3.84 (best), Ridge 4.16, RF 4.89, GBM 5.14,
+  poly-Ridge 7.67, MLP 5112.9 (unscaled features at n=58 — a real,
+  instructive blowup). Verdict stands as written: at this sample size
+  the fancy families do not beat linear. Same-year scoping from
+  Cycles 18-19 applies to the absolute numbers.
+
+## Provenance note — Cycle 3 (audit gap G7, second half)
+src/bml_cycle3.py and src/statcast_ingest.py do not exist in the repo:
+the Cycle 3 result (team xwOBA adds no signal) survives in
+data/statcast_team.json and the Cycle 3 entry above, but its generating
+script was never committed. Savant ingestion is now covered, committed,
+and tested by src/carpe.py (Cycle 20+); the gap is recorded here rather
+than papered over with a reconstructed script.
+
+## Correction — Cycle 19 grouped CV (audit gap G6, root-caused 2026-10-31)
+The Cycle 19 entry below cites grouped CV "MAE 13.0, R2 -6.09". The
+per-year fold keyed 2019 (MAE 51.9) predicts the 60-game 2020 season
+with a 162-game-trained model — a units mismatch, not model error.
+bml_cycle19_lagged.py now excludes target-season-2020 folds from the
+headline mean and reports them separately: grouped CV MAE is 10.23
+(R2 -0.081). The cycle's verdict is unchanged (the lagged model still
+does not beat naive out-of-sample, 14.05 vs 9.75).
+
+---
+
+## Cycles 20-23 — CARPEDATA (every open/free endpoint, tested before trusted)
+Connector: src/carpe.py (keyless). Scorecard: docs/CARPE_SCORECARD.md —
+kept / dropped / unavailable, with reasons. All joins by MLBAM player_id;
+name-string joins are retired in this work (the AZ/ARI failure class).
+
+- Cycle 21 (src/bml_cycle21.py) — MARCEL BACKTEST, run first because it
+  sets the baseline: shipped 2-season (5:4) vs classic 3-season (5-4-3)
+  vs 3-season + age term (slope cross-fitted on the other year's
+  residuals; lake extended to 2023+2024 via the same MLB API). Targets
+  2025+2026, pooled n=196: A OBP MAE .0227 / SLG .0468; B .0226 / .0468
+  (3rd season = a wash, +1 player of coverage); C .0220 / .0453 — the age
+  term improved OOS in both directions. ADOPTED C's structure: cycle4
+  now runs the explicit 3-season window {2026:5, 2025:4, 2024:3} plus
+  pooled fitted age slopes (OBP .00158, SLG .00390 per year from age 27;
+  ages from the lake's own per-season payloads — the old aging step was
+  a hardcoded stub that adjusted nothing). Cascade regenerated (201
+  hitters, +Profar; Judge .457->.444; aging veterans down). Cycle 11
+  (pitchers) PINNED to its explicit 2-season window — untested there —
+  and verified byte-identical after the pin.
+- Cycle 20 (src/bml_cycle20.py) — SAVANT AT PLAYER LEVEL (Cycle 3 tested
+  team level and killed it; player level was untested). Q1: prior xwOBA
+  beats prior actual wOBA at predicting next-year wOBA in all 3 pairs
+  (MAE .0279/.0304, .0256/.0260, .0266/.0286) — xwOBA is the better
+  input. Q2: traits are far more stable than outcomes (YoY r: bat speed
+  .92, EV50 .90, barrel% .80, squared-up .80 vs OBP .30-.57, SLG .36-.59).
+  Q3: as ADJUSTMENTS on top of Marcel, every family failed the
+  both-directions OOS rule — bat tracking worsened both metrics both
+  directions; batted ball split; luck gap gained .0001-.0003 on OBP and
+  split on SLG. ADOPTED: nothing. Stability is not incremental value;
+  Marcel's outcome history already prices the traits. Savant ships as
+  diagnostics (dashboard trait panel), not projection inputs.
+- Cycle 22 (src/bml_cycle22.py) — BENCHMARK vs FanGraphs Steamer 2027
+  (id-joined, 201/201 hitters, 76/76 pitchers): hitters OBP r=.889
+  MAD=.010 bias=-.002; SLG r=.876 MAD=.020; top-25 OBP overlap 18/25.
+  (Pre-adoption Marcel measured r=.856 / overlap 15 — the Cycle 21 age
+  term measurably closed the benchmark gap.) Pitchers: ERA r=.663 but
+  bias -0.324 — the pitcher Marcel is systematically OPTIMISTIC vs the
+  public benchmark; WHIP bias -.093. Disclosed on the dashboard, open
+  item. ZiPS via the FG API returned empty — not included, not claimed.
+- Cycle 23 (src/bml_cycle23_pipeline.py) — MiLB PIPELINE INDEX: AAA/AA
+  under-26 qualified production by org (ages from real birthdates, fail
+  closed; AAA 1.0 / AA 0.85 level weights; volume x quality, avg=100).
+  STL 151, CLE 143, MIL 127, AZ 126, MIA 126; TB #7 at 112 — all three
+  winning-cheap orgs sit top-7 in near-MLB depth, and STL shows a strong
+  pipeline alone doesn't convert. Limitations in the JSON metadata
+  (upper minors only, no park adjustment, player-org units).
+- Dashboard: 10 -> 13 panels (benchmark scatter, Savant trait check,
+  pipeline index), each traceable to its source; clean-clone offline
+  build re-verified (13 panels, no lake, network blocked).
+
+---
+
+## Cycles 24-25 + P7 packaging — SOLUTIONS (2026-10-31)
+- Cycle 24 (src/bml_cycle24.py) — PITCHER BIAS, ROOT-CAUSED: judged the
+  shipped pitcher Marcel against ACTUALS (not just Steamer): bias -0.208
+  ERA pooled — the optimism was ours, not Steamer's conservatism.
+  Variants as per Cycle 21: 3-season MAE .715, + cross-fitted age term
+  .711 with bias collapsing to -0.078. Age slope is NEGATIVE and large
+  (ERA -0.0355/yr from 27): old arms are where the optimism lived
+  (age >=32 band bias -0.301). ADOPTED into cycle11: explicit 3-season
+  window + pooled fitted age slopes. Pool widened 76 -> 102 pitchers
+  (Burnes/Ragans/Lopez/Eovaldi now covered); re-benchmarked vs Steamer:
+  ERA bias -0.324 -> -0.250, MAD .556 -> .524 (r dipped .663 -> .636 —
+  the added arms are harder cases). Residual gap disclosed on dashboard.
+- Cycle 25 (src/bml_cycle25.py) — REAL SALARIES + FA SHOPPING LIST
+  (Cycle 16's declared dependency, finally wired): Spotrac team payroll
+  pages -> data/salaries_2026.json (927 rows, 864 id-matched via the
+  Steamer+lake registry, accent-folded); Spotrac 2027 FA page (251
+  players, 231 with Steamer WAR) -> data/fa_shopping_2027.json. Top of
+  the class: Skubal 5.66 WAR (prior AAV $32.0M, Spotrac market est
+  $39.5M); best value: Rasmussen 8.79 WAR per $10M of prior AAV,
+  Brandon Lowe 5.81, Trevor Rogers 4.91. Prior AAV is labeled a
+  last-price anchor everywhere, never a predicted price. Spotrac
+  rate-limited 6 team pages mid-pull (ARI/BOS/CHC/MIL/TB/TEX — 500s
+  then 403): coverage is 24/30 teams, logged in the JSON metadata;
+  the script's cache makes any later rerun complete just the missing
+  six. USA TODAY salaries returned 402 — tried, blocked, logged.
+  Dashboard panel 14 ships the shopping list.
+- P7 packaging: README.md (quickstart + honesty rules + repo map),
+  EXEC_SUMMARY rewritten to the current state (was: 5 panels and the
+  retracted formula family), dashboard now 14 panels; clean-clone
+  offline build re-verified (14 panels, no lake, network blocked).
+
+---
+
+## Cycle 26 — the BOARDROOM layer (2026-10-31)
+- Built: src/bml_cycle26_wow.py -> data/wow_scenarios.json +
+  data/team_explorer.json; three dashboard panels (17 total).
+- WHAT DOES THE MONEY BUY: 26-man rosters built ENTIRELY from the real
+  2027 FA class (Spotrac + Steamer WAR, prior-AAV anchors) at three
+  budgets — Floor $171.2M: 42.0 WAR for $171.0M; Middle $208M: 45.7 WAR;
+  Cap $245.3M: 52.3 WAR for $244.6M. The floor build captures ~80% of
+  the cap build's WAR; the last $73.6M buys ~10.3 WAR. Method: greedy
+  WAR-per-dollar quota fill + WAR upgrades while budget holds;
+  constraints asserted in code (26 men, spend <= budget). Anchors are
+  last prices, labeled as such on the panel.
+- PRESS PLAY: payroll-vs-wins animated over the 2011-2026 panel
+  (16 seasons, bubble = wins per $100M, winning-cheap three in gold).
+- PICK YOUR TEAM: per-club 2026 signature radar indexed to league=100
+  (K%/HR inverted), with payroll, cap headroom, pipeline rank and top
+  prospect in the title — all 30 clubs, from committed snapshots.
