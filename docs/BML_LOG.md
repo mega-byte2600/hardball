@@ -492,3 +492,19 @@ name-string joins are retired in this work (the AZ/ARI failure class).
 - PICK YOUR TEAM: per-club 2026 signature radar indexed to league=100
   (K%/HR inverted), with payroll, cap headroom, pipeline rank and top
   prospect in the title — all 30 clubs, from committed snapshots.
+
+## Cycle 27 — AVAILABILITY STRESS on the Boardroom rosters (toby series, 2026-10-31)
+- Question: "the 42 WAR floor roster assumes health — what survives
+  injuries?" Method kept honest: per-player measured IL availability
+  covers only 12 of 33 rostered players (45% of WAR), and applying it
+  selectively would penalize the best-measured players — so the stress
+  is UNIFORM, factors measured from the 201-player pool's real 2025-26
+  IL records (mean availability 0.912, p25 0.890).
+- Measured: Floor 42.0 → 38.3 WAR (p25: 37.4); Middle 45.7 → 41.7;
+  Cap 52.3 → 47.7. Floor/cap ratio unchanged at 0.803.
+- Learned: injury risk is a level tax (~4-5 WAR at every budget), not
+  a big-spender rescue. The winning-cheap edge survives the stress.
+  Measured-subset context (12 players): 26.4 → 24.4 WAR.
+- Also this pass: docs/TALKTRACK.md renumbered to the merged 20-figure
+  dashboard (Boardroom beats added: film opener, money-buys, pick-your-
+  team close); dashboard glossary WAR reference corrected Figure 12 → 18.
