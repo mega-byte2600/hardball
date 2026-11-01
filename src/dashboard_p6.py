@@ -53,7 +53,7 @@ def panel_payroll_wins(df, year=2026):
     fig.add_vline(x=FLOOR / 1e6, line_dash="dot", line_color="purple",
                   annotation_text=f"Proposed floor $171.2M", annotation_position="bottom right")
     fig.update_layout(title=f"{year} — Payroll ($M) vs Wins: money buys some wins; winning-cheap teams win MORE per $",
-                      xaxis_title="Total payroll ($M)", yaxis_title="Wins",
+                      xaxis_title="Total payroll ($ millions)", yaxis_title="Wins",
                       template="plotly_white", height=520)
     return fig
 
@@ -63,8 +63,11 @@ def panel_kpi(df, year=2026):
     d = df[df["season"] == year].dropna(subset=["OBP", "contact", "K%", "BB%", "HR/PA"])
     grp = d.groupby("group")[["OBP", "contact", "K%", "BB%", "HR/PA"]].mean()
     metrics = ["OBP", "BB%", "HR/PA", "contact", "K%"]
-    labels = {"OBP": "OBP", "BB%": "BB%", "HR/PA": "HR / 1000 PA",
-              "contact": "Contact %", "K%": "K%"}
+    labels = {"OBP": "OBP<br><span style='font-weight:400;font-size:10px'>reach base %</span>",
+              "BB%": "BB%<br><span style='font-weight:400;font-size:10px'>walks</span>",
+              "HR/PA": "HR / 1000 PA<br><span style='font-weight:400;font-size:10px'>home runs</span>",
+              "contact": "Contact %<br><span style='font-weight:400;font-size:10px'>hits ball</span>",
+              "K%": "K%<br><span style='font-weight:400;font-size:10px'>strikeouts</span>"}
     colors = {"WIN_CHEAP": "#1b5e20", "CHEAP_MEDIOCRE": "#e65100", "OTHER": "#1565c0"}
     gname = {"WIN_CHEAP": "Winning-cheap (MIL·TB·CLE)", "CHEAP_MEDIOCRE": "Cheap-mediocre",
              "OTHER": "Other"}
@@ -1005,6 +1008,17 @@ figures are not yet law. No performance guarantee is implied.</div>
 <span class="k"><span class="sw" style="background:#1565c0"></span> blue = <b>other</b> (all remaining teams)</span>
 <span class="k"><span class="sw" style="background:#d50032"></span> red = cap line / negative signal</span>
 <span class="k"><span class="sw" style="background:#0d47a1"></span> navy = many-color charts (retention, sensitivity)</span></div>
+<div class="keybox"><b>BASEBALL PLAIN-ENGLISH KEY — every stat on this page, in one glance:</b><br>
+<span class="k"><b>PA</b> = plate appearance — every time a batter steps to the plate (any outcome)</span>
+<span class="k"><b>OBP</b> = how often a batter reaches base (hits + walks)</span>
+<span class="k"><b>contact %</b> = how often the batter actually hits the ball (vs striking out)</span>
+<span class="k"><b>BB%</b> = how often a batter takes a walk</span>
+<span class="k"><b>ISO</b> = power — extra bases beyond singles</span>
+<span class="k"><b>Run differential</b> = runs scored minus runs allowed (best single win predictor)</span>
+<span class="k"><b>wOBA / wRC+</b> = overall hitting value, 100 = league average</span>
+<span class="k"><b>FIP</b> = pitching quality (a pitcher's own doing; lower = better)</span>
+<span class="k"><b>K-BB%</b> = strikeouts minus walks = how dominant a pitcher is</span>
+<span class="k"><b>WAR</b> = the famous player-value stat — it's <u>proprietary &amp; absent from our data</u>; we show its real inputs instead (see Figure 12)</span></div>
 {js_include}
 <div class="figidx"><b>FIGURE INDEX — the story at a glance (all 20 real-data charts below)</b><br>
 <span>1</span> Press play: 16 seasons of payroll vs wins &nbsp;·&nbsp;
