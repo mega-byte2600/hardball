@@ -393,15 +393,17 @@ def panel_value_metrics():
 
 def panel_skill_persistence():
     """Centerpiece: the measurable edge. Input skills persist; OBP is noisy."""
-    v = os.path.join(DATA, "player_level_validation.json")
+    multi = os.path.join(DATA, "player_persistence_multiyear.json")
     ci = os.path.join(DATA, "persistence_ci.json")
+    if os.path.exists(multi):
+        return _panel_skill_multipair(multi, ci)
+    v = os.path.join(DATA, "player_level_validation.json")
     if not os.path.exists(v):
         return None
     d = json.load(open(v))
     pooled = None
     if os.path.exists(ci):
-        cid = json.load(open(ci))
-        pooled = cid.get("pooled_contact")
+        pooled = json.load(open(ci)).get("pooled_contact")
     yoy = d.get("yoy_corr_2025_2026", {})
     labels = {"contact": "Contact %", "BB%": "Walk %", "ISO": "Power (ISO)",
               "OBP": "On-base %", "K%": "K %"}
@@ -411,11 +413,9 @@ def panel_skill_persistence():
     for k in order:
         if k in yoy:
             names.append(labels.get(k, k)); r.append(yoy[k])
-            # green = strongly persistent (>=0.6); orange = moderate; blue = noisy
             cols.append("#1b5e20" if yoy[k] >= 0.6 else "#e65100" if yoy[k] >= 0.4 else "#1565c0")
     fig.add_trace(go.Bar(y=names, x=r, orientation="h", marker_color=cols,
                          text=[f"{v:.2f}" for v in r], textposition="outside"))
-    # legend for the color coding (so the reader knows what green/orange/blue mean)
     for lab, c in [("Green = strongly persistent (r ≥ 0.60)", "#1b5e20"),
                    ("Orange = moderately persistent (r ≥ 0.40)", "#e65100"),
                    ("Blue = noisy / weak (r < 0.40)", "#1565c0")]:
@@ -434,10 +434,49 @@ def panel_skill_persistence():
                       annotations=[dict(x=0.98, y=len(order)-0.5, xref="x", yref="y",
                                         showarrow=False, text="▲ contact carries",
                                         font=dict(color="#1b5e20", size=12))])
-    # add a sub-title line about the edge (pooled CI when present)
     fig.add_annotation(x=-0.01, y=1.135, xref="paper", yref="paper", showarrow=False,
                        text=sub or "Buy the persistent inputs (contact+walks), not the noisy output (OBP/BA)",
                        font=dict(size=12, color="#14213d"), xanchor="left")
+    return fig
+
+
+def _panel_skill_multipair(multi_path, ci_path):
+    """Multi-year version: each skill's r in EVERY season pair + pooled verdict."""
+    d = json.load(open(multi_path))
+    per = d["per_pair"]  # {"2023->2024": {contact_r, BB_r, OBP_r, n}, ...}
+    pairs = list(per.keys())
+    pooled = None
+    if os.path.exists(ci_path):
+        pooled = json.load(open(ci_path)).get("pooled_contact")
+    skills = [("contact_r", "Contact %"), ("BB%_r", "Walk %"), ("OBP_r", "On-base %")]
+    fig = go.Figure()
+    for k, lab in skills:
+        vals = [per[p][k] for p in pairs if k in per[p]]
+        edge = max(vals) if vals else 0
+        col = "#1b5e20" if edge >= 0.6 else "#e65100" if edge >= 0.4 else "#1565c0"
+        fig.add_trace(go.Bar(x=vals, y=[lab]*len(vals), name=lab, orientation="h",
+                             marker_color=col, text=[f"{v:.2f}" for v in vals],
+                             textposition="outside"))
+    # a single horizontal legend row
+    for lab, c in [("Green = persistently strong (best pair r ≥ 0.60)", "#1b5e20"),
+                   ("Orange = moderate (best pair r ≥ 0.40)", "#e65100"),
+                   ("Blue = noisy (best pair r < 0.40)", "#1565c0")]:
+        fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers", marker=dict(color=c, size=10), name=lab))
+    n_players = d.get("n_players", "")
+    sub = (f"{len(pairs)} season pairs, {n_players} players — contact persists r≥0.6 in EVERY "
+           f"pair (pooled r≈{d.get('pooled_contact_r', 0):.2f})")
+    if pooled:
+        sub += (f"; {pooled['n_pairs']} player-year pairs, pooled r={pooled['r']:.2f} "
+                f"(95% CI {pooled['ci95'][0]:.2f}-{pooled['ci95'][1]:.2f})")
+    fig.update_layout(title="The measurable edge: input SKILLS persist year-to-year (3 real season pairs, 393 players)",
+                      xaxis_title="Year-over-year persistence (r)",
+                      xaxis_range=[0, 1.1], template="plotly_white", height=420,
+                      margin=dict(l=140, t=95),
+                      bargap=0.35,
+                      legend=dict(orientation="h", yanchor="bottom", y=1.06,
+                                  xanchor="left", x=0, font=dict(size=11)))
+    fig.add_annotation(x=-0.01, y=1.16, xref="paper", yref="paper", showarrow=False,
+                       text=sub, font=dict(size=12, color="#14213d"), xanchor="left")
     return fig
 
 

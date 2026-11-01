@@ -84,7 +84,7 @@ def main():
     # pooled persistence across ALL pairs (every valid player-year)
     pooled_r = np.corrcoef(all_contact["x"], all_contact["y"])[0, 1] if all_contact["y"] else None
     print(f"\nPOOLED contact persistence across all {sum(s['n'] for s in summaries.values())} player-years: ")
-    result = {"seasons": seasons, "per_pair": summaries,
+    result = {"seasons": [int(s) for s in seasons], "per_pair": summaries,
               "total_player_seasons": int(len(df)),
               "n_players": int(df["pid"].nunique())}
     if pooled_r is not None:

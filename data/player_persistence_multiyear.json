@@ -1,0 +1,41 @@
+{
+  "seasons": [
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "per_pair": {
+    "2023->2024": {
+      "n": 124,
+      "contact_r": 0.827,
+      "BB_r": 0.753,
+      "OBP_r": 0.595,
+      "contact_mae": 2.44,
+      "contact_err_redux_pct": 46.3,
+      "contact_r2": 0.684
+    },
+    "2024->2025": {
+      "n": 93,
+      "contact_r": 0.769,
+      "BB_r": 0.711,
+      "OBP_r": 0.582,
+      "contact_mae": 2.58,
+      "contact_err_redux_pct": 38.8,
+      "contact_r2": 0.592
+    },
+    "2025->2026": {
+      "n": 80,
+      "contact_r": 0.899,
+      "BB_r": 0.655,
+      "OBP_r": 0.298,
+      "contact_mae": 2.12,
+      "contact_err_redux_pct": 57.3,
+      "contact_r2": 0.808
+    }
+  },
+  "total_player_seasons": 764,
+  "n_players": 393,
+  "pooled_contact_r": 0.838,
+  "verdict": "STABLE: contact persists r>=0.6 in EVERY season pair tested"
+}
