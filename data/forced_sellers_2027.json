@@ -1,0 +1,164 @@
+{
+ "metadata": {
+  "method": "minimal largest-first contract prefix covering the cap gap; arithmetic only, not a trade prediction",
+  "cap_2027": 245300000,
+  "floor_2027": 171200000,
+  "sources": [
+   "data/cap_scenario_2027.json (gaps)",
+   "data/salaries_2026.json (Spotrac 2026 Payroll Salary column, Cycle 25)"
+  ],
+  "coverage": "6 of 7 over-cap teams; CHC ($4.0M over) has no contract rows \u2014 its Spotrac page failed in Cycle 25 and is logged in salaries metadata",
+  "salaries_rows": 927,
+  "salaries_team_failures": [
+   "ARI",
+   "BOS",
+   "CHC",
+   "MIL",
+   "TB",
+   "TEX"
+  ],
+  "caveats": [
+   "Shedding is assumed to remove the full listed salary; real trades/releases rarely do that, so each shed count is an arithmetic lower bound, not a plan.",
+   "A team's listed contracts need not sum to its cap-scenario payroll total (different payroll definitions / roster timing); the shed count uses individual contract values against the gap.",
+   "2026 salaries measured against a 2027 cap gap: a compliance illustration, not a 2027 payroll forecast."
+  ]
+ },
+ "teams": [
+  {
+   "team": "NYM",
+   "payroll_M": 346.7,
+   "gap_to_cap": 101436805.0,
+   "covered": true,
+   "n_listed": 43,
+   "sum_listed": 291350000,
+   "n_shed": 3,
+   "shed_total": 133600000,
+   "shed": [
+    {
+     "name": "Juan Soto",
+     "pos": "LF",
+     "salary_2026": 57500000
+    },
+    {
+     "name": "Bo Bichette",
+     "pos": "3B",
+     "salary_2026": 42000000
+    },
+    {
+     "name": "Francisco Lindor",
+     "pos": "SS",
+     "salary_2026": 34100000
+    }
+   ]
+  },
+  {
+   "team": "LAD",
+   "payroll_M": 339.3,
+   "gap_to_cap": 94019244.0,
+   "covered": true,
+   "n_listed": 37,
+   "sum_listed": 422183335,
+   "n_shed": 2,
+   "shed_total": 125000000,
+   "shed": [
+    {
+     "name": "Shohei Ohtani",
+     "pos": "SP  /DH",
+     "salary_2026": 70000000
+    },
+    {
+     "name": "Kyle Tucker",
+     "pos": "RF",
+     "salary_2026": 55000000
+    }
+   ]
+  },
+  {
+   "team": "NYY",
+   "payroll_M": 308.3,
+   "gap_to_cap": 63036780.0,
+   "covered": true,
+   "n_listed": 32,
+   "sum_listed": 280383333,
+   "n_shed": 2,
+   "shed_total": 76500000,
+   "shed": [
+    {
+     "name": "Aaron Judge",
+     "pos": "RF",
+     "salary_2026": 40000000
+    },
+    {
+     "name": "Cody Bellinger",
+     "pos": "LF",
+     "salary_2026": 36500000
+    }
+   ]
+  },
+  {
+   "team": "PHI",
+   "payroll_M": 292.0,
+   "gap_to_cap": 46651676.0,
+   "covered": true,
+   "n_listed": 36,
+   "sum_listed": 279532617,
+   "n_shed": 2,
+   "shed_total": 75000000,
+   "shed": [
+    {
+     "name": "Zack Wheeler",
+     "pos": "SP",
+     "salary_2026": 42000000
+    },
+    {
+     "name": "Kyle Schwarber",
+     "pos": "DH",
+     "salary_2026": 33000000
+    }
+   ]
+  },
+  {
+   "team": "TOR",
+   "payroll_M": 276.1,
+   "gap_to_cap": 30830679.0,
+   "covered": true,
+   "n_listed": 39,
+   "sum_listed": 252163096,
+   "n_shed": 1,
+   "shed_total": 40214286,
+   "shed": [
+    {
+     "name": "Jr. Vladimir Guerrero Jr.",
+     "pos": "1B",
+     "salary_2026": 40214286
+    }
+   ]
+  },
+  {
+   "team": "ATL",
+   "payroll_M": 263.5,
+   "gap_to_cap": 18162438.0,
+   "covered": true,
+   "n_listed": 35,
+   "sum_listed": 218500000,
+   "n_shed": 1,
+   "shed_total": 27000000,
+   "shed": [
+    {
+     "name": "Chris Sale",
+     "pos": "SP",
+     "salary_2026": 27000000
+    }
+   ]
+  },
+  {
+   "team": "CHC",
+   "payroll_M": 249.3,
+   "gap_to_cap": 4019956.0,
+   "covered": false,
+   "reason": "no contract rows in salaries_2026.json (Spotrac page failed in Cycle 25)",
+   "n_listed": 0,
+   "shed": []
+  }
+ ]
+}

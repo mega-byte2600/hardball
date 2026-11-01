@@ -558,3 +558,35 @@ streaming terms, Moses et al. observability).
   curate unchanged, parity r=0.889, gate ALL PASS incl. live standings).
 - This run also probed Spotrac (Tampa Bay 2026 payroll page): still 403
   — the 24/30 salaries gap stands, logged, no routing around the block.
+
+## Cycle 30 — FORCED-SELLER PANEL (2026-11-01, 24/7 build cycle)
+- Built: src/bml_cycle30.py -> data/forced_sellers_2027.json +
+  dashboard Figure 10 (Section III, "The Cap"), new total 21 figures.
+- Method: for each over-cap team in data/cap_scenario_2027.json, rank
+  its data/salaries_2026.json contracts largest-first and take the
+  minimal prefix covering the cap gap. Assertions: cap/floor unchanged,
+  shed set minimal, coverage exactly 6/7 with CHC the sole uncovered team.
+- Measured: NYM gap $101.4M -> shed 3 (Soto $57.5M, Bichette $42.0M,
+  Lindor $34.1M) = $133.6M; LAD $94.0M -> 2 (Ohtani $70.0M, Tucker
+  $55.0M) = $125.0M; NYY $63.0M -> 2 (Judge $40.0M, Bellinger $36.5M)
+  = $76.5M; PHI $46.7M -> 2 (Wheeler $42.0M, Schwarber $33.0M) =
+  $75.0M; TOR $30.8M -> 1 (Guerrero Jr. $40.2M) = $40.2M; ATL $18.2M
+  -> 1 (Sale $27.0M) = $27.0M. CHC ($4.0M over) uncovered: no contract
+  rows — its Spotrac page failed in Cycle 25, logged, not zero.
+- Learned: every covered over-cap team closes its gap by shedding at
+  most 3 contracts — the cap binds through a handful of deals, not a
+  rebuild. Stated as arithmetic only: shedding is assumed to remove
+  the full listed salary, which real trades rarely do, so each count
+  is a lower bound, not a plan. Listed contracts need not sum to a
+  team's cap-scenario payroll total (different payroll definitions /
+  roster timing); the count uses individual values vs the gap.
+- Renumbering cascade handled explicitly (the Figure-reference rot
+  class the gate guards): old Figures 10-20 -> 11-21 in the figure
+  index, TALKTRACK (incl. Fig 16 benchmark -> 17) and the dashboard
+  glossary WAR reference (18 -> 19); gate bounds moved 20 -> 21 and
+  18 -> 19. README + EXEC_SUMMARY counts moved 20 -> 21.
+- Platform run on the same tree: Spotrac probe still 403 (24/30 gap
+  stands); ingest 20 datasets, 0 failures, Savant volumes in band
+  (expected 651-673, bat-tracking 595-619, sprint 489-506),
+  transactions 120,313 (unchanged); curate 14 tables unchanged; parity
+  r = 0.889, 201 matched; gate ALL PASS incl. live standings 30/30.

@@ -63,5 +63,5 @@ OBP agreement r = .889; pitcher bias corrected −0.324 → −0.250 ERA),
 real Spotrac salaries + the 2027 FA shopping list, the MiLB pipeline
 index, and the Boardroom panels (animated payroll film, pick-your-team
 explorer, budget-scenario rosters: a floor-budget FA build captures
-~80% of a cap-budget build's WAR). Dashboard: 20 figures. P7 UAT was
+~80% of a cap-budget build's WAR). Dashboard: 21 figures. P7 UAT was
 approved at MVP level by the owner on 2026-10-31.
