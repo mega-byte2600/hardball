@@ -69,7 +69,12 @@ def panel_kpi(df, year=2026):
             fig.add_trace(go.Bar(x=[g], y=[grp.loc[g, m]], marker_color=colors[g],
                                  showlegend=(i == 1), name=g), row=1, col=i)
     fig.update_layout(title=f"{year} — Copycat-league KPI signature (winning-cheap dominates contact/OBP)",
-                      template="plotly_white", height=420)
+                      template="plotly_white", height=460,
+                      legend=dict(orientation="h", yanchor="bottom", y=1.02,
+                                  xanchor="right", x=1),
+                      barmode="group")
+    # Spread the 5 subplots evenly and angle the group labels so nothing overlaps
+    fig.update_xaxes(tickangle=30 if year else 0)
     return fig
 
 
@@ -324,6 +329,39 @@ def panel_sensitivity():
     return fig
 
 
+def panel_value_metrics():
+    """Top Metrics panel: wOBA / wRC+ (hitting value) + FIP / K-BB% (pitching)."""
+    vm = os.path.join(DATA, "value_metrics_2026.json")
+    if not os.path.exists(vm):
+        return None
+    d = json.load(open(vm))
+    h = pd.DataFrame(d["hitting"]).sort_values("wRC+", ascending=False).head(12)
+    p = pd.DataFrame(d["pitching"]).sort_values("FIP", ascending=True).head(12)
+    def c(cd):
+        return ("#1b5e20" if cd in WIN_CHEAP else
+                "#e65100" if cd in CHEAP_MEDIOCRE else "#1565c0")
+    fig = make_subplots(rows=2, cols=1, shared_xaxes=False,
+                        subplot_titles=("Hitting value — wRC+ (100 = league avg)",
+                                        "Pitching value — FIP (lower = better)"))
+    fig.add_trace(go.Bar(x=h["team"], y=h["wRC+"], marker_color=[c(t) for t in h["team"]],
+                         text=[f"{v:.0f}" for v in h["wRC+"]], textposition="outside",
+                         name="wRC+"), 1, 1)
+    fig.add_trace(go.Bar(x=p["team"], y=p["FIP"], marker_color=[c(t) for t in p["team"]],
+                         text=[f"{v:.2f}" for v in p["FIP"]], textposition="outside",
+                         name="FIP"), 2, 1)
+    for label, col in [("Green = winning-cheap (MIL/TB/CLE)", "#1b5e20"),
+                       ("Orange = cheap-mediocre (MIA/CHW/STL)", "#e65100"),
+                       ("Blue = other", "#1565c0")]:
+        fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
+                                 marker=dict(color=col, size=10), name=label))
+    fig.update_layout(title="Top value metrics — wOBA/wRC+ & FIP/K-BB% (2026, computed from real box scores). "
+                            "WAR itself is proprietary (fWAR/bWAR) & not in the MLB API — these are its inputs.",
+                      template="plotly_white", height=520, showlegend=True)
+    fig.update_yaxes(title_text="wRC+", row=1, col=1, zeroline=True)
+    fig.update_yaxes(title_text="FIP", row=2, col=1, zeroline=True)
+    return fig
+
+
 def panel_skill_persistence():
     """Centerpiece: the measurable edge. Input skills persist; OBP is noisy."""
     v = os.path.join(DATA, "player_level_validation.json")
@@ -373,10 +411,11 @@ def build():
     fig9 = panel_runs()
     fig10 = panel_sensitivity()
     fig11 = panel_skill_persistence()
+    fig12 = panel_value_metrics()
 
     # Number every figure in display order and make each easy to reference.
     fig_panels = [f for f in (fig11, fig9, fig1, fig2, fig3, fig4, fig5,
-                              fig6, fig7, fig8, fig10) if f is not None]
+                              fig6, fig7, fig8, fig10, fig12) if f is not None]
 
     def _number(figs):
         """Executive polish for every figure + 'Figure N — ' prefix.
