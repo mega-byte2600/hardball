@@ -533,22 +533,23 @@ won ~95 games vs ~79 at roughly half payroll. <span class="act">Owner action:</s
 build the roster around OBP/contact + control pitchers, not the big power salary.
 <span class="why">Why trust it:</span> real 2025-2026 data (MLB API + Spotrac), model cross-validated.
 Not a guarantee — shown honestly below.</div>
-<div class="quant"><b>What the math provably supports (measured on 509 real team-seasons, 2011-2026):</b><br>
-<b>1) Run differential → wins is real.</b> Same-year fit R² ≈ 0.55 on a 450-row panel — run margin
-describes wins, but it is diagnostic, not a forward forecast.<br>
-<b>2) KPI-only cross-year prediction is weak.</b> Predicting NEXT season's wins from this season's
-hitting KPIs: in-sample R² ≈ 0.14; out-of-sample (forecast 2020-2025 from ≤2019 data) is
-<b>worse</b> than the naive league-mean baseline. The contact/OBP signal tested honestly does <b>not</b>
-cleanly predict next-year wins — year-to-year wins regress heavily, matching published literature.<br>
-<b>3) The robust, honest use is player-level acquisition</b> (Marcel projections + injury caps →
-the 26-man roster), not a single team-wins formula. We deliberately do <b>not</b> claim a
-CV-MAE ~4.0 / R² 0.80 forward-prediction model anymore — that number was measured on a
-favorable 2-year window and did not survive the full panel. Cross-year forecasting MAE ≈ 9-13
-wins; that is the honest capability.</div>
-<div class="note">Real 2011-2026 data (MLB Stats API + Spotrac), 509 team-seasons. Honest capability:
-same-year run-diff→wins R² ≈ 0.55; KPI-only cross-year forecasting MAE ≈ 9-13 wins (weak, beats
-naive only marginally — shown honestly). The cap/floor are owners' proposed 2027 figures
-(CBA expires Dec 1 2026), not law. No guaranteed performance claim.</div>
+<div class="quant"><b>What the math provably supports</b> &nbsp;<span style="font-weight:400;color:#4a5a72">(measured on 509 real team-seasons, 2011-2026)</span><br><br>
+<b>1. Run differential drives wins, but only as a diagnostic.</b> The same-season
+fit is strong (R² ≈ 0.55) — a better run margin means more wins. It is not a
+forward-looking prediction.<br><br>
+<b>2. Raw hitting KPIs do not reliably forecast next-season wins.</b> In-sample
+accuracy is weak (R² ≈ 0.14), and out-of-sample the model is no better than simply
+assuming the league average. Year-over-year team wins regress sharply toward the
+mean — consistent with established baseball research.<br><br>
+<b>3. The defensible edge is at the player level, not the team level.</b> A
+player's underlying skills — contact rate (r = .90) and walk discipline (r = .66) —
+persist year to year in ways that wins themselves do not. That persistence, paired
+with Marcel-style aging and health constraints, is what builds the 26-man roster
+shown here. We explicitly do not claim a forward team-wins model: cross-year accuracy
+is roughly 9-13 wins, and we present that number honestly.</div>
+<div class="note">Data: MLB Stats API + Spotrac, 2011-2026 (509 team-seasons). The 2027 cap
+($245.3M) and floor ($171.2M) are the owners' proposal; the CBA expires Dec 1, 2026 and the
+figures are not yet law. No performance guarantee is implied.</div>
 <div class="keybox"><b>COLOR KEY (used on every chart below):</b>
 <span class="k"><span class="sw" style="background:#1b5e20"></span> green = <b>winning-cheap</b> (MIL · TB · CLE — the target teams: &gt;85 wins at low payroll)</span>
 <span class="k"><span class="sw" style="background:#e65100"></span> orange = <b>cheap-mediocre</b> (MIA · CHW · STL — the trap: frugal but ~78 wins)</span>
