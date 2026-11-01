@@ -1,0 +1,3544 @@
+[
+ {
+  "player_id": 682829,
+  "name": "De La Cruz, Elly",
+  "age": 21.0,
+  "sprint_speed": 30.5,
+  "hp_to_1b": 4.13
+ },
+ {
+  "player_id": 677951,
+  "name": "Witt Jr., Bobby",
+  "age": 23.0,
+  "sprint_speed": 30.5,
+  "hp_to_1b": 4.12
+ },
+ {
+  "player_id": 680118,
+  "name": "Blanco, Dairon",
+  "age": 30.0,
+  "sprint_speed": 30.3,
+  "hp_to_1b": 4.15
+ },
+ {
+  "player_id": 607208,
+  "name": "Turner, Trea",
+  "age": 30.0,
+  "sprint_speed": 30.3,
+  "hp_to_1b": 4.14
+ },
+ {
+  "player_id": 669352,
+  "name": "Thompson, Bubba",
+  "age": 25.0,
+  "sprint_speed": 30.2,
+  "hp_to_1b": 4.23
+ },
+ {
+  "player_id": 622761,
+  "name": "Mateo, Jorge",
+  "age": 28.0,
+  "sprint_speed": 30.1,
+  "hp_to_1b": 4.2
+ },
+ {
+  "player_id": 682998,
+  "name": "Carroll, Corbin",
+  "age": 22.0,
+  "sprint_speed": 30.1,
+  "hp_to_1b": 4.08
+ },
+ {
+  "player_id": 663368,
+  "name": "Perkins, Blake",
+  "age": 26.0,
+  "sprint_speed": 30.0,
+  "hp_to_1b": 4.14
+ },
+ {
+  "player_id": 664983,
+  "name": "McCarthy, Jake",
+  "age": 25.0,
+  "sprint_speed": 30.0,
+  "hp_to_1b": 4.18
+ },
+ {
+  "player_id": 696285,
+  "name": "Young, Jacob",
+  "age": 23.0,
+  "sprint_speed": 30.0,
+  "hp_to_1b": 4.15
+ },
+ {
+  "player_id": 686668,
+  "name": "Doyle, Brenton",
+  "age": 25.0,
+  "sprint_speed": 29.9,
+  "hp_to_1b": 4.23
+ },
+ {
+  "player_id": 641658,
+  "name": "Hampson, Garrett",
+  "age": 28.0,
+  "sprint_speed": 29.8,
+  "hp_to_1b": 4.21
+ },
+ {
+  "player_id": 642350,
+  "name": "Siri, Jose",
+  "age": 27.0,
+  "sprint_speed": 29.7,
+  "hp_to_1b": 4.16
+ },
+ {
+  "player_id": 678225,
+  "name": "Bae, Jihwan",
+  "age": 23.0,
+  "sprint_speed": 29.7,
+  "hp_to_1b": 4.05
+ },
+ {
+  "player_id": 665923,
+  "name": "Ruiz, Esteury",
+  "age": 24.0,
+  "sprint_speed": 29.6,
+  "hp_to_1b": 4.34
+ },
+ {
+  "player_id": 640492,
+  "name": "Az\u00f3car, Jos\u00e9",
+  "age": 27.0,
+  "sprint_speed": 29.6,
+  "hp_to_1b": 4.33
+ },
+ {
+  "player_id": 694497,
+  "name": "Carter, Evan",
+  "age": 20.0,
+  "sprint_speed": 29.6,
+  "hp_to_1b": 4.12
+ },
+ {
+  "player_id": 677594,
+  "name": "Rodr\u00edguez, Julio",
+  "age": 22.0,
+  "sprint_speed": 29.6,
+  "hp_to_1b": 4.28
+ },
+ {
+  "player_id": 679032,
+  "name": "Rojas, Johan",
+  "age": 22.0,
+  "sprint_speed": 29.5,
+  "hp_to_1b": 4.26
+ },
+ {
+  "player_id": 680776,
+  "name": "Duran, Jarren",
+  "age": 26.0,
+  "sprint_speed": 29.5,
+  "hp_to_1b": 4.15
+ },
+ {
+  "player_id": 545361,
+  "name": "Trout, Mike",
+  "age": 31.0,
+  "sprint_speed": 29.5,
+  "hp_to_1b": 4.32
+ },
+ {
+  "player_id": 665161,
+  "name": "Pe\u00f1a, Jeremy",
+  "age": 25.0,
+  "sprint_speed": 29.4,
+  "hp_to_1b": 4.28
+ },
+ {
+  "player_id": 668930,
+  "name": "Turang, Brice",
+  "age": 23.0,
+  "sprint_speed": 29.4,
+  "hp_to_1b": 4.19
+ },
+ {
+  "player_id": 642708,
+  "name": "Rosario, Amed",
+  "age": 27.0,
+  "sprint_speed": 29.4,
+  "hp_to_1b": 4.23
+ },
+ {
+  "player_id": 678894,
+  "name": "Peguero, Liover",
+  "age": 22.0,
+  "sprint_speed": 29.3,
+  "hp_to_1b": 4.32
+ },
+ {
+  "player_id": 542932,
+  "name": "Berti, Jon",
+  "age": 33.0,
+  "sprint_speed": 29.3,
+  "hp_to_1b": 4.3
+ },
+ {
+  "player_id": 663853,
+  "name": "Gonzalez, Romy",
+  "age": 26.0,
+  "sprint_speed": 29.3,
+  "hp_to_1b": 4.3
+ },
+ {
+  "player_id": 657041,
+  "name": "Thomas, Lane",
+  "age": 27.0,
+  "sprint_speed": 29.3,
+  "hp_to_1b": 4.39
+ },
+ {
+  "player_id": 621439,
+  "name": "Buxton, Byron",
+  "age": 29.0,
+  "sprint_speed": 29.3,
+  "hp_to_1b": 4.17
+ },
+ {
+  "player_id": 665487,
+  "name": "Tatis Jr., Fernando",
+  "age": 24.0,
+  "sprint_speed": 29.3,
+  "hp_to_1b": 4.32
+ },
+ {
+  "player_id": 624641,
+  "name": "Sosa, Edmundo",
+  "age": 27.0,
+  "sprint_speed": 29.2,
+  "hp_to_1b": 4.37
+ },
+ {
+  "player_id": 665926,
+  "name": "Gim\u00e9nez, Andr\u00e9s",
+  "age": 24.0,
+  "sprint_speed": 29.2,
+  "hp_to_1b": 4.18
+ },
+ {
+  "player_id": 691026,
+  "name": "Winn, Masyn",
+  "age": 21.0,
+  "sprint_speed": 29.2,
+  "hp_to_1b": 4.24
+ },
+ {
+  "player_id": 664059,
+  "name": "Haggerty, Sam",
+  "age": 29.0,
+  "sprint_speed": 29.2,
+  "hp_to_1b": 4.29
+ },
+ {
+  "player_id": 656413,
+  "name": "Fairchild, Stuart",
+  "age": 27.0,
+  "sprint_speed": 29.2,
+  "hp_to_1b": 4.28
+ },
+ {
+  "player_id": 676694,
+  "name": "Meyers, Jake",
+  "age": 27.0,
+  "sprint_speed": 29.2,
+  "hp_to_1b": 4.32
+ },
+ {
+  "player_id": 664702,
+  "name": "Straw, Myles",
+  "age": 28.0,
+  "sprint_speed": 29.2,
+  "hp_to_1b": 4.14
+ },
+ {
+  "player_id": 665750,
+  "name": "Taveras, Leody",
+  "age": 24.0,
+  "sprint_speed": 29.1,
+  "hp_to_1b": 4.24
+ },
+ {
+  "player_id": 663837,
+  "name": "Vierling, Matt",
+  "age": 26.0,
+  "sprint_speed": 29.1,
+  "hp_to_1b": 4.39
+ },
+ {
+  "player_id": 682622,
+  "name": "Marte, Noelvi",
+  "age": 21.0,
+  "sprint_speed": 29.1,
+  "hp_to_1b": 4.3
+ },
+ {
+  "player_id": 677649,
+  "name": "Duran, Ezequiel",
+  "age": 24.0,
+  "sprint_speed": 29.1,
+  "hp_to_1b": 4.27
+ },
+ {
+  "player_id": 669392,
+  "name": "Taylor, Samad",
+  "age": 24.0,
+  "sprint_speed": 29.1,
+  "hp_to_1b": 4.23
+ },
+ {
+  "player_id": 680869,
+  "name": "Gelof, Zack",
+  "age": 23.0,
+  "sprint_speed": 29.0,
+  "hp_to_1b": 4.37
+ },
+ {
+  "player_id": 668731,
+  "name": "Baddoo, Akil",
+  "age": 24.0,
+  "sprint_speed": 29.0,
+  "hp_to_1b": 4.09
+ },
+ {
+  "player_id": 680574,
+  "name": "McLain, Matt",
+  "age": 23.0,
+  "sprint_speed": 29.0,
+  "hp_to_1b": 4.23
+ },
+ {
+  "player_id": 680911,
+  "name": "Miller, Owen",
+  "age": 26.0,
+  "sprint_speed": 29.0,
+  "hp_to_1b": 4.35
+ },
+ {
+  "player_id": 678009,
+  "name": "Meadows, Parker",
+  "age": 23.0,
+  "sprint_speed": 29.0,
+  "hp_to_1b": 4.21
+ },
+ {
+  "player_id": 676609,
+  "name": "Caballero, Jos\u00e9",
+  "age": 26.0,
+  "sprint_speed": 29.0,
+  "hp_to_1b": 4.22
+ },
+ {
+  "player_id": 608671,
+  "name": "Jankowski, Travis",
+  "age": 32.0,
+  "sprint_speed": 29.0,
+  "hp_to_1b": 4.24
+ },
+ {
+  "player_id": 667472,
+  "name": "Myers, Dane",
+  "age": 27.0,
+  "sprint_speed": 28.9,
+  "hp_to_1b": 4.28
+ },
+ {
+  "player_id": 686894,
+  "name": "Wiemer, Joey",
+  "age": 24.0,
+  "sprint_speed": 28.9,
+  "hp_to_1b": 4.27
+ },
+ {
+  "player_id": 681546,
+  "name": "Outman, James",
+  "age": 26.0,
+  "sprint_speed": 28.9,
+  "hp_to_1b": 4.24
+ },
+ {
+  "player_id": 641505,
+  "name": "Davis, Jonathan",
+  "age": 31.0,
+  "sprint_speed": 28.9,
+  "hp_to_1b": 4.26
+ },
+ {
+  "player_id": 676059,
+  "name": "Westburg, Jordan",
+  "age": 24.0,
+  "sprint_speed": 28.9,
+  "hp_to_1b": 4.35
+ },
+ {
+  "player_id": 687799,
+  "name": "Marlowe, Cade",
+  "age": 26.0,
+  "sprint_speed": 28.9,
+  "hp_to_1b": null
+ },
+ {
+  "player_id": 669242,
+  "name": "Edman, Tommy",
+  "age": 28.0,
+  "sprint_speed": 28.8,
+  "hp_to_1b": 4.24
+ },
+ {
+  "player_id": 681082,
+  "name": "Stott, Bryson",
+  "age": 25.0,
+  "sprint_speed": 28.8,
+  "hp_to_1b": 4.23
+ },
+ {
+  "player_id": 666181,
+  "name": "Benson, Will",
+  "age": 25.0,
+  "sprint_speed": 28.8,
+  "hp_to_1b": 4.38
+ },
+ {
+  "player_id": 595281,
+  "name": "Kiermaier, Kevin",
+  "age": 33.0,
+  "sprint_speed": 28.8,
+  "hp_to_1b": 4.22
+ },
+ {
+  "player_id": 669743,
+  "name": "Call, Alex",
+  "age": 28.0,
+  "sprint_speed": 28.8,
+  "hp_to_1b": 4.29
+ },
+ {
+  "player_id": 572041,
+  "name": "Pollock, AJ",
+  "age": 35.0,
+  "sprint_speed": 28.8,
+  "hp_to_1b": 4.34
+ },
+ {
+  "player_id": 677950,
+  "name": "Thomas, Alek",
+  "age": 23.0,
+  "sprint_speed": 28.8,
+  "hp_to_1b": 4.2
+ },
+ {
+  "player_id": 671739,
+  "name": "Harris II, Michael",
+  "age": 22.0,
+  "sprint_speed": 28.8,
+  "hp_to_1b": 4.24
+ },
+ {
+  "player_id": 693304,
+  "name": "Gonzales, Nick",
+  "age": 24.0,
+  "sprint_speed": 28.8,
+  "hp_to_1b": 4.37
+ },
+ {
+  "player_id": 670042,
+  "name": "Raley, Luke",
+  "age": 28.0,
+  "sprint_speed": 28.8,
+  "hp_to_1b": 4.31
+ },
+ {
+  "player_id": 596115,
+  "name": "Story, Trevor",
+  "age": 30.0,
+  "sprint_speed": 28.8,
+  "hp_to_1b": 4.32
+ },
+ {
+  "player_id": 683002,
+  "name": "Henderson, Gunnar",
+  "age": 22.0,
+  "sprint_speed": 28.8,
+  "hp_to_1b": 4.23
+ },
+ {
+  "player_id": 621438,
+  "name": "Taylor, Tyrone",
+  "age": 29.0,
+  "sprint_speed": 28.8,
+  "hp_to_1b": 4.4
+ },
+ {
+  "player_id": 664056,
+  "name": "Bader, Harrison",
+  "age": 29.0,
+  "sprint_speed": 28.8,
+  "hp_to_1b": 4.32
+ },
+ {
+  "player_id": 593160,
+  "name": "Merrifield, Whit",
+  "age": 34.0,
+  "sprint_speed": 28.8,
+  "hp_to_1b": 4.3
+ },
+ {
+  "player_id": 545350,
+  "name": "Marisnick, Jake",
+  "age": 32.0,
+  "sprint_speed": 28.8,
+  "hp_to_1b": 4.38
+ },
+ {
+  "player_id": 666139,
+  "name": "Lowe, Josh",
+  "age": 25.0,
+  "sprint_speed": 28.7,
+  "hp_to_1b": 4.23
+ },
+ {
+  "player_id": 678882,
+  "name": "Rafaela, Ceddanne",
+  "age": 22.0,
+  "sprint_speed": 28.7,
+  "hp_to_1b": 4.19
+ },
+ {
+  "player_id": 672724,
+  "name": "Peraza, Oswald",
+  "age": 23.0,
+  "sprint_speed": 28.7,
+  "hp_to_1b": 4.39
+ },
+ {
+  "player_id": 656308,
+  "name": "Chavis, Michael",
+  "age": 27.0,
+  "sprint_speed": 28.7,
+  "hp_to_1b": 4.41
+ },
+ {
+  "player_id": 572191,
+  "name": "Taylor, Michael A.",
+  "age": 32.0,
+  "sprint_speed": 28.7,
+  "hp_to_1b": 4.27
+ },
+ {
+  "player_id": 543760,
+  "name": "Semien, Marcus",
+  "age": 32.0,
+  "sprint_speed": 28.7,
+  "hp_to_1b": 4.42
+ },
+ {
+  "player_id": 663630,
+  "name": "McKenna, Ryan",
+  "age": 26.0,
+  "sprint_speed": 28.7,
+  "hp_to_1b": 4.24
+ },
+ {
+  "player_id": 671221,
+  "name": "Waters, Drew",
+  "age": 24.0,
+  "sprint_speed": 28.7,
+  "hp_to_1b": 4.3
+ },
+ {
+  "player_id": 673357,
+  "name": "Robert Jr., Luis",
+  "age": 25.0,
+  "sprint_speed": 28.7,
+  "hp_to_1b": 4.37
+ },
+ {
+  "player_id": 606132,
+  "name": "Tapia, Raimel",
+  "age": 29.0,
+  "sprint_speed": 28.7,
+  "hp_to_1b": 4.26
+ },
+ {
+  "player_id": 592663,
+  "name": "Realmuto, J.T.",
+  "age": 32.0,
+  "sprint_speed": 28.6,
+  "hp_to_1b": 4.36
+ },
+ {
+  "player_id": 666160,
+  "name": "Moniak, Mickey",
+  "age": 25.0,
+  "sprint_speed": 28.6,
+  "hp_to_1b": 4.32
+ },
+ {
+  "player_id": 670156,
+  "name": "Mastrobuoni, Miles",
+  "age": 27.0,
+  "sprint_speed": 28.6,
+  "hp_to_1b": 4.29
+ },
+ {
+  "player_id": 658668,
+  "name": "Olivares, Edward",
+  "age": 27.0,
+  "sprint_speed": 28.6,
+  "hp_to_1b": 4.44
+ },
+ {
+  "player_id": 666624,
+  "name": "Morel, Christopher",
+  "age": 24.0,
+  "sprint_speed": 28.6,
+  "hp_to_1b": 4.42
+ },
+ {
+  "player_id": 671289,
+  "name": "Freeman, Tyler",
+  "age": 24.0,
+  "sprint_speed": 28.6,
+  "hp_to_1b": 4.4
+ },
+ {
+  "player_id": 650489,
+  "name": "Castro, Willi",
+  "age": 26.0,
+  "sprint_speed": 28.6,
+  "hp_to_1b": 4.28
+ },
+ {
+  "player_id": 682928,
+  "name": "Abrams, CJ",
+  "age": 22.0,
+  "sprint_speed": 28.6,
+  "hp_to_1b": 4.22
+ },
+ {
+  "player_id": 669016,
+  "name": "Marsh, Brandon",
+  "age": 25.0,
+  "sprint_speed": 28.6,
+  "hp_to_1b": 4.31
+ },
+ {
+  "player_id": 606192,
+  "name": "Hern\u00e1ndez, Teoscar",
+  "age": 30.0,
+  "sprint_speed": 28.6,
+  "hp_to_1b": 4.33
+ },
+ {
+  "player_id": 686217,
+  "name": "Frelick, Sal",
+  "age": 23.0,
+  "sprint_speed": 28.6,
+  "hp_to_1b": 4.18
+ },
+ {
+  "player_id": 676946,
+  "name": "Batten, Matthew",
+  "age": 28.0,
+  "sprint_speed": 28.6,
+  "hp_to_1b": 4.29
+ },
+ {
+  "player_id": 678545,
+  "name": "Basabe, Osleivis",
+  "age": 22.0,
+  "sprint_speed": 28.6,
+  "hp_to_1b": 4.31
+ },
+ {
+  "player_id": 669261,
+  "name": "Suwinski, Jack",
+  "age": 24.0,
+  "sprint_speed": 28.6,
+  "hp_to_1b": 4.28
+ },
+ {
+  "player_id": 656716,
+  "name": "McKinstry, Zach",
+  "age": 28.0,
+  "sprint_speed": 28.5,
+  "hp_to_1b": 4.25
+ },
+ {
+  "player_id": 691023,
+  "name": "Walker, Jordan",
+  "age": 21.0,
+  "sprint_speed": 28.5,
+  "hp_to_1b": 4.47
+ },
+ {
+  "player_id": 663538,
+  "name": "Hoerner, Nico",
+  "age": 26.0,
+  "sprint_speed": 28.5,
+  "hp_to_1b": 4.31
+ },
+ {
+  "player_id": 641933,
+  "name": "O'Neill, Tyler",
+  "age": 28.0,
+  "sprint_speed": 28.5,
+  "hp_to_1b": 4.36
+ },
+ {
+  "player_id": 656305,
+  "name": "Chapman, Matt",
+  "age": 30.0,
+  "sprint_speed": 28.5,
+  "hp_to_1b": 4.43
+ },
+ {
+  "player_id": 669701,
+  "name": "Smith, Josh",
+  "age": 25.0,
+  "sprint_speed": 28.5,
+  "hp_to_1b": 4.29
+ },
+ {
+  "player_id": 673490,
+  "name": "Kim, Ha-Seong",
+  "age": 27.0,
+  "sprint_speed": 28.5,
+  "hp_to_1b": 4.33
+ },
+ {
+  "player_id": 656448,
+  "name": "Garrett, Stone",
+  "age": 27.0,
+  "sprint_speed": 28.5,
+  "hp_to_1b": 4.46
+ },
+ {
+  "player_id": 673548,
+  "name": "Suzuki, Seiya",
+  "age": 28.0,
+  "sprint_speed": 28.5,
+  "hp_to_1b": 4.34
+ },
+ {
+  "player_id": 683011,
+  "name": "Volpe, Anthony",
+  "age": 22.0,
+  "sprint_speed": 28.4,
+  "hp_to_1b": 4.4
+ },
+ {
+  "player_id": 666134,
+  "name": "Jones, Nolan",
+  "age": 25.0,
+  "sprint_speed": 28.4,
+  "hp_to_1b": 4.41
+ },
+ {
+  "player_id": 668227,
+  "name": "Arozarena, Randy",
+  "age": 28.0,
+  "sprint_speed": 28.4,
+  "hp_to_1b": 4.25
+ },
+ {
+  "player_id": 669127,
+  "name": "Langeliers, Shea",
+  "age": 25.0,
+  "sprint_speed": 28.4,
+  "hp_to_1b": 4.51
+ },
+ {
+  "player_id": 621545,
+  "name": "Remillard, Zach",
+  "age": 29.0,
+  "sprint_speed": 28.4,
+  "hp_to_1b": 4.47
+ },
+ {
+  "player_id": 641525,
+  "name": "Dixon, Brandon",
+  "age": 31.0,
+  "sprint_speed": 28.4,
+  "hp_to_1b": 4.33
+ },
+ {
+  "player_id": 667452,
+  "name": "Julks, Corey",
+  "age": 27.0,
+  "sprint_speed": 28.4,
+  "hp_to_1b": 4.36
+ },
+ {
+  "player_id": 457705,
+  "name": "McCutchen, Andrew",
+  "age": 36.0,
+  "sprint_speed": 28.4,
+  "hp_to_1b": 4.44
+ },
+ {
+  "player_id": 668715,
+  "name": "Steer, Spencer",
+  "age": 25.0,
+  "sprint_speed": 28.4,
+  "hp_to_1b": 4.44
+ },
+ {
+  "player_id": 665862,
+  "name": "Chisholm Jr., Jazz",
+  "age": 25.0,
+  "sprint_speed": 28.4,
+  "hp_to_1b": 4.15
+ },
+ {
+  "player_id": 669707,
+  "name": "Triolo, Jared",
+  "age": 25.0,
+  "sprint_speed": 28.4,
+  "hp_to_1b": 4.37
+ },
+ {
+  "player_id": 621020,
+  "name": "Swanson, Dansby",
+  "age": 29.0,
+  "sprint_speed": 28.4,
+  "hp_to_1b": 4.29
+ },
+ {
+  "player_id": 624415,
+  "name": "Biggio, Cavan",
+  "age": 28.0,
+  "sprint_speed": 28.3,
+  "hp_to_1b": 4.4
+ },
+ {
+  "player_id": 657136,
+  "name": "Wong, Connor",
+  "age": 27.0,
+  "sprint_speed": 28.3,
+  "hp_to_1b": 4.41
+ },
+ {
+  "player_id": 686823,
+  "name": "Brennan, Will",
+  "age": 25.0,
+  "sprint_speed": 28.3,
+  "hp_to_1b": 4.33
+ },
+ {
+  "player_id": 641355,
+  "name": "Bellinger, Cody",
+  "age": 27.0,
+  "sprint_speed": 28.3,
+  "hp_to_1b": 4.14
+ },
+ {
+  "player_id": 641531,
+  "name": "Dozier, Hunter",
+  "age": 31.0,
+  "sprint_speed": 28.3,
+  "hp_to_1b": 4.48
+ },
+ {
+  "player_id": 669222,
+  "name": "Senzel, Nick",
+  "age": 28.0,
+  "sprint_speed": 28.3,
+  "hp_to_1b": 4.51
+ },
+ {
+  "player_id": 622534,
+  "name": "Margot, Manuel",
+  "age": 28.0,
+  "sprint_speed": 28.3,
+  "hp_to_1b": 4.31
+ },
+ {
+  "player_id": 670770,
+  "name": "Friedl, TJ",
+  "age": 27.0,
+  "sprint_speed": 28.3,
+  "hp_to_1b": 4.27
+ },
+ {
+  "player_id": 621035,
+  "name": "Taylor, Chris",
+  "age": 32.0,
+  "sprint_speed": 28.3,
+  "hp_to_1b": 4.34
+ },
+ {
+  "player_id": 630105,
+  "name": "Cronenworth, Jake",
+  "age": 29.0,
+  "sprint_speed": 28.3,
+  "hp_to_1b": 4.32
+ },
+ {
+  "player_id": 541645,
+  "name": "Garc\u00eda, Avisa\u00edl",
+  "age": 32.0,
+  "sprint_speed": 28.3,
+  "hp_to_1b": 4.52
+ },
+ {
+  "player_id": 675961,
+  "name": "Williams, Alika",
+  "age": 24.0,
+  "sprint_speed": 28.2,
+  "hp_to_1b": 4.41
+ },
+ {
+  "player_id": 644374,
+  "name": "Chang, Yu",
+  "age": 27.0,
+  "sprint_speed": 28.2,
+  "hp_to_1b": 4.56
+ },
+ {
+  "player_id": 663624,
+  "name": "Mountcastle, Ryan",
+  "age": 26.0,
+  "sprint_speed": 28.2,
+  "hp_to_1b": 4.43
+ },
+ {
+  "player_id": 668904,
+  "name": "Lewis, Royce",
+  "age": 24.0,
+  "sprint_speed": 28.2,
+  "hp_to_1b": 4.35
+ },
+ {
+  "player_id": 670764,
+  "name": "Walls, Taylor",
+  "age": 26.0,
+  "sprint_speed": 28.2,
+  "hp_to_1b": 4.31
+ },
+ {
+  "player_id": 672580,
+  "name": "Garcia, Maikel",
+  "age": 23.0,
+  "sprint_speed": 28.2,
+  "hp_to_1b": 4.44
+ },
+ {
+  "player_id": 680779,
+  "name": "Davis, Henry",
+  "age": 23.0,
+  "sprint_speed": 28.2,
+  "hp_to_1b": 4.49
+ },
+ {
+  "player_id": 669364,
+  "name": "Edwards, Xavier",
+  "age": 23.0,
+  "sprint_speed": 28.2,
+  "hp_to_1b": 4.18
+ },
+ {
+  "player_id": 641943,
+  "name": "Palacios, Joshua",
+  "age": 27.0,
+  "sprint_speed": 28.2,
+  "hp_to_1b": 4.28
+ },
+ {
+  "player_id": 676801,
+  "name": "McCormick, Chas",
+  "age": 28.0,
+  "sprint_speed": 28.2,
+  "hp_to_1b": 4.31
+ },
+ {
+  "player_id": 607680,
+  "name": "Pillar, Kevin",
+  "age": 34.0,
+  "sprint_speed": 28.2,
+  "hp_to_1b": 4.42
+ },
+ {
+  "player_id": 596117,
+  "name": "Stubbs, Garrett",
+  "age": 30.0,
+  "sprint_speed": 28.1,
+  "hp_to_1b": 4.36
+ },
+ {
+  "player_id": 596019,
+  "name": "Lindor, Francisco",
+  "age": 29.0,
+  "sprint_speed": 28.1,
+  "hp_to_1b": 4.35
+ },
+ {
+  "player_id": 682985,
+  "name": "Greene, Riley",
+  "age": 22.0,
+  "sprint_speed": 28.1,
+  "hp_to_1b": 4.26
+ },
+ {
+  "player_id": 595879,
+  "name": "B\u00e1ez, Javier",
+  "age": 30.0,
+  "sprint_speed": 28.1,
+  "hp_to_1b": 4.4
+ },
+ {
+  "player_id": 666906,
+  "name": "Alu, Jake",
+  "age": 26.0,
+  "sprint_speed": 28.1,
+  "hp_to_1b": 4.37
+ },
+ {
+  "player_id": 592885,
+  "name": "Yelich, Christian",
+  "age": 31.0,
+  "sprint_speed": 28.1,
+  "hp_to_1b": 4.35
+ },
+ {
+  "player_id": 680757,
+  "name": "Kwan, Steven",
+  "age": 25.0,
+  "sprint_speed": 28.1,
+  "hp_to_1b": 4.22
+ },
+ {
+  "player_id": 643289,
+  "name": "Dub\u00f3n, Mauricio",
+  "age": 28.0,
+  "sprint_speed": 28.1,
+  "hp_to_1b": 4.26
+ },
+ {
+  "player_id": 670097,
+  "name": "Short, Zack",
+  "age": 28.0,
+  "sprint_speed": 28.1,
+  "hp_to_1b": 4.37
+ },
+ {
+  "player_id": 662139,
+  "name": "Varsho, Daulton",
+  "age": 26.0,
+  "sprint_speed": 28.1,
+  "hp_to_1b": 4.33
+ },
+ {
+  "player_id": 663586,
+  "name": "Riley, Austin",
+  "age": 26.0,
+  "sprint_speed": 28.1,
+  "hp_to_1b": 4.5
+ },
+ {
+  "player_id": 681481,
+  "name": "Carpenter, Kerry",
+  "age": 25.0,
+  "sprint_speed": 28.1,
+  "hp_to_1b": 4.32
+ },
+ {
+  "player_id": 605113,
+  "name": "Ahmed, Nick",
+  "age": 33.0,
+  "sprint_speed": 28.1,
+  "hp_to_1b": 4.44
+ },
+ {
+  "player_id": 678662,
+  "name": "Tovar, Ezequiel",
+  "age": 21.0,
+  "sprint_speed": 28.1,
+  "hp_to_1b": 4.38
+ },
+ {
+  "player_id": 642731,
+  "name": "Estrada, Thairo",
+  "age": 27.0,
+  "sprint_speed": 28.1,
+  "hp_to_1b": 4.33
+ },
+ {
+  "player_id": 672284,
+  "name": "Kelenic, Jarred",
+  "age": 23.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.35
+ },
+ {
+  "player_id": 669477,
+  "name": "Schmitt, Casey",
+  "age": 24.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.5
+ },
+ {
+  "player_id": 680700,
+  "name": "Palacios, Richie",
+  "age": 26.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.14
+ },
+ {
+  "player_id": 621028,
+  "name": "Newman, Kevin",
+  "age": 29.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.42
+ },
+ {
+  "player_id": 672356,
+  "name": "Arias, Gabriel",
+  "age": 23.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.44
+ },
+ {
+  "player_id": 641584,
+  "name": "Fraley, Jake",
+  "age": 28.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.24
+ },
+ {
+  "player_id": 669911,
+  "name": "Toglia, Michael",
+  "age": 24.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.4
+ },
+ {
+  "player_id": 655316,
+  "name": "Monasterio, Andruw",
+  "age": 26.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.4
+ },
+ {
+  "player_id": 660757,
+  "name": "Gonzalez, Oscar",
+  "age": 25.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.44
+ },
+ {
+  "player_id": 607054,
+  "name": "Peterson, Jace",
+  "age": 33.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.33
+ },
+ {
+  "player_id": 670242,
+  "name": "Wallner, Matt",
+  "age": 25.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.34
+ },
+ {
+  "player_id": 606992,
+  "name": "Haase, Eric",
+  "age": 30.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.53
+ },
+ {
+  "player_id": 660670,
+  "name": "Acu\u00f1a Jr., Ronald",
+  "age": 25.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.35
+ },
+ {
+  "player_id": 686676,
+  "name": "Lee, Korey",
+  "age": 24.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.48
+ },
+ {
+  "player_id": 669394,
+  "name": "Burger, Jake",
+  "age": 27.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.44
+ },
+ {
+  "player_id": 656775,
+  "name": "Mullins, Cedric",
+  "age": 28.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.26
+ },
+ {
+  "player_id": 677592,
+  "name": "Pereira, Everson",
+  "age": 22.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.38
+ },
+ {
+  "player_id": 607043,
+  "name": "Nimmo, Brandon",
+  "age": 30.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.27
+ },
+ {
+  "player_id": 645302,
+  "name": "Robles, Victor",
+  "age": 26.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.43
+ },
+ {
+  "player_id": 621493,
+  "name": "Ward, Taylor",
+  "age": 29.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.49
+ },
+ {
+  "player_id": 592696,
+  "name": "Rosario, Eddie",
+  "age": 31.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.3
+ },
+ {
+  "player_id": 571976,
+  "name": "Myers, Wil",
+  "age": 32.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.57
+ },
+ {
+  "player_id": 663611,
+  "name": "Madrigal, Nick",
+  "age": 26.0,
+  "sprint_speed": 28.0,
+  "hp_to_1b": 4.27
+ },
+ {
+  "player_id": 689172,
+  "name": "Wisely, Brett",
+  "age": 24.0,
+  "sprint_speed": 27.9,
+  "hp_to_1b": 4.31
+ },
+ {
+  "player_id": 681297,
+  "name": "Cowser, Colton",
+  "age": 23.0,
+  "sprint_speed": 27.9,
+  "hp_to_1b": 4.23
+ },
+ {
+  "player_id": 622569,
+  "name": "Reyes, Pablo",
+  "age": 29.0,
+  "sprint_speed": 27.9,
+  "hp_to_1b": 4.38
+ },
+ {
+  "player_id": 669397,
+  "name": "Allen, Nick",
+  "age": 24.0,
+  "sprint_speed": 27.9,
+  "hp_to_1b": 4.38
+ },
+ {
+  "player_id": 678246,
+  "name": "Vargas, Miguel",
+  "age": 23.0,
+  "sprint_speed": 27.9,
+  "hp_to_1b": 4.32
+ },
+ {
+  "player_id": 657656,
+  "name": "Laureano, Ram\u00f3n",
+  "age": 28.0,
+  "sprint_speed": 27.9,
+  "hp_to_1b": 4.4
+ },
+ {
+  "player_id": 681351,
+  "name": "O'Hoppe, Logan",
+  "age": 23.0,
+  "sprint_speed": 27.9,
+  "hp_to_1b": 4.47
+ },
+ {
+  "player_id": 665828,
+  "name": "Cabrera, Oswaldo",
+  "age": 24.0,
+  "sprint_speed": 27.8,
+  "hp_to_1b": 4.42
+ },
+ {
+  "player_id": 592192,
+  "name": "Canha, Mark",
+  "age": 34.0,
+  "sprint_speed": 27.8,
+  "hp_to_1b": 4.44
+ },
+ {
+  "player_id": 623912,
+  "name": "Ram\u00edrez, Harold",
+  "age": 28.0,
+  "sprint_speed": 27.8,
+  "hp_to_1b": 4.36
+ },
+ {
+  "player_id": 660271,
+  "name": "Ohtani, Shohei",
+  "age": 28.0,
+  "sprint_speed": 27.8,
+  "hp_to_1b": 4.16
+ },
+ {
+  "player_id": 663697,
+  "name": "India, Jonathan",
+  "age": 26.0,
+  "sprint_speed": 27.8,
+  "hp_to_1b": 4.49
+ },
+ {
+  "player_id": 665506,
+  "name": "Pache, Cristian",
+  "age": 24.0,
+  "sprint_speed": 27.8,
+  "hp_to_1b": 4.46
+ },
+ {
+  "player_id": 663457,
+  "name": "Nootbaar, Lars",
+  "age": 25.0,
+  "sprint_speed": 27.8,
+  "hp_to_1b": 4.3
+ },
+ {
+  "player_id": 608070,
+  "name": "Ram\u00edrez, Jos\u00e9",
+  "age": 30.0,
+  "sprint_speed": 27.8,
+  "hp_to_1b": 4.38
+ },
+ {
+  "player_id": 543257,
+  "name": "Grossman, Robbie",
+  "age": 33.0,
+  "sprint_speed": 27.8,
+  "hp_to_1b": 4.36
+ },
+ {
+  "player_id": 621563,
+  "name": "Wendle, Joey",
+  "age": 33.0,
+  "sprint_speed": 27.8,
+  "hp_to_1b": 4.28
+ },
+ {
+  "player_id": 502054,
+  "name": "Pham, Tommy",
+  "age": 35.0,
+  "sprint_speed": 27.8,
+  "hp_to_1b": 4.52
+ },
+ {
+  "player_id": 543807,
+  "name": "Springer, George",
+  "age": 33.0,
+  "sprint_speed": 27.8,
+  "hp_to_1b": 4.41
+ },
+ {
+  "player_id": 682848,
+  "name": "Rodr\u00edguez, Endy",
+  "age": 23.0,
+  "sprint_speed": 27.8,
+  "hp_to_1b": 4.29
+ },
+ {
+  "player_id": 664023,
+  "name": "Happ, Ian",
+  "age": 28.0,
+  "sprint_speed": 27.7,
+  "hp_to_1b": 4.32
+ },
+ {
+  "player_id": 621550,
+  "name": "Wisdom, Patrick",
+  "age": 31.0,
+  "sprint_speed": 27.7,
+  "hp_to_1b": 4.48
+ },
+ {
+  "player_id": 668804,
+  "name": "Reynolds, Bryan",
+  "age": 28.0,
+  "sprint_speed": 27.8,
+  "hp_to_1b": 4.44
+ },
+ {
+  "player_id": 596103,
+  "name": "Slater, Austin",
+  "age": 30.0,
+  "sprint_speed": 27.7,
+  "hp_to_1b": 4.51
+ },
+ {
+  "player_id": 677595,
+  "name": "Mauricio, Ronny",
+  "age": 22.0,
+  "sprint_speed": 27.7,
+  "hp_to_1b": 4.4
+ },
+ {
+  "player_id": 656811,
+  "name": "O'Hearn, Ryan",
+  "age": 29.0,
+  "sprint_speed": 27.7,
+  "hp_to_1b": 4.46
+ },
+ {
+  "player_id": 640449,
+  "name": "Frazier, Clint",
+  "age": 28.0,
+  "sprint_speed": 27.7,
+  "hp_to_1b": 4.51
+ },
+ {
+  "player_id": 682641,
+  "name": "Matos, Luis",
+  "age": 21.0,
+  "sprint_speed": 27.7,
+  "hp_to_1b": 4.43
+ },
+ {
+  "player_id": 663757,
+  "name": "Grisham, Trent",
+  "age": 26.0,
+  "sprint_speed": 27.7,
+  "hp_to_1b": 4.47
+ },
+ {
+  "player_id": 650559,
+  "name": "De La Cruz, Bryan",
+  "age": 26.0,
+  "sprint_speed": 27.7,
+  "hp_to_1b": 4.47
+ },
+ {
+  "player_id": 664238,
+  "name": "Moore, Dylan",
+  "age": 30.0,
+  "sprint_speed": 27.7,
+  "hp_to_1b": 4.43
+ },
+ {
+  "player_id": 687263,
+  "name": "Neto, Zach",
+  "age": 22.0,
+  "sprint_speed": 27.7,
+  "hp_to_1b": 4.44
+ },
+ {
+  "player_id": 643396,
+  "name": "Kiner-Falefa, Isiah",
+  "age": 28.0,
+  "sprint_speed": 27.7,
+  "hp_to_1b": 4.37
+ },
+ {
+  "player_id": 670032,
+  "name": "Lopez, Nicky",
+  "age": 28.0,
+  "sprint_speed": 27.7,
+  "hp_to_1b": 4.24
+ },
+ {
+  "player_id": 624414,
+  "name": "Arroyo, Christian",
+  "age": 28.0,
+  "sprint_speed": 27.7,
+  "hp_to_1b": 4.43
+ },
+ {
+  "player_id": 606466,
+  "name": "Marte, Ketel",
+  "age": 29.0,
+  "sprint_speed": 27.7,
+  "hp_to_1b": 4.37
+ },
+ {
+  "player_id": 609280,
+  "name": "Andujar, Miguel",
+  "age": 28.0,
+  "sprint_speed": 27.7,
+  "hp_to_1b": 4.5
+ },
+ {
+  "player_id": 593428,
+  "name": "Bogaerts, Xander",
+  "age": 30.0,
+  "sprint_speed": 27.6,
+  "hp_to_1b": 4.38
+ },
+ {
+  "player_id": 656669,
+  "name": "Luplow, Jordan",
+  "age": 29.0,
+  "sprint_speed": 27.6,
+  "hp_to_1b": 4.51
+ },
+ {
+  "player_id": 672820,
+  "name": "Sosa, Lenyn",
+  "age": 23.0,
+  "sprint_speed": 27.6,
+  "hp_to_1b": 4.62
+ },
+ {
+  "player_id": 666185,
+  "name": "Carlson, Dylan",
+  "age": 24.0,
+  "sprint_speed": 27.6,
+  "hp_to_1b": 4.39
+ },
+ {
+  "player_id": 595909,
+  "name": "Cave, Jake",
+  "age": 30.0,
+  "sprint_speed": 27.6,
+  "hp_to_1b": 4.39
+ },
+ {
+  "player_id": 664029,
+  "name": "Mathias, Mark",
+  "age": 28.0,
+  "sprint_speed": 27.6,
+  "hp_to_1b": 4.48
+ },
+ {
+  "player_id": 664728,
+  "name": "Isbel, Kyle",
+  "age": 26.0,
+  "sprint_speed": 27.6,
+  "hp_to_1b": 4.35
+ },
+ {
+  "player_id": 672779,
+  "name": "Marcano, Tucupita",
+  "age": 23.0,
+  "sprint_speed": 27.6,
+  "hp_to_1b": 4.33
+ },
+ {
+  "player_id": 594807,
+  "name": "Duvall, Adam",
+  "age": 34.0,
+  "sprint_speed": 27.6,
+  "hp_to_1b": 4.52
+ },
+ {
+  "player_id": 687952,
+  "name": "Encarnacion-Strand, Christian",
+  "age": 23.0,
+  "sprint_speed": 27.6,
+  "hp_to_1b": 4.52
+ },
+ {
+  "player_id": 673237,
+  "name": "Diaz, Yainer",
+  "age": 24.0,
+  "sprint_speed": 27.6,
+  "hp_to_1b": 4.43
+ },
+ {
+  "player_id": 663743,
+  "name": "Fortes, Nick",
+  "age": 26.0,
+  "sprint_speed": 27.6,
+  "hp_to_1b": 4.44
+ },
+ {
+  "player_id": 642715,
+  "name": "Adames, Willy",
+  "age": 27.0,
+  "sprint_speed": 27.6,
+  "hp_to_1b": 4.43
+ },
+ {
+  "player_id": 696100,
+  "name": "Goodman, Hunter",
+  "age": 23.0,
+  "sprint_speed": 27.6,
+  "hp_to_1b": 4.51
+ },
+ {
+  "player_id": 669004,
+  "name": "Melendez, MJ",
+  "age": 24.0,
+  "sprint_speed": 27.6,
+  "hp_to_1b": 4.25
+ },
+ {
+  "player_id": 593871,
+  "name": "Polanco, Jorge",
+  "age": 29.0,
+  "sprint_speed": 27.6,
+  "hp_to_1b": 4.34
+ },
+ {
+  "player_id": 645277,
+  "name": "Albies, Ozzie",
+  "age": 26.0,
+  "sprint_speed": 27.6,
+  "hp_to_1b": 4.21
+ },
+ {
+  "player_id": 453568,
+  "name": "Blackmon, Charlie",
+  "age": 36.0,
+  "sprint_speed": 27.6,
+  "hp_to_1b": 4.4
+ },
+ {
+  "player_id": 547180,
+  "name": "Harper, Bryce",
+  "age": 30.0,
+  "sprint_speed": 27.6,
+  "hp_to_1b": 4.42
+ },
+ {
+  "player_id": 665019,
+  "name": "Clemens, Kody",
+  "age": 27.0,
+  "sprint_speed": 27.5,
+  "hp_to_1b": 4.46
+ },
+ {
+  "player_id": 677551,
+  "name": "Franco, Wander",
+  "age": 22.0,
+  "sprint_speed": 27.5,
+  "hp_to_1b": 4.34
+ },
+ {
+  "player_id": 676480,
+  "name": "Barrero, Jos\u00e9",
+  "age": 25.0,
+  "sprint_speed": 27.5,
+  "hp_to_1b": 4.53
+ },
+ {
+  "player_id": 660821,
+  "name": "S\u00e1nchez, Jes\u00fas",
+  "age": 25.0,
+  "sprint_speed": 27.5,
+  "hp_to_1b": 4.44
+ },
+ {
+  "player_id": 600869,
+  "name": "Candelario, Jeimer",
+  "age": 29.0,
+  "sprint_speed": 27.5,
+  "hp_to_1b": 4.45
+ },
+ {
+  "player_id": 669720,
+  "name": "Hays, Austin",
+  "age": 27.0,
+  "sprint_speed": 27.4,
+  "hp_to_1b": 4.42
+ },
+ {
+  "player_id": 671732,
+  "name": "Butler, Lawrence",
+  "age": 22.0,
+  "sprint_speed": 27.4,
+  "hp_to_1b": 4.4
+ },
+ {
+  "player_id": 602074,
+  "name": "Daza, Yonathan",
+  "age": 29.0,
+  "sprint_speed": 27.4,
+  "hp_to_1b": 4.44
+ },
+ {
+  "player_id": 545341,
+  "name": "Grichuk, Randal",
+  "age": 31.0,
+  "sprint_speed": 27.4,
+  "hp_to_1b": 4.59
+ },
+ {
+  "player_id": 542194,
+  "name": "Bethancourt, Christian",
+  "age": 31.0,
+  "sprint_speed": 27.4,
+  "hp_to_1b": 4.51
+ },
+ {
+  "player_id": 516416,
+  "name": "Segura, Jean",
+  "age": 33.0,
+  "sprint_speed": 27.4,
+  "hp_to_1b": 4.35
+ },
+ {
+  "player_id": 666165,
+  "name": "Sabol, Blake",
+  "age": 25.0,
+  "sprint_speed": 27.4,
+  "hp_to_1b": 4.4
+ },
+ {
+  "player_id": 676914,
+  "name": "Schneider, Davis",
+  "age": 24.0,
+  "sprint_speed": 27.4,
+  "hp_to_1b": 4.47
+ },
+ {
+  "player_id": 596146,
+  "name": "Kepler, Max",
+  "age": 30.0,
+  "sprint_speed": 27.4,
+  "hp_to_1b": 4.35
+ },
+ {
+  "player_id": 677587,
+  "name": "Rocchio, Brayan",
+  "age": 22.0,
+  "sprint_speed": 27.4,
+  "hp_to_1b": 4.38
+ },
+ {
+  "player_id": 666310,
+  "name": "Naylor, Bo",
+  "age": 23.0,
+  "sprint_speed": 27.4,
+  "hp_to_1b": 4.34
+ },
+ {
+  "player_id": 664954,
+  "name": "Sullivan, Brett",
+  "age": 29.0,
+  "sprint_speed": 27.4,
+  "hp_to_1b": 4.42
+ },
+ {
+  "player_id": 650859,
+  "name": "Rengifo, Luis",
+  "age": 26.0,
+  "sprint_speed": 27.4,
+  "hp_to_1b": 4.34
+ },
+ {
+  "player_id": 624503,
+  "name": "Gordon, Nick",
+  "age": 27.0,
+  "sprint_speed": 27.4,
+  "hp_to_1b": 4.43
+ },
+ {
+  "player_id": 643446,
+  "name": "McNeil, Jeff",
+  "age": 31.0,
+  "sprint_speed": 27.4,
+  "hp_to_1b": 4.15
+ },
+ {
+  "player_id": 679529,
+  "name": "Torkelson, Spencer",
+  "age": 23.0,
+  "sprint_speed": 27.4,
+  "hp_to_1b": 4.6
+ },
+ {
+  "player_id": 664040,
+  "name": "Lowe, Brandon",
+  "age": 28.0,
+  "sprint_speed": 27.3,
+  "hp_to_1b": 4.33
+ },
+ {
+  "player_id": 572204,
+  "name": "Thompson, Trayce",
+  "age": 32.0,
+  "sprint_speed": 27.3,
+  "hp_to_1b": 4.56
+ },
+ {
+  "player_id": 666969,
+  "name": "Garc\u00eda, Adolis",
+  "age": 30.0,
+  "sprint_speed": 27.3,
+  "hp_to_1b": 4.46
+ },
+ {
+  "player_id": 666801,
+  "name": "Castro, Rodolfo",
+  "age": 24.0,
+  "sprint_speed": 27.3,
+  "hp_to_1b": 4.48
+ },
+ {
+  "player_id": 675656,
+  "name": "Smith, Kevin",
+  "age": 26.0,
+  "sprint_speed": 27.3,
+  "hp_to_1b": 4.5
+ },
+ {
+  "player_id": 664913,
+  "name": "Brown, Seth",
+  "age": 30.0,
+  "sprint_speed": 27.3,
+  "hp_to_1b": 4.58
+ },
+ {
+  "player_id": 657077,
+  "name": "Verdugo, Alex",
+  "age": 27.0,
+  "sprint_speed": 27.3,
+  "hp_to_1b": 4.34
+ },
+ {
+  "player_id": 686681,
+  "name": "Massey, Michael",
+  "age": 25.0,
+  "sprint_speed": 27.3,
+  "hp_to_1b": 4.44
+ },
+ {
+  "player_id": 643565,
+  "name": "Tauchman, Mike",
+  "age": 32.0,
+  "sprint_speed": 27.3,
+  "hp_to_1b": 4.39
+ },
+ {
+  "player_id": 543305,
+  "name": "Hicks, Aaron",
+  "age": 33.0,
+  "sprint_speed": 27.3,
+  "hp_to_1b": 4.33
+ },
+ {
+  "player_id": 643217,
+  "name": "Benintendi, Andrew",
+  "age": 28.0,
+  "sprint_speed": 27.3,
+  "hp_to_1b": 4.43
+ },
+ {
+  "player_id": 683146,
+  "name": "Baty, Brett",
+  "age": 23.0,
+  "sprint_speed": 27.3,
+  "hp_to_1b": 4.39
+ },
+ {
+  "player_id": 641343,
+  "name": "Bauers, Jake",
+  "age": 27.0,
+  "sprint_speed": 27.3,
+  "hp_to_1b": 4.42
+ },
+ {
+  "player_id": 676116,
+  "name": "Noda, Ryan",
+  "age": 27.0,
+  "sprint_speed": 27.3,
+  "hp_to_1b": 4.48
+ },
+ {
+  "player_id": 663993,
+  "name": "Lowe, Nathaniel",
+  "age": 27.0,
+  "sprint_speed": 27.3,
+  "hp_to_1b": 4.38
+ },
+ {
+  "player_id": 676369,
+  "name": "Vel\u00e1zquez, Nelson",
+  "age": 24.0,
+  "sprint_speed": 27.2,
+  "hp_to_1b": 4.54
+ },
+ {
+  "player_id": 605141,
+  "name": "Betts, Mookie",
+  "age": 30.0,
+  "sprint_speed": 27.2,
+  "hp_to_1b": 4.47
+ },
+ {
+  "player_id": 666135,
+  "name": "Kirilloff, Alex",
+  "age": 25.0,
+  "sprint_speed": 27.2,
+  "hp_to_1b": 4.41
+ },
+ {
+  "player_id": 679845,
+  "name": "Loftin, Nick",
+  "age": 24.0,
+  "sprint_speed": 27.2,
+  "hp_to_1b": 4.54
+ },
+ {
+  "player_id": 665155,
+  "name": "Maton, Nick",
+  "age": 26.0,
+  "sprint_speed": 27.2,
+  "hp_to_1b": 4.48
+ },
+ {
+  "player_id": 671277,
+  "name": "Garc\u00eda Jr., Luis",
+  "age": 23.0,
+  "sprint_speed": 27.2,
+  "hp_to_1b": 4.27
+ },
+ {
+  "player_id": 628451,
+  "name": "Ib\u00e1\u00f1ez, Andy",
+  "age": 30.0,
+  "sprint_speed": 27.2,
+  "hp_to_1b": 4.43
+ },
+ {
+  "player_id": 672695,
+  "name": "Perdomo, Geraldo",
+  "age": 23.0,
+  "sprint_speed": 27.2,
+  "hp_to_1b": 4.45
+ },
+ {
+  "player_id": 641313,
+  "name": "Anderson, Tim",
+  "age": 30.0,
+  "sprint_speed": 27.2,
+  "hp_to_1b": 4.52
+ },
+ {
+  "player_id": 542364,
+  "name": "Ortega, Rafael",
+  "age": 32.0,
+  "sprint_speed": 27.2,
+  "hp_to_1b": 4.49
+ },
+ {
+  "player_id": 493329,
+  "name": "Gurriel, Yuli",
+  "age": 39.0,
+  "sprint_speed": 27.2,
+  "hp_to_1b": 4.47
+ },
+ {
+  "player_id": 592206,
+  "name": "Castellanos, Nick",
+  "age": 31.0,
+  "sprint_speed": 27.2,
+  "hp_to_1b": 4.52
+ },
+ {
+  "player_id": 687093,
+  "name": "Grissom, Vaughn",
+  "age": 22.0,
+  "sprint_speed": 27.2,
+  "hp_to_1b": 4.54
+ },
+ {
+  "player_id": 668670,
+  "name": "Rogers, Jake",
+  "age": 28.0,
+  "sprint_speed": 27.2,
+  "hp_to_1b": 4.67
+ },
+ {
+  "player_id": 672515,
+  "name": "Moreno, Gabriel",
+  "age": 23.0,
+  "sprint_speed": 27.2,
+  "hp_to_1b": 4.4
+ },
+ {
+  "player_id": 669257,
+  "name": "Smith, Will",
+  "age": 28.0,
+  "sprint_speed": 27.2,
+  "hp_to_1b": 4.49
+ },
+ {
+  "player_id": 668709,
+  "name": "Bleday, JJ",
+  "age": 25.0,
+  "sprint_speed": 27.2,
+  "hp_to_1b": 4.5
+ },
+ {
+  "player_id": 643376,
+  "name": "Jansen, Danny",
+  "age": 28.0,
+  "sprint_speed": 27.1,
+  "hp_to_1b": 4.57
+ },
+ {
+  "player_id": 680977,
+  "name": "Donovan, Brendan",
+  "age": 26.0,
+  "sprint_speed": 27.1,
+  "hp_to_1b": 4.4
+ },
+ {
+  "player_id": 681146,
+  "name": "Bride, Jonah",
+  "age": 27.0,
+  "sprint_speed": 27.1,
+  "hp_to_1b": 4.52
+ },
+ {
+  "player_id": 500871,
+  "name": "Escobar, Eduardo",
+  "age": 34.0,
+  "sprint_speed": 27.1,
+  "hp_to_1b": 4.4
+ },
+ {
+  "player_id": 682073,
+  "name": "Hensley, David",
+  "age": 27.0,
+  "sprint_speed": 27.1,
+  "hp_to_1b": 4.53
+ },
+ {
+  "player_id": 656896,
+  "name": "Rivera, Emmanuel",
+  "age": 27.0,
+  "sprint_speed": 27.1,
+  "hp_to_1b": 4.64
+ },
+ {
+  "player_id": 641856,
+  "name": "McKinney, Billy",
+  "age": 28.0,
+  "sprint_speed": 27.1,
+  "hp_to_1b": 4.4
+ },
+ {
+  "player_id": 663647,
+  "name": "Hayes, Ke'Bryan",
+  "age": 26.0,
+  "sprint_speed": 27.1,
+  "hp_to_1b": 4.52
+ },
+ {
+  "player_id": 518792,
+  "name": "Heyward, Jason",
+  "age": 33.0,
+  "sprint_speed": 27.1,
+  "hp_to_1b": 4.45
+ },
+ {
+  "player_id": 666182,
+  "name": "Bichette, Bo",
+  "age": 25.0,
+  "sprint_speed": 27.1,
+  "hp_to_1b": 4.52
+ },
+ {
+  "player_id": 516782,
+  "name": "Marte, Starling",
+  "age": 34.0,
+  "sprint_speed": 27.1,
+  "hp_to_1b": 4.37
+ },
+ {
+  "player_id": 656582,
+  "name": "Joe, Connor",
+  "age": 30.0,
+  "sprint_speed": 27.1,
+  "hp_to_1b": 4.56
+ },
+ {
+  "player_id": 667670,
+  "name": "Rooker, Brent",
+  "age": 28.0,
+  "sprint_speed": 27.1,
+  "hp_to_1b": 4.62
+ },
+ {
+  "player_id": 598265,
+  "name": "Bradley Jr., Jackie",
+  "age": 33.0,
+  "sprint_speed": 27.1,
+  "hp_to_1b": 4.38
+ },
+ {
+  "player_id": 666023,
+  "name": "Fermin, Freddy",
+  "age": 28.0,
+  "sprint_speed": 27.1,
+  "hp_to_1b": 4.59
+ },
+ {
+  "player_id": 608701,
+  "name": "Refsnyder, Rob",
+  "age": 32.0,
+  "sprint_speed": 27.1,
+  "hp_to_1b": 4.47
+ },
+ {
+  "player_id": 666971,
+  "name": "Gurriel Jr., Lourdes",
+  "age": 29.0,
+  "sprint_speed": 27.1,
+  "hp_to_1b": 4.5
+ },
+ {
+  "player_id": 622110,
+  "name": "Duffy, Matt",
+  "age": 32.0,
+  "sprint_speed": 27.0,
+  "hp_to_1b": 4.6
+ },
+ {
+  "player_id": 668843,
+  "name": "Capel, Conner",
+  "age": 26.0,
+  "sprint_speed": 27.0,
+  "hp_to_1b": null
+ },
+ {
+  "player_id": 681807,
+  "name": "Fry, David",
+  "age": 27.0,
+  "sprint_speed": 27.0,
+  "hp_to_1b": 4.65
+ },
+ {
+  "player_id": 666397,
+  "name": "Julien, Edouard",
+  "age": 24.0,
+  "sprint_speed": 27.0,
+  "hp_to_1b": 4.39
+ },
+ {
+  "player_id": 668939,
+  "name": "Rutschman, Adley",
+  "age": 25.0,
+  "sprint_speed": 27.0,
+  "hp_to_1b": 4.41
+ },
+ {
+  "player_id": 545121,
+  "name": "Vargas, Ildemaro",
+  "age": 31.0,
+  "sprint_speed": 27.0,
+  "hp_to_1b": 4.44
+ },
+ {
+  "player_id": 573262,
+  "name": "Yastrzemski, Mike",
+  "age": 32.0,
+  "sprint_speed": 27.0,
+  "hp_to_1b": 4.37
+ },
+ {
+  "player_id": 663728,
+  "name": "Raleigh, Cal",
+  "age": 26.0,
+  "sprint_speed": 27.0,
+  "hp_to_1b": 4.56
+ },
+ {
+  "player_id": 444482,
+  "name": "Peralta, David",
+  "age": 35.0,
+  "sprint_speed": 27.0,
+  "hp_to_1b": 4.52
+ },
+ {
+  "player_id": 592656,
+  "name": "Ramos, Henry",
+  "age": 31.0,
+  "sprint_speed": 27.0,
+  "hp_to_1b": null
+ },
+ {
+  "player_id": 693049,
+  "name": "Col\u00e1s, Oscar",
+  "age": 24.0,
+  "sprint_speed": 27.0,
+  "hp_to_1b": 4.43
+ },
+ {
+  "player_id": 592273,
+  "name": "Drury, Brandon",
+  "age": 30.0,
+  "sprint_speed": 26.9,
+  "hp_to_1b": 4.56
+ },
+ {
+  "player_id": 671218,
+  "name": "Ramos, Heliot",
+  "age": 23.0,
+  "sprint_speed": 26.9,
+  "hp_to_1b": null
+ },
+ {
+  "player_id": 663845,
+  "name": "Rivas III, Alfonso",
+  "age": 26.0,
+  "sprint_speed": 26.9,
+  "hp_to_1b": 4.51
+ },
+ {
+  "player_id": 514888,
+  "name": "Altuve, Jose",
+  "age": 33.0,
+  "sprint_speed": 26.9,
+  "hp_to_1b": 4.32
+ },
+ {
+  "player_id": 663886,
+  "name": "Stephenson, Tyler",
+  "age": 26.0,
+  "sprint_speed": 26.9,
+  "hp_to_1b": 4.62
+ },
+ {
+  "player_id": 683737,
+  "name": "Busch, Michael",
+  "age": 25.0,
+  "sprint_speed": 26.9,
+  "hp_to_1b": 4.46
+ },
+ {
+  "player_id": 571970,
+  "name": "Muncy, Max",
+  "age": 32.0,
+  "sprint_speed": 26.9,
+  "hp_to_1b": 4.51
+ },
+ {
+  "player_id": 571771,
+  "name": "Hern\u00e1ndez, Enrique",
+  "age": 31.0,
+  "sprint_speed": 26.9,
+  "hp_to_1b": 4.59
+ },
+ {
+  "player_id": 570731,
+  "name": "Schoop, Jonathan",
+  "age": 31.0,
+  "sprint_speed": 26.9,
+  "hp_to_1b": 4.68
+ },
+ {
+  "player_id": 660644,
+  "name": "Bruj\u00e1n, Vidal",
+  "age": 25.0,
+  "sprint_speed": 26.9,
+  "hp_to_1b": null
+ },
+ {
+  "player_id": 650907,
+  "name": "Pinto, Ren\u00e9",
+  "age": 26.0,
+  "sprint_speed": 26.9,
+  "hp_to_1b": 4.54
+ },
+ {
+  "player_id": 669289,
+  "name": "Espinal, Santiago",
+  "age": 28.0,
+  "sprint_speed": 26.9,
+  "hp_to_1b": 4.43
+ },
+ {
+  "player_id": 665742,
+  "name": "Soto, Juan",
+  "age": 24.0,
+  "sprint_speed": 26.8,
+  "hp_to_1b": 4.39
+ },
+ {
+  "player_id": 657557,
+  "name": "DeJong, Paul",
+  "age": 29.0,
+  "sprint_speed": 26.8,
+  "hp_to_1b": 4.62
+ },
+ {
+  "player_id": 596059,
+  "name": "Odor, Rougned",
+  "age": 29.0,
+  "sprint_speed": 26.8,
+  "hp_to_1b": 4.41
+ },
+ {
+  "player_id": 673962,
+  "name": "Jung, Josh",
+  "age": 25.0,
+  "sprint_speed": 26.8,
+  "hp_to_1b": 4.59
+ },
+ {
+  "player_id": 694384,
+  "name": "Schanuel, Nolan",
+  "age": 21.0,
+  "sprint_speed": 26.8,
+  "hp_to_1b": 4.37
+ },
+ {
+  "player_id": 592669,
+  "name": "Renfroe, Hunter",
+  "age": 31.0,
+  "sprint_speed": 26.8,
+  "hp_to_1b": 4.65
+ },
+ {
+  "player_id": 663616,
+  "name": "Larnach, Trevor",
+  "age": 26.0,
+  "sprint_speed": 26.7,
+  "hp_to_1b": 4.51
+ },
+ {
+  "player_id": 677800,
+  "name": "Abreu, Wilyer",
+  "age": 24.0,
+  "sprint_speed": 26.7,
+  "hp_to_1b": null
+ },
+ {
+  "player_id": 575929,
+  "name": "Contreras, Willson",
+  "age": 31.0,
+  "sprint_speed": 26.7,
+  "hp_to_1b": 4.54
+ },
+ {
+  "player_id": 641487,
+  "name": "Crawford, J.P.",
+  "age": 28.0,
+  "sprint_speed": 26.7,
+  "hp_to_1b": 4.55
+ },
+ {
+  "player_id": 668942,
+  "name": "Rojas, Josh",
+  "age": 29.0,
+  "sprint_speed": 26.7,
+  "hp_to_1b": 4.45
+ },
+ {
+  "player_id": 602104,
+  "name": "Ur\u00edas, Ram\u00f3n",
+  "age": 29.0,
+  "sprint_speed": 26.7,
+  "hp_to_1b": 4.62
+ },
+ {
+  "player_id": 669224,
+  "name": "Wells, Austin",
+  "age": 23.0,
+  "sprint_speed": 26.7,
+  "hp_to_1b": 4.61
+ },
+ {
+  "player_id": 543939,
+  "name": "Wong, Kolten",
+  "age": 32.0,
+  "sprint_speed": 26.7,
+  "hp_to_1b": 4.44
+ },
+ {
+  "player_id": 592450,
+  "name": "Judge, Aaron",
+  "age": 31.0,
+  "sprint_speed": 26.7,
+  "hp_to_1b": 4.79
+ },
+ {
+  "player_id": 518692,
+  "name": "Freeman, Freddie",
+  "age": 33.0,
+  "sprint_speed": 26.7,
+  "hp_to_1b": 4.53
+ },
+ {
+  "player_id": 623993,
+  "name": "Santander, Anthony",
+  "age": 28.0,
+  "sprint_speed": 26.7,
+  "hp_to_1b": 4.65
+ },
+ {
+  "player_id": 571745,
+  "name": "Haniger, Mitch",
+  "age": 32.0,
+  "sprint_speed": 26.7,
+  "hp_to_1b": 4.59
+ },
+ {
+  "player_id": 686527,
+  "name": "Canzone, Dominic",
+  "age": 25.0,
+  "sprint_speed": 26.7,
+  "hp_to_1b": 4.42
+ },
+ {
+  "player_id": 678554,
+  "name": "Mead, Curtis",
+  "age": 22.0,
+  "sprint_speed": 26.7,
+  "hp_to_1b": 4.68
+ },
+ {
+  "player_id": 572816,
+  "name": "Dickerson, Corey",
+  "age": 34.0,
+  "sprint_speed": 26.6,
+  "hp_to_1b": 4.38
+ },
+ {
+  "player_id": 621043,
+  "name": "Correa, Carlos",
+  "age": 28.0,
+  "sprint_speed": 26.6,
+  "hp_to_1b": 4.61
+ },
+ {
+  "player_id": 663656,
+  "name": "Tucker, Kyle",
+  "age": 26.0,
+  "sprint_speed": 26.6,
+  "hp_to_1b": 4.51
+ },
+ {
+  "player_id": 669304,
+  "name": "Miranda, Jose F",
+  "age": 25.0,
+  "sprint_speed": 26.6,
+  "hp_to_1b": 4.51
+ },
+ {
+  "player_id": 650490,
+  "name": "D\u00edaz, Yandy",
+  "age": 31.0,
+  "sprint_speed": 26.6,
+  "hp_to_1b": 4.61
+ },
+ {
+  "player_id": 664761,
+  "name": "Bohm, Alec",
+  "age": 26.0,
+  "sprint_speed": 26.6,
+  "hp_to_1b": 4.65
+ },
+ {
+  "player_id": 624585,
+  "name": "Soler, Jorge",
+  "age": 31.0,
+  "sprint_speed": 26.6,
+  "hp_to_1b": 4.76
+ },
+ {
+  "player_id": 660707,
+  "name": "Montero, Elehuris",
+  "age": 24.0,
+  "sprint_speed": 26.6,
+  "hp_to_1b": 4.63
+ },
+ {
+  "player_id": 608336,
+  "name": "Gallo, Joey",
+  "age": 29.0,
+  "sprint_speed": 26.6,
+  "hp_to_1b": 4.69
+ },
+ {
+  "player_id": 624428,
+  "name": "Frazier, Adam",
+  "age": 31.0,
+  "sprint_speed": 26.5,
+  "hp_to_1b": 4.5
+ },
+ {
+  "player_id": 571657,
+  "name": "Farmer, Kyle",
+  "age": 32.0,
+  "sprint_speed": 26.5,
+  "hp_to_1b": 4.58
+ },
+ {
+  "player_id": 657757,
+  "name": "Sheets, Gavin",
+  "age": 27.0,
+  "sprint_speed": 26.5,
+  "hp_to_1b": 4.57
+ },
+ {
+  "player_id": 650391,
+  "name": "Jim\u00e9nez, Eloy",
+  "age": 26.0,
+  "sprint_speed": 26.5,
+  "hp_to_1b": 4.6
+ },
+ {
+  "player_id": 543281,
+  "name": "Harrison, Josh",
+  "age": 35.0,
+  "sprint_speed": 26.5,
+  "hp_to_1b": 4.66
+ },
+ {
+  "player_id": 462101,
+  "name": "Andrus, Elvis",
+  "age": 34.0,
+  "sprint_speed": 26.5,
+  "hp_to_1b": 4.57
+ },
+ {
+  "player_id": 680777,
+  "name": "Jeffers, Ryan",
+  "age": 26.0,
+  "sprint_speed": 26.5,
+  "hp_to_1b": 4.68
+ },
+ {
+  "player_id": 663698,
+  "name": "Bart, Joey",
+  "age": 26.0,
+  "sprint_speed": 26.5,
+  "hp_to_1b": 4.62
+ },
+ {
+  "player_id": 543685,
+  "name": "Rendon, Anthony",
+  "age": 33.0,
+  "sprint_speed": 26.5,
+  "hp_to_1b": 4.62
+ },
+ {
+  "player_id": 661388,
+  "name": "Contreras, William",
+  "age": 25.0,
+  "sprint_speed": 26.5,
+  "hp_to_1b": 4.49
+ },
+ {
+  "player_id": 605131,
+  "name": "Barnes, Austin",
+  "age": 33.0,
+  "sprint_speed": 26.5,
+  "hp_to_1b": 4.68
+ },
+ {
+  "player_id": 605612,
+  "name": "Castro, Harold",
+  "age": 29.0,
+  "sprint_speed": 26.5,
+  "hp_to_1b": 4.44
+ },
+ {
+  "player_id": 660162,
+  "name": "Moncada, Yo\u00e1n",
+  "age": 28.0,
+  "sprint_speed": 26.4,
+  "hp_to_1b": 4.6
+ },
+ {
+  "player_id": 669357,
+  "name": "Gorman, Nolan",
+  "age": 23.0,
+  "sprint_speed": 26.5,
+  "hp_to_1b": 4.46
+ },
+ {
+  "player_id": 666198,
+  "name": "Kieboom, Carter",
+  "age": 25.0,
+  "sprint_speed": 26.4,
+  "hp_to_1b": 4.62
+ },
+ {
+  "player_id": 542303,
+  "name": "Ozuna, Marcell",
+  "age": 32.0,
+  "sprint_speed": 26.4,
+  "hp_to_1b": 4.74
+ },
+ {
+  "player_id": 665839,
+  "name": "Valdez, Enmanuel",
+  "age": 24.0,
+  "sprint_speed": 26.4,
+  "hp_to_1b": 4.58
+ },
+ {
+  "player_id": 641511,
+  "name": "Delay, Jason",
+  "age": 28.0,
+  "sprint_speed": 26.4,
+  "hp_to_1b": 4.65
+ },
+ {
+  "player_id": 666150,
+  "name": "Fletcher, Dominic",
+  "age": 25.0,
+  "sprint_speed": 26.4,
+  "hp_to_1b": 4.47
+ },
+ {
+  "player_id": 500743,
+  "name": "Rojas, Miguel",
+  "age": 34.0,
+  "sprint_speed": 26.4,
+  "hp_to_1b": 4.57
+ },
+ {
+  "player_id": 665489,
+  "name": "Guerrero Jr., Vladimir",
+  "age": 24.0,
+  "sprint_speed": 26.4,
+  "hp_to_1b": 4.62
+ },
+ {
+  "player_id": 592178,
+  "name": "Bryant, Kris",
+  "age": 31.0,
+  "sprint_speed": 26.4,
+  "hp_to_1b": 4.59
+ },
+ {
+  "player_id": 676701,
+  "name": "Trejo, Alan",
+  "age": 27.0,
+  "sprint_speed": 26.4,
+  "hp_to_1b": 4.7
+ },
+ {
+  "player_id": 650402,
+  "name": "Torres, Gleyber",
+  "age": 26.0,
+  "sprint_speed": 26.4,
+  "hp_to_1b": 4.61
+ },
+ {
+  "player_id": 572233,
+  "name": "Walker, Christian",
+  "age": 32.0,
+  "sprint_speed": 26.4,
+  "hp_to_1b": 4.72
+ },
+ {
+  "player_id": 502671,
+  "name": "Goldschmidt, Paul",
+  "age": 35.0,
+  "sprint_speed": 26.4,
+  "hp_to_1b": 4.58
+ },
+ {
+  "player_id": 664874,
+  "name": "Zavala, Seby",
+  "age": 29.0,
+  "sprint_speed": 26.4,
+  "hp_to_1b": 4.63
+ },
+ {
+  "player_id": 682626,
+  "name": "Alvarez, Francisco",
+  "age": 21.0,
+  "sprint_speed": 26.4,
+  "hp_to_1b": 4.57
+ },
+ {
+  "player_id": 592626,
+  "name": "Pederson, Joc",
+  "age": 31.0,
+  "sprint_speed": 26.4,
+  "hp_to_1b": 4.52
+ },
+ {
+  "player_id": 605119,
+  "name": "Anderson, Brian",
+  "age": 30.0,
+  "sprint_speed": 26.4,
+  "hp_to_1b": 4.63
+ },
+ {
+  "player_id": 553993,
+  "name": "Su\u00e1rez, Eugenio",
+  "age": 31.0,
+  "sprint_speed": 26.4,
+  "hp_to_1b": 4.71
+ },
+ {
+  "player_id": 663898,
+  "name": "Rodgers, Brendan",
+  "age": 26.0,
+  "sprint_speed": 26.3,
+  "hp_to_1b": 4.59
+ },
+ {
+  "player_id": 608324,
+  "name": "Bregman, Alex",
+  "age": 29.0,
+  "sprint_speed": 26.3,
+  "hp_to_1b": 4.57
+ },
+ {
+  "player_id": 668472,
+  "name": "Pratto, Nick",
+  "age": 24.0,
+  "sprint_speed": 26.3,
+  "hp_to_1b": 4.5
+ },
+ {
+  "player_id": 643265,
+  "name": "Cooper, Garrett",
+  "age": 32.0,
+  "sprint_speed": 26.3,
+  "hp_to_1b": 4.64
+ },
+ {
+  "player_id": 621466,
+  "name": "Stewart, DJ",
+  "age": 29.0,
+  "sprint_speed": 26.3,
+  "hp_to_1b": 4.54
+ },
+ {
+  "player_id": 592518,
+  "name": "Machado, Manny",
+  "age": 30.0,
+  "sprint_speed": 26.3,
+  "hp_to_1b": 4.67
+ },
+ {
+  "player_id": 642336,
+  "name": "Mej\u00eda, Francisco",
+  "age": 27.0,
+  "sprint_speed": 26.3,
+  "hp_to_1b": 4.45
+ },
+ {
+  "player_id": 670541,
+  "name": "Alvarez, Yordan",
+  "age": 26.0,
+  "sprint_speed": 26.3,
+  "hp_to_1b": 4.58
+ },
+ {
+  "player_id": 668901,
+  "name": "Vientos, Mark",
+  "age": 23.0,
+  "sprint_speed": 26.3,
+  "hp_to_1b": 4.75
+ },
+ {
+  "player_id": 543592,
+  "name": "Nola, Austin",
+  "age": 33.0,
+  "sprint_speed": 26.2,
+  "hp_to_1b": 4.77
+ },
+ {
+  "player_id": 665120,
+  "name": "Walsh, Jared",
+  "age": 29.0,
+  "sprint_speed": 26.2,
+  "hp_to_1b": null
+ },
+ {
+  "player_id": 621566,
+  "name": "Olson, Matt",
+  "age": 29.0,
+  "sprint_speed": 26.2,
+  "hp_to_1b": 4.64
+ },
+ {
+  "player_id": 608369,
+  "name": "Seager, Corey",
+  "age": 29.0,
+  "sprint_speed": 26.2,
+  "hp_to_1b": 4.67
+ },
+ {
+  "player_id": 656180,
+  "name": "Adams, Riley",
+  "age": 27.0,
+  "sprint_speed": 26.2,
+  "hp_to_1b": 4.68
+ },
+ {
+  "player_id": 570482,
+  "name": "Urshela, Gio",
+  "age": 31.0,
+  "sprint_speed": 26.2,
+  "hp_to_1b": 4.44
+ },
+ {
+  "player_id": 643393,
+  "name": "Kemp, Tony",
+  "age": 31.0,
+  "sprint_speed": 26.2,
+  "hp_to_1b": 4.39
+ },
+ {
+  "player_id": 672275,
+  "name": "Bailey, Patrick",
+  "age": 24.0,
+  "sprint_speed": 26.2,
+  "hp_to_1b": 4.65
+ },
+ {
+  "player_id": 807799,
+  "name": "Yoshida, Masataka",
+  "age": 29.0,
+  "sprint_speed": 26.2,
+  "hp_to_1b": 4.36
+ },
+ {
+  "player_id": 664058,
+  "name": "Fletcher, David",
+  "age": 29.0,
+  "sprint_speed": 26.2,
+  "hp_to_1b": 4.55
+ },
+ {
+  "player_id": 446334,
+  "name": "Longoria, Evan",
+  "age": 37.0,
+  "sprint_speed": 26.2,
+  "hp_to_1b": 4.76
+ },
+ {
+  "player_id": 474832,
+  "name": "Belt, Brandon",
+  "age": 35.0,
+  "sprint_speed": 26.2,
+  "hp_to_1b": 4.6
+ },
+ {
+  "player_id": 543228,
+  "name": "Gomes, Yan",
+  "age": 35.0,
+  "sprint_speed": 26.2,
+  "hp_to_1b": 4.64
+ },
+ {
+  "player_id": 650333,
+  "name": "Arraez, Luis",
+  "age": 26.0,
+  "sprint_speed": 26.1,
+  "hp_to_1b": 4.57
+ },
+ {
+  "player_id": 656976,
+  "name": "Smith, Pavin",
+  "age": 27.0,
+  "sprint_speed": 26.2,
+  "hp_to_1b": 4.62
+ },
+ {
+  "player_id": 543510,
+  "name": "McCann, James",
+  "age": 33.0,
+  "sprint_speed": 26.1,
+  "hp_to_1b": 4.76
+ },
+ {
+  "player_id": 666018,
+  "name": "Aranda, Jonathan",
+  "age": 25.0,
+  "sprint_speed": 26.1,
+  "hp_to_1b": 4.59
+ },
+ {
+  "player_id": 518595,
+  "name": "d'Arnaud, Travis",
+  "age": 34.0,
+  "sprint_speed": 26.1,
+  "hp_to_1b": 4.72
+ },
+ {
+  "player_id": 624424,
+  "name": "Conforto, Michael",
+  "age": 30.0,
+  "sprint_speed": 26.1,
+  "hp_to_1b": 4.62
+ },
+ {
+  "player_id": 670623,
+  "name": "Paredes, Isaac",
+  "age": 24.0,
+  "sprint_speed": 26.1,
+  "hp_to_1b": 4.74
+ },
+ {
+  "player_id": 502110,
+  "name": "Martinez, J.D.",
+  "age": 35.0,
+  "sprint_speed": 26.1,
+  "hp_to_1b": 4.7
+ },
+ {
+  "player_id": 572138,
+  "name": "Singleton, Jon",
+  "age": 31.0,
+  "sprint_speed": 26.0,
+  "hp_to_1b": 4.57
+ },
+ {
+  "player_id": 608596,
+  "name": "Murphy, Tom",
+  "age": 32.0,
+  "sprint_speed": 26.0,
+  "hp_to_1b": 4.76
+ },
+ {
+  "player_id": 664774,
+  "name": "Wade Jr., LaMonte",
+  "age": 29.0,
+  "sprint_speed": 26.0,
+  "hp_to_1b": 4.62
+ },
+ {
+  "player_id": 649966,
+  "name": "Ur\u00edas, Luis",
+  "age": 26.0,
+  "sprint_speed": 26.0,
+  "hp_to_1b": 4.69
+ },
+ {
+  "player_id": 572287,
+  "name": "Zunino, Mike",
+  "age": 32.0,
+  "sprint_speed": 26.0,
+  "hp_to_1b": 4.75
+ },
+ {
+  "player_id": 646240,
+  "name": "Devers, Rafael",
+  "age": 26.0,
+  "sprint_speed": 26.0,
+  "hp_to_1b": 4.54
+ },
+ {
+  "player_id": 665804,
+  "name": "Amaya, Miguel",
+  "age": 24.0,
+  "sprint_speed": 26.0,
+  "hp_to_1b": 4.68
+ },
+ {
+  "player_id": 649557,
+  "name": "D\u00edaz, Aledmys",
+  "age": 32.0,
+  "sprint_speed": 26.0,
+  "hp_to_1b": 4.48
+ },
+ {
+  "player_id": 624413,
+  "name": "Alonso, Pete",
+  "age": 28.0,
+  "sprint_speed": 26.0,
+  "hp_to_1b": 4.64
+ },
+ {
+  "player_id": 571912,
+  "name": "Maile, Luke",
+  "age": 32.0,
+  "sprint_speed": 26.0,
+  "hp_to_1b": 4.67
+ },
+ {
+  "player_id": 683021,
+  "name": "Stefanic, Michael",
+  "age": 27.0,
+  "sprint_speed": 26.0,
+  "hp_to_1b": 4.62
+ },
+ {
+  "player_id": 669221,
+  "name": "Murphy, Sean",
+  "age": 28.0,
+  "sprint_speed": 26.0,
+  "hp_to_1b": 4.66
+ },
+ {
+  "player_id": 681584,
+  "name": "Villar, David",
+  "age": 26.0,
+  "sprint_speed": 25.9,
+  "hp_to_1b": 4.69
+ },
+ {
+  "player_id": 605137,
+  "name": "Bell, Josh",
+  "age": 30.0,
+  "sprint_speed": 25.9,
+  "hp_to_1b": 4.69
+ },
+ {
+  "player_id": 467793,
+  "name": "Santana, Carlos",
+  "age": 37.0,
+  "sprint_speed": 25.9,
+  "hp_to_1b": 4.59
+ },
+ {
+  "player_id": 606115,
+  "name": "Arcia, Orlando",
+  "age": 28.0,
+  "sprint_speed": 25.9,
+  "hp_to_1b": 4.67
+ },
+ {
+  "player_id": 624512,
+  "name": "McGuire, Reese",
+  "age": 28.0,
+  "sprint_speed": 25.9,
+  "hp_to_1b": 4.53
+ },
+ {
+  "player_id": 543543,
+  "name": "Miller, Brad",
+  "age": 33.0,
+  "sprint_speed": 25.9,
+  "hp_to_1b": 4.56
+ },
+ {
+  "player_id": 668800,
+  "name": "Knizner, Andrew",
+  "age": 28.0,
+  "sprint_speed": 25.9,
+  "hp_to_1b": 4.77
+ },
+ {
+  "player_id": 641857,
+  "name": "McMahon, Ryan",
+  "age": 28.0,
+  "sprint_speed": 25.8,
+  "hp_to_1b": 4.62
+ },
+ {
+  "player_id": 647304,
+  "name": "Naylor, Josh",
+  "age": 26.0,
+  "sprint_speed": 25.8,
+  "hp_to_1b": 4.66
+ },
+ {
+  "player_id": 641680,
+  "name": "Heim, Jonah",
+  "age": 28.0,
+  "sprint_speed": 25.8,
+  "hp_to_1b": 4.77
+ },
+ {
+  "player_id": 686469,
+  "name": "Pasquantino, Vinnie",
+  "age": 25.0,
+  "sprint_speed": 25.8,
+  "hp_to_1b": 4.64
+ },
+ {
+  "player_id": 605204,
+  "name": "Davis, J.D.",
+  "age": 30.0,
+  "sprint_speed": 25.8,
+  "hp_to_1b": 4.8
+ },
+ {
+  "player_id": 543063,
+  "name": "Crawford, Brandon",
+  "age": 36.0,
+  "sprint_speed": 25.8,
+  "hp_to_1b": 4.53
+ },
+ {
+  "player_id": 642086,
+  "name": "Smith, Dominic",
+  "age": 28.0,
+  "sprint_speed": 25.8,
+  "hp_to_1b": 4.56
+ },
+ {
+  "player_id": 669134,
+  "name": "Campusano, Luis",
+  "age": 24.0,
+  "sprint_speed": 25.8,
+  "hp_to_1b": 4.93
+ },
+ {
+  "player_id": 641598,
+  "name": "Garver, Mitch",
+  "age": 32.0,
+  "sprint_speed": 25.7,
+  "hp_to_1b": 4.75
+ },
+ {
+  "player_id": 608348,
+  "name": "Kelly, Carson",
+  "age": 28.0,
+  "sprint_speed": 25.7,
+  "hp_to_1b": 4.79
+ },
+ {
+  "player_id": 663527,
+  "name": "Nevin, Tyler",
+  "age": 26.0,
+  "sprint_speed": 25.7,
+  "hp_to_1b": 4.78
+ },
+ {
+  "player_id": 518934,
+  "name": "LeMahieu, DJ",
+  "age": 34.0,
+  "sprint_speed": 25.7,
+  "hp_to_1b": 4.83
+ },
+ {
+  "player_id": 691016,
+  "name": "Soderstrom, Tyler",
+  "age": 21.0,
+  "sprint_speed": 25.7,
+  "hp_to_1b": 4.59
+ },
+ {
+  "player_id": 676475,
+  "name": "Burleson, Alec",
+  "age": 24.0,
+  "sprint_speed": 25.6,
+  "hp_to_1b": 4.6
+ },
+ {
+  "player_id": 608841,
+  "name": "Meneses, Joey",
+  "age": 31.0,
+  "sprint_speed": 25.6,
+  "hp_to_1b": 4.77
+ },
+ {
+  "player_id": 458015,
+  "name": "Votto, Joey",
+  "age": 39.0,
+  "sprint_speed": 25.6,
+  "hp_to_1b": 4.73
+ },
+ {
+  "player_id": 595777,
+  "name": "Profar, Jurickson",
+  "age": 30.0,
+  "sprint_speed": 25.6,
+  "hp_to_1b": 4.61
+ },
+ {
+  "player_id": 543309,
+  "name": "Higashioka, Kyle",
+  "age": 33.0,
+  "sprint_speed": 25.6,
+  "hp_to_1b": 4.81
+ },
+ {
+  "player_id": 547989,
+  "name": "Abreu, Jos\u00e9",
+  "age": 36.0,
+  "sprint_speed": 25.5,
+  "hp_to_1b": 4.76
+ },
+ {
+  "player_id": 664901,
+  "name": "Mendick, Danny",
+  "age": 29.0,
+  "sprint_speed": 25.6,
+  "hp_to_1b": 4.68
+ },
+ {
+  "player_id": 641645,
+  "name": "Guillorme, Luis",
+  "age": 28.0,
+  "sprint_speed": 25.5,
+  "hp_to_1b": 4.48
+ },
+ {
+  "player_id": 683734,
+  "name": "Vaughn, Andrew",
+  "age": 25.0,
+  "sprint_speed": 25.5,
+  "hp_to_1b": 4.79
+ },
+ {
+  "player_id": 607461,
+  "name": "Beaty, Matt",
+  "age": 30.0,
+  "sprint_speed": 25.5,
+  "hp_to_1b": 4.65
+ },
+ {
+  "player_id": 641820,
+  "name": "Mancini, Trey",
+  "age": 31.0,
+  "sprint_speed": 25.4,
+  "hp_to_1b": 4.87
+ },
+ {
+  "player_id": 595956,
+  "name": "Gallagher, Cam",
+  "age": 30.0,
+  "sprint_speed": 25.4,
+  "hp_to_1b": 4.86
+ },
+ {
+  "player_id": 456781,
+  "name": "Solano, Donovan",
+  "age": 35.0,
+  "sprint_speed": 25.4,
+  "hp_to_1b": 4.75
+ },
+ {
+  "player_id": 488726,
+  "name": "Brantley, Michael",
+  "age": 36.0,
+  "sprint_speed": 25.4,
+  "hp_to_1b": 4.68
+ },
+ {
+  "player_id": 645444,
+  "name": "Herrera, Jose",
+  "age": 26.0,
+  "sprint_speed": 25.4,
+  "hp_to_1b": 4.76
+ },
+ {
+  "player_id": 672478,
+  "name": "Diaz, Jordan",
+  "age": 22.0,
+  "sprint_speed": 25.3,
+  "hp_to_1b": 4.81
+ },
+ {
+  "player_id": 572761,
+  "name": "Carpenter, Matt",
+  "age": 37.0,
+  "sprint_speed": 25.3,
+  "hp_to_1b": 4.63
+ },
+ {
+  "player_id": 457759,
+  "name": "Turner, Justin",
+  "age": 38.0,
+  "sprint_speed": 25.2,
+  "hp_to_1b": 4.83
+ },
+ {
+  "player_id": 519058,
+  "name": "Moustakas, Mike",
+  "age": 34.0,
+  "sprint_speed": 25.2,
+  "hp_to_1b": 4.8
+ },
+ {
+  "player_id": 593643,
+  "name": "Alberto, Hanser",
+  "age": 30.0,
+  "sprint_speed": 25.2,
+  "hp_to_1b": 4.79
+ },
+ {
+  "player_id": 660688,
+  "name": "Ruiz, Keibert",
+  "age": 24.0,
+  "sprint_speed": 25.1,
+  "hp_to_1b": 4.78
+ },
+ {
+  "player_id": 641432,
+  "name": "Calhoun, Willie",
+  "age": 28.0,
+  "sprint_speed": 25.1,
+  "hp_to_1b": 4.82
+ },
+ {
+  "player_id": 553869,
+  "name": "D\u00edaz, Elias",
+  "age": 32.0,
+  "sprint_speed": 25.0,
+  "hp_to_1b": 4.8
+ },
+ {
+  "player_id": 543333,
+  "name": "Hosmer, Eric",
+  "age": 33.0,
+  "sprint_speed": 25.0,
+  "hp_to_1b": 4.6
+ },
+ {
+  "player_id": 594777,
+  "name": "Calhoun, Kole",
+  "age": 35.0,
+  "sprint_speed": 25.0,
+  "hp_to_1b": 4.76
+ },
+ {
+  "player_id": 543877,
+  "name": "V\u00e1zquez, Christian",
+  "age": 32.0,
+  "sprint_speed": 25.0,
+  "hp_to_1b": 4.78
+ },
+ {
+  "player_id": 664034,
+  "name": "France, Ty",
+  "age": 28.0,
+  "sprint_speed": 25.0,
+  "hp_to_1b": 4.87
+ },
+ {
+  "player_id": 605170,
+  "name": "Caratini, Victor",
+  "age": 29.0,
+  "sprint_speed": 25.0,
+  "hp_to_1b": 4.83
+ },
+ {
+  "player_id": 656941,
+  "name": "Schwarber, Kyle",
+  "age": 30.0,
+  "sprint_speed": 25.0,
+  "hp_to_1b": 4.69
+ },
+ {
+  "player_id": 543068,
+  "name": "Cron, C.J.",
+  "age": 33.0,
+  "sprint_speed": 25.0,
+  "hp_to_1b": 4.81
+ },
+ {
+  "player_id": 571448,
+  "name": "Arenado, Nolan",
+  "age": 32.0,
+  "sprint_speed": 24.9,
+  "hp_to_1b": 4.77
+ },
+ {
+  "player_id": 596847,
+  "name": "Choi, Ji Man",
+  "age": 32.0,
+  "sprint_speed": 24.9,
+  "hp_to_1b": 4.63
+ },
+ {
+  "player_id": 518626,
+  "name": "Donaldson, Josh",
+  "age": 37.0,
+  "sprint_speed": 24.9,
+  "hp_to_1b": 4.79
+ },
+ {
+  "player_id": 671213,
+  "name": "Casas, Triston",
+  "age": 23.0,
+  "sprint_speed": 24.9,
+  "hp_to_1b": 4.71
+ },
+ {
+  "player_id": 596142,
+  "name": "S\u00e1nchez, Gary",
+  "age": 30.0,
+  "sprint_speed": 24.9,
+  "hp_to_1b": 4.89
+ },
+ {
+  "player_id": 443558,
+  "name": "Cruz, Nelson",
+  "age": 42.0,
+  "sprint_speed": 24.7,
+  "hp_to_1b": 4.91
+ },
+ {
+  "player_id": 642851,
+  "name": "Wynns, Austin",
+  "age": 32.0,
+  "sprint_speed": 24.7,
+  "hp_to_1b": 4.89
+ },
+ {
+  "player_id": 642136,
+  "name": "Thaiss, Matt",
+  "age": 28.0,
+  "sprint_speed": 24.7,
+  "hp_to_1b": 4.85
+ },
+ {
+  "player_id": 519203,
+  "name": "Rizzo, Anthony",
+  "age": 33.0,
+  "sprint_speed": 24.7,
+  "hp_to_1b": 4.77
+ },
+ {
+  "player_id": 663609,
+  "name": "Baker, Luken",
+  "age": 26.0,
+  "sprint_speed": 24.7,
+  "hp_to_1b": null
+ },
+ {
+  "player_id": 542208,
+  "name": "P\u00e9rez, Carlos",
+  "age": 32.0,
+  "sprint_speed": 24.6,
+  "hp_to_1b": 4.82
+ },
+ {
+  "player_id": 645801,
+  "name": "Ford, Mike",
+  "age": 30.0,
+  "sprint_speed": 24.5,
+  "hp_to_1b": 4.88
+ },
+ {
+  "player_id": 595978,
+  "name": "Hedges, Austin",
+  "age": 30.0,
+  "sprint_speed": 24.5,
+  "hp_to_1b": 5.03
+ },
+ {
+  "player_id": 519317,
+  "name": "Stanton, Giancarlo",
+  "age": 33.0,
+  "sprint_speed": 24.4,
+  "hp_to_1b": 5.02
+ },
+ {
+  "player_id": 527038,
+  "name": "Flores, Wilmer",
+  "age": 31.0,
+  "sprint_speed": 24.4,
+  "hp_to_1b": 4.9
+ },
+ {
+  "player_id": 624431,
+  "name": "Trevino, Jose",
+  "age": 30.0,
+  "sprint_speed": 24.4,
+  "hp_to_1b": 4.86
+ },
+ {
+  "player_id": 553882,
+  "name": "Narv\u00e1ez, Omar",
+  "age": 31.0,
+  "sprint_speed": 24.4,
+  "hp_to_1b": null
+ },
+ {
+  "player_id": 521692,
+  "name": "Perez, Salvador",
+  "age": 33.0,
+  "sprint_speed": 24.3,
+  "hp_to_1b": 4.93
+ },
+ {
+  "player_id": 595453,
+  "name": "Wallach, Chad",
+  "age": 31.0,
+  "sprint_speed": 24.3,
+  "hp_to_1b": 5.09
+ },
+ {
+  "player_id": 672386,
+  "name": "Kirk, Alejandro",
+  "age": 24.0,
+  "sprint_speed": 23.7,
+  "hp_to_1b": 4.93
+ },
+ {
+  "player_id": 596129,
+  "name": "Vogelbach, Daniel",
+  "age": 30.0,
+  "sprint_speed": 23.6,
+  "hp_to_1b": 4.93
+ },
+ {
+  "player_id": 607732,
+  "name": "Stallings, Jacob",
+  "age": 33.0,
+  "sprint_speed": 23.6,
+  "hp_to_1b": 5.07
+ },
+ {
+  "player_id": 608385,
+  "name": "Winker, Jesse",
+  "age": 29.0,
+  "sprint_speed": 23.5,
+  "hp_to_1b": 5.02
+ },
+ {
+  "player_id": 642133,
+  "name": "Tellez, Rowdy",
+  "age": 28.0,
+  "sprint_speed": 23.5,
+  "hp_to_1b": 4.87
+ },
+ {
+  "player_id": 571466,
+  "name": "Barnhart, Tucker",
+  "age": 32.0,
+  "sprint_speed": 23.2,
+  "hp_to_1b": 5.0
+ },
+ {
+  "player_id": 455117,
+  "name": "Maldonado, Mart\u00edn",
+  "age": 36.0,
+  "sprint_speed": 23.2,
+  "hp_to_1b": 5.05
+ },
+ {
+  "player_id": 408234,
+  "name": "Cabrera, Miguel",
+  "age": 40.0,
+  "sprint_speed": 23.1,
+  "hp_to_1b": 5.09
+ },
+ {
+  "player_id": 542583,
+  "name": "Aguilar, Jes\u00fas",
+  "age": 33.0,
+  "sprint_speed": 23.0,
+  "hp_to_1b": null
+ },
+ {
+  "player_id": 518735,
+  "name": "Grandal, Yasmani",
+  "age": 34.0,
+  "sprint_speed": 22.8,
+  "hp_to_1b": 5.14
+ }
+]
