@@ -576,5 +576,39 @@
     }
    ]
   }
- ]
+ ],
+ "availability_stress": {
+  "method": "Uniform stress: scenario WAR scaled by availability factors measured from 201 real players' 2025-26 IL records (data/projections_2027_health.json). Per-player factors exist for only part of any roster, so they are NOT applied player-by-player (that would penalize the best-measured players); the subset result is kept below for context.",
+  "pool": {
+   "n_players": 201,
+   "mean_avail": 0.912,
+   "p25_avail": 0.89,
+   "median_avail": 0.945
+  },
+  "stressed_totals": {
+   "The Floor \u2014 $171.2M": {
+    "raw_war": 42.0,
+    "war_at_pool_mean_avail": 38.3,
+    "war_at_pool_p25_avail": 37.4
+   },
+   "The Middle \u2014 $208.0M": {
+    "raw_war": 45.7,
+    "war_at_pool_mean_avail": 41.7,
+    "war_at_pool_p25_avail": 40.7
+   },
+   "The Cap \u2014 $245.3M": {
+    "raw_war": 52.3,
+    "war_at_pool_mean_avail": 47.7,
+    "war_at_pool_p25_avail": 46.6
+   }
+  },
+  "floor_cap_ratio_raw": 0.803,
+  "finding": "Injury risk is a level tax (~4-5 WAR at every budget); the floor roster still captures ~80% of the cap roster's WAR after the stress.",
+  "measured_subset_context": {
+   "rostered_players_with_measured_avail": 12,
+   "their_war": 26.4,
+   "their_war_avail_adjusted": 24.4,
+   "note": "Subset of all three rosters combined; not a per-budget figure."
+  }
+ }
 }
