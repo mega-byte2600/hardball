@@ -47,6 +47,10 @@ WHITELIST = {
     "auc", "bb", "bb9", "bwar", "fwar", "cba", "chartjunk", "datasets",
     "diff", "gridlines", "gp", "il", "lookup", "mvp", "repo", "stat", "yr",
     "bapip", "hr9", "k9", "whip", "ceiling", "floor", "derts", "euler",
+    # merged toby-lane (Cycle 27-30) vocabulary — verified correct spellings
+    "aa", "aaa", "aav", "backtested", "backtests", "benchmarked", "carpe",
+    "carpedata", "cv", "dropdown", "ev", "fangraphs", "ii", "iii", "iv",
+    "leaderboards", "milb", "pre", "prs", "qc", "vi", "vii",
 }
 
 
