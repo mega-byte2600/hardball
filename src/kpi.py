@@ -41,6 +41,9 @@ def team_code_map(season=2026) -> dict:
     m[114] = "CLE"  # Guardians
     m[145] = "CHW"  # White Sox
     m[133] = "ATH"  # Athletics
+    m[109] = "ARI"  # Diamondbacks — MLB API says "AZ", payroll says "ARI";
+    # without this remap Arizona silently dropped out of the KPI merge
+    # (29 of 30 teams in the 2025/2026 snapshots before this fix).
     return m
 
 
@@ -121,6 +124,21 @@ def kpi_frame():
         merged["wins"] = merged["wins_p"].fillna(merged["wins"])
         merged = merged.drop(columns=["wins_p"])
     return merged
+
+
+def kpi_frame_from_snapshots() -> pd.DataFrame:
+    """Load the committed data/kpi_<season>.json snapshots (written by
+    analyze() from the live frame). Deterministic and offline — this is
+    the default dataset for builds and model fits; kpi_frame() (live MLB
+    API fetch) is the refresh path that regenerates the snapshots."""
+    frames = []
+    for season in (2025, 2026):
+        path = os.path.join(DATA, f"kpi_{season}.json")
+        if os.path.exists(path):
+            frames.append(pd.read_json(path))
+    if not frames:
+        raise FileNotFoundError("no committed data/kpi_*.json snapshots found")
+    return pd.concat(frames, ignore_index=True)
 
 
 def analyze(df: pd.DataFrame, year: int):
