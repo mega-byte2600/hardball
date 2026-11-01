@@ -1,12 +1,13 @@
 """P6: HARDBALL demo dashboard (Plotly HTML) — INTEGRATED build.
 
-Twenty-one figures on real data: the main lane's 13 (payroll/KPI/
+Twenty-two figures on real data: the main lane's 13 (payroll/KPI/
 projections/durability/players/pitching/health/roster/runs/
 sensitivity + skill persistence, value metrics, cap scenario)
 plus the CarpeData/Boardroom 7 (Steamer benchmark, Savant trait
 check, MiLB pipeline, FA shopping list, animated 16-season
 payroll film, pick-your-team explorer, budget-scenario rosters)
-plus the Cycle 30 forced-seller panel,
+plus the Cycle 30 forced-seller panel
+plus the Cycle 8 title-bar AUC panel,
 presented in eight story sections with stat cards. Builds from a
 clean clone OFFLINE from committed snapshots (audit G1).
 """
