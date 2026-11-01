@@ -70,6 +70,7 @@ salaries, FA class) · ESPN (cross-validation). Connector:
 
 ## Status
 
-P1–P6 complete; CarpeData + solutions passes shipped as stacked PRs
-(#1 audit fixes, #2 CarpeData, #3 solutions). P7 = GP review of the
-dashboard. Deadline: December 1, 2026.
+P1–P6 complete; CarpeData + solutions + finale passes shipped as
+stacked PRs (#1 audit fixes, #2 CarpeData, #3 solutions, #4 finale).
+P7 UAT approved at MVP level by the owner 2026-10-31 (PR merges remain
+a separate owner decision). Deadline: December 1, 2026.

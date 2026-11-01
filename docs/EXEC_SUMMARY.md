@@ -62,4 +62,5 @@ trap (frugal-but-78-wins), and hold ~95 wins where the cap lands.
 
 ## Status against P1-P7
 P1 datasets ✓  P2 infra ✓  P3 literature ✓  P4 problem ✓  P5 copycat ✓
-P6 MVP ✓  P7 UAT — PENDING: needs GP eyes on the dashboard (open it).
+P6 MVP ✓  P7 UAT ✓ — MVP UAT approved by the owner 2026-10-31 (scoped
+to the MVP demo; PR merges remain a separate owner decision).
