@@ -220,6 +220,54 @@ verified by a real command run, not self-asserted. GP review pending on all.
 (cycles appended as they complete)
 
 ---
+## Cycles 14 / 16 / 17 — BACKFILLED 2026-10-31 (audit gap G7)
+These three cycles shipped code and data but were never logged. Entries
+reconstructed from the scripts and their committed outputs; Cycle 17's
+output file was missing, so it was re-run on the same data to restore it.
+
+- Cycle 14 (src/bml_cycle14.py) — PRODUCTION FORMULA + RUNS PANEL:
+  promoted the run-differential model to the committed production
+  artifact (data/formula_prod.json; KPIs + ISO + payroll + RD + PythE)
+  and added the run-differential dashboard panel. Its recorded CV
+  (MAE 4.3 / R2 0.764) is a two-season same-year cross-fit — Cycles
+  18-19 later scoped this whole family as diagnostic, not forecast,
+  and formula_prod.json now carries that annotation (G8).
+- Cycle 16 (src/bml_cycle16_alloc.py + bml_cycle16_salary.py) — CAP
+  ALLOCATION + the salary stub: allocation optimizer on real payroll
+  profiles (data/cap_allocation.json: winning-cheap avg payroll $105.6M
+  vs rich $332.6M; payroll coefficient ~0 once KPIs are in — "a
+  cap-constrained team does not buy wins with dollars") plus the
+  sensitivity panel. The salary half honestly reported its missing
+  input (data/salaries_2026.json) for two cycles until Cycle 25
+  supplied it (2026-10-31).
+- Cycle 17 (src/bml_cycle17_ml.py) — MODEL-FAMILY COMPARISON: linear
+  vs Ridge vs shallow RandomForest vs GradientBoosting vs poly-Ridge
+  vs a small MLP, repeated K-fold on the same 58 team-seasons.
+  Restored result (data/model_family_comparison.json, re-run
+  2026-10-31): Linear MAE 3.84 (best), Ridge 4.16, RF 4.89, GBM 5.14,
+  poly-Ridge 7.67, MLP 5112.9 (unscaled features at n=58 — a real,
+  instructive blowup). Verdict stands as written: at this sample size
+  the fancy families do not beat linear. Same-year scoping from
+  Cycles 18-19 applies to the absolute numbers.
+
+## Provenance note — Cycle 3 (audit gap G7, second half)
+src/bml_cycle3.py and src/statcast_ingest.py do not exist in the repo:
+the Cycle 3 result (team xwOBA adds no signal) survives in
+data/statcast_team.json and the Cycle 3 entry above, but its generating
+script was never committed. Savant ingestion is now covered, committed,
+and tested by src/carpe.py (Cycle 20+); the gap is recorded here rather
+than papered over with a reconstructed script.
+
+## Correction — Cycle 19 grouped CV (audit gap G6, root-caused 2026-10-31)
+The Cycle 19 entry below cites grouped CV "MAE 13.0, R2 -6.09". The
+per-year fold keyed 2019 (MAE 51.9) predicts the 60-game 2020 season
+with a 162-game-trained model — a units mismatch, not model error.
+bml_cycle19_lagged.py now excludes target-season-2020 folds from the
+headline mean and reports them separately: grouped CV MAE is 10.23
+(R2 -0.081). The cycle's verdict is unchanged (the lagged model still
+does not beat naive out-of-sample, 14.05 vs 9.75).
+
+---
 ## Cycle 18-19 — the PANEL TRUTH (honest negative, re-validated on 509 team-seasons)
 - Built: src/panel_builder.py pulls 2011-2026 team hitting + standings + payroll
   from MLB Stats API (cached to data/raw/panel/, no refetch) -> data/panel_2011_2026.csv
