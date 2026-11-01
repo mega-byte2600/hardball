@@ -62,6 +62,17 @@ season.
   low-payroll). It is the winning style: OBP + contact + avoided K + walked
   more, i.e. run-scoring construction, not just frugality.
 
+## Correction note (2026-10-31, audit G4)
+The original snapshots behind the tables above silently excluded Arizona
+(29 of 30 teams): payroll code `ARI` never matched MLB API code `AZ` in
+`src/kpi.py`'s team map, so the merge dropped them. Fixed (team id 109 →
+ARI) and snapshots regenerated at 30 teams. WIN_CHEAP and CHEAP_MEDIOCRE
+rows are unchanged at printed precision; the 2026 OTHER column moves
+slightly with Arizona (86 wins, $192.7M) included: contact 77.6→77.7,
+K% 22.4→22.3, HR/PA 31.1→30.9, wins 79.0→79.3, payroll $202.9M→$202.5M,
+wins/$100M 43.6→43.7. No conclusion changes — the discriminator analysis
+was always about the winning-cheap group's signature, not the field mean.
+
 ## What P6 must build from this
 A formula that maps a payroll-constrained roster's hitting profile
 (OBP, contact, K%, BB%, power-dependence) to expected wins, calibrated on
