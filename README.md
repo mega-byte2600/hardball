@@ -16,7 +16,7 @@ open dashboard/hardball_demo.html
 
 The build works from a clean clone with **no network and no database**:
 every panel reads committed snapshots under `data/`. The result is one
-self-contained HTML file (14 interactive Plotly panels) — the file you
+self-contained HTML file (17 interactive Plotly panels) — the file you
 can open on a plane to the Winter Meetings.
 
 ## What you're looking at

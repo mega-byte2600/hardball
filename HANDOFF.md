@@ -1,45 +1,36 @@
-# HANDOFF — toby/finale (PR #4, stacked on PR #3)
+# HANDOFF — toby/wow (PR #5, stacked on PR #4)
 
-Finale pass, 2026-10-31: the last four audit gaps closed (G6, G7, G8,
-G11) plus a presentation pass on the dashboard. **Stacked on
-`toby/solutions` (PR #3)** — merge #1 → #2 → #3 → this.
+WOW pass, 2026-10-31: the Boardroom layer (Cycle 26) — built for MLB
+stakeholders, still on real data only. **Stacked on `toby/finale`
+(PR #4)** — merge #1 → #2 → #3 → #4 → this.
 
-## Audit closeout
+## What shipped
 
-- **G6 ROOT-CAUSED**: the 2019 fold (MAE 51.9) in Cycle 19's grouped CV
-  predicts the 60-game 2020 season with a 162-game-trained model — a
-  units mismatch, not model error. `bml_cycle19_lagged.py` now excludes
-  target-season-2020 folds from the headline mean and reports them
-  separately: grouped CV MAE 13.01 → **10.23**. Verdict unchanged.
-- **G7**: BML log backfilled for Cycles 14/16/17 from scripts +
-  committed outputs; Cycle 17's missing output was restored by re-run
-  (linear wins, MAE 3.84; the unscaled MLP blowup is in the record).
-  Cycle 3 provenance note added (its script was never committed;
-  Savant ingestion now lives in `carpe.py`).
-- **G8**: `formula_prod.json` annotated in-file (status: DIAGNOSTIC
-  ONLY; cv_scope: two-season same-year cross-fit) and `bml_cycle14.py`
-  writes the annotation on regeneration, so the 4.3/0.764 can no
-  longer circulate as forecast accuracy.
-- **G11**: W-L "anomalies" verified against MLB Stats API final 2026
-  standings — all 30 records match; NYY 93-68 and BAL 79-82 (161 games)
-  are REAL (unplayed game), annotated in `payroll.py` with the pull
-  provenance; dashboard footer scopes the ESPN check to the 2025
-  validation set; `bml_cycle6_pitching.py` lake path is repo-based.
+1. **PRESS PLAY** — payroll vs wins animated across 16 seasons
+   (2011–2026 panel). Bubble size = wins per $100M; the winning-cheap
+   three ride in gold and barely move while payrolls inflate around
+   them. The thesis, in motion, in ten seconds.
+2. **PICK YOUR TEAM** — a dropdown with all 30 clubs: each team's 2026
+   signature radar indexed to league = 100 against the gold
+   winning-cheap profile, with wins, payroll, cap headroom, pipeline
+   rank, and top prospect in the title. Every stakeholder finds their
+   own club first — that's the hook.
+3. **WHAT DOES THE MONEY BUY** — full 26-man rosters bought entirely
+   from the real 2027 FA class at three budgets, switchable in-panel:
+   Floor $171.2M → **42.0 WAR**, Middle $208M → 45.7 WAR, Cap $245.3M →
+   **52.3 WAR**. The floor build captures ~80% of the cap build's WAR;
+   the last $73.6M buys ~10 WAR. Prices are prior-contract AAV anchors
+   and are labeled as such on the panel; constraints (26 men, spend ≤
+   budget) are asserted in `bml_cycle26_wow.py`.
 
-## Presentation pass (dashboard)
+Dashboard is now **17 panels / 8 sections**; clean-clone offline build
+re-verified (17 plotly divs, animation frames and scenario buttons
+present in the file). README + exec summary counts updated. Release
+v0.9.2-demo carries the built HTML at this branch's head.
 
-Story flow with seven navy section bands (I The Proof → VII The
-Future), a five-card stat strip (cap, 509 team-seasons, 303 players
-projected — counted live from the artifacts, Steamer r, 100% real
-data), panels in white cards on warm paper, and a branded Plotly
-template (navy/red/gold). Presentation only — no data or model
-changes. Clean-clone offline build verified: 14 panels, 7 sections,
-5 cards. (Browser-based visual QA was attempted three ways and the
-browser environment couldn't reach the file; structural verification
-stands, and the v0.9.1-demo release carries the built HTML for the
-owner's own eyes — that's the real P7 gate anyway.)
+## Reviewer notes
 
-## State after this PR
-
-Audit G1–G12 all closed. Remaining: owner merge of PRs #1–#4, P7 UAT,
-and the self-healing Spotrac rerun (6 salary pages) whenever.
+- Cycle 26's scenario builder is deliberately simple (greedy
+  WAR-per-dollar + upgrades). It is an illustration of value density
+  in the FA class, and says so — not a roster-construction engine.
+- No model or prior-cycle data changed in this PR.

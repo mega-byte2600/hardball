@@ -368,3 +368,21 @@ name-string joins are retired in this work (the AZ/ARI failure class).
   EXEC_SUMMARY rewritten to the current state (was: 5 panels and the
   retracted formula family), dashboard now 14 panels; clean-clone
   offline build re-verified (14 panels, no lake, network blocked).
+
+---
+## Cycle 26 — the BOARDROOM layer (2026-10-31)
+- Built: src/bml_cycle26_wow.py -> data/wow_scenarios.json +
+  data/team_explorer.json; three dashboard panels (17 total).
+- WHAT DOES THE MONEY BUY: 26-man rosters built ENTIRELY from the real
+  2027 FA class (Spotrac + Steamer WAR, prior-AAV anchors) at three
+  budgets — Floor $171.2M: 42.0 WAR for $171.0M; Middle $208M: 45.7 WAR;
+  Cap $245.3M: 52.3 WAR for $244.6M. The floor build captures ~80% of
+  the cap build's WAR; the last $73.6M buys ~10.3 WAR. Method: greedy
+  WAR-per-dollar quota fill + WAR upgrades while budget holds;
+  constraints asserted in code (26 men, spend <= budget). Anchors are
+  last prices, labeled as such on the panel.
+- PRESS PLAY: payroll-vs-wins animated over the 2011-2026 panel
+  (16 seasons, bubble = wins per $100M, winning-cheap three in gold).
+- PICK YOUR TEAM: per-club 2026 signature radar indexed to league=100
+  (K%/HR inverted), with payroll, cap headroom, pipeline rank and top
+  prospect in the title — all 30 clubs, from committed snapshots.

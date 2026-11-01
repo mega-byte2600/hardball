@@ -27,7 +27,7 @@ edge moved from "buy undervalued singles" to "win while cheap, cap-constrained."
    (Cycles 18-19 — an earlier MAE 4.0 / R² 0.80 claim was retracted).
 
 ## The deliverable
-- One self-contained offline HTML dashboard — **14 Plotly panels** at
+- One self-contained offline HTML dashboard — **17 Plotly panels** at
   dashboard/hardball_demo.html: payroll-vs-wins, KPI signature, cap
   projections, 25-year durability, player projections, pitching, health,
   the 26-man cap roster, run differential, sensitivity — plus a
