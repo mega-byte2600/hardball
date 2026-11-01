@@ -535,3 +535,26 @@ streaming terms, Moses et al. observability).
 - verify_data.py gate extended with curated-layer checks (25 total).
 - Deliberately NOT built: Kafka/Spark/Airflow/cloud warehouse —
   wrong scale, breaks offline-from-clone. Reasons in the doc.
+
+## Cycle 29 — EXECUTIVE ONE-PAGER (2026-11-01, 24/7 build cycle)
+- Built: src/make_onepager.py -> docs/ONEPAGER.html, print-clean single
+  page, no external assets, no scripts. Every number read from committed
+  artifacts at generation time; the script FAILS CLOSED on a missing
+  artifact, a broken contract (3 scenarios x 26 men, spend <= budget),
+  or a moved headline number (benchmark r, salaries rows/failures,
+  curated failures).
+- Contents: thesis; edge numbers (2025->2026 persistence n=80: contact
+  r=0.899, BB% r=0.655, OBP r=0.298; Marcel-vs-Steamer OBP r=0.889,
+  n=201); winning-cheap 2026 table (MIL 103 wins / $146.7M, TB 98 /
+  $95.6M, CLE 85 / $74.5M vs NYM 74 / $346.7M); cap reality (7 over cap,
+  15 under floor; NYM $101.4M over, CLE $96.7M to add); scenario table
+  incl. availability stress (Floor 42.0 -> 38.3, Middle 45.7 -> 41.7,
+  Cap 52.3 -> 47.7; floor/cap ratio 0.803 unchanged); honesty box
+  (retracted team-wins claim, stress as level tax, salaries 24/30,
+  WAR proprietary); data-QC line (14 curated tables, zero failures).
+- Verified: regenerated from the current main tree; all key figures
+  present in the HTML; zero external references; gate + parity green
+  on the same tree (see cycle run note: ingest 20 datasets 0 failures,
+  curate unchanged, parity r=0.889, gate ALL PASS incl. live standings).
+- This run also probed Spotrac (Tampa Bay 2026 payroll page): still 403
+  — the 24/30 salaries gap stands, logged, no routing around the block.
