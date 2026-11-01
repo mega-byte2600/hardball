@@ -1,0 +1,169 @@
+{
+  "targets": {
+    "2025": {
+      "A_2season": {
+        "ERA": {
+          "n": 28,
+          "mae": 0.561,
+          "bias_proj_minus_actual": -0.152
+        },
+        "WHIP": {
+          "n": 28,
+          "mae": 0.099,
+          "bias_proj_minus_actual": -0.009
+        }
+      },
+      "B_3season": {
+        "ERA": {
+          "n": 28,
+          "mae": 0.561,
+          "bias_proj_minus_actual": -0.152
+        },
+        "WHIP": {
+          "n": 28,
+          "mae": 0.099,
+          "bias_proj_minus_actual": -0.009
+        }
+      }
+    },
+    "2026": {
+      "A_2season": {
+        "ERA": {
+          "n": 31,
+          "mae": 0.91,
+          "bias_proj_minus_actual": -0.258
+        },
+        "WHIP": {
+          "n": 31,
+          "mae": 0.142,
+          "bias_proj_minus_actual": -0.064
+        }
+      },
+      "B_3season": {
+        "ERA": {
+          "n": 31,
+          "mae": 0.855,
+          "bias_proj_minus_actual": -0.252
+        },
+        "WHIP": {
+          "n": 31,
+          "mae": 0.139,
+          "bias_proj_minus_actual": -0.059
+        }
+      }
+    }
+  },
+  "C_age_crossfit": {
+    "2026": {
+      "fit_on": 2025,
+      "slopes": {
+        "ERA": -0.03927,
+        "WHIP": -0.00279
+      },
+      "ERA": {
+        "n": 31,
+        "mae": 0.853,
+        "bias_proj_minus_actual": -0.103
+      },
+      "WHIP": {
+        "n": 31,
+        "mae": 0.136,
+        "bias_proj_minus_actual": -0.048
+      }
+    },
+    "2025": {
+      "fit_on": 2026,
+      "slopes": {
+        "ERA": -0.03349,
+        "WHIP": -0.01242
+      },
+      "ERA": {
+        "n": 28,
+        "mae": 0.554,
+        "bias_proj_minus_actual": -0.05
+      },
+      "WHIP": {
+        "n": 28,
+        "mae": 0.103,
+        "bias_proj_minus_actual": 0.029
+      }
+    }
+  },
+  "diagnostics_variant_A": {
+    "bias_by_prior_era_band": [
+      {
+        "target": 2025,
+        "prior_era_band": "<3.50",
+        "n": 9,
+        "era_bias": 0.027
+      },
+      {
+        "target": 2025,
+        "prior_era_band": "3.50-4.50",
+        "n": 13,
+        "era_bias": -0.057
+      },
+      {
+        "target": 2025,
+        "prior_era_band": ">=4.50",
+        "n": 1,
+        "era_bias": -0.542
+      },
+      {
+        "target": 2026,
+        "prior_era_band": "<3.50",
+        "n": 8,
+        "era_bias": -0.991
+      },
+      {
+        "target": 2026,
+        "prior_era_band": "3.50-4.50",
+        "n": 10,
+        "era_bias": 0.11
+      },
+      {
+        "target": 2026,
+        "prior_era_band": ">=4.50",
+        "n": 4,
+        "era_bias": 1.347
+      }
+    ],
+    "bias_by_age_band": [
+      {
+        "age_band": "age <=27",
+        "n": 15,
+        "era_bias": -0.226,
+        "whip_bias": 0.006
+      },
+      {
+        "age_band": "age 28-31",
+        "n": 23,
+        "era_bias": -0.11,
+        "whip_bias": -0.038
+      },
+      {
+        "age_band": "age >=32",
+        "n": 21,
+        "era_bias": -0.301,
+        "whip_bias": -0.068
+      }
+    ]
+  },
+  "pooled": {
+    "A_2season": {
+      "mae_era": 0.744,
+      "mae_whip": 0.122,
+      "bias_era": -0.208
+    },
+    "B_3season": {
+      "mae_era": 0.715,
+      "mae_whip": 0.12,
+      "bias_era": -0.205
+    },
+    "C_age_crossfit": {
+      "mae_era": 0.711,
+      "mae_whip": 0.12,
+      "bias_era": -0.078
+    }
+  }
+}

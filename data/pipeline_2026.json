@@ -1,0 +1,1615 @@
+{
+  "metadata": {
+    "cycle": "BML Cycle 23 \u2014 MiLB pipeline index (CarpeData)",
+    "season": 2026,
+    "generated": "2026-10-31",
+    "source": "MLB Stats API (keyless) https://statsapi.mlb.com/api/v1",
+    "endpoints": {
+      "teams": "/teams?sportId=1 (orgs), 11 (AAA), 12 (AA) \u2014 parentOrgId maps affiliate -> org",
+      "player_stats": "/stats?stats=season&group=hitting|pitching&teamId=<affiliate>&sportId=11|12&playerPool=all",
+      "ages": "/people?personIds=<batched 50> \u2014 real birthDate per player"
+    },
+    "method": {
+      "age_rule": "under-26 = age < 26 on 2026-06-30 (born on/after 2000-07-01), from people-endpoint birthDate",
+      "qualification": "per-level split: hitters >= 150 PA, pitchers >= 40.0 IP at AAA or AA",
+      "level_weights": {
+        "AAA": 1.0,
+        "AA": 0.85
+      },
+      "wtd_ops": "sum(PA*w*OPS)/sum(PA*w) over qualified under-26 splits",
+      "wtd_era": "9*sum(w*ER)/sum(w*IP) over qualified under-26 splits (IP-weighted ERA; IP from outs/3)",
+      "index": "hit_score + pit_score; hit_score = n_hitters*(org OPS/league OPS), pit_score = n_pitchers*(league ERA/org ERA); index_avg100 rescales mean org to 100",
+      "league_baselines": {
+        "wtd_ops": 0.773,
+        "wtd_era": 4.83,
+        "n_hitters": 516,
+        "n_pitchers": 363
+      }
+    },
+    "coverage": {
+      "orgs": 30,
+      "splits_pulled": {
+        "hitting": 1885,
+        "pitching": 2504
+      },
+      "players_qualifying_pre_age": 1508,
+      "players_excluded_missing_birthdate": 0,
+      "missing_birthdate_player_ids": []
+    },
+    "limitations": [
+      "Upper minors only (AAA/AA): no A-ball, rookie ball, scouting grades, draft pedigree, or prospect rankings \u2014 this measures near-MLB depth, not total farm quality.",
+      "Players who spent most of 2026 in MLB are invisible or undercounted here regardless of age/talent.",
+      "ERA is not park- or league-adjusted; AAA Pacific Coast League parks inflate ERA vs International League.",
+      "A player traded mid-season counts once per org he qualified for (player-org units), so league n is player-orgs, not unique players.",
+      "2026 stat lines are descriptive performance, not projections; small-sample qualifiers sit exactly at the 150 PA / 40 IP floors.",
+      "Players with no birthDate from the people endpoint were excluded (fail closed), never age-guessed; count is in coverage."
+    ]
+  },
+  "orgs": [
+    {
+      "org_id": 138,
+      "org_name": "St. Louis Cardinals",
+      "org_abbr": "STL",
+      "affiliates": [
+        {
+          "team_id": 235,
+          "team_name": "Memphis Redbirds",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 440,
+          "team_name": "Springfield Cardinals",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 23,
+      "n_pitchers": 19,
+      "hit_pa": 7859,
+      "pit_ip": 1493.8,
+      "wtd_ops": 0.799,
+      "wtd_era": 4.45,
+      "top_hitter": {
+        "player_id": 800305,
+        "name": "Jes\u00fas  B\u00e1ez",
+        "age": 21.3,
+        "levels": [
+          "AA"
+        ],
+        "pa": 257,
+        "wtd_ops": 1.033
+      },
+      "top_pitcher": {
+        "player_id": 703725,
+        "name": "Luis Gastelum",
+        "age": 24.8,
+        "levels": [
+          "AAA"
+        ],
+        "ip": 43.7,
+        "wtd_era": 2.27
+      },
+      "hit_score": 23.77,
+      "pit_score": 20.61,
+      "pipeline_index": 44.38,
+      "rank": 1,
+      "index_avg100": 151.0,
+      "hit_rank": 3,
+      "pit_rank": 1
+    },
+    {
+      "org_id": 114,
+      "org_name": "Cleveland Guardians",
+      "org_abbr": "CLE",
+      "affiliates": [
+        {
+          "team_id": 445,
+          "team_name": "Columbus Clippers",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 402,
+          "team_name": "Akron RubberDucks",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 29,
+      "n_pitchers": 13,
+      "hit_pa": 8862,
+      "pit_ip": 912.9,
+      "wtd_ops": 0.784,
+      "wtd_era": 4.94,
+      "top_hitter": {
+        "player_id": 825761,
+        "name": "Ryan Cesarini",
+        "age": 23.5,
+        "levels": [
+          "AA"
+        ],
+        "pa": 184,
+        "wtd_ops": 1.015
+      },
+      "top_pitcher": {
+        "player_id": 687916,
+        "name": "Jack Jasiak",
+        "age": 25.3,
+        "levels": [
+          "AA"
+        ],
+        "ip": 56.7,
+        "wtd_era": 3.02
+      },
+      "hit_score": 29.41,
+      "pit_score": 12.7,
+      "pipeline_index": 42.11,
+      "rank": 2,
+      "index_avg100": 143.3,
+      "hit_rank": 1,
+      "pit_rank": 14
+    },
+    {
+      "org_id": 158,
+      "org_name": "Milwaukee Brewers",
+      "org_abbr": "MIL",
+      "affiliates": [
+        {
+          "team_id": 556,
+          "team_name": "Nashville Sounds",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 5015,
+          "team_name": "Biloxi Shuckers",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 22,
+      "n_pitchers": 16,
+      "hit_pa": 7670,
+      "pit_ip": 1128.6,
+      "wtd_ops": 0.775,
+      "wtd_era": 5.08,
+      "top_hitter": {
+        "player_id": 702652,
+        "name": "Andrew Fischer",
+        "age": 22.1,
+        "levels": [
+          "AA"
+        ],
+        "pa": 314,
+        "wtd_ops": 1.026
+      },
+      "top_pitcher": {
+        "player_id": 828705,
+        "name": "Tanner Gillis",
+        "age": 25.9,
+        "levels": [
+          "AA"
+        ],
+        "ip": 57.0,
+        "wtd_era": 3.32
+      },
+      "hit_score": 22.06,
+      "pit_score": 15.21,
+      "pipeline_index": 37.27,
+      "rank": 3,
+      "index_avg100": 126.8,
+      "hit_rank": 4,
+      "pit_rank": 6
+    },
+    {
+      "org_id": 109,
+      "org_name": "Arizona Diamondbacks",
+      "org_abbr": "AZ",
+      "affiliates": [
+        {
+          "team_id": 2310,
+          "team_name": "Reno Aces",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 5368,
+          "team_name": "Amarillo Sod Poodles",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 21,
+      "n_pitchers": 17,
+      "hit_pa": 7894,
+      "pit_ip": 1223.3,
+      "wtd_ops": 0.796,
+      "wtd_era": 5.3,
+      "top_hitter": {
+        "player_id": 814439,
+        "name": "Ryan Waldschmidt",
+        "age": 23.7,
+        "levels": [
+          "AAA"
+        ],
+        "pa": 234,
+        "wtd_ops": 0.897
+      },
+      "top_pitcher": {
+        "player_id": 683352,
+        "name": "Mitch Bratt",
+        "age": 23.0,
+        "levels": [
+          "AAA"
+        ],
+        "ip": 63.0,
+        "wtd_era": 3.43
+      },
+      "hit_score": 21.62,
+      "pit_score": 15.48,
+      "pipeline_index": 37.1,
+      "rank": 4,
+      "index_avg100": 126.2,
+      "hit_rank": 5,
+      "pit_rank": 4
+    },
+    {
+      "org_id": 146,
+      "org_name": "Miami Marlins",
+      "org_abbr": "MIA",
+      "affiliates": [
+        {
+          "team_id": 564,
+          "team_name": "Jacksonville Jumbo Shrimp",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 4124,
+          "team_name": "Pensacola Blue Wahoos",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 27,
+      "n_pitchers": 10,
+      "hit_pa": 8419,
+      "pit_ip": 709.9,
+      "wtd_ops": 0.757,
+      "wtd_era": 4.62,
+      "top_hitter": {
+        "player_id": 703680,
+        "name": "Brandon Compton",
+        "age": 22.7,
+        "levels": [
+          "AA"
+        ],
+        "pa": 216,
+        "wtd_ops": 1.18
+      },
+      "top_pitcher": {
+        "player_id": 687985,
+        "name": "Josh White",
+        "age": 25.6,
+        "levels": [
+          "AAA"
+        ],
+        "ip": 56.0,
+        "wtd_era": 2.41
+      },
+      "hit_score": 26.44,
+      "pit_score": 10.45,
+      "pipeline_index": 36.89,
+      "rank": 5,
+      "index_avg100": 125.5,
+      "hit_rank": 2,
+      "pit_rank": 22
+    },
+    {
+      "org_id": 119,
+      "org_name": "Los Angeles Dodgers",
+      "org_abbr": "LAD",
+      "affiliates": [
+        {
+          "team_id": 238,
+          "team_name": "Oklahoma City Comets",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 260,
+          "team_name": "Tulsa Drillers",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 17,
+      "n_pitchers": 17,
+      "hit_pa": 6721,
+      "pit_ip": 1322.1,
+      "wtd_ops": 0.823,
+      "wtd_era": 4.75,
+      "top_hitter": {
+        "player_id": 695372,
+        "name": "Jake Gelof",
+        "age": 24.3,
+        "levels": [
+          "AA"
+        ],
+        "pa": 522,
+        "wtd_ops": 0.95
+      },
+      "top_pitcher": {
+        "player_id": 699062,
+        "name": "Kelvin Ramirez",
+        "age": 25.1,
+        "levels": [
+          "AA"
+        ],
+        "ip": 66.0,
+        "wtd_era": 2.45
+      },
+      "hit_score": 18.1,
+      "pit_score": 17.28,
+      "pipeline_index": 35.38,
+      "rank": 6,
+      "index_avg100": 120.4,
+      "hit_rank": 13,
+      "pit_rank": 2
+    },
+    {
+      "org_id": 139,
+      "org_name": "Tampa Bay Rays",
+      "org_abbr": "TB",
+      "affiliates": [
+        {
+          "team_id": 234,
+          "team_name": "Durham Bulls",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 421,
+          "team_name": "Montgomery Biscuits",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 19,
+      "n_pitchers": 13,
+      "hit_pa": 6066,
+      "pit_ip": 995.0,
+      "wtd_ops": 0.76,
+      "wtd_era": 4.41,
+      "top_hitter": {
+        "player_id": 702556,
+        "name": "Austin Overn",
+        "age": 23.1,
+        "levels": [
+          "AA"
+        ],
+        "pa": 282,
+        "wtd_ops": 0.96
+      },
+      "top_pitcher": {
+        "player_id": 702650,
+        "name": "Michael Forret",
+        "age": 22.2,
+        "levels": [
+          "AA"
+        ],
+        "ip": 54.3,
+        "wtd_era": 2.15
+      },
+      "hit_score": 18.68,
+      "pit_score": 14.23,
+      "pipeline_index": 32.91,
+      "rank": 7,
+      "index_avg100": 112.0,
+      "hit_rank": 8,
+      "pit_rank": 12
+    },
+    {
+      "org_id": 137,
+      "org_name": "San Francisco Giants",
+      "org_abbr": "SF",
+      "affiliates": [
+        {
+          "team_id": 105,
+          "team_name": "Sacramento River Cats",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 3410,
+          "team_name": "Richmond Flying Squirrels",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 17,
+      "n_pitchers": 15,
+      "hit_pa": 6075,
+      "pit_ip": 1139.3,
+      "wtd_ops": 0.773,
+      "wtd_era": 4.58,
+      "top_hitter": {
+        "player_id": 813841,
+        "name": "Jonah Cox",
+        "age": 24.9,
+        "levels": [
+          "AA"
+        ],
+        "pa": 183,
+        "wtd_ops": 1.097
+      },
+      "top_pitcher": {
+        "player_id": 804922,
+        "name": "Tyler Vogel",
+        "age": 25.6,
+        "levels": [
+          "AA"
+        ],
+        "ip": 52.7,
+        "wtd_era": 3.25
+      },
+      "hit_score": 17.0,
+      "pit_score": 15.81,
+      "pipeline_index": 32.81,
+      "rank": 8,
+      "index_avg100": 111.6,
+      "hit_rank": 14,
+      "pit_rank": 3
+    },
+    {
+      "org_id": 115,
+      "org_name": "Colorado Rockies",
+      "org_abbr": "COL",
+      "affiliates": [
+        {
+          "team_id": 342,
+          "team_name": "Albuquerque Isotopes",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 538,
+          "team_name": "Hartford Yard Goats",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 16,
+      "n_pitchers": 14,
+      "hit_pa": 6166,
+      "pit_ip": 1104.0,
+      "wtd_ops": 0.815,
+      "wtd_era": 4.43,
+      "top_hitter": {
+        "player_id": 691728,
+        "name": "Zac Veen",
+        "age": 24.5,
+        "levels": [
+          "AAA"
+        ],
+        "pa": 445,
+        "wtd_ops": 1.037
+      },
+      "top_pitcher": {
+        "player_id": 687317,
+        "name": "Stu Flesland III",
+        "age": 25.7,
+        "levels": [
+          "AA"
+        ],
+        "ip": 86.0,
+        "wtd_era": 1.88
+      },
+      "hit_score": 16.87,
+      "pit_score": 15.26,
+      "pipeline_index": 32.13,
+      "rank": 9,
+      "index_avg100": 109.3,
+      "hit_rank": 15,
+      "pit_rank": 5
+    },
+    {
+      "org_id": 110,
+      "org_name": "Baltimore Orioles",
+      "org_abbr": "BAL",
+      "affiliates": [
+        {
+          "team_id": 568,
+          "team_name": "Norfolk Tides",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 418,
+          "team_name": "Chesapeake Baysox",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 20,
+      "n_pitchers": 13,
+      "hit_pa": 6581,
+      "pit_ip": 992.2,
+      "wtd_ops": 0.713,
+      "wtd_era": 4.59,
+      "top_hitter": {
+        "player_id": 803175,
+        "name": "Ethan Anderson",
+        "age": 22.8,
+        "levels": [
+          "AA"
+        ],
+        "pa": 351,
+        "wtd_ops": 0.881
+      },
+      "top_pitcher": {
+        "player_id": 809840,
+        "name": "Micah Ashman",
+        "age": 23.9,
+        "levels": [
+          "AA"
+        ],
+        "ip": 50.3,
+        "wtd_era": 1.79
+      },
+      "hit_score": 18.45,
+      "pit_score": 13.67,
+      "pipeline_index": 32.12,
+      "rank": 10,
+      "index_avg100": 109.3,
+      "hit_rank": 10,
+      "pit_rank": 13
+    },
+    {
+      "org_id": 141,
+      "org_name": "Toronto Blue Jays",
+      "org_abbr": "TOR",
+      "affiliates": [
+        {
+          "team_id": 422,
+          "team_name": "Buffalo Bisons",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 463,
+          "team_name": "New Hampshire Fisher Cats",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 20,
+      "n_pitchers": 13,
+      "hit_pa": 6401,
+      "pit_ip": 1017.0,
+      "wtd_ops": 0.782,
+      "wtd_era": 5.62,
+      "top_hitter": {
+        "player_id": 815873,
+        "name": "Sean Keys",
+        "age": 23.1,
+        "levels": [
+          "AA",
+          "AAA"
+        ],
+        "pa": 435,
+        "wtd_ops": 1.021
+      },
+      "top_pitcher": {
+        "player_id": 834978,
+        "name": "Danny Thompson Jr.",
+        "age": 23.9,
+        "levels": [
+          "AA"
+        ],
+        "ip": 53.0,
+        "wtd_era": 3.06
+      },
+      "hit_score": 20.23,
+      "pit_score": 11.17,
+      "pipeline_index": 31.4,
+      "rank": 11,
+      "index_avg100": 106.8,
+      "hit_rank": 6,
+      "pit_rank": 18
+    },
+    {
+      "org_id": 147,
+      "org_name": "New York Yankees",
+      "org_abbr": "NYY",
+      "affiliates": [
+        {
+          "team_id": 531,
+          "team_name": "Scranton/Wilkes-Barre RailRiders",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 1956,
+          "team_name": "Somerset Patriots",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 16,
+      "n_pitchers": 13,
+      "hit_pa": 5373,
+      "pit_ip": 971.3,
+      "wtd_ops": 0.798,
+      "wtd_era": 4.22,
+      "top_hitter": {
+        "player_id": 682987,
+        "name": "Spencer Jones",
+        "age": 25.1,
+        "levels": [
+          "AAA"
+        ],
+        "pa": 233,
+        "wtd_ops": 0.942
+      },
+      "top_pitcher": {
+        "player_id": 695684,
+        "name": "Elmer Rodr\u00edguez",
+        "age": 22.9,
+        "levels": [
+          "AAA"
+        ],
+        "ip": 106.3,
+        "wtd_era": 2.45
+      },
+      "hit_score": 16.52,
+      "pit_score": 14.87,
+      "pipeline_index": 31.39,
+      "rank": 12,
+      "index_avg100": 106.8,
+      "hit_rank": 17,
+      "pit_rank": 10
+    },
+    {
+      "org_id": 108,
+      "org_name": "Los Angeles Angels",
+      "org_abbr": "LAA",
+      "affiliates": [
+        {
+          "team_id": 561,
+          "team_name": "Salt Lake Bees",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 559,
+          "team_name": "Rocket City Trash Pandas",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 16,
+      "n_pitchers": 16,
+      "hit_pa": 5247,
+      "pit_ip": 1251.3,
+      "wtd_ops": 0.765,
+      "wtd_era": 5.1,
+      "top_hitter": {
+        "player_id": 677347,
+        "name": "Kyren Paris",
+        "age": 24.6,
+        "levels": [
+          "AAA"
+        ],
+        "pa": 289,
+        "wtd_ops": 0.981
+      },
+      "top_pitcher": {
+        "player_id": 822652,
+        "name": "Lucas Mahlstedt",
+        "age": 23.3,
+        "levels": [
+          "AA"
+        ],
+        "ip": 57.3,
+        "wtd_era": 3.3
+      },
+      "hit_score": 15.83,
+      "pit_score": 15.15,
+      "pipeline_index": 30.98,
+      "rank": 13,
+      "index_avg100": 105.4,
+      "hit_rank": 19,
+      "pit_rank": 7
+    },
+    {
+      "org_id": 133,
+      "org_name": "Athletics",
+      "org_abbr": "ATH",
+      "affiliates": [
+        {
+          "team_id": 400,
+          "team_name": "Las Vegas Aviators",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 237,
+          "team_name": "Midland RockHounds",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 19,
+      "n_pitchers": 13,
+      "hit_pa": 6379,
+      "pit_ip": 967.2,
+      "wtd_ops": 0.778,
+      "wtd_era": 5.43,
+      "top_hitter": {
+        "player_id": 703607,
+        "name": "Henry Bolte",
+        "age": 22.9,
+        "levels": [
+          "AAA"
+        ],
+        "pa": 177,
+        "wtd_ops": 1.076
+      },
+      "top_pitcher": {
+        "player_id": 827734,
+        "name": "Wei-En Lin",
+        "age": 20.7,
+        "levels": [
+          "AA"
+        ],
+        "ip": 51.3,
+        "wtd_era": 1.93
+      },
+      "hit_score": 19.12,
+      "pit_score": 11.56,
+      "pipeline_index": 30.68,
+      "rank": 14,
+      "index_avg100": 104.4,
+      "hit_rank": 7,
+      "pit_rank": 17
+    },
+    {
+      "org_id": 111,
+      "org_name": "Boston Red Sox",
+      "org_abbr": "BOS",
+      "affiliates": [
+        {
+          "team_id": 533,
+          "team_name": "Worcester Red Sox",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 546,
+          "team_name": "Portland Sea Dogs",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 16,
+      "n_pitchers": 13,
+      "hit_pa": 6005,
+      "pit_ip": 937.6,
+      "wtd_ops": 0.756,
+      "wtd_era": 4.21,
+      "top_hitter": {
+        "player_id": 808265,
+        "name": "Franklin Arias",
+        "age": 20.6,
+        "levels": [
+          "AA",
+          "AAA"
+        ],
+        "pa": 520,
+        "wtd_ops": 0.954
+      },
+      "top_pitcher": {
+        "player_id": 809254,
+        "name": "Anthony Eyanson",
+        "age": 21.7,
+        "levels": [
+          "AA"
+        ],
+        "ip": 48.0,
+        "wtd_era": 1.69
+      },
+      "hit_score": 15.65,
+      "pit_score": 14.91,
+      "pipeline_index": 30.56,
+      "rank": 15,
+      "index_avg100": 104.0,
+      "hit_rank": 20,
+      "pit_rank": 9
+    },
+    {
+      "org_id": 142,
+      "org_name": "Minnesota Twins",
+      "org_abbr": "MIN",
+      "affiliates": [
+        {
+          "team_id": 1960,
+          "team_name": "St. Paul Saints",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 3898,
+          "team_name": "Wichita Wind Surge",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 18,
+      "n_pitchers": 12,
+      "hit_pa": 5945,
+      "pit_ip": 846.5,
+      "wtd_ops": 0.786,
+      "wtd_era": 5.27,
+      "top_hitter": {
+        "player_id": 814522,
+        "name": "Caden Kendle",
+        "age": 24.3,
+        "levels": [
+          "AA"
+        ],
+        "pa": 200,
+        "wtd_ops": 1.076
+      },
+      "top_pitcher": {
+        "player_id": 807716,
+        "name": "Ty Langenberg",
+        "age": 24.6,
+        "levels": [
+          "AA"
+        ],
+        "ip": 86.3,
+        "wtd_era": 3.65
+      },
+      "hit_score": 18.3,
+      "pit_score": 10.99,
+      "pipeline_index": 29.29,
+      "rank": 16,
+      "index_avg100": 99.7,
+      "hit_rank": 11,
+      "pit_rank": 19
+    },
+    {
+      "org_id": 134,
+      "org_name": "Pittsburgh Pirates",
+      "org_abbr": "PIT",
+      "affiliates": [
+        {
+          "team_id": 484,
+          "team_name": "Indianapolis Indians",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 452,
+          "team_name": "Altoona Curve",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 19,
+      "n_pitchers": 11,
+      "hit_pa": 6203,
+      "pit_ip": 926.6,
+      "wtd_ops": 0.744,
+      "wtd_era": 4.95,
+      "top_hitter": {
+        "player_id": 699013,
+        "name": "Esmerlyn Valdez",
+        "age": 22.4,
+        "levels": [
+          "AAA"
+        ],
+        "pa": 237,
+        "wtd_ops": 0.914
+      },
+      "top_pitcher": {
+        "player_id": 682981,
+        "name": "Derek Diamond",
+        "age": 25.5,
+        "levels": [
+          "AAA"
+        ],
+        "ip": 43.0,
+        "wtd_era": 3.14
+      },
+      "hit_score": 18.29,
+      "pit_score": 10.73,
+      "pipeline_index": 29.02,
+      "rank": 17,
+      "index_avg100": 98.7,
+      "hit_rank": 12,
+      "pit_rank": 21
+    },
+    {
+      "org_id": 145,
+      "org_name": "Chicago White Sox",
+      "org_abbr": "CWS",
+      "affiliates": [
+        {
+          "team_id": 494,
+          "team_name": "Charlotte Knights",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 247,
+          "team_name": "Birmingham Barons",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 17,
+      "n_pitchers": 10,
+      "hit_pa": 5354,
+      "pit_ip": 738.0,
+      "wtd_ops": 0.755,
+      "wtd_era": 4.13,
+      "top_hitter": {
+        "player_id": 694378,
+        "name": "Jacob Gonzalez",
+        "age": 24.1,
+        "levels": [
+          "AAA"
+        ],
+        "pa": 239,
+        "wtd_ops": 1.097
+      },
+      "top_pitcher": {
+        "player_id": 702273,
+        "name": "Noah Schultz",
+        "age": 22.9,
+        "levels": [
+          "AAA"
+        ],
+        "ip": 44.7,
+        "wtd_era": 2.01
+      },
+      "hit_score": 16.6,
+      "pit_score": 11.69,
+      "pipeline_index": 28.29,
+      "rank": 18,
+      "index_avg100": 96.3,
+      "hit_rank": 16,
+      "pit_rank": 16
+    },
+    {
+      "org_id": 140,
+      "org_name": "Texas Rangers",
+      "org_abbr": "TEX",
+      "affiliates": [
+        {
+          "team_id": 102,
+          "team_name": "Round Rock Express",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 540,
+          "team_name": "Frisco RoughRiders",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 15,
+      "n_pitchers": 13,
+      "hit_pa": 5284,
+      "pit_ip": 872.2,
+      "wtd_ops": 0.82,
+      "wtd_era": 5.11,
+      "top_hitter": {
+        "player_id": 806964,
+        "name": "Sebastian Walcott",
+        "age": 20.3,
+        "levels": [
+          "AA"
+        ],
+        "pa": 171,
+        "wtd_ops": 0.984
+      },
+      "top_pitcher": {
+        "player_id": 701717,
+        "name": "Dalton Pence",
+        "age": 23.8,
+        "levels": [
+          "AA"
+        ],
+        "ip": 55.3,
+        "wtd_era": 2.77
+      },
+      "hit_score": 15.91,
+      "pit_score": 12.28,
+      "pipeline_index": 28.19,
+      "rank": 19,
+      "index_avg100": 95.9,
+      "hit_rank": 18,
+      "pit_rank": 15
+    },
+    {
+      "org_id": 120,
+      "org_name": "Washington Nationals",
+      "org_abbr": "WSH",
+      "affiliates": [
+        {
+          "team_id": 534,
+          "team_name": "Rochester Red Wings",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 547,
+          "team_name": "Harrisburg Senators",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 18,
+      "n_pitchers": 8,
+      "hit_pa": 6589,
+      "pit_ip": 672.0,
+      "wtd_ops": 0.799,
+      "wtd_era": 4.42,
+      "top_hitter": {
+        "player_id": 814409,
+        "name": "Seaver King",
+        "age": 23.2,
+        "levels": [
+          "AA",
+          "AAA"
+        ],
+        "pa": 521,
+        "wtd_ops": 0.895
+      },
+      "top_pitcher": {
+        "player_id": 678868,
+        "name": "Eddy Yean",
+        "age": 25.0,
+        "levels": [
+          "AAA"
+        ],
+        "ip": 61.7,
+        "wtd_era": 3.21
+      },
+      "hit_score": 18.6,
+      "pit_score": 8.74,
+      "pipeline_index": 27.34,
+      "rank": 20,
+      "index_avg100": 93.0,
+      "hit_rank": 9,
+      "pit_rank": 27
+    },
+    {
+      "org_id": 117,
+      "org_name": "Houston Astros",
+      "org_abbr": "HOU",
+      "affiliates": [
+        {
+          "team_id": 5434,
+          "team_name": "Sugar Land Space Cowboys",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 482,
+          "team_name": "Corpus Christi Hooks",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 13,
+      "n_pitchers": 14,
+      "hit_pa": 4346,
+      "pit_ip": 893.1,
+      "wtd_ops": 0.722,
+      "wtd_era": 4.48,
+      "top_hitter": {
+        "player_id": 814299,
+        "name": "Pascanel Ferreras",
+        "age": 24.6,
+        "levels": [
+          "AAA"
+        ],
+        "pa": 307,
+        "wtd_ops": 0.837
+      },
+      "top_pitcher": {
+        "player_id": 809343,
+        "name": "Bryce Mayer",
+        "age": 24.4,
+        "levels": [
+          "AA"
+        ],
+        "ip": 69.0,
+        "wtd_era": 2.61
+      },
+      "hit_score": 12.14,
+      "pit_score": 15.09,
+      "pipeline_index": 27.23,
+      "rank": 21,
+      "index_avg100": 92.7,
+      "hit_rank": 26,
+      "pit_rank": 8
+    },
+    {
+      "org_id": 144,
+      "org_name": "Atlanta Braves",
+      "org_abbr": "ATL",
+      "affiliates": [
+        {
+          "team_id": 431,
+          "team_name": "Gwinnett Stripers",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 6325,
+          "team_name": "Columbus Clingstones",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 13,
+      "n_pitchers": 12,
+      "hit_pa": 3138,
+      "pit_ip": 805.2,
+      "wtd_ops": 0.728,
+      "wtd_era": 4.06,
+      "top_hitter": {
+        "player_id": 700845,
+        "name": "Adam Zebrowski",
+        "age": 25.8,
+        "levels": [
+          "AA"
+        ],
+        "pa": 239,
+        "wtd_ops": 0.932
+      },
+      "top_pitcher": {
+        "player_id": 803349,
+        "name": "Herick Hernandez",
+        "age": 22.9,
+        "levels": [
+          "AA"
+        ],
+        "ip": 45.0,
+        "wtd_era": 2.8
+      },
+      "hit_score": 12.24,
+      "pit_score": 14.27,
+      "pipeline_index": 26.51,
+      "rank": 22,
+      "index_avg100": 90.2,
+      "hit_rank": 25,
+      "pit_rank": 11
+    },
+    {
+      "org_id": 113,
+      "org_name": "Cincinnati Reds",
+      "org_abbr": "CIN",
+      "affiliates": [
+        {
+          "team_id": 416,
+          "team_name": "Louisville Bats",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 498,
+          "team_name": "Chattanooga Lookouts",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 16,
+      "n_pitchers": 12,
+      "hit_pa": 5125,
+      "pit_ip": 773.6,
+      "wtd_ops": 0.752,
+      "wtd_era": 5.37,
+      "top_hitter": {
+        "player_id": 807728,
+        "name": "Carter Graham",
+        "age": 24.8,
+        "levels": [
+          "AA"
+        ],
+        "pa": 260,
+        "wtd_ops": 0.902
+      },
+      "top_pitcher": {
+        "player_id": 805723,
+        "name": "Jared Lyons",
+        "age": 25.8,
+        "levels": [
+          "AA",
+          "AAA"
+        ],
+        "ip": 95.7,
+        "wtd_era": 4.18
+      },
+      "hit_score": 15.56,
+      "pit_score": 10.79,
+      "pipeline_index": 26.35,
+      "rank": 23,
+      "index_avg100": 89.7,
+      "hit_rank": 21,
+      "pit_rank": 20
+    },
+    {
+      "org_id": 121,
+      "org_name": "New York Mets",
+      "org_abbr": "NYM",
+      "affiliates": [
+        {
+          "team_id": 552,
+          "team_name": "Syracuse Mets",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 505,
+          "team_name": "Binghamton Rumble Ponies",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 14,
+      "n_pitchers": 10,
+      "hit_pa": 4353,
+      "pit_ip": 722.0,
+      "wtd_ops": 0.719,
+      "wtd_era": 4.72,
+      "top_hitter": {
+        "player_id": 690970,
+        "name": "Corey Collins",
+        "age": 24.7,
+        "levels": [
+          "AA"
+        ],
+        "pa": 166,
+        "wtd_ops": 0.902
+      },
+      "top_pitcher": {
+        "player_id": 700370,
+        "name": "Felipe De La Cruz",
+        "age": 25.1,
+        "levels": [
+          "AA"
+        ],
+        "ip": 41.7,
+        "wtd_era": 2.81
+      },
+      "hit_score": 13.02,
+      "pit_score": 10.23,
+      "pipeline_index": 23.25,
+      "rank": 24,
+      "index_avg100": 79.1,
+      "hit_rank": 24,
+      "pit_rank": 23
+    },
+    {
+      "org_id": 112,
+      "org_name": "Chicago Cubs",
+      "org_abbr": "CHC",
+      "affiliates": [
+        {
+          "team_id": 451,
+          "team_name": "Iowa Cubs",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 553,
+          "team_name": "Knoxville Smokies",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 14,
+      "n_pitchers": 8,
+      "hit_pa": 5578,
+      "pit_ip": 526.8,
+      "wtd_ops": 0.777,
+      "wtd_era": 4.29,
+      "top_hitter": {
+        "player_id": 699393,
+        "name": "Pedro Ram\u00edrez",
+        "age": 22.2,
+        "levels": [
+          "AAA"
+        ],
+        "pa": 196,
+        "wtd_ops": 0.942
+      },
+      "top_pitcher": {
+        "player_id": 683100,
+        "name": "Dawson Netz",
+        "age": 25.9,
+        "levels": [
+          "AA"
+        ],
+        "ip": 85.7,
+        "wtd_era": 2.94
+      },
+      "hit_score": 14.07,
+      "pit_score": 9.0,
+      "pipeline_index": 23.07,
+      "rank": 25,
+      "index_avg100": 78.5,
+      "hit_rank": 23,
+      "pit_rank": 26
+    },
+    {
+      "org_id": 135,
+      "org_name": "San Diego Padres",
+      "org_abbr": "SD",
+      "affiliates": [
+        {
+          "team_id": 4904,
+          "team_name": "El Paso Chihuahuas",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 510,
+          "team_name": "San Antonio Missions",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 12,
+      "n_pitchers": 10,
+      "hit_pa": 4310,
+      "pit_ip": 773.6,
+      "wtd_ops": 0.745,
+      "wtd_era": 5.03,
+      "top_hitter": {
+        "player_id": 687749,
+        "name": "Jase Bowen",
+        "age": 25.8,
+        "levels": [
+          "AAA"
+        ],
+        "pa": 222,
+        "wtd_ops": 0.962
+      },
+      "top_pitcher": {
+        "player_id": 800212,
+        "name": "Francis Pe\u00f1a",
+        "age": 25.4,
+        "levels": [
+          "AA"
+        ],
+        "ip": 59.0,
+        "wtd_era": 3.05
+      },
+      "hit_score": 11.56,
+      "pit_score": 9.6,
+      "pipeline_index": 21.16,
+      "rank": 26,
+      "index_avg100": 72.0,
+      "hit_rank": 28,
+      "pit_rank": 25
+    },
+    {
+      "org_id": 118,
+      "org_name": "Kansas City Royals",
+      "org_abbr": "KC",
+      "affiliates": [
+        {
+          "team_id": 541,
+          "team_name": "Omaha Storm Chasers",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 1350,
+          "team_name": "Northwest Arkansas Naturals",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 11,
+      "n_pitchers": 13,
+      "hit_pa": 4060,
+      "pit_ip": 982.5,
+      "wtd_ops": 0.744,
+      "wtd_era": 6.29,
+      "top_hitter": {
+        "player_id": 811287,
+        "name": "Carson Roccaforte",
+        "age": 24.3,
+        "levels": [
+          "AA"
+        ],
+        "pa": 504,
+        "wtd_ops": 0.856
+      },
+      "top_pitcher": {
+        "player_id": 699325,
+        "name": "Oscar Rayo",
+        "age": 24.5,
+        "levels": [
+          "AA"
+        ],
+        "ip": 47.7,
+        "wtd_era": 4.15
+      },
+      "hit_score": 10.59,
+      "pit_score": 9.98,
+      "pipeline_index": 20.57,
+      "rank": 27,
+      "index_avg100": 70.0,
+      "hit_rank": 30,
+      "pit_rank": 24
+    },
+    {
+      "org_id": 143,
+      "org_name": "Philadelphia Phillies",
+      "org_abbr": "PHI",
+      "affiliates": [
+        {
+          "team_id": 1410,
+          "team_name": "Lehigh Valley IronPigs",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 522,
+          "team_name": "Reading Fightin Phils",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 15,
+      "n_pitchers": 4,
+      "hit_pa": 5135,
+      "pit_ip": 290.3,
+      "wtd_ops": 0.772,
+      "wtd_era": 5.3,
+      "top_hitter": {
+        "player_id": 701831,
+        "name": "Carson DeMartini",
+        "age": 23.5,
+        "levels": [
+          "AA"
+        ],
+        "pa": 235,
+        "wtd_ops": 0.929
+      },
+      "top_pitcher": {
+        "player_id": 689726,
+        "name": "Luke Russo",
+        "age": 25.4,
+        "levels": [
+          "AA"
+        ],
+        "ip": 121.3,
+        "wtd_era": 4.3
+      },
+      "hit_score": 14.98,
+      "pit_score": 3.64,
+      "pipeline_index": 18.62,
+      "rank": 28,
+      "index_avg100": 63.4,
+      "hit_rank": 22,
+      "pit_rank": 30
+    },
+    {
+      "org_id": 136,
+      "org_name": "Seattle Mariners",
+      "org_abbr": "SEA",
+      "affiliates": [
+        {
+          "team_id": 529,
+          "team_name": "Tacoma Rainiers",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 574,
+          "team_name": "Arkansas Travelers",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 11,
+      "n_pitchers": 6,
+      "hit_pa": 4176,
+      "pit_ip": 479.3,
+      "wtd_ops": 0.797,
+      "wtd_era": 4.55,
+      "top_hitter": {
+        "player_id": 703155,
+        "name": "Lazaro Montes",
+        "age": 21.7,
+        "levels": [
+          "AA",
+          "AAA"
+        ],
+        "pa": 542,
+        "wtd_ops": 0.928
+      },
+      "top_pitcher": {
+        "player_id": 807739,
+        "name": "Kade Anderson",
+        "age": 22.0,
+        "levels": [
+          "AA"
+        ],
+        "ip": 93.3,
+        "wtd_era": 1.06
+      },
+      "hit_score": 11.34,
+      "pit_score": 6.37,
+      "pipeline_index": 17.71,
+      "rank": 29,
+      "index_avg100": 60.3,
+      "hit_rank": 29,
+      "pit_rank": 28
+    },
+    {
+      "org_id": 116,
+      "org_name": "Detroit Tigers",
+      "org_abbr": "DET",
+      "affiliates": [
+        {
+          "team_id": 512,
+          "team_name": "Toledo Mud Hens",
+          "level": "AAA",
+          "sport_id": 11
+        },
+        {
+          "team_id": 106,
+          "team_name": "Erie SeaWolves",
+          "level": "AA",
+          "sport_id": 12
+        }
+      ],
+      "n_hitters": 12,
+      "n_pitchers": 5,
+      "hit_pa": 4947,
+      "pit_ip": 240.3,
+      "wtd_ops": 0.779,
+      "wtd_era": 4.98,
+      "top_hitter": {
+        "player_id": 801194,
+        "name": "Max Anderson",
+        "age": 24.3,
+        "levels": [
+          "AAA"
+        ],
+        "pa": 482,
+        "wtd_ops": 0.863
+      },
+      "top_pitcher": {
+        "player_id": 685481,
+        "name": "Moises Rodriguez",
+        "age": 24.3,
+        "levels": [
+          "AA"
+        ],
+        "ip": 42.7,
+        "wtd_era": 2.74
+      },
+      "hit_score": 12.09,
+      "pit_score": 4.85,
+      "pipeline_index": 16.94,
+      "rank": 30,
+      "index_avg100": 57.6,
+      "hit_rank": 27,
+      "pit_rank": 29
+    }
+  ]
+}
