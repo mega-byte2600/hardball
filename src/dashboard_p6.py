@@ -790,7 +790,11 @@ def panel_scenarios():
                  "<sub>A full 26-man roster bought entirely from the real 2027 free-agent class "
                  "(greedy WAR-per-dollar by position, then upgrades — Cycle 26). Prices are prior-contract "
                  "AAVs: last-price anchors, not predicted 2027 salaries. The floor roster captures "
-                 "~80% of the cap roster's WAR — the last $73M buys ~10 WAR. Switch budget:</sub>")
+                 "~80% of the cap roster's WAR — the last $73M buys ~10 WAR. Availability stress "
+                 "(Cycle 27: WAR scaled by the mean availability measured from 201 real players' "
+                 "2025-26 IL records, 0.912): this roster holds "
+                 f"{d['availability_stress']['stressed_totals'][s['label']]['war_at_pool_mean_avail']} WAR "
+                 "— injury risk taxes every budget alike. Switch budget:</sub>")
         buttons.append(dict(label=s["label"], method="update",
                             args=[{"visible": [j == i for j in range(len(d["scenarios"]))]},
                                   {"title": {"text": title}}]))
@@ -1018,7 +1022,7 @@ figures are not yet law. No performance guarantee is implied.</div>
 <span class="k"><b>wOBA / wRC+</b> = overall hitting value, 100 = league average</span>
 <span class="k"><b>FIP</b> = pitching quality (a pitcher's own doing; lower = better)</span>
 <span class="k"><b>K-BB%</b> = strikeouts minus walks = how dominant a pitcher is</span>
-<span class="k"><b>WAR</b> = the famous player-value stat — it's <u>proprietary &amp; absent from our data</u>; we show its real inputs instead (see Figure 12)</span></div>
+<span class="k"><b>WAR</b> = the famous player-value stat — it's <u>proprietary &amp; absent from our data</u>; we show its real inputs instead (see Figure 18)</span></div>
 {js_include}
 <div class="figidx"><b>FIGURE INDEX — the story at a glance (all 20 real-data charts below)</b><br>
 <span>1</span> Press play: 16 seasons of payroll vs wins &nbsp;·&nbsp;
