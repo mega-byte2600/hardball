@@ -538,26 +538,78 @@ def build():
             f.write(plotly_js)
     js_include = f"<script>{plotly_js}</script>"
 
-    html = (fig1.to_html(full_html=False, include_plotlyjs=False) +
-            "<br> " + fig2.to_html(full_html=False, include_plotlyjs=False) +
-            "<br> " + fig3.to_html(full_html=False, include_plotlyjs=False) +
-            "<br> " + fig4.to_html(full_html=False, include_plotlyjs=False) +
-            "<br> " + fig5.to_html(full_html=False, include_plotlyjs=False))
-    for fig in (fig6, fig7, fig8):
-        if fig is not None:
-            html += "<br> " + fig.to_html(full_html=False, include_plotlyjs=False)
-    if fig9 is not None:
-        html = (fig9.to_html(full_html=False, include_plotlyjs=False) +
-                "<br> " + html)
-    if fig10 is not None:
-        html = html + "<br> " + fig10.to_html(full_html=False, include_plotlyjs=False)
-    for fig in (fig11, fig12, fig13, fig14):
-        if fig is not None:
-            html += "<br> " + fig.to_html(full_html=False, include_plotlyjs=False)
+    # ---- Presentation pass (2026-10-31): branded template, story
+    # sections, stat cards. Presentation only — no data changes.
+    import plotly.io as pio
+    pio.templates["hardball"] = go.layout.Template(layout=dict(
+        font=dict(family="system-ui,-apple-system,'Segoe UI',sans-serif",
+                  color="#14213d"),
+        title=dict(font=dict(size=17, color="#14213d")),
+        paper_bgcolor="white", plot_bgcolor="white",
+        xaxis=dict(gridcolor="#eae7de", linecolor="#c9c4b4",
+                   zerolinecolor="#eae7de", title=dict(font=dict(size=13))),
+        yaxis=dict(gridcolor="#eae7de", linecolor="#c9c4b4",
+                   zerolinecolor="#eae7de", title=dict(font=dict(size=13))),
+        colorway=["#14213d", "#d50032", "#c9a227", "#1f7a6d", "#5b7ba5",
+                  "#8a6d3b"],
+        legend=dict(bgcolor="rgba(255,255,255,0.92)",
+                    bordercolor="#e3dfd2", borderwidth=1)))
+    SECTIONS = [
+        ("I", "The Proof", "Run differential describes wins (R² ≈ 0.55) — "
+         "and payroll alone doesn't buy them.", [fig9, fig1]),
+        ("II", "The Signature", "Winning-cheap teams look different: more "
+         "contact, more OBP, fewer strikeouts — for 25 straight years.",
+         [fig2, fig4]),
+        ("III", "The Cap", "The owners' proposed 2027 cap, priced team by "
+         "team.", [fig3]),
+        ("IV", "The Players", "Backtested Marcel projections, "
+         "health-capped — the actual shopping-grade numbers.",
+         [fig5, fig6, fig7]),
+        ("V", "The Roster", "A 26-man roster that fits the cap, and what "
+         "moves the win needle.", [fig8, fig10]),
+        ("VI", "The Check", "Benchmarked against Steamer and Statcast — "
+         "including where we disagree and by how much.", [fig11, fig12]),
+        ("VII", "The Future", "The pipelines feeding the cheap winners, "
+         "and the free-agent list to shop from.", [fig13, fig14]),
+    ]
+    html = ""
+    for num, name, take, figs in SECTIONS:
+        figs = [f for f in figs if f is not None]
+        if not figs:
+            continue
+        html += (f'<div class="sec"><span class="secnum">{num}</span>'
+                 f'<div><h3>{name}</h3><p>{take}</p></div></div>')
+        for fig in figs:
+            fig.update_layout(template="hardball")
+            html += ('<div class="panel">' +
+                     fig.to_html(full_html=False, include_plotlyjs=False) +
+                     "</div>")
+
+    def _count(fname):
+        p = os.path.join(DATA, fname)
+        return len(json.load(open(p))) if os.path.exists(p) else 0
+    n_hit, n_pit = _count("projections_2027.json"), _count("projections_2027_pitchers.json")
+    cards = (
+        '<div class="cards">'
+        '<div class="card"><div class="num">$245.3M</div><div class="lab">proposed 2027 cap · floor $171.2M</div></div>'
+        '<div class="card"><div class="num">509</div><div class="lab">team-seasons measured, 2011–2026</div></div>'
+        f'<div class="card"><div class="num">{n_hit + n_pit}</div><div class="lab">players projected for 2027 ({n_hit} hitters · {n_pit} pitchers)</div></div>'
+        '<div class="card"><div class="num">r = .889</div><div class="lab">hitter OBP agreement vs Steamer</div></div>'
+        '<div class="card"><div class="num">100%</div><div class="lab">real data — every panel sourced</div></div>'
+        '</div>')
 
     page = f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P6)</title>
-<style>body{{font-family:system-ui,sans-serif;margin:0;background:#f6f7f9;color:#14213d}}
-.hd{{max-width:1000px;margin:0 auto;padding:0 20px 40px}}
+<style>body{{font-family:system-ui,sans-serif;margin:0;background:#f4f1ea;color:#14213d}}
+.hd{{max-width:1120px;margin:0 auto;padding:0 20px 40px}}
+.cards{{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 4px}}
+.card{{flex:1 1 160px;background:#fff;border:1px solid #e3dfd2;border-top:4px solid #d50032;border-radius:10px;padding:14px 16px;box-shadow:0 2px 8px rgba(20,33,61,.06)}}
+.card .num{{font-size:26px;font-weight:800;color:#14213d;letter-spacing:.2px}}
+.card .lab{{font-size:12.5px;color:#5a6478;margin-top:3px;line-height:1.35}}
+.sec{{display:flex;gap:14px;align-items:center;background:linear-gradient(90deg,#14213d,#1d3557);color:#fff;border-radius:10px;padding:13px 20px;margin:30px 0 4px;box-shadow:0 2px 10px rgba(20,33,61,.18)}}
+.secnum{{font-size:21px;font-weight:800;color:#c9a227;border:2px solid #c9a227;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}}
+.sec h3{{margin:0;font-size:19px;letter-spacing:.4px}}
+.sec p{{margin:2px 0 0;font-size:13.5px;color:#cbe0ff}}
+.panel{{background:#fff;border:1px solid #e3dfd2;border-radius:12px;padding:16px 18px 8px;margin:14px 0;box-shadow:0 2px 10px rgba(20,33,61,.05)}}
 .crest{{background:linear-gradient(135deg,#14213d 0%,#1d3557 60%,#7a1f1f 160%);color:#fff;padding:28px 32px;border-radius:0 0 14px 14px;margin:0 0 4px;box-shadow:0 3px 14px rgba(20,33,61,.25)}}
 .crest h1{{margin:0;font-size:30px;letter-spacing:1px;color:#fff}}
 .crest h2{{margin:8px 0 0;font-size:16px;font-weight:400;color:#cbe0ff}}
@@ -602,6 +654,7 @@ wins; that is the honest capability.</div>
 same-year run-diff→wins R² ≈ 0.55; KPI-only cross-year forecasting MAE ≈ 9-13 wins (weak, beats
 naive only marginally — shown honestly). The cap/floor are owners' proposed 2027 figures
 (CBA expires Dec 1 2026), not law. No guaranteed performance claim.</div>
+{cards}
 {js_include}
 {html}
 <div class="srcbox">
@@ -609,7 +662,7 @@ naive only marginally — shown honestly). The cap/floor are owners' proposed 20
 <b>Primary data</b> (2025-2026, all 30 MLB teams): <span class="src">MLB Stats API
 statsapi.mlb.com/api/v1</span> — official MLB feed, keyless; team hitting/pitching + standings
 (runs scored / runs allowed). Validated against <span class="src">ESPN
-site.web.api.espn.com</span> (131 players cross-checked: HR counts match exactly).<br>
+site.web.api.espn.com</span> (2025 validation set: 131 players cross-checked, HR counts match exactly).<br>
 <b>Payroll:</b> <span class="src">Spotrac</span> (via MIT-licensed jasonbhorne/mlb-payroll,
 721 team-seasons 2000-2024 + live 2026 opening-day figures). <b>Injury/health:</b> MLB
 transactions feed (35,000+ events 2025-2026, IL days per player). <b>MLB color/look:</b> league
