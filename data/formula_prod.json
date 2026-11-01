@@ -26,5 +26,7 @@
   "cv_r2": 0.764,
   "pythag_exponent": 2.718281828459045,
   "cap_2027": 245300000,
-  "floor_2027": 171200000
+  "floor_2027": 171200000,
+  "status": "DIAGNOSTIC ONLY \u2014 same-year fit; not a forecast (see Cycles 18-19 retraction in docs/BML_LOG.md)",
+  "cv_scope": "two-season cross-fit (2025<->2026), same-year features incl. RD and PythE"
 }

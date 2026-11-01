@@ -14,8 +14,8 @@
     "beats_naive_by": -4.3
   },
   "grouped_cv": {
-    "mae_mean": 13.01,
-    "r2_mean": -6.088
+    "mae_mean": 10.23,
+    "r2_mean": -0.081
   },
   "full_fit_in_sample_r2": 0.135,
   "per_year": {
@@ -26,7 +26,6 @@
     "2016": 8.9,
     "2017": 10.8,
     "2018": 10.4,
-    "2019": 51.9,
     "2020": 15.8,
     "2021": 16.0,
     "2022": 13.3,
@@ -34,5 +33,14 @@
     "2024": 9.6,
     "2025": 7.6,
     "2026": 6.6
-  }
+  },
+  "excluded_folds": [
+    {
+      "feature_season": 2019,
+      "target_season": 2020,
+      "mae": 51.9,
+      "reason": "target season is the 60-game 2020 season; win totals are not comparable to 162-game seasons (units mismatch)"
+    }
+  ],
+  "g6_root_cause": "The 2019 fold's target is the 60-game 2020 season; its MAE 51.9 was a units mismatch, not a model failure. Excluded from grouped_cv."
 }

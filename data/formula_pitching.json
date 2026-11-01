@@ -1,18 +1,17 @@
 {
   "coefs": {
-    "OBP": 273.341,
-    "contact": 1.182,
-    "K%": -1.182,
-    "BB%": 2.127,
-    "HR/PA": 1.444,
-    "ISO": -268.413,
-    "payroll": -0.0,
-    "p_ERA": -5.868,
-    "p_WHIP": -3.409,
-    "p_BB9": 0.0,
-    "p_K9": -0.459,
-    "p_HR9": 1.721
+    "OBP": 264.401,
+    "K%": -2.285,
+    "BB%": 1.943,
+    "HR/PA": 1.233,
+    "ISO": -201.652,
+    "payroll_m": -0.011,
+    "p_ERA": -5.217,
+    "p_WHIP": -13.106,
+    "p_BB9": 1.624,
+    "p_K9": -0.737,
+    "p_HR9": 1.643
   },
-  "intercept": -60.94,
+  "intercept": 63.19,
   "note": "combined hitting+pitching wins model"
 }
