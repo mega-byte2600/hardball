@@ -277,3 +277,14 @@ verified by a real command run, not self-asserted. GP review pending on all.
   box at top (all 13 charts mappable). Fixed int64 json serialization bug.
 - Shipped: Figure 1 now cites pooled r=0.84 (95% CI 0.78-0.88, 173 pairs) with
   an explicit color legend. Dashboard 13 figures, 4.949MB.
+
+---
+## Cycle 24 — DEPLOY THE CAP POOL (how a forced-spender allocates the floor money)
+- Built: src/bml_cycle24_deploy.py -> data/cap_pool_deployment.json. For every
+  team forced up to the 2027 floor (CLE +96.7M, MIA +87.9M, TB +75.6M), split
+  the pool toward where it has measured relative strength (robust-MAD z of team
+  wOBA vs FIP). CLE/TB/MIL lean arms (their current edge is FIP); ATH/COL lean
+  hitting.
+- MEASURED-A-BUG: raw scale-split (wOBA delta / FIP delta) printed 100/0 for
+  nearly everyone because the scales differ ~1000x. Fixed with MAD-robust z.
+  Honest label: allocation model, NOT per-player salary (unavailable publicly).

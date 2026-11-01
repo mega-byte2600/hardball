@@ -1,0 +1,110 @@
+{
+  "note": "Allocation logic: for each team forced to spend up to the 2027 floor, split the pool toward where it currently has measured relative strength (robust-MAD z of team wOBA vs FIP), NOT per-player salary (no public API publishes it; nothing fabricated). Read as talent-allocation, not a contract simulator.",
+  "teams": [
+    {
+      "team": "CLE",
+      "pool_M": 96.7,
+      "hit_pct": 0,
+      "pitch_pct": 0,
+      "allocation": "rebuild: neither side is above league value"
+    },
+    {
+      "team": "MIA",
+      "pool_M": 87.9,
+      "hit_pct": 0,
+      "pitch_pct": 0,
+      "allocation": "rebuild: neither side is above league value"
+    },
+    {
+      "team": "TB",
+      "pool_M": 75.6,
+      "hit_pct": 137.9,
+      "pitch_pct": -37.9,
+      "allocation": "spend 138% on persistent contact/walk hitters + -38% on control arms (guided by measured wOBA/FIP edge, not one star)"
+    },
+    {
+      "team": "STL",
+      "pool_M": 74.8,
+      "hit_pct": 0,
+      "pitch_pct": 0,
+      "allocation": "rebuild: neither side is above league value"
+    },
+    {
+      "team": "ATH",
+      "pool_M": 72.3,
+      "hit_pct": 100.0,
+      "pitch_pct": 0.0,
+      "allocation": "spend 100% on persistent contact/walk hitters + 0% on control arms (guided by measured wOBA/FIP edge, not one star)"
+    },
+    {
+      "team": "WSH",
+      "pool_M": 69.6,
+      "hit_pct": 61.2,
+      "pitch_pct": 38.8,
+      "allocation": "spend 61% on persistent contact/walk hitters + 39% on control arms (guided by measured wOBA/FIP edge, not one star)"
+    },
+    {
+      "team": "CHW",
+      "pool_M": 67.9,
+      "hit_pct": -12.9,
+      "pitch_pct": 112.9,
+      "allocation": "spend -13% on persistent contact/walk hitters + 113% on control arms (guided by measured wOBA/FIP edge, not one star)"
+    },
+    {
+      "team": "PIT",
+      "pool_M": 64.5,
+      "hit_pct": 64.8,
+      "pitch_pct": 35.2,
+      "allocation": "spend 65% on persistent contact/walk hitters + 35% on control arms (guided by measured wOBA/FIP edge, not one star)"
+    },
+    {
+      "team": "MIN",
+      "pool_M": 55.5,
+      "hit_pct": 0,
+      "pitch_pct": 0,
+      "allocation": "rebuild: neither side is above league value"
+    },
+    {
+      "team": "COL",
+      "pool_M": 49.7,
+      "hit_pct": 100.0,
+      "pitch_pct": 0.0,
+      "allocation": "spend 100% on persistent contact/walk hitters + 0% on control arms (guided by measured wOBA/FIP edge, not one star)"
+    },
+    {
+      "team": "CIN",
+      "pool_M": 43.0,
+      "hit_pct": 0,
+      "pitch_pct": 0,
+      "allocation": "rebuild: neither side is above league value"
+    },
+    {
+      "team": "MIL",
+      "pool_M": 24.5,
+      "hit_pct": 46.5,
+      "pitch_pct": 53.5,
+      "allocation": "spend 46% on persistent contact/walk hitters + 54% on control arms (guided by measured wOBA/FIP edge, not one star)"
+    },
+    {
+      "team": "KC",
+      "pool_M": 20.8,
+      "hit_pct": 0,
+      "pitch_pct": 0,
+      "allocation": "rebuild: neither side is above league value"
+    },
+    {
+      "team": "BAL",
+      "pool_M": 4.2,
+      "hit_pct": -2705.3,
+      "pitch_pct": 2805.3,
+      "allocation": "spend -2705% on persistent contact/walk hitters + 2805% on control arms (guided by measured wOBA/FIP edge, not one star)"
+    },
+    {
+      "team": "SEA",
+      "pool_M": 1.1,
+      "hit_pct": 0,
+      "pitch_pct": 0,
+      "allocation": "rebuild: neither side is above league value"
+    }
+  ]
+}
