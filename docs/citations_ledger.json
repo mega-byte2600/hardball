@@ -180,6 +180,42 @@
       "url": "https://www.cbssports.com/mlb/news/mlb-lockout-logistics-cba-negotiations-free-agency-2027-season",
       "title": "CBS: MLB lockout 101 - cap $245.3M / floor $171.2M, Brewers 2026 champs",
       "accessed": "2026-10-31"
+    },
+    {
+      "id": 31,
+      "url": "https://blogs.fangraphs.com/introducing-the-bat-x-for-pitchers-and-the-batcast-stuff-model/",
+      "title": "THE BAT X for pitchers + THE BATcast stuff model (Derek Carty, FanGraphs)",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 32,
+      "url": "https://www.baseballprospectus.com/news/article/96300/pecota-week-pecota-2025-an-introduction/",
+      "title": "PECOTA 2025: An Introduction (Baseball Prospectus) - StuffPro integration, +341-run pitcher accuracy",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 33,
+      "url": "https://www.sciopen.com/article/10.32604/cmc.2025.065413",
+      "title": "Pitcher Performance Prediction in MLB by Temporal Fusion Transformer (Computers Materials & Continua 2025) - beats ZiPS/Steamer/THE BAT on ERA",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 34,
+      "url": "https://blogs.fangraphs.com/the-official-and-hopefully-not-too-regretful-2025-zips-projections/",
+      "title": "The Official 2025 ZiPS Projections - Monte Carlo team sims (FanGraphs)",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 35,
+      "url": "https://arxiv.org/abs/2511.02815",
+      "title": "Assessing win strength in MLB win prediction models (arXiv 2511.02815, 2025) - 6 model families",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 36,
+      "url": "https://arxiv.org/abs/2511.17733",
+      "title": "The Impacts of Increasingly Complex Matchup Models on Baseball Win Probability (arXiv 2511.17733) - hierarchical Bayesian matchup models",
+      "accessed": "2026-11-01"
     }
   ]
 }

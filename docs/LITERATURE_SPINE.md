@@ -78,6 +78,37 @@ agent cache mirror lives at `~/.hermes/cache/citations/ledger.json`.
 - LSTM-based MLB prediction (arXiv 2206.09654): Marcel background +
   sequential/age modeling. [8][3]
 
+### 2e. State of the art 2025-26 — the frontier has moved past classic Marcel
+- **THE BAT X / THE BATcast** (Derek Carty, FanGraphs) [31]: blends classic
+  THE BAT (surface stats) with a Statcast "stuff" model (velocity, movement,
+  spin, seam-shifted wake, pitch mirroring, tunneling/bridging across the full
+  pitch trajectory, ~4,000 candidate pitch variables reduced by ML). Ball-in-
+  play and pitching outcomes are projected from Statcast inputs, not surface
+  stats alone. This is the current gold-standard Statcast-aware projection.
+- **PECOTA 2025** (Baseball Prospectus) [32]: integrated StuffPro into balls-
+  in-play projection; back-test on 2024 improved pitcher accuracy by >341 runs
+  (rookies +113). Aging/projection still Marcel-style weighted history + analog
+  matching, but Statcast-stuff features now enter the hit-model.
+- **Temporal Fusion Transformer (TFT)** for pitcher ERA (Computers, Materials
+  & Continua 2025) [33]: cuts sequence-horizon; on 2023 data Full-TFT beat
+  12 RNN/CNN variants AND beat ZiPS, ATC, Depth Charts, Steamer, THE BAT — best
+  RMSE 0.481 / MAE 0.363 on 4-season windows. Evidence the frontier is a
+  transformer on recent Statcast+surface sequences, not a fixed-weight blend.
+- **ZiPS 2025** [34]: four-year weighted history + analog aging + Monte Carlo
+  (million team sims); the accuracy bar every new system is held to.
+- **Bayesian/hierarchical matchup models** [35][36]: arXiv 2025 work shows
+  pitcher-batter-handedness-recent hierarchical models predict plate-appearance
+  outcomes toward subgame-perfect strategy — the "next" frontier after
+  point projections, incl. win prediction across 6 model families.
+- **Honest position for HARDBALL:** our player projections use Marcel-style
+  history + regression-to-mean; we BENCHMARK publicly against Steamer (r=.889 /
+  201 matched). The frontier systems (THE BAT X, PECOTA-StuffPro, TFT) are
+  Statcast-aware and, per published back-tests, beat surface-stat blending. To
+  stay current we adopt Statcast features (xwOBAcon, barrels) as a *tested*
+  refinement layer and log a TFT / Statcast-feature baseline as an open BML
+  question — we do not claim Marcel alone is state of the art; we claim a
+  defensible, reproducible baseline benchmarked against the public frontier.
+
 ## 3. Statcast expected stats — what predicts vs just describes
 
 - **xwOBA->next wOBA r^2 ~= .218** vs raw wOBA->wOBA .191 (Fantrax, 7
@@ -213,3 +244,9 @@ the projection layer, joinable from the MLB injuries endpoint.
 [24] https://pmc.ncbi.nlm.nih.gov/articles/PMC12853774 — UCL injury mechanisms + RTP criteria systematic review
 [25] https://ijspt.org/wp-content/uploads/2024/01/4-Dowling-1.pdf — Workload comparison interval throwing programs, ACWR, >1.27 ~15x risk
 [26] https://pubmed.ncbi.nlm.nih.gov/40021256 — RTP throwing programs (Clin Sports Med 2025)
+[31] https://blogs.fangraphs.com/introducing-the-bat-x-for-pitchers-and-the-batcast-stuff-model/ — THE BAT X for pitchers + THE BATcast stuff model (Derek Carty, FanGraphs)
+[32] https://www.baseballprospectus.com/news/article/96300/pecota-week-pecota-2025-an-introduction/ — PECOTA 2025: StuffPro integration (+341-run pitcher accuracy)
+[33] https://www.sciopen.com/article/10.32604/cmc.2025.065413 — Pitcher Performance Prediction by Temporal Fusion Transformer (Computers, Materials & Continua 2025)
+[34] https://blogs.fangraphs.com/the-official-and-hopefully-not-too-regretful-2025-zips-projections/ — Official 2025 ZiPS Projections (FanGraphs)
+[35] https://arxiv.org/abs/2511.02815 — Assessing win strength in MLB win prediction models (arXiv, 2025)
+[36] https://arxiv.org/abs/2511.17733 — Impacts of Increasingly Complex Matchup Models on Baseball Win Probability (arXiv, 2025)
