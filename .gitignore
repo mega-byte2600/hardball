@@ -16,3 +16,6 @@ data/mlb_lake.db
 dashboard/plotly.min.js
 dashboard/hardball_demo.html
 
+
+# Analytical warehouse — built from data/curated by src/build_warehouse.py
+data/hardball.duckdb

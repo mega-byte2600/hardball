@@ -8,3 +8,7 @@ scipy==1.18.1
 scikit-learn==1.9.1
 plotly==7.1.0
 requests==2.34.2
+# data platform (ingest/curate/warehouse) — versions as resolved
+# and verified in the build environment 2026-10-31
+duckdb==2.0.0
+pyarrow==26.0.0

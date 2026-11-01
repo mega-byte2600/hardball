@@ -1,0 +1,157 @@
+{
+ "tables": {
+  "dim_player": {
+   "rows": 379,
+   "grain": "one row per player (MLBAM id)",
+   "inputs": [
+    "player_xwalk.json",
+    "player_ages.json"
+   ],
+   "checks": [
+    "player_id unique",
+    "player_id not null"
+   ]
+  },
+  "dim_team": {
+   "rows": 30,
+   "grain": "one row per club",
+   "inputs": [
+    "src/payroll.py"
+   ],
+   "checks": [
+    "30 teams",
+    "team unique"
+   ]
+  },
+  "fact_team_season": {
+   "rows": 509,
+   "grain": "team x season",
+   "inputs": [
+    "panel_2011_2026.csv"
+   ],
+   "checks": [
+    "rows >= 500",
+    "seasons 2011-2026"
+   ]
+  },
+  "fact_stat_lines": {
+   "rows": 743,
+   "grain": "player x season",
+   "inputs": [
+    "mlb_lake.db:stat_lines"
+   ],
+   "checks": [
+    "rows > 500",
+    "player_id present"
+   ]
+  },
+  "fact_proj_hitters": {
+   "rows": 201,
+   "grain": "player x 2027",
+   "inputs": [
+    "projections_2027.json"
+   ],
+   "checks": [
+    "rows >= 190"
+   ]
+  },
+  "fact_proj_pitchers": {
+   "rows": 102,
+   "grain": "player x 2027",
+   "inputs": [
+    "projections_2027_pitchers.json"
+   ],
+   "checks": [
+    "rows >= 95"
+   ]
+  },
+  "fact_savant_expected": {
+   "rows": 2642,
+   "grain": "player x season",
+   "inputs": [
+    "savant_expected_2023.json",
+    "savant_expected_2024.json",
+    "savant_expected_2025.json",
+    "savant_expected_2026.json"
+   ],
+   "checks": [
+    "4 seasons",
+    "rows > 2000"
+   ]
+  },
+  "fact_steamer_bat": {
+   "rows": 4165,
+   "grain": "player (2027 projection)",
+   "inputs": [
+    "fg_steamer_2027_bat.json"
+   ],
+   "checks": [
+    "rows > 1000",
+    "xMLBAMID present"
+   ]
+  },
+  "fact_steamer_pit": {
+   "rows": 5168,
+   "grain": "player (2027 projection)",
+   "inputs": [
+    "fg_steamer_2027_pit.json"
+   ],
+   "checks": [
+    "rows > 1000",
+    "xMLBAMID present"
+   ]
+  },
+  "fact_salaries": {
+   "rows": 927,
+   "grain": "player x team (2026)",
+   "inputs": [
+    "salaries_2026.json"
+   ],
+   "checks": [
+    "rows == metadata"
+   ]
+  },
+  "fact_fa_class": {
+   "rows": 251,
+   "grain": "player (2027 class)",
+   "inputs": [
+    "fa_shopping_2027.json"
+   ],
+   "checks": [
+    "rows >= 240"
+   ]
+  },
+  "fact_pipeline": {
+   "rows": 30,
+   "grain": "organization (2026)",
+   "inputs": [
+    "pipeline_2026.json"
+   ],
+   "checks": [
+    "30 orgs"
+   ]
+  },
+  "fact_health": {
+   "rows": 58,
+   "grain": "team x season",
+   "inputs": [
+    "health_2025_2026.json"
+   ],
+   "checks": [
+    "rows >= 50"
+   ]
+  },
+  "fact_cap_scenario": {
+   "rows": 30,
+   "grain": "team (2027 scenario)",
+   "inputs": [
+    "cap_scenario_2027.json"
+   ],
+   "checks": [
+    "30 teams",
+    "7 over cap"
+   ]
+  }
+ },
+ "failures": []
+}
