@@ -643,7 +643,7 @@ mean — consistent with established baseball research.<br><br>
 player's underlying skills — contact rate (r = .90) and walk discipline (r = .66) —
 persist year to year in ways that wins themselves do not. That persistence, paired
 with Marcel-style aging and health constraints, is what builds the 26-man roster
-shown here. We explicitly do not claim a forward team-wins model: cross-year accuracy
+shown here. We explicitly do not claim a forward-looking team-wins model: cross-year accuracy
 is roughly 9-13 wins, and we present that number honestly.</div>
 <div class="note">Data: MLB Stats API + Spotrac, 2011-2026 (509 team-seasons). The 2027 cap
 ($245.3M) and floor ($171.2M) are the owners' proposal; the CBA expires Dec 1, 2026 and the
