@@ -78,7 +78,7 @@ def load_payroll_frame():
         wins = _wins(rec)
         rows.append({
             "season": 2026, "team": code, "record": rec, "wins": wins,
-            "avg_age": None, "payroll": _dollars(pay),
+            "payroll": _dollars(pay),
         })
     df26 = pd.DataFrame(rows)
     # normalize wins (some historical rows may lack wins, e.g. '-' in record)
