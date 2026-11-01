@@ -83,9 +83,7 @@ def panel_kpi(df, year=2026):
     fig.update_layout(title=f"{year} — Copycat-league KPI signature (winning-cheap leads contact & OBP)",
                       template="plotly_white", height=440,
                       barmode="group",
-                      legend=dict(orientation="h", yanchor="bottom", y=1.10,
-                                  xanchor="left", x=0, font=dict(size=11)),
-                      margin=dict(l=40, r=20, t=110, b=40))
+                      margin=dict(l=40, r=20, t=64, b=96))
     fig.update_xaxes(showticklabels=False, showgrid=False, zeroline=False)
     fig.update_yaxes(showgrid=True, gridcolor="#eef1f6")
     return fig
@@ -132,12 +130,7 @@ def panel_durability():
     fig.update_layout(title="25-year proof (2000-2024, 721 team-seasons): efficiency is durable — "
                              "but cheap wins per $, not wins (winning-cheap = both)",
                       template="plotly_white", height=420,
-                      legend_title_text="Q = payroll quartile (1 = lowest $)",
-                      margin=dict(l=50, r=20, t=100, b=40))
-    # color explanation for the quartiles (real average payroll per quartile)
-    for i, c in enumerate(["#2e7d32", "#8bc34a", "#ef6c00", "#1565c0"]):
-        lab = f"Q{i+1} (avg ${agg['lab'][i]/1e6:.0f}M)"
-        fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers", marker=dict(color=c, size=9), name=lab))
+                      margin=dict(l=50, r=20, t=64, b=96))
     fig.update_xaxes(showgrid=False)
     fig.update_yaxes(showgrid=True, gridcolor="#eef1f6")
     return fig
@@ -287,9 +280,7 @@ def panel_roster():
                             "green = winning-cheap source team; blue = other",
                       template="plotly_white", height=620,
                       barmode="overlay", bargap=0.15,
-                      legend=dict(orientation="h", yanchor="bottom", y=1.05,
-                                  xanchor="left", x=0, font=dict(size=11)),
-                      margin=dict(l=120, r=30, t=110, b=40))
+                      margin=dict(l=120, r=30, t=64, b=96))
     fig.update_xaxes(showgrid=True, gridcolor="#eef1f6")
     fig.update_yaxes(showgrid=False, automargin=True)
     # legend for the green/blue color meaning
@@ -336,9 +327,7 @@ def panel_runs():
                       xaxis_title="Run differential (scored − allowed)",
                       yaxis_title="Wins", template="plotly_white", height=440,
                       xaxis_range=[-150, 350],
-                      legend=dict(orientation="h", yanchor="bottom", y=1.02,
-                                  xanchor="left", x=0, font=dict(size=11)),
-                      margin=dict(l=60, r=30, t=90, b=50))
+                      margin=dict(l=60, r=30, t=64, b=96))
     return fig
 
 
@@ -392,12 +381,12 @@ def panel_cap_scenario():
     fig.add_hline(y=0, line_width=1, line_color="#6b7280")
     fig.add_hline(y=FLOORV - 245.3, line_dash="dot", line_color="#7f1d1d", opacity=0.4)
     fig.update_layout(
-        title="Cap-era reality (2026 payroll vs proposed 2027 cap) — red = OVER cap (must cut); green = UNDER floor (gets new pool)",
+        title="Cap-era reality (2026 payroll vs proposed 2027 cap) — red = OVER cap; green = UNDER floor",
         xaxis_title="Team", yaxis_title="Gap to $245.3M cap ($M)", template="plotly_white",
-        height=460, margin=dict(l=60, r=40, t=100, b=60),
-        annotations=[dict(x=0.5, y=1.10, xref="paper", yref="paper", showarrow=False,
-                          text="2027 hard cap $245.3M · floor $171.2M · CBA expires Dec 1 2026",
-                          font=dict(size=11, color="#1d3557"))])
+        height=460, margin=dict(l=60, r=40, t=64, b=96),
+        annotations=[dict(x=0.5, y=-0.45, xref="paper", yref="paper", showarrow=False,
+                          text="2027 hard cap $245.3M · floor $171.2M · CBA expires Dec 1, 2026",
+                          font=dict(size=11, color="#4a5a72"))])
     return fig
 
 
@@ -425,17 +414,10 @@ def panel_value_metrics():
                          marker_color=[c(t) for t in p["team"]],
                          text=[f"{v:.2f}" for v in p["FIP"]], textposition="outside",
                          name="FIP"), 2, 1)
-    for label, col in [("Green = winning-cheap (MIL/TB/CLE)", "#1b5e20"),
-                       ("Orange = cheap-mediocre (MIA/CHW/STL)", "#e65100"),
-                       ("Blue = other", "#1565c0")]:
-        fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
-                                 marker=dict(color=col, size=10), name=label))
-    fig.update_layout(title="Top value metrics — wOBA/wRC+ & FIP/K-BB% (2026, computed from real box scores). "
-                            "WAR itself is proprietary (fWAR/bWAR) & not in the MLB API — these are its inputs.",
+    fig.update_layout(title="Top value metrics — wOBA/wRC+ & FIP/K-BB% (2026; WAR is proprietary "
+                            "(fWAR/bWAR) & absent from the MLB API — these are its reproducible inputs)",
                       template="plotly_white", height=640, showlegend=True,
-                      legend=dict(orientation="h", yanchor="bottom", y=1.02,
-                                  xanchor="right", x=1, font=dict(size=11)),
-                      margin=dict(l=60, r=40, t=100, b=40))
+                      margin=dict(l=60, r=40, t=64, b=96))
     fig.update_yaxes(automargin=True)
     fig.update_xaxes(showgrid=True, gridcolor="#eef1f6", zeroline=True, zerolinecolor="#d7dde8")
     return fig
@@ -466,10 +448,6 @@ def panel_skill_persistence():
             cols.append("#1b5e20" if yoy[k] >= 0.6 else "#e65100" if yoy[k] >= 0.4 else "#1565c0")
     fig.add_trace(go.Bar(y=names, x=r, orientation="h", marker_color=cols,
                          text=[f"{v:.2f}" for v in r], textposition="outside"))
-    for lab, c in [("Green = strongly persistent (r ≥ 0.60)", "#1b5e20"),
-                   ("Orange = moderately persistent (r ≥ 0.40)", "#e65100"),
-                   ("Blue = noisy / weak (r < 0.40)", "#1565c0")]:
-        fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers", marker=dict(color=c, size=10), name=lab))
     title = "The measurable edge: input SKILLS persist year-to-year (2025→2026, real)"
     sub = ""
     if pooled:
@@ -479,14 +457,18 @@ def panel_skill_persistence():
                f"{pooled['n_pairs']} player-year pairs")
     fig.update_layout(title=title,
                       xaxis_title="Year-over-year persistence (r)",
-                      xaxis_range=[0, 1.1], template="plotly_white", height=400,
-                      margin=dict(l=140, t=90),
-                      annotations=[dict(x=0.98, y=len(order)-0.5, xref="x", yref="y",
-                                        showarrow=False, text="▲ contact carries",
-                                        font=dict(color="#1b5e20", size=12))])
-    fig.add_annotation(x=-0.01, y=1.135, xref="paper", yref="paper", showarrow=False,
-                       text=sub or "Buy the persistent inputs (contact+walks), not the noisy output (OBP/BA)",
-                       font=dict(size=12, color="#14213d"), xanchor="left")
+                      xaxis_range=[0, 1.1], template="plotly_white", height=380,
+                      margin=dict(l=140, t=50, b=104),
+                      annotations=[
+                          dict(x=0.98, y=len(order)-0.5, xref="x", yref="y",
+                               showarrow=False, text="▲ contact carries",
+                               font=dict(color="#1b5e20", size=11)),
+                          # caption BELOW the chart (never collides with title)
+                          dict(x=0.02, y=-0.55, xref="paper", yref="paper",
+                               showarrow=False,
+                               text=sub or "Buy the persistent inputs (contact+walks), "
+                                           "not the noisy output (OBP/BA)",
+                               font=dict(size=11, color="#4a5a72"), xanchor="left")])
     return fig
 
 
@@ -506,12 +488,7 @@ def _panel_skill_multipair(multi_path, ci_path):
         col = "#1b5e20" if edge >= 0.6 else "#e65100" if edge >= 0.4 else "#1565c0"
         fig.add_trace(go.Bar(x=vals, y=[lab]*len(vals), name=lab, orientation="h",
                              marker_color=col, text=[f"{v:.2f}" for v in vals],
-                             textposition="outside"))
-    # a single horizontal legend row
-    for lab, c in [("Green = persistently strong (best pair r ≥ 0.60)", "#1b5e20"),
-                   ("Orange = moderate (best pair r ≥ 0.40)", "#e65100"),
-                   ("Blue = noisy (best pair r < 0.40)", "#1565c0")]:
-        fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers", marker=dict(color=c, size=10), name=lab))
+                             textposition="outside", showlegend=False))
     n_players = d.get("n_players", "")
     n_pairs = len(pairs)
     sub = (f"{n_pairs} season pairs, {n_players} players — contact persists r≥0.6 in EVERY "
@@ -522,13 +499,13 @@ def _panel_skill_multipair(multi_path, ci_path):
     fig.update_layout(title=f"The measurable edge: input SKILLS persist year-to-year "
                             f"({len(pairs)} real season pairs, {n_players} players)",
                       xaxis_title="Year-over-year persistence (r)",
-                      xaxis_range=[0, 1.1], template="plotly_white", height=420,
-                      margin=dict(l=140, t=95),
+                      xaxis_range=[0, 1.1], template="plotly_white", height=400,
+                      margin=dict(l=140, t=50, b=104),
                       bargap=0.35,
-                      legend=dict(orientation="h", yanchor="bottom", y=1.06,
-                                  xanchor="left", x=0, font=dict(size=11)))
-    fig.add_annotation(x=-0.01, y=1.16, xref="paper", yref="paper", showarrow=False,
-                       text=sub, font=dict(size=12, color="#14213d"), xanchor="left")
+                      # caption BELOW the chart (global legend sits under that)
+                      annotations=[dict(x=0.02, y=-0.62, xref="paper", yref="paper",
+                                        showarrow=False, text=sub,
+                                        font=dict(size=11, color="#4a5a72"), xanchor="left")])
     return fig
 
 
@@ -557,17 +534,28 @@ def build():
                               fig6, fig7, fig8, fig10, fig12, fig13) if f is not None]
 
     def _number(figs):
-        """Executive polish for every figure + 'Figure N — ' prefix.
+        """Executive polish + 'Figure N — ' prefix, applied identically.
 
-        One uniform style so all 11 charts read as one professional set:
-        light white theme (no grey default), navy text, subtle gridlines,
-        consistent legend either hidden (when self-explanatory) or a clean
-        top-right key, generous height. Applied identically to every figure.
+        One uniform style so all charts read as one professional set. KEY
+        RULE (Few/Tableau): the legend lives BELOW the chart, never in the
+        top strip with the title and subplot subtitles — that collision was
+        causing the crowding on every figure. Title alone on top, legend on
+        one clean row beneath, subtle gridlines, generous margins.
         """
         out = []
         for i, fig in enumerate(figs, 1):
-            old = fig.layout.title.text or ""
-            fig.update_layout(title_text=f"<b>Figure {i}</b> — {old}")
+            old = (fig.layout.title.text or "").replace("<b>", "").replace("</b>", "")
+            # strip the old long prose tail from figure titles so they don't
+            # run off / wrap into the plot: keep the first sentence, drop the
+            # data-source addendum (that lives in the source footer anyway).
+            short = old
+            if ";" in short:
+                short = short.split(";")[0] + "; see source footer."
+            elif ". " in short:
+                # keep only up to the second period for a readable one-liner
+                parts = short.split(". ")
+                short = ". ".join(parts[:2]) + "."
+            fig.update_layout(title_text=f"<b>Figure {i}</b> — {short}")
             # Uniform professional theme (applied to all)
             fig.update_layout(
                 template="plotly_white",
@@ -575,10 +563,11 @@ def build():
                 title_font=dict(size=15, color="#14213d"),
                 title_x=0.0, title_xanchor="left",
                 paper_bgcolor="white", plot_bgcolor="white",
-                margin=dict(l=70, r=30, t=90, b=50),
+                margin=dict(l=70, r=30, t=64, b=96),
                 height=max(fig.layout.height or 420, 420),
-                legend=dict(orientation="h", yanchor="bottom", y=1.02,
-                            xanchor="right", x=1, font=dict(size=11),
+                # legend BELOW the plot, one horizontal row, not colliding
+                legend=dict(orientation="h", yanchor="top", y=-0.32,
+                            xanchor="center", x=0.5, font=dict(size=11),
                             bgcolor="rgba(255,255,255,0.7)"),
                 xaxis=dict(gridcolor="#e8ecf3", zerolinecolor="#d6dcea"),
                 yaxis=dict(gridcolor="#e8ecf3", zerolinecolor="#d6dcea"))
