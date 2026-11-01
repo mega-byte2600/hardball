@@ -609,3 +609,52 @@ streaming terms, Moses et al. observability).
 - Race-managed with toby: remote had new toby/* branches (audit-p0-fixes,
   carpe-data, data-platform, data-qc, finale, forced-sellers, integrate,
   integrate2). Merged main converges both lanes; dashboard = 21 figures.
+
+## Cycle 32 — FanGraphs salary lane BLOCKED + 22-figure gate repair (toby, 2026-11-01 ~14:15 PT)
+- Deadline guard: 2026-11-01, inside the window (closes 2026-12-01). No change.
+- Spotrac probe: single GET of the Tampa Bay payroll page still 403
+  ("Update Your Browser" challenge page). Logged, not routed around.
+  Salaries stay 24/30; forced-seller coverage stays 6/7 (CHC uncovered).
+- FanGraphs RosterResource lane (backlog item c, owner-approved 2026-11-01):
+  FAILED CLOSED, nothing shipped from it. Direct pulls of the
+  ?season=2026 payroll pages return HTTP 403 (Cloudflare "Just a moment"
+  challenge) for both a requests pull (chunked-encoding reset) and curl
+  with a browser UA. Per the standing rule (403/429 = stop that source),
+  the pull was stopped after the probe + one team page — no alternate
+  endpoint, no browser automation to get around the challenge, and no
+  rows were added to salaries_2026.json. The reconcile-first guard was
+  therefore NOT run (no FanGraphs pull to reconcile), and salaries stay
+  labeled 24/30 Spotrac in metadata, the dashboard source box, and the
+  talk-track. A future attempt must first pin the field mapping: public
+  RosterResource snapshots show the FanGraphs 2026 cash column differing
+  from the Spotrac file on top guaranteed contracts (SD: Machado
+  $25,090,909 FG 2026 vs $39,090,909 Spotrac; Tatis $20,714,286 vs
+  $25,714,286; MIA: Alcantara $17,300,000 vs $21,000,000) — so a naive
+  2026-column comparison would fail on definition, not on data. That
+  observation is preliminary (page snapshots, not a full pull) and is
+  NOT a reconciliation result.
+- Platform run on current main (f1df9a8c, main lane moved since Cycle 30):
+  ingest 20 datasets, 0 failures; Savant volumes in band (expected
+  651-673, bat-tracking 595-619, sprint 489-506); Steamer raw +1 row
+  each (4166/5169) with no curated change; transactions watermark
+  120,313 -> 120,338; curate 14 tables, all contracts pass, counts
+  unchanged; warehouse rebuilt; benchmark parity r = 0.889, 201 matched.
+  No curated data changed, so no data PR from this run.
+- Gate failure found on current main and fixed (mechanical renumbering
+  only, no claim change): the main-lane merge added the Cycle 8 title-bar
+  AUC panel as Figure 5, renumbering every later figure +1 (22 figures
+  total), but verify_data.py still demanded the old "(see Figure 19)"
+  cross-reference, which the merge had replaced with a section pointer,
+  and TALKTRACK/README/EXEC_SUMMARY still said 21 figures. Fix in this
+  PR: gate figure check now asserts the 22-chart index line and the
+  talk-track bound moves 21 -> 22; TALKTRACK refs shifted old>=5 -> +1
+  (Fig 5 AUC line added from the panel's own title; benchmark Fig 17 ->
+  18; cap Figs 9+10+19 -> 10+11+20; money Figs 15+21 -> 16+22);
+  dashboard docstring, README, and EXEC_SUMMARY moved 21 -> 22 figures.
+  Rebuilt dashboard from committed snapshots: 22 plotly divs, PRESS PLAY
+  present; gate ALL PASS incl. live standings 30/30; spellcheck gate
+  green on the rebuilt dashboard + docs.
+- Next: item (d) presentation restructure (owner-approved, same data,
+  no new claims) is the next backlog item; item (c) retries only if
+  FanGraphs serves a direct pull again, with the field mapping pinned
+  first.

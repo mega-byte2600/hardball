@@ -146,12 +146,12 @@ def main() -> int:
     check("dashboard HTML: >=19 figures, PRESS PLAY present",
           html.count("plotly-graph-div") >= 19 and "PRESS PLAY" in html)
     check("dashboard HTML: no stale figure references",
-          "see Figure 12)" not in html and "see Figure 19)" in html)
+          "see Figure 12)" not in html and "all 22 real-data charts" in html)
 
     # --- talk track references exist in the merged deck -----------
     tt = (ROOT / "docs" / "TALKTRACK.md").read_text()
     refs = {int(n) for n in re.findall(r"Figure (\d+)", tt)}
-    check("talk track: all figure references <= 21", refs and max(refs) <= 21,
+    check("talk track: all figure references <= 22", refs and max(refs) <= 22,
           f"refs: {sorted(refs)}")
 
 
