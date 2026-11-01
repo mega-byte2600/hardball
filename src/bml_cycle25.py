@@ -188,6 +188,18 @@ def steamer_by_id():
     return out
 
 
+def _sanitize_nan(obj):
+    """Convert float NaN (Spotrac missing-value) to None so json.dump
+    never writes invalid JSON (NaN). Recurses through dicts/lists."""
+    if isinstance(obj, dict):
+        return {k: _sanitize_nan(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_sanitize_nan(v) for v in obj]
+    if isinstance(obj, float):
+        return None if (obj != obj) else obj  # NaN != NaN
+    return obj
+
+
 def main():
     reg = id_registry()
     players, failures = load_salaries(reg)
@@ -228,7 +240,7 @@ def main():
               "top15_value_war_per_10m": value[:15],
               "class": fa}
     with open(os.path.join(DATA, "fa_shopping_2027.json"), "w") as f:
-        json.dump(fa_out, f, indent=1)
+        json.dump(_sanitize_nan(fa_out), f, indent=1)
     print(f"FA class: {len(fa)} players, {len(ranked)} with Steamer WAR")
     print("\n=== Top FA by projected WAR ===")
     for r in ranked[:8]:

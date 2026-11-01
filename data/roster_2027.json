@@ -1,78 +1,91 @@
 {
   "hitters": [
     {
+      "player_id": 681198,
       "name": "TJ Rumfield",
       "team": "Colorado Rockies",
       "proj_OBP": 0.39,
       "proj_PA_health": 500
     },
     {
+      "player_id": 805808,
       "name": "Kevin McGonigle",
       "team": "Detroit Tigers",
       "proj_OBP": 0.384,
       "proj_PA_health": 500
     },
     {
+      "player_id": 672695,
       "name": "Geraldo Perdomo",
       "team": "Arizona Diamondbacks",
       "proj_OBP": 0.378,
       "proj_PA_health": 500
     },
     {
+      "player_id": 803011,
       "name": "Sam Antonacci",
       "team": "Chicago White Sox",
       "proj_OBP": 0.375,
       "proj_PA_health": 500
     },
     {
+      "player_id": 595777,
       "name": "Jurickson Profar",
       "team": "San Diego Padres",
       "proj_OBP": 0.369,
       "proj_PA_health": 500
     },
     {
+      "player_id": 665487,
       "name": "Fernando Tatis Jr.",
       "team": "San Diego Padres",
       "proj_OBP": 0.361,
       "proj_PA_health": 500
     },
     {
+      "player_id": 665742,
       "name": "Juan Soto",
       "team": "New York Mets",
       "proj_OBP": 0.404,
       "proj_PA_health": 445
     },
     {
+      "player_id": 670770,
       "name": "TJ Friedl",
       "team": "Cincinnati Reds",
       "proj_OBP": 0.358,
       "proj_PA_health": 500
     },
     {
+      "player_id": 680757,
       "name": "Steven Kwan",
       "team": "Cleveland Guardians",
       "proj_OBP": 0.358,
       "proj_PA_health": 500
     },
     {
+      "player_id": 695578,
       "name": "James Wood",
       "team": "Washington Nationals",
       "proj_OBP": 0.376,
       "proj_PA_health": 473
     },
     {
+      "player_id": 668930,
       "name": "Brice Turang",
       "team": "Milwaukee Brewers",
       "proj_OBP": 0.35100000000000003,
       "proj_PA_health": 500
     },
     {
+      "player_id": 701807,
       "name": "Carson Benge",
       "team": "New York Mets",
       "proj_OBP": 0.35100000000000003,
       "proj_PA_health": 500
     },
     {
+      "player_id": 542303,
       "name": "Marcell Ozuna",
       "team": "Atlanta Braves",
       "proj_OBP": 0.35000000000000003,
@@ -81,6 +94,7 @@
   ],
   "pitchers": [
     {
+      "player_id": 694819,
       "name": "Jacob Misiorowski",
       "team": "Milwaukee Brewers",
       "proj_ERA": 1.74,
@@ -88,6 +102,7 @@
       "proj_K9": 13.0
     },
     {
+      "player_id": 693645,
       "name": "Cam Schlittler",
       "team": "New York Yankees",
       "proj_ERA": 1.92,
@@ -95,13 +110,15 @@
       "proj_K9": 11.1
     },
     {
+      "player_id": 800048,
       "name": "Parker Messick",
       "team": "Cleveland Guardians",
-      "proj_ERA": 2.5300000000000002,
+      "proj_ERA": 2.53,
       "proj_IP_health": 200.0,
       "proj_K9": 9.3
     },
     {
+      "player_id": 808967,
       "name": "Yoshinobu Yamamoto",
       "team": "Los Angeles Dodgers",
       "proj_ERA": 2.55,
@@ -109,6 +126,7 @@
       "proj_K9": 9.5
     },
     {
+      "player_id": 669373,
       "name": "Tarik Skubal",
       "team": "Detroit Tigers",
       "proj_ERA": 2.4,
@@ -116,13 +134,15 @@
       "proj_K9": 10.9
     },
     {
+      "player_id": 656876,
       "name": "Drew Rasmussen",
       "team": "Tampa Bay Rays",
-      "proj_ERA": 2.8200000000000003,
+      "proj_ERA": 2.82,
       "proj_IP_health": 200.0,
       "proj_K9": 9.1
     },
     {
+      "player_id": 694973,
       "name": "Paul Skenes",
       "team": "Pittsburgh Pirates",
       "proj_ERA": 2.93,
@@ -130,6 +150,7 @@
       "proj_K9": 10.4
     },
     {
+      "player_id": 650911,
       "name": "Cristopher S\u00e1nchez",
       "team": "Philadelphia Phillies",
       "proj_ERA": 2.99,
@@ -137,6 +158,7 @@
       "proj_K9": 9.3
     },
     {
+      "player_id": 690997,
       "name": "Nolan McLean",
       "team": "New York Mets",
       "proj_ERA": 3.09,
@@ -144,6 +166,7 @@
       "proj_K9": 9.7
     },
     {
+      "player_id": 676917,
       "name": "Cade Cavalli",
       "team": "Washington Nationals",
       "proj_ERA": 3.06,
@@ -151,6 +174,7 @@
       "proj_K9": 10.6
     },
     {
+      "player_id": 680732,
       "name": "Sean Burke",
       "team": "Chicago White Sox",
       "proj_ERA": 3.34,
@@ -158,6 +182,7 @@
       "proj_K9": 9.7
     },
     {
+      "player_id": 593958,
       "name": "Eduardo Rodriguez",
       "team": "Arizona Diamondbacks",
       "proj_ERA": 3.14,
@@ -165,6 +190,7 @@
       "proj_K9": 6.8
     },
     {
+      "player_id": 668909,
       "name": "Gavin Williams",
       "team": "Cleveland Guardians",
       "proj_ERA": 3.45,

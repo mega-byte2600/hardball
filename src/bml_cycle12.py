@@ -22,6 +22,23 @@ INDIV_MAX = CAP * 0.15  # $36.8M
 
 HIT = os.path.join(DATA, "projections_2027_health.json")
 PIT = os.path.join(DATA, "projections_2027_pitchers.json")
+FG_PIT = os.path.join(DATA, "fg_steamer_2027_pit.json")
+
+
+def _pitcher_id_map():
+    """MLBAM id(s) by exact player name from the real FanGraphs Steamer file.
+    Returns {{name: [player_id, ...]}} — a name may map to several ids as the
+    raw file does; presence is checked per selected roster name, ambiguity is
+    resolved only where it matters."""
+    src = json.load(open(FG_PIT))
+    by_name = {}
+    for r in src:
+        nm = (r.get("PlayerName") or "").strip()
+        pid = r.get("xMLBAMID")
+        if not nm or not pid:
+            continue
+        by_name.setdefault(nm, set()).add(int(pid))
+    return by_name
 
 
 def load():
@@ -45,6 +62,23 @@ def main():
     roster_h = h.nlargest(13, "value")
     roster_p = p.nlargest(13, "value")
 
+    # resolve a real MLBAM player_id for each pitcher by name from Steamer;
+    # absent names fail loudly, ambiguous (multi-id) names also fail loudly
+    # so a roster row is never silently linked to the wrong player
+    pid_map = _pitcher_id_map()
+    unmapped = []
+    ambiguous = []
+    for nm in roster_p["name"]:
+        ids = pid_map.get(nm)
+        if not ids:
+            unmapped.append(nm)
+        elif len(ids) > 1:
+            ambiguous.append(nm)
+    if unmapped or ambiguous:
+        raise ValueError(f"pitcher linkage bad: absent={unmapped} ambiguous={ambiguous}")
+    roster_p = roster_p.copy()
+    roster_p["player_id"] = roster_p["name"].map(lambda nm: min(pid_map[nm]))
+
     print("\n=== PROPOSED 26-MAN WINNING-CHEAP ROSTER (13 H + 13 P) ===")
     print("\n-- Hitters (by OBP-based value) --")
     print(roster_h[["name", "team", "proj_OBP", "proj_PA_health"]].to_string(index=False))
@@ -61,9 +95,13 @@ def main():
           f"the same constraint. Not a dollar-figure answer — a construction framework.")
 
     out = os.path.join(DATA, "roster_2027.json")
+    # carry the MLB player_id so roster rows are LINKED to projections,
+    # not matched by (possibly duplicated) name
+    hcols = ["player_id", "name", "team", "proj_OBP", "proj_PA_health"]
+    pcols = ["player_id", "name", "team", "proj_ERA", "proj_IP_health", "proj_K9"]
     payload = {
-        "hitters": roster_h[["name", "team", "proj_OBP", "proj_PA_health"]].to_dict("records"),
-        "pitchers": roster_p[["name", "team", "proj_ERA", "proj_IP_health", "proj_K9"]].to_dict("records"),
+        "hitters": roster_h[hcols].to_dict("records"),
+        "pitchers": roster_p[pcols].to_dict("records"),
         "cap": CAP, "indiv_max": INDIV_MAX,
         "honest_limit": "no per-player salaries in lake; talent selection under cap constraint",
     }

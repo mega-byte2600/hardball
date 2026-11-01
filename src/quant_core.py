@@ -195,11 +195,29 @@ def main():
     print("  2. Logit link uses e: log-odds = ln(p/(1-p)); p = 1/(1+e^-z)")
 
     out = os.path.join(DATA, "quant_core.json")
+    # persist the logistic "title-bar" results too — they were printed but
+    # never saved, so no dashboard figure could show them
+    logistic_summary = {}
+    for label, feats in [("KPIs+PythE", RKP_PYTH), ("run-diff-only", ["RD"])]:
+        lst = {}
+        for tr, te in [(df25, df26), (df26, df25)]:
+            key = "25->26" if tr.equals(df25) else "26->25"
+            lst[key] = logistic(tr, te, feats)
+        # coerce numpy float coefficients to plain floats for clean JSON
+        for k in lst:
+            lst[k]["coef_logit"] = {fk: float(v) for fk, v in lst[k]["coef_logit"].items()}
+        logistic_summary[label] = lst
     summary = {"within_season_r2": round(sameR2, 3),
                "base_profile": base_profile,
-               "sensitivity": sens}
+               "sensitivity": sens,
+               "logistic": logistic_summary}
     json.dump(summary, open(out, "w"), indent=2)
     print(f"\nwrote {out}")
+    print("  logistic title-bar AUC (25->26 / 26->25): "
+          f"KPIs+PythE {logistic_summary['KPIs+PythE']['25->26']['auc']:.3f}/"
+          f"{logistic_summary['KPIs+PythE']['26->25']['auc']:.3f}, "
+          f"run-diff-only {logistic_summary['run-diff-only']['25->26']['auc']:.3f}/"
+          f"{logistic_summary['run-diff-only']['26->25']['auc']:.3f}")
 
 
 if __name__ == "__main__":
