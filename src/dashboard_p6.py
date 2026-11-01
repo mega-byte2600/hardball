@@ -866,7 +866,8 @@ def panel_team_explorer():
     fig.update_layout(
         title=f"{t0['team']} — pick your team<br><sub>Use the dropdown: every club's 2026 signature vs the winning-cheap profile.</sub>",
         polar=dict(radialaxis=dict(visible=True, range=[55, 135])),
-        updatemenus=[dict(buttons=buttons, direction="down", x=0.0, y=1.12,
+        updatemenus=[dict(buttons=buttons, direction="down", x=0.0, y=-0.22,
+                          xanchor="left", yanchor="top", pad=dict(r=0, t=0),
                           showactive=True, active=0)],
         template="plotly_white", height=560,
         legend=dict(orientation="h", y=-0.08))
