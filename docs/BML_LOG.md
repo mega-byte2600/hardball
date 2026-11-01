@@ -296,3 +296,19 @@ verified by a real command run, not self-asserted. GP review pending on all.
 - Re-ran cycle 21 on 5 seasons (2022-2026). Multiple season pairs now, pooled
   contact persistence held stable. Figure 1 title/subtitle made dynamic on
   len(pairs) so it reads "(N real season pairs, N players)" automatically.
+
+---
+## Cycle 21 (full) — BACKFILL COMPLETE: 5-season player lake (2022-2026)
+- backfill_players.py finished clean (exited 0): stored 2022=262, 2023=243,
+  2024=241 hitters; 2025/2026 were already present. Lake = 1,026 player-seasons,
+  457 distinct players; 179 players have >=3 hitting seasons.
+- Cycle 21 re-run over ALL 4 season pairs: contact persists in EVERY pair —
+  2022-23 r=0.82, 23-24 r=0.83, 24-25 r=0.77, 25-26 r=0.90. Pooled r=0.83
+  over 422 player-year pairs.
+- Cycle 23 (bootstrap CI) on the full set: pooled contact r=0.83,
+  95% CI [0.792, 0.862], n=422 pairs. VERDICT = STABLE (r>=0.6 every pair).
+- Dashboard Figure 1 is now dynamic: "4 real season pairs, 457 players" with
+  per-pair bars and the CI subtitle. Centerpiece verified rendering (13 plots).
+- BUG FIXED: the backfill had cached 2022 raw but ended before lake upsert;
+  wrote load_lake_2022.py to upsert. Fixed int64 json serialization in
+  cycle21 + cycle23.
