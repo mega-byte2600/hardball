@@ -252,3 +252,15 @@ verified by a real command run, not self-asserted. GP review pending on all.
   discredited team-wins formula.
 - Shipped: player_level_validation.json, player_yoy.json, dashboard panel 11
   (skill persistence chart moved to first chart).
+
+---
+## Cycle 22 — 2027 CAP-SCENARIO (who the cap/floor forces to act, real 2026 payrolls)
+- Built: src/bml_cycle22_cap.py -> data/cap_scenario_2027.json. Parsed the
+  Spotrac 2026 PAYROLL_2026 tuples (team, record, $string).
+- Measured: 7 teams OVER the proposed cap must cut -- NYM $101M (29%), LAD
+  $94M (28%), NYY $63M, PHI $47M. 15 teams UNDER the floor must spend up --
+  CLE $96.7M, MIA $88M, TB $75.6M are the biggest forced-adders. Winning-cheap
+  CLE/TB are exactly the forced-spenders -> the floor hands disciplined
+  winners $75-97M to deploy. Cap=necessity, floor=pool for the efficient.
+- Shipped: dashboard Figure 13 (cap-era bar, red=over/must cut,
+  green=under/gets pool). 13 figures total.

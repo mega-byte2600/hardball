@@ -329,6 +329,35 @@ def panel_sensitivity():
     return fig
 
 
+def panel_cap_scenario():
+    """Cap-era reality: which teams the 2027 cap/floor forces to act."""
+    f = os.path.join(DATA, "cap_scenario_2027.json")
+    if not os.path.exists(f):
+        return None
+    d = pd.DataFrame(json.load(open(f))["teams"])
+    CAPV, FLOORV = 245.3, 171.2
+    d["gap_M"] = (d["gap_to_cap"] / 1e6).round(1)  # + over cap; - under
+    # focus on the most affected, label over/under
+    d["label"] = d["team"]
+    d = d.sort_values("gap_M", ascending=False)
+    over = d[d["gap_M"] > 0].head(7)
+    under = d[d["gap_M"] < 0].tail(7)
+    show = pd.concat([over, under])
+    colors = ["#d50032"] * len(over) + ["#1b5e20"] * len(under)  # red if must cut, green if get pool
+    fig = go.Figure(go.Bar(x=show["team"], y=show["gap_M"], marker_color=colors,
+                           text=[f"{v:+.1f}M" for v in show["gap_M"]], textposition="outside"))
+    fig.add_hline(y=0, line_width=1, line_color="#6b7280")
+    fig.add_hline(y=FLOORV - 245.3, line_dash="dot", line_color="#7f1d1d", opacity=0.4)
+    fig.update_layout(
+        title="Cap-era reality (2026 payroll vs proposed 2027 cap) — red = OVER cap (must cut); green = UNDER floor (gets new pool)",
+        xaxis_title="Team", yaxis_title="Gap to $245.3M cap ($M)", template="plotly_white",
+        height=460, margin=dict(l=60, r=40, t=100, b=60),
+        annotations=[dict(x=0.5, y=1.10, xref="paper", yref="paper", showarrow=False,
+                          text="2027 hard cap $245.3M · floor $171.2M · CBA expires Dec 1 2026",
+                          font=dict(size=11, color="#1d3557"))])
+    return fig
+
+
 def panel_value_metrics():
     """Top Metrics panel: wOBA / wRC+ (hitting value) + FIP / K-BB% (pitching)."""
     vm = os.path.join(DATA, "value_metrics_2026.json")
@@ -412,10 +441,11 @@ def build():
     fig10 = panel_sensitivity()
     fig11 = panel_skill_persistence()
     fig12 = panel_value_metrics()
+    fig13 = panel_cap_scenario()
 
     # Number every figure in display order and make each easy to reference.
     fig_panels = [f for f in (fig11, fig9, fig1, fig2, fig3, fig4, fig5,
-                              fig6, fig7, fig8, fig10, fig12) if f is not None]
+                              fig6, fig7, fig8, fig10, fig12, fig13) if f is not None]
 
     def _number(figs):
         """Executive polish for every figure + 'Figure N — ' prefix.

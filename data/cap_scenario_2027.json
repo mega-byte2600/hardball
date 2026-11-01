@@ -1,0 +1,188 @@
+{
+  "cap_2027": 245300000,
+  "floor_2027": 171200000,
+  "n_over_cap": 7,
+  "n_under_floor": 15,
+  "teams": [
+    {
+      "team": "NYM",
+      "payroll_M": 346.7,
+      "gap_to_cap": 101436805.0,
+      "gap_to_floor": -175536805.0
+    },
+    {
+      "team": "LAD",
+      "payroll_M": 339.3,
+      "gap_to_cap": 94019244.0,
+      "gap_to_floor": -168119244.0
+    },
+    {
+      "team": "NYY",
+      "payroll_M": 308.3,
+      "gap_to_cap": 63036780.0,
+      "gap_to_floor": -137136780.0
+    },
+    {
+      "team": "PHI",
+      "payroll_M": 292.0,
+      "gap_to_cap": 46651676.0,
+      "gap_to_floor": -120751676.0
+    },
+    {
+      "team": "TOR",
+      "payroll_M": 276.1,
+      "gap_to_cap": 30830679.0,
+      "gap_to_floor": -104930679.0
+    },
+    {
+      "team": "ATL",
+      "payroll_M": 263.5,
+      "gap_to_cap": 18162438.0,
+      "gap_to_floor": -92262438.0
+    },
+    {
+      "team": "CHC",
+      "payroll_M": 249.3,
+      "gap_to_cap": 4019956.0,
+      "gap_to_floor": -78119956.0
+    },
+    {
+      "team": "HOU",
+      "payroll_M": 239.8,
+      "gap_to_cap": -5536217.0,
+      "gap_to_floor": -68563783.0
+    },
+    {
+      "team": "SD",
+      "payroll_M": 218.3,
+      "gap_to_cap": -27047285.0,
+      "gap_to_floor": -47052715.0
+    },
+    {
+      "team": "BOS",
+      "payroll_M": 208.0,
+      "gap_to_cap": -37311984.0,
+      "gap_to_floor": -36788016.0
+    },
+    {
+      "team": "DET",
+      "payroll_M": 202.1,
+      "gap_to_cap": -43218009.0,
+      "gap_to_floor": -30881991.0
+    },
+    {
+      "team": "ARI",
+      "payroll_M": 192.7,
+      "gap_to_cap": -52629973.0,
+      "gap_to_floor": -21470027.0
+    },
+    {
+      "team": "TEX",
+      "payroll_M": 191.3,
+      "gap_to_cap": -54037202.0,
+      "gap_to_floor": -20062798.0
+    },
+    {
+      "team": "SF",
+      "payroll_M": 190.2,
+      "gap_to_cap": -55125869.0,
+      "gap_to_floor": -18974131.0
+    },
+    {
+      "team": "LAA",
+      "payroll_M": 182.5,
+      "gap_to_cap": -62790977.0,
+      "gap_to_floor": -11309023.0
+    },
+    {
+      "team": "SEA",
+      "payroll_M": 170.1,
+      "gap_to_cap": -75228986.0,
+      "gap_to_floor": 1128986.0
+    },
+    {
+      "team": "BAL",
+      "payroll_M": 167.0,
+      "gap_to_cap": -78260789.0,
+      "gap_to_floor": 4160789.0
+    },
+    {
+      "team": "KC",
+      "payroll_M": 150.4,
+      "gap_to_cap": -94870108.0,
+      "gap_to_floor": 20770108.0
+    },
+    {
+      "team": "MIL",
+      "payroll_M": 146.7,
+      "gap_to_cap": -98593680.0,
+      "gap_to_floor": 24493680.0
+    },
+    {
+      "team": "CIN",
+      "payroll_M": 128.2,
+      "gap_to_cap": -117076252.0,
+      "gap_to_floor": 42976252.0
+    },
+    {
+      "team": "COL",
+      "payroll_M": 121.5,
+      "gap_to_cap": -123773249.0,
+      "gap_to_floor": 49673249.0
+    },
+    {
+      "team": "MIN",
+      "payroll_M": 115.7,
+      "gap_to_cap": -129551964.0,
+      "gap_to_floor": 55451964.0
+    },
+    {
+      "team": "PIT",
+      "payroll_M": 106.7,
+      "gap_to_cap": -138571499.0,
+      "gap_to_floor": 64471499.0
+    },
+    {
+      "team": "CHW",
+      "payroll_M": 103.3,
+      "gap_to_cap": -141969859.0,
+      "gap_to_floor": 67869859.0
+    },
+    {
+      "team": "WSH",
+      "payroll_M": 101.6,
+      "gap_to_cap": -143660112.0,
+      "gap_to_floor": 69560112.0
+    },
+    {
+      "team": "ATH",
+      "payroll_M": 98.9,
+      "gap_to_cap": -146351188.0,
+      "gap_to_floor": 72251188.0
+    },
+    {
+      "team": "STL",
+      "payroll_M": 96.4,
+      "gap_to_cap": -148903502.0,
+      "gap_to_floor": 74803502.0
+    },
+    {
+      "team": "TB",
+      "payroll_M": 95.6,
+      "gap_to_cap": -149684531.0,
+      "gap_to_floor": 75584531.0
+    },
+    {
+      "team": "MIA",
+      "payroll_M": 83.3,
+      "gap_to_cap": -162001877.0,
+      "gap_to_floor": 87901877.0
+    },
+    {
+      "team": "CLE",
+      "payroll_M": 74.5,
+      "gap_to_cap": -170840986.0,
+      "gap_to_floor": 96740986.0
+    }
+  ]
+}
