@@ -1,0 +1,5861 @@
+[
+ {
+  "player_id": 680776,
+  "name": "Duran, Jarren",
+  "pa": 735.0,
+  "woba": 0.357,
+  "est_woba": 0.34,
+  "est_ba": 0.267,
+  "est_slg": 0.456
+ },
+ {
+  "player_id": 660271,
+  "name": "Ohtani, Shohei",
+  "pa": 731.0,
+  "woba": 0.431,
+  "est_woba": 0.444,
+  "est_ba": 0.31,
+  "est_slg": 0.672
+ },
+ {
+  "player_id": 683002,
+  "name": "Henderson, Gunnar",
+  "pa": 719.0,
+  "woba": 0.381,
+  "est_woba": 0.374,
+  "est_ba": 0.279,
+  "est_slg": 0.499
+ },
+ {
+  "player_id": 543760,
+  "name": "Semien, Marcus",
+  "pa": 718.0,
+  "woba": 0.306,
+  "est_woba": 0.32,
+  "est_ba": 0.251,
+  "est_slg": 0.406
+ },
+ {
+  "player_id": 665742,
+  "name": "Soto, Juan",
+  "pa": 713.0,
+  "woba": 0.421,
+  "est_woba": 0.464,
+  "est_ba": 0.311,
+  "est_slg": 0.656
+ },
+ {
+  "player_id": 677951,
+  "name": "Witt Jr., Bobby",
+  "pa": 709.0,
+  "woba": 0.41,
+  "est_woba": 0.407,
+  "est_ba": 0.309,
+  "est_slg": 0.583
+ },
+ {
+  "player_id": 592450,
+  "name": "Judge, Aaron",
+  "pa": 704.0,
+  "woba": 0.476,
+  "est_woba": 0.479,
+  "est_ba": 0.303,
+  "est_slg": 0.738
+ },
+ {
+  "player_id": 665489,
+  "name": "Guerrero Jr., Vladimir",
+  "pa": 697.0,
+  "woba": 0.398,
+  "est_woba": 0.413,
+  "est_ba": 0.317,
+  "est_slg": 0.578
+ },
+ {
+  "player_id": 682829,
+  "name": "De La Cruz, Elly",
+  "pa": 696.0,
+  "woba": 0.349,
+  "est_woba": 0.33,
+  "est_ba": 0.237,
+  "est_slg": 0.437
+ },
+ {
+  "player_id": 678662,
+  "name": "Tovar, Ezequiel",
+  "pa": 695.0,
+  "woba": 0.324,
+  "est_woba": 0.291,
+  "est_ba": 0.231,
+  "est_slg": 0.41
+ },
+ {
+  "player_id": 624413,
+  "name": "Alonso, Pete",
+  "pa": 695.0,
+  "woba": 0.34,
+  "est_woba": 0.346,
+  "est_ba": 0.239,
+  "est_slg": 0.471
+ },
+ {
+  "player_id": 656941,
+  "name": "Schwarber, Kyle",
+  "pa": 692.0,
+  "woba": 0.366,
+  "est_woba": 0.38,
+  "est_ba": 0.249,
+  "est_slg": 0.519
+ },
+ {
+  "player_id": 668804,
+  "name": "Reynolds, Bryan",
+  "pa": 692.0,
+  "woba": 0.343,
+  "est_woba": 0.353,
+  "est_ba": 0.268,
+  "est_slg": 0.472
+ },
+ {
+  "player_id": 596019,
+  "name": "Lindor, Francisco",
+  "pa": 689.0,
+  "woba": 0.363,
+  "est_woba": 0.381,
+  "est_ba": 0.278,
+  "est_slg": 0.539
+ },
+ {
+  "player_id": 683011,
+  "name": "Volpe, Anthony",
+  "pa": 689.0,
+  "woba": 0.287,
+  "est_woba": 0.278,
+  "est_ba": 0.232,
+  "est_slg": 0.335
+ },
+ {
+  "player_id": 642715,
+  "name": "Adames, Willy",
+  "pa": 688.0,
+  "woba": 0.342,
+  "est_woba": 0.341,
+  "est_ba": 0.24,
+  "est_slg": 0.468
+ },
+ {
+  "player_id": 542303,
+  "name": "Ozuna, Marcell",
+  "pa": 688.0,
+  "woba": 0.395,
+  "est_woba": 0.404,
+  "est_ba": 0.283,
+  "est_slg": 0.583
+ },
+ {
+  "player_id": 621566,
+  "name": "Olson, Matt",
+  "pa": 685.0,
+  "woba": 0.339,
+  "est_woba": 0.341,
+  "est_ba": 0.242,
+  "est_slg": 0.454
+ },
+ {
+  "player_id": 682998,
+  "name": "Carroll, Corbin",
+  "pa": 684.0,
+  "woba": 0.325,
+  "est_woba": 0.328,
+  "est_ba": 0.239,
+  "est_slg": 0.401
+ },
+ {
+  "player_id": 514888,
+  "name": "Altuve, Jose",
+  "pa": 682.0,
+  "woba": 0.344,
+  "est_woba": 0.319,
+  "est_ba": 0.261,
+  "est_slg": 0.406
+ },
+ {
+  "player_id": 608070,
+  "name": "Ram\u00edrez, Jos\u00e9",
+  "pa": 682.0,
+  "woba": 0.364,
+  "est_woba": 0.333,
+  "est_ba": 0.256,
+  "est_slg": 0.467
+ },
+ {
+  "player_id": 661388,
+  "name": "Contreras, William",
+  "pa": 679.0,
+  "woba": 0.359,
+  "est_woba": 0.356,
+  "est_ba": 0.261,
+  "est_slg": 0.471
+ },
+ {
+  "player_id": 650333,
+  "name": "Arraez, Luis",
+  "pa": 672.0,
+  "woba": 0.323,
+  "est_woba": 0.33,
+  "est_ba": 0.31,
+  "est_slg": 0.408
+ },
+ {
+  "player_id": 595777,
+  "name": "Profar, Jurickson",
+  "pa": 668.0,
+  "woba": 0.365,
+  "est_woba": 0.366,
+  "est_ba": 0.279,
+  "est_slg": 0.451
+ },
+ {
+  "player_id": 623993,
+  "name": "Santander, Anthony",
+  "pa": 665.0,
+  "woba": 0.345,
+  "est_woba": 0.327,
+  "est_ba": 0.225,
+  "est_slg": 0.458
+ },
+ {
+  "player_id": 650402,
+  "name": "Torres, Gleyber",
+  "pa": 665.0,
+  "woba": 0.313,
+  "est_woba": 0.314,
+  "est_ba": 0.24,
+  "est_slg": 0.386
+ },
+ {
+  "player_id": 607043,
+  "name": "Nimmo, Brandon",
+  "pa": 663.0,
+  "woba": 0.321,
+  "est_woba": 0.338,
+  "est_ba": 0.242,
+  "est_slg": 0.418
+ },
+ {
+  "player_id": 621493,
+  "name": "Ward, Taylor",
+  "pa": 663.0,
+  "woba": 0.325,
+  "est_woba": 0.346,
+  "est_ba": 0.247,
+  "est_slg": 0.467
+ },
+ {
+  "player_id": 592206,
+  "name": "Castellanos, Nick",
+  "pa": 659.0,
+  "woba": 0.321,
+  "est_woba": 0.337,
+  "est_ba": 0.268,
+  "est_slg": 0.454
+ },
+ {
+  "player_id": 664023,
+  "name": "Happ, Ian",
+  "pa": 657.0,
+  "woba": 0.341,
+  "est_woba": 0.347,
+  "est_ba": 0.24,
+  "est_slg": 0.453
+ },
+ {
+  "player_id": 630105,
+  "name": "Cronenworth, Jake",
+  "pa": 656.0,
+  "woba": 0.315,
+  "est_woba": 0.339,
+  "est_ba": 0.257,
+  "est_slg": 0.431
+ },
+ {
+  "player_id": 668715,
+  "name": "Steer, Spencer",
+  "pa": 656.0,
+  "woba": 0.316,
+  "est_woba": 0.321,
+  "est_ba": 0.234,
+  "est_slg": 0.392
+ },
+ {
+  "player_id": 502671,
+  "name": "Goldschmidt, Paul",
+  "pa": 654.0,
+  "woba": 0.31,
+  "est_woba": 0.332,
+  "est_ba": 0.252,
+  "est_slg": 0.462
+ },
+ {
+  "player_id": 521692,
+  "name": "Perez, Salvador",
+  "pa": 652.0,
+  "woba": 0.335,
+  "est_woba": 0.361,
+  "est_ba": 0.271,
+  "est_slg": 0.53
+ },
+ {
+  "player_id": 606192,
+  "name": "Hern\u00e1ndez, Teoscar",
+  "pa": 652.0,
+  "woba": 0.36,
+  "est_woba": 0.347,
+  "est_ba": 0.245,
+  "est_slg": 0.493
+ },
+ {
+  "player_id": 680977,
+  "name": "Donovan, Brendan",
+  "pa": 652.0,
+  "woba": 0.332,
+  "est_woba": 0.341,
+  "est_ba": 0.275,
+  "est_slg": 0.432
+ },
+ {
+  "player_id": 665161,
+  "name": "Pe\u00f1a, Jeremy",
+  "pa": 650.0,
+  "woba": 0.305,
+  "est_woba": 0.314,
+  "est_ba": 0.262,
+  "est_slg": 0.401
+ },
+ {
+  "player_id": 668227,
+  "name": "Arozarena, Randy",
+  "pa": 648.0,
+  "woba": 0.32,
+  "est_woba": 0.322,
+  "est_ba": 0.213,
+  "est_slg": 0.381
+ },
+ {
+  "player_id": 656305,
+  "name": "Chapman, Matt",
+  "pa": 647.0,
+  "woba": 0.34,
+  "est_woba": 0.342,
+  "est_ba": 0.244,
+  "est_slg": 0.46
+ },
+ {
+  "player_id": 641857,
+  "name": "McMahon, Ryan",
+  "pa": 645.0,
+  "woba": 0.315,
+  "est_woba": 0.327,
+  "est_ba": 0.238,
+  "est_slg": 0.421
+ },
+ {
+  "player_id": 592518,
+  "name": "Machado, Manny",
+  "pa": 643.0,
+  "woba": 0.34,
+  "est_woba": 0.34,
+  "est_ba": 0.266,
+  "est_slg": 0.467
+ },
+ {
+  "player_id": 668709,
+  "name": "Bleday, JJ",
+  "pa": 642.0,
+  "woba": 0.33,
+  "est_woba": 0.322,
+  "est_ba": 0.238,
+  "est_slg": 0.413
+ },
+ {
+  "player_id": 670623,
+  "name": "Paredes, Isaac",
+  "pa": 641.0,
+  "woba": 0.327,
+  "est_woba": 0.309,
+  "est_ba": 0.221,
+  "est_slg": 0.35
+ },
+ {
+  "player_id": 663538,
+  "name": "Hoerner, Nico",
+  "pa": 641.0,
+  "woba": 0.313,
+  "est_woba": 0.318,
+  "est_ba": 0.281,
+  "est_slg": 0.359
+ },
+ {
+  "player_id": 553993,
+  "name": "Su\u00e1rez, Eugenio",
+  "pa": 640.0,
+  "woba": 0.337,
+  "est_woba": 0.335,
+  "est_ba": 0.246,
+  "est_slg": 0.463
+ },
+ {
+  "player_id": 518692,
+  "name": "Freeman, Freddie",
+  "pa": 638.0,
+  "woba": 0.365,
+  "est_woba": 0.368,
+  "est_ba": 0.272,
+  "est_slg": 0.475
+ },
+ {
+  "player_id": 668939,
+  "name": "Rutschman, Adley",
+  "pa": 638.0,
+  "woba": 0.309,
+  "est_woba": 0.32,
+  "est_ba": 0.254,
+  "est_slg": 0.405
+ },
+ {
+  "player_id": 691026,
+  "name": "Winn, Masyn",
+  "pa": 637.0,
+  "woba": 0.315,
+  "est_woba": 0.295,
+  "est_ba": 0.253,
+  "est_slg": 0.363
+ },
+ {
+  "player_id": 663697,
+  "name": "India, Jonathan",
+  "pa": 637.0,
+  "woba": 0.333,
+  "est_woba": 0.354,
+  "est_ba": 0.262,
+  "est_slg": 0.418
+ },
+ {
+  "player_id": 666969,
+  "name": "Garc\u00eda, Adolis",
+  "pa": 637.0,
+  "woba": 0.296,
+  "est_woba": 0.309,
+  "est_ba": 0.223,
+  "est_slg": 0.422
+ },
+ {
+  "player_id": 571448,
+  "name": "Arenado, Nolan",
+  "pa": 635.0,
+  "woba": 0.314,
+  "est_woba": 0.298,
+  "est_ba": 0.253,
+  "est_slg": 0.361
+ },
+ {
+  "player_id": 670541,
+  "name": "Alvarez, Yordan",
+  "pa": 635.0,
+  "woba": 0.402,
+  "est_woba": 0.415,
+  "est_ba": 0.3,
+  "est_slg": 0.608
+ },
+ {
+  "player_id": 650489,
+  "name": "Castro, Willi",
+  "pa": 635.0,
+  "woba": 0.317,
+  "est_woba": 0.323,
+  "est_ba": 0.242,
+  "est_slg": 0.39
+ },
+ {
+  "player_id": 608324,
+  "name": "Bregman, Alex",
+  "pa": 634.0,
+  "woba": 0.331,
+  "est_woba": 0.325,
+  "est_ba": 0.255,
+  "est_slg": 0.434
+ },
+ {
+  "player_id": 665926,
+  "name": "Gim\u00e9nez, Andr\u00e9s",
+  "pa": 633.0,
+  "woba": 0.281,
+  "est_woba": 0.301,
+  "est_ba": 0.261,
+  "est_slg": 0.362
+ },
+ {
+  "player_id": 647304,
+  "name": "Naylor, Josh",
+  "pa": 633.0,
+  "woba": 0.332,
+  "est_woba": 0.334,
+  "est_ba": 0.25,
+  "est_slg": 0.447
+ },
+ {
+  "player_id": 547180,
+  "name": "Harper, Bryce",
+  "pa": 631.0,
+  "woba": 0.38,
+  "est_woba": 0.361,
+  "est_ba": 0.264,
+  "est_slg": 0.486
+ },
+ {
+  "player_id": 663728,
+  "name": "Raleigh, Cal",
+  "pa": 628.0,
+  "woba": 0.323,
+  "est_woba": 0.347,
+  "est_ba": 0.229,
+  "est_slg": 0.483
+ },
+ {
+  "player_id": 672580,
+  "name": "Garcia, Maikel",
+  "pa": 626.0,
+  "woba": 0.27,
+  "est_woba": 0.305,
+  "est_ba": 0.259,
+  "est_slg": 0.373
+ },
+ {
+  "player_id": 650559,
+  "name": "De La Cruz, Bryan",
+  "pa": 622.0,
+  "woba": 0.283,
+  "est_woba": 0.306,
+  "est_ba": 0.241,
+  "est_slg": 0.431
+ },
+ {
+  "player_id": 665862,
+  "name": "Chisholm Jr., Jazz",
+  "pa": 621.0,
+  "woba": 0.327,
+  "est_woba": 0.317,
+  "est_ba": 0.237,
+  "est_slg": 0.419
+ },
+ {
+  "player_id": 657077,
+  "name": "Verdugo, Alex",
+  "pa": 621.0,
+  "woba": 0.283,
+  "est_woba": 0.307,
+  "est_ba": 0.248,
+  "est_slg": 0.384
+ },
+ {
+  "player_id": 650490,
+  "name": "D\u00edaz, Yandy",
+  "pa": 621.0,
+  "woba": 0.331,
+  "est_woba": 0.339,
+  "est_ba": 0.273,
+  "est_slg": 0.432
+ },
+ {
+  "player_id": 668930,
+  "name": "Turang, Brice",
+  "pa": 619.0,
+  "woba": 0.294,
+  "est_woba": 0.302,
+  "est_ba": 0.261,
+  "est_slg": 0.347
+ },
+ {
+  "player_id": 673237,
+  "name": "Diaz, Yainer",
+  "pa": 619.0,
+  "woba": 0.329,
+  "est_woba": 0.343,
+  "est_ba": 0.297,
+  "est_slg": 0.467
+ },
+ {
+  "player_id": 683734,
+  "name": "Vaughn, Andrew",
+  "pa": 619.0,
+  "woba": 0.304,
+  "est_woba": 0.32,
+  "est_ba": 0.241,
+  "est_slg": 0.443
+ },
+ {
+  "player_id": 667670,
+  "name": "Rooker, Brent",
+  "pa": 614.0,
+  "woba": 0.392,
+  "est_woba": 0.381,
+  "est_ba": 0.263,
+  "est_slg": 0.566
+ },
+ {
+  "player_id": 543807,
+  "name": "Springer, George",
+  "pa": 614.0,
+  "woba": 0.298,
+  "est_woba": 0.325,
+  "est_ba": 0.24,
+  "est_slg": 0.412
+ },
+ {
+  "player_id": 677594,
+  "name": "Rodr\u00edguez, Julio",
+  "pa": 613.0,
+  "woba": 0.321,
+  "est_woba": 0.345,
+  "est_ba": 0.27,
+  "est_slg": 0.467
+ },
+ {
+  "player_id": 666624,
+  "name": "Morel, Christopher",
+  "pa": 611.0,
+  "woba": 0.28,
+  "est_woba": 0.316,
+  "est_ba": 0.222,
+  "est_slg": 0.401
+ },
+ {
+  "player_id": 694384,
+  "name": "Schanuel, Nolan",
+  "pa": 607.0,
+  "woba": 0.315,
+  "est_woba": 0.322,
+  "est_ba": 0.253,
+  "est_slg": 0.361
+ },
+ {
+  "player_id": 664761,
+  "name": "Bohm, Alec",
+  "pa": 606.0,
+  "woba": 0.335,
+  "est_woba": 0.345,
+  "est_ba": 0.283,
+  "est_slg": 0.452
+ },
+ {
+  "player_id": 605137,
+  "name": "Bell, Josh",
+  "pa": 603.0,
+  "woba": 0.317,
+  "est_woba": 0.312,
+  "est_ba": 0.233,
+  "est_slg": 0.402
+ },
+ {
+  "player_id": 686668,
+  "name": "Doyle, Brenton",
+  "pa": 603.0,
+  "woba": 0.328,
+  "est_woba": 0.33,
+  "est_ba": 0.249,
+  "est_slg": 0.442
+ },
+ {
+  "player_id": 687263,
+  "name": "Neto, Zach",
+  "pa": 602.0,
+  "woba": 0.33,
+  "est_woba": 0.319,
+  "est_ba": 0.233,
+  "est_slg": 0.421
+ },
+ {
+  "player_id": 682928,
+  "name": "Abrams, CJ",
+  "pa": 602.0,
+  "woba": 0.322,
+  "est_woba": 0.32,
+  "est_ba": 0.243,
+  "est_slg": 0.413
+ },
+ {
+  "player_id": 606115,
+  "name": "Arcia, Orlando",
+  "pa": 602.0,
+  "woba": 0.273,
+  "est_woba": 0.262,
+  "est_ba": 0.199,
+  "est_slg": 0.327
+ },
+ {
+  "player_id": 646240,
+  "name": "Devers, Rafael",
+  "pa": 601.0,
+  "woba": 0.364,
+  "est_woba": 0.366,
+  "est_ba": 0.267,
+  "est_slg": 0.514
+ },
+ {
+  "player_id": 665833,
+  "name": "Cruz, Oneil",
+  "pa": 599.0,
+  "woba": 0.331,
+  "est_woba": 0.345,
+  "est_ba": 0.26,
+  "est_slg": 0.477
+ },
+ {
+  "player_id": 676475,
+  "name": "Burleson, Alec",
+  "pa": 595.0,
+  "woba": 0.319,
+  "est_woba": 0.333,
+  "est_ba": 0.27,
+  "est_slg": 0.444
+ },
+ {
+  "player_id": 467793,
+  "name": "Santana, Carlos",
+  "pa": 594.0,
+  "woba": 0.326,
+  "est_woba": 0.333,
+  "est_ba": 0.244,
+  "est_slg": 0.424
+ },
+ {
+  "player_id": 701538,
+  "name": "Merrill, Jackson",
+  "pa": 593.0,
+  "woba": 0.352,
+  "est_woba": 0.375,
+  "est_ba": 0.3,
+  "est_slg": 0.547
+ },
+ {
+  "player_id": 621020,
+  "name": "Swanson, Dansby",
+  "pa": 593.0,
+  "woba": 0.307,
+  "est_woba": 0.323,
+  "est_ba": 0.241,
+  "est_slg": 0.423
+ },
+ {
+  "player_id": 669701,
+  "name": "Smith, Josh",
+  "pa": 592.0,
+  "woba": 0.323,
+  "est_woba": 0.309,
+  "est_ba": 0.242,
+  "est_slg": 0.365
+ },
+ {
+  "player_id": 673548,
+  "name": "Suzuki, Seiya",
+  "pa": 585.0,
+  "woba": 0.365,
+  "est_woba": 0.348,
+  "est_ba": 0.252,
+  "est_slg": 0.464
+ },
+ {
+  "player_id": 682985,
+  "name": "Greene, Riley",
+  "pa": 584.0,
+  "woba": 0.355,
+  "est_woba": 0.354,
+  "est_ba": 0.247,
+  "est_slg": 0.486
+ },
+ {
+  "player_id": 606466,
+  "name": "Marte, Ketel",
+  "pa": 583.0,
+  "woba": 0.391,
+  "est_woba": 0.394,
+  "est_ba": 0.289,
+  "est_slg": 0.545
+ },
+ {
+  "player_id": 669394,
+  "name": "Burger, Jake",
+  "pa": 579.0,
+  "woba": 0.325,
+  "est_woba": 0.339,
+  "est_ba": 0.253,
+  "est_slg": 0.483
+ },
+ {
+  "player_id": 624585,
+  "name": "Soler, Jorge",
+  "pa": 574.0,
+  "woba": 0.34,
+  "est_woba": 0.352,
+  "est_ba": 0.243,
+  "est_slg": 0.464
+ },
+ {
+  "player_id": 694192,
+  "name": "Chourio, Jackson",
+  "pa": 573.0,
+  "woba": 0.339,
+  "est_woba": 0.327,
+  "est_ba": 0.267,
+  "est_slg": 0.431
+ },
+ {
+  "player_id": 678882,
+  "name": "Rafaela, Ceddanne",
+  "pa": 571.0,
+  "woba": 0.286,
+  "est_woba": 0.276,
+  "est_ba": 0.227,
+  "est_slg": 0.374
+ },
+ {
+  "player_id": 681082,
+  "name": "Stott, Bryson",
+  "pa": 571.0,
+  "woba": 0.296,
+  "est_woba": 0.31,
+  "est_ba": 0.254,
+  "est_slg": 0.369
+ },
+ {
+  "player_id": 641355,
+  "name": "Bellinger, Cody",
+  "pa": 569.0,
+  "woba": 0.322,
+  "est_woba": 0.302,
+  "est_ba": 0.238,
+  "est_slg": 0.396
+ },
+ {
+  "player_id": 683737,
+  "name": "Busch, Michael",
+  "pa": 567.0,
+  "woba": 0.336,
+  "est_woba": 0.324,
+  "est_ba": 0.217,
+  "est_slg": 0.432
+ },
+ {
+  "player_id": 663837,
+  "name": "Vierling, Matt",
+  "pa": 567.0,
+  "woba": 0.317,
+  "est_woba": 0.313,
+  "est_ba": 0.253,
+  "est_slg": 0.402
+ },
+ {
+  "player_id": 663993,
+  "name": "Lowe, Nathaniel",
+  "pa": 565.0,
+  "woba": 0.337,
+  "est_woba": 0.332,
+  "est_ba": 0.25,
+  "est_slg": 0.386
+ },
+ {
+  "player_id": 681297,
+  "name": "Cowser, Colton",
+  "pa": 561.0,
+  "woba": 0.331,
+  "est_woba": 0.333,
+  "est_ba": 0.23,
+  "est_slg": 0.456
+ },
+ {
+  "player_id": 694671,
+  "name": "Langford, Wyatt",
+  "pa": 557.0,
+  "woba": 0.321,
+  "est_woba": 0.332,
+  "est_ba": 0.252,
+  "est_slg": 0.435
+ },
+ {
+  "player_id": 690993,
+  "name": "Keith, Colt",
+  "pa": 556.0,
+  "woba": 0.301,
+  "est_woba": 0.315,
+  "est_ba": 0.266,
+  "est_slg": 0.4
+ },
+ {
+  "player_id": 686469,
+  "name": "Pasquantino, Vinnie",
+  "pa": 554.0,
+  "woba": 0.325,
+  "est_woba": 0.336,
+  "est_ba": 0.264,
+  "est_slg": 0.452
+ },
+ {
+  "player_id": 666971,
+  "name": "Gurriel Jr., Lourdes",
+  "pa": 553.0,
+  "woba": 0.327,
+  "est_woba": 0.325,
+  "est_ba": 0.265,
+  "est_slg": 0.433
+ },
+ {
+  "player_id": 572233,
+  "name": "Walker, Christian",
+  "pa": 552.0,
+  "woba": 0.343,
+  "est_woba": 0.354,
+  "est_ba": 0.243,
+  "est_slg": 0.47
+ },
+ {
+  "player_id": 680869,
+  "name": "Gelof, Zack",
+  "pa": 547.0,
+  "woba": 0.276,
+  "est_woba": 0.273,
+  "est_ba": 0.198,
+  "est_slg": 0.353
+ },
+ {
+  "player_id": 669257,
+  "name": "Smith, Will",
+  "pa": 544.0,
+  "woba": 0.326,
+  "est_woba": 0.337,
+  "est_ba": 0.238,
+  "est_slg": 0.463
+ },
+ {
+  "player_id": 680757,
+  "name": "Kwan, Steven",
+  "pa": 540.0,
+  "woba": 0.349,
+  "est_woba": 0.337,
+  "est_ba": 0.283,
+  "est_slg": 0.392
+ },
+ {
+  "player_id": 607208,
+  "name": "Turner, Trea",
+  "pa": 539.0,
+  "woba": 0.349,
+  "est_woba": 0.323,
+  "est_ba": 0.263,
+  "est_slg": 0.43
+ },
+ {
+  "player_id": 663898,
+  "name": "Rodgers, Brendan",
+  "pa": 539.0,
+  "woba": 0.314,
+  "est_woba": 0.299,
+  "est_ba": 0.246,
+  "est_slg": 0.382
+ },
+ {
+  "player_id": 457759,
+  "name": "Turner, Justin",
+  "pa": 539.0,
+  "woba": 0.327,
+  "est_woba": 0.333,
+  "est_ba": 0.251,
+  "est_slg": 0.394
+ },
+ {
+  "player_id": 660821,
+  "name": "S\u00e1nchez, Jes\u00fas",
+  "pa": 537.0,
+  "woba": 0.317,
+  "est_woba": 0.348,
+  "est_ba": 0.261,
+  "est_slg": 0.48
+ },
+ {
+  "player_id": 664034,
+  "name": "France, Ty",
+  "pa": 535.0,
+  "woba": 0.296,
+  "est_woba": 0.306,
+  "est_ba": 0.225,
+  "est_slg": 0.394
+ },
+ {
+  "player_id": 669127,
+  "name": "Langeliers, Shea",
+  "pa": 534.0,
+  "woba": 0.315,
+  "est_woba": 0.328,
+  "est_ba": 0.237,
+  "est_slg": 0.461
+ },
+ {
+  "player_id": 608369,
+  "name": "Seager, Corey",
+  "pa": 533.0,
+  "woba": 0.365,
+  "est_woba": 0.391,
+  "est_ba": 0.28,
+  "est_slg": 0.573
+ },
+ {
+  "player_id": 665750,
+  "name": "Taveras, Leody",
+  "pa": 529.0,
+  "woba": 0.282,
+  "est_woba": 0.299,
+  "est_ba": 0.238,
+  "est_slg": 0.378
+ },
+ {
+  "player_id": 671277,
+  "name": "Garc\u00eda Jr., Luis",
+  "pa": 528.0,
+  "woba": 0.328,
+  "est_woba": 0.335,
+  "est_ba": 0.275,
+  "est_slg": 0.461
+ },
+ {
+  "player_id": 657041,
+  "name": "Thomas, Lane",
+  "pa": 528.0,
+  "woba": 0.309,
+  "est_woba": 0.311,
+  "est_ba": 0.24,
+  "est_slg": 0.388
+ },
+ {
+  "player_id": 686217,
+  "name": "Frelick, Sal",
+  "pa": 524.0,
+  "woba": 0.292,
+  "est_woba": 0.283,
+  "est_ba": 0.246,
+  "est_slg": 0.309
+ },
+ {
+  "player_id": 681351,
+  "name": "O'Hoppe, Logan",
+  "pa": 522.0,
+  "woba": 0.311,
+  "est_woba": 0.333,
+  "est_ba": 0.248,
+  "est_slg": 0.463
+ },
+ {
+  "player_id": 643217,
+  "name": "Benintendi, Andrew",
+  "pa": 522.0,
+  "woba": 0.298,
+  "est_woba": 0.307,
+  "est_ba": 0.24,
+  "est_slg": 0.403
+ },
+ {
+  "player_id": 696285,
+  "name": "Young, Jacob",
+  "pa": 521.0,
+  "woba": 0.29,
+  "est_woba": 0.291,
+  "est_ba": 0.254,
+  "est_slg": 0.323
+ },
+ {
+  "player_id": 671218,
+  "name": "Ramos, Heliot",
+  "pa": 518.0,
+  "woba": 0.339,
+  "est_woba": 0.338,
+  "est_ba": 0.245,
+  "est_slg": 0.485
+ },
+ {
+  "player_id": 656555,
+  "name": "Hoskins, Rhys",
+  "pa": 517.0,
+  "woba": 0.313,
+  "est_woba": 0.306,
+  "est_ba": 0.201,
+  "est_slg": 0.402
+ },
+ {
+  "player_id": 605141,
+  "name": "Betts, Mookie",
+  "pa": 516.0,
+  "woba": 0.371,
+  "est_woba": 0.363,
+  "est_ba": 0.282,
+  "est_slg": 0.468
+ },
+ {
+  "player_id": 457705,
+  "name": "McCutchen, Andrew",
+  "pa": 515.0,
+  "woba": 0.325,
+  "est_woba": 0.324,
+  "est_ba": 0.219,
+  "est_slg": 0.421
+ },
+ {
+  "player_id": 663886,
+  "name": "Stephenson, Tyler",
+  "pa": 515.0,
+  "woba": 0.339,
+  "est_woba": 0.325,
+  "est_ba": 0.238,
+  "est_slg": 0.413
+ },
+ {
+  "player_id": 662139,
+  "name": "Varsho, Daulton",
+  "pa": 513.0,
+  "woba": 0.304,
+  "est_woba": 0.266,
+  "est_ba": 0.186,
+  "est_slg": 0.327
+ },
+ {
+  "player_id": 676694,
+  "name": "Meyers, Jake",
+  "pa": 513.0,
+  "woba": 0.285,
+  "est_woba": 0.307,
+  "est_ba": 0.233,
+  "est_slg": 0.391
+ },
+ {
+  "player_id": 687401,
+  "name": "Ortiz, Joey",
+  "pa": 511.0,
+  "woba": 0.319,
+  "est_woba": 0.307,
+  "est_ba": 0.232,
+  "est_slg": 0.347
+ },
+ {
+  "player_id": 608385,
+  "name": "Winker, Jesse",
+  "pa": 508.0,
+  "woba": 0.338,
+  "est_woba": 0.33,
+  "est_ba": 0.243,
+  "est_slg": 0.388
+ },
+ {
+  "player_id": 663624,
+  "name": "Mountcastle, Ryan",
+  "pa": 507.0,
+  "woba": 0.316,
+  "est_woba": 0.336,
+  "est_ba": 0.271,
+  "est_slg": 0.455
+ },
+ {
+  "player_id": 657757,
+  "name": "Sheets, Gavin",
+  "pa": 501.0,
+  "woba": 0.291,
+  "est_woba": 0.312,
+  "est_ba": 0.248,
+  "est_slg": 0.387
+ },
+ {
+  "player_id": 656775,
+  "name": "Mullins, Cedric",
+  "pa": 499.0,
+  "woba": 0.31,
+  "est_woba": 0.289,
+  "est_ba": 0.221,
+  "est_slg": 0.353
+ },
+ {
+  "player_id": 453568,
+  "name": "Blackmon, Charlie",
+  "pa": 499.0,
+  "woba": 0.323,
+  "est_woba": 0.309,
+  "est_ba": 0.246,
+  "est_slg": 0.374
+ },
+ {
+  "player_id": 643396,
+  "name": "Kiner-Falefa, Isiah",
+  "pa": 496.0,
+  "woba": 0.299,
+  "est_woba": 0.289,
+  "est_ba": 0.251,
+  "est_slg": 0.354
+ },
+ {
+  "player_id": 664983,
+  "name": "McCarthy, Jake",
+  "pa": 495.0,
+  "woba": 0.329,
+  "est_woba": 0.314,
+  "est_ba": 0.265,
+  "est_slg": 0.363
+ },
+ {
+  "player_id": 502110,
+  "name": "Martinez, J.D.",
+  "pa": 495.0,
+  "woba": 0.318,
+  "est_woba": 0.353,
+  "est_ba": 0.252,
+  "est_slg": 0.48
+ },
+ {
+  "player_id": 656811,
+  "name": "O'Hearn, Ryan",
+  "pa": 494.0,
+  "woba": 0.33,
+  "est_woba": 0.351,
+  "est_ba": 0.269,
+  "est_slg": 0.465
+ },
+ {
+  "player_id": 641680,
+  "name": "Heim, Jonah",
+  "pa": 491.0,
+  "woba": 0.265,
+  "est_woba": 0.281,
+  "est_ba": 0.226,
+  "est_slg": 0.365
+ },
+ {
+  "player_id": 624424,
+  "name": "Conforto, Michael",
+  "pa": 488.0,
+  "woba": 0.327,
+  "est_woba": 0.353,
+  "est_ba": 0.254,
+  "est_slg": 0.488
+ },
+ {
+  "player_id": 657136,
+  "name": "Wong, Connor",
+  "pa": 487.0,
+  "woba": 0.33,
+  "est_woba": 0.291,
+  "est_ba": 0.229,
+  "est_slg": 0.362
+ },
+ {
+  "player_id": 666158,
+  "name": "Lux, Gavin",
+  "pa": 487.0,
+  "woba": 0.31,
+  "est_woba": 0.319,
+  "est_ba": 0.254,
+  "est_slg": 0.39
+ },
+ {
+  "player_id": 660688,
+  "name": "Ruiz, Keibert",
+  "pa": 485.0,
+  "woba": 0.268,
+  "est_woba": 0.283,
+  "est_ba": 0.25,
+  "est_slg": 0.357
+ },
+ {
+  "player_id": 676609,
+  "name": "Caballero, Jos\u00e9",
+  "pa": 483.0,
+  "woba": 0.277,
+  "est_woba": 0.267,
+  "est_ba": 0.213,
+  "est_slg": 0.317
+ },
+ {
+  "player_id": 657557,
+  "name": "DeJong, Paul",
+  "pa": 482.0,
+  "woba": 0.302,
+  "est_woba": 0.293,
+  "est_ba": 0.216,
+  "est_slg": 0.402
+ },
+ {
+  "player_id": 502054,
+  "name": "Pham, Tommy",
+  "pa": 478.0,
+  "woba": 0.297,
+  "est_woba": 0.321,
+  "est_ba": 0.26,
+  "est_slg": 0.413
+ },
+ {
+  "player_id": 669016,
+  "name": "Marsh, Brandon",
+  "pa": 476.0,
+  "woba": 0.326,
+  "est_woba": 0.327,
+  "est_ba": 0.233,
+  "est_slg": 0.418
+ },
+ {
+  "player_id": 668942,
+  "name": "Rojas, Josh",
+  "pa": 476.0,
+  "woba": 0.286,
+  "est_woba": 0.296,
+  "est_ba": 0.221,
+  "est_slg": 0.361
+ },
+ {
+  "player_id": 573262,
+  "name": "Yastrzemski, Mike",
+  "pa": 474.0,
+  "woba": 0.319,
+  "est_woba": 0.304,
+  "est_ba": 0.217,
+  "est_slg": 0.406
+ },
+ {
+  "player_id": 641933,
+  "name": "O'Neill, Tyler",
+  "pa": 473.0,
+  "woba": 0.36,
+  "est_woba": 0.34,
+  "est_ba": 0.211,
+  "est_slg": 0.489
+ },
+ {
+  "player_id": 643446,
+  "name": "McNeil, Jeff",
+  "pa": 472.0,
+  "woba": 0.304,
+  "est_woba": 0.293,
+  "est_ba": 0.233,
+  "est_slg": 0.347
+ },
+ {
+  "player_id": 673490,
+  "name": "Kim, Ha-Seong",
+  "pa": 470.0,
+  "woba": 0.308,
+  "est_woba": 0.318,
+  "est_ba": 0.245,
+  "est_slg": 0.359
+ },
+ {
+  "player_id": 671739,
+  "name": "Harris II, Michael",
+  "pa": 470.0,
+  "woba": 0.312,
+  "est_woba": 0.346,
+  "est_ba": 0.28,
+  "est_slg": 0.468
+ },
+ {
+  "player_id": 593871,
+  "name": "Polanco, Jorge",
+  "pa": 469.0,
+  "woba": 0.287,
+  "est_woba": 0.31,
+  "est_ba": 0.224,
+  "est_slg": 0.406
+ },
+ {
+  "player_id": 663586,
+  "name": "Riley, Austin",
+  "pa": 469.0,
+  "woba": 0.338,
+  "est_woba": 0.367,
+  "est_ba": 0.265,
+  "est_slg": 0.523
+ },
+ {
+  "player_id": 680777,
+  "name": "Jeffers, Ryan",
+  "pa": 465.0,
+  "woba": 0.317,
+  "est_woba": 0.307,
+  "est_ba": 0.224,
+  "est_slg": 0.394
+ },
+ {
+  "player_id": 600869,
+  "name": "Candelario, Jeimer",
+  "pa": 463.0,
+  "woba": 0.304,
+  "est_woba": 0.285,
+  "est_ba": 0.22,
+  "est_slg": 0.375
+ },
+ {
+  "player_id": 593428,
+  "name": "Bogaerts, Xander",
+  "pa": 463.0,
+  "woba": 0.3,
+  "est_woba": 0.308,
+  "est_ba": 0.261,
+  "est_slg": 0.387
+ },
+ {
+  "player_id": 592192,
+  "name": "Canha, Mark",
+  "pa": 462.0,
+  "woba": 0.31,
+  "est_woba": 0.293,
+  "est_ba": 0.211,
+  "est_slg": 0.314
+ },
+ {
+  "player_id": 570482,
+  "name": "Urshela, Gio",
+  "pa": 461.0,
+  "woba": 0.281,
+  "est_woba": 0.307,
+  "est_ba": 0.262,
+  "est_slg": 0.4
+ },
+ {
+  "player_id": 519317,
+  "name": "Stanton, Giancarlo",
+  "pa": 459.0,
+  "woba": 0.33,
+  "est_woba": 0.354,
+  "est_ba": 0.243,
+  "est_slg": 0.52
+ },
+ {
+  "player_id": 680474,
+  "name": "Schuemann, Max",
+  "pa": 459.0,
+  "woba": 0.281,
+  "est_woba": 0.3,
+  "est_ba": 0.221,
+  "est_slg": 0.35
+ },
+ {
+  "player_id": 669911,
+  "name": "Toglia, Michael",
+  "pa": 458.0,
+  "woba": 0.329,
+  "est_woba": 0.36,
+  "est_ba": 0.241,
+  "est_slg": 0.514
+ },
+ {
+  "player_id": 670042,
+  "name": "Raley, Luke",
+  "pa": 455.0,
+  "woba": 0.339,
+  "est_woba": 0.321,
+  "est_ba": 0.22,
+  "est_slg": 0.433
+ },
+ {
+  "player_id": 668901,
+  "name": "Vientos, Mark",
+  "pa": 454.0,
+  "woba": 0.356,
+  "est_woba": 0.333,
+  "est_ba": 0.241,
+  "est_slg": 0.47
+ },
+ {
+  "player_id": 676914,
+  "name": "Schneider, Davis",
+  "pa": 454.0,
+  "woba": 0.277,
+  "est_woba": 0.293,
+  "est_ba": 0.195,
+  "est_slg": 0.368
+ },
+ {
+  "player_id": 676391,
+  "name": "Clement, Ernie",
+  "pa": 452.0,
+  "woba": 0.297,
+  "est_woba": 0.285,
+  "est_ba": 0.251,
+  "est_slg": 0.379
+ },
+ {
+  "player_id": 641487,
+  "name": "Crawford, J.P.",
+  "pa": 451.0,
+  "woba": 0.283,
+  "est_woba": 0.312,
+  "est_ba": 0.226,
+  "est_slg": 0.37
+ },
+ {
+  "player_id": 671732,
+  "name": "Butler, Lawrence",
+  "pa": 451.0,
+  "woba": 0.345,
+  "est_woba": 0.341,
+  "est_ba": 0.253,
+  "est_slg": 0.473
+ },
+ {
+  "player_id": 669004,
+  "name": "Melendez, MJ",
+  "pa": 451.0,
+  "woba": 0.292,
+  "est_woba": 0.321,
+  "est_ba": 0.237,
+  "est_slg": 0.434
+ },
+ {
+  "player_id": 666176,
+  "name": "Adell, Jo",
+  "pa": 451.0,
+  "woba": 0.296,
+  "est_woba": 0.314,
+  "est_ba": 0.222,
+  "est_slg": 0.426
+ },
+ {
+  "player_id": 672284,
+  "name": "Kelenic, Jarred",
+  "pa": 449.0,
+  "woba": 0.294,
+  "est_woba": 0.311,
+  "est_ba": 0.238,
+  "est_slg": 0.424
+ },
+ {
+  "player_id": 592626,
+  "name": "Pederson, Joc",
+  "pa": 449.0,
+  "woba": 0.391,
+  "est_woba": 0.378,
+  "est_ba": 0.259,
+  "est_slg": 0.486
+ },
+ {
+  "player_id": 672275,
+  "name": "Bailey, Patrick",
+  "pa": 448.0,
+  "woba": 0.281,
+  "est_woba": 0.322,
+  "est_ba": 0.255,
+  "est_slg": 0.404
+ },
+ {
+  "player_id": 642350,
+  "name": "Siri, Jose",
+  "pa": 448.0,
+  "woba": 0.271,
+  "est_woba": 0.298,
+  "est_ba": 0.197,
+  "est_slg": 0.419
+ },
+ {
+  "player_id": 677800,
+  "name": "Abreu, Wilyer",
+  "pa": 447.0,
+  "woba": 0.336,
+  "est_woba": 0.324,
+  "est_ba": 0.229,
+  "est_slg": 0.433
+ },
+ {
+  "player_id": 676059,
+  "name": "Westburg, Jordan",
+  "pa": 447.0,
+  "woba": 0.34,
+  "est_woba": 0.355,
+  "est_ba": 0.275,
+  "est_slg": 0.499
+ },
+ {
+  "player_id": 669707,
+  "name": "Triolo, Jared",
+  "pa": 446.0,
+  "woba": 0.275,
+  "est_woba": 0.296,
+  "est_ba": 0.226,
+  "est_slg": 0.347
+ },
+ {
+  "player_id": 670032,
+  "name": "Lopez, Nicky",
+  "pa": 445.0,
+  "woba": 0.275,
+  "est_woba": 0.273,
+  "est_ba": 0.227,
+  "est_slg": 0.291
+ },
+ {
+  "player_id": 681624,
+  "name": "Pages, Andy",
+  "pa": 443.0,
+  "woba": 0.31,
+  "est_woba": 0.324,
+  "est_ba": 0.248,
+  "est_slg": 0.434
+ },
+ {
+  "player_id": 677587,
+  "name": "Rocchio, Brayan",
+  "pa": 442.0,
+  "woba": 0.276,
+  "est_woba": 0.279,
+  "est_ba": 0.21,
+  "est_slg": 0.308
+ },
+ {
+  "player_id": 664238,
+  "name": "Moore, Dylan",
+  "pa": 441.0,
+  "woba": 0.306,
+  "est_woba": 0.299,
+  "est_ba": 0.196,
+  "est_slg": 0.334
+ },
+ {
+  "player_id": 665487,
+  "name": "Tatis Jr., Fernando",
+  "pa": 438.0,
+  "woba": 0.359,
+  "est_woba": 0.39,
+  "est_ba": 0.294,
+  "est_slg": 0.548
+ },
+ {
+  "player_id": 664056,
+  "name": "Bader, Harrison",
+  "pa": 437.0,
+  "woba": 0.285,
+  "est_woba": 0.3,
+  "est_ba": 0.242,
+  "est_slg": 0.388
+ },
+ {
+  "player_id": 645277,
+  "name": "Albies, Ozzie",
+  "pa": 435.0,
+  "woba": 0.307,
+  "est_woba": 0.308,
+  "est_ba": 0.246,
+  "est_slg": 0.404
+ },
+ {
+  "player_id": 672640,
+  "name": "Lopez, Otto",
+  "pa": 434.0,
+  "woba": 0.302,
+  "est_woba": 0.317,
+  "est_ba": 0.272,
+  "est_slg": 0.402
+ },
+ {
+  "player_id": 663368,
+  "name": "Perkins, Blake",
+  "pa": 434.0,
+  "woba": 0.288,
+  "est_woba": 0.28,
+  "est_ba": 0.218,
+  "est_slg": 0.319
+ },
+ {
+  "player_id": 641598,
+  "name": "Garver, Mitch",
+  "pa": 430.0,
+  "woba": 0.281,
+  "est_woba": 0.284,
+  "est_ba": 0.176,
+  "est_slg": 0.335
+ },
+ {
+  "player_id": 669304,
+  "name": "Miranda, Jose F",
+  "pa": 429.0,
+  "woba": 0.328,
+  "est_woba": 0.311,
+  "est_ba": 0.255,
+  "est_slg": 0.412
+ },
+ {
+  "player_id": 643289,
+  "name": "Dub\u00f3n, Mauricio",
+  "pa": 428.0,
+  "woba": 0.286,
+  "est_woba": 0.276,
+  "est_ba": 0.247,
+  "est_slg": 0.337
+ },
+ {
+  "player_id": 664728,
+  "name": "Isbel, Kyle",
+  "pa": 426.0,
+  "woba": 0.286,
+  "est_woba": 0.283,
+  "est_ba": 0.231,
+  "est_slg": 0.333
+ },
+ {
+  "player_id": 664040,
+  "name": "Lowe, Brandon",
+  "pa": 425.0,
+  "woba": 0.335,
+  "est_woba": 0.344,
+  "est_ba": 0.248,
+  "est_slg": 0.488
+ },
+ {
+  "player_id": 673357,
+  "name": "Robert Jr., Luis",
+  "pa": 425.0,
+  "woba": 0.285,
+  "est_woba": 0.283,
+  "est_ba": 0.211,
+  "est_slg": 0.378
+ },
+ {
+  "player_id": 672761,
+  "name": "P\u00e9rez, Wenceel",
+  "pa": 425.0,
+  "woba": 0.299,
+  "est_woba": 0.297,
+  "est_ba": 0.242,
+  "est_slg": 0.366
+ },
+ {
+  "player_id": 592669,
+  "name": "Renfroe, Hunter",
+  "pa": 424.0,
+  "woba": 0.302,
+  "est_woba": 0.294,
+  "est_ba": 0.219,
+  "est_slg": 0.369
+ },
+ {
+  "player_id": 571745,
+  "name": "Haniger, Mitch",
+  "pa": 423.0,
+  "woba": 0.277,
+  "est_woba": 0.298,
+  "est_ba": 0.214,
+  "est_slg": 0.38
+ },
+ {
+  "player_id": 807799,
+  "name": "Yoshida, Masataka",
+  "pa": 421.0,
+  "woba": 0.336,
+  "est_woba": 0.327,
+  "est_ba": 0.256,
+  "est_slg": 0.408
+ },
+ {
+  "player_id": 642133,
+  "name": "Tellez, Rowdy",
+  "pa": 421.0,
+  "woba": 0.301,
+  "est_woba": 0.305,
+  "est_ba": 0.234,
+  "est_slg": 0.403
+ },
+ {
+  "player_id": 666160,
+  "name": "Moniak, Mickey",
+  "pa": 418.0,
+  "woba": 0.281,
+  "est_woba": 0.283,
+  "est_ba": 0.217,
+  "est_slg": 0.384
+ },
+ {
+  "player_id": 656582,
+  "name": "Joe, Connor",
+  "pa": 416.0,
+  "woba": 0.305,
+  "est_woba": 0.279,
+  "est_ba": 0.202,
+  "est_slg": 0.311
+ },
+ {
+  "player_id": 669224,
+  "name": "Wells, Austin",
+  "pa": 414.0,
+  "woba": 0.315,
+  "est_woba": 0.343,
+  "est_ba": 0.242,
+  "est_slg": 0.439
+ },
+ {
+  "player_id": 592663,
+  "name": "Realmuto, J.T.",
+  "pa": 413.0,
+  "woba": 0.326,
+  "est_woba": 0.34,
+  "est_ba": 0.264,
+  "est_slg": 0.466
+ },
+ {
+  "player_id": 691718,
+  "name": "Crow-Armstrong, Pete",
+  "pa": 410.0,
+  "woba": 0.289,
+  "est_woba": 0.286,
+  "est_ba": 0.221,
+  "est_slg": 0.377
+ },
+ {
+  "player_id": 663457,
+  "name": "Nootbaar, Lars",
+  "pa": 405.0,
+  "woba": 0.331,
+  "est_woba": 0.358,
+  "est_ba": 0.261,
+  "est_slg": 0.466
+ },
+ {
+  "player_id": 572138,
+  "name": "Singleton, Jon",
+  "pa": 405.0,
+  "woba": 0.312,
+  "est_woba": 0.314,
+  "est_ba": 0.227,
+  "est_slg": 0.392
+ },
+ {
+  "player_id": 669357,
+  "name": "Gorman, Nolan",
+  "pa": 402.0,
+  "woba": 0.29,
+  "est_woba": 0.307,
+  "est_ba": 0.206,
+  "est_slg": 0.44
+ },
+ {
+  "player_id": 664774,
+  "name": "Wade Jr., LaMonte",
+  "pa": 401.0,
+  "woba": 0.337,
+  "est_woba": 0.356,
+  "est_ba": 0.253,
+  "est_slg": 0.437
+ },
+ {
+  "player_id": 663616,
+  "name": "Larnach, Trevor",
+  "pa": 400.0,
+  "woba": 0.336,
+  "est_woba": 0.346,
+  "est_ba": 0.254,
+  "est_slg": 0.466
+ },
+ {
+  "player_id": 664913,
+  "name": "Brown, Seth",
+  "pa": 400.0,
+  "woba": 0.289,
+  "est_woba": 0.298,
+  "est_ba": 0.23,
+  "est_slg": 0.398
+ },
+ {
+  "player_id": 596146,
+  "name": "Kepler, Max",
+  "pa": 399.0,
+  "woba": 0.298,
+  "est_woba": 0.302,
+  "est_ba": 0.243,
+  "est_slg": 0.384
+ },
+ {
+  "player_id": 663647,
+  "name": "Hayes, Ke'Bryan",
+  "pa": 396.0,
+  "woba": 0.256,
+  "est_woba": 0.285,
+  "est_ba": 0.244,
+  "est_slg": 0.336
+ },
+ {
+  "player_id": 686676,
+  "name": "Lee, Korey",
+  "pa": 394.0,
+  "woba": 0.257,
+  "est_woba": 0.257,
+  "est_ba": 0.209,
+  "est_slg": 0.342
+ },
+ {
+  "player_id": 571771,
+  "name": "Hern\u00e1ndez, Enrique",
+  "pa": 393.0,
+  "woba": 0.285,
+  "est_woba": 0.289,
+  "est_ba": 0.23,
+  "est_slg": 0.375
+ },
+ {
+  "player_id": 681807,
+  "name": "Fry, David",
+  "pa": 392.0,
+  "woba": 0.347,
+  "est_woba": 0.33,
+  "est_ba": 0.245,
+  "est_slg": 0.406
+ },
+ {
+  "player_id": 669289,
+  "name": "Espinal, Santiago",
+  "pa": 391.0,
+  "woba": 0.285,
+  "est_woba": 0.295,
+  "est_ba": 0.258,
+  "est_slg": 0.355
+ },
+ {
+  "player_id": 666310,
+  "name": "Naylor, Bo",
+  "pa": 389.0,
+  "woba": 0.269,
+  "est_woba": 0.263,
+  "est_ba": 0.194,
+  "est_slg": 0.335
+ },
+ {
+  "player_id": 621439,
+  "name": "Buxton, Byron",
+  "pa": 388.0,
+  "woba": 0.366,
+  "est_woba": 0.355,
+  "est_ba": 0.26,
+  "est_slg": 0.511
+ },
+ {
+  "player_id": 666181,
+  "name": "Benson, Will",
+  "pa": 388.0,
+  "woba": 0.285,
+  "est_woba": 0.272,
+  "est_ba": 0.179,
+  "est_slg": 0.343
+ },
+ {
+  "player_id": 672695,
+  "name": "Perdomo, Geraldo",
+  "pa": 388.0,
+  "woba": 0.317,
+  "est_woba": 0.287,
+  "est_ba": 0.231,
+  "est_slg": 0.326
+ },
+ {
+  "player_id": 666139,
+  "name": "Lowe, Josh",
+  "pa": 387.0,
+  "woba": 0.299,
+  "est_woba": 0.295,
+  "est_ba": 0.222,
+  "est_slg": 0.393
+ },
+ {
+  "player_id": 693304,
+  "name": "Gonzales, Nick",
+  "pa": 387.0,
+  "woba": 0.307,
+  "est_woba": 0.322,
+  "est_ba": 0.269,
+  "est_slg": 0.415
+ },
+ {
+  "player_id": 672386,
+  "name": "Kirk, Alejandro",
+  "pa": 386.0,
+  "woba": 0.297,
+  "est_woba": 0.329,
+  "est_ba": 0.253,
+  "est_slg": 0.403
+ },
+ {
+  "player_id": 671289,
+  "name": "Freeman, Tyler",
+  "pa": 383.0,
+  "woba": 0.283,
+  "est_woba": 0.307,
+  "est_ba": 0.236,
+  "est_slg": 0.345
+ },
+ {
+  "player_id": 641584,
+  "name": "Fraley, Jake",
+  "pa": 382.0,
+  "woba": 0.314,
+  "est_woba": 0.29,
+  "est_ba": 0.245,
+  "est_slg": 0.33
+ },
+ {
+  "player_id": 679529,
+  "name": "Torkelson, Spencer",
+  "pa": 381.0,
+  "woba": 0.295,
+  "est_woba": 0.285,
+  "est_ba": 0.209,
+  "est_slg": 0.358
+ },
+ {
+  "player_id": 642731,
+  "name": "Estrada, Thairo",
+  "pa": 381.0,
+  "woba": 0.256,
+  "est_woba": 0.265,
+  "est_ba": 0.224,
+  "est_slg": 0.342
+ },
+ {
+  "player_id": 687462,
+  "name": "Horwitz, Spencer",
+  "pa": 381.0,
+  "woba": 0.344,
+  "est_woba": 0.34,
+  "est_ba": 0.25,
+  "est_slg": 0.427
+ },
+ {
+  "player_id": 519203,
+  "name": "Rizzo, Anthony",
+  "pa": 375.0,
+  "woba": 0.285,
+  "est_woba": 0.302,
+  "est_ba": 0.239,
+  "est_slg": 0.351
+ },
+ {
+  "player_id": 516782,
+  "name": "Marte, Starling",
+  "pa": 370.0,
+  "woba": 0.313,
+  "est_woba": 0.338,
+  "est_ba": 0.28,
+  "est_slg": 0.432
+ },
+ {
+  "player_id": 672820,
+  "name": "Sosa, Lenyn",
+  "pa": 369.0,
+  "woba": 0.28,
+  "est_woba": 0.321,
+  "est_ba": 0.276,
+  "est_slg": 0.432
+ },
+ {
+  "player_id": 666023,
+  "name": "Fermin, Freddy",
+  "pa": 368.0,
+  "woba": 0.3,
+  "est_woba": 0.281,
+  "est_ba": 0.241,
+  "est_slg": 0.336
+ },
+ {
+  "player_id": 621043,
+  "name": "Correa, Carlos",
+  "pa": 367.0,
+  "woba": 0.385,
+  "est_woba": 0.358,
+  "est_ba": 0.271,
+  "est_slg": 0.458
+ },
+ {
+  "player_id": 647351,
+  "name": "Toro, Abraham",
+  "pa": 364.0,
+  "woba": 0.283,
+  "est_woba": 0.297,
+  "est_ba": 0.244,
+  "est_slg": 0.374
+ },
+ {
+  "player_id": 679032,
+  "name": "Rojas, Johan",
+  "pa": 363.0,
+  "woba": 0.265,
+  "est_woba": 0.258,
+  "est_ba": 0.225,
+  "est_slg": 0.304
+ },
+ {
+  "player_id": 665804,
+  "name": "Amaya, Miguel",
+  "pa": 363.0,
+  "woba": 0.283,
+  "est_woba": 0.303,
+  "est_ba": 0.25,
+  "est_slg": 0.378
+ },
+ {
+  "player_id": 676356,
+  "name": "DeLuca, Jonny",
+  "pa": 362.0,
+  "woba": 0.269,
+  "est_woba": 0.277,
+  "est_ba": 0.229,
+  "est_slg": 0.327
+ },
+ {
+  "player_id": 592273,
+  "name": "Drury, Brandon",
+  "pa": 360.0,
+  "woba": 0.217,
+  "est_woba": 0.264,
+  "est_ba": 0.201,
+  "est_slg": 0.295
+ },
+ {
+  "player_id": 575929,
+  "name": "Contreras, Willson",
+  "pa": 358.0,
+  "woba": 0.37,
+  "est_woba": 0.367,
+  "est_ba": 0.256,
+  "est_slg": 0.461
+ },
+ {
+  "player_id": 686681,
+  "name": "Massey, Michael",
+  "pa": 356.0,
+  "woba": 0.317,
+  "est_woba": 0.315,
+  "est_ba": 0.256,
+  "est_slg": 0.429
+ },
+ {
+  "player_id": 686823,
+  "name": "Brennan, Will",
+  "pa": 353.0,
+  "woba": 0.303,
+  "est_woba": 0.306,
+  "est_ba": 0.267,
+  "est_slg": 0.381
+ },
+ {
+  "player_id": 553869,
+  "name": "D\u00edaz, Elias",
+  "pa": 351.0,
+  "woba": 0.303,
+  "est_woba": 0.281,
+  "est_ba": 0.237,
+  "est_slg": 0.342
+ },
+ {
+  "player_id": 672515,
+  "name": "Moreno, Gabriel",
+  "pa": 351.0,
+  "woba": 0.325,
+  "est_woba": 0.328,
+  "est_ba": 0.251,
+  "est_slg": 0.393
+ },
+ {
+  "player_id": 643565,
+  "name": "Tauchman, Mike",
+  "pa": 350.0,
+  "woba": 0.325,
+  "est_woba": 0.332,
+  "est_ba": 0.237,
+  "est_slg": 0.392
+ },
+ {
+  "player_id": 650391,
+  "name": "Jim\u00e9nez, Eloy",
+  "pa": 349.0,
+  "woba": 0.276,
+  "est_woba": 0.302,
+  "est_ba": 0.243,
+  "est_slg": 0.386
+ },
+ {
+  "player_id": 642708,
+  "name": "Rosario, Amed",
+  "pa": 346.0,
+  "woba": 0.299,
+  "est_woba": 0.284,
+  "est_ba": 0.249,
+  "est_slg": 0.367
+ },
+ {
+  "player_id": 641343,
+  "name": "Bauers, Jake",
+  "pa": 346.0,
+  "woba": 0.294,
+  "est_woba": 0.304,
+  "est_ba": 0.199,
+  "est_slg": 0.389
+ },
+ {
+  "player_id": 595909,
+  "name": "Cave, Jake",
+  "pa": 346.0,
+  "woba": 0.295,
+  "est_woba": 0.281,
+  "est_ba": 0.234,
+  "est_slg": 0.362
+ },
+ {
+  "player_id": 621438,
+  "name": "Taylor, Tyrone",
+  "pa": 345.0,
+  "woba": 0.304,
+  "est_woba": 0.305,
+  "est_ba": 0.246,
+  "est_slg": 0.4
+ },
+ {
+  "player_id": 622534,
+  "name": "Margot, Manuel",
+  "pa": 343.0,
+  "woba": 0.276,
+  "est_woba": 0.31,
+  "est_ba": 0.258,
+  "est_slg": 0.385
+ },
+ {
+  "player_id": 682626,
+  "name": "Alvarez, Francisco",
+  "pa": 342.0,
+  "woba": 0.31,
+  "est_woba": 0.296,
+  "est_ba": 0.218,
+  "est_slg": 0.372
+ },
+ {
+  "player_id": 518595,
+  "name": "d'Arnaud, Travis",
+  "pa": 341.0,
+  "woba": 0.319,
+  "est_woba": 0.323,
+  "est_ba": 0.23,
+  "est_slg": 0.443
+ },
+ {
+  "player_id": 670770,
+  "name": "Friedl, TJ",
+  "pa": 341.0,
+  "woba": 0.305,
+  "est_woba": 0.293,
+  "est_ba": 0.223,
+  "est_slg": 0.322
+ },
+ {
+  "player_id": 666149,
+  "name": "Fitzgerald, Tyler",
+  "pa": 341.0,
+  "woba": 0.357,
+  "est_woba": 0.293,
+  "est_ba": 0.226,
+  "est_slg": 0.383
+ },
+ {
+  "player_id": 663656,
+  "name": "Tucker, Kyle",
+  "pa": 339.0,
+  "woba": 0.419,
+  "est_woba": 0.402,
+  "est_ba": 0.275,
+  "est_slg": 0.546
+ },
+ {
+  "player_id": 668670,
+  "name": "Rogers, Jake",
+  "pa": 337.0,
+  "woba": 0.264,
+  "est_woba": 0.299,
+  "est_ba": 0.215,
+  "est_slg": 0.42
+ },
+ {
+  "player_id": 500743,
+  "name": "Rojas, Miguel",
+  "pa": 337.0,
+  "woba": 0.327,
+  "est_woba": 0.312,
+  "est_ba": 0.276,
+  "est_slg": 0.36
+ },
+ {
+  "player_id": 666182,
+  "name": "Bichette, Bo",
+  "pa": 336.0,
+  "woba": 0.264,
+  "est_woba": 0.303,
+  "est_ba": 0.248,
+  "est_slg": 0.377
+ },
+ {
+  "player_id": 695578,
+  "name": "Wood, James",
+  "pa": 336.0,
+  "woba": 0.342,
+  "est_woba": 0.354,
+  "est_ba": 0.265,
+  "est_slg": 0.449
+ },
+ {
+  "player_id": 593160,
+  "name": "Merrifield, Whit",
+  "pa": 335.0,
+  "woba": 0.283,
+  "est_woba": 0.3,
+  "est_ba": 0.242,
+  "est_slg": 0.323
+ },
+ {
+  "player_id": 663743,
+  "name": "Fortes, Nick",
+  "pa": 335.0,
+  "woba": 0.252,
+  "est_woba": 0.247,
+  "est_ba": 0.224,
+  "est_slg": 0.292
+ },
+ {
+  "player_id": 672279,
+  "name": "Siani, Michael",
+  "pa": 334.0,
+  "woba": 0.257,
+  "est_woba": 0.246,
+  "est_ba": 0.204,
+  "est_slg": 0.27
+ },
+ {
+  "player_id": 594807,
+  "name": "Duvall, Adam",
+  "pa": 330.0,
+  "woba": 0.252,
+  "est_woba": 0.284,
+  "est_ba": 0.195,
+  "est_slg": 0.392
+ },
+ {
+  "player_id": 666163,
+  "name": "Rortvedt, Ben",
+  "pa": 328.0,
+  "woba": 0.283,
+  "est_woba": 0.27,
+  "est_ba": 0.202,
+  "est_slg": 0.292
+ },
+ {
+  "player_id": 665828,
+  "name": "Cabrera, Oswaldo",
+  "pa": 326.0,
+  "woba": 0.29,
+  "est_woba": 0.293,
+  "est_ba": 0.249,
+  "est_slg": 0.35
+ },
+ {
+  "player_id": 656716,
+  "name": "McKinstry, Zach",
+  "pa": 325.0,
+  "woba": 0.27,
+  "est_woba": 0.301,
+  "est_ba": 0.24,
+  "est_slg": 0.383
+ },
+ {
+  "player_id": 668904,
+  "name": "Lewis, Royce",
+  "pa": 325.0,
+  "woba": 0.317,
+  "est_woba": 0.318,
+  "est_ba": 0.239,
+  "est_slg": 0.437
+ },
+ {
+  "player_id": 643376,
+  "name": "Jansen, Danny",
+  "pa": 324.0,
+  "woba": 0.294,
+  "est_woba": 0.294,
+  "est_ba": 0.199,
+  "est_slg": 0.346
+ },
+ {
+  "player_id": 592696,
+  "name": "Rosario, Eddie",
+  "pa": 319.0,
+  "woba": 0.23,
+  "est_woba": 0.264,
+  "est_ba": 0.211,
+  "est_slg": 0.353
+ },
+ {
+  "player_id": 609280,
+  "name": "Andujar, Miguel",
+  "pa": 319.0,
+  "woba": 0.306,
+  "est_woba": 0.287,
+  "est_ba": 0.257,
+  "est_slg": 0.344
+ },
+ {
+  "player_id": 666152,
+  "name": "Hamilton, David",
+  "pa": 317.0,
+  "woba": 0.305,
+  "est_woba": 0.285,
+  "est_ba": 0.229,
+  "est_slg": 0.357
+ },
+ {
+  "player_id": 680700,
+  "name": "Palacios, Richie",
+  "pa": 316.0,
+  "woba": 0.303,
+  "est_woba": 0.322,
+  "est_ba": 0.243,
+  "est_slg": 0.339
+ },
+ {
+  "player_id": 592885,
+  "name": "Yelich, Christian",
+  "pa": 315.0,
+  "woba": 0.391,
+  "est_woba": 0.373,
+  "est_ba": 0.287,
+  "est_slg": 0.473
+ },
+ {
+  "player_id": 543877,
+  "name": "V\u00e1zquez, Christian",
+  "pa": 315.0,
+  "woba": 0.25,
+  "est_woba": 0.272,
+  "est_ba": 0.231,
+  "est_slg": 0.361
+ },
+ {
+  "player_id": 607680,
+  "name": "Pillar, Kevin",
+  "pa": 314.0,
+  "woba": 0.293,
+  "est_woba": 0.279,
+  "est_ba": 0.219,
+  "est_slg": 0.335
+ },
+ {
+  "player_id": 608841,
+  "name": "Meneses, Joey",
+  "pa": 313.0,
+  "woba": 0.264,
+  "est_woba": 0.283,
+  "est_ba": 0.221,
+  "est_slg": 0.341
+ },
+ {
+  "player_id": 608348,
+  "name": "Kelly, Carson",
+  "pa": 313.0,
+  "woba": 0.304,
+  "est_woba": 0.319,
+  "est_ba": 0.234,
+  "est_slg": 0.412
+ },
+ {
+  "player_id": 621028,
+  "name": "Newman, Kevin",
+  "pa": 311.0,
+  "woba": 0.298,
+  "est_woba": 0.275,
+  "est_ba": 0.257,
+  "est_slg": 0.326
+ },
+ {
+  "player_id": 657656,
+  "name": "Laureano, Ram\u00f3n",
+  "pa": 309.0,
+  "woba": 0.324,
+  "est_woba": 0.313,
+  "est_ba": 0.229,
+  "est_slg": 0.438
+ },
+ {
+  "player_id": 456781,
+  "name": "Solano, Donovan",
+  "pa": 309.0,
+  "woba": 0.333,
+  "est_woba": 0.313,
+  "est_ba": 0.256,
+  "est_slg": 0.391
+ },
+ {
+  "player_id": 608701,
+  "name": "Refsnyder, Rob",
+  "pa": 307.0,
+  "woba": 0.358,
+  "est_woba": 0.327,
+  "est_ba": 0.248,
+  "est_slg": 0.417
+ },
+ {
+  "player_id": 642086,
+  "name": "Smith, Dominic",
+  "pa": 307.0,
+  "woba": 0.306,
+  "est_woba": 0.308,
+  "est_ba": 0.216,
+  "est_slg": 0.397
+ },
+ {
+  "player_id": 650859,
+  "name": "Rengifo, Luis",
+  "pa": 304.0,
+  "woba": 0.335,
+  "est_woba": 0.3,
+  "est_ba": 0.263,
+  "est_slg": 0.359
+ },
+ {
+  "player_id": 669364,
+  "name": "Edwards, Xavier",
+  "pa": 303.0,
+  "woba": 0.359,
+  "est_woba": 0.3,
+  "est_ba": 0.252,
+  "est_slg": 0.328
+ },
+ {
+  "player_id": 545121,
+  "name": "Vargas, Ildemaro",
+  "pa": 303.0,
+  "woba": 0.271,
+  "est_woba": 0.286,
+  "est_ba": 0.255,
+  "est_slg": 0.326
+ },
+ {
+  "player_id": 656896,
+  "name": "Rivera, Emmanuel",
+  "pa": 302.0,
+  "woba": 0.291,
+  "est_woba": 0.322,
+  "est_ba": 0.248,
+  "est_slg": 0.393
+ },
+ {
+  "player_id": 666397,
+  "name": "Julien, Edouard",
+  "pa": 301.0,
+  "woba": 0.278,
+  "est_woba": 0.288,
+  "est_ba": 0.193,
+  "est_slg": 0.355
+ },
+ {
+  "player_id": 602104,
+  "name": "Ur\u00edas, Ram\u00f3n",
+  "pa": 301.0,
+  "woba": 0.325,
+  "est_woba": 0.331,
+  "est_ba": 0.245,
+  "est_slg": 0.437
+ },
+ {
+  "player_id": 572191,
+  "name": "Taylor, Michael A.",
+  "pa": 300.0,
+  "woba": 0.242,
+  "est_woba": 0.269,
+  "est_ba": 0.201,
+  "est_slg": 0.338
+ },
+ {
+  "player_id": 669134,
+  "name": "Campusano, Luis",
+  "pa": 299.0,
+  "woba": 0.282,
+  "est_woba": 0.298,
+  "est_ba": 0.243,
+  "est_slg": 0.372
+ },
+ {
+  "player_id": 678009,
+  "name": "Meadows, Parker",
+  "pa": 298.0,
+  "woba": 0.321,
+  "est_woba": 0.301,
+  "est_ba": 0.229,
+  "est_slg": 0.388
+ },
+ {
+  "player_id": 666134,
+  "name": "Jones, Nolan",
+  "pa": 297.0,
+  "woba": 0.287,
+  "est_woba": 0.291,
+  "est_ba": 0.209,
+  "est_slg": 0.331
+ },
+ {
+  "player_id": 681481,
+  "name": "Carpenter, Kerry",
+  "pa": 296.0,
+  "woba": 0.39,
+  "est_woba": 0.379,
+  "est_ba": 0.261,
+  "est_slg": 0.563
+ },
+ {
+  "player_id": 645302,
+  "name": "Robles, Victor",
+  "pa": 295.0,
+  "woba": 0.357,
+  "est_woba": 0.331,
+  "est_ba": 0.256,
+  "est_slg": 0.404
+ },
+ {
+  "player_id": 624428,
+  "name": "Frazier, Adam",
+  "pa": 294.0,
+  "woba": 0.261,
+  "est_woba": 0.29,
+  "est_ba": 0.237,
+  "est_slg": 0.323
+ },
+ {
+  "player_id": 571970,
+  "name": "Muncy, Max",
+  "pa": 293.0,
+  "woba": 0.362,
+  "est_woba": 0.353,
+  "est_ba": 0.228,
+  "est_slg": 0.461
+ },
+ {
+  "player_id": 578428,
+  "name": "Iglesias, Jose",
+  "pa": 291.0,
+  "woba": 0.362,
+  "est_woba": 0.316,
+  "est_ba": 0.284,
+  "est_slg": 0.37
+ },
+ {
+  "player_id": 595879,
+  "name": "B\u00e1ez, Javier",
+  "pa": 289.0,
+  "woba": 0.224,
+  "est_woba": 0.269,
+  "est_ba": 0.219,
+  "est_slg": 0.354
+ },
+ {
+  "player_id": 677649,
+  "name": "Duran, Ezequiel",
+  "pa": 285.0,
+  "woba": 0.27,
+  "est_woba": 0.257,
+  "est_ba": 0.215,
+  "est_slg": 0.319
+ },
+ {
+  "player_id": 663698,
+  "name": "Bart, Joey",
+  "pa": 282.0,
+  "woba": 0.347,
+  "est_woba": 0.336,
+  "est_ba": 0.246,
+  "est_slg": 0.448
+ },
+ {
+  "player_id": 595281,
+  "name": "Kiermaier, Kevin",
+  "pa": 281.0,
+  "woba": 0.241,
+  "est_woba": 0.237,
+  "est_ba": 0.196,
+  "est_slg": 0.285
+ },
+ {
+  "player_id": 607732,
+  "name": "Stallings, Jacob",
+  "pa": 281.0,
+  "woba": 0.353,
+  "est_woba": 0.321,
+  "est_ba": 0.231,
+  "est_slg": 0.389
+ },
+ {
+  "player_id": 596142,
+  "name": "S\u00e1nchez, Gary",
+  "pa": 280.0,
+  "woba": 0.307,
+  "est_woba": 0.315,
+  "est_ba": 0.218,
+  "est_slg": 0.415
+ },
+ {
+  "player_id": 545341,
+  "name": "Grichuk, Randal",
+  "pa": 279.0,
+  "woba": 0.373,
+  "est_woba": 0.367,
+  "est_ba": 0.276,
+  "est_slg": 0.502
+ },
+ {
+  "player_id": 663527,
+  "name": "Nevin, Tyler",
+  "pa": 278.0,
+  "woba": 0.276,
+  "est_woba": 0.304,
+  "est_ba": 0.215,
+  "est_slg": 0.384
+ },
+ {
+  "player_id": 660644,
+  "name": "Bruj\u00e1n, Vidal",
+  "pa": 278.0,
+  "woba": 0.276,
+  "est_woba": 0.268,
+  "est_ba": 0.218,
+  "est_slg": 0.292
+ },
+ {
+  "player_id": 669261,
+  "name": "Suwinski, Jack",
+  "pa": 277.0,
+  "woba": 0.26,
+  "est_woba": 0.298,
+  "est_ba": 0.218,
+  "est_slg": 0.37
+ },
+ {
+  "player_id": 624503,
+  "name": "Gordon, Nick",
+  "pa": 275.0,
+  "woba": 0.271,
+  "est_woba": 0.267,
+  "est_ba": 0.217,
+  "est_slg": 0.355
+ },
+ {
+  "player_id": 605170,
+  "name": "Caratini, Victor",
+  "pa": 274.0,
+  "woba": 0.324,
+  "est_woba": 0.325,
+  "est_ba": 0.261,
+  "est_slg": 0.404
+ },
+ {
+  "player_id": 624641,
+  "name": "Sosa, Edmundo",
+  "pa": 274.0,
+  "woba": 0.318,
+  "est_woba": 0.307,
+  "est_ba": 0.239,
+  "est_slg": 0.395
+ },
+ {
+  "player_id": 681146,
+  "name": "Bride, Jonah",
+  "pa": 272.0,
+  "woba": 0.351,
+  "est_woba": 0.304,
+  "est_ba": 0.224,
+  "est_slg": 0.339
+ },
+ {
+  "player_id": 689172,
+  "name": "Wisely, Brett",
+  "pa": 272.0,
+  "woba": 0.272,
+  "est_woba": 0.263,
+  "est_ba": 0.215,
+  "est_slg": 0.325
+ },
+ {
+  "player_id": 676801,
+  "name": "McCormick, Chas",
+  "pa": 267.0,
+  "woba": 0.257,
+  "est_woba": 0.286,
+  "est_ba": 0.221,
+  "est_slg": 0.361
+ },
+ {
+  "player_id": 669222,
+  "name": "Senzel, Nick",
+  "pa": 267.0,
+  "woba": 0.273,
+  "est_woba": 0.301,
+  "est_ba": 0.228,
+  "est_slg": 0.361
+ },
+ {
+  "player_id": 666185,
+  "name": "Carlson, Dylan",
+  "pa": 265.0,
+  "woba": 0.257,
+  "est_woba": 0.258,
+  "est_ba": 0.198,
+  "est_slg": 0.286
+ },
+ {
+  "player_id": 669221,
+  "name": "Murphy, Sean",
+  "pa": 264.0,
+  "woba": 0.281,
+  "est_woba": 0.31,
+  "est_ba": 0.212,
+  "est_slg": 0.403
+ },
+ {
+  "player_id": 543309,
+  "name": "Higashioka, Kyle",
+  "pa": 263.0,
+  "woba": 0.314,
+  "est_woba": 0.299,
+  "est_ba": 0.216,
+  "est_slg": 0.434
+ },
+ {
+  "player_id": 694388,
+  "name": "Loperfido, Joey",
+  "pa": 262.0,
+  "woba": 0.268,
+  "est_woba": 0.256,
+  "est_ba": 0.204,
+  "est_slg": 0.315
+ },
+ {
+  "player_id": 670242,
+  "name": "Wallner, Matt",
+  "pa": 261.0,
+  "woba": 0.385,
+  "est_woba": 0.359,
+  "est_ba": 0.23,
+  "est_slg": 0.479
+ },
+ {
+  "player_id": 608336,
+  "name": "Gallo, Joey",
+  "pa": 260.0,
+  "woba": 0.276,
+  "est_woba": 0.286,
+  "est_ba": 0.171,
+  "est_slg": 0.359
+ },
+ {
+  "player_id": 444482,
+  "name": "Peralta, David",
+  "pa": 260.0,
+  "woba": 0.329,
+  "est_woba": 0.318,
+  "est_ba": 0.258,
+  "est_slg": 0.385
+ },
+ {
+  "player_id": 671056,
+  "name": "Herrera, Iv\u00e1n",
+  "pa": 259.0,
+  "woba": 0.351,
+  "est_woba": 0.37,
+  "est_ba": 0.291,
+  "est_slg": 0.464
+ },
+ {
+  "player_id": 518792,
+  "name": "Heyward, Jason",
+  "pa": 258.0,
+  "woba": 0.3,
+  "est_woba": 0.293,
+  "est_ba": 0.232,
+  "est_slg": 0.354
+ },
+ {
+  "player_id": 668885,
+  "name": "Martin, Austin",
+  "pa": 257.0,
+  "woba": 0.297,
+  "est_woba": 0.303,
+  "est_ba": 0.26,
+  "est_slg": 0.35
+ },
+ {
+  "player_id": 669720,
+  "name": "Hays, Austin",
+  "pa": 255.0,
+  "woba": 0.303,
+  "est_woba": 0.294,
+  "est_ba": 0.232,
+  "est_slg": 0.38
+ },
+ {
+  "player_id": 641432,
+  "name": "Calhoun, Willie",
+  "pa": 254.0,
+  "woba": 0.305,
+  "est_woba": 0.311,
+  "est_ba": 0.257,
+  "est_slg": 0.364
+ },
+ {
+  "player_id": 670764,
+  "name": "Walls, Taylor",
+  "pa": 252.0,
+  "woba": 0.245,
+  "est_woba": 0.255,
+  "est_ba": 0.183,
+  "est_slg": 0.263
+ },
+ {
+  "player_id": 660766,
+  "name": "Yepez, Juan",
+  "pa": 249.0,
+  "woba": 0.331,
+  "est_woba": 0.304,
+  "est_ba": 0.252,
+  "est_slg": 0.368
+ },
+ {
+  "player_id": 660707,
+  "name": "Montero, Elehuris",
+  "pa": 247.0,
+  "woba": 0.254,
+  "est_woba": 0.279,
+  "est_ba": 0.208,
+  "est_slg": 0.349
+ },
+ {
+  "player_id": 623912,
+  "name": "Ram\u00edrez, Harold",
+  "pa": 246.0,
+  "woba": 0.265,
+  "est_woba": 0.256,
+  "est_ba": 0.235,
+  "est_slg": 0.318
+ },
+ {
+  "player_id": 621035,
+  "name": "Taylor, Chris",
+  "pa": 246.0,
+  "woba": 0.272,
+  "est_woba": 0.297,
+  "est_ba": 0.216,
+  "est_slg": 0.345
+ },
+ {
+  "player_id": 543257,
+  "name": "Grossman, Robbie",
+  "pa": 245.0,
+  "woba": 0.283,
+  "est_woba": 0.301,
+  "est_ba": 0.217,
+  "est_slg": 0.315
+ },
+ {
+  "player_id": 628451,
+  "name": "Ib\u00e1\u00f1ez, Andy",
+  "pa": 244.0,
+  "woba": 0.287,
+  "est_woba": 0.27,
+  "est_ba": 0.214,
+  "est_slg": 0.331
+ },
+ {
+  "player_id": 671213,
+  "name": "Casas, Triston",
+  "pa": 243.0,
+  "woba": 0.342,
+  "est_woba": 0.328,
+  "est_ba": 0.216,
+  "est_slg": 0.449
+ },
+ {
+  "player_id": 518735,
+  "name": "Grandal, Yasmani",
+  "pa": 243.0,
+  "woba": 0.308,
+  "est_woba": 0.327,
+  "est_ba": 0.241,
+  "est_slg": 0.43
+ },
+ {
+  "player_id": 527038,
+  "name": "Flores, Wilmer",
+  "pa": 242.0,
+  "woba": 0.262,
+  "est_woba": 0.292,
+  "est_ba": 0.22,
+  "est_slg": 0.356
+ },
+ {
+  "player_id": 571657,
+  "name": "Farmer, Kyle",
+  "pa": 242.0,
+  "woba": 0.285,
+  "est_woba": 0.296,
+  "est_ba": 0.223,
+  "est_slg": 0.371
+ },
+ {
+  "player_id": 682622,
+  "name": "Marte, Noelvi",
+  "pa": 242.0,
+  "woba": 0.243,
+  "est_woba": 0.272,
+  "est_ba": 0.225,
+  "est_slg": 0.353
+ },
+ {
+  "player_id": 641313,
+  "name": "Anderson, Tim",
+  "pa": 241.0,
+  "woba": 0.208,
+  "est_woba": 0.235,
+  "est_ba": 0.215,
+  "est_slg": 0.292
+ },
+ {
+  "player_id": 666150,
+  "name": "Fletcher, Dominic",
+  "pa": 241.0,
+  "woba": 0.227,
+  "est_woba": 0.25,
+  "est_ba": 0.22,
+  "est_slg": 0.291
+ },
+ {
+  "player_id": 543685,
+  "name": "Rendon, Anthony",
+  "pa": 238.0,
+  "woba": 0.264,
+  "est_woba": 0.299,
+  "est_ba": 0.226,
+  "est_slg": 0.337
+ },
+ {
+  "player_id": 678246,
+  "name": "Vargas, Miguel",
+  "pa": 237.0,
+  "woba": 0.233,
+  "est_woba": 0.265,
+  "est_ba": 0.175,
+  "est_slg": 0.301
+ },
+ {
+  "player_id": 624431,
+  "name": "Trevino, Jose",
+  "pa": 234.0,
+  "woba": 0.284,
+  "est_woba": 0.269,
+  "est_ba": 0.2,
+  "est_slg": 0.316
+ },
+ {
+  "player_id": 656413,
+  "name": "Fairchild, Stuart",
+  "pa": 233.0,
+  "woba": 0.288,
+  "est_woba": 0.298,
+  "est_ba": 0.215,
+  "est_slg": 0.392
+ },
+ {
+  "player_id": 543510,
+  "name": "McCann, James",
+  "pa": 233.0,
+  "woba": 0.288,
+  "est_woba": 0.315,
+  "est_ba": 0.241,
+  "est_slg": 0.424
+ },
+ {
+  "player_id": 641658,
+  "name": "Hampson, Garrett",
+  "pa": 231.0,
+  "woba": 0.255,
+  "est_woba": 0.25,
+  "est_ba": 0.206,
+  "est_slg": 0.297
+ },
+ {
+  "player_id": 676369,
+  "name": "Vel\u00e1zquez, Nelson",
+  "pa": 230.0,
+  "woba": 0.28,
+  "est_woba": 0.307,
+  "est_ba": 0.213,
+  "est_slg": 0.403
+ },
+ {
+  "player_id": 669234,
+  "name": "Malloy, Justyn-Henry",
+  "pa": 230.0,
+  "woba": 0.291,
+  "est_woba": 0.272,
+  "est_ba": 0.179,
+  "est_slg": 0.341
+ },
+ {
+  "player_id": 605113,
+  "name": "Ahmed, Nick",
+  "pa": 228.0,
+  "woba": 0.248,
+  "est_woba": 0.266,
+  "est_ba": 0.227,
+  "est_slg": 0.329
+ },
+ {
+  "player_id": 518934,
+  "name": "LeMahieu, DJ",
+  "pa": 228.0,
+  "woba": 0.239,
+  "est_woba": 0.305,
+  "est_ba": 0.241,
+  "est_slg": 0.377
+ },
+ {
+  "player_id": 680718,
+  "name": "Barger, Addison",
+  "pa": 225.0,
+  "woba": 0.262,
+  "est_woba": 0.294,
+  "est_ba": 0.226,
+  "est_slg": 0.397
+ },
+ {
+  "player_id": 669003,
+  "name": "Mitchell, Garrett",
+  "pa": 224.0,
+  "woba": 0.351,
+  "est_woba": 0.311,
+  "est_ba": 0.228,
+  "est_slg": 0.372
+ },
+ {
+  "player_id": 696100,
+  "name": "Goodman, Hunter",
+  "pa": 224.0,
+  "woba": 0.274,
+  "est_woba": 0.28,
+  "est_ba": 0.205,
+  "est_slg": 0.409
+ },
+ {
+  "player_id": 624415,
+  "name": "Biggio, Cavan",
+  "pa": 224.0,
+  "woba": 0.285,
+  "est_woba": 0.26,
+  "est_ba": 0.179,
+  "est_slg": 0.245
+ },
+ {
+  "player_id": 665839,
+  "name": "Valdez, Enmanuel",
+  "pa": 223.0,
+  "woba": 0.275,
+  "est_woba": 0.308,
+  "est_ba": 0.231,
+  "est_slg": 0.418
+ },
+ {
+  "player_id": 660670,
+  "name": "Acu\u00f1a Jr., Ronald",
+  "pa": 222.0,
+  "woba": 0.322,
+  "est_woba": 0.35,
+  "est_ba": 0.256,
+  "est_slg": 0.43
+ },
+ {
+  "player_id": 682177,
+  "name": "Schneemann, Daniel",
+  "pa": 221.0,
+  "woba": 0.295,
+  "est_woba": 0.28,
+  "est_ba": 0.208,
+  "est_slg": 0.316
+ },
+ {
+  "player_id": 686780,
+  "name": "Pag\u00e9s, Pedro",
+  "pa": 218.0,
+  "woba": 0.286,
+  "est_woba": 0.283,
+  "est_ba": 0.223,
+  "est_slg": 0.354
+ },
+ {
+  "player_id": 663853,
+  "name": "Gonzalez, Romy",
+  "pa": 216.0,
+  "woba": 0.311,
+  "est_woba": 0.317,
+  "est_ba": 0.251,
+  "est_slg": 0.425
+ },
+ {
+  "player_id": 691016,
+  "name": "Soderstrom, Tyler",
+  "pa": 213.0,
+  "woba": 0.322,
+  "est_woba": 0.351,
+  "est_ba": 0.235,
+  "est_slg": 0.493
+ },
+ {
+  "player_id": 596103,
+  "name": "Slater, Austin",
+  "pa": 212.0,
+  "woba": 0.273,
+  "est_woba": 0.307,
+  "est_ba": 0.231,
+  "est_slg": 0.326
+ },
+ {
+  "player_id": 702358,
+  "name": "Lipscomb, Trey",
+  "pa": 211.0,
+  "woba": 0.231,
+  "est_woba": 0.271,
+  "est_ba": 0.228,
+  "est_slg": 0.294
+ },
+ {
+  "player_id": 677870,
+  "name": "Jim\u00e9nez, Leo",
+  "pa": 210.0,
+  "woba": 0.308,
+  "est_woba": 0.313,
+  "est_ba": 0.225,
+  "est_slg": 0.368
+ },
+ {
+  "player_id": 663757,
+  "name": "Grisham, Trent",
+  "pa": 209.0,
+  "woba": 0.295,
+  "est_woba": 0.303,
+  "est_ba": 0.196,
+  "est_slg": 0.389
+ },
+ {
+  "player_id": 669065,
+  "name": "Stowers, Kyle",
+  "pa": 209.0,
+  "woba": 0.265,
+  "est_woba": 0.291,
+  "est_ba": 0.217,
+  "est_slg": 0.374
+ },
+ {
+  "player_id": 622761,
+  "name": "Mateo, Jorge",
+  "pa": 208.0,
+  "woba": 0.286,
+  "est_woba": 0.278,
+  "est_ba": 0.227,
+  "est_slg": 0.351
+ },
+ {
+  "player_id": 702616,
+  "name": "Holliday, Jackson",
+  "pa": 208.0,
+  "woba": 0.251,
+  "est_woba": 0.263,
+  "est_ba": 0.19,
+  "est_slg": 0.337
+ },
+ {
+  "player_id": 608671,
+  "name": "Jankowski, Travis",
+  "pa": 207.0,
+  "woba": 0.234,
+  "est_woba": 0.245,
+  "est_ba": 0.207,
+  "est_slg": 0.256
+ },
+ {
+  "player_id": 678877,
+  "name": "Noel, Jhonkensy",
+  "pa": 198.0,
+  "woba": 0.331,
+  "est_woba": 0.325,
+  "est_ba": 0.217,
+  "est_slg": 0.444
+ },
+ {
+  "player_id": 658668,
+  "name": "Olivares, Edward",
+  "pa": 196.0,
+  "woba": 0.276,
+  "est_woba": 0.333,
+  "est_ba": 0.274,
+  "est_slg": 0.398
+ },
+ {
+  "player_id": 681393,
+  "name": "Norby, Connor",
+  "pa": 194.0,
+  "woba": 0.316,
+  "est_woba": 0.316,
+  "est_ba": 0.224,
+  "est_slg": 0.448
+ },
+ {
+  "player_id": 621466,
+  "name": "Stewart, DJ",
+  "pa": 194.0,
+  "woba": 0.29,
+  "est_woba": 0.33,
+  "est_ba": 0.21,
+  "est_slg": 0.358
+ },
+ {
+  "player_id": 667452,
+  "name": "Julks, Corey",
+  "pa": 189.0,
+  "woba": 0.26,
+  "est_woba": 0.27,
+  "est_ba": 0.214,
+  "est_slg": 0.315
+ },
+ {
+  "player_id": 673962,
+  "name": "Jung, Josh",
+  "pa": 188.0,
+  "woba": 0.311,
+  "est_woba": 0.296,
+  "est_ba": 0.24,
+  "est_slg": 0.409
+ },
+ {
+  "player_id": 686527,
+  "name": "Canzone, Dominic",
+  "pa": 188.0,
+  "woba": 0.28,
+  "est_woba": 0.31,
+  "est_ba": 0.212,
+  "est_slg": 0.435
+ },
+ {
+  "player_id": 596117,
+  "name": "Stubbs, Garrett",
+  "pa": 187.0,
+  "woba": 0.258,
+  "est_woba": 0.249,
+  "est_ba": 0.192,
+  "est_slg": 0.24
+ },
+ {
+  "player_id": 641645,
+  "name": "Guillorme, Luis",
+  "pa": 187.0,
+  "woba": 0.263,
+  "est_woba": 0.285,
+  "est_ba": 0.223,
+  "est_slg": 0.3
+ },
+ {
+  "player_id": 663662,
+  "name": "Cameron, Daz",
+  "pa": 186.0,
+  "woba": 0.258,
+  "est_woba": 0.284,
+  "est_ba": 0.219,
+  "est_slg": 0.358
+ },
+ {
+  "player_id": 642136,
+  "name": "Thaiss, Matt",
+  "pa": 186.0,
+  "woba": 0.286,
+  "est_woba": 0.295,
+  "est_ba": 0.193,
+  "est_slg": 0.333
+ },
+ {
+  "player_id": 686797,
+  "name": "Lee, Brooks",
+  "pa": 185.0,
+  "woba": 0.252,
+  "est_woba": 0.282,
+  "est_ba": 0.243,
+  "est_slg": 0.355
+ },
+ {
+  "player_id": 677942,
+  "name": "Alexander, Blaze",
+  "pa": 185.0,
+  "woba": 0.298,
+  "est_woba": 0.262,
+  "est_ba": 0.203,
+  "est_slg": 0.29
+ },
+ {
+  "player_id": 687597,
+  "name": "Beck, Jordan",
+  "pa": 184.0,
+  "woba": 0.231,
+  "est_woba": 0.265,
+  "est_ba": 0.208,
+  "est_slg": 0.332
+ },
+ {
+  "player_id": 665506,
+  "name": "Pache, Cristian",
+  "pa": 183.0,
+  "woba": 0.25,
+  "est_woba": 0.258,
+  "est_ba": 0.198,
+  "est_slg": 0.297
+ },
+ {
+  "player_id": 700250,
+  "name": "Rice, Ben",
+  "pa": 178.0,
+  "woba": 0.269,
+  "est_woba": 0.338,
+  "est_ba": 0.229,
+  "est_slg": 0.46
+ },
+ {
+  "player_id": 666135,
+  "name": "Kirilloff, Alex",
+  "pa": 178.0,
+  "woba": 0.282,
+  "est_woba": 0.321,
+  "est_ba": 0.22,
+  "est_slg": 0.445
+ },
+ {
+  "player_id": 691023,
+  "name": "Walker, Jordan",
+  "pa": 178.0,
+  "woba": 0.268,
+  "est_woba": 0.278,
+  "est_ba": 0.206,
+  "est_slg": 0.366
+ },
+ {
+  "player_id": 691406,
+  "name": "Caminero, Junior",
+  "pa": 177.0,
+  "woba": 0.309,
+  "est_woba": 0.303,
+  "est_ba": 0.234,
+  "est_slg": 0.412
+ },
+ {
+  "player_id": 621550,
+  "name": "Wisdom, Patrick",
+  "pa": 174.0,
+  "woba": 0.271,
+  "est_woba": 0.294,
+  "est_ba": 0.183,
+  "est_slg": 0.436
+ },
+ {
+  "player_id": 656537,
+  "name": "Hill, Derek",
+  "pa": 172.0,
+  "woba": 0.296,
+  "est_woba": 0.297,
+  "est_ba": 0.241,
+  "est_slg": 0.403
+ },
+ {
+  "player_id": 683146,
+  "name": "Baty, Brett",
+  "pa": 171.0,
+  "woba": 0.282,
+  "est_woba": 0.284,
+  "est_ba": 0.208,
+  "est_slg": 0.347
+ },
+ {
+  "player_id": 679845,
+  "name": "Loftin, Nick",
+  "pa": 171.0,
+  "woba": 0.242,
+  "est_woba": 0.286,
+  "est_ba": 0.224,
+  "est_slg": 0.307
+ },
+ {
+  "player_id": 682657,
+  "name": "Mart\u00ednez, Angel",
+  "pa": 169.0,
+  "woba": 0.282,
+  "est_woba": 0.281,
+  "est_ba": 0.225,
+  "est_slg": 0.323
+ },
+ {
+  "player_id": 677588,
+  "name": "Tena, Jos\u00e9",
+  "pa": 168.0,
+  "woba": 0.286,
+  "est_woba": 0.306,
+  "est_ba": 0.252,
+  "est_slg": 0.418
+ },
+ {
+  "player_id": 605361,
+  "name": "Martini, Nick",
+  "pa": 163.0,
+  "woba": 0.279,
+  "est_woba": 0.28,
+  "est_ba": 0.213,
+  "est_slg": 0.345
+ },
+ {
+  "player_id": 694497,
+  "name": "Carter, Evan",
+  "pa": 162.0,
+  "woba": 0.278,
+  "est_woba": 0.282,
+  "est_ba": 0.204,
+  "est_slg": 0.341
+ },
+ {
+  "player_id": 672356,
+  "name": "Arias, Gabriel",
+  "pa": 161.0,
+  "woba": 0.263,
+  "est_woba": 0.279,
+  "est_ba": 0.218,
+  "est_slg": 0.376
+ },
+ {
+  "player_id": 656541,
+  "name": "Hilliard, Sam",
+  "pa": 158.0,
+  "woba": 0.342,
+  "est_woba": 0.298,
+  "est_ba": 0.21,
+  "est_slg": 0.414
+ },
+ {
+  "player_id": 656976,
+  "name": "Smith, Pavin",
+  "pa": 158.0,
+  "woba": 0.377,
+  "est_woba": 0.396,
+  "est_ba": 0.287,
+  "est_slg": 0.534
+ },
+ {
+  "player_id": 624512,
+  "name": "McGuire, Reese",
+  "pa": 158.0,
+  "woba": 0.259,
+  "est_woba": 0.284,
+  "est_ba": 0.22,
+  "est_slg": 0.344
+ },
+ {
+  "player_id": 808982,
+  "name": "Lee, Jung Hoo",
+  "pa": 158.0,
+  "woba": 0.284,
+  "est_woba": 0.324,
+  "est_ba": 0.276,
+  "est_slg": 0.415
+ },
+ {
+  "player_id": 668832,
+  "name": "McCann, Kyle",
+  "pa": 157.0,
+  "woba": 0.304,
+  "est_woba": 0.279,
+  "est_ba": 0.183,
+  "est_slg": 0.363
+ },
+ {
+  "player_id": 605204,
+  "name": "Davis, J.D.",
+  "pa": 157.0,
+  "woba": 0.282,
+  "est_woba": 0.29,
+  "est_ba": 0.21,
+  "est_slg": 0.366
+ },
+ {
+  "player_id": 572761,
+  "name": "Carpenter, Matt",
+  "pa": 157.0,
+  "woba": 0.303,
+  "est_woba": 0.29,
+  "est_ba": 0.212,
+  "est_slg": 0.357
+ },
+ {
+  "player_id": 605131,
+  "name": "Barnes, Austin",
+  "pa": 156.0,
+  "woba": 0.289,
+  "est_woba": 0.275,
+  "est_ba": 0.227,
+  "est_slg": 0.298
+ },
+ {
+  "player_id": 642180,
+  "name": "Wade, Tyler",
+  "pa": 156.0,
+  "woba": 0.242,
+  "est_woba": 0.285,
+  "est_ba": 0.245,
+  "est_slg": 0.316
+ },
+ {
+  "player_id": 682641,
+  "name": "Matos, Luis",
+  "pa": 156.0,
+  "woba": 0.25,
+  "est_woba": 0.271,
+  "est_ba": 0.239,
+  "est_slg": 0.366
+ },
+ {
+  "player_id": 681546,
+  "name": "Outman, James",
+  "pa": 156.0,
+  "woba": 0.242,
+  "est_woba": 0.29,
+  "est_ba": 0.2,
+  "est_slg": 0.334
+ },
+ {
+  "player_id": 700932,
+  "name": "Manzardo, Kyle",
+  "pa": 156.0,
+  "woba": 0.303,
+  "est_woba": 0.276,
+  "est_ba": 0.196,
+  "est_slg": 0.39
+ },
+ {
+  "player_id": 592178,
+  "name": "Bryant, Kris",
+  "pa": 155.0,
+  "woba": 0.287,
+  "est_woba": 0.292,
+  "est_ba": 0.21,
+  "est_slg": 0.319
+ },
+ {
+  "player_id": 656577,
+  "name": "Jackson, Alex",
+  "pa": 155.0,
+  "woba": 0.2,
+  "est_woba": 0.224,
+  "est_ba": 0.137,
+  "est_slg": 0.266
+ },
+ {
+  "player_id": 687363,
+  "name": "Scott II, Victor",
+  "pa": 155.0,
+  "woba": 0.221,
+  "est_woba": 0.251,
+  "est_ba": 0.202,
+  "est_slg": 0.322
+ },
+ {
+  "player_id": 571912,
+  "name": "Maile, Luke",
+  "pa": 154.0,
+  "woba": 0.241,
+  "est_woba": 0.244,
+  "est_ba": 0.176,
+  "est_slg": 0.257
+ },
+ {
+  "player_id": 669242,
+  "name": "Edman, Tommy",
+  "pa": 153.0,
+  "woba": 0.307,
+  "est_woba": 0.272,
+  "est_ba": 0.217,
+  "est_slg": 0.327
+ },
+ {
+  "player_id": 455117,
+  "name": "Maldonado, Mart\u00edn",
+  "pa": 147.0,
+  "woba": 0.181,
+  "est_woba": 0.221,
+  "est_ba": 0.157,
+  "est_slg": 0.287
+ },
+ {
+  "player_id": 542194,
+  "name": "Bethancourt, Christian",
+  "pa": 147.0,
+  "woba": 0.263,
+  "est_woba": 0.274,
+  "est_ba": 0.217,
+  "est_slg": 0.372
+ },
+ {
+  "player_id": 595978,
+  "name": "Hedges, Austin",
+  "pa": 146.0,
+  "woba": 0.191,
+  "est_woba": 0.171,
+  "est_ba": 0.128,
+  "est_slg": 0.188
+ },
+ {
+  "player_id": 666018,
+  "name": "Aranda, Jonathan",
+  "pa": 143.0,
+  "woba": 0.32,
+  "est_woba": 0.361,
+  "est_ba": 0.249,
+  "est_slg": 0.525
+ },
+ {
+  "player_id": 655316,
+  "name": "Monasterio, Andruw",
+  "pa": 142.0,
+  "woba": 0.266,
+  "est_woba": 0.295,
+  "est_ba": 0.207,
+  "est_slg": 0.352
+ },
+ {
+  "player_id": 664901,
+  "name": "Mendick, Danny",
+  "pa": 141.0,
+  "woba": 0.247,
+  "est_woba": 0.261,
+  "est_ba": 0.206,
+  "est_slg": 0.34
+ },
+ {
+  "player_id": 621512,
+  "name": "Nido, Tom\u00e1s",
+  "pa": 140.0,
+  "woba": 0.231,
+  "est_woba": 0.289,
+  "est_ba": 0.214,
+  "est_slg": 0.428
+ },
+ {
+  "player_id": 687231,
+  "name": "Hernaiz, Darell",
+  "pa": 135.0,
+  "woba": 0.23,
+  "est_woba": 0.276,
+  "est_ba": 0.227,
+  "est_slg": 0.285
+ },
+ {
+  "player_id": 686611,
+  "name": "Crews, Dylan",
+  "pa": 132.0,
+  "woba": 0.283,
+  "est_woba": 0.327,
+  "est_ba": 0.25,
+  "est_slg": 0.422
+ },
+ {
+  "player_id": 680118,
+  "name": "Blanco, Dairon",
+  "pa": 132.0,
+  "woba": 0.306,
+  "est_woba": 0.284,
+  "est_ba": 0.211,
+  "est_slg": 0.382
+ },
+ {
+  "player_id": 665953,
+  "name": "Chaparro, Andr\u00e9s",
+  "pa": 132.0,
+  "woba": 0.301,
+  "est_woba": 0.303,
+  "est_ba": 0.222,
+  "est_slg": 0.402
+ },
+ {
+  "player_id": 678554,
+  "name": "Mead, Curtis",
+  "pa": 132.0,
+  "woba": 0.255,
+  "est_woba": 0.282,
+  "est_ba": 0.239,
+  "est_slg": 0.357
+ },
+ {
+  "player_id": 687529,
+  "name": "McCray, Grant",
+  "pa": 130.0,
+  "woba": 0.266,
+  "est_woba": 0.257,
+  "est_ba": 0.193,
+  "est_slg": 0.353
+ },
+ {
+  "player_id": 620443,
+  "name": "Torrens, Luis",
+  "pa": 130.0,
+  "woba": 0.292,
+  "est_woba": 0.324,
+  "est_ba": 0.26,
+  "est_slg": 0.411
+ },
+ {
+  "player_id": 656180,
+  "name": "Adams, Riley",
+  "pa": 130.0,
+  "woba": 0.275,
+  "est_woba": 0.287,
+  "est_ba": 0.219,
+  "est_slg": 0.348
+ },
+ {
+  "player_id": 545361,
+  "name": "Trout, Mike",
+  "pa": 126.0,
+  "woba": 0.365,
+  "est_woba": 0.407,
+  "est_ba": 0.271,
+  "est_slg": 0.598
+ },
+ {
+  "player_id": 592200,
+  "name": "Casali, Curt",
+  "pa": 125.0,
+  "woba": 0.254,
+  "est_woba": 0.274,
+  "est_ba": 0.208,
+  "est_slg": 0.288
+ },
+ {
+  "player_id": 683021,
+  "name": "Stefanic, Michael",
+  "pa": 124.0,
+  "woba": 0.258,
+  "est_woba": 0.258,
+  "est_ba": 0.206,
+  "est_slg": 0.261
+ },
+ {
+  "player_id": 687952,
+  "name": "Encarnacion-Strand, Christian",
+  "pa": 123.0,
+  "woba": 0.223,
+  "est_woba": 0.297,
+  "est_ba": 0.234,
+  "est_slg": 0.435
+ },
+ {
+  "player_id": 695391,
+  "name": "Harris, Brett",
+  "pa": 123.0,
+  "woba": 0.252,
+  "est_woba": 0.273,
+  "est_ba": 0.18,
+  "est_slg": 0.279
+ },
+ {
+  "player_id": 680779,
+  "name": "Davis, Henry",
+  "pa": 122.0,
+  "woba": 0.213,
+  "est_woba": 0.225,
+  "est_ba": 0.152,
+  "est_slg": 0.227
+ },
+ {
+  "player_id": 681460,
+  "name": "Baldwin, Brooks",
+  "pa": 121.0,
+  "woba": 0.249,
+  "est_woba": 0.264,
+  "est_ba": 0.213,
+  "est_slg": 0.35
+ },
+ {
+  "player_id": 665019,
+  "name": "Clemens, Kody",
+  "pa": 120.0,
+  "woba": 0.301,
+  "est_woba": 0.257,
+  "est_ba": 0.192,
+  "est_slg": 0.36
+ },
+ {
+  "player_id": 547989,
+  "name": "Abreu, Jos\u00e9",
+  "pa": 120.0,
+  "woba": 0.164,
+  "est_woba": 0.201,
+  "est_ba": 0.161,
+  "est_slg": 0.244
+ },
+ {
+  "player_id": 666464,
+  "name": "Encarnacion, Jerar",
+  "pa": 119.0,
+  "woba": 0.301,
+  "est_woba": 0.352,
+  "est_ba": 0.269,
+  "est_slg": 0.513
+ },
+ {
+  "player_id": 700242,
+  "name": "Sweeney, Trey",
+  "pa": 119.0,
+  "woba": 0.279,
+  "est_woba": 0.307,
+  "est_ba": 0.213,
+  "est_slg": 0.426
+ },
+ {
+  "player_id": 643265,
+  "name": "Cooper, Garrett",
+  "pa": 116.0,
+  "woba": 0.253,
+  "est_woba": 0.327,
+  "est_ba": 0.261,
+  "est_slg": 0.424
+ },
+ {
+  "player_id": 687093,
+  "name": "Grissom, Vaughn",
+  "pa": 114.0,
+  "woba": 0.213,
+  "est_woba": 0.291,
+  "est_ba": 0.25,
+  "est_slg": 0.345
+ },
+ {
+  "player_id": 645444,
+  "name": "Herrera, Jose",
+  "pa": 114.0,
+  "woba": 0.271,
+  "est_woba": 0.26,
+  "est_ba": 0.215,
+  "est_slg": 0.28
+ },
+ {
+  "player_id": 677008,
+  "name": "Kjerstad, Heston",
+  "pa": 114.0,
+  "woba": 0.327,
+  "est_woba": 0.299,
+  "est_ba": 0.212,
+  "est_slg": 0.356
+ },
+ {
+  "player_id": 669477,
+  "name": "Schmitt, Casey",
+  "pa": 113.0,
+  "woba": 0.323,
+  "est_woba": 0.314,
+  "est_ba": 0.245,
+  "est_slg": 0.46
+ },
+ {
+  "player_id": 669743,
+  "name": "Call, Alex",
+  "pa": 113.0,
+  "woba": 0.412,
+  "est_woba": 0.319,
+  "est_ba": 0.242,
+  "est_slg": 0.375
+ },
+ {
+  "player_id": 676116,
+  "name": "Noda, Ryan",
+  "pa": 111.0,
+  "woba": 0.223,
+  "est_woba": 0.254,
+  "est_ba": 0.157,
+  "est_slg": 0.275
+ },
+ {
+  "player_id": 664314,
+  "name": "Florial, Estevan",
+  "pa": 111.0,
+  "woba": 0.277,
+  "est_woba": 0.254,
+  "est_ba": 0.163,
+  "est_slg": 0.3
+ },
+ {
+  "player_id": 649966,
+  "name": "Ur\u00edas, Luis",
+  "pa": 109.0,
+  "woba": 0.309,
+  "est_woba": 0.314,
+  "est_ba": 0.199,
+  "est_slg": 0.399
+ },
+ {
+  "player_id": 656248,
+  "name": "Bouchard, Sean",
+  "pa": 108.0,
+  "woba": 0.266,
+  "est_woba": 0.262,
+  "est_ba": 0.166,
+  "est_slg": 0.289
+ },
+ {
+  "player_id": 667472,
+  "name": "Myers, Dane",
+  "pa": 108.0,
+  "woba": 0.335,
+  "est_woba": 0.31,
+  "est_ba": 0.226,
+  "est_slg": 0.389
+ },
+ {
+  "player_id": 682868,
+  "name": "Ramos, Bryan",
+  "pa": 108.0,
+  "woba": 0.257,
+  "est_woba": 0.291,
+  "est_ba": 0.231,
+  "est_slg": 0.376
+ },
+ {
+  "player_id": 670156,
+  "name": "Mastrobuoni, Miles",
+  "pa": 106.0,
+  "woba": 0.214,
+  "est_woba": 0.3,
+  "est_ba": 0.26,
+  "est_slg": 0.367
+ },
+ {
+  "player_id": 596115,
+  "name": "Story, Trevor",
+  "pa": 106.0,
+  "woba": 0.318,
+  "est_woba": 0.259,
+  "est_ba": 0.193,
+  "est_slg": 0.301
+ },
+ {
+  "player_id": 694359,
+  "name": "Kavadas, Niko",
+  "pa": 106.0,
+  "woba": 0.278,
+  "est_woba": 0.291,
+  "est_ba": 0.183,
+  "est_slg": 0.371
+ },
+ {
+  "player_id": 669397,
+  "name": "Allen, Nick",
+  "pa": 105.0,
+  "woba": 0.207,
+  "est_woba": 0.224,
+  "est_ba": 0.202,
+  "est_slg": 0.248
+ },
+ {
+  "player_id": 686554,
+  "name": "Dunn, Oliver",
+  "pa": 104.0,
+  "woba": 0.266,
+  "est_woba": 0.266,
+  "est_ba": 0.206,
+  "est_slg": 0.326
+ },
+ {
+  "player_id": 677950,
+  "name": "Thomas, Alek",
+  "pa": 103.0,
+  "woba": 0.262,
+  "est_woba": 0.344,
+  "est_ba": 0.277,
+  "est_slg": 0.46
+ },
+ {
+  "player_id": 805779,
+  "name": "Wilson, Jacob",
+  "pa": 103.0,
+  "woba": 0.281,
+  "est_woba": 0.291,
+  "est_ba": 0.267,
+  "est_slg": 0.316
+ },
+ {
+  "player_id": 592325,
+  "name": "Gamel, Ben",
+  "pa": 99.0,
+  "woba": 0.327,
+  "est_woba": 0.345,
+  "est_ba": 0.254,
+  "est_slg": 0.38
+ },
+ {
+  "player_id": 668845,
+  "name": "Schunk, Aaron",
+  "pa": 98.0,
+  "woba": 0.257,
+  "est_woba": 0.237,
+  "est_ba": 0.204,
+  "est_slg": 0.309
+ },
+ {
+  "player_id": 642215,
+  "name": "Wilson, Weston",
+  "pa": 98.0,
+  "woba": 0.358,
+  "est_woba": 0.318,
+  "est_ba": 0.22,
+  "est_slg": 0.427
+ },
+ {
+  "player_id": 645305,
+  "name": "S\u00e1nchez, Ali",
+  "pa": 96.0,
+  "woba": 0.184,
+  "est_woba": 0.218,
+  "est_ba": 0.175,
+  "est_slg": 0.261
+ },
+ {
+  "player_id": 543228,
+  "name": "Gomes, Yan",
+  "pa": 96.0,
+  "woba": 0.184,
+  "est_woba": 0.257,
+  "est_ba": 0.207,
+  "est_slg": 0.363
+ },
+ {
+  "player_id": 571466,
+  "name": "Barnhart, Tucker",
+  "pa": 96.0,
+  "woba": 0.239,
+  "est_woba": 0.244,
+  "est_ba": 0.165,
+  "est_slg": 0.223
+ },
+ {
+  "player_id": 675961,
+  "name": "Williams, Alika",
+  "pa": 96.0,
+  "woba": 0.237,
+  "est_woba": 0.254,
+  "est_ba": 0.224,
+  "est_slg": 0.311
+ },
+ {
+  "player_id": 593934,
+  "name": "San\u00f3, Miguel",
+  "pa": 95.0,
+  "woba": 0.275,
+  "est_woba": 0.316,
+  "est_ba": 0.243,
+  "est_slg": 0.385
+ },
+ {
+  "player_id": 663611,
+  "name": "Madrigal, Nick",
+  "pa": 94.0,
+  "woba": 0.245,
+  "est_woba": 0.271,
+  "est_ba": 0.242,
+  "est_slg": 0.288
+ },
+ {
+  "player_id": 690291,
+  "name": "Jung, Jace",
+  "pa": 94.0,
+  "woba": 0.308,
+  "est_woba": 0.297,
+  "est_ba": 0.219,
+  "est_slg": 0.294
+ },
+ {
+  "player_id": 668800,
+  "name": "Knizner, Andrew",
+  "pa": 93.0,
+  "woba": 0.174,
+  "est_woba": 0.253,
+  "est_ba": 0.229,
+  "est_slg": 0.326
+ },
+ {
+  "player_id": 666915,
+  "name": "Dalbec, Bobby",
+  "pa": 93.0,
+  "woba": 0.194,
+  "est_woba": 0.184,
+  "est_ba": 0.117,
+  "est_slg": 0.178
+ },
+ {
+  "player_id": 663550,
+  "name": "Cabbage, Trey",
+  "pa": 91.0,
+  "woba": 0.258,
+  "est_woba": 0.261,
+  "est_ba": 0.188,
+  "est_slg": 0.358
+ },
+ {
+  "player_id": 664770,
+  "name": "Lukes, Nathan",
+  "pa": 91.0,
+  "woba": 0.351,
+  "est_woba": 0.329,
+  "est_ba": 0.282,
+  "est_slg": 0.396
+ },
+ {
+  "player_id": 665052,
+  "name": "Conine, Griffin",
+  "pa": 89.0,
+  "woba": 0.337,
+  "est_woba": 0.286,
+  "est_ba": 0.212,
+  "est_slg": 0.371
+ },
+ {
+  "player_id": 670097,
+  "name": "Short, Zack",
+  "pa": 88.0,
+  "woba": 0.228,
+  "est_woba": 0.276,
+  "est_ba": 0.17,
+  "est_slg": 0.265
+ },
+ {
+  "player_id": 680728,
+  "name": "Del Castillo, Adrian",
+  "pa": 87.0,
+  "woba": 0.384,
+  "est_woba": 0.298,
+  "est_ba": 0.215,
+  "est_slg": 0.4
+ },
+ {
+  "player_id": 693307,
+  "name": "Dingler, Dillon",
+  "pa": 87.0,
+  "woba": 0.217,
+  "est_woba": 0.284,
+  "est_ba": 0.238,
+  "est_slg": 0.387
+ },
+ {
+  "player_id": 695238,
+  "name": "Wagner, Will",
+  "pa": 86.0,
+  "woba": 0.342,
+  "est_woba": 0.367,
+  "est_ba": 0.316,
+  "est_slg": 0.498
+ },
+ {
+  "player_id": 660844,
+  "name": "Rivas, Leo",
+  "pa": 86.0,
+  "woba": 0.282,
+  "est_woba": 0.304,
+  "est_ba": 0.243,
+  "est_slg": 0.318
+ },
+ {
+  "player_id": 686765,
+  "name": "Sogard, Nick",
+  "pa": 86.0,
+  "woba": 0.289,
+  "est_woba": 0.309,
+  "est_ba": 0.277,
+  "est_slg": 0.361
+ },
+ {
+  "player_id": 668731,
+  "name": "Baddoo, Akil",
+  "pa": 82.0,
+  "woba": 0.23,
+  "est_woba": 0.299,
+  "est_ba": 0.194,
+  "est_slg": 0.41
+ },
+ {
+  "player_id": 682617,
+  "name": "Luciano, Marco",
+  "pa": 81.0,
+  "woba": 0.248,
+  "est_woba": 0.288,
+  "est_ba": 0.238,
+  "est_slg": 0.368
+ },
+ {
+  "player_id": 678225,
+  "name": "Bae, Jihwan",
+  "pa": 81.0,
+  "woba": 0.213,
+  "est_woba": 0.278,
+  "est_ba": 0.214,
+  "est_slg": 0.348
+ },
+ {
+  "player_id": 543063,
+  "name": "Crawford, Brandon",
+  "pa": 80.0,
+  "woba": 0.248,
+  "est_woba": 0.281,
+  "est_ba": 0.207,
+  "est_slg": 0.321
+ },
+ {
+  "player_id": 596129,
+  "name": "Vogelbach, Daniel",
+  "pa": 79.0,
+  "woba": 0.262,
+  "est_woba": 0.369,
+  "est_ba": 0.271,
+  "est_slg": 0.495
+ },
+ {
+  "player_id": 665877,
+  "name": "Ferm\u00edn, Jos\u00e9",
+  "pa": 79.0,
+  "woba": 0.207,
+  "est_woba": 0.244,
+  "est_ba": 0.194,
+  "est_slg": 0.238
+ },
+ {
+  "player_id": 640492,
+  "name": "Az\u00f3car, Jos\u00e9",
+  "pa": 79.0,
+  "woba": 0.235,
+  "est_woba": 0.269,
+  "est_ba": 0.231,
+  "est_slg": 0.312
+ },
+ {
+  "player_id": 683083,
+  "name": "Nu\u00f1ez, Nasim",
+  "pa": 78.0,
+  "woba": 0.3,
+  "est_woba": 0.27,
+  "est_ba": 0.184,
+  "est_slg": 0.229
+ },
+ {
+  "player_id": 641943,
+  "name": "Palacios, Joshua",
+  "pa": 78.0,
+  "woba": 0.307,
+  "est_woba": 0.34,
+  "est_ba": 0.261,
+  "est_slg": 0.381
+ },
+ {
+  "player_id": 642020,
+  "name": "Robinson, Chuckie",
+  "pa": 76.0,
+  "woba": 0.159,
+  "est_woba": 0.213,
+  "est_ba": 0.172,
+  "est_slg": 0.216
+ },
+ {
+  "player_id": 676632,
+  "name": "Madris, Bligh",
+  "pa": 75.0,
+  "woba": 0.301,
+  "est_woba": 0.294,
+  "est_ba": 0.225,
+  "est_slg": 0.383
+ },
+ {
+  "player_id": 676113,
+  "name": "DeLoach, Zach",
+  "pa": 75.0,
+  "woba": 0.279,
+  "est_woba": 0.269,
+  "est_ba": 0.214,
+  "est_slg": 0.279
+ },
+ {
+  "player_id": 542932,
+  "name": "Berti, Jon",
+  "pa": 74.0,
+  "woba": 0.3,
+  "est_woba": 0.308,
+  "est_ba": 0.274,
+  "est_slg": 0.337
+ },
+ {
+  "player_id": 676572,
+  "name": "Wagaman, Eric",
+  "pa": 74.0,
+  "woba": 0.29,
+  "est_woba": 0.31,
+  "est_ba": 0.267,
+  "est_slg": 0.429
+ },
+ {
+  "player_id": 669369,
+  "name": "Johnson, Bryce",
+  "pa": 73.0,
+  "woba": 0.243,
+  "est_woba": 0.293,
+  "est_ba": 0.258,
+  "est_slg": 0.306
+ },
+ {
+  "player_id": 676070,
+  "name": "Amaya, Jacob",
+  "pa": 72.0,
+  "woba": 0.19,
+  "est_woba": 0.206,
+  "est_ba": 0.179,
+  "est_slg": 0.225
+ },
+ {
+  "player_id": 661531,
+  "name": "Serven, Brian",
+  "pa": 71.0,
+  "woba": 0.217,
+  "est_woba": 0.244,
+  "est_ba": 0.171,
+  "est_slg": 0.275
+ },
+ {
+  "player_id": 605346,
+  "name": "L\u00f3pez, Jack",
+  "pa": 71.0,
+  "woba": 0.277,
+  "est_woba": 0.203,
+  "est_ba": 0.176,
+  "est_slg": 0.238
+ },
+ {
+  "player_id": 669208,
+  "name": "Bliss, Ryan",
+  "pa": 71.0,
+  "woba": 0.3,
+  "est_woba": 0.309,
+  "est_ba": 0.211,
+  "est_slg": 0.423
+ },
+ {
+  "player_id": 553882,
+  "name": "Narv\u00e1ez, Omar",
+  "pa": 69.0,
+  "woba": 0.171,
+  "est_woba": 0.206,
+  "est_ba": 0.178,
+  "est_slg": 0.246
+ },
+ {
+  "player_id": 606992,
+  "name": "Haase, Eric",
+  "pa": 69.0,
+  "woba": 0.35,
+  "est_woba": 0.309,
+  "est_ba": 0.222,
+  "est_slg": 0.471
+ },
+ {
+  "player_id": 674441,
+  "name": "Hurtubise, Jacob",
+  "pa": 68.0,
+  "woba": 0.253,
+  "est_woba": 0.268,
+  "est_ba": 0.194,
+  "est_slg": 0.256
+ },
+ {
+  "player_id": 669699,
+  "name": "Shewmake, Braden",
+  "pa": 67.0,
+  "woba": 0.144,
+  "est_woba": 0.206,
+  "est_ba": 0.178,
+  "est_slg": 0.279
+ },
+ {
+  "player_id": 691176,
+  "name": "Dom\u00ednguez, Jasson",
+  "pa": 67.0,
+  "woba": 0.285,
+  "est_woba": 0.314,
+  "est_ba": 0.206,
+  "est_slg": 0.345
+ },
+ {
+  "player_id": 676701,
+  "name": "Trejo, Alan",
+  "pa": 67.0,
+  "woba": 0.152,
+  "est_woba": 0.213,
+  "est_ba": 0.19,
+  "est_slg": 0.264
+ },
+ {
+  "player_id": 682729,
+  "name": "Clase, Jonatan",
+  "pa": 66.0,
+  "woba": 0.283,
+  "est_woba": 0.214,
+  "est_ba": 0.171,
+  "est_slg": 0.251
+ },
+ {
+  "player_id": 493329,
+  "name": "Gurriel, Yuli",
+  "pa": 65.0,
+  "woba": 0.289,
+  "est_woba": 0.324,
+  "est_ba": 0.256,
+  "est_slg": 0.343
+ },
+ {
+  "player_id": 665923,
+  "name": "Ruiz, Esteury",
+  "pa": 65.0,
+  "woba": 0.281,
+  "est_woba": 0.287,
+  "est_ba": 0.179,
+  "est_slg": 0.35
+ },
+ {
+  "player_id": 701305,
+  "name": "Dezenzo, Zach",
+  "pa": 65.0,
+  "woba": 0.283,
+  "est_woba": 0.305,
+  "est_ba": 0.222,
+  "est_slg": 0.454
+ },
+ {
+  "player_id": 668952,
+  "name": "Kreidler, Ryan",
+  "pa": 65.0,
+  "woba": 0.177,
+  "est_woba": 0.231,
+  "est_ba": 0.167,
+  "est_slg": 0.25
+ },
+ {
+  "player_id": 622569,
+  "name": "Reyes, Pablo",
+  "pa": 64.0,
+  "woba": 0.207,
+  "est_woba": 0.249,
+  "est_ba": 0.208,
+  "est_slg": 0.298
+ },
+ {
+  "player_id": 543305,
+  "name": "Hicks, Aaron",
+  "pa": 63.0,
+  "woba": 0.196,
+  "est_woba": 0.254,
+  "est_ba": 0.19,
+  "est_slg": 0.286
+ },
+ {
+  "player_id": 686452,
+  "name": "Millas, Drew",
+  "pa": 62.0,
+  "woba": 0.28,
+  "est_woba": 0.271,
+  "est_ba": 0.223,
+  "est_slg": 0.313
+ },
+ {
+  "player_id": 645801,
+  "name": "Ford, Mike",
+  "pa": 62.0,
+  "woba": 0.18,
+  "est_woba": 0.237,
+  "est_ba": 0.205,
+  "est_slg": 0.306
+ },
+ {
+  "player_id": 621311,
+  "name": "Dahl, David",
+  "pa": 62.0,
+  "woba": 0.273,
+  "est_woba": 0.277,
+  "est_ba": 0.205,
+  "est_slg": 0.405
+ },
+ {
+  "player_id": 665120,
+  "name": "Walsh, Jared",
+  "pa": 60.0,
+  "woba": 0.289,
+  "est_woba": 0.328,
+  "est_ba": 0.243,
+  "est_slg": 0.411
+ },
+ {
+  "player_id": 677347,
+  "name": "Paris, Kyren",
+  "pa": 59.0,
+  "woba": 0.207,
+  "est_woba": 0.27,
+  "est_ba": 0.18,
+  "est_slg": 0.315
+ },
+ {
+  "player_id": 682073,
+  "name": "Hensley, David",
+  "pa": 58.0,
+  "woba": 0.265,
+  "est_woba": 0.212,
+  "est_ba": 0.15,
+  "est_slg": 0.21
+ },
+ {
+  "player_id": 657061,
+  "name": "Tucker, Cole",
+  "pa": 57.0,
+  "woba": 0.25,
+  "est_woba": 0.259,
+  "est_ba": 0.193,
+  "est_slg": 0.277
+ },
+ {
+  "player_id": 666703,
+  "name": "Rosario, Eguy",
+  "pa": 57.0,
+  "woba": 0.345,
+  "est_woba": 0.275,
+  "est_ba": 0.191,
+  "est_slg": 0.398
+ },
+ {
+  "player_id": 669200,
+  "name": "McCoy, Mason",
+  "pa": 57.0,
+  "woba": 0.241,
+  "est_woba": 0.245,
+  "est_ba": 0.202,
+  "est_slg": 0.241
+ },
+ {
+  "player_id": 672012,
+  "name": "Black, Tyler",
+  "pa": 57.0,
+  "woba": 0.265,
+  "est_woba": 0.258,
+  "est_ba": 0.192,
+  "est_slg": 0.237
+ },
+ {
+  "player_id": 665561,
+  "name": "March\u00e1n, Rafael",
+  "pa": 56.0,
+  "woba": 0.382,
+  "est_woba": 0.387,
+  "est_ba": 0.33,
+  "est_slg": 0.511
+ },
+ {
+  "player_id": 644433,
+  "name": "Tromp, Chadwick",
+  "pa": 54.0,
+  "woba": 0.266,
+  "est_woba": 0.257,
+  "est_ba": 0.242,
+  "est_slg": 0.336
+ },
+ {
+  "player_id": 691011,
+  "name": "Romo, Drew",
+  "pa": 53.0,
+  "woba": 0.197,
+  "est_woba": 0.175,
+  "est_ba": 0.149,
+  "est_slg": 0.206
+ },
+ {
+  "player_id": 695336,
+  "name": "Saggese, Thomas",
+  "pa": 52.0,
+  "woba": 0.247,
+  "est_woba": 0.251,
+  "est_ba": 0.203,
+  "est_slg": 0.318
+ },
+ {
+  "player_id": 663897,
+  "name": "Williams, Luke",
+  "pa": 52.0,
+  "woba": 0.246,
+  "est_woba": 0.237,
+  "est_ba": 0.166,
+  "est_slg": 0.27
+ },
+ {
+  "player_id": 541645,
+  "name": "Garc\u00eda, Avisa\u00edl",
+  "pa": 51.0,
+  "woba": 0.274,
+  "est_woba": 0.303,
+  "est_ba": 0.252,
+  "est_slg": 0.421
+ },
+ {
+  "player_id": 677956,
+  "name": "Hinds, Rece",
+  "pa": 51.0,
+  "woba": 0.433,
+  "est_woba": 0.394,
+  "est_ba": 0.246,
+  "est_slg": 0.627
+ },
+ {
+  "player_id": 668853,
+  "name": "Shenton, Austin",
+  "pa": 50.0,
+  "woba": 0.33,
+  "est_woba": 0.291,
+  "est_ba": 0.199,
+  "est_slg": 0.3
+ },
+ {
+  "player_id": 668723,
+  "name": "Vilade, Ryan",
+  "pa": 49.0,
+  "woba": 0.2,
+  "est_woba": 0.251,
+  "est_ba": 0.228,
+  "est_slg": 0.315
+ },
+ {
+  "player_id": 663609,
+  "name": "Baker, Luken",
+  "pa": 49.0,
+  "woba": 0.294,
+  "est_woba": 0.299,
+  "est_ba": 0.188,
+  "est_slg": 0.357
+ },
+ {
+  "player_id": 695257,
+  "name": "Cook, Billy",
+  "pa": 49.0,
+  "woba": 0.285,
+  "est_woba": 0.278,
+  "est_ba": 0.219,
+  "est_slg": 0.437
+ },
+ {
+  "player_id": 673995,
+  "name": "Wendzel, Davis",
+  "pa": 49.0,
+  "woba": 0.176,
+  "est_woba": 0.269,
+  "est_ba": 0.198,
+  "est_slg": 0.389
+ },
+ {
+  "player_id": 682988,
+  "name": "Locklear, Tyler",
+  "pa": 49.0,
+  "woba": 0.238,
+  "est_woba": 0.222,
+  "est_ba": 0.146,
+  "est_slg": 0.278
+ },
+ {
+  "player_id": 650907,
+  "name": "Pinto, Ren\u00e9",
+  "pa": 49.0,
+  "woba": 0.31,
+  "est_woba": 0.335,
+  "est_ba": 0.187,
+  "est_slg": 0.483
+ },
+ {
+  "player_id": 672569,
+  "name": "Campero, Gustavo",
+  "pa": 48.0,
+  "woba": 0.271,
+  "est_woba": 0.259,
+  "est_ba": 0.229,
+  "est_slg": 0.306
+ },
+ {
+  "player_id": 642197,
+  "name": "Westbrook, Jamie",
+  "pa": 48.0,
+  "woba": 0.252,
+  "est_woba": 0.308,
+  "est_ba": 0.217,
+  "est_slg": 0.41
+ },
+ {
+  "player_id": 623520,
+  "name": "Bote, David",
+  "pa": 48.0,
+  "woba": 0.317,
+  "est_woba": 0.283,
+  "est_ba": 0.245,
+  "est_slg": 0.354
+ },
+ {
+  "player_id": 663330,
+  "name": "Jones, Jahmai",
+  "pa": 47.0,
+  "woba": 0.302,
+  "est_woba": 0.266,
+  "est_ba": 0.189,
+  "est_slg": 0.329
+ },
+ {
+  "player_id": 691723,
+  "name": "Mayo, Coby",
+  "pa": 46.0,
+  "woba": 0.152,
+  "est_woba": 0.222,
+  "est_ba": 0.17,
+  "est_slg": 0.203
+ },
+ {
+  "player_id": 694376,
+  "name": "Whitcomb, Shay",
+  "pa": 46.0,
+  "woba": 0.272,
+  "est_woba": 0.341,
+  "est_ba": 0.276,
+  "est_slg": 0.416
+ },
+ {
+  "player_id": 660162,
+  "name": "Moncada, Yo\u00e1n",
+  "pa": 45.0,
+  "woba": 0.333,
+  "est_woba": 0.316,
+  "est_ba": 0.265,
+  "est_slg": 0.351
+ },
+ {
+  "player_id": 672642,
+  "name": "Berroa, Steward",
+  "pa": 45.0,
+  "woba": 0.268,
+  "est_woba": 0.243,
+  "est_ba": 0.144,
+  "est_slg": 0.191
+ },
+ {
+  "player_id": 679822,
+  "name": "Foscue, Justin",
+  "pa": 44.0,
+  "woba": 0.08,
+  "est_woba": 0.137,
+  "est_ba": 0.103,
+  "est_slg": 0.151
+ },
+ {
+  "player_id": 664874,
+  "name": "Zavala, Seby",
+  "pa": 43.0,
+  "woba": 0.221,
+  "est_woba": 0.261,
+  "est_ba": 0.177,
+  "est_slg": 0.369
+ },
+ {
+  "player_id": 642201,
+  "name": "White, Eli",
+  "pa": 42.0,
+  "woba": 0.335,
+  "est_woba": 0.27,
+  "est_ba": 0.204,
+  "est_slg": 0.343
+ },
+ {
+  "player_id": 694377,
+  "name": "Yorke, Nick",
+  "pa": 42.0,
+  "woba": 0.289,
+  "est_woba": 0.379,
+  "est_ba": 0.279,
+  "est_slg": 0.511
+ },
+ {
+  "player_id": 682668,
+  "name": "Acu\u00f1a, Luisangel",
+  "pa": 40.0,
+  "woba": 0.406,
+  "est_woba": 0.307,
+  "est_ba": 0.264,
+  "est_slg": 0.428
+ },
+ {
+  "player_id": 640902,
+  "name": "Pereda, Jhonny",
+  "pa": 40.0,
+  "woba": 0.216,
+  "est_woba": 0.255,
+  "est_ba": 0.231,
+  "est_slg": 0.311
+ },
+ {
+  "player_id": 680716,
+  "name": "Ornelas, Jonathan",
+  "pa": 40.0,
+  "woba": 0.235,
+  "est_woba": 0.251,
+  "est_ba": 0.23,
+  "est_slg": 0.284
+ },
+ {
+  "player_id": 671286,
+  "name": "Rodr\u00edguez, Johnathan",
+  "pa": 40.0,
+  "woba": 0.253,
+  "est_woba": 0.26,
+  "est_ba": 0.134,
+  "est_slg": 0.157
+ },
+ {
+  "player_id": 669137,
+  "name": "Alvarez, Armando",
+  "pa": 39.0,
+  "woba": 0.248,
+  "est_woba": 0.289,
+  "est_ba": 0.265,
+  "est_slg": 0.344
+ },
+ {
+  "player_id": 621545,
+  "name": "Remillard, Zach",
+  "pa": 39.0,
+  "woba": 0.305,
+  "est_woba": 0.301,
+  "est_ba": 0.226,
+  "est_slg": 0.317
+ },
+ {
+  "player_id": 666165,
+  "name": "Sabol, Blake",
+  "pa": 38.0,
+  "woba": 0.352,
+  "est_woba": 0.33,
+  "est_ba": 0.244,
+  "est_slg": 0.398
+ },
+ {
+  "player_id": 608596,
+  "name": "Murphy, Tom",
+  "pa": 38.0,
+  "woba": 0.206,
+  "est_woba": 0.26,
+  "est_ba": 0.154,
+  "est_slg": 0.333
+ },
+ {
+  "player_id": 677941,
+  "name": "Adams, Jordyn",
+  "pa": 38.0,
+  "woba": 0.271,
+  "est_woba": 0.316,
+  "est_ba": 0.261,
+  "est_slg": 0.393
+ },
+ {
+  "player_id": 693049,
+  "name": "Col\u00e1s, Oscar",
+  "pa": 38.0,
+  "woba": 0.3,
+  "est_woba": 0.299,
+  "est_ba": 0.248,
+  "est_slg": 0.289
+ },
+ {
+  "player_id": 621563,
+  "name": "Wendle, Joey",
+  "pa": 37.0,
+  "woba": 0.219,
+  "est_woba": 0.247,
+  "est_ba": 0.222,
+  "est_slg": 0.307
+ },
+ {
+  "player_id": 681584,
+  "name": "Villar, David",
+  "pa": 37.0,
+  "woba": 0.305,
+  "est_woba": 0.319,
+  "est_ba": 0.222,
+  "est_slg": 0.439
+ },
+ {
+  "player_id": 686482,
+  "name": "Driscoll, Logan",
+  "pa": 37.0,
+  "woba": 0.193,
+  "est_woba": 0.267,
+  "est_ba": 0.225,
+  "est_slg": 0.357
+ },
+ {
+  "player_id": 691594,
+  "name": "Sanoja, Javier",
+  "pa": 36.0,
+  "woba": 0.236,
+  "est_woba": 0.231,
+  "est_ba": 0.219,
+  "est_slg": 0.275
+ },
+ {
+  "player_id": 691182,
+  "name": "Amador, Adael",
+  "pa": 36.0,
+  "woba": 0.176,
+  "est_woba": 0.271,
+  "est_ba": 0.244,
+  "est_slg": 0.344
+ },
+ {
+  "player_id": 657088,
+  "name": "Wall, Forrest",
+  "pa": 35.0,
+  "woba": 0.261,
+  "est_woba": 0.244,
+  "est_ba": 0.196,
+  "est_slg": 0.261
+ },
+ {
+  "player_id": 649557,
+  "name": "D\u00edaz, Aledmys",
+  "pa": 34.0,
+  "woba": 0.098,
+  "est_woba": 0.206,
+  "est_ba": 0.197,
+  "est_slg": 0.236
+ },
+ {
+  "player_id": 592348,
+  "name": "Goodrum, Niko",
+  "pa": 33.0,
+  "woba": 0.147,
+  "est_woba": 0.232,
+  "est_ba": 0.169,
+  "est_slg": 0.255
+ },
+ {
+  "player_id": 805373,
+  "name": "Alvarez Jr., Nacho",
+  "pa": 32.0,
+  "woba": 0.128,
+  "est_woba": 0.211,
+  "est_ba": 0.174,
+  "est_slg": 0.225
+ },
+ {
+  "player_id": 663905,
+  "name": "Blankenhorn, Travis",
+  "pa": 32.0,
+  "woba": 0.143,
+  "est_woba": 0.204,
+  "est_ba": 0.172,
+  "est_slg": 0.252
+ },
+ {
+  "player_id": 663967,
+  "name": "Salazar, C\u00e9sar",
+  "pa": 32.0,
+  "woba": 0.343,
+  "est_woba": 0.34,
+  "est_ba": 0.323,
+  "est_slg": 0.378
+ },
+ {
+  "player_id": 688363,
+  "name": "Pauley, Graham",
+  "pa": 32.0,
+  "woba": 0.183,
+  "est_woba": 0.214,
+  "est_ba": 0.172,
+  "est_slg": 0.324
+ },
+ {
+  "player_id": 665782,
+  "name": "De Los Santos, Luis",
+  "pa": 31.0,
+  "woba": 0.211,
+  "est_woba": 0.22,
+  "est_ba": 0.185,
+  "est_slg": 0.233
+ },
+ {
+  "player_id": 656484,
+  "name": "Gray, Tristan",
+  "pa": 31.0,
+  "woba": 0.164,
+  "est_woba": 0.211,
+  "est_ba": 0.17,
+  "est_slg": 0.191
+ },
+ {
+  "player_id": 613564,
+  "name": "Vosler, Jason",
+  "pa": 30.0,
+  "woba": 0.229,
+  "est_woba": 0.307,
+  "est_ba": 0.229,
+  "est_slg": 0.434
+ },
+ {
+  "player_id": 694362,
+  "name": "Dunn, Blake",
+  "pa": 29.0,
+  "woba": 0.247,
+  "est_woba": 0.245,
+  "est_ba": 0.158,
+  "est_slg": 0.301
+ },
+ {
+  "player_id": 670092,
+  "name": "Brooks, Trenton",
+  "pa": 29.0,
+  "woba": 0.186,
+  "est_woba": 0.267,
+  "est_ba": 0.174,
+  "est_slg": 0.291
+ },
+ {
+  "player_id": 501303,
+  "name": "Adrianza, Ehire",
+  "pa": 28.0,
+  "woba": 0.262,
+  "est_woba": 0.241,
+  "est_ba": 0.172,
+  "est_slg": 0.307
+ },
+ {
+  "player_id": 641856,
+  "name": "McKinney, Billy",
+  "pa": 28.0,
+  "woba": 0.246,
+  "est_woba": 0.232,
+  "est_ba": 0.161,
+  "est_slg": 0.236
+ },
+ {
+  "player_id": 672744,
+  "name": "Canario, Alexander",
+  "pa": 28.0,
+  "woba": 0.35,
+  "est_woba": 0.295,
+  "est_ba": 0.197,
+  "est_slg": 0.38
+ },
+ {
+  "player_id": 670223,
+  "name": "Mervis, Matt",
+  "pa": 28.0,
+  "woba": 0.137,
+  "est_woba": 0.176,
+  "est_ba": 0.123,
+  "est_slg": 0.221
+ },
+ {
+  "player_id": 641779,
+  "name": "Leblanc, Charles",
+  "pa": 28.0,
+  "woba": 0.382,
+  "est_woba": 0.37,
+  "est_ba": 0.206,
+  "est_slg": 0.461
+ },
+ {
+  "player_id": 686894,
+  "name": "Wiemer, Joey",
+  "pa": 28.0,
+  "woba": 0.175,
+  "est_woba": 0.245,
+  "est_ba": 0.181,
+  "est_slg": 0.292
+ },
+ {
+  "player_id": 680911,
+  "name": "Miller, Owen",
+  "pa": 27.0,
+  "woba": 0.177,
+  "est_woba": 0.185,
+  "est_ba": 0.184,
+  "est_slg": 0.238
+ },
+ {
+  "player_id": 670276,
+  "name": "Stevenson, Cal",
+  "pa": 27.0,
+  "woba": 0.314,
+  "est_woba": 0.318,
+  "est_ba": 0.236,
+  "est_slg": 0.387
+ },
+ {
+  "player_id": 669374,
+  "name": "Hiura, Keston",
+  "pa": 27.0,
+  "woba": 0.131,
+  "est_woba": 0.193,
+  "est_ba": 0.192,
+  "est_slg": 0.246
+ },
+ {
+  "player_id": 607054,
+  "name": "Peterson, Jace",
+  "pa": 26.0,
+  "woba": 0.113,
+  "est_woba": 0.251,
+  "est_ba": 0.203,
+  "est_slg": 0.237
+ },
+ {
+  "player_id": 671083,
+  "name": "Kennedy, Buddy",
+  "pa": 26.0,
+  "woba": 0.301,
+  "est_woba": 0.392,
+  "est_ba": 0.288,
+  "est_slg": 0.44
+ },
+ {
+  "player_id": 666197,
+  "name": "Kessinger, Grae",
+  "pa": 25.0,
+  "woba": 0.112,
+  "est_woba": 0.238,
+  "est_ba": 0.121,
+  "est_slg": 0.233
+ },
+ {
+  "player_id": 622268,
+  "name": "Walton, Donovan",
+  "pa": 25.0,
+  "woba": 0.236,
+  "est_woba": 0.274,
+  "est_ba": 0.183,
+  "est_slg": 0.306
+ },
+ {
+  "player_id": 681508,
+  "name": "Gasper, Mickey",
+  "pa": 23.0,
+  "woba": 0.151,
+  "est_woba": 0.321,
+  "est_ba": 0.209,
+  "est_slg": 0.264
+ },
+ {
+  "player_id": 694175,
+  "name": "Le\u00f3n, Pedro",
+  "pa": 21.0,
+  "woba": 0.117,
+  "est_woba": 0.185,
+  "est_ba": 0.129,
+  "est_slg": 0.239
+ },
+ {
+  "player_id": 642851,
+  "name": "Wynns, Austin",
+  "pa": 20.0,
+  "woba": 0.419,
+  "est_woba": 0.306,
+  "est_ba": 0.289,
+  "est_slg": 0.365
+ },
+ {
+  "player_id": 671221,
+  "name": "Waters, Drew",
+  "pa": 19.0,
+  "woba": 0.269,
+  "est_woba": 0.201,
+  "est_ba": 0.098,
+  "est_slg": 0.147
+ },
+ {
+  "player_id": 641511,
+  "name": "Delay, Jason",
+  "pa": 19.0,
+  "woba": 0.324,
+  "est_woba": 0.279,
+  "est_ba": 0.194,
+  "est_slg": 0.241
+ },
+ {
+  "player_id": 686555,
+  "name": "Collins, Isaac",
+  "pa": 19.0,
+  "woba": 0.165,
+  "est_woba": 0.182,
+  "est_ba": 0.11,
+  "est_slg": 0.17
+ },
+ {
+  "player_id": 678489,
+  "name": "Barrosa, Jorge",
+  "pa": 18.0,
+  "woba": 0.199,
+  "est_woba": 0.348,
+  "est_ba": 0.346,
+  "est_slg": 0.444
+ },
+ {
+  "player_id": 669352,
+  "name": "Thompson, Bubba",
+  "pa": 18.0,
+  "woba": 0.119,
+  "est_woba": 0.192,
+  "est_ba": 0.166,
+  "est_slg": 0.27
+ },
+ {
+  "player_id": 542364,
+  "name": "Ortega, Rafael",
+  "pa": 17.0,
+  "woba": 0.133,
+  "est_woba": 0.281,
+  "est_ba": 0.209,
+  "est_slg": 0.251
+ },
+ {
+  "player_id": 664954,
+  "name": "Sullivan, Brett",
+  "pa": 17.0,
+  "woba": 0.265,
+  "est_woba": 0.183,
+  "est_ba": 0.121,
+  "est_slg": 0.219
+ },
+ {
+  "player_id": 664059,
+  "name": "Haggerty, Sam",
+  "pa": 16.0,
+  "woba": 0.098,
+  "est_woba": 0.197,
+  "est_ba": 0.17,
+  "est_slg": 0.198
+ },
+ {
+  "player_id": 623168,
+  "name": "Heineman, Tyler",
+  "pa": 16.0,
+  "woba": 0.229,
+  "est_woba": 0.254,
+  "est_ba": 0.08,
+  "est_slg": 0.176
+ },
+ {
+  "player_id": 670869,
+  "name": "Soto, Livan",
+  "pa": 16.0,
+  "woba": 0.318,
+  "est_woba": 0.349,
+  "est_ba": 0.263,
+  "est_slg": 0.359
+ },
+ {
+  "player_id": 663630,
+  "name": "McKenna, Ryan",
+  "pa": 15.0,
+  "woba": 0.378,
+  "est_woba": 0.244,
+  "est_ba": 0.154,
+  "est_slg": 0.356
+ },
+ {
+  "player_id": 656883,
+  "name": "Reetz, Jakson",
+  "pa": 15.0,
+  "woba": 0.266,
+  "est_woba": 0.268,
+  "est_ba": 0.161,
+  "est_slg": 0.406
+ },
+ {
+  "player_id": 665966,
+  "name": "Narv\u00e1ez, Carlos",
+  "pa": 15.0,
+  "woba": 0.268,
+  "est_woba": 0.306,
+  "est_ba": 0.257,
+  "est_slg": 0.308
+ },
+ {
+  "player_id": 670224,
+  "name": "Misner, Kameron",
+  "pa": 15.0,
+  "woba": 0.059,
+  "est_woba": 0.09,
+  "est_ba": 0.095,
+  "est_slg": 0.109
+ },
+ {
+  "player_id": 676679,
+  "name": "V\u00e1zquez, Luis",
+  "pa": 14.0,
+  "woba": 0.114,
+  "est_woba": 0.169,
+  "est_ba": 0.112,
+  "est_slg": 0.122
+ },
+ {
+  "player_id": 671117,
+  "name": "Baker, Darren",
+  "pa": 14.0,
+  "woba": 0.494,
+  "est_woba": 0.219,
+  "est_ba": 0.22,
+  "est_slg": 0.267
+ },
+ {
+  "player_id": 676439,
+  "name": "Feduccia, Hunter",
+  "pa": 14.0,
+  "woba": 0.35,
+  "est_woba": 0.285,
+  "est_ba": 0.219,
+  "est_slg": 0.258
+ },
+ {
+  "player_id": 680577,
+  "name": "Keirsey Jr., DaShawn",
+  "pa": 14.0,
+  "woba": 0.261,
+  "est_woba": 0.338,
+  "est_ba": 0.25,
+  "est_slg": 0.472
+ },
+ {
+  "player_id": 663604,
+  "name": "Lockridge, Brandon",
+  "pa": 12.0,
+  "woba": 0.244,
+  "est_woba": 0.186,
+  "est_ba": 0.152,
+  "est_slg": 0.281
+ },
+ {
+  "player_id": 669326,
+  "name": "Teodosio, Bryce",
+  "pa": 12.0,
+  "woba": 0.073,
+  "est_woba": 0.118,
+  "est_ba": 0.122,
+  "est_slg": 0.142
+ },
+ {
+  "player_id": 657193,
+  "name": "Alvarez, Eddy",
+  "pa": 11.0,
+  "woba": 0.128,
+  "est_woba": 0.268,
+  "est_ba": 0.178,
+  "est_slg": 0.201
+ },
+ {
+  "player_id": 682119,
+  "name": "Jordan, Levi",
+  "pa": 11.0,
+  "woba": 0.114,
+  "est_woba": 0.13,
+  "est_ba": 0.122,
+  "est_slg": 0.192
+ },
+ {
+  "player_id": 672724,
+  "name": "Peraza, Oswald",
+  "pa": 11.0,
+  "woba": 0.329,
+  "est_woba": 0.333,
+  "est_ba": 0.223,
+  "est_slg": 0.47
+ },
+ {
+  "player_id": 621458,
+  "name": "Rios, Edwin",
+  "pa": 10.0,
+  "woba": 0.157,
+  "est_woba": 0.23,
+  "est_ba": 0.18,
+  "est_slg": 0.225
+ },
+ {
+  "player_id": 622110,
+  "name": "Duffy, Matt",
+  "pa": 10.0,
+  "woba": 0.386,
+  "est_woba": 0.482,
+  "est_ba": 0.413,
+  "est_slg": 0.477
+ },
+ {
+  "player_id": 643393,
+  "name": "Kemp, Tony",
+  "pa": 10.0,
+  "woba": 0.069,
+  "est_woba": 0.194,
+  "est_ba": 0.134,
+  "est_slg": 0.181
+ },
+ {
+  "player_id": 682634,
+  "name": "Alc\u00e1ntara, Kevin",
+  "pa": 10.0,
+  "woba": 0.088,
+  "est_woba": 0.201,
+  "est_ba": 0.199,
+  "est_slg": 0.25
+ },
+ {
+  "player_id": 680737,
+  "name": "Helman, Michael",
+  "pa": 10.0,
+  "woba": 0.339,
+  "est_woba": 0.116,
+  "est_ba": 0.12,
+  "est_slg": 0.155
+ },
+ {
+  "player_id": 679881,
+  "name": "Mart\u00ednez, J.P.",
+  "pa": 10.0,
+  "woba": 0.214,
+  "est_woba": 0.093,
+  "est_ba": 0.1,
+  "est_slg": 0.112
+ },
+ {
+  "player_id": 678894,
+  "name": "Peguero, Liover",
+  "pa": 10.0,
+  "woba": 0.214,
+  "est_woba": 0.269,
+  "est_ba": 0.269,
+  "est_slg": 0.347
+ },
+ {
+  "player_id": 542963,
+  "name": "Brantly, Rob",
+  "pa": 9.0,
+  "woba": 0.098,
+  "est_woba": 0.329,
+  "est_ba": 0.256,
+  "est_slg": 0.509
+ },
+ {
+  "player_id": 687799,
+  "name": "Marlowe, Cade",
+  "pa": 9.0,
+  "woba": 0.273,
+  "est_woba": 0.33,
+  "est_ba": 0.309,
+  "est_slg": 0.344
+ },
+ {
+  "player_id": 681962,
+  "name": "Capra, Vinny",
+  "pa": 9.0,
+  "woba": 0.139,
+  "est_woba": 0.057,
+  "est_ba": 0.052,
+  "est_slg": 0.071
+ },
+ {
+  "player_id": 664058,
+  "name": "Fletcher, David",
+  "pa": 9.0,
+  "woba": 0.196,
+  "est_woba": 0.14,
+  "est_ba": 0.088,
+  "est_slg": 0.101
+ },
+ {
+  "player_id": 668843,
+  "name": "Capel, Conner",
+  "pa": 8.0,
+  "woba": 0.22,
+  "est_woba": 0.182,
+  "est_ba": 0.189,
+  "est_slg": 0.241
+ },
+ {
+  "player_id": 669450,
+  "name": "Hummel, Cooper",
+  "pa": 8.0,
+  "woba": 0.0,
+  "est_woba": 0.182,
+  "est_ba": 0.149,
+  "est_slg": 0.243
+ },
+ {
+  "player_id": 680769,
+  "name": "Alexander, CJ",
+  "pa": 8.0,
+  "woba": 0.11,
+  "est_woba": 0.216,
+  "est_ba": 0.189,
+  "est_slg": 0.317
+ },
+ {
+  "player_id": 667428,
+  "name": "Koch, Grant",
+  "pa": 8.0,
+  "woba": 0.086,
+  "est_woba": 0.087,
+  "est_ba": 0.002,
+  "est_slg": 0.002
+ },
+ {
+  "player_id": 666211,
+  "name": "Trammell, Taylor",
+  "pa": 8.0,
+  "woba": 0.196,
+  "est_woba": 0.161,
+  "est_ba": 0.091,
+  "est_slg": 0.108
+ },
+ {
+  "player_id": 660636,
+  "name": "Castillo, Diego",
+  "pa": 8.0,
+  "woba": 0.439,
+  "est_woba": 0.409,
+  "est_ba": 0.326,
+  "est_slg": 0.372
+ },
+ {
+  "player_id": 605244,
+  "name": "Garcia, Aramis",
+  "pa": 7.0,
+  "woba": 0.0,
+  "est_woba": 0.114,
+  "est_ba": 0.08,
+  "est_slg": 0.177
+ },
+ {
+  "player_id": 687957,
+  "name": "Harris, Dustin",
+  "pa": 7.0,
+  "woba": 0.57,
+  "est_woba": 0.368,
+  "est_ba": 0.265,
+  "est_slg": 0.493
+ },
+ {
+  "player_id": 665856,
+  "name": "Camargo, Jair",
+  "pa": 7.0,
+  "woba": 0.098,
+  "est_woba": 0.174,
+  "est_ba": 0.096,
+  "est_slg": 0.108
+ },
+ {
+  "player_id": 595284,
+  "name": "Knapp, Andrew",
+  "pa": 6.0,
+  "woba": 0.147,
+  "est_woba": 0.136,
+  "est_ba": 0.149,
+  "est_slg": 0.157
+ },
+ {
+  "player_id": 656448,
+  "name": "Garrett, Stone",
+  "pa": 6.0,
+  "woba": 0.812,
+  "est_woba": 0.767,
+  "est_ba": 0.551,
+  "est_slg": 1.36
+ },
+ {
+  "player_id": 675659,
+  "name": "Jones, Greg",
+  "pa": 6.0,
+  "woba": 0.456,
+  "est_woba": 0.443,
+  "est_ba": 0.195,
+  "est_slg": 0.776
+ },
+ {
+  "player_id": 694355,
+  "name": "Gentry, Tyler",
+  "pa": 5.0,
+  "woba": 0.0,
+  "est_woba": 0.077,
+  "est_ba": 0.083,
+  "est_slg": 0.091
+ },
+ {
+  "player_id": 668752,
+  "name": "Ellis, Duke",
+  "pa": 5.0,
+  "woba": 0.176,
+  "est_woba": 0.261,
+  "est_ba": 0.282,
+  "est_slg": 0.301
+ },
+ {
+  "player_id": 660758,
+  "name": "Fabian, Sandro",
+  "pa": 5.0,
+  "woba": 0.0,
+  "est_woba": 0.202,
+  "est_ba": 0.143,
+  "est_slg": 0.339
+ },
+ {
+  "player_id": 605119,
+  "name": "Anderson, Brian",
+  "pa": 5.0,
+  "woba": 0.0,
+  "est_woba": 0.48,
+  "est_ba": 0.386,
+  "est_slg": 0.747
+ },
+ {
+  "player_id": 676551,
+  "name": "Hicklen, Brewer",
+  "pa": 5.0,
+  "woba": 0.0,
+  "est_woba": 0.057,
+  "est_ba": 0.063,
+  "est_slg": 0.076
+ },
+ {
+  "player_id": 665155,
+  "name": "Maton, Nick",
+  "pa": 5.0,
+  "woba": 0.0,
+  "est_woba": 0.104,
+  "est_ba": 0.085,
+  "est_slg": 0.16
+ },
+ {
+  "player_id": 669392,
+  "name": "Taylor, Samad",
+  "pa": 5.0,
+  "woba": 0.353,
+  "est_woba": 0.175,
+  "est_ba": 0.168,
+  "est_slg": 0.182
+ },
+ {
+  "player_id": 664702,
+  "name": "Straw, Myles",
+  "pa": 4.0,
+  "woba": 0.22,
+  "est_woba": 0.212,
+  "est_ba": 0.223,
+  "est_slg": 0.26
+ },
+ {
+  "player_id": 672701,
+  "name": "Devers, Jos\u00e9",
+  "pa": 4.0,
+  "woba": 0.22,
+  "est_woba": 0.34,
+  "est_ba": 0.319,
+  "est_slg": 0.361
+ },
+ {
+  "player_id": 669087,
+  "name": "Huff, Sam",
+  "pa": 4.0,
+  "woba": 0.172,
+  "est_woba": 0.38,
+  "est_ba": 0.292,
+  "est_slg": 0.324
+ },
+ {
+  "player_id": 682619,
+  "name": "Martinez, Orelvis",
+  "pa": 3.0,
+  "woba": 0.294,
+  "est_woba": 0.295,
+  "est_ba": 0.308,
+  "est_slg": 0.359
+ },
+ {
+  "player_id": 676946,
+  "name": "Batten, Matthew",
+  "pa": 3.0,
+  "woba": 0.53,
+  "est_woba": 0.264,
+  "est_ba": 0.255,
+  "est_slg": 0.358
+ },
+ {
+  "player_id": 622491,
+  "name": "Castillo, Luis",
+  "pa": 1.0,
+  "woba": 0.0,
+  "est_woba": 0.0,
+  "est_ba": null,
+  "est_slg": null
+ },
+ {
+  "player_id": 675915,
+  "name": "Ba\u00f1uelos, David",
+  "pa": 1.0,
+  "woba": 0.0,
+  "est_woba": 0.019,
+  "est_ba": 0.018,
+  "est_slg": 0.024
+ },
+ {
+  "player_id": 676896,
+  "name": "Roller, Chris",
+  "pa": 1.0,
+  "woba": 0.0,
+  "est_woba": 0.0,
+  "est_ba": null,
+  "est_slg": null
+ },
+ {
+  "player_id": 669288,
+  "name": "Johnson, Daniel",
+  "pa": 1.0,
+  "woba": 0.0,
+  "est_woba": 0.261,
+  "est_ba": 0.288,
+  "est_slg": 0.292
+ },
+ {
+  "player_id": 543518,
+  "name": "McGough, Scott",
+  "pa": 1.0,
+  "woba": 0.0,
+  "est_woba": 0.0,
+  "est_ba": null,
+  "est_slg": null
+ },
+ {
+  "player_id": 687066,
+  "name": "Yang, Eric",
+  "pa": 1.0,
+  "woba": 0.0,
+  "est_woba": 0.0,
+  "est_ba": null,
+  "est_slg": null
+ }
+]

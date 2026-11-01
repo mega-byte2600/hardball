@@ -1,0 +1,232 @@
+{
+  "q1_luck_correction": {
+    "2023->2024": {
+      "n": 240,
+      "mae_prior_actual_woba": 0.0304,
+      "mae_prior_est_woba": 0.0279,
+      "r_prior_actual": 0.461,
+      "r_prior_est": 0.572
+    },
+    "2024->2025": {
+      "n": 225,
+      "mae_prior_actual_woba": 0.026,
+      "mae_prior_est_woba": 0.0256,
+      "r_prior_actual": 0.52,
+      "r_prior_est": 0.532
+    },
+    "2025->2026": {
+      "n": 229,
+      "mae_prior_actual_woba": 0.0286,
+      "mae_prior_est_woba": 0.0266,
+      "r_prior_actual": 0.415,
+      "r_prior_est": 0.473
+    }
+  },
+  "q2_trait_stability": {
+    "bat_speed": {
+      "yoy_r_by_pair": [
+        0.919,
+        0.924
+      ],
+      "mean_r": 0.921
+    },
+    "barrel_pct": {
+      "yoy_r_by_pair": [
+        0.799,
+        0.803
+      ],
+      "mean_r": 0.801
+    },
+    "squared_up": {
+      "yoy_r_by_pair": [
+        0.794,
+        0.803
+      ],
+      "mean_r": 0.798
+    },
+    "ev50": {
+      "yoy_r_by_pair": [
+        0.902,
+        0.892
+      ],
+      "mean_r": 0.897
+    },
+    "outcome_OBP": {
+      "yoy_r_by_pair": [
+        0.574,
+        0.298
+      ],
+      "mean_r": 0.436
+    },
+    "outcome_SLG": {
+      "yoy_r_by_pair": [
+        0.593,
+        0.363
+      ],
+      "mean_r": 0.478
+    }
+  },
+  "q3_incremental_over_marcel": {
+    "F1_luck": {
+      "OBP": [
+        {
+          "fit_on": 2025,
+          "test_on": 2026,
+          "n_test": 91,
+          "base_mae": 0.0227,
+          "adj_mae": 0.0225,
+          "delta": -0.0003
+        },
+        {
+          "fit_on": 2026,
+          "test_on": 2025,
+          "n_test": 105,
+          "base_mae": 0.0208,
+          "adj_mae": 0.0207,
+          "delta": -0.0001
+        }
+      ],
+      "SLG": [
+        {
+          "fit_on": 2025,
+          "test_on": 2026,
+          "n_test": 91,
+          "base_mae": 0.0458,
+          "adj_mae": 0.0448,
+          "delta": -0.001
+        },
+        {
+          "fit_on": 2026,
+          "test_on": 2025,
+          "n_test": 105,
+          "base_mae": 0.0426,
+          "adj_mae": 0.0438,
+          "delta": 0.0012
+        }
+      ]
+    },
+    "F2_batted_ball": {
+      "OBP": [
+        {
+          "fit_on": 2025,
+          "test_on": 2026,
+          "n_test": 89,
+          "base_mae": 0.0227,
+          "adj_mae": 0.0232,
+          "delta": 0.0005
+        },
+        {
+          "fit_on": 2026,
+          "test_on": 2025,
+          "n_test": 100,
+          "base_mae": 0.0205,
+          "adj_mae": 0.0203,
+          "delta": -0.0003
+        }
+      ],
+      "SLG": [
+        {
+          "fit_on": 2025,
+          "test_on": 2026,
+          "n_test": 89,
+          "base_mae": 0.0459,
+          "adj_mae": 0.0477,
+          "delta": 0.0017
+        },
+        {
+          "fit_on": 2026,
+          "test_on": 2025,
+          "n_test": 100,
+          "base_mae": 0.0414,
+          "adj_mae": 0.0413,
+          "delta": -0.0001
+        }
+      ]
+    },
+    "F3_bat_tracking": {
+      "OBP": [
+        {
+          "fit_on": 2025,
+          "test_on": 2026,
+          "n_test": 91,
+          "base_mae": 0.0227,
+          "adj_mae": 0.0228,
+          "delta": 0.0001
+        },
+        {
+          "fit_on": 2026,
+          "test_on": 2025,
+          "n_test": 105,
+          "base_mae": 0.0208,
+          "adj_mae": 0.0209,
+          "delta": 0.0002
+        }
+      ],
+      "SLG": [
+        {
+          "fit_on": 2025,
+          "test_on": 2026,
+          "n_test": 91,
+          "base_mae": 0.0458,
+          "adj_mae": 0.0464,
+          "delta": 0.0007
+        },
+        {
+          "fit_on": 2026,
+          "test_on": 2025,
+          "n_test": 105,
+          "base_mae": 0.0426,
+          "adj_mae": 0.0441,
+          "delta": 0.0015
+        }
+      ]
+    },
+    "F4_all": {
+      "OBP": [
+        {
+          "fit_on": 2025,
+          "test_on": 2026,
+          "n_test": 89,
+          "base_mae": 0.0227,
+          "adj_mae": 0.0232,
+          "delta": 0.0005
+        },
+        {
+          "fit_on": 2026,
+          "test_on": 2025,
+          "n_test": 100,
+          "base_mae": 0.0205,
+          "adj_mae": 0.0204,
+          "delta": -0.0001
+        }
+      ],
+      "SLG": [
+        {
+          "fit_on": 2025,
+          "test_on": 2026,
+          "n_test": 89,
+          "base_mae": 0.0459,
+          "adj_mae": 0.0473,
+          "delta": 0.0014
+        },
+        {
+          "fit_on": 2026,
+          "test_on": 2025,
+          "n_test": 100,
+          "base_mae": 0.0414,
+          "adj_mae": 0.0412,
+          "delta": -0.0003
+        }
+      ]
+    }
+  },
+  "verdicts": {
+    "q1": "xwOBA is the better INPUT: prior est_woba beat prior actual wOBA at predicting next-year wOBA in all 3 pairs (MAE gaps .0025/.0004/.0020). Real, modest, literature-consistent. Noted for a future cycle that tests est-stats AS Marcel inputs (not tested here).",
+    "q2": "The traits are real: bat speed YoY r ~.92, EV50 ~.90, barrel% and squared-up ~.80 \u2014 far more stable than OBP/SLG outcomes themselves (.30-.59). Stability, however, is not the same as incremental projection value (see Q3).",
+    "F1_luck": "DROPPED. OBP improved both directions but by .0001-.0003 MAE (rounding-level), and SLG split (+.0012 one way). Directionally sensible, materially zero.",
+    "F2_batted_ball": "DROPPED. Split decisions on both metrics.",
+    "F3_bat_tracking": "DROPPED. Worsened OOS MAE in BOTH directions on BOTH metrics despite being the most stable trait family \u2014 Marcel's outcome history already prices bat speed. The literature spine's open question is answered: no, bat speed does not improve this projection.",
+    "F4_all": "DROPPED. Split decisions; combining families does not rescue them.",
+    "adoption": "No Savant family joins the projection. Savant data stays in the product as context/diagnostics (and the Q1 input finding), not as projection adjustments."
+  }
+}
