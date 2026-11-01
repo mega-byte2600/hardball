@@ -264,3 +264,16 @@ verified by a real command run, not self-asserted. GP review pending on all.
   winners $75-97M to deploy. Cap=necessity, floor=pool for the efficient.
 - Shipped: dashboard Figure 13 (cap-era bar, red=over/must cut,
   green=under/gets pool). 13 figures total.
+
+---
+## Cycle 23 — PERSISTENCE WITH CONFIDENCE (bounded edge, not bare r)
+- Built: src/bml_cycle23_ci.py -> data/persistence_ci.json. Bootstrap 95% CI
+  on every year-over-year skill correlation, on every adjacent season pair.
+- Measured: pooled contact persistence r=0.839, 95% CI [0.779, 0.883], across
+  173 player-year pairs (2024-25 n=93 + 2025-26 n=80). BB r=0.71, OBP r=0.58
+  (noisy). The edge is now stated WITH its confidence bound, not as a point.
+- Also: rewrote the "what the math provably supports" dashboard box from
+  run-on scrawl to clean executive prose (same honest claims). New FIGURE INDEX
+  box at top (all 13 charts mappable). Fixed int64 json serialization bug.
+- Shipped: Figure 1 now cites pooled r=0.84 (95% CI 0.78-0.88, 173 pairs) with
+  an explicit color legend. Dashboard 13 figures, 4.949MB.
