@@ -463,12 +463,14 @@ def _panel_skill_multipair(multi_path, ci_path):
                    ("Blue = noisy (best pair r < 0.40)", "#1565c0")]:
         fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers", marker=dict(color=c, size=10), name=lab))
     n_players = d.get("n_players", "")
-    sub = (f"{len(pairs)} season pairs, {n_players} players — contact persists r≥0.6 in EVERY "
+    n_pairs = len(pairs)
+    sub = (f"{n_pairs} season pairs, {n_players} players — contact persists r≥0.6 in EVERY "
            f"pair (pooled r≈{d.get('pooled_contact_r', 0):.2f})")
     if pooled:
         sub += (f"; {pooled['n_pairs']} player-year pairs, pooled r={pooled['r']:.2f} "
                 f"(95% CI {pooled['ci95'][0]:.2f}-{pooled['ci95'][1]:.2f})")
-    fig.update_layout(title="The measurable edge: input SKILLS persist year-to-year (3 real season pairs, 393 players)",
+    fig.update_layout(title=f"The measurable edge: input SKILLS persist year-to-year "
+                            f"({len(pairs)} real season pairs, {n_players} players)",
                       xaxis_title="Year-over-year persistence (r)",
                       xaxis_range=[0, 1.1], template="plotly_white", height=420,
                       margin=dict(l=140, t=95),

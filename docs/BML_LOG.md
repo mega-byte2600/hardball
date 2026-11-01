@@ -288,3 +288,11 @@ verified by a real command run, not self-asserted. GP review pending on all.
 - MEASURED-A-BUG: raw scale-split (wOBA delta / FIP delta) printed 100/0 for
   nearly everyone because the scales differ ~1000x. Fixed with MAD-robust z.
   Honest label: allocation model, NOT per-player salary (unavailable publicly).
+
+---
+## Cycle 21b — 2022 LOADED → persistence edge now 4 season pairs (~400+ players)
+- The overnight backfill fetched 2022 raw data but ended before the lake upsert;
+  wrote load_lake_2022.py to idempotently upsert cached 2022 into the lake.
+- Re-ran cycle 21 on 5 seasons (2022-2026). Multiple season pairs now, pooled
+  contact persistence held stable. Figure 1 title/subtitle made dynamic on
+  len(pairs) so it reads "(N real season pairs, N players)" automatically.
