@@ -1,10 +1,12 @@
 """P6: HARDBALL demo dashboard (Plotly HTML).
 
-Fourteen panels on real data (payroll-vs-wins, KPI signature, cap projections,
+Seventeen panels on real data (payroll-vs-wins, KPI signature, cap projections,
 25-year durability, 2027 Marcel projections, pitching, health/availability,
 cap roster, run differential, sensitivity, plus the CarpeData panels:
 Marcel-vs-Steamer benchmark, Savant trait check, MiLB pipeline index,
-and the 2027 free-agent shopping list).
+and the 2027 free-agent shopping list,
+plus the Boardroom layer: a 16-season animated payroll-vs-wins film, a
+pick-your-team signature explorer, and budget-scenario rosters).
 Serves as a self-contained HTML file the GP can open at the Winter Meetings.
 
 Build must work from a clean clone: every panel reads committed data
@@ -499,6 +501,159 @@ def panel_shopping():
     return fig
 
 
+def panel_animation():
+    """Cycle 26: 16 seasons of payroll vs wins, animated. Press play —
+    the cap era arrives and the gold dots (MIL/TB/CLE) never move."""
+    p = os.path.join(DATA, "panel_2011_2026.csv")
+    if not os.path.exists(p):
+        return None
+    import pandas as pd
+    d = pd.read_csv(p)
+    for c in ("payroll", "wins"):
+        d[c] = pd.to_numeric(d[c], errors="coerce")
+    d = d.dropna(subset=["payroll", "wins"])
+    d["payroll_m"] = d["payroll"] / 1e6
+    d["eff"] = d["wins"] / d["payroll_m"] * 100  # wins per $100M
+
+    def color(r):
+        if r["team"] in ("MIL", "TB", "CLE"):
+            return "#c9a227"
+        if r["payroll_m"] > 260:
+            return "#d50032"
+        return "#14213d"
+
+    seasons = sorted(d["season"].unique())
+    frames, base = [], None
+    for s in seasons:
+        sub = d[d["season"] == s]
+        tr = go.Scatter(
+            x=sub["payroll_m"], y=sub["wins"], mode="markers+text",
+            text=sub["team"], textposition="top center",
+            marker=dict(size=(sub["eff"] * 9).clip(6, 30),
+                        color=[color(r) for _, r in sub.iterrows()],
+                        opacity=0.82, line=dict(width=1, color="white")),
+            hovertemplate="%{text}: %{y} wins on $%{x:.0f}M<extra></extra>",
+            showlegend=False)
+        if base is None:
+            base = tr
+        frames.append(go.Frame(data=[tr], name=str(s)))
+    fig = go.Figure(data=[base], frames=frames)
+    fig.update_layout(
+        title=("PRESS PLAY: 16 seasons of payroll vs wins (2011–2026)<br>"
+               "<sub>Bubble size = wins per $100M. Gold = the winning-cheap three (MIL/TB/CLE); "
+               "red = $260M+ payrolls. The gold barely moves — that is the whole thesis in motion. "
+               "Source: MLB Stats API panel + Spotrac payrolls (data/panel_2011_2026.csv).</sub>"),
+        xaxis=dict(title="Team payroll ($M)", range=[0, 370]),
+        yaxis=dict(title="Wins", range=[38, 118]),
+        template="plotly_white", height=600,
+        updatemenus=[dict(type="buttons", direction="left", x=0.0, y=-0.14,
+                          buttons=[dict(label="▶ Play", method="animate",
+                                        args=[None, dict(frame=dict(duration=850, redraw=True),
+                                                         fromcurrent=True)]),
+                                   dict(label="❚❚ Pause", method="animate",
+                                        args=[[None], dict(frame=dict(duration=0, redraw=False),
+                                                            mode="immediate")])])],
+        sliders=[dict(steps=[dict(method="animate", label=str(s),
+                                  args=[[str(s)], dict(frame=dict(duration=0, redraw=True),
+                                                       mode="immediate")])
+                              for s in seasons],
+                      x=0.08, len=0.9, y=-0.14,
+                      currentvalue=dict(prefix="Season: "))])
+    return fig
+
+
+def panel_team_explorer():
+    """Cycle 26: pick your team — its 2026 signature vs the winning-cheap
+    profile, with payroll, cap headroom, and pipeline rank."""
+    fj = os.path.join(DATA, "team_explorer.json")
+    if not os.path.exists(fj):
+        return None
+    d = json.load(open(fj))
+    raw_axes = ["OBP", "contact", "K%", "BB%", "HR/PA_raw"]
+    labels = d["metadata"]["axes"]
+    cheap = d["metadata"]["winning_cheap_idx"]
+    traces, buttons = [], []
+    n = len(d["teams"])
+    for i, t in enumerate(d["teams"]):
+        vals = [t["signature_idx"][c] for c in raw_axes]
+        vals.append(vals[0])
+        traces.append(go.Scatterpolar(
+            r=vals, theta=labels + [labels[0]], fill="toself",
+            name=t["team"], visible=(i == 0),
+            line=dict(color="#14213d", width=2),
+            fillcolor="rgba(20,33,61,0.18)"))
+    cheap_vals = [cheap[l] for l in labels]
+    cheap_vals.append(cheap_vals[0])
+    traces.append(go.Scatterpolar(
+        r=cheap_vals, theta=labels + [labels[0]], name="Winning-cheap profile",
+        line=dict(color="#c9a227", width=3), fill="toself",
+        fillcolor="rgba(201,162,39,0.13)"))
+    traces.append(go.Scatterpolar(
+        r=[100] * 6, theta=labels + [labels[0]], name="League = 100",
+        line=dict(color="#9aa3b2", width=1, dash="dot")))
+    for i, t in enumerate(d["teams"]):
+        vis = [j == i for j in range(n)] + [True, True]
+        title = (f"{t['team']} — {t['wins']} wins · payroll ${t['payroll']/1e6:.0f}M · "
+                 f"cap headroom ${t['cap_headroom_m']:.0f}M · pipeline #{t['pipeline_rank']} "
+                 f"(top prospect: {t['top_prospect']})<br>"
+                 "<sub>Signature indexed to league = 100; higher = more winning-cheap-like on every axis "
+                 "(K% and HR rate inverted). Gold = MIL/TB/CLE average profile. Sources: MLB Stats API 2026 KPIs, "
+                 "Spotrac payroll, Cycle 23 pipeline index. Pick your team:</sub>")
+        buttons.append(dict(label=t["team"], method="update",
+                            args=[{"visible": vis}, {"title": {"text": title}}]))
+    t0 = d["teams"][0]
+    fig = go.Figure(data=traces)
+    fig.update_layout(
+        title=f"{t0['team']} — pick your team<br><sub>Use the dropdown: every club's 2026 signature vs the winning-cheap profile.</sub>",
+        polar=dict(radialaxis=dict(visible=True, range=[55, 135])),
+        updatemenus=[dict(buttons=buttons, direction="down", x=0.0, y=1.12,
+                          showactive=True, active=0)],
+        template="plotly_white", height=560,
+        legend=dict(orientation="h", y=-0.08))
+    return fig
+
+
+def panel_scenarios():
+    """Cycle 26: what does the money buy? Full 26-man rosters built from
+    the real FA class at the floor, the middle, and the cap."""
+    fj = os.path.join(DATA, "wow_scenarios.json")
+    if not os.path.exists(fj):
+        return None
+    d = json.load(open(fj))
+    traces, buttons = [], []
+    for i, s in enumerate(d["scenarios"]):
+        r = s["roster"]
+        traces.append(go.Table(
+            header=dict(values=["Pos", "Player", "From", "Steamer WAR", "Prior AAV"],
+                        fill_color="#14213d", font=dict(color="white", size=12),
+                        align="left"),
+            cells=dict(values=[[x["pos"] for x in r], [x["name"] for x in r],
+                               [x["prev_team"] for x in r],
+                               [x["war"] for x in r],
+                               [f"${x['prev_aav']/1e6:.1f}M" for x in r]],
+                       fill_color="rgba(244,241,234,0.6)", align="left",
+                       font=dict(size=11.5), height=19),
+            visible=(i == 0)))
+        title = (f"What does the money buy? {s['label']}: {s['total_war']} WAR for "
+                 f"${s['spend']/1e6:.1f}M<br>"
+                 "<sub>A full 26-man roster bought entirely from the real 2027 free-agent class "
+                 "(greedy WAR-per-dollar by position, then upgrades — Cycle 26). Prices are prior-contract "
+                 "AAVs: last-price anchors, not predicted 2027 salaries. The floor roster captures "
+                 "~80% of the cap roster's WAR — the last $73M buys ~10 WAR. Switch budget:</sub>")
+        buttons.append(dict(label=s["label"], method="update",
+                            args=[{"visible": [j == i for j in range(len(d["scenarios"]))]},
+                                  {"title": {"text": title}}]))
+    s0 = d["scenarios"][0]
+    fig = go.Figure(data=traces)
+    fig.update_layout(
+        title=(f"What does the money buy? {s0['label']}: {s0['total_war']} WAR for "
+               f"${s0['spend']/1e6:.1f}M<br><sub>Switch budget below the chart.</sub>"),
+        updatemenus=[dict(buttons=buttons, direction="right", x=0.0, y=-0.03,
+                          showactive=True, active=0)],
+        template="plotly_white", height=700, margin=dict(t=110, b=60))
+    return fig
+
+
 def build():
     os.makedirs(os.path.join(REPO, "dashboard"), exist_ok=True)
     try:
@@ -524,6 +679,9 @@ def build():
     fig12 = panel_savant()
     fig13 = panel_pipeline()
     fig14 = panel_shopping()
+    fig15 = panel_animation()
+    fig16 = panel_team_explorer()
+    fig17 = panel_scenarios()
 
     # Self-contained offline demo: inline plotly so no internet needed at the
     # Winter Meetings. Caches the bundle next to the dashboard if present.
@@ -555,6 +713,8 @@ def build():
         legend=dict(bgcolor="rgba(255,255,255,0.92)",
                     bordercolor="#e3dfd2", borderwidth=1)))
     SECTIONS = [
+        ("★", "The Boardroom", "Sixteen seasons in motion, and every "
+         "club's signature — find yours.", [fig15, fig16]),
         ("I", "The Proof", "Run differential describes wins (R² ≈ 0.55) — "
          "and payroll alone doesn't buy them.", [fig9, fig1]),
         ("II", "The Signature", "Winning-cheap teams look different: more "
@@ -565,8 +725,9 @@ def build():
         ("IV", "The Players", "Backtested Marcel projections, "
          "health-capped — the actual shopping-grade numbers.",
          [fig5, fig6, fig7]),
-        ("V", "The Roster", "A 26-man roster that fits the cap, and what "
-         "moves the win needle.", [fig8, fig10]),
+        ("V", "The Roster", "A 26-man roster that fits the cap, what "
+         "moves the win needle — and what the money buys at three budgets.",
+         [fig8, fig10, fig17]),
         ("VI", "The Check", "Benchmarked against Steamer and Statcast — "
          "including where we disagree and by how much.", [fig11, fig12]),
         ("VII", "The Future", "The pipelines feeding the cheap winners, "
