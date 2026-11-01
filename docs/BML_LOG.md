@@ -312,3 +312,18 @@ verified by a real command run, not self-asserted. GP review pending on all.
 - BUG FIXED: the backfill had cached 2022 raw but ended before lake upsert;
   wrote load_lake_2022.py to upsert. Fixed int64 json serialization in
   cycle21 + cycle23.
+
+## Cycle 25 — POKA-YOKE novice pass (GP: "someone who knows little about baseball sees and gets it")
+- Root-cause fix first: every figure had the SAME crowded top strip because the shared
+  `_number()` helper forced legends to y≈1.02 (above the plot, colliding title + subtitles).
+  Moved ALL legends below the charts, removed floating top annotations, cut redundant
+  legend rows that duplicated the global COLOR KEY. Verified by DOM geometry + screenshots:
+  all 13 figures = title above, legend below, zero overlap.
+- Added BASEBALL PLAIN-ENGLISH KEY glossary box (PA, OBP, contact%, BB%, ISO, run diff,
+  wOBA/wRC+, FIP, K-BB%, WAR-as-proprietary-honest-note).
+- Plain-language cue under every Figure 4 KPI subplot label (reach base %, walks, home runs,
+  hits ball, strikeouts). "Payroll ($M)" → "($ millions)".
+- Fixed "forward team-wins" → "forward-looking team-wins" (parallel with point 1).
+- Measured: build clean; browser-verified glossary renders + Figure 4 cues live.
+- Learned: one shared layout bug is the real "why won't it stop overlapping" answer —
+  patch the helper, not each figure.
