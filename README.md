@@ -19,6 +19,9 @@ over-index on exactly these inputs and win ~95 games at ~1/3-1/4 big-market cost
 - **Math** — linear + logistic regression, repeated K-fold validation,
   sensitivity/elasticity, run-differential (diagnostic) and value metrics
   (wOBA/wRC+/FIP/K-BB%). Honest negatives logged, nothing overclaimed.
+- **Evidence trail** — `docs/LITERATURE_SPINE.md` (the journals/references the
+  math is built on) + `docs/citations_ledger.json` (30 sourced references with
+  access dates), so every agent and collaborator can audit the research base.
 
 ## How to run (3 steps)
 1. `python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt`

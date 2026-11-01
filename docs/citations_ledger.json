@@ -1,0 +1,185 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://arxiv.org/abs/2110.14017",
+      "title": "Estimation of Player Aging Curves: Regression & Imputation (Schuckers, Lopez, Macdonald)",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 2,
+      "url": "https://ar5iv.labs.arxiv.org/html/2210.02383",
+      "title": "Filling the Gaps: Multiple Imputation Aging Curves MLB (ar5iv)",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 3,
+      "url": "https://ar5iv.labs.arxiv.org/html/1712.05754",
+      "title": "Understanding Career Progression in Baseball via ML",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 4,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37853750",
+      "title": "Lower extremity kinematics/kinetics & bat speed (Sports Biomech 2024)",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 5,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29651903",
+      "title": "Kinetics of Swinging a Baseball Bat (J Appl Biomech 2018)",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 6,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21085044",
+      "title": "Kinematics of baseball swing, varying skill (2010)",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 7,
+      "url": "https://www.jospt.org/doi/10.2519/jospt.1995.22.5.193",
+      "title": "Hitting a Baseball: Biomechanical Description (Welch, JOSPT 1995)",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 8,
+      "url": "https://arxiv.org/pdf/2206.09654",
+      "title": "Performance Prediction in MLB by LSTM (arXiv)",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 9,
+      "url": "https://tht.fangraphs.com/evaluating-the-2014-projection-systems",
+      "title": "Evaluating 2014 Projection Systems (Hardball Times)",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 10,
+      "url": "https://pitcherlist.com/fantasy-101-how-to-evaluate-hitters-using-multiple-statistics",
+      "title": "Evaluating hitters: Statcast descriptiveness vs predictiveness",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 11,
+      "url": "https://www.baseballprospectus.com/news/article/59972/the-delta-method-revisited",
+      "title": "Delta Method Revisited: Rethinking Aging Curves (BP)",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 12,
+      "url": "https://github.com/jackseeburger/baseball-projections",
+      "title": "baseball-projections: Bayesian PyMC + Marcel baseline + backtest",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 13,
+      "url": "https://github.com/nielsjsc/LSTMLB",
+      "title": "LSTMLB: Marcel method + LSTM, 7 component projection engine",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 14,
+      "url": "https://github.com/yasumorishima/baseball-mlops",
+      "title": "baseball-mlops: Statcast xwOBA prediction vs Marcel (LightGBM/CatBoost)",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 15,
+      "url": "https://github.com/yasumorishima/baseball-bayes",
+      "title": "baseball-bayes: pre-registered Bayesian aging vs Marcel result",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 16,
+      "url": "https://github.com/Jack1021ohoh/MLB_Position_Player_Aging_Analysis",
+      "title": "GAM aging curves with IPW survivorship correction, 1980-2025",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 17,
+      "url": "https://github.com/kellytodhunter/KBO-Player-Analysis",
+      "title": "KBO Marcel-style projection + empirical Bayes + delta aging + backtest",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 18,
+      "url": "https://mitsloan.mit.edu/shared/ods/documents?PublicationDocumentID=10724",
+      "title": "RBP: Prediction with Transparency - Offensive Value in Baseball (Czasonis/Kritzman, MIT/Cambridge Sports Analytics, Nov 2025)",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 19,
+      "url": "https://arxiv.org/pdf/2109.05280",
+      "title": "Learning to Describe Player Form in the MLB (Heaton & Mitra, SSAC 2022 finalist)",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 20,
+      "url": "https://news.mit.edu/2025/five-ways-to-succeed-sports-analytics-0313",
+      "title": "MIT News: Five ways to succeed in sports analytics (Lewis on Moneyball, Bill James runs created)",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 21,
+      "url": "https://www.tandfonline.com/doi/full/10.1080/00913847.2026.2723859",
+      "title": "Oblique strains in MLB: hitter performance decline (2026)",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 22,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12953945",
+      "title": "RTP + performance after shoulder labral repair MLB (pitcher vs position)",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 23,
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7672741/pdf/10.1177_2325967120963046.pdf",
+      "title": "ML predicts next-season MLB injury: AUC 0.76 pos/0.65 pit (2020)",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 24,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12853774",
+      "title": "UCL injury mechanisms + RTP criteria systematic review",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 25,
+      "url": "https://ijspt.org/wp-content/uploads/2024/01/4-Dowling-1.pdf",
+      "title": "Workload comparison interval throwing programs, ACWR, >1.27 ~15x risk",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 26,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40021256",
+      "title": "RTP throwing programs (Clin Sports Med 2025)",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 27,
+      "url": "https://github.com/jasonbhorne/mlb-payroll",
+      "title": "mlb-payroll: what money buys in baseball, 450 team-seasons 2011-2025 (Spotrac data)",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 28,
+      "url": "https://www.spotrac.com/mlb/payroll/_/year/2026",
+      "title": "Spotrac 2026 MLB team salary payroll tracker",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 29,
+      "url": "https://www.sportico.com/leagues/baseball/2026/mlb-labor-fight-lockout-future-salary-cap-cba-1234956712",
+      "title": "CBS: MLB lockout 101, cap vs floor, Brewers are 2026 champs",
+      "accessed": "2026-10-31"
+    },
+    {
+      "id": 30,
+      "url": "https://www.cbssports.com/mlb/news/mlb-lockout-logistics-cba-negotiations-free-agency-2027-season",
+      "title": "CBS: MLB lockout 101 - cap $245.3M / floor $171.2M, Brewers 2026 champs",
+      "accessed": "2026-10-31"
+    }
+  ]
+}

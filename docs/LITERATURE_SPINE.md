@@ -6,7 +6,10 @@ No fabricated references. This is the load-bearing wall the model design
 (P4-P7) must build from — glean the math here, do not reinvent it.
 
 Status: live working base, Nov 2026. Sources are registered in the
-grounded-citations ledger (`~/.hermes/cache/citations/ledger.json`).
+grounded-citations ledger — now committed to the repo at
+`docs/citations_ledger.json` (30 sources with access dates), so every agent
+and collaborator with repo access can audit the evidence trail. The local
+agent cache mirror lives at `~/.hermes/cache/citations/ledger.json`.
 
 ---
 
