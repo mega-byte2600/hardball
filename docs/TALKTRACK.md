@@ -74,8 +74,9 @@ you which contact/walk players and control arms to buy.**"
 ## HONESTY — what we will NOT claim (1:00)
 "This is where we're different. We do **not** tell you we can predict team
 wins — forecasting is genuinely weak (about 9-13 wins off), and saying
-otherwise would be a lie that gets exposed. WAR is proprietary and absent
-from public data — we surface its real inputs instead. Our projections were
+otherwise would be a lie that gets exposed. WAR is published free by FanGraphs
+and Baseball-Reference — but the two formulas disagree and no MLB API returns
+it — so we surface its real inputs instead. Our projections were
 benchmarked against FanGraphs' Steamer in public (Fig 18): hitter agreement
 r = .889. What we *can* show, measured over four years: skills persist,
 luck doesn't. **That's the edge you can act on.**"

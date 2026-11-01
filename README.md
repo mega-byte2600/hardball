@@ -42,9 +42,10 @@ over-index on exactly these inputs and win ~95 games at ~1/3-1/4 big-market cost
 - **ESPN API** — validation/redundancy (cross-checked)
 - **Spotrac** (via MIT-licensed jasonbhorne/mlb-payroll) — payroll
 - **MLB transactions feed** — injury/IL history (35k+ events)
-- `WAR` and defensive value are **not fabricated** — they're proprietary
-  (fWAR/bWAR) and absent from the API; we surface their reproducible inputs
-  (wOBA/wRC+/FIP/K-BB%) and say so on the page.
+- `WAR` is a public stat (FanGraphs fWAR / Baseball-Reference bWAR, free) but the
+  two formulas disagree and the MLB API returns none; we show its reproducible
+  inputs (wOBA/wRC+/FIP/K-BB%) and say so on the page (the FA shopping list does
+  use FanGraphs Steamer WAR where available).
 
 ## Honest limits
 Cross-year TEAM win forecasting is weak (MAE 9-13 wins) and regresses to the

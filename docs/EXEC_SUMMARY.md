@@ -29,8 +29,8 @@ quarter of the big-market payroll.
 ## What we deliberately do NOT claim (honesty)
 Cross-year *team* win forecasting is weak — MAE ≈ 9-13 wins, barely better than
 defaulting to the league average. We do not sell a team-wins formula. WAR is
-proprietary and absent from public sports APIs; we surface its reproducible
-inputs (wOBA, wRC+, FIP, K-BB%) instead of faking it.
+published free (fWAR/bWAR) but the formulas disagree and no MLB API returns it;
+we surface its reproducible inputs (wOBA, wRC+, FIP, K-BB%) instead of inventing one.
 
 ## The deliverable
 A 22-figure dashboard (offline, self-contained) + a Python-first repo where
@@ -44,8 +44,8 @@ what winning-cheap teams over-index on. Price the roster against the cap.
 ## Honest limits (survives expert scrutiny)
 - Cross-year TEAM win forecasting is weak (MAE 9-13); we say so on the page.
 - Cap figures are the owners' PROPOSED 2027 numbers, not law yet.
-- WAR and defensive value are proprietary/absent from public APIs; we surface
-  their reproducible inputs (wOBA/wRC+/FIP/K-BB%) rather than fabricating them.
+- WAR is published free (fWAR/bWAR) but the two formulas disagree and no MLB API
+  returns it; we surface its reproducible inputs (wOBA/wRC+/FIP/K-BB%) rather than inventing one.
 
 ## Status against P1-P7
 P1 datasets ✓  P2 infra ✓  P3 literature ✓  P4 problem ✓  P5 copycat ✓

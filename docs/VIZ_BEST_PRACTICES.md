@@ -48,7 +48,7 @@ documentation cite — we don't guess.
   chart (OBP → "reach base %", HR/PA → "home runs", contact → "hits ball", K% → "strikeouts").
 - **A glossary lives at the top** ("BASEBALL PLAIN-ENGLISH KEY") so no acronym goes unexplained:
   PA, OBP, BB%, ISO, run differential, wOBA/wRC+, FIP, K-BB%, WAR (with the honest note that WAR
-  is proprietary and we show its real inputs instead).
+  is published free by fWAR/bWAR but the formulas differ and no MLB API returns it; we show its real inputs instead).
 - **Rule:** a chart at the Winter Meetings must be understood by the non-baseball owner in the room
   within 3 seconds; if a term needs a glossary, both the in-chart cue AND the glossary exist.
 

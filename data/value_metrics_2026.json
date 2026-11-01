@@ -321,5 +321,5 @@
     "3B": 1.62,
     "HR": 2.1
   },
-  "note": "wOBA/wRC+/FIP computed from real box scores (standard weights). WAR is proprietary (fWAR/bWAR) and not in the MLB API; these are its reproducible inputs."
+  "note": "wOBA/wRC+/FIP computed from real box scores (standard weights). WAR is published free (fWAR/bWAR) but the formulas disagree and the MLB API returns no WAR; these are its reproducible inputs."
 }

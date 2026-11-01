@@ -175,8 +175,7 @@ factors cover only 12 of 33 rostered players, so they are not applied
 selectively (that would penalize the best-measured players).</li>
 <li><b>Salaries cover 24 of 30 teams.</b> Spotrac blocked ARI, BOS, CHC, MIL, TB,
 TEX (927 rows, 864 ID-matched). The gap is labeled in the data, not filled.</li>
-<li><b>WAR is proprietary</b> and absent from public APIs; we surface its
-reproducible inputs (wOBA, wRC+, FIP, K-BB%) rather than fabricating it.</li>
+<li><b>WAR</b> is a public stat (FanGraphs fWAR / Baseball-Reference bWAR, free) but the two formulas disagree and the MLB API does not return it; we surface its reproducible inputs (wOBA, wRC+, FIP, K-BB%) rather than inventing a single WAR.</li>
 </ul></div>
 
 <p class="foot"><b>Data QC (this build):</b> {n_tables} curated Parquet tables,

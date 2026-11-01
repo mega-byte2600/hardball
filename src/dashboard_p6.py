@@ -1,4 +1,5 @@
-"""P6: HARDBALL demo dashboard (Plotly HTML) — INTEGRATED build.
+"""HARDBALL demo dashboard (Plotly HTML) — INTEGRATED build. [P7; script name
+retains the P6 filename for README/repo stability]
 
 Twenty-two figures on real data: the main lane's 13 (payroll/KPI/
 projections/durability/players/pitching/health/roster/runs/
@@ -57,6 +58,9 @@ def panel_payroll_wins(df, year=2026):
     fig.update_layout(title=f"{year} — Payroll ($M) vs Wins: money buys some wins; winning-cheap teams win MORE per $",
                       xaxis_title="Total payroll ($ millions)", yaxis_title="Wins",
                       template="plotly_white", height=520)
+    fig.add_hline(y=81, line_dash="dash", line_color="#d50032", opacity=0.75,
+                  annotation_text="league avg = 81 wins (.500)",
+                  annotation_position="bottom left", annotation_font=dict(color="#d50032", size=11))
     return fig
 
 
@@ -105,6 +109,9 @@ def panel_projections(proj_fname="projections_2026.json"):
     fig.update_layout(title="2026 — Model-projected wins by team (from hitting KPIs + payroll)",
                       xaxis_title="Team", yaxis_title="Projected wins",
                       template="plotly_white", height=460)
+    fig.add_hline(y=81, line_dash="dash", line_color="#d50032", opacity=0.75,
+                  annotation_text="league avg = 81 wins",
+                  annotation_position="bottom left", annotation_font=dict(color="#d50032", size=11))
     return fig
 
 
@@ -137,6 +144,9 @@ def panel_durability():
                              "but cheap wins per $, not wins (winning-cheap = both)",
                       template="plotly_white", height=420,
                       margin=dict(l=50, r=20, t=64, b=96))
+    fig.add_hline(y=81, row=1, col=2, line_dash="dash", line_color="#d50032", opacity=0.7,
+                  annotation_text="league avg = 81 wins",
+                  annotation_position="bottom left", annotation_font=dict(color="#d50032", size=10))
     fig.update_xaxes(showgrid=False)
     fig.update_yaxes(showgrid=True, gridcolor="#eef1f6")
     return fig
@@ -338,6 +348,9 @@ def panel_runs():
                       yaxis_title="Wins", template="plotly_white", height=440,
                       xaxis_range=[-150, 350],
                       margin=dict(l=60, r=30, t=64, b=96))
+    fig.add_hline(y=81, line_dash="dot", line_color="#d50032", opacity=0.6,
+                  annotation_text="league avg = 81 wins",
+                  annotation_position="bottom right", annotation_font=dict(color="#d50032", size=11))
     return fig
 
 
@@ -530,10 +543,21 @@ def panel_value_metrics():
                          marker_color=[c(t) for t in p["team"]],
                          text=[f"{v:.2f}" for v in p["FIP"]], textposition="outside",
                          name="FIP"), 2, 1)
-    fig.update_layout(title="Top value metrics — wOBA/wRC+ & FIP/K-BB% (2026; WAR is proprietary "
-                            "(fWAR/bWAR) & absent from the MLB API — these are its reproducible inputs)",
+    fig.update_layout(title="Top value metrics — wOBA/wRC+ & FIP/K-BB% (2026; the MLB API returns no WAR, "
+                            "and fWAR vs bWAR disagree — these are WAR's reproducible inputs)",
                       template="plotly_white", height=640, showlegend=True,
                       margin=dict(l=60, r=40, t=64, b=96))
+    # league-average reference lines, mirroring the Figure 21 pattern:
+    # wRC+ is an index where 100 = league average; FIP gets the league mean.
+    fig.add_vline(x=100, row=1, col=1, line_dash="dash", line_color="#d50032", opacity=0.75,
+                  annotation_text="league avg = 100", annotation_position="top right",
+                  annotation_font=dict(color="#d50032", size=10))
+    _fip = [p["FIP"] for p in d["pitching"] if p.get("FIP") is not None]
+    league_fip = round(sum(_fip) / len(_fip), 2) if _fip else 3.81
+    fig.add_vline(x=league_fip, row=2, col=1, line_dash="dash", line_color="#d50032", opacity=0.75,
+                  annotation_text=f"league avg FIP {league_fip:.2f}",
+                  annotation_position="top right",
+                  annotation_font=dict(color="#d50032", size=10))
     fig.update_yaxes(automargin=True)
     fig.update_xaxes(showgrid=True, gridcolor="#eef1f6", zeroline=True, zerolinecolor="#d7dde8")
     return fig
@@ -1056,7 +1080,7 @@ def build():
                      fig.to_html(full_html=False, include_plotlyjs=False) +
                      "</div>")
 
-    page = f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P6)</title>
+    page = f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P7)</title>
 <style>body{{font-family:system-ui,sans-serif;margin:0;background:#f4f1ea;color:#14213d}}
 .hd{{max-width:1120px;margin:0 auto;padding:0 20px 40px}}
 .crest{{background:linear-gradient(135deg,#14213d 0%,#1d3557 60%,#7a1f1f 160%);color:#fff;padding:28px 32px;border-radius:0 0 14px 14px;margin:0 0 4px;box-shadow:0 3px 14px rgba(20,33,61,.25)}}
@@ -1089,7 +1113,7 @@ def build():
 </style></head>
 <body>
 <div class="crest">
-<h1>⚾ HARDBALL <span class="tag">P6 MVP · ready for Winter Meetings 2026 · target Dec 3</span></h1>
+<h1>⚾ HARDBALL <span class="tag">P7 · ready for Winter Meetings 2026 · target Dec 3</span></h1>
 <h2>Cap-Era Moneyball: win while cheap — buy contact + OBP and low-walk arms, price it against the <b>$245.3M</b> cap</h2>
 </div>
 <div class="hd">
@@ -1137,7 +1161,7 @@ figures are not yet law. No performance guarantee is implied.</div>
 <span class="k"><b>wOBA / wRC+</b> = overall hitting value, 100 = league average</span>
 <span class="k"><b>FIP</b> = pitching quality (a pitcher's own doing; lower = better)</span>
 <span class="k"><b>K-BB%</b> = strikeouts minus walks = how dominant a pitcher is</span>
-<span class="k"><b>WAR</b> = the famous player-value stat — it's <u>proprietary &amp; absent from our data</u>; we show its real inputs instead (the Value Metrics panel, Section VI)</span></div>
+<span class="k"><b>WAR</b> = wins above replacement, the famous player-value stat. Published free by FanGraphs (fWAR) &amp; Baseball-Reference (bWAR), but the two formulas disagree, it is not returned by the MLB API, and it is not a league-published number — so this value panel shows WAR's reproducible inputs (wOBA, wRC+, FIP, K-BB%) instead. Note: the FA shopping list (this build) uses FanGraphs Steamer WAR.</span></div>
 {js_include}
 <div class="figidx"><b>FIGURE INDEX — the story at a glance (all 22 real-data charts below)</b><br>
 <span>1</span> Press play: 16 seasons of payroll vs wins &nbsp;·&nbsp;

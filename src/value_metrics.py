@@ -1,8 +1,9 @@
 """HARDBALL VALUE METRICS — wOBA / wRC+ / FIP / K-BB% from real data.
 
 The standard sabermetric "value" metrics an owner expects, computed from the
-REAL box-score components we hold (no fabrication). WAR itself is proprietary
-(fWAR/bWAR) and NOT in the MLB API — we do not fake it; we surface the
+REAL box-score components we hold (no fabrication). WAR is published free by
+FanGraphs (fWAR) and Baseball-Reference (bWAR), but the two formulas disagree
+and the MLB API returns no WAR — we do not invent one; we surface the
 reproducible inputs it is built from.
 
 Hitting (team-level, from panel 2011-2026):
@@ -109,8 +110,9 @@ def main():
                 "pitching": p.to_dict(orient="records"),
                 "woba_weights": W,
                 "note": ("wOBA/wRC+/FIP computed from real box scores (standard "
-                         "weights). WAR is proprietary (fWAR/bWAR) and not in the "
-                         "MLB API; these are its reproducible inputs.")}
+                         "weights). WAR is published free (fWAR/bWAR) but the "
+                         "formulas disagree and the MLB API returns no WAR; "
+                         "these are its reproducible inputs.")}
     out = os.path.join(DATA, "value_metrics_2026.json")
     with open(out, "w") as f:
         json.dump(combined, f, indent=2)
