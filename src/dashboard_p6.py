@@ -543,8 +543,7 @@ def panel_value_metrics():
                          marker_color=[c(t) for t in p["team"]],
                          text=[f"{v:.2f}" for v in p["FIP"]], textposition="outside",
                          name="FIP"), 2, 1)
-    fig.update_layout(title="Top value metrics — wOBA/wRC+ & FIP/K-BB% (2026; the MLB API returns no WAR, "
-                            "and fWAR vs bWAR disagree — these are WAR's reproducible inputs)",
+    fig.update_layout(title="Top value metrics — wOBA/wRC+ & FIP/K-BB% (2026) — the reproducible inputs WAR is built from: the MLB API returns no WAR",
                       template="plotly_white", height=640, showlegend=True,
                       margin=dict(l=60, r=40, t=64, b=96))
     # league-average reference lines, mirroring the Figure 21 pattern:
