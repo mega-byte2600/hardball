@@ -87,7 +87,19 @@ def main():
     formula = {"features": FEATS, "coefs": coefs, "intercept": round(float(m.intercept_), 2),
                "cv_mae": round(cv_mae, 2), "cv_r2": round(cv_r2, 3),
                "pythag_exponent": E,
-               "cap_2027": 245_300_000, "floor_2027": 171_200_000}
+               "cap_2027": 245_300_000, "floor_2027": 171_200_000,
+               # G8 annotation (2026-10-31): the cv_mae/cv_r2 above are a
+               # TWO-SEASON (2025<->2026) same-year cross-fit of a spec
+               # containing same-year RD/PythE — a diagnostic, not a
+               # forecast. Cycles 18-19 showed this family does not
+               # generalize on the 2011-2026 panel (lagged OOS MAE 14.05,
+               # worse than naive). Do not cite 4.3/0.764 as predictive
+               # accuracy. Coefficients are retained for the Cycle 16
+               # allocation exercise, which is how they are used.
+               "status": "DIAGNOSTIC ONLY — same-year fit; not a forecast "
+                         "(see Cycles 18-19 retraction in docs/BML_LOG.md)",
+               "cv_scope": "two-season cross-fit (2025<->2026), same-year "
+                           "features incl. RD and PythE"}
     out = os.path.join(DATA, "formula_prod.json")
     with open(out, "w") as f:
         json.dump(formula, f, indent=2)

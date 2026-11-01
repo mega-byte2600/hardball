@@ -6,11 +6,14 @@ IP/ERA/K/BB/HR contributions that separate them from cheap-mediocre AND from
 expensive teams? Turns GP's 'pitching depth is critical' into evidence.
 """
 import json
+import os
 import sqlite3
 
 import pandas as pd
 
-LAKE = "data/mlb_lake.db"
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+LAKE = os.path.join(REPO, "data", "mlb_lake.db")  # was a relative path —
+# broke when run from src/ (G11, fixed 2026-10-31)
 TEAM = {
     "New York Yankees": "NYY", "Houston Astros": "HOU", "New York Mets": "NYM",
     "Milwaukee Brewers": "MIL", "Tampa Bay Rays": "TB", "Arizona Diamondbacks": "AZ",
