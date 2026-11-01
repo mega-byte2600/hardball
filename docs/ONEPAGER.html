@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>HARDBALL — Executive One-Pager</title>
+<style>
+  @page { size: letter; margin: 0.5in; }
+  * { box-sizing: border-box; }
+  body { font-family: Georgia, 'Times New Roman', serif; color: #111;
+         margin: 0.5in auto; max-width: 7.5in; font-size: 11.5pt; line-height: 1.35; }
+  h1 { font-size: 20pt; margin: 0 0 2pt; }
+  h2 { font-size: 12.5pt; margin: 14pt 0 4pt; border-bottom: 1.5px solid #111; padding-bottom: 2pt; }
+  .sub { font-size: 10pt; color: #444; margin: 0 0 8pt; }
+  .cols { display: flex; gap: 18pt; }
+  .cols > div { flex: 1; }
+  table { border-collapse: collapse; width: 100%; font-size: 10.5pt; margin: 4pt 0; }
+  th, td { border-bottom: 1px solid #ccc; padding: 3pt 4pt; text-align: left; }
+  th { font-size: 9.5pt; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num, th.num { text-align: right; }
+  .thesis { font-size: 13pt; font-style: italic; margin: 8pt 0; }
+  .honesty { border: 1.5px solid #111; padding: 8pt 10pt; margin-top: 10pt; }
+  .honesty h2 { border: none; margin-top: 0; }
+  .foot { font-size: 9pt; color: #555; margin-top: 10pt; }
+  ul { margin: 4pt 0; padding-left: 16pt; }
+  li { margin-bottom: 3pt; }
+  @media print { body { margin: 0; max-width: none; } }
+</style></head><body>
+<h1>HARDBALL &mdash; Cap-Era Moneyball</h1>
+<p class="sub">Executive one-pager &middot; Prepared for the December 2026 Winter Meetings
+&middot; Generated 2026-11-01 10:23 UTC from committed repo snapshots by
+<code>src/make_onepager.py</code> &middot; Real data only; no invented numbers.</p>
+
+<p class="thesis">Thesis: under a hard cap, buy the persistent inputs &mdash; contact and
+walk discipline &mdash; and control-walking arms. Do not pay for noisy power output.</p>
+
+<div class="cols"><div>
+<h2>Why the edge is real</h2>
+<ul>
+<li><b>Skills persist; outputs do not.</b> 2025&rarr;2026, 80 players
+(200+ PA): contact r&nbsp;=&nbsp;0.899, walk rate
+r&nbsp;=&nbsp;0.655, OBP r&nbsp;=&nbsp;0.298.
+Buying contact/walk skill buys something that carries.</li>
+<li><b>Our projections sit on the public benchmark.</b> Marcel vs FanGraphs
+Steamer 2027, ID-matched (never by name): OBP r&nbsp;=&nbsp;0.889,
+n&nbsp;=&nbsp;201, mean |diff|&nbsp;=&nbsp;0.010.</li>
+<li><b>Winning cheap is observable, not theoretical.</b> 2026:</li>
+</ul>
+<table><tr><th>Team</th><th class="num">Wins</th><th class="num">Payroll</th>
+<th class="num">Wins / $100M</th></tr><tr><td>MIL</td><td>103</td><td>$146.7M</td><td>70</td></tr><tr><td>TB</td><td>98</td><td>$95.6M</td><td>102</td></tr><tr><td>CLE</td><td>85</td><td>$74.5M</td><td>114</td></tr></table>
+<p style="font-size:10pt">Compare: NYM won 74 games on
+$346.7M &mdash;
+21 wins per $100M.</p>
+</div><div>
+<h2>Cap reality (owners&rsquo; proposed 2027 numbers)</h2>
+<ul>
+<li>Cap $245.3M / floor $171.2M /
+15% per-player max. Proposed, not law &mdash; CBA expires Dec 1, 2026.</li>
+<li><b>7 teams over the cap</b> and must cut &mdash; most:
+NYM ($101.4M over).</li>
+<li><b>15 teams under the floor</b> and must add &mdash; most:
+CLE ($96.7M to add).
+The disciplined winners are the ones the system now forces to spend.</li>
+</ul>
+<h2>What the money buys (2027 FA class only)</h2>
+<table><tr><th>Build</th><th class="num">Spend</th><th class="num">WAR</th>
+<th class="num">WAR stressed*</th><th class="num">WAR p25*</th></tr>
+<tr><td>The Floor — $171.2M</td><td>$171.0M</td><td>42.0</td><td>38.3</td><td>37.4</td></tr><tr><td>The Middle — $208.0M</td><td>$207.3M</td><td>45.7</td><td>41.7</td><td>40.7</td></tr><tr><td>The Cap — $245.3M</td><td>$244.6M</td><td>52.3</td><td>47.7</td><td>46.6</td></tr></table>
+<p style="font-size:10pt">Prices are prior-contract AAV anchors (last prices, not predicted
+prices). 26 men each; spend &le; budget, asserted in code. The floor build
+captures 80% of the cap build&rsquo;s WAR &mdash; the last $74.1M buys
+~10 WAR.</p>
+</div></div>
+
+<div class="honesty"><h2>The honesty box &mdash; what we do NOT claim</h2>
+<ul>
+<li><b>Team-wins forecasting is weak</b> (MAE ~9&ndash;13 wins, barely better than
+the league average). The earlier R&sup2;&nbsp;0.80 team-wins claim was
+<b>retracted</b> (Cycles 18&ndash;19). We sell player-level projections + cap
+rosters, not a wins formula.</li>
+<li><b>*Availability stress is a level tax, not a rescue.</b> Uniform stress from
+201 real players&rsquo; 2025&ndash;26 IL records (mean availability 0.912): every
+budget loses ~4&ndash;5 WAR; the floor/cap ratio is unchanged. Per-player
+factors cover only 12 of 33 rostered players, so they are not applied
+selectively (that would penalize the best-measured players).</li>
+<li><b>Salaries cover 24 of 30 teams.</b> Spotrac blocked ARI, BOS, CHC, MIL, TB,
+TEX (927 rows, 864 ID-matched). The gap is labeled in the data, not filled.</li>
+<li><b>WAR is proprietary</b> and absent from public APIs; we surface its
+reproducible inputs (wOBA, wRC+, FIP, K-BB%) rather than fabricating it.</li>
+</ul></div>
+
+<p class="foot"><b>Data QC (this build):</b> 14 curated Parquet tables,
+schema-enforced, zero contract failures; benchmark parity reproduced from
+curated tables alone (r&nbsp;=&nbsp;0.889, 201 matched). Sources: MLB Stats API,
+Baseball Savant, FanGraphs Steamer, Spotrac, ESPN cross-check. Full audit trail:
+<code>docs/BML_LOG.md</code>. Interactive demo: <code>dashboard/hardball_demo.html</code>
+(20 figures, builds offline from committed snapshots).</p>
+</body></html>
