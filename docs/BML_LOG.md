@@ -508,3 +508,30 @@ name-string joins are retired in this work (the AZ/ARI failure class).
 - Also this pass: docs/TALKTRACK.md renumbered to the merged 20-figure
   dashboard (Boardroom beats added: film opener, money-buys, pick-your-
   team close); dashboard glossary WAR reference corrected Figure 12 → 18.
+
+## Cycle 28 — THE DATA PLATFORM (toby series, 2026-10-31)
+Owner's call: "your role is data engineer" — the cycle-file pattern
+became a real platform (docs/DATA_PLATFORM.md): ingest → raw →
+curated → DuckDB warehouse → serving, built to the professional
+canon (Reis & Housley lifecycle, Kleppmann, Kimball grain, Akidau
+streaming terms, Moses et al. observability).
+- src/ingest_platform.py: bounded-parallel batch (6 workers) for MLB
+  API / Savant / FanGraphs + watermark micro-batch for transactions
+  (120,313 events landed, deduped on id) + manifest lineage
+  (sha256/rows/status per object). First run re-derived the Savant
+  bat-tracking trap from scratch (a ?year= URL silently returns a
+  209-row default board for every season) — caught by manifest
+  VOLUME parity against known counts, fixed by mirroring carpe.py's
+  proven date-range URLs; final counts match the committed snapshots
+  exactly, all 15 datasets.
+- src/curate.py: 14 schema-enforced Parquet tables with declared
+  grains (dim_player/dim_team + 12 facts), fail-closed contracts.
+- src/build_warehouse.py + queries/: DuckDB analytical store; the
+  stakeholder questions are named SQL. PARITY PROOF: benchmark_parity
+  reproduces Cycle 22 from curated tables alone (201 matched,
+  OBP r = 0.889, mean |diff| 0.0101); persistence query reproduces
+  the 2025→26 OBP YoY r = 0.298 exactly. Cap gaps match the talk
+  track (NYM 101.4 / CLE +96.7 / TB +75.6).
+- verify_data.py gate extended with curated-layer checks (25 total).
+- Deliberately NOT built: Kafka/Spark/Airflow/cloud warehouse —
+  wrong scale, breaks offline-from-clone. Reasons in the doc.

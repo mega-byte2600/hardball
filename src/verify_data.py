@@ -154,6 +154,25 @@ def main() -> int:
     check("talk track: all figure references <= 20", refs and max(refs) <= 20,
           f"refs: {sorted(refs)}")
 
+
+    # --- data platform: curated layer contracts ------------------
+    rep_path = DATA / "curated" / "_build_report.json"
+    check("platform: curated build report present, no failures",
+          rep_path.exists() and not json.loads(rep_path.read_text())["failures"]
+          if rep_path.exists() else False)
+    if rep_path.exists():
+        rep = json.loads(rep_path.read_text())
+        import pyarrow.parquet as pq
+        bad = []
+        for t, meta in rep["tables"].items():
+            f = DATA / "curated" / f"{t}.parquet"
+            if not f.exists() or pq.read_metadata(f).num_rows != meta["rows"]:
+                bad.append(t)
+        check("platform: every curated table matches its build report",
+              not bad, f"mismatch: {bad}")
+        check("platform: >=13 curated tables", len(rep["tables"]) >= 13,
+              f"tables={len(rep['tables'])}")
+
     # --- optional live check ---------------------------------------
     if live:
         import requests
