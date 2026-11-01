@@ -33,7 +33,7 @@ proprietary and absent from public sports APIs; we surface its reproducible
 inputs (wOBA, wRC+, FIP, K-BB%) instead of faking it.
 
 ## The deliverable
-A 13-figure dashboard (offline, self-contained) + a Python-first repo where
+A 21-figure dashboard (offline, self-contained) + a Python-first repo where
 every number traces to a public source. Every build is logged in BML_LOG.md.
 
 ## The thesis in words (what an owner does)

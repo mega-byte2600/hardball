@@ -590,3 +590,22 @@ streaming terms, Moses et al. observability).
   (expected 651-673, bat-tracking 595-619, sprint 489-506),
   transactions 120,313 (unchanged); curate 14 tables unchanged; parity
   r = 0.889, 201 matched; gate ALL PASS incl. live standings 30/30.
+
+## Cycle 31 — SPELL-CHECK BUILD GATE + merge reconciliation (main lane, 2026-11-01)
+- Built src/spellcheck_gate.py: fails the build (exit 2) on ANY misspelled
+  word in user-visible text (parses visible words from the built dashboard
+  HTML + doc prose; possessive-aware normalization; vocabulary whitelist for
+  legit baseball/stats/team terms). Verified green on the full merged build.
+- Fixed "provably" -> "What the data actually shows" (the box header is plain
+  English, no dictionary argument possible) and "homeruns" -> "home runs".
+- Rebased my local cycle onto the merged toby-lane main (origin moved 21
+  commits ahead, Cycles 27-30: Boardroom, data platform, QC gate, forced
+  sellers). 0 conflicts; local work sits on top; both lanes preserved.
+- Fixed pandas 2.x FutureWarning in payroll.load_payroll_frame (all-NA
+  avg_age in the 2026 rows triggered dtype-coercion deprecation): dropped
+  the all-NA field from df26 rows. VERIFIED: 480 rows, 30 teams in 2026,
+  avg_age still retained from historical frames, wins float / payroll int,
+  ZERO warnings on clean rebuild.
+- Race-managed with toby: remote had new toby/* branches (audit-p0-fixes,
+  carpe-data, data-platform, data-qc, finale, forced-sellers, integrate,
+  integrate2). Merged main converges both lanes; dashboard = 21 figures.
