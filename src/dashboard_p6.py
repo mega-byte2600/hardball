@@ -1042,12 +1042,12 @@ def build():
 <div class="bottomline">
 <b>BOTTOM LINE (read this first):</b> A team can win at mid-tier payroll by spending on
 <b>contact + getting on base (OBP)</b> and <b>low-walk arms</b>, not power. Winning-cheap teams
-(MIL/TB/CLE) had <b>higher OBP, more contact, fewer strikeouts, fewer homeruns AND elite team pitching</b> — yet
+(MIL/TB/CLE) had <b>higher OBP, more contact, fewer strikeouts, fewer home runs AND elite team pitching</b> — yet
 won ~95 games vs ~79 at roughly half payroll. <span class="act">Owner action:</span>
 build the roster around OBP/contact + control pitchers, not the big power salary.
 <span class="why">Why trust it:</span> real 2025-2026 data (MLB API + Spotrac), model cross-validated.
 Not a guarantee — shown honestly below.</div>
-<div class="quant"><b>What the math provably supports</b> &nbsp;<span style="font-weight:400;color:#4a5a72">(measured on 509 real team-seasons, 2011-2026)</span><br><br>
+<div class="quant"><b>What the data actually shows</b> &nbsp;<span style="font-weight:400;color:#4a5a72">(measured on 509 real team-seasons, 2011-2026)</span><br><br>
 <b>1. Run differential drives wins, but only as a diagnostic.</b> The same-season
 fit is strong (R² ≈ 0.55) — a better run margin means more wins. It is not a
 forward-looking prediction.<br><br>
