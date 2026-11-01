@@ -3,9 +3,9 @@
   "n_features": 8,
   "models": {
     "LinearRegression": {
-      "mae_mean": 4.3,
-      "mae_2sd": 1.47,
-      "r2_mean": 0.701
+      "mae_mean": 3.84,
+      "mae_2sd": 1.15,
+      "r2_mean": 0.76
     },
     "Ridge(alpha=1)": {
       "mae_mean": 4.16,
@@ -19,8 +19,8 @@
     },
     "GradBoost(depth2)": {
       "mae_mean": 5.14,
-      "mae_2sd": 1.93,
-      "r2_mean": 0.573
+      "mae_2sd": 1.94,
+      "r2_mean": 0.574
     },
     "MLP(1x8) neural": {
       "mae_mean": 5112.9,
@@ -28,10 +28,10 @@
       "r2_mean": -308445.272
     },
     "Poly-Ridge(deg2)": {
-      "mae_mean": 8.48,
-      "mae_2sd": 14.59,
-      "r2_mean": -3.156
+      "mae_mean": 7.67,
+      "mae_2sd": 8.42,
+      "r2_mean": -1.312
     }
   },
-  "best_by_mae": "Ridge(alpha=1)"
+  "best_by_mae": "LinearRegression"
 }

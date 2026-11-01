@@ -72,9 +72,16 @@ def main():
 
     # --- C) grouped CV: hold out WHOLE seasons at a time ---
     #      the gold standard for forecasting — no same-year contamination
+    #      G6 (root-caused 2026-10-31): the fold keyed "2019" predicts the
+    #      60-GAME 2020 season (actual win totals 22-43) with a model
+    #      trained on 162-game seasons — its MAE 51.9 is a units mismatch,
+    #      not model error, and it inflated the grouped-CV mean (13.0 vs
+    #      ~10.2 without it). Folds whose TARGET season is 2020 are
+    #      excluded from the headline mean and reported separately.
     years = sorted(df["season"].unique())
     maes, r2s = [], []
     tested_years = []
+    excluded_folds = []
     for y_test in years[1:]:  # need prior year to exist
         trm = (df["season"] < y_test).values
         tem = (df["season"] == y_test).values
@@ -82,7 +89,17 @@ def main():
             continue
         mm = Ridge(alpha=1.0).fit(X[trm], y[trm])
         ypp = mm.predict(X[tem])
-        maes.append(mean_absolute_error(y[tem], ypp))
+        fold_mae = mean_absolute_error(y[tem], ypp)
+        if y_test + 1 == 2020:
+            excluded_folds.append({"feature_season": int(y_test),
+                                   "target_season": 2020,
+                                   "mae": round(float(fold_mae), 1),
+                                   "reason": "target season is the 60-game "
+                                             "2020 season; win totals are "
+                                             "not comparable to 162-game "
+                                             "seasons (units mismatch)"})
+            continue
+        maes.append(fold_mae)
         r2s.append(r2_score(y[tem], ypp))
         tested_years.append(y_test)
     print("\n[GROUPED CV — train on all prior years, test each future year]")
@@ -101,7 +118,11 @@ def main():
                           "r2_mean": round(float(np.mean(r2s)), 3)},
            "full_fit_in_sample_r2": round(float(r2_score(y, Ridge(alpha=1.0).fit(X, y).predict(X))), 3),
            "per_year": dict(zip([str(yr) for yr in tested_years],
-                                [round(float(e), 1) for e in maes]))}
+                                [round(float(e), 1) for e in maes])),
+           "excluded_folds": excluded_folds,
+           "g6_root_cause": "The 2019 fold's target is the 60-game 2020 "
+                            "season; its MAE 51.9 was a units mismatch, "
+                            "not a model failure. Excluded from grouped_cv."}
     with open(os.path.join(DATA, "lagged_forecast.json"), "w") as f:
         json.dump(out, f, indent=2)
     print("\nwrote data/lagged_forecast.json")

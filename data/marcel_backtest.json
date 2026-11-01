@@ -1,0 +1,65 @@
+{
+  "method": "Cycle 4 Marcel math mirrored; A={T-1:5,T-2:4}, B adds {T-3:3}; C = B + cross-fitted age slope",
+  "targets": {
+    "2025": {
+      "A_2season": {
+        "n": 105,
+        "mae_obp": 0.0211,
+        "mae_slg": 0.0439
+      },
+      "B_3season": {
+        "n": 105,
+        "mae_obp": 0.0211,
+        "mae_slg": 0.0439
+      }
+    },
+    "2026": {
+      "A_2season": {
+        "n": 90,
+        "mae_obp": 0.0245,
+        "mae_slg": 0.0501
+      },
+      "B_3season": {
+        "n": 91,
+        "mae_obp": 0.0244,
+        "mae_slg": 0.0501
+      }
+    }
+  },
+  "C_age_crossfit": {
+    "2026": {
+      "fit_on": 2025,
+      "slopes": {
+        "OBP": 0.00086,
+        "SLG": 0.00222
+      },
+      "n": 91,
+      "mae_obp": 0.0233,
+      "mae_slg": 0.047
+    },
+    "2025": {
+      "fit_on": 2026,
+      "slopes": {
+        "OBP": 0.00236,
+        "SLG": 0.00574
+      },
+      "n": 105,
+      "mae_obp": 0.0209,
+      "mae_slg": 0.0439
+    }
+  },
+  "pooled": {
+    "A_2season": {
+      "mae_obp": 0.0227,
+      "mae_slg": 0.0468
+    },
+    "B_3season": {
+      "mae_obp": 0.0226,
+      "mae_slg": 0.0468
+    },
+    "C_age_crossfit": {
+      "mae_obp": 0.022,
+      "mae_slg": 0.0453
+    }
+  }
+}

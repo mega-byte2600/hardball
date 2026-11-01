@@ -16,8 +16,12 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(REPO, "data")
 PAY = os.path.join(DATA, "payroll")
 
-# 2026 payroll from Spotrac live table (30 teams, total payroll allocations)
-# {team_code: (team_name, record, R, RA, payroll)}
+# 2026 payroll from Spotrac live table (30 teams, total payroll allocations),
+# pulled during the 2026 season build (repo state Oct 2026).
+# {team_code: (team_name, record, payroll)}
+# W-L verified against MLB Stats API final 2026 standings on 2026-10-31:
+# all 30 match. NYY 93-68 and BAL 79-82 sum to 161 games — that is REAL
+# (a game not played/made up), confirmed in the API standings, not a typo.
 PAYROLL_2026 = {
     "NYM": ("New York Mets", "74-88", "$346,736,805"),
     "LAD": ("Los Angeles Dodgers", "100-62", "$339,319,244"),

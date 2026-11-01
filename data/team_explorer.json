@@ -1,0 +1,501 @@
+{
+ "metadata": {
+  "basis": "2026 team KPIs indexed to league = 100; K% and HR/PA inverted so higher always means more winning-cheap-like",
+  "winning_cheap_idx": {
+   "OBP": 102.9,
+   "Contact": 102.1,
+   "Fewer K": 107.4,
+   "Walks": 106.6,
+   "Less power-chasing": 113.6
+  },
+  "axes": [
+   "OBP",
+   "Contact",
+   "Fewer K",
+   "Walks",
+   "Less power-chasing"
+  ]
+ },
+ "teams": [
+  {
+   "team": "ARI",
+   "wins": 86,
+   "signature_idx": {
+    "OBP": 99.9,
+    "contact": 103.5,
+    "K%": 112.2,
+    "BB%": 99.1,
+    "HR/PA_raw": 111.0
+   },
+   "payroll": 192670027.0,
+   "cap_headroom_m": 52.6,
+   "pipeline_rank": null,
+   "pipeline_index": null,
+   "top_prospect": null
+  },
+  {
+   "team": "ATH",
+   "wins": 64,
+   "signature_idx": {
+    "OBP": 99.6,
+    "contact": 99.7,
+    "K%": 98.8,
+    "BB%": 95.6,
+    "HR/PA_raw": 95.6
+   },
+   "payroll": 98948812.0,
+   "cap_headroom_m": 146.4,
+   "pipeline_rank": 14,
+   "pipeline_index": 104.4,
+   "top_prospect": "Henry Bolte"
+  },
+  {
+   "team": "ATL",
+   "wins": 94,
+   "signature_idx": {
+    "OBP": 97.1,
+    "contact": 100.6,
+    "K%": 102.3,
+    "BB%": 86.5,
+    "HR/PA_raw": 88.9
+   },
+   "payroll": 263462438.0,
+   "cap_headroom_m": -18.2,
+   "pipeline_rank": 22,
+   "pipeline_index": 90.2,
+   "top_prospect": "Adam Zebrowski"
+  },
+  {
+   "team": "BAL",
+   "wins": 79,
+   "signature_idx": {
+    "OBP": 98.6,
+    "contact": 96.4,
+    "K%": 87.2,
+    "BB%": 108.6,
+    "HR/PA_raw": 92.1
+   },
+   "payroll": 167039211.0,
+   "cap_headroom_m": 78.3,
+   "pipeline_rank": 10,
+   "pipeline_index": 109.3,
+   "top_prospect": "Ethan Anderson"
+  },
+  {
+   "team": "BOS",
+   "wins": 87,
+   "signature_idx": {
+    "OBP": 100.2,
+    "contact": 100.6,
+    "K%": 102.0,
+    "BB%": 95.3,
+    "HR/PA_raw": 112.1
+   },
+   "payroll": 207988016.0,
+   "cap_headroom_m": 37.3,
+   "pipeline_rank": 15,
+   "pipeline_index": 104.0,
+   "top_prospect": "Franklin Arias"
+  },
+  {
+   "team": "CHC",
+   "wins": 89,
+   "signature_idx": {
+    "OBP": 106.5,
+    "contact": 101.4,
+    "K%": 104.8,
+    "BB%": 118.9,
+    "HR/PA_raw": 86.3
+   },
+   "payroll": 249319956.0,
+   "cap_headroom_m": -4.0,
+   "pipeline_rank": 25,
+   "pipeline_index": 78.5,
+   "top_prospect": "Pedro Ram\u00edrez"
+  },
+  {
+   "team": "CHW",
+   "wins": 84,
+   "signature_idx": {
+    "OBP": 100.5,
+    "contact": 97.4,
+    "K%": 90.9,
+    "BB%": 107.2,
+    "HR/PA_raw": 87.5
+   },
+   "payroll": 103330141.0,
+   "cap_headroom_m": 142.0,
+   "pipeline_rank": null,
+   "pipeline_index": null,
+   "top_prospect": null
+  },
+  {
+   "team": "CIN",
+   "wins": 75,
+   "signature_idx": {
+    "OBP": 95.8,
+    "contact": 95.6,
+    "K%": 84.7,
+    "BB%": 103.7,
+    "HR/PA_raw": 83.9
+   },
+   "payroll": 128223748.0,
+   "cap_headroom_m": 117.1,
+   "pipeline_rank": 23,
+   "pipeline_index": 89.7,
+   "top_prospect": "Carter Graham"
+  },
+  {
+   "team": "CLE",
+   "wins": 85,
+   "signature_idx": {
+    "OBP": 99.3,
+    "contact": 101.8,
+    "K%": 106.2,
+    "BB%": 105.7,
+    "HR/PA_raw": 112.7
+   },
+   "payroll": 74459014.0,
+   "cap_headroom_m": 170.8,
+   "pipeline_rank": 2,
+   "pipeline_index": 143.3,
+   "top_prospect": "Ryan Cesarini"
+  },
+  {
+   "team": "COL",
+   "wins": 58,
+   "signature_idx": {
+    "OBP": 101.1,
+    "contact": 99.1,
+    "K%": 96.9,
+    "BB%": 91.2,
+    "HR/PA_raw": 103.8
+   },
+   "payroll": 121526751.0,
+   "cap_headroom_m": 123.8,
+   "pipeline_rank": 9,
+   "pipeline_index": 109.3,
+   "top_prospect": "Zac Veen"
+  },
+  {
+   "team": "DET",
+   "wins": 76,
+   "signature_idx": {
+    "OBP": 100.5,
+    "contact": 99.1,
+    "K%": 96.8,
+    "BB%": 106.7,
+    "HR/PA_raw": 103.3
+   },
+   "payroll": 202081991.0,
+   "cap_headroom_m": 43.2,
+   "pipeline_rank": 30,
+   "pipeline_index": 57.6,
+   "top_prospect": "Max Anderson"
+  },
+  {
+   "team": "HOU",
+   "wins": 81,
+   "signature_idx": {
+    "OBP": 98.9,
+    "contact": 100.3,
+    "K%": 100.9,
+    "BB%": 97.5,
+    "HR/PA_raw": 78.3
+   },
+   "payroll": 239763783.0,
+   "cap_headroom_m": 5.5,
+   "pipeline_rank": 21,
+   "pipeline_index": 92.7,
+   "top_prospect": "Pascanel Ferreras"
+  },
+  {
+   "team": "KC",
+   "wins": 69,
+   "signature_idx": {
+    "OBP": 99.3,
+    "contact": 101.6,
+    "K%": 105.6,
+    "BB%": 94.8,
+    "HR/PA_raw": 107.8
+   },
+   "payroll": 150429892.0,
+   "cap_headroom_m": 94.9,
+   "pipeline_rank": 27,
+   "pipeline_index": 70.0,
+   "top_prospect": "Carson Roccaforte"
+  },
+  {
+   "team": "LAA",
+   "wins": 62,
+   "signature_idx": {
+    "OBP": 97.4,
+    "contact": 95.7,
+    "K%": 85.0,
+    "BB%": 94.5,
+    "HR/PA_raw": 116.6
+   },
+   "payroll": 182509023.0,
+   "cap_headroom_m": 62.8,
+   "pipeline_rank": 13,
+   "pipeline_index": 105.4,
+   "top_prospect": "Kyren Paris"
+  },
+  {
+   "team": "LAD",
+   "wins": 100,
+   "signature_idx": {
+    "OBP": 106.2,
+    "contact": 102.2,
+    "K%": 107.9,
+    "BB%": 113.8,
+    "HR/PA_raw": 91.7
+   },
+   "payroll": 339319244.0,
+   "cap_headroom_m": -94.0,
+   "pipeline_rank": 6,
+   "pipeline_index": 120.4,
+   "top_prospect": "Jake Gelof"
+  },
+  {
+   "team": "MIA",
+   "wins": 80,
+   "signature_idx": {
+    "OBP": 102.4,
+    "contact": 100.4,
+    "K%": 101.4,
+    "BB%": 101.5,
+    "HR/PA_raw": 109.6
+   },
+   "payroll": 83298123.0,
+   "cap_headroom_m": 162.0,
+   "pipeline_rank": 5,
+   "pipeline_index": 125.5,
+   "top_prospect": "Brandon Compton"
+  },
+  {
+   "team": "MIL",
+   "wins": 103,
+   "signature_idx": {
+    "OBP": 107.1,
+    "contact": 100.2,
+    "K%": 100.8,
+    "BB%": 119.4,
+    "HR/PA_raw": 119.4
+   },
+   "payroll": 146706320.0,
+   "cap_headroom_m": 98.6,
+   "pipeline_rank": 3,
+   "pipeline_index": 126.8,
+   "top_prospect": "Andrew Fischer"
+  },
+  {
+   "team": "MIN",
+   "wins": 77,
+   "signature_idx": {
+    "OBP": 99.6,
+    "contact": 101.2,
+    "K%": 104.4,
+    "BB%": 93.2,
+    "HR/PA_raw": 99.4
+   },
+   "payroll": 115748036.0,
+   "cap_headroom_m": 129.6,
+   "pipeline_rank": 16,
+   "pipeline_index": 99.7,
+   "top_prospect": "Caden Kendle"
+  },
+  {
+   "team": "NYM",
+   "wins": 74,
+   "signature_idx": {
+    "OBP": 97.4,
+    "contact": 99.8,
+    "K%": 99.4,
+    "BB%": 97.3,
+    "HR/PA_raw": 89.9
+   },
+   "payroll": 346736805.0,
+   "cap_headroom_m": -101.4,
+   "pipeline_rank": 24,
+   "pipeline_index": 79.1,
+   "top_prospect": "Corey Collins"
+  },
+  {
+   "team": "NYY",
+   "wins": 93,
+   "signature_idx": {
+    "OBP": 97.7,
+    "contact": 96.7,
+    "K%": 88.5,
+    "BB%": 107.4,
+    "HR/PA_raw": 77.4
+   },
+   "payroll": 308336780.0,
+   "cap_headroom_m": -63.0,
+   "pipeline_rank": 12,
+   "pipeline_index": 106.8,
+   "top_prospect": "Spencer Jones"
+  },
+  {
+   "team": "PHI",
+   "wins": 88,
+   "signature_idx": {
+    "OBP": 98.0,
+    "contact": 100.6,
+    "K%": 102.1,
+    "BB%": 98.0,
+    "HR/PA_raw": 101.3
+   },
+   "payroll": 291951676.0,
+   "cap_headroom_m": -46.7,
+   "pipeline_rank": 28,
+   "pipeline_index": 63.4,
+   "top_prospect": "Carson DeMartini"
+  },
+  {
+   "team": "PIT",
+   "wins": 82,
+   "signature_idx": {
+    "OBP": 103.7,
+    "contact": 97.5,
+    "K%": 91.3,
+    "BB%": 102.3,
+    "HR/PA_raw": 101.9
+   },
+   "payroll": 106728501.0,
+   "cap_headroom_m": 138.6,
+   "pipeline_rank": 17,
+   "pipeline_index": 98.7,
+   "top_prospect": "Esmerlyn Valdez"
+  },
+  {
+   "team": "SD",
+   "wins": 91,
+   "signature_idx": {
+    "OBP": 100.2,
+    "contact": 100.7,
+    "K%": 102.5,
+    "BB%": 102.8,
+    "HR/PA_raw": 100.6
+   },
+   "payroll": 218252715.0,
+   "cap_headroom_m": 27.0,
+   "pipeline_rank": 26,
+   "pipeline_index": 72.0,
+   "top_prospect": "Jase Bowen"
+  },
+  {
+   "team": "SEA",
+   "wins": 76,
+   "signature_idx": {
+    "OBP": 98.6,
+    "contact": 98.9,
+    "K%": 96.2,
+    "BB%": 103.0,
+    "HR/PA_raw": 101.4
+   },
+   "payroll": 170071014.0,
+   "cap_headroom_m": 75.2,
+   "pipeline_rank": 29,
+   "pipeline_index": 60.3,
+   "top_prospect": "Lazaro Montes"
+  },
+  {
+   "team": "SF",
+   "wins": 65,
+   "signature_idx": {
+    "OBP": 96.1,
+    "contact": 100.0,
+    "K%": 100.0,
+    "BB%": 83.4,
+    "HR/PA_raw": 103.2
+   },
+   "payroll": 190174131.0,
+   "cap_headroom_m": 55.1,
+   "pipeline_rank": 8,
+   "pipeline_index": 111.6,
+   "top_prospect": "Jonah Cox"
+  },
+  {
+   "team": "STL",
+   "wins": 77,
+   "signature_idx": {
+    "OBP": 98.3,
+    "contact": 101.1,
+    "K%": 103.9,
+    "BB%": 93.7,
+    "HR/PA_raw": 110.3
+   },
+   "payroll": 96396498.0,
+   "cap_headroom_m": 148.9,
+   "pipeline_rank": 1,
+   "pipeline_index": 151.0,
+   "top_prospect": "Jes\u00fas  B\u00e1ez"
+  },
+  {
+   "team": "TB",
+   "wins": 98,
+   "signature_idx": {
+    "OBP": 102.4,
+    "contact": 104.4,
+    "K%": 115.3,
+    "BB%": 94.8,
+    "HR/PA_raw": 108.7
+   },
+   "payroll": 95615469.0,
+   "cap_headroom_m": 149.7,
+   "pipeline_rank": 7,
+   "pipeline_index": 112.0,
+   "top_prospect": "Austin Overn"
+  },
+  {
+   "team": "TEX",
+   "wins": 80,
+   "signature_idx": {
+    "OBP": 99.6,
+    "contact": 98.9,
+    "K%": 96.2,
+    "BB%": 97.8,
+    "HR/PA_raw": 100.1
+   },
+   "payroll": 191262798.0,
+   "cap_headroom_m": 54.0,
+   "pipeline_rank": 19,
+   "pipeline_index": 95.9,
+   "top_prospect": "Sebastian Walcott"
+  },
+  {
+   "team": "TOR",
+   "wins": 79,
+   "signature_idx": {
+    "OBP": 97.4,
+    "contact": 104.0,
+    "K%": 114.1,
+    "BB%": 85.5,
+    "HR/PA_raw": 117.1
+   },
+   "payroll": 276130679.0,
+   "cap_headroom_m": -30.8,
+   "pipeline_rank": 11,
+   "pipeline_index": 106.8,
+   "top_prospect": "Sean Keys"
+  },
+  {
+   "team": "WSH",
+   "wins": 77,
+   "signature_idx": {
+    "OBP": 100.8,
+    "contact": 100.4,
+    "K%": 101.6,
+    "BB%": 100.9,
+    "HR/PA_raw": 88.2
+   },
+   "payroll": 101639888.0,
+   "cap_headroom_m": 143.7,
+   "pipeline_rank": 20,
+   "pipeline_index": 93.0,
+   "top_prospect": "Seaver King"
+  }
+ ]
+}

@@ -1,5 +1,10 @@
-numpy==2.0.2
-pandas==2.3.3
+# HARDBALL — pinned dependencies (integration union, 2026-10-31)
+# Verified end-to-end on Python 3.12 for the integrated 20-figure build
+# (offline clean-clone dashboard build passes; scipy included — model_p6
+# requires it and the earlier main-lane pins omitted it).
+numpy==2.5.4
+pandas==3.1.0
+scipy==1.18.1
+scikit-learn==1.9.1
 plotly==7.1.0
-requests==2.32.5
-scikit-learn==1.6.1
+requests==2.34.2
