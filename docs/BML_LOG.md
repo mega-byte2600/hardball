@@ -820,3 +820,30 @@ streaming terms, Moses et al. observability).
   gate ALL PASS; spellcheck green on the edited files.
 - Next: item (h) — drift re-run / docs polish (all backlog items a-g
   now done; no new claims).
+
+## Cycle 37 — DRIFT RE-RUN: CYCLE 24 PITCHER BACKTEST (toby, 2026-11-02 ~02:12 PT, overnight sprint)
+- Backlog item (h): re-ran src/bml_cycle24.py (pitcher Marcel backtest,
+  targets 2025 + 2026) on the current lake and diffed the regenerated
+  data/pitcher_backtest.json against the committed artifact.
+- Result: NO DRIFT — regenerated artifact identical to committed, so no
+  data or model change ships from this re-run. Pooled numbers unchanged:
+  MAE ERA A 0.744 / B 0.715 / C 0.711; MAE WHIP 0.122 / 0.120 / 0.120;
+  ERA bias -0.208 / -0.205 / -0.078. The shipped pitcher method stands.
+- Platform run this cycle, on main a80989d0 (unmoved since Cycle 36):
+  ingest 21 datasets, 0 failures; Savant volumes in band (expected
+  651-673, bat-tracking 595-619, sprint 489-506); NPB BIS leaderboards
+  340 rows; curate 14 tables, all contracts pass; warehouse rebuilt;
+  parity r = 0.889, 201 matched; curated byte-identical to main (no
+  data PR from the platform step); gate ALL PASS; dashboard rebuilds
+  with 23-chart index intact (Story 6 chapters, Boardroom 15 slides,
+  Explorer all 23 figures, 8 percentile cards, Figure 23 Explorer-only
+  with BIS label).
+- Spotrac probe (once per run): still 403. FanGraphs probe (once per
+  run): still 403 Cloudflare. Salaries remain 24/30, forced-seller 6/7
+  (CHC uncovered); the reconciled-FanGraphs lane stays closed under
+  the Cycle 32 guard — it reopens only on a 200 probe.
+- Verified by DOM/data checks only (no browser visual QA, per standing
+  rule): gate ALL PASS; dashboard rebuild holds figures 1-23 with no
+  duplicates.
+- Next: item (h) continues — next drift re-run (Cycle 21 hitter
+  backtest) or docs polish; no new claims.
