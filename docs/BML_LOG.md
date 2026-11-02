@@ -877,6 +877,80 @@ streaming terms, Moses et al. observability).
   persistence-figure recompute, r vs R^2 labeling) or the next drift
   re-run; no new claims.
 
+## Cycle 39 — PERSISTENCE RECOMPUTE: THE "OBP r ≈ 0.3" CLAIM CORRECTED (toby, 2026-11-02 ~04:40 PT, overnight sprint)
+
+- Backlog item (h): the MIT/Moneyball study's flagged persistence item —
+  recompute the demo's headline persistence figures in HARDBALL's own
+  sample and fix the r-vs-R²-adjacent labeling before Dec 1.
+- FINDING 1 — the copy generalized one pair. The demo's prose (Story
+  chapter 3, talk-track THE EDGE, exec summary) said OBP "carries at
+  only about 0.3" across four season pairs. The committed per-pair data
+  never said that: OBP r = 0.576 / 0.595 / 0.582 / 0.298. Only the latest
+  pair (2025→2026, n=80) is 0.30; the first three pairs are 0.55-0.60.
+  The 0.298 is a genuine Pearson r (recomputed twice, see below), NOT a
+  mislabeled R² — but note the first three pairs' OBP R² values are
+  0.33 / 0.35 / 0.30, which is plausibly where a stray "0.3" came from.
+  Pooled OBP r on the restored lake is 0.534 (R² 0.285, n=457 pairs) —
+  weaker than contact (0.843), not zero. The thesis direction stands;
+  the number was overstated.
+- FINDING 2 — the committed persistence artifacts were NOT reproducible
+  from the lake as found. Re-running src/bml_cycle21_multiyear.py +
+  src/bml_cycle23_ci.py on the lake in the working tree (543 hitting
+  rows, 2023-2026 only) reproduced ONLY the 2025→2026 pair exactly and
+  dropped the 2022→2023 pair entirely. Root cause: the lake is gitignored
+  and src/ingest.py's init_schema DROPs stat_lines and reloads only
+  qualified rows; a later reload wiped the Cycle 21 backfill (2022-2024
+  leaders-based rows, 1,026 player-seasons) and its raw cache, which no
+  longer exists in this environment. The platform (ingest_platform.py)
+  does NOT touch the lake — the hazard is the legacy loader, which
+  remains runnable. Follow-up for a later cycle: poka-yoke ingest.py
+  (refuse to DROP a lake holding seasons it will not reload) or retire
+  it; until then, never run src/ingest.py against a backfilled lake.
+- RESTORE (this cycle, live MLB Stats API, committed script only):
+  re-ran src/backfill_players.py — stored counts reproduced Cycle 21
+  exactly (2022=262, 2023=243, 2024=241). The restored lake initially had
+  223 duplicate (season, player) rows where the legacy qualified reload
+  overlapped the backfill; all 223 pairs had byte-identical stat_json,
+  so deleting the legacy copy was value-neutral. Restored lake: 1,066
+  hitting rows (Cycle 21's 1,026 + 40 legacy-only qualified rows for
+  2023/2024), 466 players. Re-running both persistence scripts on it:
+  2025→2026 identical to committed on every figure; other pairs moved
+  by ≤0.05 (extra 40 rows + larger n: pairs n=133/141/103/80 vs
+  committed 125/124/93/80); pooled contact r = 0.843 (95% CI 0.810-0.872,
+  457 pairs) vs committed 0.83 (0.792-0.862, 422 pairs). Verdict still
+  STABLE (contact r ≥ 0.6 in every pair). Pooled on the restored lake:
+  contact 0.843, BB% 0.721, ISO 0.613, OBP 0.534.
+- WHAT THIS PR CHANGES (owner call — claim numbers move, so left open,
+  NOT merged): data/player_persistence_multiyear.json +
+  data/persistence_ci.json refreshed to the restored-lake recomputation
+  (same scripts, same MIN_PA=200 method, real MLB API data); Story
+  chapter 3, talk-track THE EDGE + back-pocket numbers, and exec summary
+  rewritten to the new figures (OBP pooled 0.53, per-pair 0.58/0.59/0.55/
+  0.30; pooled contact 0.84, CI 0.81-0.87; pooled walk 0.72; 466 players;
+  error cut 42-57%). The one-pager needs no change: it quotes only the
+  latest pair (contact 0.899, BB 0.655, OBP 0.298, n=80), which is
+  unchanged, and its n==80 assertion still passes. Dashboard Figure 3
+  itself was always honest (it plots the per-pair bars); only the prose
+  headlines generalized the last pair.
+- Platform run this cycle, on main f8ab2726 (unmoved since Cycle 38):
+  ingest 21 datasets, 0 failures; Savant volumes in band (expected
+  651-673, bat-tracking 595-619, sprint 489-506); NPB BIS leaderboards
+  340 rows; curate 14 tables, all contracts pass; warehouse rebuilt;
+  parity r = 0.889, 201 matched; curated byte-identical to main (no
+  data PR from the platform step); gate ALL PASS on the rebuilt
+  dashboard (23 figures, Story 6 chapters, Boardroom ≤15 slides,
+  Explorer all 23, 8 percentile cards, Figure 23 Explorer-only).
+- Spotrac probe (once per run): still 403. FanGraphs probe (once per
+  run): still 403 Cloudflare. Salaries remain 24/30, forced-seller 6/7
+  (CHC uncovered); the reconciled-FanGraphs lane stays closed under
+  the Cycle 32 guard — it reopens only on a 200 probe.
+- Verified by DOM/data checks only (no browser visual QA, per standing
+  rule): gate ALL PASS after the copy + data refresh; dashboard rebuild
+  holds figures 1-23 with no duplicates.
+- Next: owner decision on this PR (merge = new persistence numbers go
+  live); otherwise item (h) continues — next drift re-run or the
+  ingest.py poka-yoke; no new claims.
+
 ## Cycle 40 — DRIFT RE-RUN: CYCLE 20 SAVANT PLAYER-LEVEL TEST (toby, 2026-11-02 ~05:12 PT, overnight sprint)
 - Backlog item (h): re-ran src/bml_cycle20.py (Savant at player level:
   Q1 luck correction, Q2 trait stability, Q3 Savant families as
@@ -1060,3 +1134,78 @@ streaming terms, Moses et al. observability).
   in either.
 - Next: item (h) continues — next drift re-run or docs polish; no new
   claims.
+
+## Cycle 44 — ACCURACY STACK: PERSISTENCE CORRECTION LANDED + LABELED SALARY LAYERS + CROSSWALK + IL HISTORY (toby, 2026-11-02 ~08:20 PT)
+
+- Owner directive (2026-11-02 08:11 PT): "do what takes to make
+  accurate, optimal and professional." That is this cycle's
+  authorization, including merging on gate pass and superseding
+  PR #21. Base: current main 93cb55ce (verified live before building;
+  fresh tarball tree, kpi.py clean).
+- (1) PERSISTENCE ACCURACY FIX — PR #21 SUPERSEDED, CORRECTION
+  LANDED. A direct merge of PR #21 failed (mergeable=False/dirty
+  against main after Cycles 40–43), so the correction was re-applied
+  by hand onto current main: PR #21's versions of
+  src/dashboard_p6.py (1 claim hunk), docs/TALKTRACK.md (2 hunks),
+  docs/EXEC_SUMMARY.md (1 hunk), data/player_persistence_multiyear.json
+  and data/persistence_ci.json (restored-lake recompute), plus its
+  Cycle 39 BML entry inserted in chronological position. Current main
+  wins on everything unrelated (Cycles 40–43 entries intact). The
+  corrected claims: OBP pooled r ≈ 0.53 (per-pair 0.58/0.59/0.55/0.30),
+  contact pooled r = 0.84 (95% CI 0.81–0.87), walk pooled r = 0.72,
+  466 players / 457 pairs, error cut 42–57%. No other claims changed.
+  PR #21 is closed as superseded with an explanatory comment.
+- (2) COT'S AS SECOND LABELED DATASET (owner option b). New
+  src/bml_cycle44.py builds data/salaries_cots_2027.json from the
+  Cycle 41 mirror cache: 237 rows, 30 teams — every player with a
+  published Cot's LRP-2027 dollar figure, each row labeled
+  source=cots_baseball_prospectus, basis in the file metadata (LRP:
+  PV deferrals, buyout option years). data/salaries_2026.json
+  UNTOUCHED; forced-seller math UNCHANGED (still 6/7, CHC uncovered,
+  on the Spotrac-basis file). Curated as fact_salaries_cots.
+- (3) BREF WAR SALARY CROSS-CHECK — FAILED CLOSED. BRef's salary
+  column is real but partial (2026: 495 player-team rows, ~30% of
+  players). Reconciliation (workpaper data/salary_recon_cycle44.json):
+  vs the Spotrac-basis file, 195/927 matched (21.0%), 28.7% within
+  $50k — basis difference by construction (2026 actual vs the file's
+  2027 basis). Vs Cot's LRP-2026 (same season) for the 6 gap teams:
+  114 matched, 71.1% within $50k — under the 80% credibility bar, so
+  NO BRef salary dataset ships. Disagreements are documented
+  convention gaps (traded players: Cot's books the acquiring club's
+  share, BRef the full-season figure; deferred/PV cases). The WAR
+  files land in the raw zone for WAR cross-checks only.
+- (4) CHADWICK REGISTER CROSSWALK — ADOPTED. ingest_platform gains a
+  chadwick task (16 keyless GitHub shards, ODC-BY; 527,990 person
+  rows landed); curate gains dim_player_xwalk (137,320 rows with an
+  MLBAM key; Retro/BRef/FanGraphs/NPB/Wikidata keys). Join proof:
+  379/379 dim_player registry players matched (100%); 370 carry
+  FanGraphs IDs, 17 carry NPB keys.
+- (5) INJURY REPORT IL HISTORY — ADOPTED. ingest gains an
+  injury_report task (keyless CSV from MLB IL transactions); curate
+  gains fact_il_stints: 6,632 stints, 2,177 players, 2019–2026 (the
+  site's headline says 6,651 injuries; its CSV parses to 6,632
+  stints — we count the CSV). Cross-check layer only: Cycle 27
+  availability factors and all roster math unchanged.
+- (6) KEY-BASED SOURCES PREP — DOCS + STUBS, NO SIGNUPS, NO KEYS.
+  src/keyed_sources.py: env-key-gated fail-closed stubs for Tank01,
+  Statyx, FastballAPI, Sportradar (verified: all four return labeled
+  "data unavailable" with no key and make no network call).
+  Scorecard + DATA_PLATFORM carry ready-to-activate entries;
+  Sportradar trial flagged DO NOT START before mid-Nov (30-day
+  window must cover Dec 1).
+- Platform run this cycle, on the final tree: ingest 25 datasets,
+  0 failures (Savant volumes in band; NPB BIS 340; transactions
+  watermark at 120,355 events; FanGraphs Steamer raw pull answered
+  this run — curated tables still build from the committed artifacts,
+  byte-identical); curate 17 tables, all contracts pass (14 prior
+  tables byte-identical, 3 new); warehouse rebuilt from 17 tables;
+  parity r = 0.889, 201 matched; dashboard rebuilt (23 figures,
+  corrected persistence copy live in Story ch. 3); gate ALL PASS
+  (offline and --live, standings 30/30); spellcheck green.
+- Spotrac probe (once per run): still 403 (CHC page). Salaries for
+  the demo's math remain 24/30 Spotrac-basis, forced-seller 6/7 —
+  now with a labeled Cot's layer beside them, stated as such.
+- Verified by DOM/data checks only (no browser visual QA, per
+  standing rule).
+- Next: Sportradar trial decision mid-Nov (owner starts it, Toby
+  wires it); the 24/7 cycle continues its drift/polish backlog.

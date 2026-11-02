@@ -21,6 +21,13 @@ Sources of truth per table (documented in the report):
   fact_fa_class       data/fa_shopping_2027.json
   fact_pipeline       data/pipeline_2026.json (grain organization)
   fact_health         data/health_2025_2026.json (grain team x season)
+  dim_player_xwalk    data/raw/chadwick/people.csv (Cycle 44; grain one
+                      row per person carrying an MLBAM key)
+  fact_il_stints      data/raw/injury_report/il_stints_2019_2026.csv
+                      (Cycle 44; grain one IL stint)
+  fact_salaries_cots  data/salaries_cots_2027.json (Cycle 44; labeled
+                      Cot's LRP-2027 cross-check layer — separate basis,
+                      never summed with fact_salaries)
 """
 import json
 import re
@@ -32,6 +39,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
+RAW = DATA / "raw"
 OUT = DATA / "curated"
 OUT.mkdir(parents=True, exist_ok=True)
 REPORT = {"tables": {}, "failures": []}
@@ -150,6 +158,50 @@ def main():
     df = pd.DataFrame(load("health_2025_2026.json"))
     emit("fact_health", df, "team x season", ["health_2025_2026.json"],
          [("rows >= 50", len(df) >= 50)])
+
+    # Cycle 44: Chadwick crosswalk (raw zone, when present) -------------------
+    chad = RAW / "chadwick" / "people.csv"
+    if chad.exists():
+        d = pd.read_csv(chad, low_memory=False)
+        d = d[d["key_mlbam"].notna() & (d["key_mlbam"] != "")]
+        df = pd.DataFrame({
+            "player_id": d["key_mlbam"].astype(int),
+            "retro_id": d["key_retro"], "bbref_id": d["key_bbref"],
+            "bbref_minors_id": d["key_bbref_minors"],
+            "fg_id": pd.to_numeric(d["key_fangraphs"], errors="coerce"),
+            "npb_id": d["key_npb"], "wikidata_id": d["key_wikidata"],
+            "name_last": d["name_last"], "name_first": d["name_first"],
+            "birth_year": pd.to_numeric(d["birth_year"], errors="coerce"),
+        }).drop_duplicates("player_id")
+        emit("dim_player_xwalk", df, "one row per person (MLBAM key)",
+             ["raw/chadwick/people.csv (Chadwick Bureau Register, ODC-BY)"],
+             [("rows > 50000", len(df) > 50000),
+              ("player_id unique", df.player_id.is_unique),
+              ("player_id not null", df.player_id.notna().all())])
+    else:
+        print("  dim_player_xwalk: SKIPPED (chadwick raw absent)")
+
+    # Cycle 44: Injury Report IL stints (raw zone, when present) ---------------
+    il = RAW / "injury_report" / "il_stints_2019_2026.csv"
+    if il.exists():
+        df = pd.read_csv(il, low_memory=False)
+        emit("fact_il_stints", df, "one IL stint (player x placement)",
+             ["raw/injury_report/il_stints_2019_2026.csv "
+              "(The Injury Report, from MLB IL transactions)"],
+             [("rows >= 6000", len(df) >= 6000),
+              ("seasons 2019-2026", df["season"].nunique() == 8),
+              ("player_id present", "player_id" in df.columns)])
+    else:
+        print("  fact_il_stints: SKIPPED (injury report raw absent)")
+
+    # Cycle 44: Cot's labeled salary cross-check layer -------------------------
+    cots = load("salaries_cots_2027.json")
+    df = pd.DataFrame(cots["players"])
+    emit("fact_salaries_cots", df, "player x team (Cot's LRP 2027)",
+         ["salaries_cots_2027.json"],
+         [("rows == metadata", len(df) == cots["metadata"]["rows"]),
+          ("30 teams", df.team.nunique() == 30),
+          ("every row labeled cots", bool((df.source == "cots_baseball_prospectus").all()))])
 
     # cap scenario -----------------------------------------------------------------
     cap = load("cap_scenario_2027.json")

@@ -1,0 +1,2382 @@
+{
+ "metadata": {
+  "source": "Cot's Baseball Contracts (Baseball Prospectus), per-team Google Sheets exports pulled 2026-11-02 (Cycle 41)",
+  "basis": "Cot's Labor Relations Payroll (LRP) 2027 \u2014 projected 40-man year-end; deferred money at present value; option years at the guaranteed buyout. NOT the Spotrac-basis basis of data/salaries_2026.json; never mix the two in one sum.",
+  "field": "LRP 2027 dollar figure (rows exist only where Cot's publishes a figure; unsigned players carry FA/arb/option markers, not numbers)",
+  "rows": 237,
+  "teams": 30,
+  "role": "Labeled cross-check / coverage layer ONLY. Does not feed forced-seller math or any roster math."
+ },
+ "players": [
+  {
+   "name": "Corbin Burnes",
+   "team": "ARI",
+   "pos": "rhp-s",
+   "contract": "6 y/$210M (25-30)*",
+   "salary_lrp_2027": 30963000,
+   "lrp_2026": 30962673,
+   "cb_2027_aav": 32911000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Merrill Kelly",
+   "team": "ARI",
+   "pos": "rhp-s",
+   "contract": "2 y/$40M (26-27)+28 v opt",
+   "salary_lrp_2027": 22000000,
+   "lrp_2026": 18000000,
+   "cb_2027_aav": 20000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Eduardo Rodriguez",
+   "team": "ARI",
+   "pos": "lhp-s",
+   "contract": "4 y/$80M (24-27)+28 v opt",
+   "salary_lrp_2027": 19000000,
+   "lrp_2026": 21000000,
+   "cb_2027_aav": 20000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Nolan Arenado",
+   "team": "ARI",
+   "pos": "3b",
+   "contract": "8 y/$260M (19-26)+'27 extn*",
+   "salary_lrp_2027": 15000000,
+   "lrp_2026": 24398219,
+   "cb_2027_aav": 21000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Corbin Carroll",
+   "team": "ARI",
+   "pos": "lf",
+   "contract": "8 y/$111M (23-30)+31 cl opt",
+   "salary_lrp_2027": 12625000,
+   "lrp_2026": 10625000,
+   "cb_2027_aav": 13875000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Ketel Marte",
+   "team": "ARI",
+   "pos": "2b",
+   "contract": "7 y/$116.5M (25-31)*",
+   "salary_lrp_2027": 11267000,
+   "lrp_2026": 12534465,
+   "cb_2027_aav": 15641000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Geraldo Perdomo",
+   "team": "ARI",
+   "pos": "ss",
+   "contract": "4 y/$45M (26-29)+30 cl opt",
+   "salary_lrp_2027": 9250000,
+   "lrp_2026": 6250000,
+   "cb_2027_aav": 11250000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Brandon Pfaadt",
+   "team": "ARI",
+   "pos": "rhp-s",
+   "contract": "5 y/$45M (26-30)+opts",
+   "salary_lrp_2027": 5400000,
+   "lrp_2026": 3400000,
+   "cb_2027_aav": 9000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Lourdes Gurriel Jr.",
+   "team": "ARI",
+   "pos": null,
+   "contract": "released 9/18/26",
+   "salary_lrp_2027": 5000000,
+   "lrp_2026": 13000000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Justin Martinez",
+   "team": "ARI",
+   "pos": "rhp-c",
+   "contract": "5 y/$18M (25-29)+30-31 opts",
+   "salary_lrp_2027": 3400000,
+   "lrp_2026": 2400000,
+   "cb_2027_aav": 3600000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Michael Soroka",
+   "team": "ARI",
+   "pos": "rhp-s",
+   "contract": "1 y/$7.5M (26)+27 m opt",
+   "salary_lrp_2027": 1000000,
+   "lrp_2026": 6500000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Luis Severino",
+   "team": "ATH",
+   "pos": "rhp-s",
+   "contract": "3 y/$67M (25-27)",
+   "salary_lrp_2027": 22000000,
+   "lrp_2026": 25000000,
+   "cb_2027_aav": 22333000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Brent Rooker",
+   "team": "ATH",
+   "pos": "dh-lf",
+   "contract": "5 y/$60M (25-29)+30 cl opt",
+   "salary_lrp_2027": 14000000,
+   "lrp_2026": 8000000,
+   "cb_2027_aav": 12000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Tyler Soderstrom",
+   "team": "ATH",
+   "pos": "lf",
+   "contract": "7 y/$86M (26-32)+33 cl opt",
+   "salary_lrp_2027": 6429000,
+   "lrp_2026": 1428571,
+   "cb_2027_aav": 12286000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Lawrence Butler",
+   "team": "ATH",
+   "pos": "rf",
+   "contract": "7 y/$65.5M (25-31)+32 cl opt",
+   "salary_lrp_2027": 5429000,
+   "lrp_2026": 3678571,
+   "cb_2027_aav": 9357000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jacob Wilson",
+   "team": "ATH",
+   "pos": "ss",
+   "contract": "7 y/$70M (26-32)+33 cl opt",
+   "salary_lrp_2027": 2929000,
+   "lrp_2026": 1428571,
+   "cb_2027_aav": 10000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jeff McNeil",
+   "team": "ATH",
+   "pos": "2b",
+   "contract": "4 yr/$50M (23-26)+27 cl opt",
+   "salary_lrp_2027": 2000000,
+   "lrp_2026": 15750000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jeffrey Springs",
+   "team": "ATH",
+   "pos": "lhp-s",
+   "contract": "4 yr/$31M (23-26)+27 cl opt",
+   "salary_lrp_2027": 750000,
+   "lrp_2026": 10500000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Chris Sale",
+   "team": "ATL",
+   "pos": "lhp-s",
+   "contract": "2 y/$38 (24-25)+26 opt 1 y/$27 (27)+28 cl opt",
+   "salary_lrp_2027": 27000000,
+   "lrp_2026": 18000000,
+   "cb_2027_aav": 27000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Matt Olson",
+   "team": "ATL",
+   "pos": "1b",
+   "contract": "8 y/$168M (22-29)+30 cl opt",
+   "salary_lrp_2027": 22000000,
+   "lrp_2026": 22000000,
+   "cb_2027_aav": 21000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Austin Riley",
+   "team": "ATL",
+   "pos": "3b",
+   "contract": "10 y/$212M (23-32)+33 cl opt",
+   "salary_lrp_2027": 22000000,
+   "lrp_2026": 22000000,
+   "cb_2027_aav": 21200000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Spencer Strider",
+   "team": "ATL",
+   "pos": "rhp-s",
+   "contract": "6 y/$75M (23-28)+29 cl opt",
+   "salary_lrp_2027": 22000000,
+   "lrp_2026": 20000000,
+   "cb_2027_aav": 12500000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Robert Suarez",
+   "team": "ATL",
+   "pos": "rhp-c",
+   "contract": "3 y/$45M (26-28)",
+   "salary_lrp_2027": 16000000,
+   "lrp_2026": 13000000,
+   "cb_2027_aav": 15000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Sean Murphy",
+   "team": "ATL",
+   "pos": "c",
+   "contract": "6 y/$73M (23-28)+29 cl opt",
+   "salary_lrp_2027": 15000000,
+   "lrp_2026": 15000000,
+   "cb_2027_aav": 12167000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jurickson Profar",
+   "team": "ATL",
+   "pos": "lf",
+   "contract": "3 y/$42M (25-27) (suspended)",
+   "salary_lrp_2027": 15000000,
+   "lrp_2026": null,
+   "cb_2027_aav": 14000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Ronald Acu\u00f1a Jr.",
+   "team": "ATL",
+   "pos": "rf",
+   "contract": "8 y/$100M (19-26)+27-28 opts",
+   "salary_lrp_2027": 10000000,
+   "lrp_2026": 17000000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Mike Yastrzemski",
+   "team": "ATL",
+   "pos": "rf",
+   "contract": "2 y/$23M (26-27)+28 cl opt",
+   "salary_lrp_2027": 10000000,
+   "lrp_2026": 9000000,
+   "cb_2027_aav": 11500000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Michael Harris II",
+   "team": "ATL",
+   "pos": "cf",
+   "contract": "8 y/$72M (23-30)+31-32 cl opts",
+   "salary_lrp_2027": 9000000,
+   "lrp_2026": 8000000,
+   "cb_2027_aav": 9000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Reynaldo L\u00f3pez",
+   "team": "ATL",
+   "pos": "rhp-s",
+   "contract": "3 y/$30M (24-26)+27 cl opt",
+   "salary_lrp_2027": 8000000,
+   "lrp_2026": 14000000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Pete Alonso",
+   "team": "BAL",
+   "pos": "1b",
+   "contract": "5 y/$155M (26-30)",
+   "salary_lrp_2027": 33500000,
+   "lrp_2026": 21000000,
+   "cb_2027_aav": 31000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Tyler O'Neill",
+   "team": "BAL",
+   "pos": "lf",
+   "contract": "3 y/$49.5M (25-27)",
+   "salary_lrp_2027": 16500000,
+   "lrp_2026": 16500000,
+   "cb_2027_aav": 16500000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Ryan Helsley",
+   "team": "BAL",
+   "pos": "rhp-c",
+   "contract": "2 y/$28M (26-27)",
+   "salary_lrp_2027": 14000000,
+   "lrp_2026": 14000000,
+   "cb_2027_aav": 14000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Kyle Bradish",
+   "team": "BAL",
+   "pos": "rhp-s",
+   "contract": "1 y/$3.55 (26) 5 y/$90 (27-31)",
+   "salary_lrp_2027": 10000000,
+   "lrp_2026": 3550000,
+   "cb_2027_aav": 18000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Shane Baz",
+   "team": "BAL",
+   "pos": "rhp-s",
+   "contract": "5 y/$68M (26-30)",
+   "salary_lrp_2027": 7800000,
+   "lrp_2026": 1800000,
+   "cb_2027_aav": 13600000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Yennier Cano",
+   "team": "BAL",
+   "pos": "rhp",
+   "contract": "1 y/$1.6 (26) 2 y/$7.5 (27-28)+opt",
+   "salary_lrp_2027": 2750000,
+   "lrp_2026": 1600000,
+   "cb_2027_aav": 3750000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Zach Eflin",
+   "team": "BAL",
+   "pos": "rhp-s",
+   "contract": "1 y/$10M (26)+27 m opt",
+   "salary_lrp_2027": 2000000,
+   "lrp_2026": 8000000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Luis Robert Jr.",
+   "team": "BAL",
+   "pos": "cf",
+   "contract": "6 y/$50M (20-25)+26-27 opts",
+   "salary_lrp_2027": 2000000,
+   "lrp_2026": 2887701,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Samuel Basallo",
+   "team": "BAL",
+   "pos": "c",
+   "contract": "8 y/$67M (26-33)+34 opt",
+   "salary_lrp_2027": 1625000,
+   "lrp_2026": 1625000,
+   "cb_2027_aav": 8375000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Garrett Crochet",
+   "team": "BOS",
+   "pos": "lhp-s",
+   "contract": "6 y/$170M (26-31)",
+   "salary_lrp_2027": 28667000,
+   "lrp_2026": 24666667,
+   "cb_2027_aav": 28333000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Trevor Story",
+   "team": "BOS",
+   "pos": "ss",
+   "contract": "6 y/$140M (22-27)+28 cl opt",
+   "salary_lrp_2027": 25000000,
+   "lrp_2026": 25000000,
+   "cb_2027_aav": 23333000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Masataka Yoshida",
+   "team": "BOS",
+   "pos": "lf",
+   "contract": "5 y/$90M (23-27)",
+   "salary_lrp_2027": 18600000,
+   "lrp_2026": 18600000,
+   "cb_2027_aav": 18000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Willson Contreras",
+   "team": "BOS",
+   "pos": "1b-dh",
+   "contract": "5 y/$87.5M (23-27)",
+   "salary_lrp_2027": 17000000,
+   "lrp_2026": 18000000,
+   "cb_2027_aav": 21250000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Ranger Su\u00e1rez",
+   "team": "BOS",
+   "pos": "lhp-s",
+   "contract": "5 y/$130M (26-30)+31 m opt",
+   "salary_lrp_2027": 15600000,
+   "lrp_2026": 7600000,
+   "cb_2027_aav": 26000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Aroldis Chapman",
+   "team": "BOS",
+   "pos": "lhp-c",
+   "contract": "1 y/$13.3M (26)+27 opt",
+   "salary_lrp_2027": 13000000,
+   "lrp_2026": 13000000,
+   "cb_2027_aav": 13000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Sonny Gray",
+   "team": "BOS",
+   "pos": "rhp-s",
+   "contract": "3 y/$75M (24-26)+27 cl opt*",
+   "salary_lrp_2027": 10000000,
+   "lrp_2026": 31000000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Brayan Bello",
+   "team": "BOS",
+   "pos": "rhp-s",
+   "contract": "6 y/$55M (24-29)+30 cl opt",
+   "salary_lrp_2027": 8667000,
+   "lrp_2026": 6166667,
+   "cb_2027_aav": 9167000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Roman Anthony",
+   "team": "BOS",
+   "pos": "of",
+   "contract": "8 y/$130M (26-33)+34 cl opt",
+   "salary_lrp_2027": 4625000,
+   "lrp_2026": 2650000,
+   "cb_2027_aav": 16250000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jordan Hicks",
+   "team": "BOS",
+   "pos": null,
+   "contract": "to Chicago White Sox, 2/1/26 trade",
+   "salary_lrp_2027": 4000000,
+   "lrp_2026": 4000000,
+   "cb_2027_aav": 4000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Ceddanne Rafaela",
+   "team": "BOS",
+   "pos": "cf-inf",
+   "contract": "8 y/$50M (24-31)",
+   "salary_lrp_2027": 3750000,
+   "lrp_2026": 2250000,
+   "cb_2027_aav": 6250000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Kristian Campbell",
+   "team": "BOS",
+   "pos": "2b",
+   "contract": "8 y/$60M (25-32)+33-34 opts",
+   "salary_lrp_2027": 3250000,
+   "lrp_2026": 2250000,
+   "cb_2027_aav": 7500000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Rafael Devers",
+   "team": "BOS",
+   "pos": null,
+   "contract": "signing bonus, 1/11/23 contract",
+   "salary_lrp_2027": 2000000,
+   "lrp_2026": 2000000,
+   "cb_2027_aav": 2000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Alex Bregman",
+   "team": "CHC",
+   "pos": "3b",
+   "contract": "5 y/$175M (26-30)*",
+   "salary_lrp_2027": 29527000,
+   "lrp_2026": 26287079,
+   "cb_2027_aav": 30894000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Dansby Swanson",
+   "team": "CHC",
+   "pos": "ss",
+   "contract": "7 y/$177M (23-29)",
+   "salary_lrp_2027": 28000000,
+   "lrp_2026": 28000000,
+   "cb_2027_aav": 25286000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Nico Hoerner",
+   "team": "CHC",
+   "pos": "2b",
+   "contract": "3 y/$35 (24-26) 6 y/$141 (27-32)*",
+   "salary_lrp_2027": 23833000,
+   "lrp_2026": 12000000,
+   "cb_2027_aav": 22852000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Clay Holmes",
+   "team": "CHC",
+   "pos": "rhp-s",
+   "contract": "3 y/$38M (25-27)",
+   "salary_lrp_2027": 12000000,
+   "lrp_2026": 3823529,
+   "cb_2027_aav": 12227000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Pete Crow-Armstrong",
+   "team": "CHC",
+   "pos": "cf",
+   "contract": "1 y/$894,000 (26) 6 y/$115 (27-32)",
+   "salary_lrp_2027": 10833000,
+   "lrp_2026": 894000,
+   "cb_2027_aav": 19167000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Phil Maton",
+   "team": "CHC",
+   "pos": "rhp",
+   "contract": "2 y/$14.5M (26-27)+28 cl opt",
+   "salary_lrp_2027": 6000000,
+   "lrp_2026": 5500000,
+   "cb_2027_aav": 7250000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Matt Boyd",
+   "team": "CHC",
+   "pos": "lhp-s",
+   "contract": "2 y/$29M (25-26)+27 m opt",
+   "salary_lrp_2027": 2000000,
+   "lrp_2026": 17000000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Carson Kelly",
+   "team": "CHC",
+   "pos": "c",
+   "contract": "2 y/$11.5M (25-26)",
+   "salary_lrp_2027": 1500000,
+   "lrp_2026": 5000000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Shelby Miller",
+   "team": "CHC",
+   "pos": "rhp",
+   "contract": "2 y/$2.5M (26-27)",
+   "salary_lrp_2027": 1500000,
+   "lrp_2026": 1000000,
+   "cb_2027_aav": 1250000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Colin Rea",
+   "team": "CHC",
+   "pos": "rhp",
+   "contract": "1 y/$6.5M (26)+27 cl opt",
+   "salary_lrp_2027": 1000000,
+   "lrp_2026": 5500000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Hunter Harvey",
+   "team": "CHC",
+   "pos": "rhp",
+   "contract": "1 y/$6M (26)+27 m opt",
+   "salary_lrp_2027": 1000000,
+   "lrp_2026": 5000000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Caleb Thielbar",
+   "team": "CHC",
+   "pos": "lhp",
+   "contract": "1 y/$4.5M (26)+27 m opt",
+   "salary_lrp_2027": 500000,
+   "lrp_2026": 4000000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Hunter Greene",
+   "team": "CIN",
+   "pos": "rhp-s",
+   "contract": "6 y/$53M (23-28)+29 cl opt",
+   "salary_lrp_2027": 15333000,
+   "lrp_2026": 8333333,
+   "cb_2027_aav": 8833000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Emilio Pag\u00e1n",
+   "team": "CIN",
+   "pos": "rhp-c",
+   "contract": "2 y/$20M (26-27)",
+   "salary_lrp_2027": 10000000,
+   "lrp_2026": 10000000,
+   "cb_2027_aav": 10000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Ke'Bryan Hayes",
+   "team": "CIN",
+   "pos": "3b",
+   "contract": "8 y/$70M (22-29)+30 cl opt",
+   "salary_lrp_2027": 7000000,
+   "lrp_2026": 7000000,
+   "cb_2027_aav": 8851000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jose Trevino",
+   "team": "CIN",
+   "pos": "c",
+   "contract": "3 y/$14.925M (25-27)+28 cl opt",
+   "salary_lrp_2027": 5250000,
+   "lrp_2026": 5250000,
+   "cb_2027_aav": 4975000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jeimer Candelario",
+   "team": "CIN",
+   "pos": null,
+   "contract": "released 6/29/25 less LAA portion",
+   "salary_lrp_2027": 3000000,
+   "lrp_2026": 12920749,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Chase Burns",
+   "team": "CIN",
+   "pos": "rhp-s",
+   "contract": "1 y/$785,000 (26) 7 y/$105 (27-33)",
+   "salary_lrp_2027": 2786000,
+   "lrp_2026": 785000,
+   "cb_2027_aav": 15000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Pierce Johnson",
+   "team": "CIN",
+   "pos": "rhp",
+   "contract": "1 y/$6.5M (26)+27 m opt",
+   "salary_lrp_2027": 1000000,
+   "lrp_2026": 5500000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jos\u00e9 Ram\u00edrez",
+   "team": "CLE",
+   "pos": "3b",
+   "contract": "7 y/$175M (26-32)*",
+   "salary_lrp_2027": 18357000,
+   "lrp_2026": 18356711,
+   "cb_2027_aav": 20801000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Tanner Bibee",
+   "team": "CLE",
+   "pos": "rhp-s",
+   "contract": "5 y/$48M (25-29)+30 cl opt",
+   "salary_lrp_2027": 7400000,
+   "lrp_2026": 4400000,
+   "cb_2027_aav": 9600000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Emmanuel Clase",
+   "team": "CLE",
+   "pos": "rhp-c",
+   "contract": "5 yr/$20M (22-26) restricted list",
+   "salary_lrp_2027": 2000000,
+   "lrp_2026": 6400000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Myles Straw",
+   "team": "CLE",
+   "pos": null,
+   "contract": "outrighted 11/1/24, paid in 1/17/25 trade",
+   "salary_lrp_2027": 1750000,
+   "lrp_2026": 1000000,
+   "cb_2027_aav": 1750000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Shawn Armstrong",
+   "team": "CLE",
+   "pos": "rhp",
+   "contract": "1 y/$5.5M (26)+27 m opt",
+   "salary_lrp_2027": 1500000,
+   "lrp_2026": 4000000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Trevor Stephan",
+   "team": "CLE",
+   "pos": null,
+   "contract": "outrighted 8/15/25",
+   "salary_lrp_2027": 1250000,
+   "lrp_2026": 3500000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Andr\u00e9s Gim\u00e9nez",
+   "team": "CLE",
+   "pos": null,
+   "contract": "signing bonus, paid before trade",
+   "salary_lrp_2027": 571000,
+   "lrp_2026": 571429,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Kris Bryant",
+   "team": "COL",
+   "pos": "rf",
+   "contract": "7 y/$182M (22-28)",
+   "salary_lrp_2027": 27000000,
+   "lrp_2026": 27000000,
+   "cb_2027_aav": 26000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Ezequiel Tovar",
+   "team": "COL",
+   "pos": "ss",
+   "contract": "7 y/$63.5M (24-30)+31 cl opt",
+   "salary_lrp_2027": 8214000,
+   "lrp_2026": 5214286,
+   "cb_2027_aav": 9071000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Willi Castro",
+   "team": "COL",
+   "pos": "2b-of",
+   "contract": "2 y/$12.8M (26-27)",
+   "salary_lrp_2027": 7300000,
+   "lrp_2026": 5500000,
+   "cb_2027_aav": 6400000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Mickey Moniak",
+   "team": "COL",
+   "pos": "of",
+   "contract": "1 yr/$4 (26) 2 y/$16.25 (27-28)",
+   "salary_lrp_2027": 7250000,
+   "lrp_2026": 4000000,
+   "cb_2027_aav": 8125000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Nolan Arenado",
+   "team": "COL",
+   "pos": null,
+   "contract": "paid by Colorado in 2/21 trade",
+   "salary_lrp_2027": 5000000,
+   "lrp_2026": 5000000,
+   "cb_2027_aav": 5000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Michael Lorenzen",
+   "team": "COL",
+   "pos": "rhp-s",
+   "contract": "1 y/$8M (26)+27 opt",
+   "salary_lrp_2027": 250000,
+   "lrp_2026": 7750000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Michael Lorenzen",
+   "team": "COL",
+   "pos": null,
+   "contract": "released 8/19/26, less Toronto portion",
+   "salary_lrp_2027": 250000,
+   "lrp_2026": 7641551,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Luis Castillo",
+   "team": "CWS",
+   "pos": "rhp-s",
+   "contract": "5 yr/$108M (23-27)+28 v opt",
+   "salary_lrp_2027": 22750000,
+   "lrp_2026": 7934492,
+   "cb_2027_aav": 23516000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Munetaka Murakami",
+   "team": "CWS",
+   "pos": "1b",
+   "contract": "2 y/$34M (26-27)",
+   "salary_lrp_2027": 17500000,
+   "lrp_2026": 16500000,
+   "cb_2027_aav": 17000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Andrew Benintendi",
+   "team": "CWS",
+   "pos": "lf",
+   "contract": "5 y/$75M (23-27)",
+   "salary_lrp_2027": 15100000,
+   "lrp_2026": 17100000,
+   "cb_2027_aav": 15000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jordan Hicks",
+   "team": "CWS",
+   "pos": "rhp",
+   "contract": "4 y/$44M (24-27)",
+   "salary_lrp_2027": 12000000,
+   "lrp_2026": 12500000,
+   "cb_2027_aav": 12000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Anthony Kay",
+   "team": "CWS",
+   "pos": "lhp-s",
+   "contract": "2 y/$12M (26-27)+28 m opt",
+   "salary_lrp_2027": 5000000,
+   "lrp_2026": 5000000,
+   "cb_2027_aav": 6000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Austin Hays",
+   "team": "CWS",
+   "pos": null,
+   "contract": "released 8/7/26 less SD portion",
+   "salary_lrp_2027": 1000000,
+   "lrp_2026": 4791444,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Framber Valdez",
+   "team": "DET",
+   "pos": "lhp-s",
+   "contract": "3 y/$115M (26-28)*",
+   "salary_lrp_2027": 42827000,
+   "lrp_2026": 22826679,
+   "cb_2027_aav": 36523000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Javier B\u00e1ez",
+   "team": "DET",
+   "pos": "ss-cf",
+   "contract": "6 y/$140M (22-27)",
+   "salary_lrp_2027": 24000000,
+   "lrp_2026": 24000000,
+   "cb_2027_aav": 23333000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Kyle Finnegan",
+   "team": "DET",
+   "pos": "rhp",
+   "contract": "2 y/$19M (26-27)+28 m opt",
+   "salary_lrp_2027": 8000000,
+   "lrp_2026": 8750000,
+   "cb_2027_aav": 9500000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Colt Keith",
+   "team": "DET",
+   "pos": "1b-dh",
+   "contract": "6 y/$28,642,500 (24-29)+opts",
+   "salary_lrp_2027": 4333000,
+   "lrp_2026": 4333333,
+   "cb_2027_aav": 4774000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Kevin McGonigle",
+   "team": "DET",
+   "pos": "ss-3b",
+   "contract": "1 y/$780,000 (26) 8 y/$150 (27-34)",
+   "salary_lrp_2027": 2750000,
+   "lrp_2026": 780000,
+   "cb_2027_aav": 18750000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Kenley Jansen",
+   "team": "DET",
+   "pos": "rhp-c",
+   "contract": "1 y/$11M (26)+27 cl opt",
+   "salary_lrp_2027": 2000000,
+   "lrp_2026": 9000000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jose Altuve",
+   "team": "HOU",
+   "pos": "2b-lf",
+   "contract": "5 y/$125M (25-29)",
+   "salary_lrp_2027": 33000000,
+   "lrp_2026": 33000000,
+   "cb_2027_aav": 25000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Carlos Correa",
+   "team": "HOU",
+   "pos": "3b",
+   "contract": "6 yr/$200M (23-28)+opts",
+   "salary_lrp_2027": 31833000,
+   "lrp_2026": 32833333,
+   "cb_2027_aav": 31177000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Yordan Alvarez",
+   "team": "HOU",
+   "pos": "dh-lf",
+   "contract": "6 y/$115M (23-28)",
+   "salary_lrp_2027": 26833000,
+   "lrp_2026": 26833333,
+   "cb_2027_aav": 19167000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Cristian Javier",
+   "team": "HOU",
+   "pos": "rhp-s",
+   "contract": "5 y/$64M (23-27)",
+   "salary_lrp_2027": 21400000,
+   "lrp_2026": 21400000,
+   "cb_2027_aav": 12800000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Christian Walker",
+   "team": "HOU",
+   "pos": "1b",
+   "contract": "3 y/$60M (25-27)",
+   "salary_lrp_2027": 20000000,
+   "lrp_2026": 20000000,
+   "cb_2027_aav": 20000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Josh Hader",
+   "team": "HOU",
+   "pos": "lhp-c",
+   "contract": "5 y/$95M (24-28)",
+   "salary_lrp_2027": 19000000,
+   "lrp_2026": 19000000,
+   "cb_2027_aav": 19000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Tatsuya Imai",
+   "team": "HOU",
+   "pos": "rhp-s",
+   "contract": "3 y/$54M (26-28)",
+   "salary_lrp_2027": 18000000,
+   "lrp_2026": 18000000,
+   "cb_2027_aav": 18000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Ryan Weiss",
+   "team": "HOU",
+   "pos": null,
+   "contract": "outrighted 6/17/26",
+   "salary_lrp_2027": 500000,
+   "lrp_2026": 2100000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Seth Lugo",
+   "team": "KC",
+   "pos": "rhp-s",
+   "contract": "2 y/$46 (26-27)+28 opt",
+   "salary_lrp_2027": 21500000,
+   "lrp_2026": 21500000,
+   "cb_2027_aav": 23000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Bobby Witt Jr.",
+   "team": "KC",
+   "pos": "ss",
+   "contract": "11 yr/$288.7M (24-34)+opt",
+   "salary_lrp_2027": 20111000,
+   "lrp_2026": 14111111,
+   "cb_2027_aav": 26253000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Michael Wacha",
+   "team": "KC",
+   "pos": "rhp-s",
+   "contract": "3 yr/$51M (25-27)+28 cl opt",
+   "salary_lrp_2027": 14000000,
+   "lrp_2026": 18000000,
+   "cb_2027_aav": 17000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Salvador Perez",
+   "team": "KC",
+   "pos": "c",
+   "contract": "2 y/$25M (26-27)*",
+   "salary_lrp_2027": 10273000,
+   "lrp_2026": 10449377,
+   "cb_2027_aav": 11321000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Cole Ragans",
+   "team": "KC",
+   "pos": "lhp-s",
+   "contract": "3 y/$13.25M (25-27)",
+   "salary_lrp_2027": 7583000,
+   "lrp_2026": 4583333,
+   "cb_2027_aav": 4417000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Maikel Garcia",
+   "team": "KC",
+   "pos": "3b",
+   "contract": "5 y/$57.5M (26-30)+31 cl opt",
+   "salary_lrp_2027": 7200000,
+   "lrp_2026": 4200000,
+   "cb_2027_aav": 11500000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Vinnie Pasquantino",
+   "team": "KC",
+   "pos": "1b",
+   "contract": "2 y/$11.1M (26-27)",
+   "salary_lrp_2027": 7100000,
+   "lrp_2026": 4200000,
+   "cb_2027_aav": 5750000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Carlos Est\u00e9vez",
+   "team": "KC",
+   "pos": "rhp-c",
+   "contract": "2 y/$22M (25-26)+27 cl opt",
+   "salary_lrp_2027": 2000000,
+   "lrp_2026": 10100000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Mike Trout",
+   "team": "LAA",
+   "pos": "cf",
+   "contract": "12 y/$426.5M (19-30)",
+   "salary_lrp_2027": 37117000,
+   "lrp_2026": 37116667,
+   "cb_2027_aav": 35542000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Yusei Kikuchi",
+   "team": "LAA",
+   "pos": "lhp-s",
+   "contract": "3 yr/$63.675M (25-27)",
+   "salary_lrp_2027": 21225000,
+   "lrp_2026": 21225000,
+   "cb_2027_aav": 21225000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Kyle Tucker",
+   "team": "LAD",
+   "pos": "rf",
+   "contract": "4 y/$240M (26-29)*",
+   "salary_lrp_2027": 81917000,
+   "lrp_2026": 33000000,
+   "cb_2027_aav": 57196000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Tyler Glasnow",
+   "team": "LAD",
+   "pos": "rhp-s",
+   "contract": "5 y/$136,562,500 (24-28)",
+   "salary_lrp_2027": 32500000,
+   "lrp_2026": 32500000,
+   "cb_2027_aav": 27313000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Yoshinobu Yamamoto",
+   "team": "LAD",
+   "pos": "rhp-s",
+   "contract": "12 y/$325M (24-35)",
+   "salary_lrp_2027": 30167000,
+   "lrp_2026": 16166667,
+   "cb_2027_aav": 27083000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Shohei Ohtani",
+   "team": "LAD",
+   "pos": "dh-rhp",
+   "contract": "10 y/$700M (24-33)*",
+   "salary_lrp_2027": 28216000,
+   "lrp_2026": 28216994,
+   "cb_2027_aav": 46082000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Blake Snell",
+   "team": "LAD",
+   "pos": "lhp-s",
+   "contract": "5 y/$182M (25-29)+cdl opt*",
+   "salary_lrp_2027": 27333000,
+   "lrp_2026": 27869485,
+   "cb_2027_aav": 31306000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Mookie Betts",
+   "team": "LAD",
+   "pos": "ss",
+   "contract": "12 y/$365M (21-32)*",
+   "salary_lrp_2027": 25168000,
+   "lrp_2026": 25167520,
+   "cb_2027_aav": 30417000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Freddie Freeman",
+   "team": "LAD",
+   "pos": "1b",
+   "contract": "6 y/$162M (22-27)*",
+   "salary_lrp_2027": 23075000,
+   "lrp_2026": 22874920,
+   "cb_2027_aav": 27000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Edwin D\u00edaz",
+   "team": "LAD",
+   "pos": "rhp-c",
+   "contract": "3 y/$69M (26-28)*",
+   "salary_lrp_2027": 23011000,
+   "lrp_2026": 14010520,
+   "cb_2027_aav": 21110000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Teoscar Hern\u00e1ndez",
+   "team": "LAD",
+   "pos": "lf",
+   "contract": "3 y/$66M (25-27)+28 cl opt*",
+   "salary_lrp_2027": 17343000,
+   "lrp_2026": 15558798,
+   "cb_2027_aav": 19940000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Tanner Scott",
+   "team": "LAD",
+   "pos": "lhp-c",
+   "contract": "4 y/$72M (25-28)*",
+   "salary_lrp_2027": 16195000,
+   "lrp_2026": 12466680,
+   "cb_2027_aav": 16129000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Will Smith",
+   "team": "LAD",
+   "pos": "c",
+   "contract": "10 y/$140M (24-33)*",
+   "salary_lrp_2027": 12928000,
+   "lrp_2026": 12927716,
+   "cb_2027_aav": 12241000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Tommy Edman",
+   "team": "LAD",
+   "pos": "2b-cf",
+   "contract": "5 y/$74M (25-29)+30 cl opt*",
+   "salary_lrp_2027": 11786000,
+   "lrp_2026": 12091513,
+   "cb_2027_aav": 13040000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Max Muncy",
+   "team": "LAD",
+   "pos": "3b",
+   "contract": "2 y/$24 (24-25)+26 opt 1 y/$10 (27)+28 cl opt",
+   "salary_lrp_2027": 10750000,
+   "lrp_2026": 10000000,
+   "cb_2027_aav": 13750000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Hyeseong Kim",
+   "team": "LAD",
+   "pos": "2b",
+   "contract": "3 y/$12.5M (25-27)+28-29 opt",
+   "salary_lrp_2027": 4083000,
+   "lrp_2026": 4083000,
+   "cb_2027_aav": 4167000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Giancarlo Stanton",
+   "team": "MIA",
+   "pos": null,
+   "contract": "to NY Yankees, 12/9/17 trade",
+   "salary_lrp_2027": 10000000,
+   "lrp_2026": 10000000,
+   "cb_2027_aav": 3000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Christian Yelich",
+   "team": "MIL",
+   "pos": "lf",
+   "contract": "9 y/$215M (20-28)+29 m opt*",
+   "salary_lrp_2027": 23946000,
+   "lrp_2026": 24032605,
+   "cb_2027_aav": 23370000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jackson Chourio",
+   "team": "MIL",
+   "pos": "of",
+   "contract": "8 y/$82M (24-31)+32-33 opts",
+   "salary_lrp_2027": 8250000,
+   "lrp_2026": 7250000,
+   "cb_2027_aav": 10250000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Aaron Ashby",
+   "team": "MIL",
+   "pos": "lhp",
+   "contract": "5 y/$20.5M (23-27)+28-29 opts",
+   "salary_lrp_2027": 5700000,
+   "lrp_2026": 5700000,
+   "cb_2027_aav": 4100000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Cooper Pratt",
+   "team": "MIL",
+   "pos": "ss",
+   "contract": "8 y/$50.75M (26-33)+34-35 opts",
+   "salary_lrp_2027": 3875000,
+   "lrp_2026": 2875000,
+   "cb_2027_aav": 6344000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Luis Lara",
+   "team": "MIL",
+   "pos": "cf",
+   "contract": "7 y/$31M (26-32)+33-35 opts",
+   "salary_lrp_2027": 2286000,
+   "lrp_2026": 2285714,
+   "cb_2027_aav": 4429000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Luis Rengifo",
+   "team": "MIL",
+   "pos": null,
+   "contract": "released 6/23/26",
+   "salary_lrp_2027": 1500000,
+   "lrp_2026": 1657968,
+   "cb_2027_aav": 1500000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Dustin May",
+   "team": "MIL",
+   "pos": "rhp-s",
+   "contract": "1 y/$12.5M (26)+27 m opt",
+   "salary_lrp_2027": 500000,
+   "lrp_2026": 3529412,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Gary S\u00e1nchez",
+   "team": "MIL",
+   "pos": "c",
+   "contract": "1 y/$1.75M (26)+27 m opt",
+   "salary_lrp_2027": 250000,
+   "lrp_2026": 1500000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Pablo L\u00f3pez",
+   "team": "MIN",
+   "pos": "rhp-s",
+   "contract": "4 yr/$73.5M (24-27)",
+   "salary_lrp_2027": 21750000,
+   "lrp_2026": 21750000,
+   "cb_2027_aav": 18375000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Byron Buxton",
+   "team": "MIN",
+   "pos": "cf",
+   "contract": "7 yr/$100M (22-28)",
+   "salary_lrp_2027": 15143000,
+   "lrp_2026": 15142857,
+   "cb_2027_aav": 14286000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jeff Hoffman",
+   "team": "MIN",
+   "pos": "rhp",
+   "contract": "3 y/$33M (25-27)",
+   "salary_lrp_2027": 11000000,
+   "lrp_2026": 3235294,
+   "cb_2027_aav": 11000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Carlos Correa",
+   "team": "MIN",
+   "pos": null,
+   "contract": "to Houston, 7/31/25 trade",
+   "salary_lrp_2027": 10000000,
+   "lrp_2026": 10000000,
+   "cb_2027_aav": 10000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Victor Caratini",
+   "team": "MIN",
+   "pos": "c-dh",
+   "contract": "2 y/$14M (26-27)+28 m opt",
+   "salary_lrp_2027": 6500000,
+   "lrp_2026": 4000000,
+   "cb_2027_aav": 7000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Carlos Correa",
+   "team": "MIN",
+   "pos": null,
+   "contract": "signing bonus",
+   "salary_lrp_2027": 1333000,
+   "lrp_2026": 1333333,
+   "cb_2027_aav": 1333000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Josh Bell",
+   "team": "MIN",
+   "pos": "dh-1b",
+   "contract": "1 y/$7M (26)+27 m opt",
+   "salary_lrp_2027": 1250000,
+   "lrp_2026": 5750000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Joe Ryan",
+   "team": "MIN",
+   "pos": "rhp-s",
+   "contract": "1 y/$6.2M (26)+27 m opt",
+   "salary_lrp_2027": 100000,
+   "lrp_2026": 6100000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Juan Soto",
+   "team": "NYM",
+   "pos": "lf",
+   "contract": "15 y/$765M (25-39)",
+   "salary_lrp_2027": 57500000,
+   "lrp_2026": 61875000,
+   "cb_2027_aav": 51000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Bo Bichette",
+   "team": "NYM",
+   "pos": "3b",
+   "contract": "3 y/$126M (26-28)",
+   "salary_lrp_2027": 42000000,
+   "lrp_2026": 42000000,
+   "cb_2027_aav": 42000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Francisco Lindor",
+   "team": "NYM",
+   "pos": "ss",
+   "contract": "10 yr/$341M (22-31)*",
+   "salary_lrp_2027": 32478000,
+   "lrp_2026": 32477821,
+   "cb_2027_aav": 34100000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Marcus Semien",
+   "team": "NYM",
+   "pos": "2b",
+   "contract": "7 y/$175M (22-28)",
+   "salary_lrp_2027": 26000000,
+   "lrp_2026": 26000000,
+   "cb_2027_aav": 24000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jorge Polanco",
+   "team": "NYM",
+   "pos": "1b-3b",
+   "contract": "2 y/$40M (26-27)",
+   "salary_lrp_2027": 23000000,
+   "lrp_2026": 17000000,
+   "cb_2027_aav": 20000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Sean Manaea",
+   "team": "NYM",
+   "pos": "lhp",
+   "contract": "3 y/$75M (25-27)*",
+   "salary_lrp_2027": 19243000,
+   "lrp_2026": 19680726,
+   "cb_2027_aav": 22009000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Kodai Senga",
+   "team": "NYM",
+   "pos": "rhp-s",
+   "contract": "5 yr/$75M (23-27)",
+   "salary_lrp_2027": 14000000,
+   "lrp_2026": 14000000,
+   "cb_2027_aav": 15000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Devin Williams",
+   "team": "NYM",
+   "pos": "rhp-c",
+   "contract": "3 y/$51M (26-28)*",
+   "salary_lrp_2027": 13775000,
+   "lrp_2026": 14117634,
+   "cb_2027_aav": 15005000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Luke Weaver",
+   "team": "NYM",
+   "pos": null,
+   "contract": "to Pittsburgh, 8/3/26 trade",
+   "salary_lrp_2027": 6000000,
+   "lrp_2026": 2123529,
+   "cb_2027_aav": 6000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Luis Torrens",
+   "team": "NYM",
+   "pos": "c",
+   "contract": "1 y/$2.275 (26) 2 y/$11.5 (27-28)",
+   "salary_lrp_2027": 5750000,
+   "lrp_2026": 2275000,
+   "cb_2027_aav": 5750000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Cody Bellinger",
+   "team": "NYY",
+   "pos": "cf",
+   "contract": "5 y/$162.5M (26-30)",
+   "salary_lrp_2027": 42500000,
+   "lrp_2026": 42500000,
+   "cb_2027_aav": 44750000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Aaron Judge",
+   "team": "NYY",
+   "pos": "rf-dh",
+   "contract": "9 y/$360M (23-31)",
+   "salary_lrp_2027": 40000000,
+   "lrp_2026": 40000000,
+   "cb_2027_aav": 40000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Gerrit Cole",
+   "team": "NYY",
+   "pos": "rhp-s",
+   "contract": "9 y/$324M (20-28)",
+   "salary_lrp_2027": 36000000,
+   "lrp_2026": 36000000,
+   "cb_2027_aav": 36000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Max Fried",
+   "team": "NYY",
+   "pos": "lhp-s",
+   "contract": "8 y/$218M (25-32)",
+   "salary_lrp_2027": 31500000,
+   "lrp_2026": 14500000,
+   "cb_2027_aav": 27250000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Carlos Rod\u00f3n",
+   "team": "NYY",
+   "pos": "lhp-s",
+   "contract": "6 y/$162M (23-28)",
+   "salary_lrp_2027": 27833000,
+   "lrp_2026": 27833333,
+   "cb_2027_aav": 27000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Giancarlo Stanton",
+   "team": "NYY",
+   "pos": "dh-rf",
+   "contract": "13 y/$325M (15-27)+28 opt",
+   "salary_lrp_2027": 25000000,
+   "lrp_2026": 29000000,
+   "cb_2027_aav": 25000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Ryan McMahon",
+   "team": "NYY",
+   "pos": "3b",
+   "contract": "6 yr/$70M (22-27)",
+   "salary_lrp_2027": 16000000,
+   "lrp_2026": 16000000,
+   "cb_2027_aav": 15405000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Zack Wheeler",
+   "team": "PHI",
+   "pos": "rhp-s",
+   "contract": "3 y/$126M (25-27)",
+   "salary_lrp_2027": 42000000,
+   "lrp_2026": 42000000,
+   "cb_2027_aav": 42000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Kyle Schwarber",
+   "team": "PHI",
+   "pos": "dh",
+   "contract": "5 y/$150M (26-30)",
+   "salary_lrp_2027": 33000000,
+   "lrp_2026": 18000000,
+   "cb_2027_aav": 30000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Bryce Harper",
+   "team": "PHI",
+   "pos": "rf-1b",
+   "contract": "13 y/$330M (19-31)",
+   "salary_lrp_2027": 27539000,
+   "lrp_2026": 27538462,
+   "cb_2027_aav": 25385000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Trea Turner",
+   "team": "PHI",
+   "pos": "ss",
+   "contract": "11 y/$300M (23-33)",
+   "salary_lrp_2027": 27273000,
+   "lrp_2026": 27272727,
+   "cb_2027_aav": 27273000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jesus L\u00fazardo",
+   "team": "PHI",
+   "pos": "lhp-s",
+   "contract": "1 y/$11 (26) 5 y/$135 (27-31)+32 opt",
+   "salary_lrp_2027": 27000000,
+   "lrp_2026": 11000000,
+   "cb_2027_aav": 27000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Aaron Nola",
+   "team": "PHI",
+   "pos": "rhp-s",
+   "contract": "7 y/$172M (24-30)",
+   "salary_lrp_2027": 24571000,
+   "lrp_2026": 24571429,
+   "cb_2027_aav": 24571000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "J.T. Realmuto",
+   "team": "PHI",
+   "pos": "c",
+   "contract": "3 y/$45M (26-28)",
+   "salary_lrp_2027": 15000000,
+   "lrp_2026": 15000000,
+   "cb_2027_aav": 15000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Brad Keller",
+   "team": "PHI",
+   "pos": "rhp",
+   "contract": "2 y/$22M (26-27)",
+   "salary_lrp_2027": 13000000,
+   "lrp_2026": 9000000,
+   "cb_2027_aav": 11000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Cristopher S\u00e1nchez",
+   "team": "PHI",
+   "pos": "lhp-s",
+   "contract": "4 y/$22.5 (25-28) 6 y/$104 (27-32)",
+   "salary_lrp_2027": 7000000,
+   "lrp_2026": 3500000,
+   "cb_2027_aav": 16471000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Mitch Keller",
+   "team": "PIT",
+   "pos": "rhp-s",
+   "contract": "5 yr/$77M (24-28)",
+   "salary_lrp_2027": 18412000,
+   "lrp_2026": 16911500,
+   "cb_2027_aav": 15400000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Bryan Reynolds",
+   "team": "PIT",
+   "pos": "lf",
+   "contract": "8 y/$106.75M (23-30)+31 cl opt",
+   "salary_lrp_2027": 15250000,
+   "lrp_2026": 14250000,
+   "cb_2027_aav": 13344000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Ryan O'Hearn",
+   "team": "PIT",
+   "pos": "rf",
+   "contract": "2 y/$29M (26-27)",
+   "salary_lrp_2027": 15000000,
+   "lrp_2026": 14000000,
+   "cb_2027_aav": 14500000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Luke Weaver",
+   "team": "PIT",
+   "pos": "rhp",
+   "contract": "2 y/$22M (26-27)",
+   "salary_lrp_2027": 11000000,
+   "lrp_2026": 2352941,
+   "cb_2027_aav": 10318000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Konnor Griffin",
+   "team": "PIT",
+   "pos": "ss",
+   "contract": "9 y/$140M (26-34)",
+   "salary_lrp_2027": 3333000,
+   "lrp_2026": 2333333,
+   "cb_2027_aav": 15555000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Marcell Ozuna",
+   "team": "PIT",
+   "pos": null,
+   "contract": "released 8/7/26",
+   "salary_lrp_2027": 1500000,
+   "lrp_2026": 10500000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Manny Machado",
+   "team": "SD",
+   "pos": "3b",
+   "contract": "11 y/$350M (23-33)",
+   "salary_lrp_2027": 39091000,
+   "lrp_2026": 25090909,
+   "cb_2027_aav": 31818000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Michael King",
+   "team": "SD",
+   "pos": "rhp-s",
+   "contract": "3 y/$75M (26-28)",
+   "salary_lrp_2027": 28000000,
+   "lrp_2026": 17000000,
+   "cb_2027_aav": 25000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Xander Bogaerts",
+   "team": "SD",
+   "pos": "ss",
+   "contract": "11 y/$280M (23-33)",
+   "salary_lrp_2027": 25455000,
+   "lrp_2026": 25454545,
+   "cb_2027_aav": 25455000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Fernando Tatis Jr.",
+   "team": "SD",
+   "pos": "rf",
+   "contract": "14 y/$340M (21-34)",
+   "salary_lrp_2027": 20714000,
+   "lrp_2026": 20714286,
+   "cb_2027_aav": 24286000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Joe Musgrove",
+   "team": "SD",
+   "pos": "rhp-s",
+   "contract": "5 y/$100M (23-27)",
+   "salary_lrp_2027": 20000000,
+   "lrp_2026": 20000000,
+   "cb_2027_aav": 20000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Yu Darvish",
+   "team": "SD",
+   "pos": "rhp-s",
+   "contract": "6 y/$108M (23-28) restricted list",
+   "salary_lrp_2027": 15000000,
+   "lrp_2026": 16000000,
+   "cb_2027_aav": 18000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jake Cronenworth",
+   "team": "SD",
+   "pos": "1b",
+   "contract": "7 y/$80M (24-30)",
+   "salary_lrp_2027": 12286000,
+   "lrp_2026": 12285714,
+   "cb_2027_aav": 11429000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jackson Merrill",
+   "team": "SD",
+   "pos": "cf",
+   "contract": "9 y/$135M (26-34)",
+   "salary_lrp_2027": 7111000,
+   "lrp_2026": 2111111,
+   "cb_2027_aav": 15000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Yuki Matsui",
+   "team": "SD",
+   "pos": "lhp",
+   "contract": "5 yr/$28M (24-28)",
+   "salary_lrp_2027": 6500000,
+   "lrp_2026": 5900000,
+   "cb_2027_aav": 5600000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Wandy Peralta",
+   "team": "SD",
+   "pos": "lhp",
+   "contract": "4 y/$16.5M (24-27)",
+   "salary_lrp_2027": 4450000,
+   "lrp_2026": 4450000,
+   "cb_2027_aav": 4125000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Sung Mun Song",
+   "team": "SD",
+   "pos": "3b-2b",
+   "contract": "4 y/$15M (26-29)",
+   "salary_lrp_2027": 3333000,
+   "lrp_2026": 2833333,
+   "cb_2027_aav": 3750000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Miguel Andujar",
+   "team": "SD",
+   "pos": "lf",
+   "contract": "1 y/$4M (26)+27 m opt",
+   "salary_lrp_2027": 2500000,
+   "lrp_2026": 1500000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Lucas Giolito",
+   "team": "SD",
+   "pos": "rhp-s",
+   "contract": "1 y/$3M (26)+27 m opt",
+   "salary_lrp_2027": 1500000,
+   "lrp_2026": 1275401,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Griffin Canning",
+   "team": "SD",
+   "pos": "rhp-s",
+   "contract": "1 y/$2.5M (26)+27 m opt",
+   "salary_lrp_2027": 1500000,
+   "lrp_2026": 1000000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Kyle Hart",
+   "team": "SD",
+   "pos": "lhp-s",
+   "contract": "1 y/$1.2M (25)+26 opt",
+   "salary_lrp_2027": 200000,
+   "lrp_2026": 1000000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Julio Rodr\u00edguez",
+   "team": "SEA",
+   "pos": "cf",
+   "contract": "12 y/$209.3M (23-29)/30-34 p opt",
+   "salary_lrp_2027": 20186000,
+   "lrp_2026": 20185714,
+   "cb_2027_aav": 17442000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Josh Naylor",
+   "team": "SEA",
+   "pos": "1b",
+   "contract": "5 y/$92.5M (26-30)",
+   "salary_lrp_2027": 17300000,
+   "lrp_2026": 11300000,
+   "cb_2027_aav": 18500000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Cal Raleigh",
+   "team": "SEA",
+   "pos": "c",
+   "contract": "6 y/$105M (25-30)+31 v opt",
+   "salary_lrp_2027": 13667000,
+   "lrp_2026": 12666667,
+   "cb_2027_aav": 17500000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Seranthony Dom\u00ednguez",
+   "team": "SEA",
+   "pos": "rhp",
+   "contract": "2 y/$20M (26-27)+28 m opt",
+   "salary_lrp_2027": 10000000,
+   "lrp_2026": 2133690,
+   "cb_2027_aav": 10832000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Colt Emerson",
+   "team": "SEA",
+   "pos": "ss",
+   "contract": "8 y/$95M (26-33)+34 cl opt",
+   "salary_lrp_2027": 3000000,
+   "lrp_2026": 2000000,
+   "cb_2027_aav": 11875000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Bryce Miller",
+   "team": "SEA",
+   "pos": "rhp",
+   "contract": "1 y/$2,542,500 (26)+27 cl opt",
+   "salary_lrp_2027": 15000,
+   "lrp_2026": 2437500,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Willy Adames",
+   "team": "SF",
+   "pos": "ss",
+   "contract": "7 y/$182M (25-31)",
+   "salary_lrp_2027": 31143000,
+   "lrp_2026": 13142857,
+   "cb_2027_aav": 26000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Rafael Devers",
+   "team": "SF",
+   "pos": "dh-3b",
+   "contract": "10 y/$313.5M (24-33)*",
+   "salary_lrp_2027": 27313000,
+   "lrp_2026": 23812620,
+   "cb_2027_aav": 27467000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Matt Chapman",
+   "team": "SF",
+   "pos": "3b",
+   "contract": "6 y/$151M (25-30)",
+   "salary_lrp_2027": 25167000,
+   "lrp_2026": 25166667,
+   "cb_2027_aav": 25167000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jung Hoo Lee",
+   "team": "SF",
+   "pos": "rf",
+   "contract": "6 y/$113M (24-29)",
+   "salary_lrp_2027": 23250000,
+   "lrp_2026": 23250000,
+   "cb_2027_aav": 18833000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Logan Webb",
+   "team": "SF",
+   "pos": "rhp-s",
+   "contract": "5 y/$90M (24-28)",
+   "salary_lrp_2027": 23000000,
+   "lrp_2026": 23000000,
+   "cb_2027_aav": 18000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Harrison Bader",
+   "team": "SF",
+   "pos": "cf",
+   "contract": "2 y/$20.5M (26-27)",
+   "salary_lrp_2027": 13000000,
+   "lrp_2026": 7500000,
+   "cb_2027_aav": 10250000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Adrian Houser",
+   "team": "SF",
+   "pos": "rhp-s",
+   "contract": "2 y/$22M (26-27)+28 cl opt",
+   "salary_lrp_2027": 11000000,
+   "lrp_2026": 7000000,
+   "cb_2027_aav": 11000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Rowan Wick",
+   "team": "SF",
+   "pos": "rhp",
+   "contract": "1 y/$880,000 (26)+27 cl opt",
+   "salary_lrp_2027": 100000,
+   "lrp_2026": 780000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Nolan Arenado",
+   "team": "STL",
+   "pos": null,
+   "contract": "traded to Arizona 1/13/26",
+   "salary_lrp_2027": 9000000,
+   "lrp_2026": 22000000,
+   "cb_2027_aav": 9000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Willson Contreras",
+   "team": "STL",
+   "pos": null,
+   "contract": "traded to Boston 12/21/25",
+   "salary_lrp_2027": 4000000,
+   "lrp_2026": 4000000,
+   "cb_2027_aav": 4000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "JJ Wetherholt",
+   "team": "STL",
+   "pos": "2b",
+   "contract": "1 y/$780,000 (26) 8 y/$112.5 (27-34)",
+   "salary_lrp_2027": 2750000,
+   "lrp_2026": 780000,
+   "cb_2027_aav": 14063000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Ryne Stanek",
+   "team": "STL",
+   "pos": "rhp",
+   "contract": "1 y/$3.5M (26)+27 cl opt",
+   "salary_lrp_2027": 1000000,
+   "lrp_2026": 2500000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Ram\u00f3n Ur\u00edas",
+   "team": "STL",
+   "pos": null,
+   "contract": "released 9/18/26",
+   "salary_lrp_2027": 500000,
+   "lrp_2026": 1500000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Yandy D\u00edaz",
+   "team": "TB",
+   "pos": "1b",
+   "contract": "3 y/$24M (23-25)+26, 27 opts",
+   "salary_lrp_2027": 13000000,
+   "lrp_2026": 12000000,
+   "cb_2027_aav": 13000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Steven Matz",
+   "team": "TB",
+   "pos": "lhp-s",
+   "contract": "2 y/$15M (26-27)",
+   "salary_lrp_2027": 7500000,
+   "lrp_2026": 7500000,
+   "cb_2027_aav": 7500000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Nick Martinez",
+   "team": "TB",
+   "pos": "rhp-s",
+   "contract": "1 y/$13M (26)+27 m opt",
+   "salary_lrp_2027": 4000000,
+   "lrp_2026": 9000000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Cedric Mullins",
+   "team": "TB",
+   "pos": "cf",
+   "contract": "1 y/$7M (26)+27 m opt",
+   "salary_lrp_2027": 500000,
+   "lrp_2026": 6500000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Drew Rasmussen",
+   "team": "TB",
+   "pos": "rhp-s",
+   "contract": "2 y/$8.5M (25-26)+27 cl opt",
+   "salary_lrp_2027": 500000,
+   "lrp_2026": 5750000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jacob deGrom",
+   "team": "TEX",
+   "pos": "rhp-s",
+   "contract": "5 y/$185M (23-27)+28 opt",
+   "salary_lrp_2027": 37000000,
+   "lrp_2026": 38000000,
+   "cb_2027_aav": 37000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Corey Seager",
+   "team": "TEX",
+   "pos": "ss",
+   "contract": "10 y/$325M (22-31)",
+   "salary_lrp_2027": 31500000,
+   "lrp_2026": 31500000,
+   "cb_2027_aav": 32500000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Nathan Eovaldi",
+   "team": "TEX",
+   "pos": "rhp-s",
+   "contract": "3 y/$75M (25-27)",
+   "salary_lrp_2027": 24000000,
+   "lrp_2026": 29000000,
+   "cb_2027_aav": 25000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Brandon Nimmo",
+   "team": "TEX",
+   "pos": "rf",
+   "contract": "8 yr/$162M (23-30)",
+   "salary_lrp_2027": 20500000,
+   "lrp_2026": 20500000,
+   "cb_2027_aav": 20250000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Danny Jansen",
+   "team": "TEX",
+   "pos": "c",
+   "contract": "2 y/$14.5M (26-27)+28 m opt",
+   "salary_lrp_2027": 8000000,
+   "lrp_2026": 4250000,
+   "cb_2027_aav": 7250000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jakob Junis",
+   "team": "TEX",
+   "pos": "rhp",
+   "contract": "1 y/$4M (26)+27 m opt",
+   "salary_lrp_2027": 1250000,
+   "lrp_2026": 2750000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Kyle Higashioka",
+   "team": "TEX",
+   "pos": "c",
+   "contract": "2 y/$13.5M (25-26)+27 m opt",
+   "salary_lrp_2027": 1000000,
+   "lrp_2026": 6750000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Vladimir Guerrero Jr.",
+   "team": "TOR",
+   "pos": "1b",
+   "contract": "14 y/$500 (26-39)",
+   "salary_lrp_2027": 40214000,
+   "lrp_2026": 40214286,
+   "cb_2027_aav": 35714000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Dylan Cease",
+   "team": "TOR",
+   "pos": "rhp-s",
+   "contract": "7 y/$210M (26-32)*",
+   "salary_lrp_2027": 28968000,
+   "lrp_2026": 20759455,
+   "cb_2027_aav": 27024000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jos\u00e9 O. Berr\u00edos",
+   "team": "TOR",
+   "pos": "rhp-s",
+   "contract": "7 yr/$131M (22-28)",
+   "salary_lrp_2027": 24000000,
+   "lrp_2026": 19000000,
+   "cb_2027_aav": 18714000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Andr\u00e9s Gim\u00e9nez",
+   "team": "TOR",
+   "pos": "2b",
+   "contract": "7 y/$106.5 (23-29)+30 cl opt",
+   "salary_lrp_2027": 23571000,
+   "lrp_2026": 15571429,
+   "cb_2027_aav": 19300000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Kazuma Okamoto",
+   "team": "TOR",
+   "pos": "3b-of",
+   "contract": "4 y/$60M (26-29)",
+   "salary_lrp_2027": 17250000,
+   "lrp_2026": 8250000,
+   "cb_2027_aav": 15000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Tyler Rogers",
+   "team": "TOR",
+   "pos": "rhp",
+   "contract": "3 y/$37M (26-28)+29 v opt",
+   "salary_lrp_2027": 13667000,
+   "lrp_2026": 8666666,
+   "cb_2027_aav": 12333000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Anthony Santander",
+   "team": "TOR",
+   "pos": "rf",
+   "contract": "5 y/$92.5M (25-29)+30 cl opt*",
+   "salary_lrp_2027": 12672000,
+   "lrp_2026": 13496154,
+   "cb_2027_aav": 14678000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Alejandro Kirk",
+   "team": "TOR",
+   "pos": "c",
+   "contract": "5 y/$58M (26-30)",
+   "salary_lrp_2027": 12325000,
+   "lrp_2026": 8700000,
+   "cb_2027_aav": 11600000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Cody Ponce",
+   "team": "TOR",
+   "pos": "rhp-s",
+   "contract": "3 y/$30M (26-28)",
+   "salary_lrp_2027": 12000000,
+   "lrp_2026": 6000000,
+   "cb_2027_aav": 10000000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Yariel Rodriguez",
+   "team": "TOR",
+   "pos": null,
+   "contract": "outrighted 6/12/26",
+   "salary_lrp_2027": 8000000,
+   "lrp_2026": 7000000,
+   "cb_2027_aav": 6400000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Jeff Hoffman",
+   "team": "TOR",
+   "pos": null,
+   "contract": "to Minnesota, 8/3/26 trade",
+   "salary_lrp_2027": 3750000,
+   "lrp_2026": null,
+   "cb_2027_aav": 3750000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Myles Straw",
+   "team": "TOR",
+   "pos": "cf",
+   "contract": "5 yr/$25M (22-26)+27-28 cl opts",
+   "salary_lrp_2027": 1750000,
+   "lrp_2026": 7400000,
+   "cb_2027_aav": null,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Keibert Ruiz",
+   "team": "WSH",
+   "pos": "c",
+   "contract": "8 yr/$50M (23-30)+31-32 opts",
+   "salary_lrp_2027": 5375000,
+   "lrp_2026": 5375000,
+   "cb_2027_aav": 6250000,
+   "source": "cots_baseball_prospectus"
+  },
+  {
+   "name": "Cade Cavalli",
+   "team": "WSH",
+   "pos": "rhp-s",
+   "contract": "1 y/$870,000 (26) 4 y/$47 (27-30)+31 opt",
+   "salary_lrp_2027": 5000000,
+   "lrp_2026": 862500,
+   "cb_2027_aav": 11750000,
+   "source": "cots_baseball_prospectus"
+  }
+ ]
+}

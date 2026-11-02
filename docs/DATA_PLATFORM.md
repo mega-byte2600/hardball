@@ -47,6 +47,18 @@ atomically, manifests are append-only history).
 - **Blocked-source lane**: Spotrac is serial, cache-first, and stops
   at the first 403 (recorded in the manifest as `blocked`). No
   routing around blocks, ever.
+- **Cycle 44 sources** (all keyless, same manifest discipline):
+  Chadwick Register people shards (the ID crosswalk), The Injury
+  Report IL-stints CSV, and Baseball-Reference WAR daily files. The
+  BRef files land raw ONLY — their salary column failed the Cycle 44
+  credibility bar for dataset use (see CARPE_SCORECARD), so no
+  curated salary table is built from them; fail closed, on record.
+- **Key-gated sources (prepared, not active)**: `src/keyed_sources.py`
+  holds env-key-gated, fail-closed stubs for Tank01, Statyx,
+  FastballAPI, and Sportradar. Without a key they return a labeled
+  "data unavailable" and make no network call. Sportradar's trial is
+  deliberately NOT started before mid-November (30-day window must
+  cover Dec 1).
 
 ## Structured and unstructured
 Structured sources (APIs, CSVs) land as JSON/CSV in raw and curate
@@ -81,6 +93,20 @@ queries in `queries/`.
 - `fact_fa_class` — grain: player (2027 class).
 - `fact_pipeline` — grain: organization (2026).
 - `fact_health` — grain: team × season (IL counts).
+- `dim_player_xwalk` — grain: one row per person carrying an MLBAM key
+  (Cycle 44; Chadwick Bureau Register, ODC-BY): the conformed ID
+  crosswalk (Retro / BRef / FanGraphs / NPB / Wikidata). 137,320 rows;
+  joins `dim_player` 379/379.
+- `fact_il_stints` — grain: one IL stint (Cycle 44; The Injury Report,
+  from MLB IL transactions): 6,632 stints, 2,177 players, 2019–2026.
+  Availability-history cross-checks only — it does not feed the
+  Cycle 27 availability factors.
+- `fact_salaries_cots` — grain: player × team (Cycle 44; Cot's LRP
+  2027 basis, 237 rows, every row labeled
+  `source=cots_baseball_prospectus`). A separately labeled cross-check
+  layer: its basis (present-value deferrals, buyout option years)
+  differs from `fact_salaries` (Spotrac-basis) BY DESIGN — the two
+  are never summed or mixed.
 
 ## Data quality & observability (Moses et al.'s five signals)
 - **Freshness**: manifest fetched_at per dataset; the 24/7 cycle
