@@ -36,6 +36,8 @@ WHITELIST = {
     "nationals", "oakland", "athletics", "ath", "az", "diamondbacks",
     # people / roster
     "misiorowski", "judge", "aaron", "soto",
+    # Cycle 48 (HS-2) vocabulary — verified correct spellings
+    "sauer", "misprices", "mispricing", "underprices", "workpaper",
     # data/tools vocab
     "api", "espn", "mlb", "statsapi", "spotrac", "github", "plotly",
     "sqlite", "csv", "kpi", "kpis", "keyless", "gitignored", "json", "html",

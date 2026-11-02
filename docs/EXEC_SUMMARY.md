@@ -32,9 +32,16 @@ Cross-year *team* win forecasting is weak — MAE ≈ 9-13 wins, barely better t
 defaulting to the league average. We do not sell a team-wins formula. WAR is
 published free (fWAR/bWAR) but the formulas disagree and no MLB API returns it;
 we surface its reproducible inputs (wOBA, wRC+, FIP, K-BB%) instead of inventing one.
+**We do not claim the market misprices contact/OBP.** We ran our own
+Hakes–Sauer pricing test (Cycles 46/48, Figure 24): with a run-value benchmark
+derived from 480 team-seasons, the formal proportionality test is inconclusive
+at current samples (n = 60 / 82) — it can neither confirm correct pricing nor
+rule mispricing out. The descriptive contrast (top-quartile contact hitters at
+about half the bottom quartile's median $/WAR, on both salary bases) is labeled
+a contrast, not a price effect. The claim is persistence + cap-efficiency.
 
 ## The deliverable
-A 23-figure dashboard (offline, self-contained) + a Python-first repo where
+A 24-figure dashboard (offline, self-contained) + a Python-first repo where
 every number traces to a public source. Every build is logged in BML_LOG.md.
 
 ## The thesis in words (what an owner does)

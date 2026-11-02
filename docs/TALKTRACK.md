@@ -1,12 +1,12 @@
 # HARDBALL — Meeting Talk-Track (10 minutes, Figure-by-Figure)
 *For the GP to present to an owner. Every number is real and measured; every
 honesty caveat is already inside the pitch so it survives a skeptical room.
-Figure numbers match the merged 23-figure dashboard (main, v1.0.0-mvp).*
+Figure numbers match the merged 24-figure dashboard (main, v1.0.0-mvp).*
 
 **Weapons:** the dashboard, opened on Figure 1. This page tells you what to
 say and in what order. Don't read it — talk it.
 
-## The three modes (same 23 figures, same numbers, presented three ways)
+## The three modes (same 24 figures, same numbers, presented three ways)
 - **Story (the default landing):** the verdict first, then 6 chapters with one
   figure each — Chapter 1 Figure 3 (skills persist), Chapter 2 Figure 4 (run
   differential describes), Chapter 3 Figure 6 (payroll vs wins), Chapter 4
@@ -19,17 +19,20 @@ say and in what order. Don't read it — talk it.
   Slide 8 Figure 15, Slide 9 Figure 10, Slide 10 Figure 11, Slide 11
   Figure 20, Slide 12 Figure 16, Slide 13 Figure 22, Slide 14 Figure 2,
   Slide 15 Figure 18. Use it in the room.
-- **Explorer (all 23 figures, grouped by task):** Cap Reality (Figures 1, 6,
+- **Explorer (all 24 figures, grouped by task):** Cap Reality (Figures 1, 6,
   9, 10, 11), Build a Roster (Figures 7, 8, 12, 13, 14, 15, 16, 17),
   Shop the FA Class (Figures 21, 22, plus percentile cards for the top
   bargain free agents), The Posted Class (Figure 23, plus trio cards, the
   posting clock, and the translation honesty box), Check the Model
-  (Figures 3, 4, 5, 18, 19, 20), with Pick Your Team (Figure 2) on top.
+  (Figures 3, 4, 5, 18, 19, 20, 24), with Pick Your Team (Figure 2) on top.
   Use it for questions.
 Figures 1–22 did not change: every reference below still points at the
 same figure it always did. Figure 23 is appended, Explorer-only — Story
 stays 6 chapters and Boardroom stays 15 slides, so the posted class adds
-a live-market exhibit without adding a thesis claim.
+a live-market exhibit without adding a thesis claim. Cycle 48 appends
+Figure 24 the same way: Explorer-only, inside Check the Model — the
+Hakes–Sauer verdict exhibit, a claim check on our own pricing language,
+not a new claim.
 
 ---
 
@@ -104,7 +107,10 @@ otherwise would be a lie that gets exposed. WAR is published free by FanGraphs
 and Baseball-Reference — but the two formulas disagree and no MLB API returns
 it — so we surface its real inputs instead. Our projections were
 benchmarked against FanGraphs' Steamer in public (Fig 18): hitter agreement
-r = .889. What we *can* show, measured over four years: skills persist,
+r = .889. And we do **not** claim the market misprices these skills — we ran
+the pricing test on ourselves (Fig 24): formally inconclusive at current
+samples, so the claim stays persistence and cap-efficiency, not proven
+undervaluation. What we *can* show, measured over four years: skills persist,
 luck doesn't. **That's the edge you can act on.**"
 
 ---
@@ -151,6 +157,12 @@ AP / MLB Trade Rumors / Sportsnet.
   Cap $245.3M → 52.3 WAR (real FA class, prior-AAV price anchors).
 - Benchmark: Marcel vs Steamer hitter OBP r = .889 (201 matched by ID);
   pitcher bias corrected in public (Steamer -0.250 ERA, ours -0.208 pre-fix).
+- Hakes–Sauer pricing test (Fig 24): run-value benchmark from 480
+  team-seasons (a point of OBP worth 0.94× a point of SLG, CI 0.72–1.17);
+  formal proportionality test p = .42 (Spotrac sample, n = 60) and
+  p = .90 (Cot's sample, n = 82) — inconclusive by power, stated on the
+  panel. Quartile contrast: top-quartile contact median $/WAR is 0.54×
+  (S) / 0.53× (C) the bottom quartile's — descriptive, not a price effect.
 - Value metrics surfaced instead of fake WAR: wOBA, wRC+, FIP, K-BB%.
 - Honest limit: cross-year team-wins forecasting MAE ≈ 10.2 grouped CV
   (2020 fold excluded — it predicts the 60-game season; stated on page).

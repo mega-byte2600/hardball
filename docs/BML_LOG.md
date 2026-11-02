@@ -1414,3 +1414,61 @@ count unchanged at 23. No NPB→MLB translation factor claimed anywhere.
 - **Next:** the Fig. 23 panels update only when the posting window
   resolves (signings by Dec 16) or new BIS data lands; HS-2 follows
   Cycle 46's Hakes–Sauer workpaper.
+
+## Cycle 48 — HS-2: HAKES–SAUER VERDICT EXHIBIT (toby, 2026-11-02)
+
+- Owner-approved MIT-gap programme (2026-11-02 12:57 PT), increment 2
+  of 6: HS-2. Base: main ed177ed3 (verified live before building;
+  fresh tarball tree, kpi.py restored clean from the tarball).
+- WHAT SHIPPED: `src/bml_cycle48.py` (benchmark + formal test +
+  verdict, prints its own summary) writing
+  `data/hakes_sauer_verdict.json`; Figure 24 (Explorer, Check the
+  Model group) via `panel_hs_verdict()` + the verdict box
+  (`_hs_verdict_html()`, text rendered verbatim from the artifact);
+  figure count 23 → 24 across dashboard source, gate, README,
+  TALKTRACK, EXEC_SUMMARY, and the ONEPAGER generator (regenerated:
+  24 figures, 17 curated tables, parity r = 0.889 / 201). Figures
+  1–23 keep their numbers — Figure 24 is appended last in the build
+  order, so Story (6 chapters) and Boardroom (15 slides) are
+  untouched. Spellcheck WHITELIST += sauer, misprices, mispricing,
+  underprices, workpaper (verified spellings).
+- BENCHMARK ATTEMPT — SURVIVED, LABELED AGGREGATE: pre-registered
+  criteria fixed before estimation (FE coefs > 0, p < 0.10, VIF < 10,
+  ratio CI finite excluding 0). Runs per PA on OBP + SLG,
+  fact_team_season, 480 unique team-seasons 2011–2026 (29 duplicated
+  2026 rows in the committed table differ only in payroll-cell
+  formatting; batting fields identical, deduped, noted in the
+  artifact — curate.py itself unchanged). Season-FE: OBP +0.262
+  (p ≈ 1.8e-26), SLG +0.278 (p ≈ 1.9e-85), within R² = 0.865,
+  VIF 2.45; rho = 0.94, 95% CI 0.72–1.17 (pooled sensitivity 0.66,
+  0.44–0.88; per-season median 1.00). Ecological limit on record:
+  team aggregates split OBP/SLG's joint variation (corr 0.77 through
+  batting average), so the aggregate ratio sits below event-level
+  linear-weights values — labeled wherever the benchmark is used.
+- FORMAL TEST — INCONCLUSIVE BY POWER: HS-1 spec A refit from the
+  committed dataset reproduces HS-1's published coefs/SEs exactly
+  (asserted in code, max dev < 0.01). Wald vs FE rho: S (n = 60)
+  contrast −6.49, SE 8.05, p = 0.42; C (n = 82) contrast +1.21,
+  SE 9.43, p = 0.90 (pooled rho: p = 0.45 / 0.84). The ratios
+  neither sample can reject at 5% span the whole scanned range
+  [−20, +20] — correct pricing and large mispricing both survive.
+- VERDICT (exact text rendered in Figure 24's box): INCONCLUSIVE on
+  mispricing; descriptive $/WAR contrast consistent across both
+  bases (0.54× / 0.53×); the defensible claim is persistence +
+  cap-efficiency + low variance, not proven undervaluation. Design
+  limit stands: active-contract cross-section, not newly-signed FAs.
+- CLAIM HYGIENE: grep of dashboard source, EXEC_SUMMARY, TALKTRACK,
+  README, ONEPAGER found NO unqualified undervalued/mispriced
+  assertion about contact/OBP to replace — surfaces already carry
+  the measured language. Additive hygiene only: verdict + Figure 24
+  cite added to EXEC_SUMMARY's do-NOT-claim section, TALKTRACK's
+  honesty section + back-pocket numbers, and the dashboard sources
+  box. Thesis untouched (winning-cheap via contact + OBP +
+  availability stands as strategy).
+- Platform + gate on the final tree: ingest 25 datasets, 0 failures;
+  curate 17 tables, contracts pass, parquets byte-identical to
+  committed; warehouse rebuilt; parity r = 0.889 / 201 matched;
+  dashboard rebuilt with lake at 24 figures; gate ALL PASS (offline,
+  incl. new Figure 24 + HS-2 artifact checks); spellcheck green.
+  No browser visual QA (standing rule).
+- Next: OPT-1 (roster optimizer) per the approved programme order.
