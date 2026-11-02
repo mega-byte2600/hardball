@@ -42,9 +42,38 @@ def _archive(source: str, key: str, obj) -> str:
     return path
 
 
+# Seasons main() below actually reloads. Anything outside this set that
+# is already in the lake would be destroyed by init_schema()'s DROPs and
+# NOT reloaded — that is exactly how the Cycle 21 backfill (2022-2024,
+# 1,026 player-seasons) was wiped from the lake before Cycle 39, leaving
+# the committed persistence artifacts unreproducible from the lake as
+# found (Cycle 39, PR #21). The guard below makes that failure
+# unrepeatable: init_schema() refuses to drop a lake holding seasons
+# outside RELOAD_SEASONS instead of silently destroying them.
+RELOAD_SEASONS = (2025, 2026)
+
+
 def init_schema():
     conn = _connect()
     c = conn.cursor()
+    # Poka-yoke (Cycle 43): fail closed rather than wipe unreloadable
+    # seasons. A missing stat_lines table (fresh lake) means nothing to
+    # lose, so only an existing table with rows is inspected.
+    try:
+        seasons = {r[0] for r in c.execute("SELECT DISTINCT season FROM stat_lines")}
+    except Exception:
+        seasons = set()
+    doomed = sorted(seasons - set(RELOAD_SEASONS))
+    if doomed:
+        conn.close()
+        raise RuntimeError(
+            "init_schema() REFUSED: lake holds seasons %s, which main() "
+            "does not reload (it reloads only %s). Dropping stat_lines "
+            "would destroy them, as happened to the 2022-2024 backfill "
+            "before Cycle 39. Restore/extend the reload first, or back "
+            "the lake up and clear it deliberately — do not run this "
+            "against a backfilled lake." % (doomed, list(RELOAD_SEASONS))
+        )
     c.executescript(
         """
         DROP TABLE IF EXISTS stat_lines;
@@ -118,7 +147,7 @@ def load_qualified(season: int, group: str, sort_stat: str, order: str = "desc",
 
 def main():
     init_schema()
-    for season in (2025, 2026):
+    for season in RELOAD_SEASONS:
         for group, sort in (("hitting", "homeRuns"), ("pitching", "strikeouts")):
             df = load_qualified(season, group, sort)
             print(f"{season} {group}: {len(df)} qualified players pulled")
