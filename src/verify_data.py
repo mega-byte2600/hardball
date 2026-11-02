@@ -345,6 +345,35 @@ def main() -> int:
               "overlay counts hold, Fastball standings agree 30/30)",
               False, "data/il_current_live.json missing")
 
+    # --- UNC-1 availability-cap backtest: artifact on record -----
+    unc1_path = DATA / "unc1_availability_backtest.json"
+    if unc1_path.exists():
+        u = json.loads(unc1_path.read_text())
+        rows = u["rows"]
+        pooled = u["pooled"]
+        ok = (u["verdict"] in ("SUPPORTED", "MIXED", "NOT SUPPORTED")
+              and set(u["per_class"]) == {"2022", "2023", "2024"}
+              and len(rows) == pooled["n"] >= 30
+              and all(r["target_season"] in (2022, 2023, 2024) for r in rows)
+              and all(0.3 <= r["avail_pct"] <= 1.0 for r in rows))
+        # pooled MAEs recomputed from rows must match the artifact
+        for key in ("flat500", "flat500_capped", "marcel_pa", "marcel_pa_capped"):
+            mae = sum(abs(r[key] - r["actual_pa"]) for r in rows) / len(rows)
+            ok = ok and abs(mae - pooled[f"mae_{key}"]) < 0.2
+        # verdict must follow its declared rule on the pooled MAEs
+        flat_win = pooled["mae_flat500_capped"] < pooled["mae_flat500"]
+        marcel_win = pooled["mae_marcel_pa_capped"] < pooled["mae_marcel_pa"]
+        expect = ("SUPPORTED" if (flat_win and marcel_win)
+                  else "MIXED" if (flat_win or marcel_win) else "NOT SUPPORTED")
+        ok = ok and u["verdict"] == expect
+        check("UNC-1: backtest artifact consistent (3 FA classes, pooled "
+              "MAEs recompute, verdict follows declared rule)",
+              ok, f"verdict={u['verdict']} n={pooled['n']}")
+    else:
+        check("UNC-1: backtest artifact consistent (3 FA classes, pooled "
+              "MAEs recompute, verdict follows declared rule)",
+              False, "data/unc1_availability_backtest.json missing")
+
     # --- data platform: curated layer contracts ------------------
     rep_path = DATA / "curated" / "_build_report.json"
     check("platform: curated build report present, no failures",

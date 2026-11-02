@@ -521,3 +521,25 @@ label — disclosure is a claim call, left for the owner.
 Feed-architecture cycle (FastballAPI = census, Statyx = event
 layer, ≤1 pull/day, credit ledger) per the owner's 2026-11-02
 design direction; then UNC-1 (availability-cap backtest).
+## Cycle 54 — UNC-1: availability-cap backtest (workpaper only)
+
+Numbered 54 because the parallel lane took 53 (FIG-QA, PR #35) mid-run;
+this cycle rebased onto main 8b604edf before shipping. Verdict: NOT
+SUPPORTED as a point-forecast improvement — pooled n=39 qualified FA
+regulars from the 2022–24 classes (5,153 signings screened): flat MAE
+95.1 → 132.3 capped; Marcel MAE 46.2 → 61.1 capped. The cap wins on
+Marcel only in 2022 and on flat in no class. Why: the cap is a
+one-directional penalty and the baselines already undershoot or sit
+unbiased (flat bias −95.1 PA; Marcel bias +9.8); on the 20 players
+where Marcel overshot, the cap helped 65% — it is a downside
+adjustment, not a point correction. That is the UNC-2 input. NO demo
+number, figure, or 2027 cap changed; script `src/bml_cycle54.py` →
+`data/unc1_availability_backtest.json`; gate gains a UNC-1
+consistency check. Platform + gate on the final tree: ingest 25/0,
+curate 18 tables byte-identical, parity r = 0.889 / 201, dashboard
+25 figures, gate ALL PASS.
+
+## Next
+
+UNC-2 (uncertainty layer — intervals on scenario WAR + projection
+error bands) — final programme increment.
