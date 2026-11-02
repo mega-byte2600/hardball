@@ -1589,7 +1589,7 @@ def panel_scenarios():
                         align="left"),
             cells=dict(values=[[x["pos"] for x in r], [x["name"] for x in r],
                                [x["prev_team"] for x in r],
-                               [x["war"] for x in r],
+                               [f"{x['war']:.1f}" for x in r],
                                [f"${x['prev_aav']/1e6:.1f}M" for x in r]],
                        fill_color="rgba(244,241,234,0.6)", align="left",
                        font=dict(size=11.5), height=19),
@@ -1747,7 +1747,7 @@ def build():
     n_pit = _count("projections_2027_pitchers.json")
     cards = (
         '<div class="cards">'
-        '<div class="card"><div class="num">r = .83</div><div class="lab">contact skill persists year to year (pooled, 422 pairs) — the edge that wins</div></div>'
+        '<div class="card"><div class="num">r = .84</div><div class="lab">contact skill persists year to year (pooled, 457 pairs) — the edge that wins</div></div>'
         '<div class="card"><div class="num">$245.3M</div><div class="lab">proposed 2027 cap · floor $171.2M</div></div>'
         '<div class="card"><div class="num">509</div><div class="lab">real team-seasons measured, 2011–2026</div></div>'
         f'<div class="card"><div class="num">{n_hit + n_pit}</div><div class="lab">players projected for 2027 ({n_hit} hitters · {n_pit} pitchers)</div></div>'
@@ -1841,7 +1841,7 @@ def build():
             out.append(
                 '<article class="pcard"><h4>' + _html.escape(r["name"]) + " · " +
                 _html.escape(str(r["pos"])) + " · " + _html.escape(str(r["prev_team"])) + "</h4>" +
-                "<p>Steamer WAR " + f"{r['steamer_war']:.2f}" +
+                "<p>Steamer WAR " + f"{r['steamer_war']:.1f}" +
                 " · prior average salary $" + f"{r['prev_aav'] / 1e6:.1f}M" +
                 " · WAR per $10M of prior salary " + f"{r['war_per_10m_prior_aav']:.2f}" + "</p>" +
                 rows + "</article>")
@@ -1878,8 +1878,8 @@ def build():
         (16, "The floor roster captures most of the cap roster's talent.",
          "Built entirely from the real 2027 free-agent class, the floor roster buys 48.9 WAR for "
          "$171.1M and the cap roster buys 54.8 WAR for $245.2M: about 89 percent of the talent "
-         "for about 70 percent of the money. The builds are proven optimal, and the floor holds "
-         "45.0 WAR even with every price 20 percent above its anchor.",
+         "for about 70 percent of the money. The builds are proven optimal, and across "
+         "±20% price error the floor holds 45.0 to 53.2 WAR.",
          "Spend to the floor first. The last dollars buy the least talent.",
          "Source: Spotrac free-agent class plus FanGraphs Steamer WAR, prior-contract price anchors; "
          "exact optimization, Cycle 49 (Figure 25)."),
@@ -1897,7 +1897,8 @@ def build():
               "mid-tier payroll by spending on <b>contact + getting on base (OBP)</b> and "
               "<b>low-walk arms</b>, not power. Winning-cheap teams (MIL/TB/CLE) had "
               "<b>higher OBP, more contact, fewer strikeouts, fewer home runs AND elite team pitching</b> "
-              "— yet won ~95 games vs ~79 at roughly half payroll. <span class=\"act\">Owner action:</span> "
+              "— yet won ~95 games on average vs ~79 for the rest of the league, at about a third of "
+              "the biggest payrolls. <span class=\"act\">Owner action:</span> "
               "build the roster around OBP/contact + control pitchers, not the big power salary. "
               "<span class=\"why\">Why trust it:</span> real 2025-2026 data (MLB API + Spotrac), model "
               "cross-validated. Not a guarantee — shown honestly below.</div>")
@@ -1922,7 +1923,7 @@ def build():
               "assuming the league average. Year-over-year team wins regress sharply toward the "
               "mean — consistent with established baseball research.<br><br>"
               "<b>3. The defensible edge is at the player level, not the team level.</b> A "
-              "player's underlying skills — contact rate (r = .90) and walk discipline (r = .66) — "
+              "player's underlying skills — contact rate (pooled r = .84) and walk discipline (r = .66 to .77 in each of the four pairs) — "
               "persist year to year in ways that wins themselves do not. That persistence, paired "
               "with Marcel-style aging and health constraints, is what builds the 26-man roster "
               "shown here. We explicitly do not claim a forward-looking team-wins model: cross-year accuracy "

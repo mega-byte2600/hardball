@@ -495,3 +495,29 @@ stale greedy headline strings.
 
 UNC-1 (availability-cap backtest, out-of-sample 2022-24 FA
 classes) — next programme increment.
+
+---
+## CYCLE 53 — FIG-QA: FIGURES 1–25 TRACED AND GATED (2026-11-02, owner-directed)
+
+Full QA audit of the dashboard: every figure's rendered numbers
+traced to committed artifacts (trace table = CARPE_SCORECARD
+Cycle 53 addendum), conventions applied, numbering/titles
+reconciled across dashboard, Explorer, README, TALKTRACK,
+EXEC_SUMMARY and ONEPAGER. Seven number/label edits, no claim
+changes (detail in BML_LOG Cycle 53). The gate now carries one
+artifact-tied check per figure (FIG-QA 1–25 in
+`src/verify_data.py`, expected values computed from the
+artifacts at gate time): **65 checks offline / 66 --live, ALL
+PASS** (was 40/41). Platform clean: ingest 25 datasets /
+0 failures, curate 18 tables, warehouse rebuilt, parity
+r = 0.889 / 201, spellcheck green.
+
+**Owner item:** Figure 9 (projections_2026) is in-sample fitted
+values under a "Model-projected wins" title with no in-sample
+label — disclosure is a claim call, left for the owner.
+
+## Next
+
+Feed-architecture cycle (FastballAPI = census, Statyx = event
+layer, ≤1 pull/day, credit ledger) per the owner's 2026-11-02
+design direction; then UNC-1 (availability-cap backtest).
