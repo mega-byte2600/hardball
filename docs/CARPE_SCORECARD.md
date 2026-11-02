@@ -50,6 +50,7 @@ under `data/`; raw payloads archived under `data/raw/` (gitignored).
 | Spotrac team payroll pages (per-player 2026 salaries) | KEPT with a caveat: 24/30 teams pulled (927 rows) before Spotrac rate-limited the pull (500s, then 403 — requests stopped, per policy, not routed around). Missing: ARI, BOS, CHC, MIL, TB, TEX. `bml_cycle25.py` caches successes, so any later rerun fetches only the missing six |
 | Spotrac 2027 free-agents page | KEPT: full class (251 players) in one pull, before the rate limit |
 | USA TODAY salary database | TRIED, BLOCKED: HTTP 402 access restricted. Logged, not circumvented |
+| NPB official BIS — leaderboards + posted trio (Cycle 34) | KEPT: keyless 2024–2026 qualified leaderboards (340 rows, both leagues, bat+pit) via `src/pull_npb_bis.py`, now an `npb_bis` platform source in `src/ingest_platform.py`. Trio dataset `data/posted_class_2026.json` (Sato/Taira/Itoh, posted Nov 1, 2026) verified vs AP wire reports; BIS canonical over wire roundings (Sato .306 not .308; Itoh 34 BB not 32). Figure 23 uses BIS counting stats only — no NPB→MLB translation factor claimed. Dropped same lane: baseball-data.com (403/404), ESPN jlb API (400/404) |
 
 ---
 ## FULL VERIFICATION PASS — 2026-10-31 (post-merge, against main adbe2077)

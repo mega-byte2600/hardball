@@ -1,14 +1,15 @@
 """HARDBALL demo dashboard (Plotly HTML) — INTEGRATED build. [P7; script name
 retains the P6 filename for README/repo stability]
 
-Twenty-two figures on real data: the main lane's 13 (payroll/KPI/
+Twenty-three figures on real data: the main lane's 13 (payroll/KPI/
 projections/durability/players/pitching/health/roster/runs/
 sensitivity + skill persistence, value metrics, cap scenario)
 plus the CarpeData/Boardroom 7 (Steamer benchmark, Savant trait
 check, MiLB pipeline, FA shopping list, animated 16-season
 payroll film, pick-your-team explorer, budget-scenario rosters)
 plus the Cycle 30 forced-seller panel
-plus the Cycle 8 title-bar AUC panel,
+plus the Cycle 8 title-bar AUC panel
+plus the Cycle 34 posted-class panel (NPB BIS),
 presented in three modes (Story, Boardroom, Explorer) with stat cards. Builds from a
 clean clone OFFLINE from committed snapshots (audit G1).
 """
@@ -785,6 +786,184 @@ def panel_shopping():
         xaxis_range=[0, max(vals) * 1.45])
     return fig
 
+def panel_posted():
+    """Cycle 34, Figure 23: the posted class — Japan's window.
+
+    Four BIS-counting-stat panels, read from data/posted_class_2026.json
+    so the figure can never drift from the verified trio dataset (BIS is
+    canonical over wire roundings: Sato .306 not .308, Itoh 34 BB not 32).
+    NO NPB-to-MLB translation factor is claimed anywhere: Sato's 26.7% K
+    rate is the whiff risk against the contact thesis, Itoh's 3.6-4.7% BB
+    rate plus three straight 172+ IP seasons is the thesis fit, and
+    Taira's closer-to-starter conversion is a workload question (146 IP
+    after 52.2 IP). Itoh's 2024 row carries no BB% — BIS gives no BF for
+    that row in the dataset, so only his BB count is shown for 2024."""
+    fj = os.path.join(DATA, "posted_class_2026.json")
+    if not os.path.exists(fj):
+        return None
+    d = json.load(open(fj))
+    by_name = {p["name"]: p for p in d["players"]}
+    sato = by_name.get("Teruaki Sato")
+    taira = by_name.get("Kaima Taira")
+    itoh = by_name.get("Hiromi Itoh")
+    if not (sato and taira and itoh):
+        return None
+
+    def seasons(p):
+        return {s["year"]: s for s in p["seasons_bis"]}
+
+    ss, ts, ins = seasons(sato), seasons(taira), seasons(itoh)
+    years = [2024, 2025, 2026]
+    fig = make_subplots(
+        rows=2, cols=2,
+        subplot_titles=[
+            "Sato K% — the whiff risk (contact thesis: whiff does not travel)",
+            "Sato BB% — rising, the counterweight",
+            "Itoh innings + walk suppression — the thesis fit",
+            "Taira: closer to starter — the workload question"],
+        horizontal_spacing=0.14, vertical_spacing=0.22)
+    fig.add_trace(go.Bar(
+        x=[str(y) for y in years],
+        y=[ss[y]["K_pct_computed"] for y in years],
+        marker_color="#d50032",
+        text=[f"{ss[y]['K_pct_computed']:.1f}%" for y in years],
+        textposition="outside", name="Sato K%", showlegend=False), 1, 1)
+    fig.add_trace(go.Bar(
+        x=[str(y) for y in years],
+        y=[ss[y]["BB_pct_computed"] for y in years],
+        marker_color="#1b5e20",
+        text=[f"{ss[y]['BB_pct_computed']:.1f}%" for y in years],
+        textposition="outside", name="Sato BB%", showlegend=False), 1, 2)
+    itoh_text = []
+    for y in years:
+        row = ins[y]
+        if row.get("BB_pct_computed") is not None:
+            itoh_text.append(f"{row['BB']} BB · {row['BB_pct_computed']:.1f}% BB")
+        else:
+            itoh_text.append(f"{row['BB']} BB (no BB% in dataset)")
+    fig.add_trace(go.Bar(
+        x=[str(y) for y in years],
+        y=[ins[y]["IP"] for y in years],
+        marker_color="#1d3557",
+        text=itoh_text, textposition="outside",
+        name="Itoh IP", showlegend=False), 2, 1)
+    fig.add_trace(go.Bar(
+        x=["2025 · closer", "2026 · starter"],
+        y=[ts[2025]["ERA"], ts[2026]["ERA"]],
+        marker_color=["#e65100", "#1d3557"],
+        text=[f"{ts[2025]['ERA']:.2f} ERA · 31 SV · 52.2 IP",
+              f"{ts[2026]['ERA']:.2f} ERA · 146.0 IP · 12–5"],
+        textposition="outside", name="Taira ERA", showlegend=False), 2, 2)
+    fig.update_layout(
+        title=("The Posted Class: Japan's window — the thesis test in one market<br>"
+               "<sub>NPB official BIS counting stats only (2024–2026, qualified leaderboards). "
+               "No NPB-to-MLB translation factor is claimed anywhere in this figure. "
+               "Sato's power whiffs, Itoh's control travels, Taira's conversion is a workload question.</sub>"),
+        template="plotly_white", height=640,
+        margin=dict(l=50, r=30, t=110, b=96))
+    fig.update_yaxes(title_text="K%", row=1, col=1)
+    fig.update_yaxes(title_text="BB%", row=1, col=2)
+    fig.update_yaxes(title_text="Innings pitched", row=2, col=1)
+    fig.update_yaxes(title_text="ERA", row=2, col=2)
+    return fig
+
+
+def _posted_html():
+    """Cycle 34, Figure 23 companion HTML (Explorer only): trio cards,
+    the posting clock + fee tiers, and the translation honesty box.
+    Every number comes from data/posted_class_2026.json; the fee worked
+    example is arithmetic on that file's published tiers, labeled as an
+    illustration — never a predicted contract price."""
+    import html as _html
+    d = json.load(open(os.path.join(DATA, "posted_class_2026.json")))
+    pf = d["posting_facts"]
+
+    def fmt(v, nd=3):
+        if v is None:
+            return "—"
+        return f"{v:.{nd}f}" if isinstance(v, float) else str(v)
+
+    cards = []
+    for p in d["players"]:
+        s26 = next((s for s in p["seasons_bis"] if s["year"] == 2026), None)
+        if s26 is None:
+            continue
+        if "AVG" in s26:
+            ops = s26.get("OPS", s26.get("OPS_computed"))
+            headline = (f"2026: {fmt(s26['AVG'])} · {s26['HR']} HR · "
+                        f"{s26['RBI']} RBI · {fmt(ops)} OPS")
+            rows = "".join(
+                f"<tr><td>{s['year']}</td><td>{s['G']}</td>"
+                f"<td>{fmt(s['AVG'])}</td><td>{fmt(s['OBP'])}</td>"
+                f"<td>{fmt(s['SLG'])}</td><td>{s['HR']}</td>"
+                f"<td>{s['RBI']}</td>"
+                f"<td>{fmt(s.get('K_pct_computed'), 1)}%</td>"
+                f"<td>{fmt(s.get('BB_pct_computed'), 1)}%</td></tr>"
+                for s in p["seasons_bis"])
+            table = ("<table><tr><th>Year</th><th>G</th><th>AVG</th><th>OBP</th>"
+                     "<th>SLG</th><th>HR</th><th>RBI</th><th>K%</th><th>BB%</th></tr>"
+                     + rows + "</table>")
+        else:
+            wl = f"{s26['W']}–{s26['L']}"
+            headline = (f"2026: {fmt(s26['ERA'], 2)} ERA · {wl} · "
+                        f"{fmt(s26['IP'], 1)} IP")
+            rows = ""
+            for s in p["seasons_bis"]:
+                role = s.get("role", "starter")
+                rows += (f"<tr><td>{s['year']}</td><td>{role}</td>"
+                         f"<td>{s['G']}</td><td>{fmt(s['ERA'], 2)}</td>"
+                         f"<td>{fmt(s['IP'], 1)}</td>"
+                         f"<td>{s['W']}–{s['L']}</td><td>{s['SO']}</td>"
+                         f"<td>{s['BB']}</td><td>{s.get('SV', 0)}</td></tr>")
+            table = ("<table><tr><th>Year</th><th>Role</th><th>G</th><th>ERA</th>"
+                     "<th>IP</th><th>W–L</th><th>SO</th><th>BB</th><th>SV</th></tr>"
+                     + rows + "</table>")
+        sub = (f"Age {p['age']}" if "age" in p else
+               f"Born {p.get('born', '')}")
+        if p.get("size"):
+            sub += f" · {p['size']}"
+        cards.append(
+            '<article class="ncard"><h4>' + _html.escape(p["name"]) + " · " +
+            _html.escape(p["role"]) + "</h4><p>" +
+            _html.escape(p["team"]) + " · " + _html.escape(sub) + "</p>" +
+            "<p><b>" + _html.escape(headline) + "</b></p>" + table +
+            "<p>" + _html.escape(p.get("note", "")) + "</p></article>")
+    # Fee worked example: tiers from posting_facts, arithmetic in code.
+    fee60 = 0.20 * 25 + 0.175 * 25 + 0.15 * 10  # $M on a $60M contract
+    clock = (
+        '<div class="npbclock"><h3>The posting clock</h3>'
+        "<p>Posted <b>Nov 1, 2026</b> → negotiations open <b>Nov 2</b> → "
+        "CBA expires <b>Dec 1</b> (the clock pauses during a lockout) → "
+        "signing deadline <b>Dec 16, 17:00 ET</b> (45-day window).</p>"
+        "<p>Posting fee, paid to the NPB club on top of the contract: " +
+        _html.escape(pf["posting_fee"]) + ".</p>"
+        "<p>Worked example — ILLUSTRATIVE, not a predicted price: on a "
+        f"hypothetical $60M contract the fee is 20% of $25M ($5.00M) + "
+        f"17.5% of $25M ($4.375M) + 15% of $10M ($1.50M) = <b>${fee60:.3f}M</b>. "
+        "Under a hard cap, that fee is a real acquisition cost a GM must budget.</p>"
+        "<p>Context only: " + _html.escape(pf["also_posted_same_day"]) + ".</p></div>")
+    honest = (
+        '<div class="npbhonest"><h3>Translation honesty box — read before you price anyone</h3>'
+        "<p><b>No NPB-to-MLB translation factor is claimed anywhere in this "
+        "figure.</b> NPB dominance is evidence, not a projection. The "
+        "cautionary comp is in the same market: Tatsuya Imai, posted last "
+        "winter, was projected at 6 years / $150M (MLBTR), signed 3 years / "
+        "$54M with Houston, then posted a 4.93 ERA and was moved to the "
+        "bullpen (MLBTR).</p>"
+        "<p>Known gaps, labeled not filled: leaderboards are qualified-only "
+        "(no full-roster NPB stats pulled); Taira's 2024 season does not "
+        "appear on qualified boards (reliever workload) so no 2024 row is "
+        "shown for him; no NPB salary data is used — in the posting market "
+        "the fee, not a salary, is the cost.</p>"
+        "<p class=\"srcline\">Source: NPB official Baseball Information System "
+        "(BIS), npb.jp/bis/&lt;year&gt;/stats/*.html, pulled 2026-11-01; BIS is "
+        "canonical over wire roundings (Sato .306 not .308; Itoh 34 BB not 32). "
+        "Posting facts: AP / MLB Trade Rumors / Sportsnet, 2026-11-01. "
+        "Dataset: data/posted_class_2026.json; leaderboards: "
+        "data/npb_leaderboards_2024_2026_raw.csv.</p></div>")
+    return '<div class="ncards">' + "".join(cards) + "</div>" + clock + honest
+
+
 def panel_animation():
     """Cycle 26: 16 seasons of payroll vs wins, animated. Press play —
     the cap era arrives and the gold dots (MIL/TB/CLE) never move."""
@@ -974,6 +1153,7 @@ def build():
     fig_savant = panel_savant()
     fig_pipe = panel_pipeline()
     fig_shop = panel_shopping()
+    fig_posted = panel_posted()
     fig_scen = panel_scenarios()
 
     SECTIONS = [
@@ -998,7 +1178,9 @@ def build():
          "value metrics — including where we disagree and by how much.",
          [fig_bench, fig_savant, fig_value]),
         ("VII", "The Future", "The pipelines feeding the cheap winners, "
-         "and the free-agent list to shop from.", [fig_pipe, fig_shop]),
+         "the free-agent list to shop from — and the posted class "
+         "resolving during the demo window.",
+         [fig_pipe, fig_shop, fig_posted]),
     ]
     flat = [f for _, _, _, figs in SECTIONS for f in figs if f is not None]
 
@@ -1287,7 +1469,7 @@ def build():
                       '<p class="srcline">Source: see the figure footer and the data sources box at '
                       "the foot of this page.</p></section>")
 
-    # --- EXPLORER mode: all 22 figures, grouped by task ---
+    # --- EXPLORER mode: all 23 figures, grouped by task ---
     groups = [
         ("Cap Reality", "What the cap and floor do to every payroll, and what must be shed.",
          [1, 6, 9, 10, 11],
@@ -1298,6 +1480,9 @@ def build():
         ("Shop the FA Class", "The farm pipeline behind the cheap winners, the shopping list, and the best values.",
          [21, 22],
          "Source: Spotrac free-agent class and FanGraphs Steamer WAR; prices are prior-contract averages."),
+        ("The Posted Class", "Japan's window, resolving during the demo: three NPB stars posted Nov 1, 2026 — the thesis test in a new market.",
+         [23],
+         "Source: NPB official Baseball Information System (BIS) — data/posted_class_2026.json; posting facts: AP / MLB Trade Rumors / Sportsnet, 2026-11-01."),
         ("Check the Model", "Persistence, run differential, the title-bar test, the benchmark, and the trait check.",
          [3, 4, 5, 18, 19, 20],
          "Source: FanGraphs Steamer benchmark, Baseball Savant leaderboards, and MLB panel data."),
@@ -1315,6 +1500,12 @@ def build():
                          "<p>Ranked by WAR per $10M of prior salary. Bars show where each player sits "
                          "in the committed free-agent pool for that metric.</p></div>")
             explorer += _player_cards()
+        if name == "The Posted Class":
+            explorer += ('<div class="task"><h3>The trio, the clock, and the honesty box</h3>'
+                         "<p>Cards, posting clock, and fee tiers below Figure 23 — Explorer only. "
+                         "Story stays 6 chapters and Boardroom stays 15 slides: this is a live-market "
+                         "exhibit, not a new thesis claim.</p></div>")
+            explorer += _posted_html()
 
     page_template = """<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P7)</title>
 <style>body{font-family:system-ui,sans-serif;margin:0;background:#f4f1ea;color:#14213d}
@@ -1374,6 +1565,17 @@ def build():
 .pctbar span{display:block;background:#1b5e20;height:10px}
 .pctnum{flex:0 0 110px;text-align:right;font-weight:700}
 .pctna{color:#5a6478;font-style:italic}
+.ncards{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+.ncard{flex:1 1 340px;background:#fff;border:1px solid #e3dfd2;border-top:4px solid #7a1f1f;border-radius:10px;padding:14px 16px}
+.ncard h4{margin:0 0 4px;font-size:16px}
+.ncard p{margin:0 0 8px;font-size:13px;color:#5a6478}
+.ncard table{border-collapse:collapse;font-size:12.5px;margin:8px 0;width:100%}
+.ncard th,.ncard td{border:1px solid #e3dfd2;padding:3px 6px;text-align:right}
+.ncard th:first-child,.ncard td:first-child,.ncard td:nth-child(2){text-align:left}
+.npbclock{background:#fff8e1;border-left:4px solid #f9a825;border-radius:6px;padding:12px 16px;margin:14px 0;font-size:14px}
+.npbclock h3{margin:0 0 6px}
+.npbhonest{background:#eef4ff;border-left:5px solid #0d47a1;border-radius:6px;padding:14px 18px;margin:14px 0;font-size:14px}
+.npbhonest h3{margin:0 0 6px}
 @media print{body.print-boardroom #mode-story,body.print-boardroom #mode-explorer,body.print-boardroom .modenav,body.print-boardroom .crest,body.print-boardroom .keybox,body.print-boardroom .figidx,body.print-boardroom .srcbox{display:none}body.print-boardroom button{display:none}}
 </style></head>
 <body>
@@ -1402,7 +1604,7 @@ def build():
 <span class="k"><b>K-BB%</b> = strikeouts minus walks = how dominant a pitcher is</span>
 <span class="k"><b>WAR</b> = wins above replacement, the famous player-value stat. Published free by FanGraphs (fWAR) &amp; Baseball-Reference (bWAR), but the two formulas disagree, it is not returned by the MLB API, and it is not a league-published number — so this value panel shows WAR's reproducible inputs (wOBA, wRC+, FIP, K-BB%) instead. Note: the FA shopping list (this build) uses FanGraphs Steamer WAR.</span></div>
 __JS_INCLUDE__
-<div class="figidx"><b>FIGURE INDEX — the story at a glance (all 22 real-data charts below)</b><br>
+<div class="figidx"><b>FIGURE INDEX — the story at a glance (all 23 real-data charts below)</b><br>
 <span>1</span> Press play: 16 seasons of payroll vs wins &nbsp;·&nbsp;
 <span>2</span> Pick your team &nbsp;·&nbsp;
 <span>3</span> The measurable edge — skills persist (contact r=.90) &nbsp;·&nbsp;
@@ -1424,11 +1626,12 @@ __JS_INCLUDE__
 <span>19</span> Savant trait check &nbsp;·&nbsp;
 <span>20</span> Value metrics &nbsp;·&nbsp;
 <span>21</span> MiLB pipeline index &nbsp;·&nbsp;
-<span>22</span> The 2027 shopping list</div>
+<span>22</span> The 2027 shopping list &nbsp;·&nbsp;
+<span>23</span> The Posted Class: Japan's window</div>
 <nav class="modenav">
 <button type="button" id="btn-story" class="active" onclick="showMode('story')">Story: the case in 6 chapters</button>
 <button type="button" id="btn-boardroom" onclick="showMode('boardroom')">Boardroom: 15 slides</button>
-<button type="button" id="btn-explorer" onclick="showMode('explorer')">Explorer: all 22 figures by task</button>
+<button type="button" id="btn-explorer" onclick="showMode('explorer')">Explorer: all 23 figures by task</button>
 </nav>
 <div id="mode-story">__STORY__</div>
 <div id="mode-boardroom">__BOARDROOM__</div>
@@ -1445,6 +1648,10 @@ site.web.api.espn.com</span> (2025 validation set: 131 players cross-checked, HR
 a rate limit, logged in data/salaries_2026.json). <b>Injury/health:</b> MLB
 transactions feed (35,000+ events 2025-2026, IL days per player). <b>MLB color/look:</b> league
 branding only, for presentation.<br>
+<b>NPB posted class (Cycle 34, keyless):</b> <span class="src">NPB official BIS
+(npb.jp/bis)</span> — 2024–2026 qualified leaderboards (340 rows) plus the
+posted trio (Sato / Taira / Itoh, posted Nov 1, 2026); BIS is canonical over
+wire roundings, and no NPB-to-MLB translation factor is claimed anywhere.<br>
 <b>CarpeData layer (2026-10-31, all keyless):</b> <span class="src">Baseball Savant</span>
 leaderboards by player_id — expected stats (xwOBA), batted ball (EV/barrels), bat tracking
 2024-2026, sprint speed, arm strength; <span class="src">FanGraphs API</span> — Steamer 2027
