@@ -303,3 +303,23 @@ as such), the formal coefficient-proportionality test, and — if the
 data can support it — a newly signed contract subset so the design
 matches Hakes–Sauer's. Only then, and only if the verdict supports
 it, does any headline change.
+
+## Cycle 47 addendum — computed context layer for Figure 23 (2026-11-02)
+
+- **New computed artifact:** `data/fig23_rebuild_2026.json`, produced
+  by `src/bml_cycle47.py` from two already-committed sources (the
+  posted-class trio JSON + the 340-row NPB leaderboard CSV). No new
+  external source was needed — the value is computation over data
+  already in the repo, guarded by a printed 14/14 verification table
+  against the canonical trio dataset (incl. the $60M fee checkpoint
+  reproducing Cycle 34's $10.875M exactly).
+- **What it adds:** 2026 leaderboard ranks/percentiles (Sato #1 of 19
+  CL bats in HR/RBI/OPS; Taira #1 of 11 PL arms in ERA and #1 of 13
+  on the 2025 saves board; Itoh #2 of 11 in walk rate, #7 of 11 in
+  ERA), Sato K% vs the CL qualified median by year, Itoh's BB% series
+  (2024 computed from leaderboard batters-faced), and the posting-fee
+  curve with checkpoints ($25M→$5.0M, $50M→$9.375M, $60M→$10.875M,
+  $100M→$16.875M).
+- **Kept honest:** small qualified-only pools labeled in the honesty
+  box; no NPB→MLB translation factor anywhere; Taira 2024 not
+  backfilled (absent from the qualified boards).

@@ -787,21 +787,31 @@ def panel_shopping():
     return fig
 
 def panel_posted():
-    """Cycle 34, Figure 23: the posted class — Japan's window.
+    """Cycle 47 rebuild, Figure 23: the posted class — three players,
+    three different bets. Sato is the thesis TEST (Triple Crown power
+    whose 26.7% K rate sits ~11 points above the Central League
+    qualified median), Itoh is the thesis FIT (#2 of 11 Pacific League
+    qualifiers in walk rate, 172+ IP three straight years), Taira is
+    the conversion GAMBLE (31-save closer to PL-best ERA as a starter,
+    on a +93.8 IP workload jump).
 
-    Four BIS-counting-stat panels, read from data/posted_class_2026.json
-    so the figure can never drift from the verified trio dataset (BIS is
-    canonical over wire roundings: Sato .306 not .308, Itoh 34 BB not 32).
-    NO NPB-to-MLB translation factor is claimed anywhere: Sato's 26.7% K
-    rate is the whiff risk against the contact thesis, Itoh's 3.6-4.7% BB
-    rate plus three straight 172+ IP seasons is the thesis fit, and
-    Taira's closer-to-starter conversion is a workload question (146 IP
-    after 52.2 IP). Itoh's 2024 row carries no BB% — BIS gives no BF for
-    that row in the dataset, so only his BB count is shown for 2024."""
+    Every number traces to committed data: the trio lines and posting
+    facts come from data/posted_class_2026.json (NPB official BIS,
+    canonical over wire roundings — Sato .306 not .308, Itoh 34 BB not
+    32); the leaderboard ranks/percentiles, Sato-vs-median K%, Itoh's
+    BB% series (2024 computed from the leaderboard's batters-faced
+    column, which the trio dataset lacks) and the fee curve come from
+    data/fig23_rebuild_2026.json, computed by src/bml_cycle47.py with a
+    14/14 verification table against the trio dataset. Taira 2024 is
+    NOT on the qualified boards and is never backfilled — his panels
+    show 2025-2026 only. NO NPB-to-MLB translation factor is claimed
+    anywhere in this figure."""
     fj = os.path.join(DATA, "posted_class_2026.json")
-    if not os.path.exists(fj):
+    fr = os.path.join(DATA, "fig23_rebuild_2026.json")
+    if not (os.path.exists(fj) and os.path.exists(fr)):
         return None
     d = json.load(open(fj))
+    rb = json.load(open(fr))
     by_name = {p["name"]: p for p in d["players"]}
     sato = by_name.get("Teruaki Sato")
     taira = by_name.get("Kaima Taira")
@@ -814,57 +824,194 @@ def panel_posted():
 
     ss, ts, ins = seasons(sato), seasons(taira), seasons(itoh)
     years = [2024, 2025, 2026]
+    x3 = [str(y) for y in years]
+    ctx = rb["leaderboard_context_2026"]
+    kv = {r["year"]: r for r in rb["sato_k_vs_cl_median"]}
+    ib = {r["year"]: r for r in rb["itoh_bb_pct_by_year"]}
+
     fig = make_subplots(
-        rows=2, cols=2,
+        rows=5, cols=2,
+        specs=[[{"secondary_y": False}, {"secondary_y": True}],
+               [{}, {}],
+               [{}, {}],
+               [{}, {}],
+               [{"colspan": 2}, None]],
         subplot_titles=[
-            "Sato K% — the whiff risk (contact thesis: whiff does not travel)",
-            "Sato BB% — rising, the counterweight",
-            "Itoh innings + walk suppression — the thesis fit",
-            "Taira: closer to starter — the workload question"],
-        horizontal_spacing=0.14, vertical_spacing=0.22)
-    fig.add_trace(go.Bar(
-        x=[str(y) for y in years],
-        y=[ss[y]["K_pct_computed"] for y in years],
-        marker_color="#d50032",
+            "Sato — the test: walks climbing (7.3% → 11.1%), whiffs not leaving (26.7% K)",
+            "Itoh — the fit: 172+ IP three straight years, walk rate never above 5.5%",
+            "Taira — the gamble: a 31-save closer became the PL's best ERA as a starter",
+            "Taira's price question is workload: +93.8 IP in one jump, a career high",
+            "How rare is it? The trio against their own 2026 qualified leaderboards",
+            f"Sato whiffs like a slugger: 26.7% K vs a {kv[2026]['cl_median_k_pct']:.1f}% Central League median",
+            "The fee is a second price tag: $10.875M on top of a $60M deal",
+            "Last winter's warning: Imai — projected $150M, signed $54M, then a 4.93 ERA",
+            "The clock: Nov 2 → Dec 16, with the Dec 1 lockout pause cut into the middle"],
+        horizontal_spacing=0.13, vertical_spacing=0.085)
+
+    # (1,1) Sato career arc — K% vs BB%
+    fig.add_trace(go.Scatter(
+        x=x3, y=[ss[y]["K_pct_computed"] for y in years],
+        mode="lines+markers+text", line=dict(color="#d50032", width=3),
+        marker=dict(size=9),
         text=[f"{ss[y]['K_pct_computed']:.1f}%" for y in years],
-        textposition="outside", name="Sato K%", showlegend=False), 1, 1)
-    fig.add_trace(go.Bar(
-        x=[str(y) for y in years],
-        y=[ss[y]["BB_pct_computed"] for y in years],
-        marker_color="#1b5e20",
+        textposition="top center", name="Sato K%", showlegend=False), 1, 1)
+    fig.add_trace(go.Scatter(
+        x=x3, y=[ss[y]["BB_pct_computed"] for y in years],
+        mode="lines+markers+text", line=dict(color="#1b5e20", width=3),
+        marker=dict(size=9),
         text=[f"{ss[y]['BB_pct_computed']:.1f}%" for y in years],
-        textposition="outside", name="Sato BB%", showlegend=False), 1, 2)
-    itoh_text = []
-    for y in years:
-        row = ins[y]
-        if row.get("BB_pct_computed") is not None:
-            itoh_text.append(f"{row['BB']} BB · {row['BB_pct_computed']:.1f}% BB")
-        else:
-            itoh_text.append(f"{row['BB']} BB (no BB% in dataset)")
+        textposition="bottom center", name="Sato BB%", showlegend=False), 1, 1)
+
+    # (1,2) Itoh career arc — IP bars + BB% line (secondary axis)
     fig.add_trace(go.Bar(
-        x=[str(y) for y in years],
-        y=[ins[y]["IP"] for y in years],
-        marker_color="#1d3557",
-        text=itoh_text, textposition="outside",
-        name="Itoh IP", showlegend=False), 2, 1)
+        x=x3, y=[ins[y]["IP"] for y in years], marker_color="#1d3557",
+        text=[f"{ins[y]['IP']:.1f} IP · {ins[y]['BB']} BB" for y in years],
+        textposition="outside", name="Itoh IP", showlegend=False), 1, 2)
+    fig.add_trace(go.Scatter(
+        x=x3, y=[ib[y]["bb_pct"] for y in years],
+        mode="lines+markers+text", line=dict(color="#c9a227", width=3),
+        marker=dict(size=9),
+        text=[f"{ib[y]['bb_pct']:.1f}% BB" for y in years],
+        textposition="top center", name="Itoh BB%", showlegend=False),
+        row=1, col=2, secondary_y=True)
+
+    # (2,1) Taira conversion — ERA by role
     fig.add_trace(go.Bar(
         x=["2025 · closer", "2026 · starter"],
         y=[ts[2025]["ERA"], ts[2026]["ERA"]],
         marker_color=["#e65100", "#1d3557"],
         text=[f"{ts[2025]['ERA']:.2f} ERA · 31 SV · 52.2 IP",
               f"{ts[2026]['ERA']:.2f} ERA · 146.0 IP · 12–5"],
-        textposition="outside", name="Taira ERA", showlegend=False), 2, 2)
+        textposition="outside", name="Taira ERA", showlegend=False), 2, 1)
+
+    # (2,2) Taira workload — the jump
+    fig.add_trace(go.Bar(
+        x=["2025 · closer", "2026 · starter"],
+        y=[ts[2025]["IP"], ts[2026]["IP"]],
+        marker_color=["#e65100", "#d50032"],
+        text=["52.2 IP", "146.0 IP · +93.8 in one year"],
+        textposition="outside", name="Taira IP", showlegend=False), 2, 2)
+
+    # (3,1) Leaderboard context — percentile dots (built from the
+    # computed artifact so the figure can never drift from it)
+    dots = [  # first entry renders at the BOTTOM of the axis
+        ("Itoh · ERA — PL arms", ctx["itoh"]["ERA"], "#c9a227"),
+        ("Itoh · walk rate — PL arms", ctx["itoh"]["BB_pct"], "#c9a227"),
+        ("Taira · ERA — PL arms", ctx["taira"]["ERA"], "#1d3557"),
+        ("Sato · RBI — CL bats", ctx["sato"]["RBI"], "#d50032"),
+        ("Sato · OPS — CL bats", ctx["sato"]["OPS"], "#d50032"),
+        ("Sato · home runs — CL bats", ctx["sato"]["HR"], "#d50032"),
+    ]
+    ys, xs, txs, cs = [], [], [], []
+    for lab, c, col in dots:
+        stat = lab.split("·")[1].strip().split(" —")[0]
+        key = {"home runs": "HR", "OPS": "OPS", "RBI": "RBI",
+               "ERA": "ERA", "walk rate": "BB rate"}[stat]
+        ys.append(lab)
+        xs.append(c["percentile"])
+        txs.append(f"{c['value']} {key} · #{c['rank']} of {c['of']}")
+        cs.append(col)
+    fig.add_trace(go.Scatter(
+        x=xs, y=ys, mode="markers+text", marker=dict(size=13, color=cs),
+        text=txs, textposition="middle right", name="Leaderboard context",
+        showlegend=False), 3, 1)
+    fig.add_vline(x=50, line_dash="dot", line_color="#888",
+                  annotation_text="median qualifier",
+                  annotation_position="bottom left", row=3, col=1)
+
+    # (3,2) Sato K% vs Central League median K%
+    fig.add_trace(go.Bar(
+        x=x3, y=[kv[y]["sato_k_pct"] for y in years],
+        marker_color="#d50032",
+        text=[f"{kv[y]['sato_k_pct']:.1f}%" for y in years],
+        textposition="outside", name="Sato K%", showlegend=False), 3, 2)
+    fig.add_trace(go.Scatter(
+        x=x3, y=[kv[y]["cl_median_k_pct"] for y in years],
+        mode="lines+markers+text", line=dict(color="#1d3557", width=3,
+                                             dash="dash"),
+        marker=dict(size=9),
+        text=[f"median {kv[y]['cl_median_k_pct']:.1f}%" for y in years],
+        textposition="bottom center", name="CL median K%",
+        showlegend=False), 3, 2)
+
+    # (4,1) Posting-fee curve
+    curve = rb["fee_curve"]
+    fig.add_trace(go.Scatter(
+        x=[p["contract_m"] for p in curve],
+        y=[p["fee_m"] for p in curve], mode="lines",
+        line=dict(color="#c9a227", width=3), fill="tozeroy",
+        fillcolor="rgba(201,162,39,0.18)", name="Posting fee",
+        showlegend=False), 4, 1)
+    ck = rb["fee_checkpoints_m"]
+    fig.add_trace(go.Scatter(
+        x=[25, 50, 60, 100],
+        y=[ck["25"], ck["50"], ck["60"], ck["100"]],
+        mode="markers+text", marker=dict(size=9, color="#14213d"),
+        text=[f"$25M → ${ck['25']:.2f}M", f"$50M → ${ck['50']:.2f}M",
+              f"$60M → ${ck['60']:.3f}M", f"$100M → ${ck['100']:.2f}M"],
+        textposition="top center", name="Fee checkpoints",
+        showlegend=False), 4, 1)
+
+    # (4,2) Imai — expectation vs reality (MLBTR figures, in the trio
+    # dataset's honesty notes; totals only, both are contract totals)
+    fig.add_trace(go.Bar(
+        x=["Projected (MLBTR)", "Signed (Houston)"],
+        y=[150, 54], marker_color=["#888888", "#d50032"],
+        text=["6 yr / $150M", "3 yr / $54M"],
+        textposition="outside", name="Imai", showlegend=False), 4, 2)
+    fig.add_trace(go.Scatter(
+        x=["Signed (Houston)"], y=[86], mode="text",
+        text=["then: 4.93 ERA · moved to the bullpen"],
+        textposition="middle center", showlegend=False), 4, 2)
+
+    # (5,1) The posting clock — day offsets from Nov 1, 2026
+    fig.add_trace(go.Bar(
+        x=[29], y=["window"], base=[1], orientation="h",
+        marker_color="#c9a227",
+        text=["Nov 2 → Dec 1 · open · 29 days"],
+        textposition="inside", name="Open window", showlegend=False),
+        5, 1)
+    fig.add_trace(go.Bar(
+        x=[15], y=["window"], base=[30], orientation="h",
+        marker=dict(color="#cfd8dc",
+                    pattern=dict(shape="/", fgcolor="rgba(20,33,61,0.5)",
+                                 bgcolor="#cfd8dc", size=6)),
+        text=["Dec 1 → Dec 16 · paused in a lockout · 15 days"],
+        textposition="inside", name="Paused window", showlegend=False),
+        5, 1)
+    fig.add_trace(go.Scatter(
+        x=[0, 30, 45], y=["window"] * 3, mode="markers+text",
+        marker=dict(symbol="diamond", size=11,
+                    color=["#1d3557", "#d50032", "#14213d"]),
+        text=["Posted<br>Nov 1",
+              "Dec 1 · CBA expires — clock pauses · demo deadline",
+              "Dec 16 · 17:00 ET<br>signing deadline"],
+        textposition=["bottom center", "top center", "bottom center"],
+        name="Clock markers", showlegend=False), 5, 1)
+
     fig.update_layout(
-        title=("The Posted Class: Japan's window — the thesis test in one market<br>"
-               "<sub>NPB official BIS counting stats only (2024–2026, qualified leaderboards). "
-               "No NPB-to-MLB translation factor is claimed anywhere in this figure. "
-               "Sato's power whiffs, Itoh's control travels, Taira's conversion is a workload question.</sub>"),
-        template="plotly_white", height=640,
+        title=("The Posted Class: three players, three different bets. "
+               "Sato tests the thesis, Itoh fits it, Taira is the gamble "
+               "— all on NPB official BIS data, and no NPB-to-MLB "
+               "translation factor is claimed anywhere in this figure."),
+        template="plotly_white", height=1520, barmode="overlay",
         margin=dict(l=50, r=30, t=110, b=96))
-    fig.update_yaxes(title_text="K%", row=1, col=1)
-    fig.update_yaxes(title_text="BB%", row=1, col=2)
-    fig.update_yaxes(title_text="Innings pitched", row=2, col=1)
-    fig.update_yaxes(title_text="ERA", row=2, col=2)
+    fig.update_yaxes(title_text="Rate (%)", row=1, col=1)
+    fig.update_yaxes(title_text="Innings pitched", row=1, col=2)
+    fig.update_yaxes(title_text="BB%", row=1, col=2, secondary_y=True)
+    fig.update_yaxes(title_text="ERA", row=2, col=1)
+    fig.update_yaxes(title_text="Innings pitched", row=2, col=2)
+    fig.update_xaxes(title_text="Percentile among qualified (100 = best)",
+                     range=[-4, 152], row=3, col=1)
+    fig.update_yaxes(title_text="K%", row=3, col=2)
+    fig.update_xaxes(title_text="MLB contract ($M)", row=4, col=1)
+    fig.update_yaxes(title_text="Posting fee ($M)", row=4, col=1)
+    fig.update_yaxes(title_text="Total contract ($M)", range=[0, 175],
+                     row=4, col=2)
+    fig.update_xaxes(tickvals=[0, 1, 30, 45],
+                     ticktext=["Nov 1", "Nov 2", "Dec 1", "Dec 16"],
+                     range=[-3, 48], row=5, col=1)
+    fig.update_yaxes(showticklabels=False, row=5, col=1)
     return fig
 
 
@@ -930,11 +1077,23 @@ def _posted_html():
             "<p>" + _html.escape(p.get("note", "")) + "</p></article>")
     # Fee worked example: tiers from posting_facts, arithmetic in code.
     fee60 = 0.20 * 25 + 0.175 * 25 + 0.15 * 10  # $M on a $60M contract
+    imai = (
+        '<div class="npbclock"><h3>Expectation vs reality — last '
+        'winter\'s posted arm</h3>'
+        "<p><b>Projected:</b> 6 years / $150M (MLBTR) &nbsp;→&nbsp; "
+        "<b>Signed:</b> 3 years / $54M with Houston &nbsp;→&nbsp; "
+        "<b>Delivered:</b> a 4.93 ERA and a move to the bullpen "
+        "(MLBTR).</p>"
+        "<p>That is the whole translation argument in one line: the "
+        "market already discounts NPB dominance once — price the "
+        "discount, do not pretend it away.</p></div>")
     clock = (
         '<div class="npbclock"><h3>The posting clock</h3>'
-        "<p>Posted <b>Nov 1, 2026</b> → negotiations open <b>Nov 2</b> → "
-        "CBA expires <b>Dec 1</b> (the clock pauses during a lockout) → "
-        "signing deadline <b>Dec 16, 17:00 ET</b> (45-day window).</p>"
+        "<p>The window is drawn as the bottom panel of Figure 23 "
+        "above; the facts: posted <b>Nov 1, 2026</b> → negotiations "
+        "open <b>Nov 2</b> → CBA expires <b>Dec 1</b> (the clock "
+        "pauses during a lockout) → signing deadline <b>Dec 16, "
+        "17:00 ET</b> (45-day window).</p>"
         "<p>Posting fee, paid to the NPB club on top of the contract: " +
         _html.escape(pf["posting_fee"]) + ".</p>"
         "<p>Worked example — ILLUSTRATIVE, not a predicted price: on a "
@@ -955,13 +1114,24 @@ def _posted_html():
         "appear on qualified boards (reliever workload) so no 2024 row is "
         "shown for him; no NPB salary data is used — in the posting market "
         "the fee, not a salary, is the cost.</p>"
+        "<p>Cycle 47 computed layer: the ranks and percentiles in Figure 23 "
+        "come from src/bml_cycle47.py (output: data/fig23_rebuild_2026.json), "
+        "verified 14/14 against the trio dataset. Pools are the player's own "
+        "league board and are small — 19 Central League bats and 11 Pacific "
+        "League ERA-qualified arms in 2026 — so ranks are exact and "
+        "percentiles are coarse. Itoh's 2024 walk rate (5.5%) is computed "
+        "from the leaderboard's batters-faced column, which the trio "
+        "dataset does not carry for 2024; his 2025-2026 rates cross-check "
+        "exactly against it.</p>"
         "<p class=\"srcline\">Source: NPB official Baseball Information System "
         "(BIS), npb.jp/bis/&lt;year&gt;/stats/*.html, pulled 2026-11-01; BIS is "
         "canonical over wire roundings (Sato .306 not .308; Itoh 34 BB not 32). "
         "Posting facts: AP / MLB Trade Rumors / Sportsnet, 2026-11-01. "
         "Dataset: data/posted_class_2026.json; leaderboards: "
-        "data/npb_leaderboards_2024_2026_raw.csv.</p></div>")
-    return '<div class="ncards">' + "".join(cards) + "</div>" + clock + honest
+        "data/npb_leaderboards_2024_2026_raw.csv; computed context: "
+        "data/fig23_rebuild_2026.json.</p></div>")
+    return ('<div class="ncards">' + "".join(cards) + "</div>" + clock
+            + imai + honest)
 
 
 def panel_animation():
@@ -1481,9 +1651,9 @@ def build():
         ("Shop the FA Class", "The farm pipeline behind the cheap winners, the shopping list, and the best values.",
          [21, 22],
          "Source: Spotrac free-agent class and FanGraphs Steamer WAR; prices are prior-contract averages."),
-        ("The Posted Class", "Japan's window, resolving during the demo: three NPB stars posted Nov 1, 2026 — the thesis test in a new market.",
+        ("The Posted Class", "Japan's window, resolving during the demo: three NPB stars posted Nov 1, 2026 — three different bets: the test, the fit, the gamble.",
          [23],
-         "Source: NPB official Baseball Information System (BIS) — data/posted_class_2026.json; posting facts: AP / MLB Trade Rumors / Sportsnet, 2026-11-01."),
+         "Source: NPB official Baseball Information System (BIS) — data/posted_class_2026.json; leaderboard context computed by src/bml_cycle47.py into data/fig23_rebuild_2026.json; posting facts: AP / MLB Trade Rumors / Sportsnet, 2026-11-01."),
         ("Check the Model", "Persistence, run differential, the title-bar test, the benchmark, and the trait check.",
          [3, 4, 5, 18, 19, 20],
          "Source: FanGraphs Steamer benchmark, Baseball Savant leaderboards, and MLB panel data."),
@@ -1503,7 +1673,8 @@ def build():
             explorer += _player_cards()
         if name == "The Posted Class":
             explorer += ('<div class="task"><h3>The trio, the clock, and the honesty box</h3>'
-                         "<p>Cards, posting clock, and fee tiers below Figure 23 — Explorer only. "
+                         "<p>Cards, the posting-clock facts, the Imai expectation-vs-reality strip, "
+                         "and the honesty box below Figure 23 — Explorer only. "
                          "Story stays 6 chapters and Boardroom stays 15 slides: this is a live-market "
                          "exhibit, not a new thesis claim.</p></div>")
             explorer += _posted_html()

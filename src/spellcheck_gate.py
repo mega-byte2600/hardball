@@ -50,7 +50,9 @@ WHITELIST = {
     # merged toby-lane (Cycle 27-30) vocabulary — verified correct spellings
     "aa", "aaa", "aav", "backtested", "backtests", "benchmarked", "carpe",
     "carpedata", "cv", "dropdown", "ev", "fangraphs", "ii", "iii", "iv",
-    "leaderboards", "milb", "pre", "prs", "qc", "vi", "vii",
+    "leaderboards", "leaderboard", "milb", "pre", "prs", "qc", "vi", "vii",
+    # Cycle 47 fig-23 source-line path tokens — verified correct
+    "src", "py",
     # Cycle 33 percentile-card names — verified against data/fa_shopping_2027.json
     "bauers", "buehler", "lorenzen", "quantrill", "rengifo", "sd",
     # Cycle 34 posted-class names — verified against data/posted_class_2026.json
