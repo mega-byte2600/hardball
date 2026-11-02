@@ -1697,3 +1697,76 @@ count unchanged at 23. No NPB→MLB translation factor claimed anywhere.
 - Next: feed-architecture cycle (FastballAPI census + Statyx
   event layer) per the owner's 2026-11-02 design direction,
   then UNC-1.
+
+## Cycle 54 — UNC-1: AVAILABILITY-CAP OUT-OF-SAMPLE BACKTEST (toby, 2026-11-02)
+
+- NUMBERING NOTE: this is the programme's UNC-1 increment. It is
+  numbered 54, not 53, because the parallel lane merged its own
+  Cycle 53 (FIG-QA, PR #35) onto main 8b604edf while this cycle was
+  being built; this cycle rebased onto that head before shipping.
+  No FIG-QA file is touched here.
+- WHY: programme increment 5 of 6. The demo caps projected PA by
+  measured availability (Cycle 9: proj_PA_health = proj_PA x avail_pct
+  from prior-2-season IL days) and Cycle 27 stress-tests rosters the
+  same way — but nobody had ever tested, out of sample, whether the
+  cap improves a forecast. UNC-1 is that test, on the FA classes
+  entering 2022, 2023, 2024.
+- METHOD (declared before running; script `src/bml_cycle54.py`):
+  FA class T = "Signed as Free Agent" transactions Nov (T-1)–Apr (T)
+  from the MLB Stats API (the committed transactions stream starts
+  Dec 2024, so these historical classes are pulled fresh, monthly,
+  sequential; any non-200 aborts with no artifact). Evaluation set =
+  class members with a qualified hitting line in season T (same pool
+  as the lake loader). Actuals: lake for 2023/2024, fresh pulls for
+  2022; priors: lake where present, fresh pulls for 2020–2022 (the
+  protected lake is read-only here). Availability: committed
+  fact_il_stints days summed per player-season, capped at 182/season
+  (263 player-seasons sum above 182 from overlapping stint rows),
+  over T-2 and T-1, avail = clip(1 - days/(2*182), 0.3, 1.0) — Cycle
+  9's formula exactly. Forecasts: flat500, flat500 x avail, Marcel
+  PA (5:4 prior PA), Marcel PA x avail. 2020 is NEVER a PA prior
+  (60-game season, PA not on a full-season scale; no scaling
+  invented) — class 2022 therefore uses 2021 only, labeled.
+- VERDICT RULE (fixed in advance): SUPPORTED only if capped MAE <
+  uncapped MAE on BOTH baselines pooled; MIXED if one; else NOT
+  SUPPORTED. Result: NOT SUPPORTED. Pooled n=39 qualified FA
+  regulars (5,153 signings screened; the rest are minor-league deals
+  or players with no qualified T-season line — counted, not hidden).
+  Flat: MAE 95.1 uncapped → 132.3 capped. Marcel: 46.2 → 61.1.
+  Per class, the cap wins on Marcel only in 2022 (37.4 → 36.0) and
+  loses in 2023 (46.6 → 67.0) and 2024 (55.4 → 81.6); on flat it
+  loses in all three classes (win rate 0.0 — every evaluated player
+  actually topped 500 PA, min 505, so the flat 500 baseline already
+  undershoots and any penalty only worsens it).
+- WHY IT LOSES, AND WHAT IT DOES NOT MEAN: the cap is a
+  one-directional penalty, so it can only help forecasts that
+  overshoot. On the 20 players where Marcel overshot, the cap helped
+  65% of the time — it does what it should directionally. Pooled it
+  loses because the baselines are roughly unbiased (Marcel bias
+  +9.8 PA) or undershooting (flat bias −95.1), and roughly half the
+  pool undershoots. The honest reading is NOT "availability doesn't
+  matter": it is "a cap is a downside adjustment, not a point
+  forecast improvement." That is the UNC-2 input: carry availability
+  as an interval/downside layer, not as a point-forecast correction.
+  Frame limit, stated in the artifact: the qualified pool excludes
+  players who fell below qualification in season T — exactly the
+  players a bad injury removes — which biases AGAINST the cap, so
+  this negative is conservative for regulars and says nothing about
+  unqualified players.
+- SCOPE KEPT: workpaper only. No demo number, figure, or 2027 cap
+  changes; no talk-track change. Gate gains a UNC-1 check (artifact
+  present, 3 classes, pooled MAEs recompute from rows, verdict
+  follows the declared rule). Platform + gate on the final tree:
+  ingest 25 datasets / 0 failures; curate 18 tables, contracts
+  pass, parquets byte-identical to committed; warehouse rebuilt;
+  parity r = 0.889 / 201; dashboard rebuilt with lake at 25 figures;
+  gate ALL PASS (offline AND --live, standings 30/30, incl. the new
+  UNC-1 check); spellcheck green. GitHub Actions ignored per the
+  owner's blackout directive (until Dec 1). No browser visual QA
+  (standing rule).
+- Next: UNC-2 (uncertainty layer — intervals on scenario WAR +
+  projection error bands) — final programme increment. (The
+  parallel lane's Cycle 53 note queues a feed-architecture cycle
+  before UNC-1; UNC-1 shipped here first because it was built and
+  verified this run and touches no feed files — the two lanes do not
+  collide.)
