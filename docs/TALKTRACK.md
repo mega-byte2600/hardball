@@ -6,6 +6,27 @@ Figure numbers match the merged 22-figure dashboard (main, v1.0.0-mvp).*
 **Weapons:** the dashboard, opened on Figure 1. This page tells you what to
 say and in what order. Don't read it — talk it.
 
+## The three modes (same 22 figures, same numbers, presented three ways)
+- **Story (the default landing):** the verdict first, then 6 chapters with one
+  figure each — Chapter 1 Figure 3 (skills persist), Chapter 2 Figure 4 (run
+  differential describes), Chapter 3 Figure 6 (payroll vs wins), Chapter 4
+  Figure 10 (cap reality), Chapter 5 Figure 16 (what the money buys),
+  Chapter 6 Figure 18 (the Steamer benchmark) — plus the appendix with the
+  method and honesty box. Use it for a first read.
+- **Boardroom (15 slides, print it):** this talk-track in slide order —
+  Slide 1 Figure 1, Slide 2 Figure 3, Slide 3 Figures 4 and 5, Slide 4
+  Figure 6, Slide 5 Figure 7, Slide 6 Figure 13, Slide 7 Figure 14,
+  Slide 8 Figure 15, Slide 9 Figure 10, Slide 10 Figure 11, Slide 11
+  Figure 20, Slide 12 Figure 16, Slide 13 Figure 22, Slide 14 Figure 2,
+  Slide 15 Figure 18. Use it in the room.
+- **Explorer (all 22 figures, grouped by task):** Cap Reality (Figures 1, 6,
+  9, 10, 11), Build a Roster (Figures 7, 8, 12, 13, 14, 15, 16, 17),
+  Shop the FA Class (Figures 21, 22, plus percentile cards for the top
+  bargain free agents), Check the Model (Figures 3, 4, 5, 18, 19, 20),
+  with Pick Your Team (Figure 2) on top. Use it for questions.
+Figure numbers did not change: every reference below still points at the
+same figure it always did.
+
 ---
 
 ## HOWDY + THE FILM — Figure 1 (1:00)

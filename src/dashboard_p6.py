@@ -9,7 +9,7 @@ check, MiLB pipeline, FA shopping list, animated 16-season
 payroll film, pick-your-team explorer, budget-scenario rosters)
 plus the Cycle 30 forced-seller panel
 plus the Cycle 8 title-bar AUC panel,
-presented in eight story sections with stat cards. Builds from a
+presented in three modes (Story, Boardroom, Explorer) with stat cards. Builds from a
 clean clone OFFLINE from committed snapshots (audit G1).
 """
 import json
@@ -1037,7 +1037,7 @@ def build():
             out.append(fig)
         return out
 
-    numbered = iter(_number(flat))
+    numbered_figs = _number(flat)
     # Self-contained offline demo: inline plotly from the installed
     # package if no cached bundle (never fetch at build time — G1).
     bundle = os.path.join(REPO, "dashboard", "plotly.min.js")
@@ -1066,49 +1066,315 @@ def build():
         '<div class="card"><div class="num">100%</div><div class="lab">real data — every panel sourced</div></div>'
         '</div>')
 
-    html = ""
-    for num, name, take, figs in SECTIONS:
-        figs = [f for f in figs if f is not None]
-        if not figs:
-            continue
-        html += (f'<div class="sec"><span class="secnum">{num}</span>'
-                 f'<div><h3>{name}</h3><p>{take}</p></div></div>')
-        for _f in figs:
-            fig = next(numbered)
-            html += ('<div class="panel">' +
-                     fig.to_html(full_html=False, include_plotlyjs=False) +
-                     "</div>")
+    by_num = {i + 1: f for i, f in enumerate(numbered_figs)}
 
-    page = f"""<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P7)</title>
-<style>body{{font-family:system-ui,sans-serif;margin:0;background:#f4f1ea;color:#14213d}}
-.hd{{max-width:1120px;margin:0 auto;padding:0 20px 40px}}
-.crest{{background:linear-gradient(135deg,#14213d 0%,#1d3557 60%,#7a1f1f 160%);color:#fff;padding:28px 32px;border-radius:0 0 14px 14px;margin:0 0 4px;box-shadow:0 3px 14px rgba(20,33,61,.25)}}
-.crest h1{{margin:0;font-size:30px;letter-spacing:1px;color:#fff}}
-.crest h2{{margin:8px 0 0;font-size:16px;font-weight:400;color:#cbe0ff}}
-.mlb{{background:#d50032;color:#fff;padding:2px 9px;border-radius:5px;font-size:12px;font-weight:700;letter-spacing:.5px}}
-.tag{{background:#cbe0ff;color:#14213d;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600}}
-.note{{background:#fff8e1;border-left:4px solid #f9a825;padding:10px 14px;margin:14px 0}}
-.bottomline{{background:#e8f5e9;border-left:5px solid #1d3557;border-radius:6px;padding:14px 18px;margin:16px 0;font-size:15px}}
-.act{{background:#14213d;color:#fff;padding:2px 8px;border-radius:4px;font-weight:bold}}
-.why{{color:#1d3557;font-weight:bold}}
-.quant{{background:#eef4ff;border-left:5px solid #0d47a1;border-radius:6px;padding:14px 18px;margin:16px 0;font-size:14px}}
-.srcbox{{background:#14213d;color:#dbe4f3;border-radius:8px;padding:16px 20px;margin:30px 0 8px;font-size:13px;line-height:1.5}}
-.srcbox b{{color:#fff}}
-.src{{color:#8ab6ff;font-family:ui-monospace,monospace}}
-.keybox{{background:#f0f4fa;border:1px solid #c4d3ea;border-radius:6px;padding:10px 14px;margin:14px 0;font-size:12.5px;line-height:1.9}}
-.figidx{{background:#fff;border:1px solid #d6dcea;border-left:4px solid #1d3557;border-radius:6px;padding:10px 14px;margin:14px 0;font-size:12px;line-height:1.8;color:#14213d}}
-.figidx span{{display:inline-block;background:#d50032;color:#fff;border-radius:3px;padding:0 5px;margin:0 2px;font-weight:700;font-size:11px;min-width:14px;text-align:center}}
-.k{{margin-right:16px;display:inline-block}}
-.sw{{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}}
-.cards{{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 4px}}
-.card{{flex:1 1 160px;background:#fff;border:1px solid #e3dfd2;border-top:4px solid #d50032;border-radius:10px;padding:14px 16px;box-shadow:0 2px 8px rgba(20,33,61,.06)}}
-.card .num{{font-size:26px;font-weight:800;color:#14213d;letter-spacing:.2px}}
-.card .lab{{font-size:12.5px;color:#5a6478;margin-top:3px;line-height:1.35}}
-.sec{{display:flex;gap:14px;align-items:center;background:linear-gradient(90deg,#14213d,#1d3557);color:#fff;border-radius:10px;padding:13px 20px;margin:30px 0 4px;box-shadow:0 2px 10px rgba(20,33,61,.18)}}
-.secnum{{font-size:19px;font-weight:800;color:#c9a227;border:2px solid #c9a227;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}}
-.sec h3{{margin:0;font-size:19px;letter-spacing:.4px}}
-.sec p{{margin:2px 0 0;font-size:13.5px;color:#cbe0ff}}
-.panel{{background:#fff;border:1px solid #e3dfd2;border-radius:12px;padding:16px 18px 8px;margin:14px 0;box-shadow:0 2px 10px rgba(20,33,61,.05)}}
+    def _panel(num, mode):
+        if num not in by_num:
+            # Lake-less builds omit the pitching panel gracefully (G1);
+            # say so instead of breaking the build or renumbering silently.
+            return ('<div class="panel" data-mode="' + mode +
+                    '" data-figure-missing="' + str(num) + '">'
+                    "<p>Figure " + str(num) + " is not available in this build: "
+                    "it needs the lake file, which is not committed.</p></div>")
+        fig = by_num[num]
+        return ('<div class="panel" data-mode="' + mode +
+                '" data-figure="' + str(num) + '">' +
+                fig.to_html(full_html=False, include_plotlyjs=False) +
+                "</div>")
+
+    def _player_cards():
+        import html as _html
+        fa = json.load(open(os.path.join(DATA, "fa_shopping_2027.json")))
+        pool = [r for r in fa["class"] if r.get("steamer_war") is not None]
+        if len(pool) < 200:
+            raise ValueError("FA pool too small for percentile cards")
+        health = {r["player_id"]: r
+                  for r in json.load(open(os.path.join(DATA, "projections_2027_health.json")))}
+        pitchers = {r["name"]: r
+                    for r in json.load(open(os.path.join(DATA, "projections_2027_pitchers.json")))}
+        xw = {r["player_id"]: r["est_woba"]
+              for r in json.load(open(os.path.join(DATA, "savant_expected_2026.json")))
+              if r.get("est_woba") is not None}
+
+        def pct_high(val, vals):
+            return round(100.0 * sum(1 for v in vals if v <= val) / len(vals)) if vals else None
+
+        def pct_low(val, vals):
+            return round(100.0 * sum(1 for v in vals if v >= val) / len(vals)) if vals else None
+
+        def avail_of(r):
+            if r["player_id"] in health:
+                return health[r["player_id"]].get("avail_pct")
+            if r["name"] in pitchers:
+                return pitchers[r["name"]].get("avail_pct")
+            return None
+
+        obp_vals = [health[r["player_id"]]["proj_OBP"] for r in pool
+                    if r["player_id"] in health and health[r["player_id"]].get("proj_OBP") is not None]
+        k_vals = [health[r["player_id"]]["proj_K%"] for r in pool
+                  if r["player_id"] in health and health[r["player_id"]].get("proj_K%") is not None]
+        xw_vals = [xw[r["player_id"]] for r in pool if r["player_id"] in xw]
+        avail_vals = [a for a in (avail_of(r) for r in pool) if a is not None]
+        dpw_vals = [r["prev_aav"] / r["steamer_war"] for r in pool
+                    if r.get("prev_aav") and r["steamer_war"] and r["steamer_war"] > 0]
+        top = sorted(pool, key=lambda r: r.get("war_per_10m_prior_aav") or 0, reverse=True)[:8]
+        if len(top) < 8:
+            raise ValueError("fewer than 8 bargain free agents in the pool")
+
+        def bar(label, pct, val_text):
+            if pct is None:
+                return ('<div class="pctrow"><span>' + label +
+                        '</span><span class="pctna">Not in the committed pool for this metric</span></div>')
+            return ('<div class="pctrow"><span>' + label + ": " + val_text + "</span>"
+                    '<span class="pctbar"><span style="width:' + str(pct) + '%"></span></span>'
+                    '<span class="pctnum">Percentile ' + str(pct) + "</span></div>")
+
+        out = []
+        for r in top:
+            h = health.get(r["player_id"])
+            obp = h["proj_OBP"] if h else None
+            kk = h["proj_K%"] if h else None
+            av = avail_of(r)
+            dpw = (r["prev_aav"] / r["steamer_war"]) if r.get("prev_aav") and r["steamer_war"] and r["steamer_war"] > 0 else None
+            rows = "".join([
+                bar("On-base percentage", pct_high(obp, obp_vals) if obp is not None else None,
+                    f"{obp:.3f}" if obp is not None else ""),
+                bar("Strikeout rate (lower is better)", pct_low(kk, k_vals) if kk is not None else None,
+                    f"{kk:.1f}%" if kk is not None else ""),
+                bar("Expected on-base average (xwOBA)",
+                    pct_high(xw[r["player_id"]], xw_vals) if r["player_id"] in xw else None,
+                    f"{xw[r['player_id']]:.3f}" if r["player_id"] in xw else ""),
+                bar("Availability", pct_high(av, avail_vals) if av is not None else None,
+                    f"{av:.0%}" if av is not None else ""),
+                bar("Cost per WAR (lower is better)", pct_low(dpw, dpw_vals) if dpw is not None else None,
+                    f"${dpw / 1e6:.2f}M" if dpw is not None else ""),
+            ])
+            out.append(
+                '<article class="pcard"><h4>' + _html.escape(r["name"]) + " · " +
+                _html.escape(str(r["pos"])) + " · " + _html.escape(str(r["prev_team"])) + "</h4>" +
+                "<p>Steamer WAR " + f"{r['steamer_war']:.2f}" +
+                " · prior average salary $" + f"{r['prev_aav'] / 1e6:.1f}M" +
+                " · WAR per $10M of prior salary " + f"{r['war_per_10m_prior_aav']:.2f}" + "</p>" +
+                rows + "</article>")
+        note = ("<p class=\"srcline\">Percentiles are computed from the 2027 free-agent pool in "
+                "data/fa_shopping_2027.json only (players with Steamer WAR; each bar uses only the "
+                "players who have that metric). Prices are prior-contract averages, not predicted "
+                "prices. Source: Spotrac free-agent class, FanGraphs Steamer WAR, Marcel projections, "
+                "Baseball Savant expected stats.</p>")
+        return '<div class="pcards">' + "".join(out) + "</div>" + note
+
+    # --- STORY mode: verdict first, then 6 chapters, one figure each ---
+    chapters = [
+        (3, "Skills persist. Luck does not.",
+         "Across four real season pairs, contact rate persists at r of about 0.8 to 0.9, "
+         "while on-base percentage, the output owners are tempted to buy, carries at only about 0.3.",
+         "Pay for the skill that produces on-base percentage, not for last year's on-base percentage.",
+         "Source: MLB Stats API player data, year over year."),
+        (4, "Run differential describes a season. It does not forecast one.",
+         "The same-season fit is strong, with R squared of about 0.55: a better run margin means "
+         "more wins in that season. It is not a forward-looking prediction.",
+         "Use run differential to describe a season, never to promise the next one.",
+         "Source: MLB Stats API panel, 2011 to 2026, 509 team-seasons."),
+        (6, "Money buys some wins. It does not buy the most wins per dollar.",
+         "The winning-cheap teams, Milwaukee, Tampa, and Cleveland, win about 95 games at a third "
+         "to a quarter of big-market payroll.",
+         "A mid-tier payroll is enough when it buys contact and control.",
+         "Source: MLB Stats API plus Spotrac payroll."),
+        (10, "The cap forces the market. Seven teams must cut, fifteen must add.",
+         "Seven teams are over the proposed cap and must cut, the Mets by $101.4M, while fifteen, "
+         "including Cleveland at $96.7M to add, sit under the floor and are forced to spend.",
+         "The cap punishes the biggest payrolls and pays the disciplined teams to add.",
+         "Source: Spotrac payroll against the owners' proposed 2027 cap and floor."),
+        (16, "The floor roster captures most of the cap roster's talent.",
+         "Built entirely from the real 2027 free-agent class, the floor roster buys 42.0 WAR for "
+         "$171.0M and the cap roster buys 52.3 WAR for $244.6M: about 80 percent of the talent "
+         "for about 70 percent of the money.",
+         "Spend to the floor first. The last dollars buy the least talent.",
+         "Source: Spotrac free-agent class plus FanGraphs Steamer WAR, prior-contract price anchors."),
+        (18, "Checked in public against the best benchmark we could get.",
+         "Our Marcel hitter projections match FanGraphs Steamer at OBP r of 0.889, with 201 hitters "
+         "matched by player ID. The pitcher bias found in that check is disclosed on the panel.",
+         "Trust the player projections because they were checked in the open, limits included.",
+         "Source: FanGraphs Steamer 2027 projections, ID-matched."),
+    ]
+    story = ('<div class="verdict"><h2>The verdict</h2>'
+             "<p>Win while cheap: buy contact plus on-base percentage and low-walk arms, and price "
+             "it against the proposed $245.3M cap. The winning-cheap teams prove it on real data, "
+             "and the cap now rewards exactly that discipline.</p></div>")
+    story += ('<div class="bottomline"><b>BOTTOM LINE (read this first):</b> A team can win at '
+              "mid-tier payroll by spending on <b>contact + getting on base (OBP)</b> and "
+              "<b>low-walk arms</b>, not power. Winning-cheap teams (MIL/TB/CLE) had "
+              "<b>higher OBP, more contact, fewer strikeouts, fewer home runs AND elite team pitching</b> "
+              "— yet won ~95 games vs ~79 at roughly half payroll. <span class=\"act\">Owner action:</span> "
+              "build the roster around OBP/contact + control pitchers, not the big power salary. "
+              "<span class=\"why\">Why trust it:</span> real 2025-2026 data (MLB API + Spotrac), model "
+              "cross-validated. Not a guarantee — shown honestly below.</div>")
+    story += cards
+    story += ('<div class="hero-team"><h3>Pick your team first</h3>'
+              "<p>Find your club before the story: its 2026 signature against the winning-cheap "
+              "profile, its cap headroom, its farm pipeline, and its top prospect.</p></div>")
+    story += _panel(2, "story")
+    for i, (num, head, note, sowhat, src) in enumerate(chapters, 1):
+        story += (f'<section class="chapter" data-chapter="{i}"><span class="chapnum">Chapter {i}</span>'
+                  f"<h3>{head}</h3><p>{note}</p>" + _panel(num, "story") +
+                  f'<p class="sowhat"><b>So what for the owner:</b> {sowhat}</p>'
+                  f'<p class="srcline">{src}</p></section>')
+    story += ('<details class="appendix"><summary>Appendix: method and honesty box</summary>'
+              '<div class="quant"><b>What the data actually shows</b> &nbsp;'
+              '<span style="font-weight:400;color:#4a5a72">(measured on 509 real team-seasons, 2011-2026)</span><br><br>'
+              "<b>1. Run differential drives wins, but only as a diagnostic.</b> The same-season "
+              "fit is strong (R² ≈ 0.55) — a better run margin means more wins. It is not a "
+              "forward-looking prediction.<br><br>"
+              "<b>2. Raw hitting KPIs do not reliably forecast next-season wins.</b> In-sample "
+              "accuracy is weak (R² ≈ 0.14), and out-of-sample the model is no better than simply "
+              "assuming the league average. Year-over-year team wins regress sharply toward the "
+              "mean — consistent with established baseball research.<br><br>"
+              "<b>3. The defensible edge is at the player level, not the team level.</b> A "
+              "player's underlying skills — contact rate (r = .90) and walk discipline (r = .66) — "
+              "persist year to year in ways that wins themselves do not. That persistence, paired "
+              "with Marcel-style aging and health constraints, is what builds the 26-man roster "
+              "shown here. We explicitly do not claim a forward-looking team-wins model: cross-year accuracy "
+              "is roughly 9-13 wins, and we present that number honestly.</div>"
+              '<div class="note">Data: MLB Stats API + Spotrac, 2011-2026 (509 team-seasons). The 2027 cap '
+              "($245.3M) and floor ($171.2M) are the owners' proposal; the CBA expires Dec 1, 2026 and the "
+              "figures are not yet law. No performance guarantee is implied. Salaries cover 24 of 30 teams: "
+              "Spotrac blocks 6 team pages, labeled wherever salaries appear.</div></details>")
+
+    # --- BOARDROOM mode: 15 slides in talk-track order ---
+    slides = [
+        ([1], "Press play: sixteen seasons prove the cheap winners stay gold",
+         "Sixteen seasons of payroll vs wins animate; the cheap winners stay gold the whole time."),
+        ([3], "Pay for skill, not output: contact persists, on-base percentage does not",
+         "What a player does that is a skill carries. The output owners are tempted to buy does not."),
+        ([4, 5], "Run differential describes a season and flags a winner. It does not forecast one",
+         "Better teams score more than they allow, and run differential alone flags a 90+ win club "
+         "with AUC of about 0.95. That is separation, not a forecast."),
+        ([6], "Money buys some wins, but the cheap winners win about 95 at a fraction of the payroll",
+         "Milwaukee, Tampa, and Cleveland win about 95 at a third to a quarter of big-market payroll."),
+        ([7], "Winning-cheap teams dominate contact, on-base percentage, and walks",
+         "The 2026 signature: contact, on-base percentage, and walks lead, with fewer strikeouts."),
+        ([13], "Pitching is the other winning-cheap half: low walks, low WHIP, elite ERA",
+         "The winners field control arms, not just contact bats."),
+        ([14], "Health is priced in, not hoped for",
+         "Injury risk caps playing time in the projections instead of being wished away."),
+        ([15], "The 2027 roster is built from real projections on exactly those inputs",
+         "Contact and walk skills plus control arms plus health caps, in one 26-man roster."),
+        ([10], "Seven teams must cut. Fifteen must add. The cap is the opportunity",
+         "The Mets are $101.4M over and the Dodgers $94.0M over; Cleveland has $96.7M to add and "
+         "Tampa $75.6M. The system now rewards the teams that waste the least."),
+        ([11], "Every over-cap team closes its gap by shedding at most three contracts",
+         "Toronto and Atlanta need just one. The cap binds through a handful of deals, not a rebuild. "
+         "That is arithmetic, not a prediction that anyone trades those players."),
+        ([20], "Instead of a made-up WAR, we show the real inputs: wOBA, wRC+, FIP",
+         "WAR formulas disagree and no MLB feed returns it, so the panel shows the reproducible inputs."),
+        ([16], "The floor roster buys 42.0 WAR. The cap roster buys 52.3",
+         "A disciplined floor team captures about 80 percent of the cap team's talent for about "
+         "70 percent of the money."),
+        ([22], "The shopping list ranks the whole free-agent class by projected value",
+         "Every name priced off last year's real contract anchor, never a predicted price."),
+        ([2], "Pick your team: every club gets the same treatment",
+         "Name your club: its signature, its cap headroom, its farm pipeline, its top prospect."),
+        ([18], "Checked in public, limits disclosed: Marcel vs Steamer, r = 0.889",
+         "We do not claim team-wins forecasts. Forecasting is genuinely weak, about 9 to 13 wins off, "
+         "and saying otherwise would not survive a skeptical room."),
+    ]
+    boardroom = ('<p>15 slides, in talk-track order. Print this section for the room: '
+                 '<button type="button" onclick="printBoardroom()">Print boardroom</button></p>')
+    for i, (nums, head, note) in enumerate(slides, 1):
+        boardroom += (f'<section class="slide"><span class="slidenum">Slide {i} of 15</span>'
+                      f"<h3>{head}</h3><p>{note}</p>" +
+                      "".join(_panel(n, "boardroom") for n in nums) +
+                      '<p class="srcline">Source: see the figure footer and the data sources box at '
+                      "the foot of this page.</p></section>")
+
+    # --- EXPLORER mode: all 22 figures, grouped by task ---
+    groups = [
+        ("Cap Reality", "What the cap and floor do to every payroll, and what must be shed.",
+         [1, 6, 9, 10, 11],
+         "Source: MLB Stats API team data and Spotrac payroll, plus the proposed 2027 cap."),
+        ("Build a Roster", "Signatures, durability, projections, health, the roster, and what moves wins.",
+         [7, 8, 12, 13, 14, 15, 16, 17],
+         "Source: Marcel projections, health caps, and the 2027 roster build from committed files."),
+        ("Shop the FA Class", "The farm pipeline behind the cheap winners, the shopping list, and the best values.",
+         [21, 22],
+         "Source: Spotrac free-agent class and FanGraphs Steamer WAR; prices are prior-contract averages."),
+        ("Check the Model", "Persistence, run differential, the title-bar test, the benchmark, and the trait check.",
+         [3, 4, 5, 18, 19, 20],
+         "Source: FanGraphs Steamer benchmark, Baseball Savant leaderboards, and MLB panel data."),
+    ]
+    explorer = ('<div class="hero-team"><h3>Pick your team first</h3>'
+                "<p>Use the dropdown: every club's 2026 signature against the winning-cheap profile, "
+                "with cap headroom, pipeline rank, and top prospect.</p></div>")
+    explorer += _panel(2, "explorer")
+    for name, desc, nums, src in groups:
+        explorer += (f'<div class="task"><h3>{name}</h3><p>{desc}</p></div>' +
+                     "".join(_panel(n, "explorer") for n in nums) +
+                     f'<p class="srcline">{src}</p>')
+        if name == "Shop the FA Class":
+            explorer += ('<div class="task"><h3>Top bargain free agents: Savant-style percentile cards</h3>'
+                         "<p>Ranked by WAR per $10M of prior salary. Bars show where each player sits "
+                         "in the committed free-agent pool for that metric.</p></div>")
+            explorer += _player_cards()
+
+    page_template = """<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P7)</title>
+<style>body{font-family:system-ui,sans-serif;margin:0;background:#f4f1ea;color:#14213d}
+.hd{max-width:1120px;margin:0 auto;padding:0 20px 40px}
+.crest{background:linear-gradient(135deg,#14213d 0%,#1d3557 60%,#7a1f1f 160%);color:#fff;padding:28px 32px;border-radius:0 0 14px 14px;margin:0 0 4px;box-shadow:0 3px 14px rgba(20,33,61,.25)}
+.crest h1{margin:0;font-size:30px;letter-spacing:1px;color:#fff}
+.crest h2{margin:8px 0 0;font-size:16px;font-weight:400;color:#cbe0ff}
+.mlb{background:#d50032;color:#fff;padding:2px 9px;border-radius:5px;font-size:12px;font-weight:700;letter-spacing:.5px}
+.tag{background:#cbe0ff;color:#14213d;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600}
+.note{background:#fff8e1;border-left:4px solid #f9a825;padding:10px 14px;margin:14px 0}
+.bottomline{background:#e8f5e9;border-left:5px solid #1d3557;border-radius:6px;padding:14px 18px;margin:16px 0;font-size:15px}
+.act{background:#14213d;color:#fff;padding:2px 8px;border-radius:4px;font-weight:bold}
+.why{color:#1d3557;font-weight:bold}
+.quant{background:#eef4ff;border-left:5px solid #0d47a1;border-radius:6px;padding:14px 18px;margin:16px 0;font-size:14px}
+.srcbox{background:#14213d;color:#dbe4f3;border-radius:8px;padding:16px 20px;margin:30px 0 8px;font-size:13px;line-height:1.5}
+.srcbox b{color:#fff}
+.src{color:#8ab6ff;font-family:ui-monospace,monospace}
+.keybox{background:#f0f4fa;border:1px solid #c4d3ea;border-radius:6px;padding:10px 14px;margin:14px 0;font-size:12.5px;line-height:1.9}
+.figidx{background:#fff;border:1px solid #d6dcea;border-left:4px solid #1d3557;border-radius:6px;padding:10px 14px;margin:14px 0;font-size:12px;line-height:1.8;color:#14213d}
+.figidx span{display:inline-block;background:#d50032;color:#fff;border-radius:3px;padding:0 5px;margin:0 2px;font-weight:700;font-size:11px;min-width:14px;text-align:center}
+.k{margin-right:16px;display:inline-block}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.cards{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 4px}
+.card{flex:1 1 160px;background:#fff;border:1px solid #e3dfd2;border-top:4px solid #d50032;border-radius:10px;padding:14px 16px;box-shadow:0 2px 8px rgba(20,33,61,.06)}
+.card .num{font-size:26px;font-weight:800;color:#14213d;letter-spacing:.2px}
+.card .lab{font-size:12.5px;color:#5a6478;margin-top:3px;line-height:1.35}
+.sec{display:flex;gap:14px;align-items:center;background:linear-gradient(90deg,#14213d,#1d3557);color:#fff;border-radius:10px;padding:13px 20px;margin:30px 0 4px;box-shadow:0 2px 10px rgba(20,33,61,.18)}
+.secnum{font-size:19px;font-weight:800;color:#c9a227;border:2px solid #c9a227;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.sec h3{margin:0;font-size:19px;letter-spacing:.4px}
+.sec p{margin:2px 0 0;font-size:13.5px;color:#cbe0ff}
+.panel{background:#fff;border:1px solid #e3dfd2;border-radius:12px;padding:16px 18px 8px;margin:14px 0;box-shadow:0 2px 10px rgba(20,33,61,.05)}
+.modenav{display:flex;gap:10px;margin:18px 0}
+.modenav button{flex:1;padding:12px;border:2px solid #1d3557;border-radius:8px;background:#fff;color:#14213d;font-size:15px;font-weight:700;cursor:pointer}
+.modenav button.active{background:#14213d;color:#fff}
+.verdict{background:#14213d;color:#fff;border-radius:10px;padding:18px 22px;margin:16px 0}
+.verdict h2{margin:0 0 6px;color:#fff}
+.verdict p{margin:0;color:#cbe0ff;font-size:15px;line-height:1.5}
+.hero-team h3{margin:24px 0 0}
+.chapter{border-top:3px solid #c9a227;margin:30px 0;padding-top:8px}
+.chapnum{font-weight:800;color:#7a1f1f;letter-spacing:.5px}
+.sowhat{background:#e8f5e9;border-left:5px solid #1d3557;border-radius:6px;padding:12px 16px}
+.srcline{font-size:12.5px;color:#5a6478}
+.appendix{margin:30px 0;border:1px solid #c4d3ea;border-radius:8px;padding:12px 16px;background:#fff}
+.appendix summary{font-weight:800;cursor:pointer}
+.slide{border:1px solid #d6dcea;border-radius:10px;padding:16px 20px;margin:18px 0;background:#fff;page-break-after:always}
+.slidenum{font-weight:800;color:#7a1f1f}
+.task{background:linear-gradient(90deg,#14213d,#1d3557);color:#fff;border-radius:10px;padding:13px 20px;margin:30px 0 4px}
+.task h3{margin:0}
+.task p{margin:2px 0 0;color:#cbe0ff;font-size:13.5px}
+.pcards{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+.pcard{flex:1 1 340px;background:#fff;border:1px solid #e3dfd2;border-top:4px solid #1b5e20;border-radius:10px;padding:14px 16px}
+.pcard h4{margin:0 0 4px;font-size:16px}
+.pcard p{margin:0 0 8px;font-size:13px;color:#5a6478}
+.pctrow{display:flex;gap:8px;align-items:center;font-size:12.5px;margin:5px 0}
+.pctrow span:first-child{flex:0 0 210px}
+.pctbar{flex:1;background:#e8ecf3;border-radius:4px;height:10px;overflow:hidden}
+.pctbar span{display:block;background:#1b5e20;height:10px}
+.pctnum{flex:0 0 110px;text-align:right;font-weight:700}
+.pctna{color:#5a6478;font-style:italic}
+@media print{body.print-boardroom #mode-story,body.print-boardroom #mode-explorer,body.print-boardroom .modenav,body.print-boardroom .crest,body.print-boardroom .keybox,body.print-boardroom .figidx,body.print-boardroom .srcbox{display:none}body.print-boardroom button{display:none}}
 </style></head>
 <body>
 <div class="crest">
@@ -1116,32 +1382,6 @@ def build():
 <h2>Cap-Era Moneyball: win while cheap — buy contact + OBP and low-walk arms, price it against the <b>$245.3M</b> cap</h2>
 </div>
 <div class="hd">
-<div class="bottomline">
-<b>BOTTOM LINE (read this first):</b> A team can win at mid-tier payroll by spending on
-<b>contact + getting on base (OBP)</b> and <b>low-walk arms</b>, not power. Winning-cheap teams
-(MIL/TB/CLE) had <b>higher OBP, more contact, fewer strikeouts, fewer home runs AND elite team pitching</b> — yet
-won ~95 games vs ~79 at roughly half payroll. <span class="act">Owner action:</span>
-build the roster around OBP/contact + control pitchers, not the big power salary.
-<span class="why">Why trust it:</span> real 2025-2026 data (MLB API + Spotrac), model cross-validated.
-Not a guarantee — shown honestly below.</div>
-<div class="quant"><b>What the data actually shows</b> &nbsp;<span style="font-weight:400;color:#4a5a72">(measured on 509 real team-seasons, 2011-2026)</span><br><br>
-<b>1. Run differential drives wins, but only as a diagnostic.</b> The same-season
-fit is strong (R² ≈ 0.55) — a better run margin means more wins. It is not a
-forward-looking prediction.<br><br>
-<b>2. Raw hitting KPIs do not reliably forecast next-season wins.</b> In-sample
-accuracy is weak (R² ≈ 0.14), and out-of-sample the model is no better than simply
-assuming the league average. Year-over-year team wins regress sharply toward the
-mean — consistent with established baseball research.<br><br>
-<b>3. The defensible edge is at the player level, not the team level.</b> A
-player's underlying skills — contact rate (r = .90) and walk discipline (r = .66) —
-persist year to year in ways that wins themselves do not. That persistence, paired
-with Marcel-style aging and health constraints, is what builds the 26-man roster
-shown here. We explicitly do not claim a forward-looking team-wins model: cross-year accuracy
-is roughly 9-13 wins, and we present that number honestly.</div>
-<div class="note">Data: MLB Stats API + Spotrac, 2011-2026 (509 team-seasons). The 2027 cap
-($245.3M) and floor ($171.2M) are the owners' proposal; the CBA expires Dec 1, 2026 and the
-figures are not yet law. No performance guarantee is implied.</div>
-{cards}
 <div class="keybox"><b>COLOR KEY (used on every chart below):</b>
 <span class="k"><span class="sw" style="background:#1b5e20"></span> green = <b>winning-cheap</b> (MIL · TB · CLE — the target teams: &gt;85 wins at low payroll)</span>
 <span class="k"><span class="sw" style="background:#e65100"></span> orange = <b>cheap-mediocre</b> (MIA · CHW · STL — the trap: frugal but ~78 wins)</span>
@@ -1161,7 +1401,7 @@ figures are not yet law. No performance guarantee is implied.</div>
 <span class="k"><b>FIP</b> = pitching quality (a pitcher's own doing; lower = better)</span>
 <span class="k"><b>K-BB%</b> = strikeouts minus walks = how dominant a pitcher is</span>
 <span class="k"><b>WAR</b> = wins above replacement, the famous player-value stat. Published free by FanGraphs (fWAR) &amp; Baseball-Reference (bWAR), but the two formulas disagree, it is not returned by the MLB API, and it is not a league-published number — so this value panel shows WAR's reproducible inputs (wOBA, wRC+, FIP, K-BB%) instead. Note: the FA shopping list (this build) uses FanGraphs Steamer WAR.</span></div>
-{js_include}
+__JS_INCLUDE__
 <div class="figidx"><b>FIGURE INDEX — the story at a glance (all 22 real-data charts below)</b><br>
 <span>1</span> Press play: 16 seasons of payroll vs wins &nbsp;·&nbsp;
 <span>2</span> Pick your team &nbsp;·&nbsp;
@@ -1185,7 +1425,14 @@ figures are not yet law. No performance guarantee is implied.</div>
 <span>20</span> Value metrics &nbsp;·&nbsp;
 <span>21</span> MiLB pipeline index &nbsp;·&nbsp;
 <span>22</span> The 2027 shopping list</div>
-{html}
+<nav class="modenav">
+<button type="button" id="btn-story" class="active" onclick="showMode('story')">Story: the case in 6 chapters</button>
+<button type="button" id="btn-boardroom" onclick="showMode('boardroom')">Boardroom: 15 slides</button>
+<button type="button" id="btn-explorer" onclick="showMode('explorer')">Explorer: all 22 figures by task</button>
+</nav>
+<div id="mode-story">__STORY__</div>
+<div id="mode-boardroom">__BOARDROOM__</div>
+<div id="mode-explorer">__EXPLORER__</div>
 <div class="srcbox">
 <b>DATA SOURCES &amp; METHODS — everything on this page is real and traceable.</b><br><br>
 <b>Primary data</b> (2025-2026, all 30 MLB teams): <span class="src">MLB Stats API
@@ -1216,7 +1463,29 @@ on the panel). The product is player-level acquisition, not a team-wins formula.
 <b>Project repo:</b> github.com/mega-byte2600/hardball (private) · audit trail in docs/BML_LOG.md
 (two cycle series converged on 2026-10-31 — see the integration note at the top of the log)
 </div>
-</div></body></html>"""
+</div>
+<script>
+function showMode(id) {
+  var modes = ["story", "boardroom", "explorer"];
+  for (var i = 0; i < modes.length; i++) {
+    document.getElementById("mode-" + modes[i]).style.display = (modes[i] === id) ? "block" : "none";
+    document.getElementById("btn-" + modes[i]).className = (modes[i] === id) ? "active" : "";
+  }
+}
+function printBoardroom() {
+  showMode("boardroom");
+  document.body.classList.add("print-boardroom");
+  window.print();
+  document.body.classList.remove("print-boardroom");
+}
+showMode("story");
+</script>
+</body></html>"""
+
+    page = (page_template.replace("__JS_INCLUDE__", js_include)
+            .replace("__STORY__", story)
+            .replace("__BOARDROOM__", boardroom)
+            .replace("__EXPLORER__", explorer))
 
     out = os.path.join(REPO, "dashboard", "hardball_demo.html")
     with open(out, "w") as f:

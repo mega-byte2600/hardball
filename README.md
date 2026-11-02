@@ -72,7 +72,8 @@ PRs #1-#5, integrated via PR #6) converged with the main lane on
 - **Boardroom layer** (Cycle 26): animated 16-season payroll film,
   pick-your-team explorer (all 30 clubs), and budget-scenario rosters
   — floor $171.2M builds 42.0 WAR vs cap $245.3M at 52.3 WAR.
-- Dashboard is now **22 figures in 8 story sections**; P7 UAT approved
+- Dashboard is now **22 figures in three modes — Story (6 chapters, the default landing),
+  Boardroom (15 slides), Explorer (all 22 figures grouped by task)**; P7 UAT approved
   at MVP level by the owner 2026-10-31.
 Cycle numbering collided between lanes (two "Cycle 20-24" series) —
 see the integration note in docs/BML_LOG.md.

@@ -143,10 +143,30 @@ def main() -> int:
 
     # --- committed dashboard is the current build -----------------
     html = (ROOT / "dashboard" / "hardball_demo.html").read_text(errors="ignore")
-    check("dashboard HTML: >=19 figures, PRESS PLAY present",
-          html.count("plotly-graph-div") >= 19 and "PRESS PLAY" in html)
+
+    def _mode_figs(mode):
+        seg = html.split(f'id="mode-{mode}"', 1)[1]
+        seg = re.split(r'id="mode-|<div class="srcbox"', seg)[0]
+        return [int(n) for n in re.findall(r'data-mode="' + mode + r'" data-figure="(\d+)"', seg)]
+
+    all_figs = sorted({int(n) for n in re.findall(r'data-figure="(\d+)"', html)})
+    n_chapters = len(re.findall(r'class="chapter"', html))
+    n_slides = len(re.findall(r'class="slide"', html))
+    n_cards = len(re.findall(r'class="pcard"', html))
+    explorer_figs = sorted(set(_mode_figs("explorer")))
+    check("dashboard HTML: PRESS PLAY present, 22-chart index intact",
+          "PRESS PLAY" in html and "all 22 real-data charts" in html)
     check("dashboard HTML: no stale figure references",
-          "see Figure 12)" not in html and "all 22 real-data charts" in html)
+          "see Figure 12)" not in html)
+    check("dashboard modes: story has exactly 6 chapters",
+          n_chapters == 6, f"chapters={n_chapters}")
+    check("dashboard modes: boardroom has <=15 slides",
+          1 <= n_slides <= 15, f"slides={n_slides}")
+    check("dashboard modes: explorer holds every figure the build produced",
+          explorer_figs == all_figs and len(all_figs) >= 21,
+          f"explorer={explorer_figs} all={all_figs}")
+    check("dashboard modes: 8 percentile player cards",
+          n_cards == 8, f"cards={n_cards}")
 
     # --- talk track references exist in the merged deck -----------
     tt = (ROOT / "docs" / "TALKTRACK.md").read_text()
