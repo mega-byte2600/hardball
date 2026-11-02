@@ -795,3 +795,28 @@ streaming terms, Moses et al. observability).
 - Spotrac probe (once per run): still 403. Salaries remain 24/30,
   forced-seller 6/7 (CHC uncovered).
 - Next: item (g) December readiness checklist in HANDOFF.md.
+
+## Cycle 36 — DECEMBER READINESS CHECKLIST (toby, 2026-11-02 ~01:15 PT, overnight sprint)
+- Backlog item (g): HANDOFF.md gains a December readiness checklist
+  (freeze + final refresh targets, demo-package checks, print pack,
+  known gaps carried honestly, Dec 1 day-of sequence, post-Dec 1
+  shutdown). No data, model, figure, or claim changed: HANDOFF.md +
+  this log entry only.
+- Status snapshot recorded in the checklist, all verified this run on
+  main 10c217c8 (unmoved since Cycle 35): gate ALL PASS; parity
+  r = 0.889, 201 matched; curated byte-identical to main (no data PR
+  from the platform step); dashboard rebuilds with lake at 23 figures
+  (Story 6 chapters, Boardroom 15 slides, Explorer all 23, 8 percentile
+  cards, Figure 23 Explorer-only with BIS label).
+- Platform run: ingest 21 datasets, 0 failures; Savant volumes in band
+  (expected 651-673, bat-tracking 595-619, sprint 489-506); NPB BIS
+  leaderboards 340 rows; transactions watermark advanced; curate 14
+  tables, all contracts pass; warehouse rebuilt.
+- Spotrac probe (once per run): still 403. Salaries remain 24/30,
+  forced-seller 6/7 (CHC uncovered). FanGraphs lane not retried (no
+  200 probe; Cycle 32 guard still binds).
+- Verified by DOM/data checks only (no browser visual QA, per standing
+  rule): dashboard rebuild holds figures 1-23 with no duplicates;
+  gate ALL PASS; spellcheck green on the edited files.
+- Next: item (h) — drift re-run / docs polish (all backlog items a-g
+  now done; no new claims).
