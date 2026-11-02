@@ -768,3 +768,30 @@ streaming terms, Moses et al. observability).
   PASS; spellcheck green.
 - Next: item (f) README demo-runbook rewritten around the three modes,
   pointing at Fig. 23 as the live-market exhibit.
+
+## Cycle 35 — README DEMO-RUNBOOK (toby, 2026-11-02 ~00:12 PT, overnight sprint)
+- Backlog item (f): README gains a "Presenting in 5 minutes" section,
+  written around the three modes shipped in Cycle 33 and the Fig. 23
+  exhibit shipped in Cycle 34. Story in 5 minutes (verdict screen, then
+  Chapters 1/3/5 — Figures 3, 6, 16 — then the appendix); PRESS PLAY on
+  Figure 1 as the film-first hook (Boardroom slide 1 / Explorer Cap
+  Reality); Boardroom for the room (15 slides, talk-track order, Print
+  boardroom button); Explorer for questions (all 23 figures by task,
+  Pick Your Team on top); Figure 23 as the closer — the posted class
+  (Sato, Taira, Itoh; Nov 1 -> Nov 2 -> Dec 1 lockout pause -> Dec 16
+  17:00 ET) with its own translation honesty box. The section also names
+  where the honesty box lives every time: the Story appendix, Figure 23's
+  translation box, and the README Honest limits.
+- No data, model, figure, or claim changed: README + this log entry only.
+  Every number in the new section is already in the dashboard or the
+  talk-track (win ~95 at a third to a quarter of big-market payroll;
+  floor vs cap builds; posting dates and fee tiers from Cycle 34).
+- Verified by DOM/data checks only (no browser visual QA, per standing
+  rule): platform gate ALL PASS on current main f294e245 (sprint
+  courtesy: ingest skipped — Cycle 34's ingest ran within the hour and
+  main unmoved; gate never skipped); benchmark parity r = 0.889, 201
+  matched; dashboard rebuilds with 23-chart index intact, 6 story
+  chapters, Figure 23 present; spellcheck green on the edited README.
+- Spotrac probe (once per run): still 403. Salaries remain 24/30,
+  forced-seller 6/7 (CHC uncovered).
+- Next: item (g) December readiness checklist in HANDOFF.md.
