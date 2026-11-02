@@ -876,3 +876,41 @@ streaming terms, Moses et al. observability).
 - Next: item (h) continues — docs polish (e.g. the checklist's
   persistence-figure recompute, r vs R^2 labeling) or the next drift
   re-run; no new claims.
+
+## Cycle 40 — DRIFT RE-RUN: CYCLE 20 SAVANT PLAYER-LEVEL TEST (toby, 2026-11-02 ~05:12 PT, overnight sprint)
+- Backlog item (h): re-ran src/bml_cycle20.py (Savant at player level:
+  Q1 luck correction, Q2 trait stability, Q3 Savant families as
+  adjustments on Marcel, both-directions OOS) on the current lake and
+  diffed the regenerated data/savant_test.json against the committed
+  artifact.
+- Result: NO DRIFT — regenerated artifact identical to committed, so
+  no data or model change ships from this re-run. Numbers unchanged:
+  Q1 xwOBA beats actual wOBA in all 3 pairs (MAE .0279/.0304,
+  .0256/.0260, .0266/.0286); Q2 trait stability bat speed r .921,
+  EV50 .897, barrel% .801, squared-up .798 vs outcome OBP .436 /
+  SLG .478; Q3 no family improves OOS MAE in both directions on both
+  metrics, so nothing is adopted — Savant stays diagnostics, not
+  projection inputs, exactly as Cycle 20 concluded. The shipped
+  projection method stands.
+- Platform run this cycle, on main f8ab2726 (unmoved since Cycle 38):
+  ingest skipped per the sprint courtesy (prior run's ingest within
+  the last hour, no source changes, main unmoved); curate 14 tables,
+  all contracts pass; warehouse rebuilt; parity r = 0.889, 201 matched;
+  curated byte-identical to the prior rebuilt set (no data PR from
+  the platform step); gate ALL PASS; dashboard rebuilds with
+  23-chart index intact (Story 6 chapters, Boardroom 15 slides,
+  Explorer all 23 figures, 8 percentile cards, Figure 23 Explorer-only
+  with BIS label).
+- Spotrac probe (once per run): still 403. FanGraphs probe (once per
+  run): no response this run (HTTP 000, not a 200) — the
+  reconciled-FanGraphs lane stays closed under the Cycle 32 guard;
+  it reopens only on a 200 probe. Salaries remain 24/30, forced-seller
+  6/7 (CHC uncovered).
+- Verified by DOM/data checks only (no browser visual QA, per standing
+  rule): gate ALL PASS; dashboard rebuild holds figures 1-23 with no
+  duplicates.
+- Still awaiting the owner: PR #21 (Cycle 39 persistence correction)
+  is open and unmerged — claim change, his call. This run changes
+  nothing in it.
+- Next: item (h) continues — next drift re-run (e.g. Cycle 22 Steamer
+  benchmark) or docs polish; no new claims.
