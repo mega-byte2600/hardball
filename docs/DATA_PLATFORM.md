@@ -53,12 +53,49 @@ atomically, manifests are append-only history).
   BRef files land raw ONLY — their salary column failed the Cycle 44
   credibility bar for dataset use (see CARPE_SCORECARD), so no
   curated salary table is built from them; fail closed, on record.
-- **Key-gated sources (prepared, not active)**: `src/keyed_sources.py`
-  holds env-key-gated, fail-closed stubs for Tank01, Statyx,
-  FastballAPI, and Sportradar. Without a key they return a labeled
-  "data unavailable" and make no network call. Sportradar's trial is
+- **Key-gated sources**: `src/keyed_sources.py` holds the
+  env-key-gated, fail-closed paths for Tank01, Statyx, FastballAPI,
+  and Sportradar. Without a key they return a labeled "data
+  unavailable" and make no network call. **Statyx and FastballAPI
+  are ACTIVE since 2026-11-02** (see the connection record below);
+  Tank01 is deferred (owner dropped the RapidAPI signup for now;
+  supplement only, nothing depends on it); Sportradar's trial is
   deliberately NOT started before mid-November (30-day window must
   cover Dec 1).
+
+## API connections — Statyx + FastballAPI LIVE (2026-11-02)
+
+**Read this, collaborating lanes:** two keyed APIs were connected on
+2026-11-02 and verified live. This section is the committed record
+of that event (Cycle 45) so every agent working from git sees it.
+
+- **Statyx** — connected 2026-11-02 via Toby's Secure Vault
+  connector (`custom.statyx`). Verified live: GET
+  https://api.statyx.io/v1/mlb/standings → 200; GET
+  /v1/mlb/injuries → 200 with **16 live records** (status, expected
+  return, injury type, comments; feed timestamped 2026-11-02). The
+  free tier DOES include MLB injuries. Key rides as a Bearer header.
+- **FastballAPI** — connected 2026-11-02 via Toby's Secure Vault
+  connector (`custom.fastballapi`). Verified live: tools are POST
+  https://mcp.fastballapi.com/v1/{tool} with the key in the
+  `x-api-key` header; get_standings {season: 2026} → 200, **30
+  teams**; get_injuries {} → 200, **190 records dated 2026-11-02**.
+  Cross-checked against the committed StatsAPI standings: 30/30
+  wins agree, zero diffs (docs/CARPE_SCORECARD.md, Cycle 45).
+- **Access route for other lanes:** the keys live in Toby's Secure
+  Vault and are **NEVER committed to git** — do not hunt for a key
+  in this repo, there is none to find. Route Statyx/FastballAPI
+  pulls through Toby (or the 6-hourly cycle) instead. The repo-side
+  code path is `src/keyed_sources.py`: env-key-gated and
+  fail-closed, with the corrected FastballAPI shape (POST
+  /v1/{tool}, `x-api-key` header — the Cycle 44 Bearer guess was
+  wrong and is fixed).
+- **Not yet active:** **Tank01** (deferred — the owner dropped
+  the RapidAPI signup for now; supplement only, nothing in the
+  demo depends on it) and **Sportradar** (trial deliberately not
+  started before mid-Nov so its 30-day window covers Dec 1).
+  Neither is a source of any demo data yet; never present them as
+  connected.
 
 ## Structured and unstructured
 Structured sources (APIs, CSVs) land as JSON/CSV in raw and curate

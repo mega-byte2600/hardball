@@ -170,6 +170,13 @@ def main() -> int:
     check("dashboard modes: explorer holds Figure 23 with BIS source label",
           23 in explorer_figs and "NPB official" in html,
           f"explorer={explorer_figs}")
+    footer_sources = ["MLB Stats API", "Baseball Savant", "ESPN", "Steamer",
+                      "Spotrac", "Cot's", "Chadwick", "Injury Report",
+                      "NPB official BIS", "Baseball-Reference", "Statyx",
+                      "FastballAPI", "ALL DATA &amp; API SOURCES"]
+    missing_src = [s for s in footer_sources if s not in html]
+    check("dashboard footer: all data & API sources listed (Cycle 45)",
+          not missing_src, f"missing: {missing_src}")
 
     # --- posted class: trio dataset present and verified ----------
     posted = DATA / "posted_class_2026.json"

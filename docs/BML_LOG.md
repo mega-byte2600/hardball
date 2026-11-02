@@ -1209,3 +1209,96 @@ streaming terms, Moses et al. observability).
   standing rule).
 - Next: Sportradar trial decision mid-Nov (owner starts it, Toby
   wires it); the 24/7 cycle continues its drift/polish backlog.
+
+## Cycle 45 — SOURCES FOOTER + API CONNECTIONS: STATYX & FASTBALLAPI LIVE (toby, 2026-11-02 ~10:25 PT)
+
+Owner directives (2026-11-02 10:10–10:13 PT): "update repo so that
+hardball shows all API sources at bottom of page when rendered! its
+key for credibility! we just got two more!" and "make sure git knows
+we have these apis as other agents collab on hardball project!"
+
+- (1) CONNECTION EVENT — STATYX + FASTBALLAPI CONNECTED 2026-11-02.
+  Both keys were supplied by the owner and live in Toby's Secure
+  Vault connectors (custom.statyx / custom.fastballapi); keys are
+  NEVER committed to git. Verified live by Toby before this cycle
+  built on them: Statyx standings 200, injuries 200 with 16 live
+  records (free tier DOES include MLB injuries — Cycle 44's open
+  question, settled); FastballAPI standings 200 / 30 teams,
+  injuries 200 with 190 records dated 2026-11-02. Committed
+  connection record: HANDOFF.md ("API CONNECTIONS" section) +
+  docs/DATA_PLATFORM.md ("API connections — Statyx + FastballAPI
+  LIVE") + docs/CARPE_SCORECARD.md Cycle 45 addendum. Access route
+  for other lanes: through Toby / the 6-hourly cycle, never a repo
+  key hunt. No AGENTS.md exists anywhere in this repo (checked the
+  full git tree) — HANDOFF.md is the collaborators' surface, so the
+  record lives there and in DATA_PLATFORM.md.
+- (2) DASHBOARD FOOTER — the rendered page's bottom sources box now
+  carries an "ALL DATA & API SOURCES" enumeration: every source
+  with what it provides and an honest status label — MLB Stats API
+  (live, keyless), Baseball Savant (live, keyless), ESPN (verified
+  cross-validation), FanGraphs Steamer (committed snapshot, site
+  403 to automated pulls), Spotrac (committed, 24/30), Cot's
+  (committed labeled cross-check layer, 30 teams / 237 rows),
+  Chadwick Register (committed, joins 379/379), The Injury Report
+  (committed, 6,632 stints), NPB official BIS (committed, keyless),
+  Baseball-Reference WAR files (salary use FAILED CLOSED Cycle 44,
+  stated on the page), Statyx (connected 2026-11-02, verified
+  live), FastballAPI (connected 2026-11-02, verified live). Tank01
+  (deferred — owner dropped the RapidAPI signup for now,
+  2026-11-02) and Sportradar (trial starts mid-Nov) are listed
+  explicitly as NOT yet connected and sources of nothing on the
+  page. Presentation only — no data, figure, or claim changes;
+  still 23 figures, Story 6 chapters / Boardroom ≤15 / Explorer
+  all figures. Gate gains a footer check: all 13 source strings
+  must appear in the rendered HTML. Spellcheck whitelist gains the
+  Cycle 45 provider names.
+- (3) src/keyed_sources.py CORRECTED TO VERIFIED REALITY.
+  FastballAPI: base https://mcp.fastballapi.com/v1, tools are POST
+  /v1/{tool} with a JSON body, key in the x-api-key header (the
+  Cycle 44 Bearer-at-fastballapi.com entry was wrong — caught
+  against the provider's own Python client during connection).
+  Statyx: Bearer at api.statyx.io (was already correct), marked
+  ACTIVE/VERIFIED with the record counts. Tank01 unchanged
+  (X-RapidAPI-Key; status: deferred by the owner). Sportradar unchanged (DO NOT
+  START before mid-Nov). Fail-closed behavior re-verified: with no
+  env keys, all four return labeled "data unavailable" and make no
+  network call.
+- (4) CROSS-CHECKS (fresh pulls this cycle; FastballAPI cost 4
+  credits of the 500/mo free pool — standings 2 + injuries 2;
+  Statyx free). Standings: FastballAPI 2026 vs committed
+  StatsAPI-derived data — vs data/kpi_2026.json, 30/30 teams,
+  wins 30/30 agree, runs scored 30/30 agree, ZERO diffs; vs
+  curated fact_team_season (carries losses), 29/29 comparable
+  teams agree on wins + losses + runs allowed (Arizona is keyed
+  "AZ" in the curated table vs "ARI" at FastballAPI — an
+  abbreviation artifact, already covered by the KPI comparison).
+  Injuries: 14 of Statyx's 16 records also appear in
+  FastballAPI's 190 by player name (87.5%), all 14 agreeing on
+  status AND injury type; Statyx-only: Brooks Kriske, Jalen Beeks
+  (Statyx reads as a recent-moves feed vs FastballAPI's full IL
+  snapshot — complementary, not contradictory). Full detail in
+  the CARPE_SCORECARD Cycle 45 addendum. Neither feed feeds any
+  figure or model yet — connecting + cross-checking is this
+  cycle; wiring them into the availability layer is a future
+  measured cycle, not a silent swap.
+- Platform run this cycle, on the final tree: ingest 25 datasets,
+  0 failures (Savant volumes in band — bat-tracking 595–619 per
+  season; transactions watermark at 120,355 events; Chadwick
+  527,990; Injury Report 6,632; NPB BIS 340; Spotrac cache
+  present); curate 17 tables, all contracts pass, byte-identical
+  to committed; warehouse rebuilt from 17 tables; parity
+  r = 0.889, 201 matched; dashboard rebuilt from committed
+  snapshots (23 figures; footer verified present by text/DOM
+  check — all source names render below the three modes); gate
+  ALL PASS (offline and --live, standings 30/30) incl. the new
+  footer check; spellcheck green.
+- Spotrac probe: not re-run this cycle (Cycle 44's 403 stands).
+  Salaries remain 24/30 Spotrac-basis + labeled Cot's layer;
+  forced-seller 6/7.
+- Verified by DOM/data checks only (no browser visual QA, per
+  standing rule).
+- Next: Tank01 stays deferred unless the owner revives the
+  RapidAPI signup (supplement only, nothing depends on it);
+  Sportradar trial mid-Nov (owner starts it, Toby wires it); a future cycle
+  decides, on measurements, whether the two live injury feeds join
+  the availability layer.

@@ -166,3 +166,50 @@ Spotrac-basis file, forced-seller math, or any roster math.
 | The Injury Report (Seehafer) — IL stints CSV | ADOPTED: keyless CSV (built from MLB's own IL transactions) lands in the raw zone and curates to `fact_il_stints`: **6,632 stints, 2,177 players, seasons 2019–2026**. Note: the site's headline count is 6,651 injuries; its downloadable CSV parses to 6,632 stints — the CSV is what we count. Availability cross-check layer only; Cycle 27 availability factors unchanged. |
 | Spotrac team payroll pages (completion probe) | STILL BLOCKED: single probe of the CHC page this cycle still 403. No rerun of `bml_cycle25.py`. |
 | Ready-to-activate keyed sources (prep only — NO signups, NO keys exist yet) | `src/keyed_sources.py` ships env-key-gated, fail-closed stubs (no key → labeled "data unavailable", no network call; a 403/429 stops, never routed around). **Tank01** (RapidAPI Basic, free forever, 1,000 hits/mo, no card): injuries-by-date, roster history, ID crosswalk — no salaries. **Statyx** (free key): reference data free; MLB injuries + WAR endpoints exist but free-tier inclusion UNVERIFIED. **FastballAPI** (500 credits/mo free, no card): pitch-level 2015+, injuries snapshot at 2 credits/call — no salaries. **Sportradar MLB v8 trial: DO NOT START before mid-November** — its 30-day window must cover Dec 1; trial carries the one real contract field in the set (annual BASE salary in Player/Team Profile), internal-evaluation license — owner reads the trial terms at signup. |
+
+## Addendum — Cycle 45 (2026-11-02 ~10:20 PT): Statyx + FastballAPI CONNECTED and cross-checked; full source list now renders in the dashboard footer
+
+Owner directives: "update repo so that hardball shows all API sources
+at bottom of page when rendered! its key for credibility! we just got
+two more!" and "make sure git knows we have these apis as other
+agents collab on hardball project!" Both are executed here: the
+rendered dashboard's bottom sources box now enumerates every data/API
+source with its status, and the connection record is committed in
+HANDOFF.md + docs/DATA_PLATFORM.md where collaborating lanes read.
+
+| Source | Status |
+|---|---|
+| Statyx (api.statyx.io) | CONNECTED 2026-11-02 via the owner's Secure Vault connector (custom.statyx); the key is NEVER in this repo. VERIFIED LIVE by Toby: GET /v1/mlb/standings -> 200; GET /v1/mlb/injuries -> 200 with **16 live records** (status, expected return, injury type, comments; feed timestamped 2026-11-02). The free tier DOES include MLB injuries — Cycle 44's UNVERIFIED question is settled. Repo-side path: `src/keyed_sources.py` (Bearer at api.statyx.io — that entry was already correct). No MLB salaries (contracts endpoint is NBA only). |
+| FastballAPI (mcp.fastballapi.com) | CONNECTED 2026-11-02 via the owner's Secure Vault connector (custom.fastballapi); the key is NEVER in this repo. VERIFIED LIVE by Toby: tools are POST /v1/{tool} with the key in the x-api-key header — the Cycle 44 stub's Bearer-at-fastballapi.com shape was WRONG and `src/keyed_sources.py` is corrected in this cycle. get_standings {season: 2026} -> 200, **30 teams**; get_injuries {} -> 200, **190 records dated 2026-11-02** (player, team, status, type, detail, return_date). Cross-checks below. Free tier: 500 credits/mo; standings + injuries cost 2 credits per call. No salaries. |
+| Tank01 (RapidAPI) | DEFERRED by the owner 2026-11-02 (RapidAPI signup dropped for now — "forget it for now"). Supplement only; nothing in the demo depends on it (Chadwick already covers the ID-crosswalk job at 379/379). Not a source of any demo data; listed as deferred in the dashboard footer and the connection record, never as connected. The secure-entry link exists if the owner ever revives it. |
+| Sportradar MLB v8 trial | STILL NOT STARTED, deliberately: trial starts mid-November so the 30-day window covers Dec 1. |
+
+### Cycle 45 cross-checks (run 2026-11-02 ~10:15 PT, fresh pulls)
+
+- **FastballAPI 2026 standings vs the platform's committed standings
+  (MLB StatsAPI-derived).** One fresh get_standings call (2 credits).
+  Against `data/kpi_2026.json`: **30/30 teams matched; wins agree
+  30/30; runs scored agree 30/30; zero diffs.** Against curated
+  `fact_team_season` (which carries losses; the KPI file does not):
+  29/29 comparable teams agree on wins, losses, AND runs allowed —
+  the 30th (Arizona) is keyed "AZ" in the curated table vs "ARI" at
+  FastballAPI, an abbreviation artifact, and its wins/runs already
+  agree via the KPI comparison. Verdict: FastballAPI's standings are
+  an exact match to the official feed on every field both files
+  carry. [VERIFIED]
+- **Injury-feed overlap, Statyx vs FastballAPI.** One fresh Statyx
+  injuries call (free) + the FastballAPI injuries pull above (2
+  credits), matched by normalized player name: **14 of Statyx's 16
+  records also appear in FastballAPI's 190 (87.5%)**, and all 14
+  agree on status AND injury type (e.g. Cal Raleigh — Out /
+  Shoulder at both; Zack Kelly — 60-Day-IL / Elbow at both). The 2
+  Statyx-only names are Brooks Kriske and Jalen Beeks — consistent
+  with Statyx carrying a recent-transactions-style feed (16 current
+  moves) against FastballAPI's full daily IL snapshot (190); the
+  feeds are complementary, not contradictory. [VERIFIED]
+- **What did NOT change:** neither feed feeds any figure, model, or
+  roster math in this cycle. They are connected, verified, and
+  cross-checked; wiring them into the availability layer is a future
+  cycle's measured decision, not a silent swap. Spotrac probe this
+  cycle: not re-run (Cycle 44's 403 stands; salaries remain 24/30
+  Spotrac-basis + the labeled Cot's layer).
