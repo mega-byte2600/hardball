@@ -14,15 +14,21 @@ and makes NO network call. No fabricated rows, ever. Any HTTP block
 around.
 
 Sources:
-  statyx      Statyx — ACTIVE, VERIFIED LIVE 2026-11-02.
+  statyx      Statyx — ACTIVE, VERIFIED LIVE 2026-11-02; SERVING
+              since Cycle 51 (pull 2026-11-02).
               Base: https://api.statyx.io/v1, key as Bearer header.
               Env: STATYX_API_KEY.
               Verified: GET /mlb/standings -> 200; GET /mlb/injuries
-              -> 200 with 16 live records (status, expected return,
-              type, comments). The free tier DOES include MLB
-              injuries (Cycle 44's UNVERIFIED question, settled).
+              -> 200 (16 live records at first verification; the
+              Cycle 51 pull's first page carried 50 recent-move
+              records). The free tier DOES include MLB injuries
+              (Cycle 44's UNVERIFIED question, settled).
               NO MLB salaries (contracts endpoint is NBA only).
-  fastballapi FastballAPI — ACTIVE, VERIFIED LIVE 2026-11-02.
+              Serving: dated snapshots in data/raw/statyx/ feed
+              fact_il_current + the dashboard health panel's live-IL
+              picture via src/bml_cycle51.py.
+  fastballapi FastballAPI — ACTIVE, VERIFIED LIVE 2026-11-02;
+              SERVING since Cycle 51 (pull 2026-11-02).
               Tools are POST https://mcp.fastballapi.com/v1/{tool}
               with a JSON body; the key rides in the x-api-key
               header (per the provider's own Python client). The
@@ -32,6 +38,10 @@ Sources:
               teams; get_injuries {} -> 200, 190 records dated
               2026-11-02. 500 free credits/mo, no card; standings
               and injuries cost 2 credits per call. NO salaries.
+              Serving: dated snapshots in data/raw/fastballapi/ feed
+              fact_il_current + the dashboard health panel's live-IL
+              picture via src/bml_cycle51.py (Cycle 51 spent 4
+              credits: one standings + one injuries call).
   tank01      Tank01 MLB via RapidAPI — DEFERRED by the owner
               2026-11-02 (RapidAPI signup dropped for now;
               supplement only, nothing in the demo depends on it).

@@ -424,3 +424,29 @@ block with figures 1-25 intact.
 UNC-1 (availability-cap backtest, out-of-sample 2022-24 FA classes)
 — programme increment 5 of 6. The Story/Boardroom roster question
 (greedy vs optimizer) stays queued for the owner.
+
+## Cycle 51 — API-1: Statyx + FastballAPI wired in and serving (PR pending)
+
+The two keyed feeds stop being decoration: they now feed a curated
+table and a dashboard panel. Collaborating lanes: pulls still route
+through Toby's vault connectors (keys never in git); the committed
+snapshots under `data/raw/{statyx,fastballapi}/` are the offline
+source of truth, rebuilt by `src/bml_cycle51.py`.
+
+1. **Snapshots (2026-11-02, all HTTP 200)** — Statyx injuries first
+   page (50) + standings (50 rows, no team names, raw only);
+   FastballAPI injuries (190) + standings (30 teams). FastballAPI
+   credits spent: 4 of 500/mo; Statyx free. Manifest entries in
+   `data/raw/manifest.jsonl`.
+2. **`fact_il_current`** — 196-row union of the two injury feeds,
+   registered in `src/curate.py`; all 17 prior tables reproduce
+   byte-identical. Artifact: `data/il_current_live.json`.
+3. **Consumer** — health figure gains a "Current IL picture — LIVE
+   feeds" sub-panel: **13 of 251 FAs currently listed injured**,
+   with status/injury/return. One live-only finding: Garrett
+   Whitlock (static stints all closed; live: Out, leg fracture,
+   return 2027-02-01), flagged in the artifact. Standings
+   cross-check re-proven: FastballAPI vs kpi_2026, 30/30 wins+runs.
+4. **Footer + gate** — both feeds now read SERVING in the sources
+   footer; `src/verify_data.py` gained API-1 checks (artifact
+   consistency + live panel present). Figure count stays 25.

@@ -1,0 +1,4 @@
+{"source": "statyx", "dataset": "injuries_2026-11-02", "fetched_at": "2026-11-02T21:51:28+00:00", "sha256": "91345109e9c1483a", "bytes": 39610, "rows": 50, "status": "ok"}
+{"source": "statyx", "dataset": "standings_2026-11-02", "fetched_at": "2026-11-02T21:51:28+00:00", "sha256": "4101bb169bd4b9f2", "bytes": 24540, "rows": 50, "status": "ok"}
+{"source": "fastballapi", "dataset": "injuries_2026-11-02", "fetched_at": "2026-11-02T21:51:28+00:00", "sha256": "a4eead617add470b", "bytes": 42576, "rows": 190, "status": "ok"}
+{"source": "fastballapi", "dataset": "standings_2026-11-02", "fetched_at": "2026-11-02T21:51:28+00:00", "sha256": "379f8733ff4987c3", "bytes": 12007, "rows": 30, "status": "ok"}

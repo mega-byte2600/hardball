@@ -177,6 +177,19 @@
     "every row labeled cots"
    ]
   },
+  "fact_il_current": {
+   "rows": 196,
+   "grain": "one row per currently listed injured player",
+   "inputs": [
+    "il_current_live.json (Statyx + FastballAPI snapshots, data/raw/{statyx,fastballapi}/*_2026-11-02.json, via src/bml_cycle51.py)"
+   ],
+   "checks": [
+    "rows >= 150",
+    "player_name unique",
+    "every row in at least one feed",
+    "pulled_at present"
+   ]
+  },
   "fact_cap_scenario": {
    "rows": 30,
    "grain": "team (2027 scenario)",

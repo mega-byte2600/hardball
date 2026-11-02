@@ -1574,3 +1574,43 @@ count unchanged at 23. No NPB→MLB translation factor claimed anywhere.
   spellcheck green. No browser visual QA (standing rule).
 - Next: UNC-1 (availability-cap out-of-sample backtest) per the
   approved programme order.
+
+## Cycle 51 — API-1: STATYX + FASTBALLAPI WIRED INTO THE PLATFORM (toby, 2026-11-02)
+
+- WHY: Cycles 44–45 left the two keyed feeds connected + verified
+  but serving nothing — no figure or model read from them. The
+  owner called it out ("does my hardball project get service from
+  new APIs statyx and fastball?"). This cycle makes them serve.
+- PULLED (2026-11-02, one call per endpoint, all HTTP 200, via the
+  vault connector helpers — keys never in repo): Statyx injuries
+  first page 50 records + standings 50 rows (no team names; raw
+  only); FastballAPI get_injuries 190 records + get_standings
+  30 teams. FastballAPI credits spent: 4 of 500/mo. Statyx free.
+- WHAT SHIPPED: `src/bml_cycle51.py` (pull mode via helpers, fail
+  closed on any non-200; offline build from committed snapshots
+  with sha256 assertion) → `data/il_current_live.json`; dated raw
+  snapshot envelopes in `data/raw/{statyx,fastballapi}/` +
+  `data/raw/manifest.jsonl` entries; new curated table
+  `fact_il_current` (196 rows) registered in `src/curate.py` with
+  a declared contract; health-figure live-IL sub-panel in
+  `src/dashboard_p6.py` (figure count stays 25); footer lines for
+  both feeds now read SERVING and name the layer; gate checks for
+  the artifact + panel in `src/verify_data.py`;
+  `src/keyed_sources.py` statuses updated to SERVING.
+- RECONCILIATION (in the artifact): union 196 players (44 in both
+  feeds); FA overlay 13 of 251 FAs currently listed injured; 12/13
+  agree with the static layer (on IL at 2026 season end); 1 differs
+  — Garrett Whitlock (static stints all closed; live feed: Out,
+  leg fracture, return 2027-02-01). Standings cross-check:
+  FastballAPI vs kpi_2026, 30/30 wins + runs agree, zero diffs.
+- Platform + gate on the final tree: ingest 25 datasets,
+  0 failures; curate 18 tables, contracts pass, prior 17 parquets
+  byte-identical to committed; warehouse rebuilt (18 tables);
+  parity r = 0.889 / 201 matched; dashboard rebuilt with lake at
+  25 figures; gate ALL PASS (offline AND --live, standings 30/30,
+  incl. the new API-1 checks); spellcheck green. GitHub Actions
+  ignored per the owner's blackout directive (until Dec 1). No
+  browser visual QA (standing rule).
+- Next: UNC-1 (availability-cap out-of-sample backtest) per the
+  approved programme order; the roster SWAP runs after API-1 per
+  the owner's "need all 1-3" approval.

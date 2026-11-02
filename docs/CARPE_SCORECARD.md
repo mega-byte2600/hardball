@@ -499,3 +499,50 @@ sensitivity strip + the mixed-build result under its facts box
 (figure count stays 25); Figure 16, Story and Boardroom are
 unchanged, and replacing greedy rosters with optimizer rosters
 remains an owner decision.
+
+## Cycle 51 addendum — API-1: Statyx + FastballAPI wired in and SERVING (2026-11-02)
+
+Cycles 44–45 connected and cross-checked the two keyed feeds but no
+figure or model read from them — the owner called that out, and this
+cycle closes it. One pull per endpoint on 2026-11-02 (all HTTP 200):
+Statyx injuries (first page, 50 recent-move records) and standings
+(50 rows, no team names — snapshot kept raw only); FastballAPI
+get_injuries (190 records) and get_standings 2026 (30 teams).
+FastballAPI credits spent: **4 of 500** free monthly credits
+(2 calls × 2). Statyx: free.
+
+**Snapshots.** Dated raw envelopes under `data/raw/statyx/` and
+`data/raw/fastballapi/` (payload sha256 in each envelope), with
+entries in `data/raw/manifest.jsonl` (sha256/rows/status, platform
+style). `src/bml_cycle51.py --pull` reproduces the landing via the
+vault connector helpers; the default offline build consumes the
+committed snapshots and asserts their sha256 before use.
+
+**Curation.** New curated table **fact_il_current** (196 rows,
+grain: one row per currently listed injured player) — the union of
+the two feeds by normalized name: 190 FastballAPI + 50 Statyx page
+records, **44 in both feeds**, 6 Statyx-only (recent moves the full
+list has not picked up, e.g. Adolis García), 146 FastballAPI-only.
+All 17 prior curated tables reproduce byte-identical.
+
+**Reconciliation.** (a) FA pool: **13 of the 251** players in the
+2027 FA class are currently listed injured (García, Quantrill,
+Whitlock, Lux, Harvey, Berríos, Giolito, Severino, Laureano, Wick,
+Mountcastle, Thompson, Austin). (b) Against the static layer
+(fact_il_stints, The Injury Report): 12 of the 13 were on the IL at
+the 2026 season end (static file agrees). **1 differs — Garrett
+Whitlock**: his two 2026 stints both closed (activated Jun 9 and
+Aug 29), but FastballAPI lists him Out — leg fracture, expected
+return 2027-02-01. That is a post-season development the static
+file cannot know; it is the live layer's first unique contribution
+and it is flagged `differs_from_static` in the artifact, not
+smoothed over. (c) Standings: FastballAPI 2026 vs committed
+kpi_2026 — **30/30 teams agree on wins and runs scored**, zero
+diffs (the Cycle 45 result, re-proven on the committed snapshot).
+
+**Serving.** The consumer is the dashboard health figure: a new
+"Current IL picture — LIVE feeds" sub-panel (table of the 13 FA-pool
+players with status/injury/return, rendered from
+`data/il_current_live.json`) under the existing IL-based PA-cap
+chart. Figure count stays 25. The sources footer now reads SERVING
+for both feeds and names the layer they feed.

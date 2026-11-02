@@ -57,11 +57,16 @@ atomically, manifests are append-only history).
   env-key-gated, fail-closed paths for Tank01, Statyx, FastballAPI,
   and Sportradar. Without a key they return a labeled "data
   unavailable" and make no network call. **Statyx and FastballAPI
-  are ACTIVE since 2026-11-02** (see the connection record below);
-  Tank01 is deferred (owner dropped the RapidAPI signup for now;
-  supplement only, nothing depends on it); Sportradar's trial is
-  deliberately NOT started before mid-November (30-day window must
-  cover Dec 1).
+  are ACTIVE since 2026-11-02** (see the connection record below)
+  and **SERVING since Cycle 51 (2026-11-02)**: dated snapshots of
+  both feeds land in `data/raw/{statyx,fastballapi}/` via
+  `src/bml_cycle51.py --pull` and curate into `fact_il_current`
+  (current-IL union, 196 players), consumed by the dashboard
+  health panel's live-IL picture and recorded in
+  `data/il_current_live.json`. Tank01 is deferred (owner dropped
+  the RapidAPI signup for now; supplement only, nothing depends
+  on it); Sportradar's trial is deliberately NOT started before
+  mid-November (30-day window must cover Dec 1).
 
 ## API connections — Statyx + FastballAPI LIVE (2026-11-02)
 
