@@ -1349,7 +1349,8 @@ def build():
     chapters = [
         (3, "Skills persist. Luck does not.",
          "Across four real season pairs, contact rate persists at r of about 0.8 to 0.9, "
-         "while on-base percentage, the output owners are tempted to buy, carries at only about 0.3.",
+         "while on-base percentage persists more weakly: r of about 0.55 to 0.59 in the first "
+         "three pairs and 0.30 in the latest pair (2025 to 2026), pooled r of about 0.53.",
          "Pay for the skill that produces on-base percentage, not for last year's on-base percentage.",
          "Source: MLB Stats API player data, year over year."),
         (4, "Run differential describes a season. It does not forecast one.",

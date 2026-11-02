@@ -876,3 +876,77 @@ streaming terms, Moses et al. observability).
 - Next: item (h) continues — docs polish (e.g. the checklist's
   persistence-figure recompute, r vs R^2 labeling) or the next drift
   re-run; no new claims.
+
+## Cycle 39 — PERSISTENCE RECOMPUTE: THE "OBP r ≈ 0.3" CLAIM CORRECTED (toby, 2026-11-02 ~04:40 PT, overnight sprint)
+
+- Backlog item (h): the MIT/Moneyball study's flagged persistence item —
+  recompute the demo's headline persistence figures in HARDBALL's own
+  sample and fix the r-vs-R²-adjacent labeling before Dec 1.
+- FINDING 1 — the copy generalized one pair. The demo's prose (Story
+  chapter 3, talk-track THE EDGE, exec summary) said OBP "carries at
+  only about 0.3" across four season pairs. The committed per-pair data
+  never said that: OBP r = 0.576 / 0.595 / 0.582 / 0.298. Only the latest
+  pair (2025→2026, n=80) is 0.30; the first three pairs are 0.55-0.60.
+  The 0.298 is a genuine Pearson r (recomputed twice, see below), NOT a
+  mislabeled R² — but note the first three pairs' OBP R² values are
+  0.33 / 0.35 / 0.30, which is plausibly where a stray "0.3" came from.
+  Pooled OBP r on the restored lake is 0.534 (R² 0.285, n=457 pairs) —
+  weaker than contact (0.843), not zero. The thesis direction stands;
+  the number was overstated.
+- FINDING 2 — the committed persistence artifacts were NOT reproducible
+  from the lake as found. Re-running src/bml_cycle21_multiyear.py +
+  src/bml_cycle23_ci.py on the lake in the working tree (543 hitting
+  rows, 2023-2026 only) reproduced ONLY the 2025→2026 pair exactly and
+  dropped the 2022→2023 pair entirely. Root cause: the lake is gitignored
+  and src/ingest.py's init_schema DROPs stat_lines and reloads only
+  qualified rows; a later reload wiped the Cycle 21 backfill (2022-2024
+  leaders-based rows, 1,026 player-seasons) and its raw cache, which no
+  longer exists in this environment. The platform (ingest_platform.py)
+  does NOT touch the lake — the hazard is the legacy loader, which
+  remains runnable. Follow-up for a later cycle: poka-yoke ingest.py
+  (refuse to DROP a lake holding seasons it will not reload) or retire
+  it; until then, never run src/ingest.py against a backfilled lake.
+- RESTORE (this cycle, live MLB Stats API, committed script only):
+  re-ran src/backfill_players.py — stored counts reproduced Cycle 21
+  exactly (2022=262, 2023=243, 2024=241). The restored lake initially had
+  223 duplicate (season, player) rows where the legacy qualified reload
+  overlapped the backfill; all 223 pairs had byte-identical stat_json,
+  so deleting the legacy copy was value-neutral. Restored lake: 1,066
+  hitting rows (Cycle 21's 1,026 + 40 legacy-only qualified rows for
+  2023/2024), 466 players. Re-running both persistence scripts on it:
+  2025→2026 identical to committed on every figure; other pairs moved
+  by ≤0.05 (extra 40 rows + larger n: pairs n=133/141/103/80 vs
+  committed 125/124/93/80); pooled contact r = 0.843 (95% CI 0.810-0.872,
+  457 pairs) vs committed 0.83 (0.792-0.862, 422 pairs). Verdict still
+  STABLE (contact r ≥ 0.6 in every pair). Pooled on the restored lake:
+  contact 0.843, BB% 0.721, ISO 0.613, OBP 0.534.
+- WHAT THIS PR CHANGES (owner call — claim numbers move, so left open,
+  NOT merged): data/player_persistence_multiyear.json +
+  data/persistence_ci.json refreshed to the restored-lake recomputation
+  (same scripts, same MIN_PA=200 method, real MLB API data); Story
+  chapter 3, talk-track THE EDGE + back-pocket numbers, and exec summary
+  rewritten to the new figures (OBP pooled 0.53, per-pair 0.58/0.59/0.55/
+  0.30; pooled contact 0.84, CI 0.81-0.87; pooled walk 0.72; 466 players;
+  error cut 42-57%). The one-pager needs no change: it quotes only the
+  latest pair (contact 0.899, BB 0.655, OBP 0.298, n=80), which is
+  unchanged, and its n==80 assertion still passes. Dashboard Figure 3
+  itself was always honest (it plots the per-pair bars); only the prose
+  headlines generalized the last pair.
+- Platform run this cycle, on main f8ab2726 (unmoved since Cycle 38):
+  ingest 21 datasets, 0 failures; Savant volumes in band (expected
+  651-673, bat-tracking 595-619, sprint 489-506); NPB BIS leaderboards
+  340 rows; curate 14 tables, all contracts pass; warehouse rebuilt;
+  parity r = 0.889, 201 matched; curated byte-identical to main (no
+  data PR from the platform step); gate ALL PASS on the rebuilt
+  dashboard (23 figures, Story 6 chapters, Boardroom ≤15 slides,
+  Explorer all 23, 8 percentile cards, Figure 23 Explorer-only).
+- Spotrac probe (once per run): still 403. FanGraphs probe (once per
+  run): still 403 Cloudflare. Salaries remain 24/30, forced-seller 6/7
+  (CHC uncovered); the reconciled-FanGraphs lane stays closed under
+  the Cycle 32 guard — it reopens only on a 200 probe.
+- Verified by DOM/data checks only (no browser visual QA, per standing
+  rule): gate ALL PASS after the copy + data refresh; dashboard rebuild
+  holds figures 1-23 with no duplicates.
+- Next: owner decision on this PR (merge = new persistence numbers go
+  live); otherwise item (h) continues — next drift re-run or the
+  ingest.py poka-yoke; no new claims.

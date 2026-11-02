@@ -45,8 +45,9 @@ Point at the bars. "Here's the single most important chart in the room.
 We tracked real players year over year. What a player *does* that's a *skill*
 — making contact, drawing walks — **carries. Across four real season pairs,
 contact rate persists at r ≈ 0.8-0.9.** But the *output* owners are
-tempted to buy — on-base percentage — is mostly luck, and it does **not**
-carry (r ≈ 0.3)."
+tempted to buy — on-base percentage — persists more weakly: r ≈ 0.55-0.59
+in the first three pairs, 0.30 in the latest pair (2025→2026), pooled
+r ≈ 0.53 across 457 player-year pairs. It carries less than the skills do."
 
 **The line:** "You don't pay for the OBP. You pay for the skill that produces
 it. That's a measurable edge."
@@ -135,9 +136,9 @@ roundings — Sato .306 not .308, Itoh 34 walks not 32); posting facts via
 AP / MLB Trade Rumors / Sportsnet.
 
 ### Back-pocket numbers (for questions)
-- Pooled contact persistence r = 0.84 (95% CI 0.78-0.88); dashboard panel:
-  4 season pairs, 457 players.
-- Contact next-year prediction error cut 38-57% per season pair.
+- Pooled contact persistence r = 0.84 (95% CI 0.81-0.87); dashboard panel:
+  4 season pairs, 466 players, 457 player-year pairs.
+- Contact next-year prediction error cut 42-57% per season pair.
 - MIL/TB/CLE: ~95 wins at ~1/3-1/4 big-market payroll.
 - Cap cuts: NYM $101.4M, LAD $94.0M, NYY $63.0M over. Floor adds: CLE
   +$96.7M, TB +$75.6M (7 over cap / 15 under floor).
