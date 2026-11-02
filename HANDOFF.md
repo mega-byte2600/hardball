@@ -194,3 +194,29 @@ ALL PASS. Keyed sources (Tank01 / Statyx / FastballAPI / Sportradar)
 are prepped as fail-closed stubs in `src/keyed_sources.py` — no
 signups, no keys; Sportradar trial must not start before mid-Nov.
 Detail: docs/BML_LOG.md Cycle 44, docs/CARPE_SCORECARD.md Cycle 44.
+
+---
+
+## CYCLE 46 — HS-1: HAKES–SAUER PRICING SCREEN (2026-11-02, owner-approved MIT-gap programme, increment 1 of 6)
+
+Workpaper only — no dashboard, talk-track, or exec-summary change.
+`src/bml_cycle46.py` builds `data/hakes_sauer_dataset.json` (142
+player rows, basis labels + exclusion cascades in the metadata) and
+`data/hakes_sauer_results.json` from committed data only. Two salary
+samples, bases never mixed: S = Spotrac-basis file (n = 60 after
+excluding 553 pre-arb flat-$1M placeholders, 219 non-Bypassed
+arbitration projections, 68 pitchers, 1 two-way, 26 incomplete —
+exactly at the pre-registered n≈60 power floor, marginal); C = Cot's
+LRP-2027 aggregated to player level (n = 82; CBT-AAV sensitivity
+n = 76). Model: ln(salary) on Marcel 2027 OBP/SLG/K%/BB% with age,
+Steamer WAR, Steamer PA controls (spec B drops WAR). Result: NO
+verdict — no skill coefficient is significant in either sample, and
+the descriptive OBP/SLG coefficient ratio flips sign across bases
+(−1.43 vs +1.48); no in-repo run-value benchmark exists, so the
+formal proportionality test is HS-2's job. The descriptive quartile
+view points the thesis's way in both samples (top-quartile contact
+median $/WAR ≈ half the bottom quartile's: $8.03M vs $14.98M in S,
+$6.19M vs $11.64M in C) and is labeled a contrast, not a price
+effect. Full method, limits, and HS-2 scope: docs/CARPE_SCORECARD.md
+Cycle 46 addendum + docs/BML_LOG.md Cycle 46. Gate ALL PASS; parity
+r = 0.889 / 201.
