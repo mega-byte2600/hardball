@@ -20,6 +20,15 @@ Sources (all keyless):
                2024-2026, keyless) — the Fig. 23 raw zone. The verified
                curated trio lives in data/posted_class_2026.json; this
                task only lands the raw leaderboard CSV, never rewrites it
+  chadwick     Chadwick Bureau Register people shards (keyless CSV,
+               ODC-BY) — the player ID crosswalk (Cycle 44)
+  injury_report The Injury Report IL stints CSV 2019-2026 (keyless,
+               built from MLB IL transactions) — availability history
+               cross-checks (Cycle 44)
+  bref_war     Baseball-Reference WAR daily downloads (keyless txt);
+               the salary column is a labeled cross-check ONLY — it
+               failed the Cycle 44 credibility bar for a dataset, so it
+               lands raw and is never curated into a salary table
   spotrac      serial, cache-first (local mirror cache), stops at the
                first block; status recorded either way
 
@@ -194,6 +203,38 @@ def t_npb_bis():
                  out.to_csv(index=False).encode(), len(out), ext="csv")]
 
 
+def t_chadwick():
+    """Chadwick Bureau Register: 16 sharded people CSVs on GitHub,
+    keyless, ODC-BY licence. Landed concatenated; curation keeps the
+    rows carrying an MLBAM key."""
+    frames = []
+    shards = [str(i) for i in range(10)] + list("abcdef")
+    for s in shards:
+        r = get("https://raw.githubusercontent.com/chadwickbureau/"
+                f"register/master/data/people-{s}.csv")
+        frames.append(pd.read_csv(io.StringIO(r.text), low_memory=False))
+    out = pd.concat(frames, ignore_index=True)
+    return [land("chadwick", "people", out.to_csv(index=False).encode(),
+                 len(out), ext="csv")]
+
+
+def t_injury_report():
+    """The Injury Report (Seehafer): every MLB IL stint 2019-2026,
+    built from MLB's own IL transactions. Keyless CSV download."""
+    url = ("https://lucasseehafer.github.io/the-injury-report/downloads/"
+           "mlb_injured_list_stints_2019-2026.csv")
+    r = get(url)
+    rows = len(pd.read_csv(io.StringIO(r.text)))
+    return [land("injury_report", "il_stints_2019_2026", r.content,
+                 rows, ext="csv")]
+
+
+def t_bref_war(kind):
+    r = get(f"https://www.baseball-reference.com/data/war_daily_{kind}.txt")
+    rows = len(pd.read_csv(io.StringIO(r.text), low_memory=False))
+    return [land("bref_war", f"war_daily_{kind}", r.content, rows, ext="txt")]
+
+
 def run_spotrac():
     cache = Path.home() / "workspace/github/hardball/data/raw/spotrac"
     if cache.exists():
@@ -230,6 +271,13 @@ def main():
                   ("fg steamer pit", lambda: t_fangraphs("pit"))]
     if not only or "npb_bis" in only:
         tasks += [("npb bis leaderboards", t_npb_bis)]
+    if not only or "chadwick" in only:
+        tasks += [("chadwick register", t_chadwick)]
+    if not only or "injury_report" in only:
+        tasks += [("injury report il stints", t_injury_report)]
+    if not only or "bref_war" in only:
+        tasks += [("bref war bat", lambda: t_bref_war("bat")),
+                  ("bref war pitch", lambda: t_bref_war("pitch"))]
 
     entries, failures = [], []
     with ThreadPoolExecutor(max_workers=args.workers) as ex:

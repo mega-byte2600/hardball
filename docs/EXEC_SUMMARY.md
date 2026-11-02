@@ -15,10 +15,11 @@ over-index on exactly these inputs and win ~95 games at roughly a third to a
 quarter of the big-market payroll.
 
 ## What the data provably supports
-- **Skills persist; outputs do not.** Contact rate persists year-over-year at
-  **pooled r = 0.84 (95% CI 0.78-0.88)**, walk discipline r = 0.66; OBP (the
-  output) is noisy at r = 0.30. Buying a player's contact/walk skill is buying
-  something that carries.
+- **Skills persist more than outputs.** Contact rate persists year-over-year at
+  **pooled r = 0.84 (95% CI 0.81-0.87)**, walk discipline at pooled r = 0.72;
+  OBP (the output) persists more weakly at pooled r = 0.53, and only 0.30 in
+  the latest pair. Buying a player's contact/walk skill is buying something
+  that carries further.
 - **Run differential and wins move together**, but only as a same-year
   diagnostic (R² ≈ 0.55), not a forward forecast. We do not overclaim.
 - **Cap reality is concrete.** On 2026 payrolls, 7 teams exceed the proposed

@@ -141,6 +141,42 @@
     "rows >= 50"
    ]
   },
+  "dim_player_xwalk": {
+   "rows": 137320,
+   "grain": "one row per person (MLBAM key)",
+   "inputs": [
+    "raw/chadwick/people.csv (Chadwick Bureau Register, ODC-BY)"
+   ],
+   "checks": [
+    "rows > 50000",
+    "player_id unique",
+    "player_id not null"
+   ]
+  },
+  "fact_il_stints": {
+   "rows": 6632,
+   "grain": "one IL stint (player x placement)",
+   "inputs": [
+    "raw/injury_report/il_stints_2019_2026.csv (The Injury Report, from MLB IL transactions)"
+   ],
+   "checks": [
+    "rows >= 6000",
+    "seasons 2019-2026",
+    "player_id present"
+   ]
+  },
+  "fact_salaries_cots": {
+   "rows": 237,
+   "grain": "player x team (Cot's LRP 2027)",
+   "inputs": [
+    "salaries_cots_2027.json"
+   ],
+   "checks": [
+    "rows == metadata",
+    "30 teams",
+    "every row labeled cots"
+   ]
+  },
   "fact_cap_scenario": {
    "rows": 30,
    "grain": "team (2027 scenario)",

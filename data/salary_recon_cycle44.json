@@ -1,0 +1,46 @@
+{
+ "generated": "Cycle 44 (2026-11-02)",
+ "bref_rows_2026_with_salary": 495,
+ "bref_conflicting_duplicates_dropped": 0,
+ "vs_spotrac_basis_file": {
+  "spotrac_rows_24_teams": 927,
+  "bref_rows_24_teams": 318,
+  "matched_name_team": 195,
+  "coverage_of_spotrac_rows_pct": 21.0,
+  "agree_within_50k": 56,
+  "agree_pct_of_matched": 28.7,
+  "note": "Expected to disagree on escalators: the Spotrac-basis file is on a 2027 basis (Cycle 41 discovery); BRef is the 2026 season's salary."
+ },
+ "vs_cots": {
+  "lrp_2026_same_season_gap6": {
+   "bref_rows": 116,
+   "cots_rows_with_figure": 397,
+   "matched_name_team": 114,
+   "agree_within_50k": 81,
+   "agree_pct_of_matched": 71.1
+  },
+  "lrp_2026_same_season_all30": {
+   "bref_rows": 495,
+   "cots_rows_with_figure": 1996,
+   "matched_name_team": 419,
+   "agree_within_50k": 311,
+   "agree_pct_of_matched": 74.2
+  },
+  "lrp_2027_spotrac_basis_gap6": {
+   "bref_rows": 116,
+   "cots_rows_with_figure": 56,
+   "matched_name_team": 48,
+   "agree_within_50k": 8,
+   "agree_pct_of_matched": 16.7
+  },
+  "lrp_2027_spotrac_basis_all30": {
+   "bref_rows": 495,
+   "cots_rows_with_figure": 235,
+   "matched_name_team": 165,
+   "agree_within_50k": 45,
+   "agree_pct_of_matched": 27.3
+  }
+ },
+ "gap_pass_bar": ">=80% of matched gap-team pairs within $50k on Cot's LRP-2026 (same season), >=30 matched",
+ "bref_dataset_shipped": false
+}

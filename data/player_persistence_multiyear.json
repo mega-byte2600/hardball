@@ -8,31 +8,31 @@
   ],
   "per_pair": {
     "2022->2023": {
-      "n": 125,
-      "contact_r": 0.816,
-      "BB_r": 0.729,
+      "n": 133,
+      "contact_r": 0.822,
+      "BB_r": 0.735,
       "OBP_r": 0.576,
-      "contact_mae": 2.54,
-      "contact_err_redux_pct": 41.7,
-      "contact_r2": 0.665
+      "contact_mae": 2.55,
+      "contact_err_redux_pct": 42.4,
+      "contact_r2": 0.676
     },
     "2023->2024": {
-      "n": 124,
-      "contact_r": 0.827,
-      "BB_r": 0.753,
-      "OBP_r": 0.595,
-      "contact_mae": 2.44,
-      "contact_err_redux_pct": 46.3,
-      "contact_r2": 0.684
+      "n": 141,
+      "contact_r": 0.847,
+      "BB_r": 0.766,
+      "OBP_r": 0.591,
+      "contact_mae": 2.38,
+      "contact_err_redux_pct": 49.3,
+      "contact_r2": 0.718
     },
     "2024->2025": {
-      "n": 93,
-      "contact_r": 0.769,
-      "BB_r": 0.711,
-      "OBP_r": 0.582,
-      "contact_mae": 2.58,
-      "contact_err_redux_pct": 38.8,
-      "contact_r2": 0.592
+      "n": 103,
+      "contact_r": 0.816,
+      "BB_r": 0.736,
+      "OBP_r": 0.548,
+      "contact_mae": 2.53,
+      "contact_err_redux_pct": 44.5,
+      "contact_r2": 0.666
     },
     "2025->2026": {
       "n": 80,
@@ -44,8 +44,8 @@
       "contact_r2": 0.808
     }
   },
-  "total_player_seasons": 1026,
-  "n_players": 457,
-  "pooled_contact_r": 0.83,
+  "total_player_seasons": 1066,
+  "n_players": 466,
+  "pooled_contact_r": 0.843,
   "verdict": "STABLE: contact persists r>=0.6 in EVERY season pair tested"
 }

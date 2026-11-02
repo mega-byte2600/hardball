@@ -139,3 +139,23 @@ claims, no new thesis.
 - [ ] This job's deadline guard fires (today after 2026-12-01): no
       builds, one report that the window closed, then silence. Disable
       the `hardball-247-build` schedule at that point.
+
+---
+
+## CYCLE 44 — ACCURACY STACK (2026-11-02 ~08:20 PT, owner directive: "do what takes to make accurate, optimal and professional")
+
+Supersedes PR #21 (closed with comment): its persistence correction
+is re-applied onto main 93cb55ce — OBP pooled r ≈ 0.53 (not "≈0.3"),
+contact 0.84 (CI 0.81–0.87), walk 0.72, 466 players. Cot's adopted as
+a second, separately labeled salary dataset (237 rows, LRP-2027
+basis, `data/salaries_cots_2027.json`); the Spotrac-basis file and
+forced-seller math are untouched. BRef WAR salary cross-check
+reconciled and FAILED CLOSED (gap teams 71.1% within $50k vs the 80%
+bar; workpaper `data/salary_recon_cycle44.json`). Platform grows:
+Chadwick Register crosswalk (`dim_player_xwalk`, joins the registry
+379/379) and Injury Report IL history (`fact_il_stints`, 6,632
+stints 2019–2026) — 17 curated tables, parity r = 0.889/201, gate
+ALL PASS. Keyed sources (Tank01 / Statyx / FastballAPI / Sportradar)
+are prepped as fail-closed stubs in `src/keyed_sources.py` — no
+signups, no keys; Sportradar trial must not start before mid-Nov.
+Detail: docs/BML_LOG.md Cycle 44, docs/CARPE_SCORECARD.md Cycle 44.
