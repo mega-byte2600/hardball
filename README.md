@@ -12,7 +12,7 @@ year to year; OBP is BABIP-luck noise. Winning-cheap teams (MIL/TB/CLE)
 over-index on exactly these inputs and win ~95 games at ~1/3-1/4 big-market cost.
 
 ## What you get
-- **DASHBOARD** — 24 figures, self-contained offline HTML (works without
+- **DASHBOARD** — 25 figures, self-contained offline HTML (works without
   internet at the meeting). See **How to run**.
 - **Data** — 16-season team panel (2011-2026, 509 team-seasons) + player
   projections + injury/IL history. All from public APIs, cached locally.
@@ -31,7 +31,7 @@ over-index on exactly these inputs and win ~95 games at ~1/3-1/4 big-market cost
 
 ## Presenting in 5 minutes
 Open the built file (`open dashboard/hardball_demo.html`) — it is
-self-contained and works offline at the meeting. The same 24 figures and
+self-contained and works offline at the meeting. The same 25 figures and
 the same numbers are presented three ways; pick the mode for the moment,
 not a different deck.
 
@@ -51,7 +51,7 @@ not a different deck.
 - **Boardroom for the room.** Switch to Boardroom: 15 slides in
   talk-track order (`docs/TALKTRACK.md`), print-clean via the Print
   boardroom button. This is the version to leave behind on paper.
-- **Explorer for questions.** Switch to Explorer: all 24 figures,
+- **Explorer for questions.** Switch to Explorer: all 25 figures,
   grouped by task instead of by number — Cap Reality, Build a Roster,
   Shop the FA Class, The Posted Class, Check the Model — with Pick Your
   Team (Figure 2) on top. Any question from the room lands on a group,
@@ -117,12 +117,16 @@ PRs #1-#5, integrated via PR #6) converged with the main lane on
 - **Boardroom layer** (Cycle 26): animated 16-season payroll film,
   pick-your-team explorer (all 30 clubs), and budget-scenario rosters
   — floor $171.2M builds 42.0 WAR vs cap $245.3M at 52.3 WAR.
-- Dashboard is now **24 figures in three modes — Story (6 chapters, the default landing),
-  Boardroom (15 slides), Explorer (all 24 figures grouped by task)**; P7 UAT approved
+- Dashboard is now **25 figures in three modes — Story (6 chapters, the default landing),
+  Boardroom (15 slides), Explorer (all 25 figures grouped by task)**; P7 UAT approved
   at MVP level by the owner 2026-10-31. Figure 23 (Cycle 34, Explorer-only)
   is the posted NPB class — Sato, Taira, Itoh — from NPB official BIS data.
   Figure 24 (Cycle 48, Explorer-only) is the Hakes–Sauer verdict exhibit:
   our own pricing test of the contact/OBP claim, verdict inconclusive —
   the demo claims persistence and cap-efficiency, not proven undervaluation.
+  Figure 25 (Cycle 49, Explorer-only) is the optimizer's audit: an exact
+  MILP re-solve of the Figure 16 roster problem finds +6.9 / +7.1 / +2.5
+  WAR over the greedy builds at the same budgets, optima proven — a
+  method check; the Figure 16 rosters themselves are unchanged.
 Cycle numbering collided between lanes (two "Cycle 20-24" series) —
 see the integration note in docs/BML_LOG.md.

@@ -1472,3 +1472,55 @@ count unchanged at 23. No NPB→MLB translation factor claimed anywhere.
   incl. new Figure 24 + HS-2 artifact checks); spellcheck green.
   No browser visual QA (standing rule).
 - Next: OPT-1 (roster optimizer) per the approved programme order.
+
+## Cycle 49 — OPT-1: ROSTER OPTIMIZER — EXACT MILP VS CYCLE 26 GREEDY (toby, 2026-11-02)
+
+- Owner-approved MIT-gap programme (2026-11-02 12:57 PT), increment 3
+  of 6: OPT-1. Base: main 5a80d614 (verified live before building;
+  fresh tarball tree, kpi.py verified clean from the tarball).
+  GitHub Actions ignored per the owner's 2026-11-02 directive (minutes
+  exhausted until Dec 1) — local gate + platform + parity carry the
+  verification, as in Cycles 44-48.
+- WHAT SHIPPED: `src/bml_cycle49.py` (greedy reproduction + MILP +
+  DH sensitivity, prints its own summary) writing
+  `data/optimizer_comparison_2027.json` (full greedy, optimizer, and
+  DH-restricted rosters for all three budgets); Figure 25 (Explorer,
+  Build a Roster group) via `panel_optimizer()` + the facts box
+  (`_optimizer_html()`, numbers rendered from the artifact); figure
+  count 24 -> 25 across dashboard source (docstring, index, button,
+  Explorer), gate expectations (+ new Figure 25 and OPT-1 artifact
+  checks), README, TALKTRACK (+ back-pocket Q&A), EXEC_SUMMARY, and
+  the ONEPAGER generator (regenerated: 25 figures). Spellcheck
+  WHITELIST += combinatorics, dh, milp, scipy (sanctioned mechanism).
+- GREEDY REPRODUCTION (asserted in code before optimizing): Cycle 26's
+  build_roster on the identical 199-player pool reproduces
+  wow_scenarios.json exactly — Floor 42.0 WAR / $170,955,000; Middle
+  45.7 / $207,293,333; Cap 52.3 / $244,620,833; identical 26 names at
+  every budget.
+- RESULTS (all three optima PROVEN, HiGHS gap 0): Floor 42.0 -> 48.9
+  WAR (+6.9, +16.4%; spend $171.1M; overlap 16/26). Middle 45.7 ->
+  52.8 (+7.1, +15.5%; $207.8M; 17/26). Cap 52.3 -> 54.8 (+2.5, +4.8%;
+  $245.2M; 21/26). The optimizer's floor roster (48.9) beats the
+  greedy's middle roster (45.7) outright.
+- DECOMPOSITION: DH-restricted sensitivity (DH open only to DH-mapped
+  players = the greedy's effective search space) still finds +5.5 /
+  +5.2 / +0.4 — the floor/middle edge is mostly combinatorics; the cap
+  edge is mostly the DH rule (+2.1 of +2.5). The greedy carries
+  Dominic Smith (0.01 WAR) at DH at all three budgets because Cycle
+  26's any-bat fallback never triggers with two DH-mapped players in
+  the pool; the optimizer plays Brandon Lowe (2.32 WAR) there.
+- 15% PER-PLAYER RULE: binds nobody in the pool at prior-AAV anchors
+  (max $35.0M < $36.795M); all three greedy rosters satisfy it
+  (max AAV $22.0M / $32.0M / $32.0M); enforced as a hard constraint in
+  the optimizer and checked in the gate for both methods.
+- SCOPE KEPT: Figure 16 rosters and all Story/Boardroom numbers
+  unchanged. Optimizer rosters replacing greedy ones is OPT-2 / owner
+  territory.
+- Platform + gate on the final tree: ingest 25 datasets, 0 failures;
+  curate 17 tables, contracts pass, parquets byte-identical to
+  committed; warehouse rebuilt; parity r = 0.889 / 201 matched;
+  dashboard rebuilt with lake at 25 figures; gate ALL PASS (offline,
+  incl. new Figure 25 + OPT-1 artifact checks); spellcheck green.
+  No browser visual QA (standing rule).
+- Next: OPT-2 (optimizer sensitivity + mixed pre-arb+FA floor roster)
+  per the approved programme order.

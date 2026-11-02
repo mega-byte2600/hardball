@@ -1,7 +1,7 @@
 """HARDBALL demo dashboard (Plotly HTML) — INTEGRATED build. [P7; script name
 retains the P6 filename for README/repo stability]
 
-Twenty-four figures on real data: the main lane's 13 (payroll/KPI/
+Twenty-five figures on real data: the main lane's 13 (payroll/KPI/
 projections/durability/players/pitching/health/roster/runs/
 sensitivity + skill persistence, value metrics, cap scenario)
 plus the CarpeData/Boardroom 7 (Steamer benchmark, Savant trait
@@ -11,7 +11,9 @@ plus the Cycle 30 forced-seller panel
 plus the Cycle 8 title-bar AUC panel
 plus the Cycle 34 posted-class panel (NPB BIS)
 plus the Cycle 48 Hakes–Sauer verdict panel (Explorer-only,
-appended last so figures 1–23 keep their numbers),
+appended last so figures 1–23 keep their numbers)
+plus the Cycle 49 roster-optimizer panel (Explorer-only,
+appended last so figures 1–24 keep their numbers),
 presented in three modes (Story, Boardroom, Explorer) with stat cards. Builds from a
 clean clone OFFLINE from committed snapshots (audit G1).
 """
@@ -795,6 +797,92 @@ def _hs_verdict_html():
             "src/bml_cycle48.py, data/hakes_sauer_verdict.json.</p>")
 
 
+def panel_optimizer():
+    """Cycle 49 (OPT-1), Figure 25: the optimizer's audit of Cycle 26.
+
+    Cycle 26 built the three budget rosters greedily (WAR-per-dollar
+    quota fill + upgrades). OPT-1 re-solves the identical problem —
+    same 199-player FA pool, same Steamer WAR, same prior-AAV anchors,
+    same positional quotas — as a mixed-integer program
+    (scipy.optimize.milp / HiGHS) with the owners' proposed 15%
+    per-player maximum as an added hard constraint, and proves the
+    optima (gap 0 at all three budgets). Every number renders from
+    data/optimizer_comparison_2027.json so the panel can never drift
+    from the workpaper. The DH-restricted series is the sensitivity
+    that isolates Cycle 26's own stated DH rule ("DH can be any bat")
+    — a freedom its greedy never actually used."""
+    cj = os.path.join(DATA, "optimizer_comparison_2027.json")
+    if not os.path.exists(cj):
+        return None
+    d = json.load(open(cj))
+    budgets = d["budgets"]
+    cats = [b["label"].replace("The ", "") for b in budgets]
+
+    def series(key, name, color, delta=False):
+        ys = [b[key]["total_war"] for b in budgets]
+        tx = []
+        for b in budgets:
+            t = f"{b[key]['total_war']:.1f}"
+            if delta:
+                t += f" (+{b['delta_war']:.1f})"
+            tx.append(t)
+        return go.Bar(
+            name=name, x=cats, y=ys, marker_color=color, text=tx,
+            textposition="outside",
+            hovertemplate="%{x}<br>" + name + ": %{y:.1f} WAR<br>" +
+            "spend $" + "%{customdata:.2f}M<extra></extra>",
+            customdata=[b[key]["spend"] / 1e6 for b in budgets])
+
+    fig = go.Figure(data=[
+        series("greedy", "Greedy build (Cycle 26)", "#7a1f1f"),
+        series("optimizer", "Exact optimizer (proven optimal)", "#1d3557",
+               delta=True),
+        series("optimizer_dh_restricted",
+               "Optimizer, DH restricted to DH-mapped bats", "#b8860b"),
+    ])
+    f0 = budgets[0]
+    fig.update_layout(
+        title=(f"The optimizer's audit: exact math beats the greedy roster build — "
+               f"+{f0['delta_war']:.1f} WAR at the floor, "
+               f"+{budgets[1]['delta_war']:.1f} in the middle, "
+               f"+{budgets[2]['delta_war']:.1f} at the cap, all three optima proven; "
+               f"same pool, prices and quotas as Figure 16 — "
+               f"data/optimizer_comparison_2027.json (Cycle 49)."),
+        barmode="group", template="plotly_white", height=560,
+        yaxis_title="Total Steamer WAR (26-man roster)")
+    return fig
+
+
+def _optimizer_html():
+    """Cycle 49: the OPT-1 facts box under the Build a Roster group
+    (Explorer only). Text renders from data/optimizer_comparison_2027.json."""
+    import html as _html
+    d = json.load(open(os.path.join(DATA, "optimizer_comparison_2027.json")))
+    rows = []
+    for b in d["budgets"]:
+        o, g = b["optimizer"], b["greedy"]
+        rows.append(
+            f"<b>{_html.escape(b['label'])}:</b> greedy {g['total_war']:.1f} WAR "
+            f"(${g['spend']/1e6:.1f}M) → optimizer {o['total_war']:.1f} WAR "
+            f"(${o['spend']/1e6:.1f}M), +{b['delta_war']:.1f} WAR with "
+            f"{b['overlap']['n_shared']} of 26 names shared. At DH the greedy "
+            f"carries {g['dh_slot']['name']} ({g['dh_slot']['war']:.2f} WAR); "
+            f"the optimizer plays {o['dh_slot']['name']} ({o['dh_slot']['war']:.2f} WAR).")
+    pm = d["metadata"]["per_player_max"]
+    return ('<div class="note"><b>THE OPTIMIZER\'S AUDIT (Cycle 49).</b> ' +
+            " ".join(rows) +
+            f" All three optima are proven (solver gap 0). The 15% per-player "
+            f"rule (${pm['value']/1e6:.1f}M) binds nobody in this pool — the "
+            f"dearest free agent anchors at $35.0M — and all three greedy "
+            f"rosters satisfy it. The DH-restricted sensitivity (gold bars) "
+            f"shows the edge is mostly combinatorics, not the DH rule: "
+            f"restricted to the greedy's own effective search space the "
+            f"optimizer still finds "
+            f"+{d['budgets'][0]['delta_war_dh_restricted']:.1f} WAR at the floor. "
+            "Figure 16's rosters are unchanged: whether the optimizer "
+            "rosters replace them is a later, owner-visible call.</div>")
+
+
 def panel_savant():
     """CarpeData: Savant trait stability vs incremental value (Cycle 20)."""
     tj = os.path.join(DATA, "savant_test.json")
@@ -1429,6 +1517,7 @@ def build():
     fig_shop = panel_shopping()
     fig_posted = panel_posted()
     fig_hs = panel_hs_verdict()
+    fig_opt = panel_optimizer()
     fig_scen = panel_scenarios()
 
     SECTIONS = [
@@ -1455,7 +1544,7 @@ def build():
         ("VII", "The Future", "The pipelines feeding the cheap winners, "
          "the free-agent list to shop from — and the posted class "
          "resolving during the demo window.",
-         [fig_pipe, fig_shop, fig_posted, fig_hs]),
+         [fig_pipe, fig_shop, fig_posted, fig_hs, fig_opt]),
     ]
     flat = [f for _, _, _, figs in SECTIONS for f in figs if f is not None]
 
@@ -1745,14 +1834,14 @@ def build():
                       '<p class="srcline">Source: see the figure footer and the data sources box at '
                       "the foot of this page.</p></section>")
 
-    # --- EXPLORER mode: all 24 figures, grouped by task ---
+    # --- EXPLORER mode: all 25 figures, grouped by task ---
     groups = [
         ("Cap Reality", "What the cap and floor do to every payroll, and what must be shed.",
          [1, 6, 9, 10, 11],
          "Source: MLB Stats API team data and Spotrac payroll, plus the proposed 2027 cap."),
-        ("Build a Roster", "Signatures, durability, projections, health, the roster, and what moves wins.",
-         [7, 8, 12, 13, 14, 15, 16, 17],
-         "Source: Marcel projections, health caps, and the 2027 roster build from committed files."),
+        ("Build a Roster", "Signatures, durability, projections, health, the roster, and what moves wins — audited by an exact optimizer.",
+         [7, 8, 12, 13, 14, 15, 16, 17, 25],
+         "Source: Marcel projections, health caps, and the 2027 roster build from committed files; optimizer audit: data/optimizer_comparison_2027.json (Cycle 49, scipy/HiGHS MILP on the identical pool, prices and quotas)."),
         ("Shop the FA Class", "The farm pipeline behind the cheap winners, the shopping list, and the best values.",
          [21, 22],
          "Source: Spotrac free-agent class and FanGraphs Steamer WAR; prices are prior-contract averages."),
@@ -1771,6 +1860,13 @@ def build():
         explorer += (f'<div class="task"><h3>{name}</h3><p>{desc}</p></div>' +
                      "".join(_panel(n, "explorer") for n in nums) +
                      f'<p class="srcline">{src}</p>')
+        if name == "Build a Roster":
+            explorer += ('<div class="task"><h3>The optimizer\'s audit of the roster build</h3>'
+                         "<p>Figure 25 re-solves Figure 16's exact problem with a "
+                         "mixed-integer optimizer and proves the optima — a method "
+                         "check on the greedy build, not a new roster. Explorer only. "
+                         "Story stays 6 chapters and Boardroom stays 15 slides.</p></div>")
+            explorer += _optimizer_html()
         if name == "Shop the FA Class":
             explorer += ('<div class="task"><h3>Top bargain free agents: Savant-style percentile cards</h3>'
                          "<p>Ranked by WAR per $10M of prior salary. Bars show where each player sits "
@@ -1888,7 +1984,7 @@ def build():
 <span class="k"><b>K-BB%</b> = strikeouts minus walks = how dominant a pitcher is</span>
 <span class="k"><b>WAR</b> = wins above replacement, the famous player-value stat. Published free by FanGraphs (fWAR) &amp; Baseball-Reference (bWAR), but the two formulas disagree, it is not returned by the MLB API, and it is not a league-published number — so this value panel shows WAR's reproducible inputs (wOBA, wRC+, FIP, K-BB%) instead. Note: the FA shopping list (this build) uses FanGraphs Steamer WAR.</span></div>
 __JS_INCLUDE__
-<div class="figidx"><b>FIGURE INDEX — the story at a glance (all 24 real-data charts below)</b><br>
+<div class="figidx"><b>FIGURE INDEX — the story at a glance (all 25 real-data charts below)</b><br>
 <span>1</span> Press play: 16 seasons of payroll vs wins &nbsp;·&nbsp;
 <span>2</span> Pick your team &nbsp;·&nbsp;
 <span>3</span> The measurable edge — skills persist (contact r=.90) &nbsp;·&nbsp;
@@ -1912,11 +2008,12 @@ __JS_INCLUDE__
 <span>21</span> MiLB pipeline index &nbsp;·&nbsp;
 <span>22</span> The 2027 shopping list &nbsp;·&nbsp;
 <span>23</span> The Posted Class: Japan's window &nbsp;·&nbsp;
-<span>24</span> The pricing test: our own Hakes–Sauer verdict</div>
+<span>24</span> The pricing test: our own Hakes–Sauer verdict &nbsp;·&nbsp;
+<span>25</span> The optimizer's audit: exact math vs the greedy roster build</div>
 <nav class="modenav">
 <button type="button" id="btn-story" class="active" onclick="showMode('story')">Story: the case in 6 chapters</button>
 <button type="button" id="btn-boardroom" onclick="showMode('boardroom')">Boardroom: 15 slides</button>
-<button type="button" id="btn-explorer" onclick="showMode('explorer')">Explorer: all 24 figures by task</button>
+<button type="button" id="btn-explorer" onclick="showMode('explorer')">Explorer: all 25 figures by task</button>
 </nav>
 <div id="mode-story">__STORY__</div>
 <div id="mode-boardroom">__BOARDROOM__</div>

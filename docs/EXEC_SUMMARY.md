@@ -39,9 +39,16 @@ at current samples (n = 60 / 82) — it can neither confirm correct pricing nor
 rule mispricing out. The descriptive contrast (top-quartile contact hitters at
 about half the bottom quartile's median $/WAR, on both salary bases) is labeled
 a contrast, not a price effect. The claim is persistence + cap-efficiency.
+**The scenario rosters are greedy builds, and we say what that costs.** An
+exact optimizer audit (Cycle 49, Figure 25) re-solves the identical roster
+problem — same FA pool, Steamer WAR, prior-AAV anchors and quotas — and
+finds +6.9 / +7.1 / +2.5 WAR at the floor / middle / cap budgets, optima
+proven. The greedy rosters stay the headline (they satisfy every proposed
+constraint, including the 15% per-player maximum, which binds nobody in
+this class); replacing them is an owner-visible decision, not a silent edit.
 
 ## The deliverable
-A 24-figure dashboard (offline, self-contained) + a Python-first repo where
+A 25-figure dashboard (offline, self-contained) + a Python-first repo where
 every number traces to a public source. Every build is logged in BML_LOG.md.
 
 ## The thesis in words (what an owner does)

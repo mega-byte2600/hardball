@@ -38,6 +38,8 @@ WHITELIST = {
     "misiorowski", "judge", "aaron", "soto",
     # Cycle 48 (HS-2) vocabulary — verified correct spellings
     "sauer", "misprices", "mispricing", "underprices", "workpaper",
+    # Cycle 49 (OPT-1) vocabulary — verified correct spellings
+    "combinatorics", "dh", "milp", "scipy",
     # data/tools vocab
     "api", "espn", "mlb", "statsapi", "spotrac", "github", "plotly",
     "sqlite", "csv", "kpi", "kpis", "keyless", "gitignored", "json", "html",

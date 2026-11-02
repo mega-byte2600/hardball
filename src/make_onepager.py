@@ -183,7 +183,7 @@ schema-enforced, zero contract failures; benchmark parity reproduced from
 curated tables alone (r&nbsp;=&nbsp;{r:.3f}, {n} matched). Sources: MLB Stats API,
 Baseball Savant, FanGraphs Steamer, Spotrac, ESPN cross-check. Full audit trail:
 <code>docs/BML_LOG.md</code>. Interactive demo: <code>dashboard/hardball_demo.html</code>
-(24 figures, builds offline from committed snapshots).</p>
+(25 figures, builds offline from committed snapshots).</p>
 </body></html>
 """
     OUT.write_text(doc)
