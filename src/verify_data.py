@@ -289,6 +289,29 @@ def main() -> int:
               "within budget", False,
               "data/optimizer_sensitivity_2027.json missing")
 
+    # --- API-1 live-feed layer: artifact on record -----------------
+    ilc_path = DATA / "il_current_live.json"
+    if ilc_path.exists():
+        ilc = json.loads(ilc_path.read_text())
+        ov = ilc["fa_overlay"]
+        sc = ilc["reconciliation"]["standings_check_fastball_vs_kpi_2026"]
+        check("API-1: live-IL artifact consistent (union >= 150, FA "
+              "overlay counts hold, Fastball standings agree 30/30)",
+              len(ilc["rows"]) >= 150
+              and ov["n_matched"] == len(ov["players"])
+              and ov["n_differs_from_static"]
+              == sum(1 for p in ov["players"] if p["differs_from_static"])
+              and sc["teams_compared"] == 30
+              and sc["wins_and_runs_agree"] == 30,
+              f"rows={len(ilc['rows'])} matched={ov['n_matched']} "
+              f"agree={sc['wins_and_runs_agree']}")
+        check("API-1: health figure carries the live-IL picture (Cycle 51)",
+              "Current IL picture" in html and "fact_il_current" in html)
+    else:
+        check("API-1: live-IL artifact consistent (union >= 150, FA "
+              "overlay counts hold, Fastball standings agree 30/30)",
+              False, "data/il_current_live.json missing")
+
     # --- data platform: curated layer contracts ------------------
     rep_path = DATA / "curated" / "_build_report.json"
     check("platform: curated build report present, no failures",
