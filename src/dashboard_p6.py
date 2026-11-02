@@ -1668,6 +1668,55 @@ MAE ≈ 14.1 wins, worse than the naive baseline; grouped CV MAE 10.2 (a fold pr
 backtested Marcel (3-season 5-4-3 + fitted age terms; Cycles 21/24), health-capped, benchmarked
 against Steamer (hitter OBP r = .889; pitcher ERA bias −0.25 after the Cycle 24 fix, disclosed
 on the panel). The product is player-level acquisition, not a team-wins formula.<br><br>
+<b>ALL DATA &amp; API SOURCES — the full list, with status (2026-11-02).</b>
+Every figure above traces to one of these; nothing else feeds this page.<br>
+<span class="src">MLB Stats API</span> (statsapi.mlb.com) — standings, team
+hitting/pitching, player ages, transactions (35,000+ events), minor-league
+affiliates. <b>LIVE · keyless.</b><br>
+<span class="src">Baseball Savant</span> — expected stats (xwOBA), batted ball
+(EV/barrels), bat tracking, sprint speed, arm strength. <b>LIVE · keyless</b>
+(committed snapshots, re-verified player-by-player).<br>
+<span class="src">ESPN</span> (site.web.api.espn.com) — independent
+cross-validation only: HR counts match exactly for all 254 players compared.
+<b>VERIFIED.</b><br>
+<span class="src">FanGraphs Steamer</span> — 2027 projections: the benchmark
+panel and the FA-class WAR column; the original player-ID crosswalk.
+<b>Committed snapshot</b> (the site currently refuses automated pulls, 403 —
+stopped, not routed around).<br>
+<span class="src">Spotrac</span> — per-player salaries (2027 payroll basis)
+and the 2027 free-agent class (251 players). <b>Committed snapshot — 24 of 30
+teams</b> (the pull was rate-limited; the 6 missing teams are named in the
+data metadata, not papered over).<br>
+<span class="src">Cot's Baseball Contracts</span> (Baseball Prospectus) — the
+second salary dataset, on its own LRP-2027 basis (present-value deferrals,
+buyout option years): 237 players, all 30 teams. <b>Committed · labeled
+cross-check layer only</b> — never mixed into the Spotrac-basis math.<br>
+<span class="src">Chadwick Bureau Register</span> — the conformed player-ID
+crosswalk (MLBAM / Retrosheet / Baseball-Reference / FanGraphs / NPB keys).
+<b>Committed · joins this demo's player registry 379 of 379.</b><br>
+<span class="src">The Injury Report</span> — every MLB injured-list stint,
+2019–2026: 6,632 stints, 2,177 players, built from MLB's own IL
+transactions. <b>Committed · availability cross-check layer.</b><br>
+<span class="src">NPB official BIS</span> (npb.jp) — the posted class (Sato /
+Taira / Itoh) and 2024–2026 leaderboards, 340 rows. <b>Committed ·
+keyless.</b><br>
+<span class="src">Baseball-Reference</span> WAR daily files — WAR context and
+a salary cross-check. <b>Salary use FAILED CLOSED (Cycle 44):</b> only 71.1%
+of matched salaries agreed within $50k against the 80% bar, so no
+Baseball-Reference salary data is used anywhere on this page; the files are
+kept raw for WAR checks only.<br>
+<span class="src">Statyx</span> (api.statyx.io) — live MLB injuries and
+standings. <b>CONNECTED 2026-11-02 · verified live</b> (injuries endpoint
+answered 200 with 16 current records).<br>
+<span class="src">FastballAPI</span> (mcp.fastballapi.com) — live injuries and
+standings plus pitch-level history back to 2015. <b>CONNECTED 2026-11-02 ·
+verified live</b> (standings 200, all 30 teams; injuries 200, 190 records;
+its 2026 wins agree with the MLB Stats API 30 of 30 — cross-check in
+docs/CARPE_SCORECARD.md).<br>
+<b>Not yet connected (not sources of anything on this page):</b> Tank01 —
+deferred (the owner dropped the RapidAPI signup for now; supplement only,
+nothing in the demo depends on it). Sportradar — trial deliberately starts
+mid-November so its 30-day window covers Dec 1.<br><br>
 <b>Project repo:</b> github.com/mega-byte2600/hardball (private) · audit trail in docs/BML_LOG.md
 (two cycle series converged on 2026-10-31 — see the integration note at the top of the log)
 </div>

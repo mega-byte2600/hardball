@@ -36,6 +36,41 @@ v0.9.2-demo carries the built HTML at this branch's head.
 - No model or prior-cycle data changed in this PR.
 
 ---
+## API CONNECTIONS — Statyx + FastballAPI LIVE (2026-11-02, Cycle 45)
+
+**All lanes read this:** two keyed APIs were connected on
+2026-11-02 and verified live. The owner directed that git itself
+carry this news.
+
+- **Statyx — CONNECTED + VERIFIED LIVE 2026-11-02** via Toby's
+  Secure Vault connector (`custom.statyx`). GET
+  https://api.statyx.io/v1/mlb/standings → 200; GET
+  /v1/mlb/injuries → 200 with **16 live records** (status, expected
+  return, type, comments; feed timestamped 2026-11-02). The free
+  tier DOES include MLB injuries.
+- **FastballAPI — CONNECTED + VERIFIED LIVE 2026-11-02** via
+  Toby's Secure Vault connector (`custom.fastballapi`). Tools are
+  POST https://mcp.fastballapi.com/v1/{tool}, key in the
+  `x-api-key` header. get_standings {season: 2026} → 200, **30
+  teams**; get_injuries {} → 200, **190 records dated
+  2026-11-02**. Cross-checks vs the committed data: standings wins
+  agree 30/30 with the MLB Stats API (zero diffs); 14 of Statyx's
+  16 injuries also appear in FastballAPI's 190, all agreeing on
+  status + type (docs/CARPE_SCORECARD.md, Cycle 45 addendum).
+- **Access route:** the keys live in Toby's Secure Vault and are
+  **NEVER committed to git** — there is no key in this repo to
+  find. Other agents route Statyx/FastballAPI pulls through Toby
+  (or the 6-hourly cycle). Repo-side code: `src/keyed_sources.py`
+  (env-key-gated, fail-closed; FastballAPI shape corrected in
+  Cycle 45). The rendered dashboard's bottom sources box lists
+  both as connected, with the full source list beside them.
+- **NOT yet active:** Tank01 (deferred — the owner dropped the
+  RapidAPI signup for now; supplement only, nothing in the demo
+  depends on it) and Sportradar (trial deliberately not started
+  before mid-Nov so the 30-day window covers Dec 1). Neither
+  feeds any demo data.
+
+---
 ## INTEGRATION (2026-10-31, PR #6 — supersedes PRs #1–#5)
 Main advanced 21 commits in a parallel lane while PRs #1–#5 were open
 (player persistence, cap-pool deployment, viz overhaul, TALKTRACK), so

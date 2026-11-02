@@ -61,6 +61,9 @@ WHITELIST = {
     "heyman", "murakami", "passan", "tarik", "skubal", "cy", "sportsnet",
     "mlbtr", "ap", "ny", "jp", "sep", "avg", "slg", "rbi", "ip", "sv",
     "rhp", "dataset", "roundings", "comp", "gm", "ft",
+    # Cycle 45 connected-source names — verified against the providers
+    "statyx", "fastballapi", "chadwick", "tank", "sportradar", "mcp", "io",
+    "lrp", "metadata", "mlbam", "rapidapi", "retrosheet", "signup",
 }
 
 
