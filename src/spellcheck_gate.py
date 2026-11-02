@@ -51,6 +51,8 @@ WHITELIST = {
     "aa", "aaa", "aav", "backtested", "backtests", "benchmarked", "carpe",
     "carpedata", "cv", "dropdown", "ev", "fangraphs", "ii", "iii", "iv",
     "leaderboards", "milb", "pre", "prs", "qc", "vi", "vii",
+    # Cycle 33 percentile-card names — verified against data/fa_shopping_2027.json
+    "bauers", "buehler", "lorenzen", "quantrill", "rengifo", "sd",
 }
 
 

@@ -658,3 +658,64 @@ streaming terms, Moses et al. observability).
   no new claims) is the next backlog item; item (c) retries only if
   FanGraphs serves a direct pull again, with the field mapping pinned
   first.
+
+## Cycle 33 — PRESENTATION RESTRUCTURE (toby, 2026-11-01 ~20:15 PT)
+- Deadline guard: 2026-11-01, inside the window (closes 2026-12-01). No change.
+- Spotrac probe: single GET of the Tampa Bay payroll page still 403
+  ("Update Your Browser" challenge page). Logged, not routed around.
+  FanGraphs single probe (RosterResource payroll page, browser UA) still
+  403 (Cloudflare "Just a moment"). Item (c) therefore stays BLOCKED and
+  untouched: no rows added, salaries stay 24/30, forced-seller 6/7.
+- Platform run on current main (2f2e626e, parallel lane moved since Cycle 32):
+  ingest 20 datasets, 0 failures; Savant volumes in band (expected 651-673,
+  bat-tracking 595-619, sprint 489-506); transactions watermark 120,338 ->
+  120,351 (+13, no sharp move); curate 14 tables, all contracts pass,
+  byte-identical to main (no data PR from this run); warehouse rebuilt;
+  benchmark parity r = 0.889, 201 matched.
+- Restructure (backlog item d, owner-approved 2026-11-01): src/dashboard_p6.py
+  ASSEMBLY ONLY — no panel function, model, dataset, or claim changed, and
+  figure numbers are unchanged (1-22 in the same order), so every talk-track
+  reference still points at the same figure. Three modes from the same
+  committed figures, with a mode switcher (Story is the default landing;
+  without scripts all three modes simply show in order):
+  (1) STORY — verdict first (thesis + the existing stat cards + Pick Your
+  Team, Figure 2), then 6 chapters with ONE figure each: skills persist
+  (Fig 3), run differential describes (Fig 4), payroll vs wins (Fig 6),
+  cap reality (Fig 10), what the money buys (Fig 16), the Steamer
+  benchmark (Fig 18). Each chapter headline is the claim that figure
+  already proves, using only numbers already in the talk-track, plus a
+  one-line "So what for the owner" and a source line; method + honesty
+  box collapsed into an appendix at the end.
+  (2) BOARDROOM — 15 slides in talk-track order (Figures 4+5 share one
+  slide, which is how 16 talk-track figures fit 15 slides), each headed
+  with its conclusion, with a print-boardroom control that prints only
+  this section.
+  (3) EXPLORER — all 22 figures reachable, grouped by task instead of one
+  figure-numbered scroll: Cap Reality (1, 6, 9, 10, 11), Build a Roster
+  (7, 8, 12, 13, 14, 15, 16, 17), Shop the FA Class (21, 22), Check the
+  Model (3, 4, 5, 18, 19, 20), with Pick Your Team (Fig 2) on top — plus
+  Savant-style percentile cards for the top 8 bargain free agents, ranked
+  by WAR per $10M of prior salary (Rengifo 13.51, Rasmussen 8.79,
+  Quantrill 8.75, Montgomery 8.69, France 7.51, Buehler 6.83, Bauers 6.47,
+  Lorenzen 6.21). Percentiles are computed from the committed 2027
+  free-agent pool only (231 players with Steamer WAR; each bar uses only
+  the players who have that metric); a metric a player lacks in the
+  committed projections is labeled "Not in the committed pool for this
+  metric", never filled — pitchers have no hitter OBP/K%/xwOBA there,
+  and four pitchers plus France have no availability row there.
+  A lake-less build renders a labeled placeholder for the pitching panel
+  instead of breaking or renumbering silently (G1 preserved).
+- Verified by DOM/data checks only (no browser visual QA, per standing
+  rule): story 7 renders (hero + 6 chapters), 6 chapters; boardroom 15
+  slides, 16 renders; explorer 22 renders, distinct figures 1-22 (no
+  figure lost); all 8 card numbers match data/fa_shopping_2027.json and
+  the recomputed OBP percentile for the first card (14) matches the bar;
+  no double-numbered figure titles. Gate updated to the new assembly
+  (chapter/slide/explorer/card checks) and ALL PASS, including the live
+  standings check; spellcheck green (card surnames added to its whitelist
+  as verified spellings).
+- Docs: TALKTRACK gains a three-mode map (figure numbers unchanged);
+  README moves "8 story sections" to the three modes; EXEC_SUMMARY still
+  says 22 figures, which is still true, so it is untouched.
+- Next: item (e) README demo-runbook rewritten around the three modes;
+  item (c) retries only if FanGraphs serves a direct pull again.
