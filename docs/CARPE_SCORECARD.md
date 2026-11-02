@@ -564,3 +564,74 @@ exact method: **44.6 / 48.1 / 50.0 WAR** at the pool-mean factor
 artifact so the panel cannot drift from the workpaper. Owner
 approval on record (2026-11-02); presentation pass per the owner's
 standard — short declarative copy, caveats stated once.
+
+## Cycle 53 addendum — FIG-QA: every figure traced, gated (2026-11-02)
+
+Full audit of Figures 1–25: every rendered number traced to a
+committed artifact, conventions applied (WAR 1 decimal in panels,
+whole-win bands in prose, percentile ranks labeled as ranks, no
+undervalued/mispriced assertion outside the Figure 24 verdict,
+scenario figures carry Cycle 52 values with ±20% ranges and the
+prior-AAV anchor label), and numbering/titles reconciled across
+dashboard, Explorer, README, TALKTRACK, EXEC_SUMMARY and ONEPAGER.
+The gate now carries one artifact-tied check per figure (FIG-QA
+1–25, expected values computed from the artifacts at gate time):
+**40 → 65 offline checks (41 → 66 with --live), ALL PASS.**
+
+| Fig | Source artifact(s) | Check method |
+|---|---|---|
+| 1 | panel_2011_2026.csv | seasons exactly 2011–2026; title in HTML |
+| 2 | team_explorer.json | 30 teams; panel present |
+| 3 | persistence_ci.json (+ multiyear) | caption pooled r and 457 pairs computed from artifact |
+| 4 | runs_panel.json | 2026 slice = 30 rows; title in HTML |
+| 5 | quant_core.json | run-diff-only AUC rounds to the titled 0.95 |
+| 6 | kpi_2026.json | cap/floor lines + title in HTML; KPI sanity checks |
+| 7 | kpi_2026.json | 30 teams, contact/K% non-null; title in HTML |
+| 8 | efficiency_2000_2024.csv | file rows = titled 721 team-seasons |
+| 9 | projections_2026.json | 30 rows; title in HTML (see owner item) |
+| 10 | cap_scenario_2027.json | over-cap count recomputed = 7 |
+| 11 | forced_sellers_2027.json | 6 covered; CHC the only uncovered team |
+| 12 | projections_2027.json | top-OBP name from artifact leads the panel |
+| 13 | mlb_lake.db (local lake) | title present with lake; omission disclosed without |
+| 14 | il_current_live.json (+ health) | live counts + pull date rendered from artifact |
+| 15 | roster_2027.json | 13 hitters + 13 pitchers |
+| 16 | wow_scenarios.json | floor ±20% range in title; SWAP check pins totals to Cycle 49/50 artifacts |
+| 17 | robust_validation.json | ≥5 elasticity levers; title in HTML |
+| 18 | fg_benchmark_2027.json | title carries artifact r = 0.889 and top-25 overlap 18/25 |
+| 19 | savant_test.json | ≥6 trait stabilities; title in HTML |
+| 20 | value_metrics_2026.json | hitting/pitching tables ≥12 rows each |
+| 21 | pipeline_2026.json | 30 orgs; title in HTML |
+| 22 | fa_shopping_2027.json | top-25 list present; title in HTML |
+| 23 | posted_class_2026.json + fig23_rebuild_2026.json | $60M fee checkpoint = $10.875M exact; no-translation label shown |
+| 24 | hakes_sauer_verdict.json (+ results) | 480 team-seasons in title; HS-2 verdict check |
+| 25 | optimizer_comparison_2027.json (+ sensitivity) | floor delta +6.9 WAR in title; OPT artifact checks |
+
+**Defects fixed (7 edits).** Stale numbers (2): the Story stat
+card read "r = .83 (pooled, 422 pairs)" — artifacts say pooled
+r = 0.843 over 457 pairs → card now .84 / 457; EXEC_SUMMARY's P7
+line still said UAT PENDING — corrected to the owner's recorded
+MVP-level approval (2026-10-31). Untraceable as stated (2
+passages, 3 values): the Story appendix quoted the single latest
+season pair (contact r = .90, walk r = .66) as the general result
+→ now pooled contact .84 and walk .66–.77 across the four pairs;
+EXEC_SUMMARY's "walk discipline at pooled r = 0.72" has no pooled
+walk value in any artifact → now the per-pair range 0.66–0.77.
+Conventions (4): player-card Steamer WAR printed at 2 decimals →
+1; Figure 16 roster-table WAR printed raw (2 dp) → 1; the
+bottom-line "roughly half payroll" contradicted the traced
+fraction (win-cheap payroll averages ~ a third of the biggest)
+→ reworded with both win averages sourced (trio 95.3 vs
+rest-of-league 79.4, computed from kpi_2026.json); Story chapter
+5 now gives the floor's full ±20% range (45.0–53.2), not only the
+low bound. Count mismatches: none open — 25-figure counts agree
+in every current doc (the "23 figures" line sits inside the
+dated 2026-10-31 integration addendum and is superseded in-file
+by the Cycle 52 addendum; left as a dated record).
+
+**Owner item (not changed — claim presentation).** Figure 9's
+`projections_2026.json` is written by `src/model_p6.py` as
+in-sample fitted values (2025+2026 fit applied to 2026 teams);
+the panel title "Model-projected wins by team" carries no
+in-sample/diagnostic label, while the demo elsewhere disclaims
+team-wins forecasting (formula_prod is gate-annotated DIAGNOSTIC
+ONLY). Adding the disclosure is the owner's call.

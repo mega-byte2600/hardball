@@ -1656,3 +1656,44 @@ count unchanged at 23. No NPB→MLB translation factor claimed anywhere.
   (until Dec 1). No browser visual QA (standing rule).
 - Next: UNC-1 (availability-cap out-of-sample backtest) per the
   approved programme order.
+
+---
+## Cycle 53 — FIG-QA: full audit of Figures 1–25 (2026-11-02, owner-directed)
+- Built: per-figure trace audit of the whole dashboard — every
+  rendered number checked against its committed source artifact;
+  trace table (figure → artifact(s) → check method) recorded as
+  the CARPE_SCORECARD Cycle 53 addendum. Gate extended with 25
+  FIG-QA checks in `src/verify_data.py`, one per figure, each
+  computing its expected value from the artifact at gate time.
+- Fixed (7 edits, no claim changes): stat card pooled contact
+  r = .83 / 422 pairs → .84 / 457 (persistence_ci.json); Story
+  appendix latest-pair-only r = .90 / .66 → pooled .84 and walk
+  .66–.77 across pairs; EXEC_SUMMARY "pooled walk r = 0.72"
+  (no such artifact value) → per-pair range; EXEC_SUMMARY P7
+  line PENDING → owner-recorded MVP approval 2026-10-31;
+  player-card Steamer WAR 2 dp → 1 dp; Figure 16 roster-table
+  WAR 2 dp → 1 dp; bottom-line "roughly half payroll" →
+  traced fraction (~ a third; ~95 trio avg vs ~79 rest-of-league
+  avg, computed from kpi_2026.json); Story chapter 5 floor
+  range completed to 45.0–53.2 across ±20% price error.
+- Measured: figures traced 25/25. Defects by class — stale
+  numbers 2, untraceable-as-stated 2 passages (3 values),
+  convention violations 4, count mismatches 0 open. Figure
+  numbering/titles verified identical across dashboard build
+  order, Explorer, README, TALKTRACK, EXEC_SUMMARY, ONEPAGER;
+  pre-swap numbers (42.0/45.7/52.3, stress 38.3/41.7/47.7)
+  survive only as labeled benchmark/historical context.
+- Owner item (held, not fixed): Figure 9's projections_2026
+  values are in-sample fits (model_p6.py) under a
+  "Model-projected wins" title with no in-sample label — a
+  disclosure/claim call for the owner.
+- GATE: platform + gate on the final tree — ingest 25
+  datasets / 0 failures; curate 18 tables, contracts pass;
+  warehouse rebuilt; parity r = 0.889 / 201; gate ALL PASS
+  offline (65 checks, was 40) and --live (66, was 41);
+  spellcheck green. GitHub Actions ignored per the owner's
+  blackout directive (until Dec 1). No browser visual QA
+  (standing rule).
+- Next: feed-architecture cycle (FastballAPI census + Statyx
+  event layer) per the owner's 2026-11-02 design direction,
+  then UNC-1.

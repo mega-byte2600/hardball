@@ -16,7 +16,8 @@ quarter of the big-market payroll.
 
 ## What the data provably supports
 - **Skills persist more than outputs.** Contact rate persists year-over-year at
-  **pooled r = 0.84 (95% CI 0.81-0.87)**, walk discipline at pooled r = 0.72;
+  **pooled r = 0.84 (95% CI 0.81-0.87)**, walk discipline at r = 0.66-0.77 in
+  every season pair;
   OBP (the output) persists more weakly at pooled r = 0.53, and only 0.30 in
   the latest pair. Buying a player's contact/walk skill is buying something
   that carries further.
@@ -69,7 +70,7 @@ what winning-cheap teams over-index on. Price the roster against the cap.
 
 ## Status against P1-P7
 P1 datasets ✓  P2 infra ✓  P3 literature ✓  P4 problem ✓  P5 copycat ✓
-P6 MVP ✓  P7 UAT — PENDING until the GP accepts (open the dashboard).
+P6 MVP ✓  P7 UAT — approved at MVP level by the owner 2026-10-31 (MVP scope only).
 
 ## Readiness
 Target **Dec 3, 2026** for final UAT and handoff. Preliminary MVP UAT approved;

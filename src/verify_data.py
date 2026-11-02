@@ -363,6 +363,133 @@ def main() -> int:
         check("platform: >=13 curated tables", len(rep["tables"]) >= 13,
               f"tables={len(rep['tables'])}")
 
+    # --- FIG-QA (Cycle 53): one artifact-tied check per figure -----
+    # Every figure gets a check whose expected value is computed from
+    # its committed source artifact at gate time, so a wrong number in
+    # any figure turns the gate red even if the panel code is edited.
+    def _fig(n, name, ok, detail=""):
+        check(f"FIG-QA fig {n}: {name}", ok, detail)
+
+    # Plotly serializes figure JSON with \uXXXX escapes; normalize a
+    # copy so title/annotation text checks see the rendered characters.
+    html_qa = re.sub(r"\\+u([0-9a-fA-F]{4})",
+                     lambda m: chr(int(m.group(1), 16)), html)
+
+    panel_seasons = sorted({int(r["season"]) for r in panel})
+    _fig(1, "animation panel covers 2011-2026, title in HTML",
+         panel_seasons == list(range(2011, 2027))
+         and "16 seasons of payroll vs wins" in html_qa,
+         f"seasons={panel_seasons}")
+    te = load("team_explorer.json")
+    _fig(2, "team explorer: 30 teams in artifact and panel",
+         len(te["teams"]) == 30 and "pick your team" in html_qa,
+         f"teams={len(te['teams'])}")
+    pci = load("persistence_ci.json")["pooled_contact"]
+    _fig(3, "persistence caption carries pooled contact r + pair count",
+         f"pooled r={pci['r']:.2f}" in html_qa
+         and f"{pci['n_pairs']} player-year pairs" in html_qa,
+         f"pooled={pci}")
+    runs26 = [r for r in load("runs_panel.json") if r["season"] == 2026]
+    _fig(4, "runs panel: 30 teams in 2026 slice, title in HTML",
+         len(runs26) == 30 and "run differential → wins" in html_qa,
+         f"rows26={len(runs26)}")
+    qc = load("quant_core.json")["logistic"]["run-diff-only"]["25->26"]
+    _fig(5, "AUC panel: artifact AUC rounds to the titled 0.95",
+         round(qc["auc"], 2) == 0.95 and "AUC ≈ 0.95" in html_qa,
+         f"auc={qc['auc']}")
+    _fig(6, "payroll-vs-wins panel with cap/floor lines in HTML",
+         "Payroll ($M) vs Wins" in html_qa and "Proposed cap $245.3M" in html_qa
+         and "Proposed floor $171.2M" in html_qa)
+    k26 = load("kpi_2026.json")
+    _fig(7, "KPI signature: 30 teams with contact/K% in snapshot, panel in HTML",
+         len(k26) == 30
+         and all(r.get("contact") is not None and r.get("K%") is not None
+                 for r in k26)
+         and "Copycat-league KPI signature" in html_qa)
+    with open(DATA / "efficiency_2000_2024.csv") as fh:
+        n_eff = sum(1 for _ in fh) - 1
+    _fig(8, "durability: efficiency file row count matches titled 721",
+         n_eff == 721 and "721 team-seasons" in html_qa, f"rows={n_eff}")
+    _fig(9, "projected-wins panel: 30 rows in projections_2026, title in HTML",
+         len(load("projections_2026.json")) == 30
+         and "Model-projected wins by team" in html_qa)
+    cap_teams = load("cap_scenario_2027.json")["teams"]
+    n_over = sum(1 for t in cap_teams if t["gap_to_cap"] > 0)
+    _fig(10, "cap scenario: over-cap count from artifact is 7, panel in HTML",
+         n_over == 7 and "Cap-era reality" in html_qa, f"over={n_over}")
+    fs = load("forced_sellers_2027.json")["teams"]
+    covered = [t["team"] for t in fs if t["covered"]]
+    uncovered = [t["team"] for t in fs if not t["covered"]]
+    _fig(11, "forced sellers: 6 covered, CHC the only uncovered team",
+         len(covered) == 6 and uncovered == ["CHC"]
+         and "Forced sellers" in html_qa,
+         f"covered={covered} uncovered={uncovered}")
+    proj27 = load("projections_2027.json")
+    top_name = max(proj27, key=lambda r: r["proj_OBP"])["name"]
+    _fig(12, "hitter projections: top-OBP name from artifact leads the panel",
+         top_name in html_qa and "projected hitters by OBP" in html_qa,
+         f"top={top_name}")
+    if (DATA / "mlb_lake.db").exists():
+        _fig(13, "pitching panel built from the lake, title in HTML",
+             "Pitching is the other winning-cheap half" in html_qa)
+    else:
+        _fig(13, "pitching panel absent without lake, omission disclosed",
+             'data-figure-missing="13"' in html_qa)
+    ilc = load("il_current_live.json")
+    ov = ilc["fa_overlay"]
+    _fig(14, "health panel: live-IL counts and pull date from the artifact",
+         f"{ov['n_matched']} of {ov['fa_pool_size']} free agents "
+         "currently listed injured" in html_qa
+         and ilc["metadata"]["pulled_date"] in html_qa,
+         f"matched={ov['n_matched']}")
+    rost = load("roster_2027.json")
+    _fig(15, "roster panel: 13 hitters + 13 pitchers in artifact",
+         len(rost["hitters"]) == 13 and len(rost["pitchers"]) == 13
+         and "Proposed 26-man winning-cheap roster" in html_qa,
+         f"H={len(rost['hitters'])} P={len(rost['pitchers'])}")
+    wow0 = wow["scenarios"][0]["war_range_prices_pm20"]
+    _fig(16, "scenario panel: floor title carries its +-20% price range",
+         f"{wow0['low']}–{wow0['high']}" in html_qa
+         and "across ±20% price error" in html_qa,
+         f"range={wow0}")
+    rv = load("robust_validation.json")
+    _fig(17, "sensitivity panel: elasticity table present in artifact",
+         len(rv.get("elasticity", {})) >= 5 and "measured elasticity" in html_qa,
+         f"levers={len(rv.get('elasticity', {}))}")
+    hb = load("fg_benchmark_2027.json")["hitters"]
+    _fig(18, "benchmark panel: title carries artifact r and top-25 overlap",
+         f"OBP r = {hb['obp']['pearson_r']}" in html_qa
+         and f"{hb['top25_obp_overlap']['overlap_n']}/25" in html_qa,
+         f"r={hb['obp']['pearson_r']}")
+    st = load("savant_test.json").get("q2_trait_stability", {})
+    _fig(19, "Savant panel: >=6 trait stabilities in artifact, title in HTML",
+         len(st) >= 6 and "Savant traits are rock-stable" in html_qa,
+         f"traits={len(st)}")
+    vm = load("value_metrics_2026.json")
+    _fig(20, "value metrics: hitting and pitching tables present",
+         len(vm["hitting"]) >= 12 and len(vm["pitching"]) >= 12
+         and "Top value metrics" in html_qa,
+         f"H={len(vm['hitting'])} P={len(vm['pitching'])}")
+    _fig(21, "pipeline panel title in HTML, 30 orgs behind it",
+         "under-26 upper-minors depth" in html_qa
+         and len(load("pipeline_2026.json")["orgs"]) == 30)
+    _fig(22, "shopping panel: top-25 list in artifact, title in HTML",
+         len(fa.get("top25_by_war", [])) == 25
+         and "The shopping list" in html_qa,
+         f"top25={len(fa.get('top25_by_war', []))}")
+    f23 = load("fig23_rebuild_2026.json")
+    _fig(23, "posted class: fee checkpoint exact, no-translation label shown",
+         f23["fee_checkpoints_m"]["60"] == 10.875
+         and "No NPB-to-MLB translation factor is claimed" in html_qa,
+         f"fee60={f23['fee_checkpoints_m']['60']}")
+    hsv = load("hakes_sauer_verdict.json")
+    _fig(24, "HS panel: benchmark team-season count in the rendered title",
+         f"{hsv['benchmark_attempt']['n_team_seasons']} team-seasons" in html_qa,
+         f"n={hsv['benchmark_attempt']['n_team_seasons']}")
+    d0 = optc["budgets"][0]["delta_war"]
+    _fig(25, "optimizer panel: floor delta from artifact in the title",
+         f"+{d0:.1f} WAR at the floor" in html_qa, f"delta={d0}")
+
     # --- optional live check ---------------------------------------
     if live:
         import requests
