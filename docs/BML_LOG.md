@@ -1614,3 +1614,45 @@ count unchanged at 23. No NPB→MLB translation factor claimed anywhere.
 - Next: UNC-1 (availability-cap out-of-sample backtest) per the
   approved programme order; the roster SWAP runs after API-1 per
   the owner's "need all 1-3" approval.
+
+## Cycle 52 — SWAP: OPTIMIZER ROSTERS BECOME THE HEADLINE (toby, 2026-11-02)
+
+- WHY: OPT-1 (Cycle 49) proved the exact optima on Cycle 26's
+  identical inputs — 48.9 / 52.8 / 54.8 WAR vs the greedy builds'
+  42.0 / 45.7 / 52.3. OPT-2 (Cycle 50) stress-tested the optima.
+  The owner approved the promotion on 2026-11-02 ("sounds like need
+  all 1-3"), with the research condition that the optimizer is
+  headlined but never as bare numbers: ranges and labels travel
+  with the figures.
+- WHAT SHIPPED: `src/bml_cycle52.py` (promotion only, no new
+  solves) rewrites `data/wow_scenarios.json`: `scenarios` is now
+  the Cycle 49 optimizer set, each entry carrying its Cycle 50
+  price-error range; the greedy set moves verbatim to
+  `benchmark_greedy` (scenarios + their Cycle 27 stress totals).
+  The Cycle 27 availability stress is recomputed on the new totals
+  with Cycle 27's exact method (unrounded pool mean / p25-index):
+  44.6 / 48.1 / 50.0 WAR at the mean factor, 43.5 / 47.0 / 48.8 at
+  p25; floor/cap ratio 0.803 -> 0.892; measured subset now 13 of
+  35 rostered players.
+- SURFACES: Figure 16 panel (title carries "WAR proven-optimal
+  (low–high across ±20% price error)"; sub-copy: floor captures
+  ~89% of cap WAR, last $74.1M buys 5.9 WAR, anchor label kept);
+  Story chapter 5 and Boardroom slide 12 quote the optimizer
+  values with ranges; Figure 25 + its facts box + the Explorer
+  group framing become "benchmark vs headline"; README,
+  EXEC_SUMMARY (honesty paragraph rewritten + Cycle 52 addendum),
+  TALKTRACK (money-buys script, optimizer back-pocket Q&A,
+  back-pocket numbers), ONEPAGER regenerated (ratio 89%, subset
+  counts read from the artifact, "~10 WAR" corrected to 5.9).
+- GATE: two new checks in `src/verify_data.py` — headline values
+  equal the Cycle 49 artifact with Cycle 50 ranges attached and
+  the greedy benchmark preserved; Story/Boardroom HTML carries
+  the new headline and none of the old. Platform + gate on the
+  final tree: ingest 25 datasets / 0 failures; curate 18 tables,
+  contracts pass, all 18 parquets byte-identical to committed;
+  warehouse rebuilt; parity r = 0.889 / 201; gate ALL PASS
+  (offline AND --live, standings 30/30); spellcheck green.
+  GitHub Actions ignored per the owner's blackout directive
+  (until Dec 1). No browser visual QA (standing rule).
+- Next: UNC-1 (availability-cap out-of-sample backtest) per the
+  approved programme order.

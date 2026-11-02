@@ -450,3 +450,48 @@ source of truth, rebuilt by `src/bml_cycle51.py`.
 4. **Footer + gate** — both feeds now read SERVING in the sources
    footer; `src/verify_data.py` gained API-1 checks (artifact
    consistency + live panel present). Figure count stays 25.
+
+## Cycle 52 — SWAP: optimizer rosters become the headline (PR pending)
+
+The owner-approved promotion. Figure 16's rosters are now the
+Cycle 49 proven-optimal builds; the greedy builds are the
+benchmark. Figure count stays 25; no new solves.
+
+1. **`src/bml_cycle52.py` → `data/wow_scenarios.json`** —
+   `scenarios` = optimizer set with Cycle 50 price-error ranges;
+   greedy set preserved verbatim under `benchmark_greedy`;
+   Cycle 27 stress recomputed on the new totals (44.6 / 48.1 /
+   50.0 at the mean factor; floor/cap ratio 0.892).
+2. **Surfaces** — Figure 16 title/sub-copy, Story chapter 5,
+   Boardroom slide 12 (all with ranges attached), Figure 25 and
+   Explorer framing now "benchmark vs headline", README,
+   EXEC_SUMMARY, TALKTRACK, ONEPAGER (regenerated). The
+   prior-AAV anchor label stays on the scenario exhibits.
+3. **Gate** — new checks pin the headline to the Cycle 49
+   artifact + ranges, and the Story/Boardroom HTML to the new
+   numbers.
+
+## The numbers
+
+- Floor $171.2M: **48.9 WAR** for $171.1M (45.0–53.2 across
+  ±20% price error); Middle $208.0M: **52.8** for $207.8M
+  (48.5–55.5); Cap $245.3M: **54.8** for $245.2M (50.4–55.9).
+- Money story: the floor captures ~89% of the cap roster's WAR
+  for ~70% of the money; the last $74.1M buys 5.9 WAR. Methods
+  note kept: the optimizer's floor (48.9) beats the greedy's
+  middle (45.7) outright.
+
+## Verification
+
+Platform clean (ingest 25 datasets / 0 failures, curate 18
+tables, parquets byte-identical to committed), warehouse
+rebuilt, parity r = 0.889 / 201 unchanged, gate ALL PASS
+(offline and --live, standings 30/30) including the two new
+Cycle 52 checks, spellcheck green, DOM checks confirm the new
+headline in Story, Boardroom and the Figure 16 panel with no
+stale greedy headline strings.
+
+## Next
+
+UNC-1 (availability-cap backtest, out-of-sample 2022-24 FA
+classes) — next programme increment.

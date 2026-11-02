@@ -1,20 +1,31 @@
 {
  "metadata": {
-  "method": "greedy WAR-per-dollar quota fill, then WAR upgrades while budget holds; deterministic",
+  "cycle": 52,
+  "method": "Headline: exact mixed-integer optimization (scipy.optimize.milp / HiGHS, Cycle 49) \u2014 binary player-slot selection maximizing Steamer WAR under Cycle 26 positional quotas, 26-man roster, spend <= budget, prior AAV <= 15% of the proposed cap; optima proven (solver gap 0). Benchmark: Cycle 26 greedy WAR-per-dollar quota fill, preserved under benchmark_greedy.",
   "price_basis": "prior-contract AAV (Spotrac) \u2014 a last-price anchor, NOT a predicted 2027 price",
   "scope": "free-agent-only build from the 2027 class (Cycle 25); pre-arb/arb players not priced here",
-  "pool": 199
+  "pool": 199,
+  "promotion": "Owner-approved 2026-11-02 (Cycle 52): the Cycle 49 optimizer rosters replace the greedy builds as the headline scenarios. Headline WAR is published with its Cycle 50 +-20% price-error range."
  },
  "scenarios": [
   {
    "label": "The Floor \u2014 $171.2M",
    "budget": 171200000.0,
-   "spend": 170955000,
-   "total_war": 42.0,
+   "spend": 171122500,
+   "total_war": 48.9,
+   "method": "exact MILP optimizer (Cycle 49), proven optimal",
+   "proven_optimal": true,
+   "mip_gap": 0.0,
+   "war_range_prices_pm20": {
+    "low": 45.0,
+    "high": 53.2,
+    "basis": "Cycle 50: all prior-AAV anchors scaled x1.2 / x0.8 and re-solved to proven optima"
+   },
    "roster": [
     {
      "pos": "C",
      "name": "William Contreras",
+     "player_id": 661388,
      "prev_team": "MIL",
      "war": 4.29,
      "prev_aav": 9400000
@@ -22,27 +33,31 @@
     {
      "pos": "C",
      "name": "Ryan Jeffers",
+     "player_id": 680777,
      "prev_team": "MIN",
      "war": 2.23,
      "prev_aav": 6700000
     },
     {
      "pos": "1B",
-     "name": "Alec Bohm",
-     "prev_team": "PHI",
-     "war": 1.94,
-     "prev_aav": 10200000
-    },
-    {
-     "pos": "1B",
      "name": "Jake Bauers",
+     "player_id": 641343,
      "prev_team": "MIL",
      "war": 1.75,
      "prev_aav": 2700000
     },
     {
+     "pos": "1B",
+     "name": "Ty France",
+     "player_id": 664034,
+     "prev_team": "SD",
+     "war": 1.01,
+     "prev_aav": 1350000
+    },
+    {
      "pos": "2B",
      "name": "Luis Arraez",
+     "player_id": 650333,
      "prev_team": "PHI",
      "war": 2.75,
      "prev_aav": 12000000
@@ -50,6 +65,7 @@
     {
      "pos": "3B",
      "name": "Isaac Paredes",
+     "player_id": 670623,
      "prev_team": "HOU",
      "war": 2.8,
      "prev_aav": 9350000
@@ -57,6 +73,7 @@
     {
      "pos": "SS",
      "name": "J.P. Crawford",
+     "player_id": 641487,
      "prev_team": "SEA",
      "war": 2.01,
      "prev_aav": 10200000
@@ -64,6 +81,7 @@
     {
      "pos": "SS",
      "name": "Mauricio Dubon",
+     "player_id": 643289,
      "prev_team": "ATL",
      "war": 1.22,
      "prev_aav": 6100000
@@ -71,76 +89,87 @@
     {
      "pos": "OF",
      "name": "Seiya Suzuki",
+     "player_id": 673548,
      "prev_team": "CHC",
      "war": 2.46,
      "prev_aav": 17000000
     },
     {
      "pos": "OF",
-     "name": "Randy Arozarena",
-     "prev_team": "SEA",
-     "war": 2.2,
-     "prev_aav": 15650000
+     "name": "Cedric Mullins",
+     "player_id": 656775,
+     "prev_team": "TB",
+     "war": 1.05,
+     "prev_aav": 7000000
     },
     {
      "pos": "OF",
-     "name": "Trent Grisham",
-     "prev_team": "NYY",
-     "war": 1.98,
-     "prev_aav": 22025000
+     "name": "Tyrone Taylor",
+     "player_id": 621438,
+     "prev_team": "CHC",
+     "war": 0.7,
+     "prev_aav": 3800000
     },
     {
      "pos": "OF",
-     "name": "Taylor Ward",
-     "prev_team": "SEA",
-     "war": 1.34,
-     "prev_aav": 12175000
+     "name": "Randal Grichuk",
+     "player_id": 545341,
+     "prev_team": "CHW",
+     "war": 0.4,
+     "prev_aav": 780000
     },
     {
      "pos": "DH",
-     "name": "Dominic Smith",
-     "prev_team": "ATL",
-     "war": 0.01,
-     "prev_aav": 1250000
+     "name": "Brandon Lowe",
+     "player_id": 664040,
+     "prev_team": "PIT",
+     "war": 2.32,
+     "prev_aav": 4000000
+    },
+    {
+     "pos": "SP",
+     "name": "Tarik Skubal",
+     "player_id": 669373,
+     "prev_team": "LAD",
+     "war": 5.66,
+     "prev_aav": 32000000
     },
     {
      "pos": "SP",
      "name": "Drew Rasmussen",
+     "player_id": 656876,
      "prev_team": "TB",
      "war": 3.74,
      "prev_aav": 4250000
     },
     {
      "pos": "SP",
+     "name": "Trevor Rogers",
+     "player_id": 669432,
+     "prev_team": "BAL",
+     "war": 3.04,
+     "prev_aav": 6200000
+    },
+    {
+     "pos": "SP",
+     "name": "Foster Griffin",
+     "player_id": 656492,
+     "prev_team": "CLE",
+     "war": 2.59,
+     "prev_aav": 5500000
+    },
+    {
+     "pos": "SP",
      "name": "Freddy Peralta",
+     "player_id": 642547,
      "prev_team": "TB",
      "war": 1.78,
      "prev_aav": 3100000
     },
     {
-     "pos": "SP",
-     "name": "Cal Quantrill",
-     "prev_team": "TEX",
-     "war": 1.09,
-     "prev_aav": 1250000
-    },
-    {
-     "pos": "SP",
-     "name": "Jordan Montgomery",
-     "prev_team": "TEX",
-     "war": 1.09,
-     "prev_aav": 1250000
-    },
-    {
-     "pos": "SP",
-     "name": "Walker Buehler",
-     "prev_team": "SD",
-     "war": 1.02,
-     "prev_aav": 1500000
-    },
-    {
      "pos": "RP",
      "name": "David Peterson",
+     "player_id": 656849,
      "prev_team": "CHC",
      "war": 1.98,
      "prev_aav": 8100000
@@ -148,6 +177,7 @@
     {
      "pos": "RP",
      "name": "Adrian Morejon",
+     "player_id": 670970,
      "prev_team": "SD",
      "war": 1.32,
      "prev_aav": 3900000
@@ -155,20 +185,31 @@
     {
      "pos": "RP",
      "name": "Mart\u00edn P\u00e9rez",
+     "player_id": 527048,
      "prev_team": "ATL",
      "war": 0.9,
      "prev_aav": 3500000
     },
     {
      "pos": "RP",
-     "name": "A.J. Puk",
-     "prev_team": "ARI",
-     "war": 0.59,
-     "prev_aav": 3100000
+     "name": "Garrett Whitlock",
+     "player_id": 676477,
+     "prev_team": "BOS",
+     "war": 0.83,
+     "prev_aav": 4687500
+    },
+    {
+     "pos": "RP",
+     "name": "Sean Newcomb",
+     "player_id": 656794,
+     "prev_team": "CHW",
+     "war": 0.74,
+     "prev_aav": 4500000
     },
     {
      "pos": "RP",
      "name": "Kevin Ginkel",
+     "player_id": 656464,
      "prev_team": "ARI",
      "war": 0.57,
      "prev_aav": 2725000
@@ -176,20 +217,15 @@
     {
      "pos": "RP",
      "name": "Jonathan Loaisiga",
+     "player_id": 642528,
      "prev_team": "ARI",
      "war": 0.52,
      "prev_aav": 1500000
     },
     {
      "pos": "RP",
-     "name": "Brent Suter",
-     "prev_team": "ATL",
-     "war": 0.24,
-     "prev_aav": 1250000
-    },
-    {
-     "pos": "RP",
      "name": "Trevor Williams",
+     "player_id": 592866,
      "prev_team": "TEX",
      "war": 0.21,
      "prev_aav": 780000
@@ -199,12 +235,21 @@
   {
    "label": "The Middle \u2014 $208.0M",
    "budget": 208000000.0,
-   "spend": 207293333,
-   "total_war": 45.7,
+   "spend": 207787500,
+   "total_war": 52.8,
+   "method": "exact MILP optimizer (Cycle 49), proven optimal",
+   "proven_optimal": true,
+   "mip_gap": 0.0,
+   "war_range_prices_pm20": {
+    "low": 48.5,
+    "high": 55.5,
+    "basis": "Cycle 50: all prior-AAV anchors scaled x1.2 / x0.8 and re-solved to proven optima"
+   },
    "roster": [
     {
      "pos": "C",
      "name": "William Contreras",
+     "player_id": 661388,
      "prev_team": "MIL",
      "war": 4.29,
      "prev_aav": 9400000
@@ -212,6 +257,7 @@
     {
      "pos": "C",
      "name": "Ryan Jeffers",
+     "player_id": 680777,
      "prev_team": "MIN",
      "war": 2.23,
      "prev_aav": 6700000
@@ -219,6 +265,7 @@
     {
      "pos": "1B",
      "name": "Alec Bohm",
+     "player_id": 664761,
      "prev_team": "PHI",
      "war": 1.94,
      "prev_aav": 10200000
@@ -226,6 +273,7 @@
     {
      "pos": "1B",
      "name": "Jake Bauers",
+     "player_id": 641343,
      "prev_team": "MIL",
      "war": 1.75,
      "prev_aav": 2700000
@@ -233,6 +281,7 @@
     {
      "pos": "2B",
      "name": "Luis Arraez",
+     "player_id": 650333,
      "prev_team": "PHI",
      "war": 2.75,
      "prev_aav": 12000000
@@ -240,6 +289,7 @@
     {
      "pos": "3B",
      "name": "Isaac Paredes",
+     "player_id": 670623,
      "prev_team": "HOU",
      "war": 2.8,
      "prev_aav": 9350000
@@ -247,6 +297,7 @@
     {
      "pos": "SS",
      "name": "J.P. Crawford",
+     "player_id": 641487,
      "prev_team": "SEA",
      "war": 2.01,
      "prev_aav": 10200000
@@ -254,6 +305,7 @@
     {
      "pos": "SS",
      "name": "Mauricio Dubon",
+     "player_id": 643289,
      "prev_team": "ATL",
      "war": 1.22,
      "prev_aav": 6100000
@@ -261,6 +313,7 @@
     {
      "pos": "OF",
      "name": "Seiya Suzuki",
+     "player_id": 673548,
      "prev_team": "CHC",
      "war": 2.46,
      "prev_aav": 17000000
@@ -268,224 +321,39 @@
     {
      "pos": "OF",
      "name": "Randy Arozarena",
+     "player_id": 668227,
      "prev_team": "SEA",
      "war": 2.2,
      "prev_aav": 15650000
     },
     {
      "pos": "OF",
-     "name": "Trent Grisham",
-     "prev_team": "NYY",
-     "war": 1.98,
-     "prev_aav": 22025000
+     "name": "Taylor Ward",
+     "player_id": 621493,
+     "prev_team": "SEA",
+     "war": 1.34,
+     "prev_aav": 12175000
     },
     {
      "pos": "OF",
-     "name": "Ian Happ",
-     "prev_team": "CHC",
-     "war": 1.71,
-     "prev_aav": 20333333
-    },
-    {
-     "pos": "DH",
-     "name": "Dominic Smith",
-     "prev_team": "ATL",
-     "war": 0.01,
-     "prev_aav": 1250000
-    },
-    {
-     "pos": "SP",
-     "name": "Tarik Skubal",
-     "prev_team": "LAD",
-     "war": 5.66,
-     "prev_aav": 32000000
-    },
-    {
-     "pos": "SP",
-     "name": "Drew Rasmussen",
+     "name": "Cedric Mullins",
+     "player_id": 656775,
      "prev_team": "TB",
-     "war": 3.74,
-     "prev_aav": 4250000
-    },
-    {
-     "pos": "SP",
-     "name": "Cal Quantrill",
-     "prev_team": "TEX",
-     "war": 1.09,
-     "prev_aav": 1250000
-    },
-    {
-     "pos": "SP",
-     "name": "Jordan Montgomery",
-     "prev_team": "TEX",
-     "war": 1.09,
-     "prev_aav": 1250000
-    },
-    {
-     "pos": "SP",
-     "name": "Michael Lorenzen",
-     "prev_team": "TOR",
-     "war": 0.48,
-     "prev_aav": 780000
-    },
-    {
-     "pos": "RP",
-     "name": "David Peterson",
-     "prev_team": "CHC",
-     "war": 1.98,
-     "prev_aav": 8100000
-    },
-    {
-     "pos": "RP",
-     "name": "Adrian Morejon",
-     "prev_team": "SD",
-     "war": 1.32,
-     "prev_aav": 3900000
-    },
-    {
-     "pos": "RP",
-     "name": "Mart\u00edn P\u00e9rez",
-     "prev_team": "ATL",
-     "war": 0.9,
-     "prev_aav": 3500000
-    },
-    {
-     "pos": "RP",
-     "name": "A.J. Puk",
-     "prev_team": "ARI",
-     "war": 0.59,
-     "prev_aav": 3100000
-    },
-    {
-     "pos": "RP",
-     "name": "Kevin Ginkel",
-     "prev_team": "ARI",
-     "war": 0.57,
-     "prev_aav": 2725000
-    },
-    {
-     "pos": "RP",
-     "name": "Jonathan Loaisiga",
-     "prev_team": "ARI",
-     "war": 0.52,
-     "prev_aav": 1500000
-    },
-    {
-     "pos": "RP",
-     "name": "Brent Suter",
-     "prev_team": "ATL",
-     "war": 0.24,
-     "prev_aav": 1250000
-    },
-    {
-     "pos": "RP",
-     "name": "Trevor Williams",
-     "prev_team": "TEX",
-     "war": 0.21,
-     "prev_aav": 780000
-    }
-   ]
-  },
-  {
-   "label": "The Cap \u2014 $245.3M",
-   "budget": 245300000.0,
-   "spend": 244620833,
-   "total_war": 52.3,
-   "roster": [
-    {
-     "pos": "C",
-     "name": "William Contreras",
-     "prev_team": "MIL",
-     "war": 4.29,
-     "prev_aav": 9400000
-    },
-    {
-     "pos": "C",
-     "name": "Ryan Jeffers",
-     "prev_team": "MIN",
-     "war": 2.23,
-     "prev_aav": 6700000
-    },
-    {
-     "pos": "1B",
-     "name": "Alec Bohm",
-     "prev_team": "PHI",
-     "war": 1.94,
-     "prev_aav": 10200000
-    },
-    {
-     "pos": "1B",
-     "name": "Jake Bauers",
-     "prev_team": "MIL",
-     "war": 1.75,
-     "prev_aav": 2700000
-    },
-    {
-     "pos": "2B",
-     "name": "Luis Arraez",
-     "prev_team": "PHI",
-     "war": 2.75,
-     "prev_aav": 12000000
-    },
-    {
-     "pos": "3B",
-     "name": "Isaac Paredes",
-     "prev_team": "HOU",
-     "war": 2.8,
-     "prev_aav": 9350000
-    },
-    {
-     "pos": "SS",
-     "name": "J.P. Crawford",
-     "prev_team": "SEA",
-     "war": 2.01,
-     "prev_aav": 10200000
-    },
-    {
-     "pos": "SS",
-     "name": "Mauricio Dubon",
-     "prev_team": "ATL",
-     "war": 1.22,
-     "prev_aav": 6100000
-    },
-    {
-     "pos": "OF",
-     "name": "Seiya Suzuki",
-     "prev_team": "CHC",
-     "war": 2.46,
-     "prev_aav": 17000000
-    },
-    {
-     "pos": "OF",
-     "name": "Randy Arozarena",
-     "prev_team": "SEA",
-     "war": 2.2,
-     "prev_aav": 15650000
-    },
-    {
-     "pos": "OF",
-     "name": "Trent Grisham",
-     "prev_team": "NYY",
-     "war": 1.98,
-     "prev_aav": 22025000
-    },
-    {
-     "pos": "OF",
-     "name": "Ian Happ",
-     "prev_team": "CHC",
-     "war": 1.71,
-     "prev_aav": 20333333
+     "war": 1.05,
+     "prev_aav": 7000000
     },
     {
      "pos": "DH",
-     "name": "Dominic Smith",
-     "prev_team": "ATL",
-     "war": 0.01,
-     "prev_aav": 1250000
+     "name": "Brandon Lowe",
+     "player_id": 664040,
+     "prev_team": "PIT",
+     "war": 2.32,
+     "prev_aav": 4000000
     },
     {
      "pos": "SP",
      "name": "Tarik Skubal",
+     "player_id": 669373,
      "prev_team": "LAD",
      "war": 5.66,
      "prev_aav": 32000000
@@ -493,6 +361,7 @@
     {
      "pos": "SP",
      "name": "Drew Rasmussen",
+     "player_id": 656876,
      "prev_team": "TB",
      "war": 3.74,
      "prev_aav": 4250000
@@ -500,27 +369,31 @@
     {
      "pos": "SP",
      "name": "Trevor Rogers",
+     "player_id": 669432,
      "prev_team": "BAL",
      "war": 3.04,
      "prev_aav": 6200000
     },
     {
      "pos": "SP",
-     "name": "Sonny Gray",
-     "prev_team": "BOS",
-     "war": 2.97,
-     "prev_aav": 25000000
-    },
-    {
-     "pos": "SP",
      "name": "Foster Griffin",
+     "player_id": 656492,
      "prev_team": "CLE",
      "war": 2.59,
      "prev_aav": 5500000
     },
     {
+     "pos": "SP",
+     "name": "Kris Bubic",
+     "player_id": 663460,
+     "prev_team": "LAD",
+     "war": 2.13,
+     "prev_aav": 6150000
+    },
+    {
      "pos": "RP",
      "name": "David Peterson",
+     "player_id": 656849,
      "prev_team": "CHC",
      "war": 1.98,
      "prev_aav": 8100000
@@ -528,6 +401,7 @@
     {
      "pos": "RP",
      "name": "Adrian Morejon",
+     "player_id": 670970,
      "prev_team": "SD",
      "war": 1.32,
      "prev_aav": 3900000
@@ -535,6 +409,7 @@
     {
      "pos": "RP",
      "name": "Mart\u00edn P\u00e9rez",
+     "player_id": 527048,
      "prev_team": "ATL",
      "war": 0.9,
      "prev_aav": 3500000
@@ -542,20 +417,23 @@
     {
      "pos": "RP",
      "name": "Garrett Whitlock",
+     "player_id": 676477,
      "prev_team": "BOS",
      "war": 0.83,
      "prev_aav": 4687500
     },
     {
      "pos": "RP",
-     "name": "A.J. Puk",
-     "prev_team": "ARI",
-     "war": 0.59,
-     "prev_aav": 3100000
+     "name": "Sean Newcomb",
+     "player_id": 656794,
+     "prev_team": "CHW",
+     "war": 0.74,
+     "prev_aav": 4500000
     },
     {
      "pos": "RP",
      "name": "Kevin Ginkel",
+     "player_id": 656464,
      "prev_team": "ARI",
      "war": 0.57,
      "prev_aav": 2725000
@@ -563,22 +441,248 @@
     {
      "pos": "RP",
      "name": "Jonathan Loaisiga",
+     "player_id": 642528,
      "prev_team": "ARI",
      "war": 0.52,
      "prev_aav": 1500000
     },
     {
      "pos": "RP",
-     "name": "Brent Suter",
+     "name": "Alex Vesia",
+     "player_id": 681911,
+     "prev_team": "LAD",
+     "war": 0.42,
+     "prev_aav": 2300000
+    }
+   ]
+  },
+  {
+   "label": "The Cap \u2014 $245.3M",
+   "budget": 245300000.0,
+   "spend": 245187500,
+   "total_war": 54.8,
+   "method": "exact MILP optimizer (Cycle 49), proven optimal",
+   "proven_optimal": true,
+   "mip_gap": 0.0,
+   "war_range_prices_pm20": {
+    "low": 50.4,
+    "high": 55.9,
+    "basis": "Cycle 50: all prior-AAV anchors scaled x1.2 / x0.8 and re-solved to proven optima"
+   },
+   "roster": [
+    {
+     "pos": "C",
+     "name": "William Contreras",
+     "player_id": 661388,
+     "prev_team": "MIL",
+     "war": 4.29,
+     "prev_aav": 9400000
+    },
+    {
+     "pos": "C",
+     "name": "Ryan Jeffers",
+     "player_id": 680777,
+     "prev_team": "MIN",
+     "war": 2.23,
+     "prev_aav": 6700000
+    },
+    {
+     "pos": "1B",
+     "name": "Alec Bohm",
+     "player_id": 664761,
+     "prev_team": "PHI",
+     "war": 1.94,
+     "prev_aav": 10200000
+    },
+    {
+     "pos": "1B",
+     "name": "Jake Bauers",
+     "player_id": 641343,
+     "prev_team": "MIL",
+     "war": 1.75,
+     "prev_aav": 2700000
+    },
+    {
+     "pos": "2B",
+     "name": "Luis Arraez",
+     "player_id": 650333,
+     "prev_team": "PHI",
+     "war": 2.75,
+     "prev_aav": 12000000
+    },
+    {
+     "pos": "3B",
+     "name": "Isaac Paredes",
+     "player_id": 670623,
+     "prev_team": "HOU",
+     "war": 2.8,
+     "prev_aav": 9350000
+    },
+    {
+     "pos": "SS",
+     "name": "J.P. Crawford",
+     "player_id": 641487,
+     "prev_team": "SEA",
+     "war": 2.01,
+     "prev_aav": 10200000
+    },
+    {
+     "pos": "SS",
+     "name": "Mauricio Dubon",
+     "player_id": 643289,
      "prev_team": "ATL",
-     "war": 0.24,
-     "prev_aav": 1250000
+     "war": 1.22,
+     "prev_aav": 6100000
+    },
+    {
+     "pos": "OF",
+     "name": "Seiya Suzuki",
+     "player_id": 673548,
+     "prev_team": "CHC",
+     "war": 2.46,
+     "prev_aav": 17000000
+    },
+    {
+     "pos": "OF",
+     "name": "Randy Arozarena",
+     "player_id": 668227,
+     "prev_team": "SEA",
+     "war": 2.2,
+     "prev_aav": 15650000
+    },
+    {
+     "pos": "OF",
+     "name": "Trent Grisham",
+     "player_id": 663757,
+     "prev_team": "NYY",
+     "war": 1.98,
+     "prev_aav": 22025000
+    },
+    {
+     "pos": "OF",
+     "name": "Cedric Mullins",
+     "player_id": 656775,
+     "prev_team": "TB",
+     "war": 1.05,
+     "prev_aav": 7000000
+    },
+    {
+     "pos": "DH",
+     "name": "Brandon Lowe",
+     "player_id": 664040,
+     "prev_team": "PIT",
+     "war": 2.32,
+     "prev_aav": 4000000
+    },
+    {
+     "pos": "SP",
+     "name": "Tarik Skubal",
+     "player_id": 669373,
+     "prev_team": "LAD",
+     "war": 5.66,
+     "prev_aav": 32000000
+    },
+    {
+     "pos": "SP",
+     "name": "Drew Rasmussen",
+     "player_id": 656876,
+     "prev_team": "TB",
+     "war": 3.74,
+     "prev_aav": 4250000
+    },
+    {
+     "pos": "SP",
+     "name": "Trevor Rogers",
+     "player_id": 669432,
+     "prev_team": "BAL",
+     "war": 3.04,
+     "prev_aav": 6200000
+    },
+    {
+     "pos": "SP",
+     "name": "Sonny Gray",
+     "player_id": 543243,
+     "prev_team": "BOS",
+     "war": 2.97,
+     "prev_aav": 25000000
+    },
+    {
+     "pos": "SP",
+     "name": "Foster Griffin",
+     "player_id": 656492,
+     "prev_team": "CLE",
+     "war": 2.59,
+     "prev_aav": 5500000
+    },
+    {
+     "pos": "RP",
+     "name": "David Peterson",
+     "player_id": 656849,
+     "prev_team": "CHC",
+     "war": 1.98,
+     "prev_aav": 8100000
+    },
+    {
+     "pos": "RP",
+     "name": "Adrian Morejon",
+     "player_id": 670970,
+     "prev_team": "SD",
+     "war": 1.32,
+     "prev_aav": 3900000
+    },
+    {
+     "pos": "RP",
+     "name": "Mart\u00edn P\u00e9rez",
+     "player_id": 527048,
+     "prev_team": "ATL",
+     "war": 0.9,
+     "prev_aav": 3500000
+    },
+    {
+     "pos": "RP",
+     "name": "Garrett Whitlock",
+     "player_id": 676477,
+     "prev_team": "BOS",
+     "war": 0.83,
+     "prev_aav": 4687500
+    },
+    {
+     "pos": "RP",
+     "name": "Evan Phillips",
+     "player_id": 623465,
+     "prev_team": "LAD",
+     "war": 0.76,
+     "prev_aav": 6500000
+    },
+    {
+     "pos": "RP",
+     "name": "Sean Newcomb",
+     "player_id": 656794,
+     "prev_team": "CHW",
+     "war": 0.74,
+     "prev_aav": 4500000
+    },
+    {
+     "pos": "RP",
+     "name": "Aaron Civale",
+     "player_id": 650644,
+     "prev_team": "CHC",
+     "war": 0.72,
+     "prev_aav": 6000000
+    },
+    {
+     "pos": "RP",
+     "name": "Kevin Ginkel",
+     "player_id": 656464,
+     "prev_team": "ARI",
+     "war": 0.57,
+     "prev_aav": 2725000
     }
    ]
   }
  ],
  "availability_stress": {
-  "method": "Uniform stress: scenario WAR scaled by availability factors measured from 201 real players' 2025-26 IL records (data/projections_2027_health.json). Per-player factors exist for only part of any roster, so they are NOT applied player-by-player (that would penalize the best-measured players); the subset result is kept below for context.",
+  "method": "Uniform stress: scenario WAR scaled by availability factors measured from 201 real players' 2025-26 IL records (data/projections_2027_health.json). Per-player factors exist for only part of any roster, so they are NOT applied player-by-player (that would penalize the best-measured players); the subset result is kept below for context. Recomputed on the Cycle 49 optimizer totals in Cycle 52, Cycle 27's method unchanged.",
   "pool": {
    "n_players": 201,
    "mean_avail": 0.912,
@@ -586,6 +690,607 @@
    "median_avail": 0.945
   },
   "stressed_totals": {
+   "The Floor \u2014 $171.2M": {
+    "raw_war": 48.9,
+    "war_at_pool_mean_avail": 44.6,
+    "war_at_pool_p25_avail": 43.5
+   },
+   "The Middle \u2014 $208.0M": {
+    "raw_war": 52.8,
+    "war_at_pool_mean_avail": 48.1,
+    "war_at_pool_p25_avail": 47.0
+   },
+   "The Cap \u2014 $245.3M": {
+    "raw_war": 54.8,
+    "war_at_pool_mean_avail": 50.0,
+    "war_at_pool_p25_avail": 48.8
+   }
+  },
+  "floor_cap_ratio_raw": 0.892,
+  "finding": "Injury risk is a level tax (~4-5 WAR at every budget); the floor roster still captures ~89% of the cap roster's WAR after the stress.",
+  "measured_subset_context": {
+   "rostered_players_with_measured_avail": 13,
+   "n_unique_rostered_players": 35,
+   "their_war": 28.1,
+   "their_war_avail_adjusted": 25.9,
+   "note": "Subset of all three rosters combined; not a per-budget figure."
+  }
+ },
+ "benchmark_greedy": {
+  "note": "Cycle 26 greedy builds (WAR-per-dollar quota fill, then upgrades while budget holds), preserved verbatim as the benchmark for Figure 25's comparison; superseded as the headline by the Cycle 49 optimizer in Cycle 52.",
+  "scenarios": [
+   {
+    "label": "The Floor \u2014 $171.2M",
+    "budget": 171200000.0,
+    "spend": 170955000,
+    "total_war": 42.0,
+    "roster": [
+     {
+      "pos": "C",
+      "name": "William Contreras",
+      "prev_team": "MIL",
+      "war": 4.29,
+      "prev_aav": 9400000
+     },
+     {
+      "pos": "C",
+      "name": "Ryan Jeffers",
+      "prev_team": "MIN",
+      "war": 2.23,
+      "prev_aav": 6700000
+     },
+     {
+      "pos": "1B",
+      "name": "Alec Bohm",
+      "prev_team": "PHI",
+      "war": 1.94,
+      "prev_aav": 10200000
+     },
+     {
+      "pos": "1B",
+      "name": "Jake Bauers",
+      "prev_team": "MIL",
+      "war": 1.75,
+      "prev_aav": 2700000
+     },
+     {
+      "pos": "2B",
+      "name": "Luis Arraez",
+      "prev_team": "PHI",
+      "war": 2.75,
+      "prev_aav": 12000000
+     },
+     {
+      "pos": "3B",
+      "name": "Isaac Paredes",
+      "prev_team": "HOU",
+      "war": 2.8,
+      "prev_aav": 9350000
+     },
+     {
+      "pos": "SS",
+      "name": "J.P. Crawford",
+      "prev_team": "SEA",
+      "war": 2.01,
+      "prev_aav": 10200000
+     },
+     {
+      "pos": "SS",
+      "name": "Mauricio Dubon",
+      "prev_team": "ATL",
+      "war": 1.22,
+      "prev_aav": 6100000
+     },
+     {
+      "pos": "OF",
+      "name": "Seiya Suzuki",
+      "prev_team": "CHC",
+      "war": 2.46,
+      "prev_aav": 17000000
+     },
+     {
+      "pos": "OF",
+      "name": "Randy Arozarena",
+      "prev_team": "SEA",
+      "war": 2.2,
+      "prev_aav": 15650000
+     },
+     {
+      "pos": "OF",
+      "name": "Trent Grisham",
+      "prev_team": "NYY",
+      "war": 1.98,
+      "prev_aav": 22025000
+     },
+     {
+      "pos": "OF",
+      "name": "Taylor Ward",
+      "prev_team": "SEA",
+      "war": 1.34,
+      "prev_aav": 12175000
+     },
+     {
+      "pos": "DH",
+      "name": "Dominic Smith",
+      "prev_team": "ATL",
+      "war": 0.01,
+      "prev_aav": 1250000
+     },
+     {
+      "pos": "SP",
+      "name": "Drew Rasmussen",
+      "prev_team": "TB",
+      "war": 3.74,
+      "prev_aav": 4250000
+     },
+     {
+      "pos": "SP",
+      "name": "Freddy Peralta",
+      "prev_team": "TB",
+      "war": 1.78,
+      "prev_aav": 3100000
+     },
+     {
+      "pos": "SP",
+      "name": "Cal Quantrill",
+      "prev_team": "TEX",
+      "war": 1.09,
+      "prev_aav": 1250000
+     },
+     {
+      "pos": "SP",
+      "name": "Jordan Montgomery",
+      "prev_team": "TEX",
+      "war": 1.09,
+      "prev_aav": 1250000
+     },
+     {
+      "pos": "SP",
+      "name": "Walker Buehler",
+      "prev_team": "SD",
+      "war": 1.02,
+      "prev_aav": 1500000
+     },
+     {
+      "pos": "RP",
+      "name": "David Peterson",
+      "prev_team": "CHC",
+      "war": 1.98,
+      "prev_aav": 8100000
+     },
+     {
+      "pos": "RP",
+      "name": "Adrian Morejon",
+      "prev_team": "SD",
+      "war": 1.32,
+      "prev_aav": 3900000
+     },
+     {
+      "pos": "RP",
+      "name": "Mart\u00edn P\u00e9rez",
+      "prev_team": "ATL",
+      "war": 0.9,
+      "prev_aav": 3500000
+     },
+     {
+      "pos": "RP",
+      "name": "A.J. Puk",
+      "prev_team": "ARI",
+      "war": 0.59,
+      "prev_aav": 3100000
+     },
+     {
+      "pos": "RP",
+      "name": "Kevin Ginkel",
+      "prev_team": "ARI",
+      "war": 0.57,
+      "prev_aav": 2725000
+     },
+     {
+      "pos": "RP",
+      "name": "Jonathan Loaisiga",
+      "prev_team": "ARI",
+      "war": 0.52,
+      "prev_aav": 1500000
+     },
+     {
+      "pos": "RP",
+      "name": "Brent Suter",
+      "prev_team": "ATL",
+      "war": 0.24,
+      "prev_aav": 1250000
+     },
+     {
+      "pos": "RP",
+      "name": "Trevor Williams",
+      "prev_team": "TEX",
+      "war": 0.21,
+      "prev_aav": 780000
+     }
+    ]
+   },
+   {
+    "label": "The Middle \u2014 $208.0M",
+    "budget": 208000000.0,
+    "spend": 207293333,
+    "total_war": 45.7,
+    "roster": [
+     {
+      "pos": "C",
+      "name": "William Contreras",
+      "prev_team": "MIL",
+      "war": 4.29,
+      "prev_aav": 9400000
+     },
+     {
+      "pos": "C",
+      "name": "Ryan Jeffers",
+      "prev_team": "MIN",
+      "war": 2.23,
+      "prev_aav": 6700000
+     },
+     {
+      "pos": "1B",
+      "name": "Alec Bohm",
+      "prev_team": "PHI",
+      "war": 1.94,
+      "prev_aav": 10200000
+     },
+     {
+      "pos": "1B",
+      "name": "Jake Bauers",
+      "prev_team": "MIL",
+      "war": 1.75,
+      "prev_aav": 2700000
+     },
+     {
+      "pos": "2B",
+      "name": "Luis Arraez",
+      "prev_team": "PHI",
+      "war": 2.75,
+      "prev_aav": 12000000
+     },
+     {
+      "pos": "3B",
+      "name": "Isaac Paredes",
+      "prev_team": "HOU",
+      "war": 2.8,
+      "prev_aav": 9350000
+     },
+     {
+      "pos": "SS",
+      "name": "J.P. Crawford",
+      "prev_team": "SEA",
+      "war": 2.01,
+      "prev_aav": 10200000
+     },
+     {
+      "pos": "SS",
+      "name": "Mauricio Dubon",
+      "prev_team": "ATL",
+      "war": 1.22,
+      "prev_aav": 6100000
+     },
+     {
+      "pos": "OF",
+      "name": "Seiya Suzuki",
+      "prev_team": "CHC",
+      "war": 2.46,
+      "prev_aav": 17000000
+     },
+     {
+      "pos": "OF",
+      "name": "Randy Arozarena",
+      "prev_team": "SEA",
+      "war": 2.2,
+      "prev_aav": 15650000
+     },
+     {
+      "pos": "OF",
+      "name": "Trent Grisham",
+      "prev_team": "NYY",
+      "war": 1.98,
+      "prev_aav": 22025000
+     },
+     {
+      "pos": "OF",
+      "name": "Ian Happ",
+      "prev_team": "CHC",
+      "war": 1.71,
+      "prev_aav": 20333333
+     },
+     {
+      "pos": "DH",
+      "name": "Dominic Smith",
+      "prev_team": "ATL",
+      "war": 0.01,
+      "prev_aav": 1250000
+     },
+     {
+      "pos": "SP",
+      "name": "Tarik Skubal",
+      "prev_team": "LAD",
+      "war": 5.66,
+      "prev_aav": 32000000
+     },
+     {
+      "pos": "SP",
+      "name": "Drew Rasmussen",
+      "prev_team": "TB",
+      "war": 3.74,
+      "prev_aav": 4250000
+     },
+     {
+      "pos": "SP",
+      "name": "Cal Quantrill",
+      "prev_team": "TEX",
+      "war": 1.09,
+      "prev_aav": 1250000
+     },
+     {
+      "pos": "SP",
+      "name": "Jordan Montgomery",
+      "prev_team": "TEX",
+      "war": 1.09,
+      "prev_aav": 1250000
+     },
+     {
+      "pos": "SP",
+      "name": "Michael Lorenzen",
+      "prev_team": "TOR",
+      "war": 0.48,
+      "prev_aav": 780000
+     },
+     {
+      "pos": "RP",
+      "name": "David Peterson",
+      "prev_team": "CHC",
+      "war": 1.98,
+      "prev_aav": 8100000
+     },
+     {
+      "pos": "RP",
+      "name": "Adrian Morejon",
+      "prev_team": "SD",
+      "war": 1.32,
+      "prev_aav": 3900000
+     },
+     {
+      "pos": "RP",
+      "name": "Mart\u00edn P\u00e9rez",
+      "prev_team": "ATL",
+      "war": 0.9,
+      "prev_aav": 3500000
+     },
+     {
+      "pos": "RP",
+      "name": "A.J. Puk",
+      "prev_team": "ARI",
+      "war": 0.59,
+      "prev_aav": 3100000
+     },
+     {
+      "pos": "RP",
+      "name": "Kevin Ginkel",
+      "prev_team": "ARI",
+      "war": 0.57,
+      "prev_aav": 2725000
+     },
+     {
+      "pos": "RP",
+      "name": "Jonathan Loaisiga",
+      "prev_team": "ARI",
+      "war": 0.52,
+      "prev_aav": 1500000
+     },
+     {
+      "pos": "RP",
+      "name": "Brent Suter",
+      "prev_team": "ATL",
+      "war": 0.24,
+      "prev_aav": 1250000
+     },
+     {
+      "pos": "RP",
+      "name": "Trevor Williams",
+      "prev_team": "TEX",
+      "war": 0.21,
+      "prev_aav": 780000
+     }
+    ]
+   },
+   {
+    "label": "The Cap \u2014 $245.3M",
+    "budget": 245300000.0,
+    "spend": 244620833,
+    "total_war": 52.3,
+    "roster": [
+     {
+      "pos": "C",
+      "name": "William Contreras",
+      "prev_team": "MIL",
+      "war": 4.29,
+      "prev_aav": 9400000
+     },
+     {
+      "pos": "C",
+      "name": "Ryan Jeffers",
+      "prev_team": "MIN",
+      "war": 2.23,
+      "prev_aav": 6700000
+     },
+     {
+      "pos": "1B",
+      "name": "Alec Bohm",
+      "prev_team": "PHI",
+      "war": 1.94,
+      "prev_aav": 10200000
+     },
+     {
+      "pos": "1B",
+      "name": "Jake Bauers",
+      "prev_team": "MIL",
+      "war": 1.75,
+      "prev_aav": 2700000
+     },
+     {
+      "pos": "2B",
+      "name": "Luis Arraez",
+      "prev_team": "PHI",
+      "war": 2.75,
+      "prev_aav": 12000000
+     },
+     {
+      "pos": "3B",
+      "name": "Isaac Paredes",
+      "prev_team": "HOU",
+      "war": 2.8,
+      "prev_aav": 9350000
+     },
+     {
+      "pos": "SS",
+      "name": "J.P. Crawford",
+      "prev_team": "SEA",
+      "war": 2.01,
+      "prev_aav": 10200000
+     },
+     {
+      "pos": "SS",
+      "name": "Mauricio Dubon",
+      "prev_team": "ATL",
+      "war": 1.22,
+      "prev_aav": 6100000
+     },
+     {
+      "pos": "OF",
+      "name": "Seiya Suzuki",
+      "prev_team": "CHC",
+      "war": 2.46,
+      "prev_aav": 17000000
+     },
+     {
+      "pos": "OF",
+      "name": "Randy Arozarena",
+      "prev_team": "SEA",
+      "war": 2.2,
+      "prev_aav": 15650000
+     },
+     {
+      "pos": "OF",
+      "name": "Trent Grisham",
+      "prev_team": "NYY",
+      "war": 1.98,
+      "prev_aav": 22025000
+     },
+     {
+      "pos": "OF",
+      "name": "Ian Happ",
+      "prev_team": "CHC",
+      "war": 1.71,
+      "prev_aav": 20333333
+     },
+     {
+      "pos": "DH",
+      "name": "Dominic Smith",
+      "prev_team": "ATL",
+      "war": 0.01,
+      "prev_aav": 1250000
+     },
+     {
+      "pos": "SP",
+      "name": "Tarik Skubal",
+      "prev_team": "LAD",
+      "war": 5.66,
+      "prev_aav": 32000000
+     },
+     {
+      "pos": "SP",
+      "name": "Drew Rasmussen",
+      "prev_team": "TB",
+      "war": 3.74,
+      "prev_aav": 4250000
+     },
+     {
+      "pos": "SP",
+      "name": "Trevor Rogers",
+      "prev_team": "BAL",
+      "war": 3.04,
+      "prev_aav": 6200000
+     },
+     {
+      "pos": "SP",
+      "name": "Sonny Gray",
+      "prev_team": "BOS",
+      "war": 2.97,
+      "prev_aav": 25000000
+     },
+     {
+      "pos": "SP",
+      "name": "Foster Griffin",
+      "prev_team": "CLE",
+      "war": 2.59,
+      "prev_aav": 5500000
+     },
+     {
+      "pos": "RP",
+      "name": "David Peterson",
+      "prev_team": "CHC",
+      "war": 1.98,
+      "prev_aav": 8100000
+     },
+     {
+      "pos": "RP",
+      "name": "Adrian Morejon",
+      "prev_team": "SD",
+      "war": 1.32,
+      "prev_aav": 3900000
+     },
+     {
+      "pos": "RP",
+      "name": "Mart\u00edn P\u00e9rez",
+      "prev_team": "ATL",
+      "war": 0.9,
+      "prev_aav": 3500000
+     },
+     {
+      "pos": "RP",
+      "name": "Garrett Whitlock",
+      "prev_team": "BOS",
+      "war": 0.83,
+      "prev_aav": 4687500
+     },
+     {
+      "pos": "RP",
+      "name": "A.J. Puk",
+      "prev_team": "ARI",
+      "war": 0.59,
+      "prev_aav": 3100000
+     },
+     {
+      "pos": "RP",
+      "name": "Kevin Ginkel",
+      "prev_team": "ARI",
+      "war": 0.57,
+      "prev_aav": 2725000
+     },
+     {
+      "pos": "RP",
+      "name": "Jonathan Loaisiga",
+      "prev_team": "ARI",
+      "war": 0.52,
+      "prev_aav": 1500000
+     },
+     {
+      "pos": "RP",
+      "name": "Brent Suter",
+      "prev_team": "ATL",
+      "war": 0.24,
+      "prev_aav": 1250000
+     }
+    ]
+   }
+  ],
+  "availability_stress_totals": {
    "The Floor \u2014 $171.2M": {
     "raw_war": 42.0,
     "war_at_pool_mean_avail": 38.3,
@@ -601,14 +1306,6 @@
     "war_at_pool_mean_avail": 47.7,
     "war_at_pool_p25_avail": 46.6
    }
-  },
-  "floor_cap_ratio_raw": 0.803,
-  "finding": "Injury risk is a level tax (~4-5 WAR at every budget); the floor roster still captures ~80% of the cap roster's WAR after the stress.",
-  "measured_subset_context": {
-   "rostered_players_with_measured_avail": 12,
-   "their_war": 26.4,
-   "their_war_avail_adjusted": 24.4,
-   "note": "Subset of all three rosters combined; not a per-budget figure."
   }
  }
 }

@@ -839,7 +839,9 @@ def _hs_verdict_html():
 
 
 def panel_optimizer():
-    """Cycle 49 (OPT-1), Figure 25: the optimizer's audit of Cycle 26.
+    """Cycle 49 (OPT-1), Figure 25: the optimizer's audit of Cycle 26
+    (Cycle 52: benchmark vs headline — the optimum now headlines
+    Figure 16 and the greedy build is the benchmark).
 
     Cycle 26 built the three budget rosters greedily (WAR-per-dollar
     quota fill + upgrades). OPT-1 re-solves the identical problem —
@@ -851,7 +853,9 @@ def panel_optimizer():
     data/optimizer_comparison_2027.json so the panel can never drift
     from the workpaper. The DH-restricted series is the sensitivity
     that isolates Cycle 26's own stated DH rule ("DH can be any bat")
-    — a freedom its greedy never actually used."""
+    — a freedom its greedy never actually used. Cycle 52 promotes the
+    optimizer rosters to the Figure 16 headline; this panel is the
+    benchmark comparison behind the promotion."""
     cj = os.path.join(DATA, "optimizer_comparison_2027.json")
     if not os.path.exists(cj):
         return None
@@ -883,7 +887,7 @@ def panel_optimizer():
     ])
     f0 = budgets[0]
     fig.update_layout(
-        title=(f"The optimizer's audit: exact math beats the greedy roster build — "
+        title=(f"Benchmark vs headline: the exact optimum beats the greedy build — "
                f"+{f0['delta_war']:.1f} WAR at the floor, "
                f"+{budgets[1]['delta_war']:.1f} in the middle, "
                f"+{budgets[2]['delta_war']:.1f} at the cap, all three optima proven; "
@@ -910,7 +914,7 @@ def _optimizer_html():
             f"carries {g['dh_slot']['name']} ({g['dh_slot']['war']:.2f} WAR); "
             f"the optimizer plays {o['dh_slot']['name']} ({o['dh_slot']['war']:.2f} WAR).")
     pm = d["metadata"]["per_player_max"]
-    return ('<div class="note"><b>THE OPTIMIZER\'S AUDIT (Cycle 49).</b> ' +
+    return ('<div class="note"><b>BENCHMARK VS HEADLINE (Cycles 49–52).</b> ' +
             " ".join(rows) +
             f" All three optima are proven (solver gap 0). The 15% per-player "
             f"rule (${pm['value']/1e6:.1f}M) binds nobody in this pool — the "
@@ -920,8 +924,8 @@ def _optimizer_html():
             f"restricted to the greedy's own effective search space the "
             f"optimizer still finds "
             f"+{d['budgets'][0]['delta_war_dh_restricted']:.1f} WAR at the floor. "
-            "Figure 16's rosters are unchanged: whether the optimizer "
-            "rosters replace them is a later, owner-visible call. "
+            "Since Cycle 52, Figure 16 headlines the optimizer "
+            "rosters; the greedy builds remain here as the benchmark. "
             "Cycle 50 stress-tests these optima — price swings, a "
             "targeted bid-up, an aging haircut, and a mixed pre-arb "
             "build — in the strip directly below.</div>")
@@ -1566,8 +1570,12 @@ def panel_team_explorer():
     return fig
 
 def panel_scenarios():
-    """Cycle 26: what does the money buy? Full 26-man rosters built from
-    the real FA class at the floor, the middle, and the cap."""
+    """Cycle 26, headline promoted Cycle 52: what does the money buy?
+    Full 26-man rosters from the real FA class at the floor, the
+    middle, and the cap — the proven-optimal builds (Cycle 49 MILP on
+    Cycle 26's identical pool, prices and quotas), each headline WAR
+    carrying its Cycle 50 +-20% price-error range. The greedy builds
+    are preserved in the artifact as the benchmark Figure 25 shows."""
     fj = os.path.join(DATA, "wow_scenarios.json")
     if not os.path.exists(fj):
         return None
@@ -1586,16 +1594,31 @@ def panel_scenarios():
                        fill_color="rgba(244,241,234,0.6)", align="left",
                        font=dict(size=11.5), height=19),
             visible=(i == 0)))
+        rng = s["war_range_prices_pm20"]
         title = (f"What does the money buy? {s['label']} — "
-                 f"{s['total_war']} WAR for ${s['spend']/1e6:.1f}M")
+                 f"{s['total_war']} WAR proven-optimal ({rng['low']}–{rng['high']} "
+                 f"across ±20% price error) for ${s['spend']/1e6:.1f}M<br>"
+                 "<sub>Exact optimizer (Cycle 49); the greedy build is the benchmark "
+                 "in Figure 25. Prices are prior-contract AAVs: last-price anchors, "
+                 "not predicted 2027 salaries. Availability stress (Cycle 27: WAR "
+                 "scaled by the mean availability measured from 201 real players' "
+                 f"2025-26 IL records, {d['availability_stress']['pool']['mean_avail']}): "
+                 "this roster holds "
+                 f"{d['availability_stress']['stressed_totals'][s['label']]['war_at_pool_mean_avail']} WAR "
+                 "— injury risk taxes every budget alike. Switch budget:</sub>")
         buttons.append(dict(label=s["label"], method="update",
                             args=[{"visible": [j == i for j in range(len(d["scenarios"]))]},
                                   {"title": {"text": title}}]))
     s0 = d["scenarios"][0]
+    rng0 = s0["war_range_prices_pm20"]
     fig = go.Figure(data=traces)
     fig.update_layout(
-        title=(f"What does the money buy? {s0['label']}: {s0['total_war']} WAR for "
-               f"${s0['spend']/1e6:.1f}M<br><sub>Switch budget below the chart.</sub>"),
+        title=(f"What does the money buy? {s0['label']} — {s0['total_war']} WAR "
+               f"proven-optimal ({rng0['low']}–{rng0['high']} across ±20% price "
+               f"error) for ${s0['spend']/1e6:.1f}M<br>"
+               "<sub>Full 26-man rosters from the real 2027 free-agent class. "
+               "The floor roster captures ~89% of the cap roster's WAR — the last "
+               "$74.1M buys 5.9 WAR. Switch budget below the chart.</sub>"),
         updatemenus=[dict(buttons=buttons, direction="right", x=0.0, y=-0.03,
                           showactive=True, active=0)],
         template="plotly_white", height=700, margin=dict(t=110, b=60))
@@ -1853,11 +1876,13 @@ def build():
          "The cap punishes the biggest payrolls and pays the disciplined teams to add.",
          "Source: Spotrac payroll against the owners' proposed 2027 cap and floor."),
         (16, "The floor roster captures most of the cap roster's talent.",
-         "Built entirely from the real 2027 free-agent class, the floor roster buys 42.0 WAR for "
-         "$171.0M and the cap roster buys 52.3 WAR for $244.6M: about 80 percent of the talent "
-         "for about 70 percent of the money.",
+         "Built entirely from the real 2027 free-agent class, the floor roster buys 48.9 WAR for "
+         "$171.1M and the cap roster buys 54.8 WAR for $245.2M: about 89 percent of the talent "
+         "for about 70 percent of the money. The builds are proven optimal, and the floor holds "
+         "45.0 WAR even with every price 20 percent above its anchor.",
          "Spend to the floor first. The last dollars buy the least talent.",
-         "Source: Spotrac free-agent class plus FanGraphs Steamer WAR, prior-contract price anchors."),
+         "Source: Spotrac free-agent class plus FanGraphs Steamer WAR, prior-contract price anchors; "
+         "exact optimization, Cycle 49 (Figure 25)."),
         (18, "Checked in public against the best benchmark we could get.",
          "Our Marcel hitter projections match FanGraphs Steamer at OBP r of 0.889, with 201 hitters "
          "matched by player ID. The pitcher bias found in that check is disclosed on the panel.",
@@ -1934,9 +1959,10 @@ def build():
          "That is arithmetic, not a prediction that anyone trades those players."),
         ([20], "Instead of a made-up WAR, we show the real inputs: wOBA, wRC+, FIP",
          "WAR formulas disagree and no MLB feed returns it, so the panel shows the reproducible inputs."),
-        ([16], "The floor roster buys 42.0 WAR. The cap roster buys 52.3",
-         "A disciplined floor team captures about 80 percent of the cap team's talent for about "
-         "70 percent of the money."),
+        ([16], "The floor roster buys 48.9 WAR. The cap roster buys 54.8",
+         "A disciplined floor team captures about 89 percent of the cap team's talent for about "
+         "70 percent of the money. Proven-optimal builds; across ±20% price error the floor "
+         "holds 45.0–53.2 WAR and the cap 50.4–55.9."),
         ([22], "The shopping list ranks the whole free-agent class by projected value",
          "Every name priced off last year's real contract anchor, never a predicted price."),
         ([2], "Pick your team: every club gets the same treatment",
@@ -1959,9 +1985,9 @@ def build():
         ("Cap Reality", "What the cap and floor do to every payroll, and what must be shed.",
          [1, 6, 9, 10, 11],
          "Source: MLB Stats API team data and Spotrac payroll, plus the proposed 2027 cap."),
-        ("Build a Roster", "Signatures, durability, projections, health, the roster, and what moves wins — audited by an exact optimizer.",
+        ("Build a Roster", "Signatures, durability, projections, health, the roster, and what moves wins — the roster itself is the exact optimizer's proven optimum.",
          [7, 8, 12, 13, 14, 15, 16, 17, 25],
-         "Source: Marcel projections, health caps, and the 2027 roster build from committed files; optimizer audit: data/optimizer_comparison_2027.json (Cycle 49, scipy/HiGHS MILP on the identical pool, prices and quotas)."),
+         "Source: Marcel projections, health caps, and the 2027 roster build from committed files; headline rosters: data/wow_scenarios.json (Cycle 49 exact MILP optimum, promoted Cycle 52; greedy build preserved in the same file as the benchmark); optimizer comparison: data/optimizer_comparison_2027.json (Cycle 49, scipy/HiGHS MILP on the identical pool, prices and quotas)."),
         ("Shop the FA Class", "The farm pipeline behind the cheap winners, the shopping list, and the best values.",
          [21, 22],
          "Source: Spotrac free-agent class and FanGraphs Steamer WAR; prices are prior-contract averages."),
@@ -1981,10 +2007,11 @@ def build():
                      "".join(_panel(n, "explorer") for n in nums) +
                      f'<p class="srcline">{src}</p>')
         if name == "Build a Roster":
-            explorer += ('<div class="task"><h3>The optimizer\'s audit of the roster build</h3>'
+            explorer += ('<div class="task"><h3>Benchmark vs headline: the optimizer\'s audit</h3>'
                          "<p>Figure 25 re-solves Figure 16's exact problem with a "
-                         "mixed-integer optimizer and proves the optima — a method "
-                         "check on the greedy build, not a new roster. Explorer only. "
+                         "mixed-integer optimizer and proves the optima. Since Cycle 52 "
+                         "those optima are Figure 16's headline rosters; the greedy "
+                         "build remains as the benchmark. Explorer only. "
                          "Story stays 6 chapters and Boardroom stays 15 slides.</p></div>")
             explorer += _optimizer_html()
             explorer += _optimizer_sensitivity_html()
@@ -2130,7 +2157,7 @@ __JS_INCLUDE__
 <span>22</span> The 2027 shopping list &nbsp;·&nbsp;
 <span>23</span> The Posted Class: Japan's window &nbsp;·&nbsp;
 <span>24</span> The pricing test: our own Hakes–Sauer verdict &nbsp;·&nbsp;
-<span>25</span> The optimizer's audit: exact math vs the greedy roster build</div>
+<span>25</span> Benchmark vs headline: exact math vs the greedy roster build</div>
 <nav class="modenav">
 <button type="button" id="btn-story" class="active" onclick="showMode('story')">Story: the case in 6 chapters</button>
 <button type="button" id="btn-boardroom" onclick="showMode('boardroom')">Boardroom: 15 slides</button>

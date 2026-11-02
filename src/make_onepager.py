@@ -50,6 +50,12 @@ def main():
     stress = wow["availability_stress"]["stressed_totals"]
     ratio = wow["availability_stress"]["floor_cap_ratio_raw"]
     assert 0.7 <= ratio <= 0.9, f"floor/cap ratio out of range: {ratio}"
+    subset = wow["availability_stress"]["measured_subset_context"]
+    floor_s, cap_s = scenarios[0], scenarios[2]
+    delta_spend = (cap_s["spend"] - floor_s["spend"]) / 1e6
+    delta_war = cap_s["total_war"] - floor_s["total_war"]
+    floor_rng = floor_s["war_range_prices_pm20"]
+    cap_rng = cap_s["war_range_prices_pm20"]
     assert cap["cap_2027"] == 245300000 and cap["floor_2027"] == 171200000
     over = [t for t in cap["teams"] if t["gap_to_cap"] > 0]
     under = [t for t in cap["teams"] if t["gap_to_floor"] > 0]
@@ -156,10 +162,14 @@ The disciplined winners are the ones the system now forces to spend.</li>
 <table><tr><th>Build</th><th class="num">Spend</th><th class="num">WAR</th>
 <th class="num">WAR stressed*</th><th class="num">WAR p25*</th></tr>
 {''.join(scen_row(s) for s in scenarios)}</table>
-<p style="font-size:10pt">Prices are prior-contract AAV anchors (last prices, not predicted
+<p style="font-size:10pt">Builds are the proven-optimal rosters (exact MILP,
+Cycle 49; promoted Cycle 52) &mdash; the greedy build is kept as the
+Figure 25 benchmark. Prices are prior-contract AAV anchors (last prices, not predicted
 prices). 26 men each; spend &le; budget, asserted in code. The floor build
-captures {ratio:.0%} of the cap build&rsquo;s WAR &mdash; the last $74.1M buys
-~10 WAR.</p>
+captures {ratio:.0%} of the cap build&rsquo;s WAR &mdash; the last
+${delta_spend:.1f}M buys {delta_war:.1f} WAR. Across &plusmn;20% price error
+the floor build holds {floor_rng['low']:.1f}&ndash;{floor_rng['high']:.1f} WAR
+and the cap build {cap_rng['low']:.1f}&ndash;{cap_rng['high']:.1f}.</p>
 </div></div>
 
 <div class="honesty"><h2>The honesty box &mdash; what we do NOT claim</h2>
@@ -171,7 +181,8 @@ rosters, not a wins formula.</li>
 <li><b>*Availability stress is a level tax, not a rescue.</b> Uniform stress from
 201 real players&rsquo; 2025&ndash;26 IL records (mean availability 0.912): every
 budget loses ~4&ndash;5 WAR; the floor/cap ratio is unchanged. Per-player
-factors cover only 12 of 33 rostered players, so they are not applied
+factors cover only {subset['rostered_players_with_measured_avail']} of
+{subset['n_unique_rostered_players']} rostered players, so they are not applied
 selectively (that would penalize the best-measured players).</li>
 <li><b>Salaries cover 24 of 30 teams.</b> Spotrac blocked ARI, BOS, CHC, MIL, TB,
 TEX (927 rows, 864 ID-matched). The gap is labeled in the data, not filled.</li>

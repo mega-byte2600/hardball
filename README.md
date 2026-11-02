@@ -116,7 +116,9 @@ PRs #1-#5, integrated via PR #6) converged with the main lane on
   (927 rows) and the full 2027 FA class with Steamer WAR.
 - **Boardroom layer** (Cycle 26): animated 16-season payroll film,
   pick-your-team explorer (all 30 clubs), and budget-scenario rosters
-  — floor $171.2M builds 42.0 WAR vs cap $245.3M at 52.3 WAR.
+  — floor $171.2M builds 48.9 WAR vs cap $245.3M at 54.8 WAR
+  (Cycle 52: the proven-optimal rosters headline; the original
+  greedy builds are the Figure 25 benchmark).
 - Dashboard is now **25 figures in three modes — Story (6 chapters, the default landing),
   Boardroom (15 slides), Explorer (all 25 figures grouped by task)**; P7 UAT approved
   at MVP level by the owner 2026-10-31. Figure 23 (Cycle 34, Explorer-only)
@@ -124,9 +126,10 @@ PRs #1-#5, integrated via PR #6) converged with the main lane on
   Figure 24 (Cycle 48, Explorer-only) is the Hakes–Sauer verdict exhibit:
   our own pricing test of the contact/OBP claim, verdict inconclusive —
   the demo claims persistence and cap-efficiency, not proven undervaluation.
-  Figure 25 (Cycle 49, Explorer-only) is the optimizer's audit: an exact
-  MILP re-solve of the Figure 16 roster problem finds +6.9 / +7.1 / +2.5
-  WAR over the greedy builds at the same budgets, optima proven — a
-  method check; the Figure 16 rosters themselves are unchanged.
+  Figure 25 (Cycle 49, Explorer-only) is the benchmark comparison: an
+  exact MILP re-solve of the Figure 16 roster problem finds +6.9 /
+  +7.1 / +2.5 WAR over the greedy builds at the same budgets, optima
+  proven. Since Cycle 52 the optimizer rosters headline Figure 16;
+  the greedy builds remain as the benchmark.
 Cycle numbering collided between lanes (two "Cycle 20-24" series) —
 see the integration note in docs/BML_LOG.md.
