@@ -635,3 +635,51 @@ the panel title "Model-projected wins by team" carries no
 in-sample/diagnostic label, while the demo elsewhere disclaims
 team-wins forecasting (formula_prod is gate-annotated DIAGNOSTIC
 ONLY). Adding the disclosure is the owner's call.
+
+## Cycle 55 addendum — feed architecture: census / event / validator (2026-11-02)
+
+Owner-directed ("design and architect to use in way thats best for
+us and adds value — carpedata"). The two live APIs get fixed roles:
+**FastballAPI = census** (canonical current-IL snapshot),
+**Statyx = event layer** (recent moves), MLB Stats API stays
+standings of record, FastballAPI standings stay validator.
+
+**Statyx standings test — verdict: DROPPED.** The committed
+snapshot (50 rows) was inspected for any identifier that joins
+deterministically to the platform's team table. The payload's only
+identifier field is `team_id` — Statyx-internal values 1794–1823,
+25 distinct — with no team name, abbreviation, or code fields
+(full field list recorded in `data/il_events.json` metadata). No
+crosswalk from Statyx team_id to MLB teams exists anywhere in the
+repo (the Chadwick register is player-level; `dim_team` keys on
+StatsAPI IDs/abbreviations). Coverage is also partial: 25 rows per
+season (2025 and 2026) against 30 platform teams. Disposition:
+snapshot retained raw-only for provenance; nothing curates from
+it; no code pretends otherwise.
+
+**First event comparison — baseline vs fresh pull: 0 events.**
+One fresh call per endpoint (all HTTP 200; 4 FastballAPI credits,
+8 of 500 for November including Cycle 51). Standings and
+FastballAPI injuries payloads were byte-identical to the baseline.
+The Statyx injuries page carried the same 50 players with the same
+statuses, types, details, and return dates; the ONLY difference
+was every record's `updated_at`, re-stamped to the page-generation
+time (20:00:25Z → 22:32:02Z) — verified by hand, field by field.
+Statyx therefore timestamps the page, not the move; the stable
+per-record field is `date`. Zero movement events is the correct
+result and ships as such: `data/il_events.json` records the
+baseline pair, the comparison (0 new IL / 0 returned / 0 status
+changes, full set and FA-pool view), and the standings verdict.
+Landing is state-aware from here on: a payload unchanged after
+stripping volatile fields (`updated_at`) is recorded in the
+manifest as `ok_no_change` and not re-landed.
+
+**Consumer:** the health figure gains a third row under the live-IL
+table — the movement line, rendered from `il_events.json` ("no
+movement in the FA pool since the baseline pull", with both
+layers' pull dates). Figure count stays 25. The gate gains two
+API-2 checks (artifact consistency incl. snapshot sha verification,
+and the movement line in the rendered HTML): **65 → 67 offline
+checks, ALL PASS**; curated tables **18 → 19** (`fact_il_events`,
+0 rows at baseline, contracts pass; all prior parquets
+byte-identical). Parity r = 0.889 / 201.

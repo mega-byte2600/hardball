@@ -1,0 +1,91 @@
+{
+ "metadata": {
+  "cycle": 55,
+  "architecture": "FastballAPI = census (canonical IL snapshot); Statyx = event layer (recent moves); MLB Stats API = standings of record; FastballAPI standings = validator",
+  "baseline_date": "2026-11-02",
+  "current_date": "2026-11-02",
+  "census_pulled_date": "2026-11-02",
+  "moves_pulled_date": "2026-11-02",
+  "baseline": {
+   "statyx_injuries": {
+    "file": "data/raw/statyx/injuries_2026-11-02.json",
+    "fetched_at": "2026-11-02T21:51:28+00:00",
+    "payload_sha256": "37206be03bd31fc18f9db9fcdb6d3acccd0b9cf41be299035c38938633981605"
+   },
+   "fastballapi_injuries": {
+    "file": "data/raw/fastballapi/injuries_2026-11-02.json",
+    "fetched_at": "2026-11-02T21:51:28+00:00",
+    "payload_sha256": "7d01e0020b02f74df48407d49337ad546ff5722e2953ba514320af3974fb26e2"
+   }
+  },
+  "current": {
+   "statyx_injuries": {
+    "file": "data/raw/statyx/injuries_2026-11-02.json",
+    "fetched_at": "2026-11-02T21:51:28+00:00",
+    "payload_sha256": "37206be03bd31fc18f9db9fcdb6d3acccd0b9cf41be299035c38938633981605"
+   },
+   "fastballapi_injuries": {
+    "file": "data/raw/fastballapi/injuries_2026-11-02.json",
+    "fetched_at": "2026-11-02T21:51:28+00:00",
+    "payload_sha256": "7d01e0020b02f74df48407d49337ad546ff5722e2953ba514320af3974fb26e2"
+   }
+  },
+  "published_view": "FA pool (251) + scenario-roster players; the full diff is stored in 'events'",
+  "statyx_standings_test": {
+   "verdict": "dropped",
+   "reason": "Statyx standings carries no joinable team identifier: the only identifier field is 'team_id' (Statyx-internal values 1794..1823), there are no team name/abbreviation/code fields, and no crosswalk from Statyx team_id to MLB teams exists in the repo (the Chadwick register is player-level; dim_team keys on StatsAPI IDs/abbreviations). Coverage is also partial: {2025: 25, 2026: 25} rows per season vs 30 platform teams. The snapshot stays raw-only; nothing curates from it.",
+   "evidence": {
+    "rows": 50,
+    "seasons": [
+     2025,
+     2026
+    ],
+    "rows_per_season": {
+     "2025": 25,
+     "2026": 25
+    },
+    "distinct_team_ids": 25,
+    "identifier_fields_present": [
+     "team_id"
+    ],
+    "all_fields": [
+     "away_losses",
+     "away_wins",
+     "division_name",
+     "division_rank",
+     "games_behind",
+     "home_losses",
+     "home_wins",
+     "last_ten_games",
+     "league_name",
+     "league_rank",
+     "losses",
+     "run_differential",
+     "runs_allowed",
+     "runs_scored",
+     "season",
+     "streak",
+     "team_id",
+     "win_percent",
+     "wins"
+    ]
+   },
+   "disposition": "raw snapshot retained for provenance; standings of record remain MLB Stats API with FastballAPI as validator (Cycle 51)."
+  },
+  "movement_line": "Movement since 2026-11-02: no movement in the FA pool since the baseline pull \u2014 census (FastballAPI) pulled 2026-11-02, moves (Statyx) pulled 2026-11-02."
+ },
+ "summary": {
+  "events_total": 0,
+  "new_il": 0,
+  "returned": 0,
+  "status_change": 0
+ },
+ "fa_pool_summary": {
+  "events_total": 0,
+  "new_il": 0,
+  "returned": 0,
+  "status_change": 0
+ },
+ "events": [],
+ "fa_pool_events": []
+}

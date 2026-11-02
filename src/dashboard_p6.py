@@ -311,7 +311,37 @@ def panel_health():
         title=fig.layout.title.text,
         xaxis_title="", yaxis_title="Projected PA reduction (%)",
         template="plotly_white", height=760, showlegend=True)
-    return combo
+    # Cycle 55: movement line from the event layer (data/il_events.json,
+    # built by src/bml_cycle55.py) under the live-IL table. Absent the
+    # artifact, the panel keeps the Cycle 51 two-row shape — fail closed.
+    ev_path = os.path.join(DATA, "il_events.json")
+    if not os.path.exists(ev_path):
+        return combo
+    with open(ev_path) as fh:
+        ev = json.load(fh)
+    line = ev["metadata"]["movement_line"]
+    table_title = (f"Current IL picture — LIVE feeds (Statyx + FastballAPI, pulled "
+                   f"{live['metadata']['pulled_date']}): {ov['n_matched']} of "
+                   f"{ov['fa_pool_size']} free agents currently listed injured")
+    combo3 = make_subplots(
+        rows=3, cols=1, row_heights=[0.44, 0.42, 0.14],
+        vertical_spacing=0.10,
+        specs=[[{"type": "bar"}], [{"type": "table"}],
+               [{"type": "scatter"}]],
+        subplot_titles=["", table_title, ""])
+    for tr in combo.data[:-1]:
+        combo3.add_trace(tr, row=1, col=1)
+    combo3.add_trace(combo.data[-1], row=2, col=1)
+    combo3.add_trace(go.Scatter(
+        x=[0], y=[0], mode="text", text=[line], showlegend=False,
+        textfont=dict(size=13), hoverinfo="skip"), row=3, col=1)
+    combo3.update_xaxes(visible=False, row=3, col=1)
+    combo3.update_yaxes(visible=False, row=3, col=1)
+    combo3.update_layout(
+        title=fig.layout.title.text,
+        xaxis_title="", yaxis_title="Projected PA reduction (%)",
+        template="plotly_white", height=830, showlegend=True)
+    return combo3
 
 
 def panel_roster():
@@ -2239,16 +2269,22 @@ a salary cross-check. <b>Salary use FAILED CLOSED (Cycle 44):</b> only 71.1%
 of matched salaries agreed within $50k against the 80% bar, so no
 Baseball-Reference salary data is used anywhere on this page; the files are
 kept raw for WAR checks only.<br>
-<span class="src">Statyx</span> (api.statyx.io) — live MLB injuries and
-standings. <b>SERVING since Cycle 51 (2026-11-02)</b>: with FastballAPI it
-feeds the current-IL layer (curated table fact_il_current, 196 players)
-and the health figure's live-IL picture — 13 of the 251 free agents
-currently listed injured, pulled 2026-11-02 (injuries page answered 200
-with 50 recent-move records, 44 of them also on FastballAPI's full
-list).<br>
+<span class="src">Statyx</span> (api.statyx.io) — live MLB injuries
+(recent-moves feed). <b>SERVING since Cycle 51 (2026-11-02) — the EVENT
+layer (Cycle 55)</b>: its moves are compared against the FastballAPI
+census for the health figure's movement line (curated table
+fact_il_events), and with FastballAPI it feeds the current-IL layer
+(curated table fact_il_current, 196 players) and the health figure's
+live-IL picture — 13 of the 251 free agents currently listed injured,
+pulled 2026-11-02 (injuries page answered 200 with 50 recent-move
+records, 44 of them also on FastballAPI's full list). Its standings
+payload was tested in Cycle 55 and dropped as a source (only a
+Statyx-internal team_id, no crosswalk to MLB teams, 25 of 30 teams
+covered) — kept raw only.<br>
 <span class="src">FastballAPI</span> (mcp.fastballapi.com) — live injuries and
 standings plus pitch-level history back to 2015. <b>SERVING since Cycle 51
-(2026-11-02)</b>: the full 190-record IL list is the backbone of the same
+(2026-11-02) — the CENSUS (Cycle 55)</b>: the full 190-record IL list is
+the canonical snapshot behind the same
 current-IL layer and health-figure live picture; its 2026 standings
 snapshot agrees with the committed MLB Stats API picture 30 of 30 on
 wins and runs scored (cross-check in docs/CARPE_SCORECARD.md).<br>

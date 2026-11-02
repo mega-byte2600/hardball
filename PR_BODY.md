@@ -1,61 +1,62 @@
-# Cycle 53 — FIG-QA: Figures 1–25 traced, corrected, gated
+# Cycle 55 — API-2: feed architecture (census / event / validator)
 
-Owner-directed 2026-11-02 ("improve QA of figures 1-25").
-**Figure count stays 25. No claim changes** — number and label
-corrections only; the one item that would change a claim is
-held as an owner item below. GitHub Actions ignored per the
+Owner-directed 2026-11-02 ("design and architect to use in way
+thats best for us and adds value — carpedata"). **Figure count
+stays 25. No claim changes.** GitHub Actions ignored per the
 owner's 2026-11-02 directive (minutes exhausted until Dec 1) —
 the local gate, platform, and parity below carry the
 verification.
 
 ## What shipped
 
-- **Trace audit (CARPE_SCORECARD Cycle 53 addendum):** a
-  25-row table — figure → source artifact(s) → check method.
-  Figures traced 25/25; numbering/titles verified identical
-  across dashboard build order, Explorer, README, TALKTRACK,
-  EXEC_SUMMARY and ONEPAGER. Pre-swap numbers (42.0/45.7/52.3,
-  stress 38.3/41.7/47.7) survive only as labeled benchmark or
-  dated historical context.
-- **Gate (`src/verify_data.py`):** 25 new FIG-QA checks, one
-  per figure, each computing its expected value from the
-  committed artifact at gate time (pooled r and pair count,
-  over-cap count, fee checkpoint, benchmark r and overlap,
-  live-IL counts and pull date, …). A wrong number in any
-  figure now turns the gate red. **40 → 65 checks offline,
-  41 → 66 with --live, ALL PASS.**
-- **Fixes (7 edits):**
-  - Stat card: pooled contact "r = .83, 422 pairs" → **.84,
-    457 pairs** (persistence_ci.json).
-  - Story appendix: latest-pair-only contact/walk r values
-    (.90/.66) presented as general → pooled .84, walk .66–.77
-    across the four pairs.
-  - EXEC_SUMMARY: "walk discipline at pooled r = 0.72" (no
-    pooled walk value exists in any artifact) → per-pair
-    range 0.66–0.77; P7 line corrected from PENDING to the
-    owner's recorded MVP-level approval (2026-10-31).
-  - WAR precision convention: player-card Steamer WAR and the
-    Figure 16 roster table now print WAR at 1 decimal.
-  - Bottom line: "roughly half payroll" → traced fraction
-    (~ a third of the biggest payrolls; ~95 = winning-cheap
-    trio average wins, ~79 = rest-of-league average, both
-    computed from kpi_2026.json).
-  - Story chapter 5: floor's ±20% range completed (45.0–53.2).
-
-## Owner item (not in this PR)
-
-Figure 9's `projections_2026.json` is in-sample fitted values
-(`src/model_p6.py`: 2025+2026 fit applied to 2026 teams) under
-the title "Model-projected wins by team", with no in-sample /
-diagnostic label — while the demo elsewhere disclaims
-team-wins forecasting. Adding the disclosure changes the
-figure's claim presentation; it is the owner's call.
+- **Fixed feed roles:** FastballAPI = CENSUS (canonical current-IL
+  snapshot); Statyx = EVENT layer (recent moves); MLB Stats API
+  stays standings of record; FastballAPI standings stay validator.
+  Documented in docs/DATA_PLATFORM.md ("Feed architecture") and
+  labeled in the dashboard's sources footer.
+- **Statyx standings test — DROPPED.** The payload's only
+  identifier is a Statyx-internal `team_id` (1794–1823, 25
+  distinct); no team name/abbreviation/code fields exist, no
+  crosswalk to MLB teams exists in the repo, and coverage is 25 of
+  30 teams per season (2025, 2026). Snapshot stays raw-only;
+  verdict + field-level evidence recorded in
+  `data/il_events.json` metadata and the CARPE_SCORECARD Cycle 55
+  addendum. No code curates from it.
+- **Event layer:** `src/bml_cycle55.py` compares the Cycle 51
+  baseline snapshots against the newest landed pair and writes
+  `data/il_events.json` (full comparison stored; published view
+  restricted to the FA pool + scenario-roster players), curated as
+  append-only `fact_il_events`. Fresh pull this cycle (one call
+  per endpoint, all HTTP 200, 4 FastballAPI credits): **0 events —
+  the correct result.** Standings and FastballAPI injuries were
+  byte-identical to baseline; the Statyx page carried the same 50
+  players/statuses/types/details/returns, differing only in every
+  record's `updated_at`, which Statyx re-stamps at page-generation
+  time (hand-verified). Landing is therefore state-aware: volatile
+  fields are stripped before the change test, and an unchanged
+  payload is logged `ok_no_change` in the manifest, not re-landed.
+- **Refresh:** `src/refresh_live_feeds.py` — the production path
+  the 6-hourly job will call. Watermark guard (skip if the last
+  successful pull is <20h old, exit 0), credit ledger from the
+  manifest with a hard skip at 200 FastballAPI credits/month,
+  fail-closed pull (nothing lands unless all four endpoints
+  answer 200), then rebuild of both artifacts and a one-line
+  summary. `--force` overrides the watermark only. The gate never
+  calls it — gate/CI contexts stay fully offline.
+- **Consumer:** the health figure gains a movement line under the
+  live-IL table, rendered from `il_events.json` (zero state reads
+  "no movement in the FA pool since the baseline pull", with both
+  layers' pull dates shown). `src/bml_cycle51.py` now resolves the
+  newest landed snapshot stem per (source, kind); its rebuild of
+  `il_current_live.json` is byte-identical (md5 da5e995f…).
 
 ## Verification
 
-Platform: ingest 25 datasets / 0 failures; curate 18 tables,
-all contracts pass; warehouse rebuilt; parity r = 0.889 / 201.
-Gate ALL PASS offline (65) and --live (66, standings 30/30).
+Platform: ingest 25 datasets / 0 failures; curate 19 tables
+(18 → 19, `fact_il_events` new at 0 rows), all contracts pass,
+all prior parquets byte-identical; warehouse rebuilt; parity
+r = 0.889 / 201. Gate ALL PASS offline (68 checks, was 66 — two
+new API-2 checks: il_events consistency incl. snapshot sha
+verification, and the movement line in the rendered HTML).
 Spellcheck green. No browser visual QA (standing rule).
-Docs: CARPE_SCORECARD Cycle 53 addendum (trace table),
-BML_LOG Cycle 53, HANDOFF.
+Credits: 4 spent this cycle; 8 of 500 for November.

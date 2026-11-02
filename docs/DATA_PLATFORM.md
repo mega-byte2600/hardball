@@ -102,6 +102,43 @@ of that event (Cycle 45) so every agent working from git sees it.
   Neither is a source of any demo data yet; never present them as
   connected.
 
+## Feed architecture — census / event / validator (Cycle 55)
+
+The two live APIs have fixed roles; nothing reads from them ad hoc.
+
+- **FastballAPI = CENSUS.** Its full injuries list (190 records) is
+  the canonical current-IL snapshot behind curated
+  `fact_il_current` and the health figure's live-IL picture.
+- **Statyx = EVENT layer.** Its injuries page is a recent-moves
+  feed (50 records with per-move dates and commentary). Successive
+  pulls are compared against the census baseline (Cycle 51,
+  2026-11-02); movement — new IL / returned / status change — is
+  published as `data/il_events.json` and curated as append-only
+  `fact_il_events`. The published view is restricted to the FA pool
+  (251) plus scenario-roster players; the artifact stores the full
+  comparison as well.
+- **Standings:** MLB Stats API remains the standings of record;
+  FastballAPI standings are the validator (Cycle 51: 30/30 on wins
+  and runs). **Statyx standings were tested in Cycle 55 and
+  DROPPED**: the payload's only identifier is a Statyx-internal
+  `team_id` (values 1794–1823) with no name/abbreviation/code
+  fields, no crosswalk to MLB teams exists in the repo, and it
+  covers 25 of 30 teams per season (2025 and 2026). The snapshot
+  stays raw-only for provenance; nothing curates from it.
+- **Refresh discipline:** `src/refresh_live_feeds.py` is the ONLY
+  network path for the feeds (the 6-hourly job calls it). It skips
+  when the last successful pull is under 20h old (FastballAPI
+  itself updates once daily, 10:00 UTC), and it hard-skips at 200
+  FastballAPI credits month-to-date against the 500/month plan,
+  counted from the `credits` fields of `data/raw/manifest.jsonl`.
+  A pull lands only when all four endpoints answer 200 (fail
+  closed); snapshots land state-aware — a payload that changed
+  only in volatile fields (Statyx re-stamps every record's
+  `updated_at` at page-generation time) is recorded in the
+  manifest as `ok_no_change` and not re-landed. The data gate
+  never calls the refresh script; it verifies committed artifacts
+  only, so gate/CI contexts run fully offline.
+
 ## Structured and unstructured
 Structured sources (APIs, CSVs) land as JSON/CSV in raw and curate
 into typed tables. Unstructured sources (Spotrac HTML pages) land

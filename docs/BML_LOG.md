@@ -1770,3 +1770,46 @@ count unchanged at 23. No NPB→MLB translation factor claimed anywhere.
   before UNC-1; UNC-1 shipped here first because it was built and
   verified this run and touches no feed files — the two lanes do not
   collide.)
+## Cycle 55 — API-2: feed architecture, census/event/validator (2026-11-02, owner-directed)
+- Built: fixed feed roles — FastballAPI = CENSUS (canonical IL
+  snapshot), Statyx = EVENT layer (recent moves), StatsAPI =
+  standings of record, FastballAPI standings = validator.
+  `src/bml_cycle55.py`: Statyx standings join test, state-aware
+  landing (volatile-field stripping), baseline-vs-current event
+  comparison → `data/il_events.json`; curated append-only table
+  `fact_il_events` (src/curate.py). `src/bml_cycle51.py` now
+  resolves the newest landed snapshot stem per (source, kind) —
+  rebuild of il_current_live.json verified byte-identical
+  (md5 da5e995f…). `src/refresh_live_feeds.py`: the production
+  refresh path — 20h watermark skip, hard skip at 200 FastballAPI
+  credits/month counted from the manifest ledger, fail-closed
+  pull → land → rebuild both artifacts → one-line summary; the
+  gate never calls it (offline-safe by construction).
+- Measured: Statyx standings test DROPPED — only identifier is
+  Statyx-internal team_id 1794–1823 (25 distinct), no
+  name/abbreviation/code fields, no crosswalk in repo, 25 of 30
+  teams per season (2025+2026); kept raw-only (verdict + evidence
+  in il_events.json metadata and the CARPE_SCORECARD Cycle 55
+  addendum). Fresh pull (one call per endpoint, all 200, 4
+  FastballAPI credits; November total 8 of 500): standings and
+  FastballAPI injuries byte-identical to baseline; Statyx page
+  identical in players/status/type/detail/return, differing only
+  in all 50 records' updated_at (re-stamped at page generation —
+  hand-verified) → first event comparison = 0 events (0 new IL /
+  0 returned / 0 status changes), the correct result, shipped as
+  baseline-established. Health figure gains the movement line
+  (third row, from il_events.json); figure count stays 25;
+  dashboard sources footer now labels the census/event roles and
+  the standings drop.
+- GATE: ingest 25 datasets / 0 failures; curate 19 tables (was
+  18), all contracts pass, prior parquets byte-identical;
+  warehouse rebuilt; parity r = 0.889 / 201; gate ALL PASS
+  offline (67 checks, was 65 — two new API-2 checks) and
+  spellcheck green. GitHub Actions ignored per the owner's
+  blackout directive (until Dec 1). No browser visual QA
+  (standing rule).
+- Note: numbered Cycle 55 because the parallel lane's UNC-1
+  took Cycle 54 (PR #36) while this cycle was in build; the two
+  lanes touched disjoint files.
+- Next: wire refresh_live_feeds.py into the 6-hourly job (parent
+  lane), then UNC-2 (uncertainty layer) — final increment.
