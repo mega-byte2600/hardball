@@ -914,3 +914,48 @@ streaming terms, Moses et al. observability).
   nothing in it.
 - Next: item (h) continues — next drift re-run (e.g. Cycle 22 Steamer
   benchmark) or docs polish; no new claims.
+
+## Cycle 41 — COT'S SALARY LANE: RECONCILED, FAILED CLOSED (toby, 2026-11-02 ~06:20 PT, owner-approved lane)
+- Owner approved the Cot's lane in chat ("Run the Cot's lane — reconcile,
+  then fill the 6 teams"), mirroring the FanGraphs lane's discipline:
+  pull, run the reconcile-first guard against the 24 Spotrac teams, fill
+  only on a pass.
+- Pull: legacy.baseballprospectus.com is Anubis-gated for direct fetch
+  (challenge page, no data — not routed around). The Cot's index links
+  public per-team Google Sheets ("26 YE", projected 40-man year-end
+  through 11/1/26); all 30 exported as CSV (30/30 HTTP 200, polite rate)
+  and cached in the mirror at data/raw/cots/ on the Spotrac pattern.
+  2,240 payroll lines parsed: 1,369 main contract rows + 871 bonus /
+  buyout / departed-player lines.
+- Reconciliation discovery: the Spotrac salaries file is on a **2027**
+  basis — cached pages are titled "2027 <Team> Payroll Table" (Spotrac
+  had rolled seasons at the Cycle 25 pull, 2026-10-31). Contracted
+  veterans match Cot's LRP-2027 to the dollar (ATH escalators exact).
+  All four Cot's columns tested; LRP 2027 is the only viable mapping.
+- Guard result: FAIL on every prong of the pass bar. Coverage 150/927
+  (16.2%) — the unmatched 777 are 501 pre-arb rows at Spotrac's flat
+  $1,000,000 placeholder, 209 arbitration projections, 58 names absent
+  from the team's Cot's sheet, and 9 option/FA-marker veterans; Cot's
+  does not publish estimates for unsigned players. Agreement 104/150 within
+  $50k = 69.3% (bar 95%); plain-contract subset 85.5%. Team totals off
+  by >2% in 16/24. Top-5 clean in 3/17 evaluable teams. Causes are
+  accounting conventions: option years (Cot's books the buyout,
+  Spotrac the exercised salary — Robert Jr. $2.0M vs $20.0M), deferred
+  money (Cot's present value vs Spotrac nominal — Ohtani $28.216M vs
+  $70.0M), signing-bonus proration residuals ≤ ~$1.7M. Full tables in
+  docs/CARPE_SCORECARD.md (Cycle 41 addendum).
+- FAILED CLOSED, as the guard requires: data/salaries_2026.json
+  untouched, salaries remain 24/30 Spotrac, forced-seller coverage
+  remains 6/7 (CHC uncovered), no platform or dashboard change. Cot's
+  itself spot-verified accurate (CHC: Swanson AAV $25,285,714, Imanaga
+  $22,025,000, Happ AAV $20,333,333). A fill would need a full-file
+  basis conversion or a separately labeled Cot's dataset — owner's
+  call, flagged in the scorecard, not taken here.
+- This PR is docs-only (scorecard + this entry). Gate state unchanged
+  from Cycle 40's ALL PASS on the same main head; the salaries honesty
+  check still reads 24/30 because the data still is 24/30.
+- Spotrac / FanGraphs not retried this lane beyond the standing
+  per-run probes (both still blocked); no source was routed around.
+- Next: owner's call on the two fill options above, or item (h)
+  continues; PR #21 (Cycle 39 persistence correction) still open,
+  untouched.
