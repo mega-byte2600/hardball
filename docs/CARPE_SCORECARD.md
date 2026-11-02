@@ -213,3 +213,93 @@ HANDOFF.md + docs/DATA_PLATFORM.md where collaborating lanes read.
   cycle's measured decision, not a silent swap. Spotrac probe this
   cycle: not re-run (Cycle 44's 403 stands; salaries remain 24/30
   Spotrac-basis + the labeled Cot's layer).
+
+## Addendum — Cycle 46 (2026-11-02): HS-1, the Hakes–Sauer pricing screen (workpaper only — no dashboard claim change)
+
+Owner-approved MIT-gap programme, increment 1 of 6 (2026-11-02 12:57 PT).
+Hakes & Sauer (2006) regressed ln(salary) of newly signed free agents on
+performance and showed OBP was underpriced relative to SLG before ~2004
+and correctly priced after. HS-1 asks HARDBALL's version on today's
+market: are the thesis skills (contact/K-avoidance, OBP, walk discipline,
+availability) priced below their run value? Build:
+`src/bml_cycle46.py`; dataset `data/hakes_sauer_dataset.json`; full
+coefficient tables `data/hakes_sauer_results.json`. Committed data only.
+
+**Method.** Two salary samples, bases never mixed. Sample S:
+`data/salaries_2026.json` (Spotrac basis; Cycle 41 established the file
+is the 2027 payroll despite its name), salary field as committed.
+Sample C: `data/salaries_cots_2027.json` (Cot's LRP-2027 basis),
+player-team obligation rows summed to player level (a player paid by
+two clubs is paid the sum; obligations within one basis only). Skills
+are expected 2027 skills — Marcel projections (OBP, SLG, K%, BB%) —
+because the salary year is 2027; controls are age (dim_player),
+Steamer 2027 WAR, and Steamer projected PA (Marcel's proj_PA is a
+constant 500 for all 201 hitters and cannot proxy availability).
+Realized 2026 skills are carried as a descriptive sensitivity.
+Regression: ln(salary) on OBP, SLG, K%, BB%, age, WAR, PA (spec A),
+plus an HS-faithful spec B without the WAR control. OLS via numpy with
+classical standard errors (no statsmodels in the venv). Pitchers are
+out of scope; two-way players are excluded (their salary prices both
+roles — the Spotrac file stores the case as "SP  /DH", which the
+exclusion matches on the space-stripped position).
+
+**Exclusion cascades.** Sample S: 927 rows → 553 Pre-Arbitration rows
+at Spotrac's flat $1,000,000 excluded as placeholders and 219
+non-Bypassed Arbitration rows excluded as projections → 155 real
+contract rows → 68 pitcher positions and 1 two-way row excluded → 26
+without a Marcel projection or complete controls → **n = 60**, exactly
+at the pre-registered n≈60 power floor (marginal; read accordingly).
+Reconciliation: Cycle 41's 501/209 counts described the subset of
+Spotrac rows with no Cot's counterpart (777 rows); HS-1's whole-file
+rule (553/219) is broader and more conservative. Sample C: 237
+player-team rows → 90 rows match a Marcel hitter (83 unique players)
+→ 1 two-way label excluded → **n = 82** on LRP-2027 (n = 76 on the
+CBT-AAV sensitivity, which requires an AAV on every Cot's row).
+
+**Headline numbers (spec A).** Sample S (n = 60, R² = 0.359): OBP
+−3.91 (SE 6.49, p = .549), SLG +2.73 (SE 2.23, p = .226), K% −0.005
+(p = .798), BB% +0.032 (p = .519); age is the only significant term
+(+0.102, p < .001). Sample C (n = 82, R² = 0.302): OBP +3.31 (SE 7.52,
+p = .661), SLG +2.23 (SE 2.71, p = .414), K% +0.026 (p = .260), BB%
+−0.018 (p = .751); age (+0.111, p < .001) and Steamer PA (+0.0026,
+p = .014) significant. Spec B (no WAR control) tells the same story in
+both samples. The descriptive OBP/SLG coefficient ratio is −1.43 in
+Sample S and +1.48 in Sample C — it flips sign across bases, and no
+OBP/SLG run-value benchmark exists in the repo docs/data (the
+value_metrics wOBA weights are event weights, not OBP/SLG marginal
+values), so HS-1 reports the ratio as descriptive only and defers the
+formal proportionality test to HS-2. OBP's standard errors are large
+by construction: OBP VIF is 7.5 / 6.4 (S / C) against BB% and WAR.
+
+**Non-parametric cross-view ($/WAR by skill quartile).** $/WAR is
+salary ÷ Steamer WAR, defined for WAR > 0 only (no sample player was
+excluded on that rule). Top-quartile contact hitters (lowest K%) cost
+about half as much per WAR as bottom-quartile contact hitters, in
+both samples: Sample S median $/WAR $8.03M (n = 15) vs $14.98M
+(n = 15), ratio 0.536; Sample C $6.19M (n = 21) vs $11.64M (n = 21),
+ratio 0.532. The same pattern holds, weaker, for OBP quartiles
+(ratios 0.77 / 0.70). This is a descriptive contrast, not a price
+effect: quartile medians do not control for age, position, or
+contract timing.
+
+**Limits — what HS-1 is not.** (1) HS's design used newly signed FA
+contracts; the committed data carries active 2027 contracts with no
+signing-date field, so this is a cross-sectional pricing screen —
+many of these salaries were set in earlier markets. (2) Skills are
+projections, not realized performance; the realized-2026 sensitivity
+covers qualified hitters only (fact_stat_lines carries PA ≥ 502
+hitters: 42 of Sample S, 55 of Sample C) and is reported as
+descriptives only — no regression was run on it. (3) Sample S sits
+exactly at the power floor and covers 24 of 30 teams. (4) No skill
+coefficient is statistically distinguishable from zero in either
+sample, so HS-1 returns NO verdict on "undervalued": the screen is
+consistent with the thesis direction on the quartile view and
+uninformative on the regression view. Both statements stay in the
+workpaper; neither touches the dashboard.
+
+**What HS-2 adds.** A run-value benchmark for OBP vs SLG (from run
+expectancy on committed play data or a cited literature value, labeled
+as such), the formal coefficient-proportionality test, and — if the
+data can support it — a newly signed contract subset so the design
+matches Hakes–Sauer's. Only then, and only if the verdict supports
+it, does any headline change.

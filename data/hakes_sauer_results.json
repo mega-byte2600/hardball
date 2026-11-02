@@ -1,0 +1,502 @@
+{
+ "cycle": 46,
+ "study": "HS-1 Hakes-Sauer pricing screen (workpaper only; no dashboard claim change)",
+ "method": {
+  "dependent_variable": "ln(2027 salary anchor), field defined per sample in the dataset metadata",
+  "skills": "Marcel 2027 projections (data/projections_2027.json): proj_OBP, proj_SLG, proj_K%, proj_BB%",
+  "controls": "age (dim_player.current_age), Steamer 2027 WAR, Steamer projected PA (fact_steamer_bat)",
+  "spec_B": "sensitivity without the WAR control (Hakes-Sauer controlled playing time/experience, not WAR)",
+  "run_value_benchmark": "none found in repo docs/data \u2014 descriptive coefficient ratio only; formal test deferred to HS-2",
+  "scope": "hitters only; pitchers out of scope; two-way players excluded (salary prices both roles)",
+  "design_limit": "cross-sectional screen on ACTIVE 2027 contracts, not HS's newly-signed-FA design; associations are not causal price effects",
+  "min_n_rule": "samples below n=60 are reported as underpowered descriptives only"
+ },
+ "sample_S_spotrac_basis": {
+  "salary_basis": "Spotrac-basis file data/salaries_2026.json, salary_2026 field (2027 payroll basis per Cycle 41)",
+  "n": 60,
+  "powered_at_min_n": true,
+  "spec_A_full_controls": {
+   "n": 60,
+   "r2": 0.3594,
+   "adj_r2": 0.2731,
+   "terms": {
+    "intercept": {
+     "coef": 12.7157,
+     "se": 1.9461,
+     "t": 6.534,
+     "p": 0.0
+    },
+    "OBP": {
+     "coef": -3.9124,
+     "se": 6.4923,
+     "t": -0.603,
+     "p": 0.5494
+    },
+    "SLG": {
+     "coef": 2.7342,
+     "se": 2.2303,
+     "t": 1.226,
+     "p": 0.2257
+    },
+    "K%": {
+     "coef": -0.0052,
+     "se": 0.0204,
+     "t": -0.257,
+     "p": 0.7982
+    },
+    "BB%": {
+     "coef": 0.032,
+     "se": 0.0494,
+     "t": 0.649,
+     "p": 0.5192
+    },
+    "age": {
+     "coef": 0.1024,
+     "se": 0.0254,
+     "t": 4.025,
+     "p": 0.0002
+    },
+    "WAR": {
+     "coef": 0.0698,
+     "se": 0.0949,
+     "t": 0.736,
+     "p": 0.4652
+    },
+    "PA": {
+     "coef": 0.0012,
+     "se": 0.0009,
+     "t": 1.289,
+     "p": 0.203
+    }
+   },
+   "vif": {
+    "OBP": 7.51,
+    "SLG": 3.07,
+    "K%": 2.39,
+    "BB%": 4.52,
+    "age": 1.62,
+    "WAR": 3.27,
+    "PA": 1.89
+   }
+  },
+  "spec_B_no_war_control": {
+   "n": 60,
+   "r2": 0.3527,
+   "adj_r2": 0.2794,
+   "terms": {
+    "intercept": {
+     "coef": 12.6916,
+     "se": 1.9374,
+     "t": 6.551,
+     "p": 0.0
+    },
+    "OBP": {
+     "coef": -3.8165,
+     "se": 6.4629,
+     "t": -0.591,
+     "p": 0.5573
+    },
+    "SLG": {
+     "coef": 3.281,
+     "se": 2.0937,
+     "t": 1.567,
+     "p": 0.123
+    },
+    "K%": {
+     "coef": -0.009,
+     "se": 0.0196,
+     "t": -0.457,
+     "p": 0.6496
+    },
+    "BB%": {
+     "coef": 0.0353,
+     "se": 0.0489,
+     "t": 0.72,
+     "p": 0.4744
+    },
+    "age": {
+     "coef": 0.0948,
+     "se": 0.0232,
+     "t": 4.093,
+     "p": 0.0001
+    },
+    "PA": {
+     "coef": 0.0016,
+     "se": 0.0007,
+     "t": 2.159,
+     "p": 0.0354
+    }
+   },
+   "vif": {
+    "OBP": 7.51,
+    "SLG": 2.73,
+    "K%": 2.24,
+    "BB%": 4.49,
+    "age": 1.36,
+    "PA": 1.22
+   }
+  },
+  "obp_to_slg_coef_ratio_descriptive": -1.431,
+  "ratio_note": "DESCRIPTIVE ONLY: no OBP/SLG run-value benchmark exists in-repo; the formal Hakes-Sauer proportionality test is deferred to HS-2."
+ },
+ "sample_C_cots_lrp2027": {
+  "salary_basis": "Cot's LRP-2027, player-aggregated salary_lrp_2027",
+  "n": 82,
+  "powered_at_min_n": true,
+  "spec_A_full_controls": {
+   "n": 82,
+   "r2": 0.3017,
+   "adj_r2": 0.2356,
+   "terms": {
+    "intercept": {
+     "coef": 9.1705,
+     "se": 2.1541,
+     "t": 4.257,
+     "p": 0.0001
+    },
+    "OBP": {
+     "coef": 3.3071,
+     "se": 7.5163,
+     "t": 0.44,
+     "p": 0.6612
+    },
+    "SLG": {
+     "coef": 2.2308,
+     "se": 2.7144,
+     "t": 0.822,
+     "p": 0.4138
+    },
+    "K%": {
+     "coef": 0.0263,
+     "se": 0.0232,
+     "t": 1.136,
+     "p": 0.2597
+    },
+    "BB%": {
+     "coef": -0.018,
+     "se": 0.0567,
+     "t": -0.318,
+     "p": 0.7512
+    },
+    "age": {
+     "coef": 0.1105,
+     "se": 0.0308,
+     "t": 3.587,
+     "p": 0.0006
+    },
+    "WAR": {
+     "coef": 0.0663,
+     "se": 0.1143,
+     "t": 0.58,
+     "p": 0.564
+    },
+    "PA": {
+     "coef": 0.0026,
+     "se": 0.001,
+     "t": 2.523,
+     "p": 0.0138
+    }
+   },
+   "vif": {
+    "OBP": 6.42,
+    "SLG": 3.13,
+    "K%": 2.11,
+    "BB%": 3.91,
+    "age": 1.71,
+    "WAR": 3.6,
+    "PA": 2.01
+   }
+  },
+  "spec_B_no_war_control": {
+   "n": 82,
+   "r2": 0.2985,
+   "adj_r2": 0.2424,
+   "terms": {
+    "intercept": {
+     "coef": 9.2642,
+     "se": 2.1385,
+     "t": 4.332,
+     "p": 0.0
+    },
+    "OBP": {
+     "coef": 3.0815,
+     "se": 7.4729,
+     "t": 0.412,
+     "p": 0.6812
+    },
+    "SLG": {
+     "coef": 2.787,
+     "se": 2.5279,
+     "t": 1.103,
+     "p": 0.2738
+    },
+    "K%": {
+     "coef": 0.0223,
+     "se": 0.022,
+     "t": 1.012,
+     "p": 0.3146
+    },
+    "BB%": {
+     "coef": -0.0124,
+     "se": 0.0556,
+     "t": -0.222,
+     "p": 0.8247
+    },
+    "age": {
+     "coef": 0.102,
+     "se": 0.0269,
+     "t": 3.787,
+     "p": 0.0003
+    },
+    "PA": {
+     "coef": 0.003,
+     "se": 0.0008,
+     "t": 3.664,
+     "p": 0.0005
+    }
+   },
+   "vif": {
+    "OBP": 6.4,
+    "SLG": 2.74,
+    "K%": 1.92,
+    "BB%": 3.8,
+    "age": 1.32,
+    "PA": 1.25
+   }
+  },
+  "obp_to_slg_coef_ratio_descriptive": 1.482,
+  "ratio_note": "DESCRIPTIVE ONLY: no OBP/SLG run-value benchmark exists in-repo; the formal Hakes-Sauer proportionality test is deferred to HS-2."
+ },
+ "sample_C_cots_aav_sensitivity": {
+  "salary_basis": "Cot's CBT AAV (cb_2027_aav), player-aggregated; only players with an AAV on every Cot's row",
+  "n": 76,
+  "powered_at_min_n": true,
+  "spec_A_full_controls": {
+   "n": 76,
+   "r2": 0.3649,
+   "adj_r2": 0.2995,
+   "terms": {
+    "intercept": {
+     "coef": 12.8873,
+     "se": 1.309,
+     "t": 9.845,
+     "p": 0.0
+    },
+    "OBP": {
+     "coef": 0.932,
+     "se": 4.5163,
+     "t": 0.206,
+     "p": 0.8371
+    },
+    "SLG": {
+     "coef": 0.3913,
+     "se": 1.606,
+     "t": 0.244,
+     "p": 0.8082
+    },
+    "K%": {
+     "coef": 0.0048,
+     "se": 0.0139,
+     "t": 0.345,
+     "p": 0.731
+    },
+    "BB%": {
+     "coef": 0.027,
+     "se": 0.0339,
+     "t": 0.796,
+     "p": 0.4291
+    },
+    "age": {
+     "coef": 0.0743,
+     "se": 0.0179,
+     "t": 4.151,
+     "p": 0.0001
+    },
+    "WAR": {
+     "coef": 0.1241,
+     "se": 0.0677,
+     "t": 1.833,
+     "p": 0.0711
+    },
+    "PA": {
+     "coef": 0.0008,
+     "se": 0.0007,
+     "t": 1.23,
+     "p": 0.2231
+    }
+   },
+   "vif": {
+    "OBP": 6.3,
+    "SLG": 2.95,
+    "K%": 2.16,
+    "BB%": 3.79,
+    "age": 1.65,
+    "WAR": 3.37,
+    "PA": 1.91
+   }
+  },
+  "spec_B_no_war_control": {
+   "n": 76,
+   "r2": 0.3335,
+   "adj_r2": 0.2755,
+   "terms": {
+    "intercept": {
+     "coef": 13.044,
+     "se": 1.3283,
+     "t": 9.82,
+     "p": 0.0
+    },
+    "OBP": {
+     "coef": 0.4065,
+     "se": 4.5837,
+     "t": 0.089,
+     "p": 0.9296
+    },
+    "SLG": {
+     "coef": 1.4832,
+     "se": 1.5167,
+     "t": 0.978,
+     "p": 0.3315
+    },
+    "K%": {
+     "coef": -0.0029,
+     "se": 0.0135,
+     "t": -0.217,
+     "p": 0.8286
+    },
+    "BB%": {
+     "coef": 0.0376,
+     "se": 0.034,
+     "t": 1.105,
+     "p": 0.2729
+    },
+    "age": {
+     "coef": 0.0589,
+     "se": 0.0161,
+     "t": 3.664,
+     "p": 0.0005
+    },
+    "PA": {
+     "coef": 0.0016,
+     "se": 0.0005,
+     "t": 2.835,
+     "p": 0.006
+    }
+   },
+   "vif": {
+    "OBP": 6.27,
+    "SLG": 2.55,
+    "K%": 1.96,
+    "BB%": 3.68,
+    "age": 1.28,
+    "PA": 1.24
+   }
+  },
+  "obp_to_slg_coef_ratio_descriptive": 2.382,
+  "ratio_note": "DESCRIPTIVE ONLY: no OBP/SLG run-value benchmark exists in-repo; the formal Hakes-Sauer proportionality test is deferred to HS-2."
+ },
+ "quartile_tables": {
+  "sample_S_spotrac_basis": {
+   "by_contact_pct": {
+    "skill": "contact_pct",
+    "q1_cut": 75.075,
+    "q3_cut": 83.225,
+    "n_usable": 60,
+    "excluded_war_le_0": 0,
+    "bottom_quartile": {
+     "n": 15,
+     "median_salary": 17250000.0,
+     "median_war": 2.033,
+     "median_dollars_per_war": 14979225.0
+    },
+    "top_quartile": {
+     "n": 15,
+     "median_salary": 23250000.0,
+     "median_war": 2.893,
+     "median_dollars_per_war": 8028252.0
+    },
+    "top_to_bottom_median_dpw_ratio": 0.536
+   },
+   "by_proj_obp": {
+    "skill": "proj_obp",
+    "q1_cut": 0.309,
+    "q3_cut": 0.349,
+    "n_usable": 60,
+    "excluded_war_le_0": 0,
+    "bottom_quartile": {
+     "n": 15,
+     "median_salary": 17250000.0,
+     "median_war": 1.43,
+     "median_dollars_per_war": 14420086.0
+    },
+    "top_quartile": {
+     "n": 16,
+     "median_salary": 26916666.5,
+     "median_war": 2.731,
+     "median_dollars_per_war": 10696363.0
+    },
+    "top_to_bottom_median_dpw_ratio": 0.742
+   }
+  },
+  "sample_C_cots_lrp2027": {
+   "by_contact_pct": {
+    "skill": "contact_pct",
+    "q1_cut": 75.275,
+    "q3_cut": 83.95,
+    "n_usable": 82,
+    "excluded_war_le_0": 0,
+    "bottom_quartile": {
+     "n": 21,
+     "median_salary": 17500000.0,
+     "median_war": 2.033,
+     "median_dollars_per_war": 11635251.0
+    },
+    "top_quartile": {
+     "n": 21,
+     "median_salary": 15000000.0,
+     "median_war": 2.893,
+     "median_dollars_per_war": 6189076.0
+    },
+    "top_to_bottom_median_dpw_ratio": 0.532
+   },
+   "by_proj_obp": {
+    "skill": "proj_obp",
+    "q1_cut": 0.309,
+    "q3_cut": 0.346,
+    "n_usable": 82,
+    "excluded_war_le_0": 0,
+    "bottom_quartile": {
+     "n": 21,
+     "median_salary": 17250000.0,
+     "median_war": 1.262,
+     "median_dollars_per_war": 14308460.0
+    },
+    "top_quartile": {
+     "n": 22,
+     "median_salary": 20857000.0,
+     "median_war": 2.641,
+     "median_dollars_per_war": 10036131.0
+    },
+    "top_to_bottom_median_dpw_ratio": 0.701
+   }
+  }
+ },
+ "actual_2026_sensitivity": {
+  "sample_S_spotrac_basis": {
+   "n_with_qualified_2026_actuals": 41,
+   "note": "fact_stat_lines carries qualified hitters only (all PA >= 502); descriptive medians only \u2014 no regression on this subset",
+   "median_actual_obp": 0.321,
+   "median_actual_slg": 0.421,
+   "spearman_salary_vs_actual_obp": 0.171,
+   "spearman_salary_vs_actual_slg": 0.079
+  },
+  "sample_C_cots_lrp2027": {
+   "n_with_qualified_2026_actuals": 55,
+   "note": "fact_stat_lines carries qualified hitters only (all PA >= 502); descriptive medians only \u2014 no regression on this subset",
+   "median_actual_obp": 0.326,
+   "median_actual_slg": 0.424,
+   "spearman_salary_vs_actual_obp": 0.106,
+   "spearman_salary_vs_actual_slg": 0.071
+  }
+ }
+}

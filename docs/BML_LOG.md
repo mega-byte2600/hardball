@@ -1302,3 +1302,58 @@ we have these apis as other agents collab on hardball project!"
   Sportradar trial mid-Nov (owner starts it, Toby wires it); a future cycle
   decides, on measurements, whether the two live injury feeds join
   the availability layer.
+
+## Cycle 46 — HS-1: HAKES–SAUER PRICING SCREEN, DATASET + FIRST REGRESSIONS (toby, 2026-11-02)
+
+- Owner-approved MIT-gap programme (2026-11-02 12:57 PT), increment 1
+  of 6: HS-1. Workpaper only — dashboard, talk track, and exec summary
+  UNCHANGED (any verdict exhibit or re-headline is HS-2, and only if
+  the verdict supports it). Base: main 021410f8 (verified live before
+  building; fresh tarball tree, kpi.py clean).
+- WHAT SHIPPED: `src/bml_cycle46.py` (full reproducible build, prints
+  its own summary), `data/hakes_sauer_dataset.json` (142 player rows +
+  metadata with basis labels and exclusion cascades),
+  `data/hakes_sauer_results.json` (coefficients, SEs, p-values, R²,
+  VIFs, quartile tables, sample notes), and the Cycle 46 addendum in
+  docs/CARPE_SCORECARD.md.
+- DESIGN: ln(2027 salary) on Marcel 2027 OBP, SLG, K%, BB% with age,
+  Steamer WAR, and Steamer PA controls (spec A) plus a no-WAR spec B.
+  Two samples, bases never mixed: S = Spotrac-basis file (2027 basis
+  per Cycle 41), C = Cot's LRP-2027 aggregated from player-team rows
+  to player level. Pitchers out of scope; two-way players excluded
+  (the Spotrac "SP  /DH" spacing trap was caught in-build: the first
+  run included the $70M two-way salary in the batting sample, the
+  exclusion now matches the space-stripped position, and the dataset
+  was re-verified to contain no two-way row).
+- SAMPLES: S: 927 → −553 pre-arb flat-$1M placeholders → −219
+  non-Bypassed arbitration projections → 155 real contracts → −68
+  pitchers → −1 two-way → −26 incomplete → n = 60 (exactly at the
+  pre-registered n≈60 floor; marginal). Cycle 41's 501/209 were the
+  no-Cot's-counterpart subset; the whole-file rule is broader, and
+  the difference is documented in the dataset metadata. C: 237
+  player-team rows → 83 unique Marcel-matched players → −1 two-way →
+  n = 82 (AAV sensitivity n = 76).
+- FINDINGS (no verdict — that is the honest HS-1 result): no skill
+  coefficient is significant in either sample (S: OBP −3.91 p = .549,
+  SLG +2.73 p = .226, K% p = .798, BB% p = .519, R² = 0.359; C: OBP
+  +3.31 p = .661, SLG +2.23 p = .414, K% p = .260, BB% p = .751,
+  R² = 0.302; age significant in both). The descriptive OBP/SLG
+  coefficient ratio flips sign across bases (−1.43 vs +1.48) and no
+  in-repo run-value benchmark exists, so the formal HS
+  proportionality test is deferred to HS-2. The non-parametric view
+  points the thesis's way in both samples: top-quartile contact
+  hitters' median $/WAR is ~half the bottom quartile's (S: $8.03M vs
+  $14.98M, ratio 0.536; C: $6.19M vs $11.64M, ratio 0.532) — a
+  descriptive contrast, labeled as such, not a price effect.
+- LIMITS ON RECORD: active-contract cross-section, not HS's
+  newly-signed-FA design; skills are projections (realized-2026
+  sensitivity is qualified hitters only, descriptives only, no
+  regression run on it); S covers 24/30 teams and sits at the power
+  floor. Nothing failed closed except by design: no BRef-style new
+  salary source was added, no blocked source was probed.
+- Platform + gate on the final tree: ingest 25 datasets, 0 failures;
+  curate contracts pass; warehouse rebuilt from 17 tables; parity
+  r = 0.889 / 201 matched; dashboard rebuilt with lake at 23 figures;
+  gate ALL PASS (offline). No browser visual QA (standing rule).
+- Next: HS-2 (verdict exhibit + formal proportionality test, only on
+  a supported verdict), then OPT-1 per the approved programme order.
