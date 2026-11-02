@@ -546,3 +546,21 @@ players with status/injury/return, rendered from
 `data/il_current_live.json`) under the existing IL-based PA-cap
 chart. Figure count stays 25. The sources footer now reads SERVING
 for both feeds and names the layer they feed.
+
+## Cycle 52 addendum — SWAP: the optimizer rosters headline (2026-11-02)
+
+Promotion, not new science: `src/bml_cycle52.py` moves the Cycle 49
+proven-optimal rosters into `data/wow_scenarios.json` as the
+headline `scenarios` (Floor 48.9 WAR / $171.1M, Middle 52.8 /
+$207.8M, Cap 54.8 / $245.2M), each with its Cycle 50 ±20%
+price-error range attached (Floor 45.0–53.2, Middle 48.5–55.5,
+Cap 50.4–55.9). The Cycle 26 greedy rosters are preserved verbatim
+under `benchmark_greedy`, stress totals included — Figure 25's
+comparison now reads benchmark vs headline. The Cycle 27 uniform
+availability stress, recomputed on the new totals by Cycle 27's
+exact method: **44.6 / 48.1 / 50.0 WAR** at the pool-mean factor
+(0.912), 43.5 / 47.0 / 48.8 at p25; floor/cap ratio **0.892**
+(was 0.803). New gate checks pin the headline to the Cycle 49
+artifact so the panel cannot drift from the workpaper. Owner
+approval on record (2026-11-02); presentation pass per the owner's
+standard — short declarative copy, caveats stated once.

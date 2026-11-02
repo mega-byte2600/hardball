@@ -39,13 +39,18 @@ at current samples (n = 60 / 82) — it can neither confirm correct pricing nor
 rule mispricing out. The descriptive contrast (top-quartile contact hitters at
 about half the bottom quartile's median $/WAR, on both salary bases) is labeled
 a contrast, not a price effect. The claim is persistence + cap-efficiency.
-**The scenario rosters are greedy builds, and we say what that costs.** An
-exact optimizer audit (Cycle 49, Figure 25) re-solves the identical roster
-problem — same FA pool, Steamer WAR, prior-AAV anchors and quotas — and
-finds +6.9 / +7.1 / +2.5 WAR at the floor / middle / cap budgets, optima
-proven. The greedy rosters stay the headline (they satisfy every proposed
-constraint, including the 15% per-player maximum, which binds nobody in
-this class); replacing them is an owner-visible decision, not a silent edit.
+**The scenario rosters are proven-optimal builds, and we say what
+"optimal" rests on.** An exact optimizer (Cycle 49, Figure 25) solves the
+roster problem — same FA pool, Steamer WAR, prior-AAV anchors and quotas —
+and proves its optima: 48.9 / 52.8 / 54.8 WAR at the floor / middle / cap
+budgets, against the original greedy builds' 42.0 / 45.7 / 52.3. With the
+owner's approval (Cycle 52) the optimizer rosters are the headline and
+the greedy builds remain in Figure 25 as the benchmark. The headline WAR
+always travels with its robustness range (Cycle 50): across ±20% price
+error the floor build holds 45.0–53.2 WAR. Optimal means optimal under
+the stated inputs — Steamer WAR and last-price anchors, not predicted
+2027 salaries — and both builds satisfy every proposed constraint,
+including the 15% per-player maximum, which binds nobody in this class.
 
 ## The deliverable
 A 25-figure dashboard (offline, self-contained) + a Python-first repo where
@@ -81,3 +86,9 @@ explorer, budget-scenario rosters: a floor-budget FA build captures
 ~80% of a cap-budget build's WAR). Dashboard: 23 figures (Figure 23, Cycle 34,
 Explorer-only: the posted NPB class from official BIS data). P7 UAT was
 approved at MVP level by the owner on 2026-10-31.
+
+## Cycle 52 addendum (2026-11-02)
+The scenario rosters are now the proven-optimal builds (Cycle 49,
+promoted with the owner's approval): floor 48.9 WAR, middle 52.8,
+cap 54.8 — the floor build captures ~89% of the cap build's WAR. The
+greedy builds remain as the Figure 25 benchmark. Dashboard: 25 figures.

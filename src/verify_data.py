@@ -118,6 +118,32 @@ def main() -> int:
     check("scenarios: availability stress present (Cycle 27)",
           "availability_stress" in wow)
 
+    # --- SWAP: headline scenarios are the proven-optimal rosters --
+    optc = load("optimizer_comparison_2027.json")
+    sens = load("optimizer_sensitivity_2027.json")
+    opt_by_label = {b["label"]: b["optimizer"] for b in optc["budgets"]}
+    rng_by_label = {}
+    for scale, key in (("x1.2", "low"), ("x0.8", "high")):
+        for e in sens["price_sensitivity"][scale]:
+            rng_by_label.setdefault(e["label"], {})[key] = e["total_war"]
+    ok = wow["metadata"].get("cycle") == 52
+    for s in wow["scenarios"]:
+        o = opt_by_label[s["label"]]
+        ok = ok and s["total_war"] == o["total_war"] and s["spend"] == o["spend"]
+        ok = ok and s.get("proven_optimal") and s.get("mip_gap") == 0
+        ok = ok and s["war_range_prices_pm20"]["low"] == rng_by_label[s["label"]]["low"]
+        ok = ok and s["war_range_prices_pm20"]["high"] == rng_by_label[s["label"]]["high"]
+        st = wow["availability_stress"]["stressed_totals"][s["label"]]
+        ok = ok and st["raw_war"] == s["total_war"]
+    greedy_bench = {s["label"]: s["total_war"]
+                    for s in wow["benchmark_greedy"]["scenarios"]}
+    ok = ok and greedy_bench == {"The Floor — $171.2M": 42.0,
+                                 "The Middle — $208.0M": 45.7,
+                                 "The Cap — $245.3M": 52.3}
+    check("SWAP: headline scenarios are the Cycle 49 proven-optimal rosters "
+          "with Cycle 50 price-error ranges; greedy preserved as benchmark "
+          "(Cycle 52)", ok)
+
     # --- salaries honesty ----------------------------------------
     sal = load("salaries_2026.json")
     check("salaries: metadata consistent, failures labeled",
@@ -178,6 +204,13 @@ def main() -> int:
           25 in explorer_figs and "optimizer" in html.lower()
           and "proven optimal" in html,
           f"explorer={explorer_figs}")
+    check("dashboard modes: story/boardroom headline the optimizer rosters "
+          "(Cycle 52)",
+          "floor roster buys 48.9 WAR" in html
+          and "The floor roster buys 48.9 WAR" in html
+          and "48.9 WAR proven-optimal" in html
+          and "floor roster buys 42.0 WAR" not in html
+          and "cap roster buys 52.3" not in html)
 
     # --- HS-2 verdict artifact: status + benchmark on record -------
     hs_path = DATA / "hakes_sauer_verdict.json"

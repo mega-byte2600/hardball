@@ -35,7 +35,12 @@ Hakes–Sauer verdict exhibit, a claim check on our own pricing language,
 not a new claim. Cycle 49 appends Figure 25 the same way: Explorer-only,
 inside Build a Roster — the exact optimizer's audit of the Cycle 26
 greedy build, a method check on our own roster construction, not a new
-roster claim; Figure 16's rosters are unchanged.
+roster claim; Figure 16's rosters are unchanged. Cycle 52 changes no
+figure either: with the owner's approval it promotes the Cycle 49
+optimizer rosters to Figure 16's headline — Story chapter 5 and
+Boardroom slide 12 quote the proven-optimal builds, each WAR figure
+with its Cycle 50 price-error range — and Figure 25 becomes the
+benchmark-vs-headline comparison.
 
 ---
 
@@ -91,11 +96,13 @@ wOBA, wRC+, FIP. Real, reproducible."
 
 ## WHAT THE MONEY BUYS — Figures 16 + 22 (1:30)
 "We built the actual free-agent rosters at each budget — real players, real
-prices. The floor roster — $171M — buys **42 wins above replacement**. The
-cap roster at $245M buys 52. **A disciplined floor team captures 80% of the
-cap team's talent for 70% of the money.** The shopping list (Fig 22) is the
-class ranked by projected value — every name priced off last year's real
-contract anchor."
+prices, and each roster is the proven optimum at its budget. The floor
+roster — $171M — buys **49 wins above replacement**. The cap roster at
+$245M buys 55. **A disciplined floor team captures 89% of the cap team's
+talent for 70% of the money.** And the floor figure is not fragile: with
+every price 20% above its anchor it still holds 45 WAR. The shopping list
+(Fig 22) is the class ranked by projected value — every name priced off
+last year's real contract anchor."
 
 ## PICK YOUR TEAM — Figure 2 (the interactive close, 1:00)
 Hand them the dropdown. "Name your club — its 2026 signature against the
@@ -119,11 +126,14 @@ luck doesn't. **That's the edge you can act on.**"
 ---
 
 ## BACK-POCKET Q&A — Did you optimize the roster, or just fill it greedily? (Figure 25, Explorer only)
-"Both — and we published the difference. Figure 16's rosters are a greedy
-build: best WAR-per-dollar at each position, then upgrades while the
-budget holds. In Cycle 49 we re-solved the identical problem — same 199
+"Both — and we published the difference. The original build was greedy:
+best WAR-per-dollar at each position, then upgrades while the budget
+holds. In Cycle 49 we re-solved the identical problem — same 199
 free agents, same Steamer WAR, same prior-contract prices, same quotas —
-as an exact mixed-integer optimization, and the solver proved its optima."
+as an exact mixed-integer optimization, and the solver proved its optima.
+In Cycle 52, with the owner's approval, the optimizer rosters became
+Figure 16's headline; the greedy builds stay in Figure 25 as the
+benchmark."
 - **The gap:** Floor 42.0 → **48.9 WAR** (+6.9), Middle 45.7 → **52.8**
   (+7.1), Cap 52.3 → **54.8** (+2.5). The optimizer's floor roster beats
   the greedy's middle roster outright — construction quality is worth
@@ -138,10 +148,11 @@ as an exact mixed-integer optimization, and the solver proved its optima."
   binds nobody in this class at prior prices — the dearest anchor is
   $35.0M — and all three greedy rosters satisfy it. Enforced in the
   optimizer anyway; the check is on the record in Figure 25.
-- **Why Figure 16 still shows the greedy rosters:** "The audit is the
-  finding. Swapping in the optimizer rosters rewrites the demo's
-  headline numbers — that is an owner's call, queued as OPT-2, not
-  something we slipped in."
+- **Why the greedy rosters are still on the page:** "They are the
+  benchmark. The gap between a competent greedy build and the proven
+  optimum is the evidence that construction quality is worth roughly a
+  budget tier — so Figure 25 keeps both, labeled. The promotion itself
+  was the owner's call (Cycle 52), not a silent edit."
 Source for every line: data/optimizer_comparison_2027.json (Cycle 49,
 src/bml_cycle49.py; solver scipy/HiGHS MILP, gap 0 at all three budgets).
 
@@ -183,13 +194,16 @@ AP / MLB Trade Rumors / Sportsnet.
 - MIL/TB/CLE: ~95 wins at ~1/3-1/4 big-market payroll.
 - Cap cuts: NYM $101.4M, LAD $94.0M, NYY $63.0M over. Floor adds: CLE
   +$96.7M, TB +$75.6M (7 over cap / 15 under floor).
-- Scenario rosters: Floor $171.2M → 42.0 WAR; Middle $208.3M → 45.7 WAR;
-  Cap $245.3M → 52.3 WAR (real FA class, prior-AAV price anchors).
-- Optimizer audit (Fig 25): exact MILP on the identical inputs finds
-  48.9 / 52.8 / 54.8 WAR — +6.9 / +7.1 / +2.5 over the greedy builds,
-  optima proven (gap 0); rosters share 16 / 17 / 21 of 26 names; the
-  15%-of-cap per-player rule binds nobody (max anchor $35.0M < $36.8M)
-  and all greedy rosters satisfy it.
+- Scenario rosters (headline since Cycle 52, proven-optimal): Floor
+  $171.2M → 48.9 WAR (45.0–53.2 across ±20% price error); Middle
+  $208.0M → 52.8 WAR (48.5–55.5); Cap $245.3M → 54.8 WAR (50.4–55.9).
+  Real FA class, prior-AAV price anchors. Availability-stressed
+  (Cycle 27 method): 44.6 / 48.1 / 50.0 WAR.
+- Greedy benchmark (Fig 25): the original builds on identical inputs
+  reach 42.0 / 45.7 / 52.3 WAR — the optimizer's edge is +6.9 / +7.1 /
+  +2.5, optima proven (gap 0); rosters share 16 / 17 / 21 of 26 names;
+  the 15%-of-cap per-player rule binds nobody (max anchor $35.0M <
+  $36.8M) and both builds satisfy it.
 - Benchmark: Marcel vs Steamer hitter OBP r = .889 (201 matched by ID);
   pitcher bias corrected in public (Steamer -0.250 ERA, ours -0.208 pre-fix).
 - Hakes–Sauer pricing test (Fig 24): run-value benchmark from 480
