@@ -683,3 +683,52 @@ and the movement line in the rendered HTML): **65 → 67 offline
 checks, ALL PASS**; curated tables **18 → 19** (`fact_il_events`,
 0 rows at baseline, contracts pass; all prior parquets
 byte-identical). Parity r = 0.889 / 201.
+
+## Cycle 56 addendum — UNC-2: the uncertainty layer (2026-11-02)
+
+Final increment of the owner-approved MIT-gap programme (HS-1 → UNC-2
+complete). The headline scenario WAR — 48.9 / 52.8 / 54.8 since the
+Cycle 52 swap — carried only its Cycle 50 ±20% price-error range. This
+cycle adds the second error layer: delivered WAR under measured
+projection error and measured player availability, so the headline is
+never a bare number.
+
+**Method (all inputs measured in this repo).** Seeded Monte Carlo,
+20,000 draws (`src/bml_cycle56.py`, seed 20261102, artifact reproduces
+byte-for-byte on re-run). Error pools: the shipped Marcel's own
+out-of-sample residuals, recomputed by importing the Cycle 21 / 24
+backtest scripts and replaying their variant-C cross-fitted
+construction — hitters: paired (OBP, SLG) residuals, n=196 (targets
+2025+2026; pooled MAE 0.0220 / 0.0453); pitchers: ERA residuals, n=59
+(MAE 0.711). The replay is asserted against the committed backtest
+artifacts before any simulation runs. Availability pools: measured
+2025–26 IL factors, hitters n=201 (mean 0.912, Cycle 27) and pitchers
+n=102 (mean 0.807). Rate residuals convert to WAR with the Cycle 48
+run-value slopes and Steamer's own fitted runs-to-WAR scale (hitters
+0.1132 WAR/run, R² 0.482, n=309; pitchers 0.0837, R² 0.215, n=557) —
+no outside runs-per-win constant. Per UNC-1's verdict, availability
+shapes the distribution only; no point is re-centered.
+
+**Results (delivered WAR, 10th–90th percentile).** Floor 48.9 →
+33.0–46.9, median 39.8. Middle 52.8 → 36.0–50.7, median 43.2. Cap
+54.8 → 37.6–52.4, median 44.9. The median gap decomposes exactly:
+availability level effect −6.8 / −7.2 / −7.5 WAR plus measured
+residual bias −2.2 / −2.3 / −2.3 (the backtest pools are not
+zero-mean: SLG bias −0.0078, ERA bias +0.078 actual-minus-projected);
+the analytic delivered mean reproduces the simulated mean within
+0.05 WAR on all three rosters. The Cycle 52 uniform-stress totals
+(44.6 / 48.1 / 50.0) fall inside all three intervals. Limits, stated
+in the artifact: draws are independent (correlated injury waves
+would widen the ranges); Steamer has no in-repo outcome history, so
+the pools price the error this repo has measured for this class of
+projection (the Marcel spine tracks Steamer at OBP r = 0.889);
+non-availability playing-time error is not separately simulated.
+
+**Consumers:** Figure 16 titles (default + all three budget buttons),
+Story chapter 5, Boardroom slide 12, and the executive one-pager's
+scenario table now carry the intervals; Figure count stays 25.
+The gate gains three UNC-2 checks (artifact consistency incl. pool
+ties to the committed backtests, rendered intervals on all three
+dashboard surfaces, one-pager): **68 → 71 offline checks, ALL PASS**
+(72 with --live); platform clean (ingest 25/0, curate 19 tables,
+parity r = 0.889 / 201); spellcheck green.

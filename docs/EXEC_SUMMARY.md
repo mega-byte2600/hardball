@@ -48,7 +48,12 @@ budgets, against the original greedy builds' 42.0 / 45.7 / 52.3. With the
 owner's approval (Cycle 52) the optimizer rosters are the headline and
 the greedy builds remain in Figure 25 as the benchmark. The headline WAR
 always travels with its robustness range (Cycle 50): across ±20% price
-error the floor build holds 45.0–53.2 WAR. Optimal means optimal under
+error the floor build holds 45.0–53.2 WAR. It also travels with a
+delivered-WAR range (Cycle 56, UNC-2): a Monte Carlo over measured
+projection error and player availability puts the floor at a median
+39.8 WAR (10th–90th: 33.0–46.9) and the cap at 44.9 (37.6–52.4) — the
+points are full-availability projections; delivered WAR runs lower
+and wider. Optimal means optimal under
 the stated inputs — Steamer WAR and last-price anchors, not predicted
 2027 salaries — and both builds satisfy every proposed constraint,
 including the 15% per-player maximum, which binds nobody in this class.
@@ -93,3 +98,16 @@ The scenario rosters are now the proven-optimal builds (Cycle 49,
 promoted with the owner's approval): floor 48.9 WAR, middle 52.8,
 cap 54.8 — the floor build captures ~89% of the cap build's WAR. The
 greedy builds remain as the Figure 25 benchmark. Dashboard: 25 figures.
+
+## Cycle 56 addendum (2026-11-02)
+UNC-2, the uncertainty layer, is shipped — the final increment of the
+MIT-gap programme. Every headline scenario number now carries a
+delivered-WAR range beside its price-error range: floor 48.9 WAR,
+10th–90th 33.0–46.9 (median 39.8); middle 52.8, 36.0–50.7 (43.2);
+cap 54.8, 37.6–52.4 (44.9). Method: seeded Monte Carlo (20,000 draws)
+over the repo's measured Marcel-backtest residuals (hitters n=196,
+pitchers n=59) and the measured 2025–26 availability pools (hitters
+n=201, pitchers n=102). The medians sit below the points by the
+measured availability level effect plus the backtest pools' measured
+optimism (SLG and ERA bias); the points are unchanged. Artifact:
+data/uncertainty_scenarios_2027.json. Dashboard: 25 figures.

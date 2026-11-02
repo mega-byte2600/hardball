@@ -199,6 +199,15 @@ AP / MLB Trade Rumors / Sportsnet.
   $208.0M → 52.8 WAR (48.5–55.5); Cap $245.3M → 54.8 WAR (50.4–55.9).
   Real FA class, prior-AAV price anchors. Availability-stressed
   (Cycle 27 method): 44.6 / 48.1 / 50.0 WAR.
+- Delivered-WAR ranges (Cycle 56, UNC-2 — if asked "but what will
+  they actually deliver?"): Monte Carlo over measured projection
+  error and player availability, 10th–90th percentile: Floor
+  33.0–46.9 (median 39.8); Middle 36.0–50.7 (43.2); Cap 37.6–52.4
+  (44.9). The headline points are full-availability projections;
+  the medians sit lower by the measured availability level effect
+  plus the measured optimism in the backtest error pools. Error
+  pools: Marcel backtest residuals, hitters n=196 / pitchers n=59;
+  availability pools n=201 / n=102.
 - Greedy benchmark (Fig 25): the original builds on identical inputs
   reach 42.0 / 45.7 / 52.3 WAR — the optimizer's edge is +6.9 / +7.1 /
   +2.5, optima proven (gap 0); rosters share 16 / 17 / 21 of 26 names;

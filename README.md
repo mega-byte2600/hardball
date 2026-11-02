@@ -118,7 +118,11 @@ PRs #1-#5, integrated via PR #6) converged with the main lane on
   pick-your-team explorer (all 30 clubs), and budget-scenario rosters
   — floor $171.2M builds 48.9 WAR vs cap $245.3M at 54.8 WAR
   (Cycle 52: the proven-optimal rosters headline; the original
-  greedy builds are the Figure 25 benchmark).
+  greedy builds are the Figure 25 benchmark). Delivered-WAR
+  ranges (Cycle 56, UNC-2): 10th–90th percentile 33.0–46.9 at
+  the floor, 36.0–50.7 in the middle, 37.6–52.4 at the cap —
+  Monte Carlo over measured projection error and player
+  availability (data/uncertainty_scenarios_2027.json).
 - Dashboard is now **25 figures in three modes — Story (6 chapters, the default landing),
   Boardroom (15 slides), Explorer (all 25 figures grouped by task)**; P7 UAT approved
   at MVP level by the owner 2026-10-31. Figure 23 (Cycle 34, Explorer-only)
