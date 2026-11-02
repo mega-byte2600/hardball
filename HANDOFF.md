@@ -375,3 +375,52 @@ present — a lake-less build drops a panel and renumbers figures
 OPT-2 (optimizer sensitivity + mixed pre-arb+FA floor roster) —
 programme increment 4 of 6. Whether optimizer rosters ever REPLACE
 the greedy ones in Figure 16 is an owner call, queued there.
+
+---
+
+## Cycle 50 — OPT-2: optimizer sensitivity + mixed pre-arb/FA floor (PR pending)
+
+Programme increment 4 of 6. Explorer/workpaper layer only — Figure
+16, Story and Boardroom untouched; replacing the greedy rosters with
+optimizer rosters remains an OWNER decision, not part of this cycle.
+
+1. **`src/bml_cycle50.py` → `data/optimizer_sensitivity_2027.json`** —
+   Cycle 49's MILP imported unchanged; a base re-solve reproduces
+   OPT-1 exactly (asserted) before any scenario runs. All solves
+   proven optimal (gap 0), each with dual bound on record.
+2. **Sensitivity strip under Figure 25** — scenario table (base /
+   prices x0.8 / prices x1.2 / targeted bid-up / aging haircut) with
+   WAR + roster churn per budget, plus the mixed-build block; every
+   number rendered from the artifact.
+3. **Gate** — new OPT-2 artifact check (scenario rosters 26-man,
+   proven, spend within budget, mixed split sums to 26, pre-arb
+   slots all at the $1M placeholder).
+
+## The numbers
+
+- Prices x0.8: 53.2 / 55.5 / 55.9 WAR (churn 6/6/4); x1.2: 45.0 /
+  48.5 / 50.4 (churn 3/4/4) vs base optima 48.9 / 52.8 / 54.8. At
+  x1.2 the 15% rule excludes Rendon and Skubal at scaled prices.
+- Targeted bid-up (your 26 floor targets x1.2): 45.6 WAR, churn 6 —
+  the solver drops 6 of its own targets, ace included.
+- Aging haircut (WAR x0.85 at 33+): pessimist rosters re-score
+  48.8 / 52.8 / 54.8 on base WAR — within 0.1 of the optima.
+- Mixed floor (FA pool + 509 pre-arb at the $1M placeholder):
+  **74.8 WAR for $96.2M**, 19 pre-arb / 7 FA slots. Framing: what
+  the floor buys a club that develops or holds pre-arb talent —
+  internal production, NOT a shopping list.
+
+## Verification
+
+Platform clean (ingest 25 datasets / 0 failures, curate 17 tables,
+parquets byte-identical to committed), warehouse rebuilt, parity
+r = 0.889 / 201 unchanged, gate ALL PASS (offline and --live,
+standings 30/30) including the new OPT-2 check, spellcheck green,
+DOM checks confirm the strip renders inside Figure 25's Explorer
+block with figures 1-25 intact.
+
+## Next
+
+UNC-1 (availability-cap backtest, out-of-sample 2022-24 FA classes)
+— programme increment 5 of 6. The Story/Boardroom roster question
+(greedy vs optimizer) stays queued for the owner.

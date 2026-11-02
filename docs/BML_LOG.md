@@ -1524,3 +1524,53 @@ count unchanged at 23. No NPB→MLB translation factor claimed anywhere.
   No browser visual QA (standing rule).
 - Next: OPT-2 (optimizer sensitivity + mixed pre-arb+FA floor roster)
   per the approved programme order.
+
+## Cycle 50 — OPT-2: OPTIMIZER SENSITIVITY + MIXED PRE-ARB/FA FLOOR (toby, 2026-11-02)
+
+- Owner-approved MIT-gap programme (2026-11-02 12:57 PT), increment 4
+  of 6: OPT-2. Base: main 261a9645 (verified live before building;
+  fresh tarball tree, kpi.py verified clean from the tarball).
+  GitHub Actions ignored per the owner's 2026-11-02 directive (minutes
+  exhausted until Dec 1) — local gate + platform + parity carry the
+  verification, as in Cycles 44-49.
+- WHAT SHIPPED: `src/bml_cycle50.py` (imports Cycle 49's solver and
+  pool builder unchanged; asserts a base re-solve reproduces OPT-1's
+  three rosters exactly before varying anything) writing
+  `data/optimizer_sensitivity_2027.json`; Figure 25 extended with a
+  sensitivity strip + mixed-build block (`_optimizer_sensitivity_html()`,
+  numbers rendered from the artifact; figure count stays 25); gate
+  gains an OPT-2 artifact check; spellcheck WHITELIST += the 15
+  pre-arb surnames the strip renders (sanctioned mechanism).
+- PRICE SENSITIVITY (all solves PROVEN, gap 0): anchors x0.8 ->
+  Floor 53.2 / Middle 55.5 / Cap 55.9 WAR (churn 6/6/4 of 26);
+  x1.2 -> 45.0 / 48.5 / 50.4 (churn 3/4/4). The 15% rule is applied
+  to scaled prices: at x1.2, Rendon ($42.0M) and Skubal ($38.4M)
+  cross the $36.795M max and are excluded.
+- TARGETED BID-UP: only OPT-1's 26 floor-roster players at x1.2,
+  floor re-solved: 45.6 WAR, churn 6 — the solver walks away from
+  6 of its own targets, its ace Skubal included, and still lands
+  within 3.3 WAR of the base optimum.
+- WAR HAIRCUT (Steamer WAR x0.85 at age 33+, 93 of 199 pool players):
+  rosters chosen under pessimism re-score on base WAR at 48.8 /
+  52.8 / 54.8 vs base optima 48.9 / 52.8 / 54.8 (middle roster
+  unchanged, churn 0); each haircut roster carries 2 players 33+.
+- MIXED PRE-ARB + FA FLOOR: pre-arb pool from salaries_2026.json
+  status exactly "Pre-Arbitration" — 553 rows, 509 usable (42 no
+  ID, 1 duplicate, 1 no Steamer WAR, 0 in the FA class) — priced at
+  the $1.0M placeholder convention (labeled as such everywhere),
+  Steamer WAR, POSMAP positions. Floor solve on the 708-player
+  mixed pool: 74.8 WAR (+25.9 vs FA-only 48.9) for $96.2M, 19
+  pre-arb slots (53.0 WAR) / 7 FA slots, $75.0M of the floor
+  unspent, proven optimal. Framed strictly as internal production
+  a club develops or holds — not a shopping list.
+- SCOPE KEPT: Explorer/workpaper only. Figure 16 rosters, Story
+  (6 chapters) and Boardroom (15 slides) unchanged; replacing the
+  greedy rosters remains an owner decision, explicitly out of scope.
+- Platform + gate on the final tree: ingest 25 datasets, 0 failures;
+  curate 17 tables, contracts pass, parquets byte-identical to
+  committed; warehouse rebuilt; parity r = 0.889 / 201 matched;
+  dashboard rebuilt with lake at 25 figures; gate ALL PASS (offline
+  AND --live, standings 30/30, incl. the new OPT-2 artifact check);
+  spellcheck green. No browser visual QA (standing rule).
+- Next: UNC-1 (availability-cap out-of-sample backtest) per the
+  approved programme order.

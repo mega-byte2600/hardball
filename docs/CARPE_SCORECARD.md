@@ -438,3 +438,64 @@ artifact and in the gate.
 are unchanged. Figure 25 (Explorer, Build a Roster) publishes the
 comparison; whether the optimizer rosters replace the greedy ones is
 OPT-2 / owner territory.
+
+## Cycle 50 addendum — OPT-2: how fragile is the optimum, and the floor with a farm system (2026-11-02)
+
+**The questions.** OPT-1 proved the optima at one set of anchors.
+OPT-2 asks (a) how much of that proof survives when the anchors and
+projections move, and (b) the Kleinbard rebuttal — a real club does
+not build a floor roster from free agents alone. Same solver
+(`src/bml_cycle50.py` imports Cycle 49's MILP unchanged), same quotas,
+artifact `data/optimizer_sensitivity_2027.json`. Every solve proven
+optimal (HiGHS gap 0), and a base-case re-solve reproduces OPT-1's
+three rosters exactly — identical IDs, WAR to 0.05, spend to the
+dollar — asserted in code before any scenario runs.
+
+**Price sensitivity (uniform scaling of every prior-AAV anchor).**
+x0.8: Floor 48.9 -> 53.2 WAR (churn 6 of 26), Middle 52.8 -> 55.5 (6),
+Cap 54.8 -> 55.9 (4). x1.2: Floor -> 45.0 (3), Middle -> 48.5 (4),
+Cap -> 50.4 (4). A uniform ±20% price swing moves the floor optimum
+by about ±4 WAR and swaps at most 6 names — the optimum is a
+portfolio, not a knife-edge. The 15% per-player maximum is applied
+to the prices in force: at x1.2 two anchors cross it (Rendon
+$35.0M -> $42.0M, Skubal $32.0M -> $38.4M) and are excluded.
+
+**Targeted bid-up ("the market bids up your targets").** Only the
+26 players on OPT-1's floor roster are scaled x1.2; the floor is
+re-solved. Optimum: 45.6 WAR (spend $171.2M at scenario prices) with
+6 of the 26 targets swapped out — including the roster's ace (Skubal)
+— replaced from the rest of the class at base anchors. Losing the
+bidding war on your own list costs 3.3 WAR against the base optimum,
+not the build.
+
+**WAR sensitivity (aging haircut).** Steamer WAR x0.85 for players
+aged 33+ (93 of the 199 pool players; ages from the FA class file),
+base prices. Chosen-under-pessimism values: 48.6 / 52.6 / 54.6.
+Re-scored on base WAR, the same rosters are worth 48.8 /
+52.8 / 54.8 — within 0.1 WAR of the base optima at every budget
+(the middle roster does not change at all), and each carries just
+2 players aged 33+. The optima barely lean on old players.
+
+**Mixed pre-arb + FA floor (the rebuttal test).** Pool: the 199 FAs
+plus the repo's pre-arb pool — `data/salaries_2026.json` rows with
+Spotrac status exactly "Pre-Arbitration" (553 rows, every one at the
+file's flat $1,000,000), of which 509 are usable (42 carry no
+committed player ID, 1 duplicate ID, 1 has no Steamer WAR; 0 are in
+the FA class). Each is priced at $1.0M — the repo's pre-arb
+PLACEHOLDER convention (Cycles 41/46), not a measured salary — with
+Steamer WAR and positions from the same committed files. Solved at
+the floor only, identical quotas: **74.8 WAR for $96.2M**, 19 pre-arb
+slots (53.0 WAR — Kurtz 4.46, Wood 4.37, Schlittler 4.36, Ashcraft
+3.80, Messick 3.58, Dingler 3.58, Keaschall 3.30, Rice 3.26,
+Jensen 3.22, ...) and 7 FA slots, $75.0M of the floor unspent.
+Framing, on the record wherever this is used: a real club cannot
+sign another club's pre-arb players — this answers what the floor
+buys a club that develops or holds pre-arb talent. The floor is
+survivable with internal pre-arb production; the mixed roster is
+not a shopping list.
+
+**Scope kept.** Explorer/workpaper layer only: Figure 25 gains a
+sensitivity strip + the mixed-build result under its facts box
+(figure count stays 25); Figure 16, Story and Boardroom are
+unchanged, and replacing greedy rosters with optimizer rosters
+remains an owner decision.
