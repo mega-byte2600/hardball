@@ -959,3 +959,45 @@ streaming terms, Moses et al. observability).
 - Next: owner's call on the two fill options above, or item (h)
   continues; PR #21 (Cycle 39 persistence correction) still open,
   untouched.
+
+## Cycle 42 — DRIFT RE-RUN: CYCLE 22 STEAMER BENCHMARK (toby, 2026-11-02 ~06:12 PT, overnight sprint)
+- Backlog item (h): re-ran src/bml_cycle22.py (Marcel vs FanGraphs
+  Steamer 2027, MLBAM id join only, committed 2026-10-31 snapshots +
+  lake players registry for pitcher ids) on the current lake and
+  diffed the regenerated data/fg_benchmark_2027.json against the
+  committed artifact.
+- Result: NO DRIFT — regenerated artifact byte-identical to committed,
+  so no data or model change ships from this re-run. Numbers unchanged:
+  hitters matched 201/201, OBP r = 0.889, MAD 0.010, bias -0.002; SLG
+  r = 0.876, MAD 0.020, bias -0.004; top-25-by-OBP overlap 18/25.
+  Pitchers matched 102/102, ERA r = 0.636, MAD 0.524, bias -0.250;
+  WHIP r = 0.717, MAD 0.100, bias -0.074. Agreement-with-Steamer only,
+  not accuracy — neither system has 2027 outcomes yet, as Cycle 22
+  scoped it. The shipped projection method stands.
+- Platform run this cycle, on main e8b7be07: main moved mid-run when
+  the parallel Cot's lane merged PR #23 (docs-only); this run's tree
+  was rebuilt from the new head before the gate and drift checks, so
+  nothing here is based on the superseded head. Ingest 21 datasets,
+  0 failures (Savant expected 651-673/season, bat-tracking 595-619,
+  sprint 489-506 — all at known-good counts, no silent-source move);
+  curate 14 tables, all contracts pass; warehouse rebuilt; parity
+  r = 0.889, 201 matched; curated Parquet + build report byte-identical
+  to the prior tree (no data PR from the platform step); gate ALL PASS;
+  dashboard rebuilds with the 23-chart index intact (Story 6 chapters,
+  Boardroom <=15 slides, Explorer all 23 figures, 8 percentile cards,
+  Figure 23 Explorer-only with BIS label).
+- Spotrac probe (once per run): still 403. FanGraphs probe (once per
+  run): no response this run (HTTP 000, not a 200) — the
+  reconciled-FanGraphs lane stays closed under the Cycle 32 guard;
+  it reopens only on a 200 probe. Salaries remain 24/30, forced-seller
+  6/7 (CHC uncovered).
+- Verified by DOM/data checks only (no browser visual QA, per standing
+  rule): gate ALL PASS; dashboard rebuild holds figures 1-23 with no
+  duplicates.
+- Still awaiting the owner: PR #21 (Cycle 39 persistence correction)
+  is open and unmerged — claim change, his call. The Cot's fill
+  options from Cycle 41 (full-file basis conversion vs a separately
+  labeled Cot's dataset) are also his call. This run changes nothing
+  in either.
+- Next: item (h) continues — next drift re-run or docs polish; no new
+  claims.
