@@ -271,7 +271,47 @@ def panel_health():
                             "playtime you should NOT count on",
                       xaxis_title="", yaxis_title="Projected PA reduction (%)",
                       template="plotly_white", height=400)
-    return fig
+    # Cycle 51 (API-1): live-feed sub-panel — the Statyx + FastballAPI
+    # current-IL picture for the 2027 FA pool, rendered ONLY from the
+    # committed artifact data/il_current_live.json (built by
+    # src/bml_cycle51.py from the dated raw snapshots). Absent the
+    # artifact, the panel stays the static picture — fail closed.
+    live_path = os.path.join(DATA, "il_current_live.json")
+    if not os.path.exists(live_path):
+        return fig
+    with open(live_path) as fh:
+        live = json.load(fh)
+    ov = live["fa_overlay"]
+    players = ov["players"]
+    combo = make_subplots(
+        rows=2, cols=1, row_heights=[0.52, 0.48], vertical_spacing=0.14,
+        specs=[[{"type": "bar"}], [{"type": "table"}]],
+        subplot_titles=[
+            "",
+            (f"Current IL picture — LIVE feeds (Statyx + FastballAPI, pulled "
+             f"{live['metadata']['pulled_date']}): {ov['n_matched']} of "
+             f"{ov['fa_pool_size']} free agents currently listed injured")])
+    for tr in fig.data:
+        combo.add_trace(tr, row=1, col=1)
+    combo.add_trace(go.Table(
+        header=dict(values=["Free agent", "Team", "Status (live feed)",
+                            "Injury", "Expected return"],
+                    fill_color="#14213d",
+                    font=dict(color="white", size=12), align="left"),
+        cells=dict(values=[
+            [p["name"] for p in players],
+            [p["team"] or p["prev_team"] or "" for p in players],
+            [p["status"] for p in players],
+            [(p["type"] or "") + (" — " + p["detail"] if p["detail"] else "")
+             for p in players],
+            [p["return_date"] or "" for p in players]],
+            fill_color="#f2f4f8", font=dict(size=12), align="left")),
+        row=2, col=1)
+    combo.update_layout(
+        title=fig.layout.title.text,
+        xaxis_title="", yaxis_title="Projected PA reduction (%)",
+        template="plotly_white", height=760, showlegend=True)
+    return combo
 
 
 def panel_roster():
@@ -2178,13 +2218,18 @@ of matched salaries agreed within $50k against the 80% bar, so no
 Baseball-Reference salary data is used anywhere on this page; the files are
 kept raw for WAR checks only.<br>
 <span class="src">Statyx</span> (api.statyx.io) — live MLB injuries and
-standings. <b>CONNECTED 2026-11-02 · verified live</b> (injuries endpoint
-answered 200 with 16 current records).<br>
+standings. <b>SERVING since Cycle 51 (2026-11-02)</b>: with FastballAPI it
+feeds the current-IL layer (curated table fact_il_current, 196 players)
+and the health figure's live-IL picture — 13 of the 251 free agents
+currently listed injured, pulled 2026-11-02 (injuries page answered 200
+with 50 recent-move records, 44 of them also on FastballAPI's full
+list).<br>
 <span class="src">FastballAPI</span> (mcp.fastballapi.com) — live injuries and
-standings plus pitch-level history back to 2015. <b>CONNECTED 2026-11-02 ·
-verified live</b> (standings 200, all 30 teams; injuries 200, 190 records;
-its 2026 wins agree with the MLB Stats API 30 of 30 — cross-check in
-docs/CARPE_SCORECARD.md).<br>
+standings plus pitch-level history back to 2015. <b>SERVING since Cycle 51
+(2026-11-02)</b>: the full 190-record IL list is the backbone of the same
+current-IL layer and health-figure live picture; its 2026 standings
+snapshot agrees with the committed MLB Stats API picture 30 of 30 on
+wins and runs scored (cross-check in docs/CARPE_SCORECARD.md).<br>
 <b>Not yet connected (not sources of anything on this page):</b> Tank01 —
 deferred (the owner dropped the RapidAPI signup for now; supplement only,
 nothing in the demo depends on it). Sportradar — trial deliberately starts
