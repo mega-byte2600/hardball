@@ -29,6 +29,51 @@ over-index on exactly these inputs and win ~95 games at ~1/3-1/4 big-market cost
 3. `open dashboard/hardball_demo.html` (or `python3 -m http.server 8893` then
    browse `http://127.0.0.1:8893/hardball_demo.html`)
 
+## Presenting in 5 minutes
+Open the built file (`open dashboard/hardball_demo.html`) — it is
+self-contained and works offline at the meeting. The same 23 figures and
+the same numbers are presented three ways; pick the mode for the moment,
+not a different deck.
+
+- **Story in 5 minutes (the default path).** The file lands on Story:
+  the verdict is on the first screen (thesis + the 3 headline numbers +
+  Pick Your Team). Then walk four chapters and stop: Chapter 1, Figure 3
+  (skills persist — contact and walk discipline carry year to year, OBP
+  does not); Chapter 3, Figure 6 (payroll vs wins — the winning-cheap
+  teams win ~95 at a third to a quarter of big-market payroll);
+  Chapter 5, Figure 16 (what the money buys — the floor build vs the cap
+  build); then the appendix at the end of Story, where the method and
+  honesty box live collapsed. That is the whole case in five minutes.
+- **If the room wants the film first.** Figure 1, PRESS PLAY, is in
+  Boardroom slide 1 and in Explorer under Cap Reality: sixteen seasons
+  of payroll vs wins animate, and the cheap winners stay gold the whole
+  time. Press play before you say a word, then drop back to Story.
+- **Boardroom for the room.** Switch to Boardroom: 15 slides in
+  talk-track order (`docs/TALKTRACK.md`), print-clean via the Print
+  boardroom button. This is the version to leave behind on paper.
+- **Explorer for questions.** Switch to Explorer: all 23 figures,
+  grouped by task instead of by number — Cap Reality, Build a Roster,
+  Shop the FA Class, The Posted Class, Check the Model — with Pick Your
+  Team (Figure 2) on top. Any question from the room lands on a group,
+  not a scroll hunt.
+- **The live-market exhibit: Figure 23.** In Explorer, under The Posted
+  Class: three NPB stars posted Nov 1, 2026 — Sato (Hanshin), Taira
+  (Seibu), Itoh (Nippon-Ham) — with trio cards, the thesis test, the
+  posting clock (posted Nov 1, negotiations Nov 2, clock pauses at the
+  Dec 1 lockout, deadline Dec 16, 17:00 ET), fee tiers, and its own
+  translation honesty box (the Imai caution: no NPB-to-MLB translation
+  factor is claimed anywhere). Use it as the closer: this is the one part
+  of the 2027 market that resolves while the demo window is open.
+  Story stays 6 chapters and Boardroom stays 15 slides — Figure 23 is
+  Explorer-only by design, so it adds a live exhibit without adding a
+  thesis claim.
+
+Where the honesty box lives, every time: the Story appendix (method +
+honesty box, collapsed at the end), Figure 23's translation honesty box
+in Explorer, and the Honest limits above. If a number is challenged,
+the answer is in one of those three places — never off the top of your
+head.
+
 ## Repo layout
 - `src/` — Python: data ingest, panel builder, model, value metrics, dashboard generator, BML cycles
 - `data/` — real data artifacts (panel CSV, projections JSON, validation outputs)
