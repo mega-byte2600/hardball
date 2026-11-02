@@ -1556,9 +1556,11 @@ def panel_team_explorer():
     fig.update_layout(
         title=f"{t0['team']} — pick your team<br><sub>Use the dropdown: every club's 2026 signature vs the winning-cheap profile.</sub>",
         polar=dict(radialaxis=dict(visible=True, range=[55, 135])),
-        updatemenus=[dict(buttons=buttons, direction="down", x=0.0, y=-0.22,
-                          xanchor="left", yanchor="top", pad=dict(r=0, t=0),
-                          showactive=True, active=0)],
+        updatemenus=[dict(type="dropdown", buttons=buttons, direction="down",
+                          x=1.08, xanchor="right", y=1.06, yanchor="top",
+                          pad=dict(r=8, t=6), showactive=True, active=0,
+                          font=dict(size=11), bgcolor="#ffffff",
+                          bordercolor="#c9a227", borderwidth=1)],
         template="plotly_white", height=560,
         legend=dict(orientation="h", y=-0.08))
     return fig
@@ -1584,16 +1586,8 @@ def panel_scenarios():
                        fill_color="rgba(244,241,234,0.6)", align="left",
                        font=dict(size=11.5), height=19),
             visible=(i == 0)))
-        title = (f"What does the money buy? {s['label']}: {s['total_war']} WAR for "
-                 f"${s['spend']/1e6:.1f}M<br>"
-                 "<sub>A full 26-man roster bought entirely from the real 2027 free-agent class "
-                 "(greedy WAR-per-dollar by position, then upgrades — Cycle 26). Prices are prior-contract "
-                 "AAVs: last-price anchors, not predicted 2027 salaries. The floor roster captures "
-                 "~80% of the cap roster's WAR — the last $73M buys ~10 WAR. Availability stress "
-                 "(Cycle 27: WAR scaled by the mean availability measured from 201 real players' "
-                 "2025-26 IL records, 0.912): this roster holds "
-                 f"{d['availability_stress']['stressed_totals'][s['label']]['war_at_pool_mean_avail']} WAR "
-                 "— injury risk taxes every budget alike. Switch budget:</sub>")
+        title = (f"What does the money buy? {s['label']} — "
+                 f"{s['total_war']} WAR for ${s['spend']/1e6:.1f}M")
         buttons.append(dict(label=s["label"], method="update",
                             args=[{"visible": [j == i for j in range(len(d["scenarios"]))]},
                                   {"title": {"text": title}}]))
