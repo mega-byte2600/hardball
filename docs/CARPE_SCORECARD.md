@@ -77,3 +77,73 @@ Every source re-checked live or by independent recomputation. Verdicts:
 | FanGraphs RosterResource payroll (?season=2026 team pages) | TRIED, BLOCKED: direct pulls return HTTP 403 (Cloudflare challenge) for both requests and curl with a browser UA. Pull stopped per policy — no alternate endpoint, no automation around the challenge, no rows added. Reconcile-first guard NOT run (nothing to reconcile). Salaries remain 24/30 Spotrac; forced-seller coverage remains 6/7 (CHC uncovered). Open definition question for any future attempt: which FanGraphs column (2026 cash, 2027 cash, AAV), if any, corresponds to Spotrac's "Payroll Salary" field is not established — public snapshots show the 2026 cash column differing from the Spotrac file on top guaranteed contracts (see BML Cycle 32). Preliminary observation only, not a reconciliation result. |
 | Spotrac team payroll pages (completion probe) | STILL BLOCKED: Tampa Bay page still 403 on a single probe GET. No rerun of bml_cycle25.py (it would fetch only the missing six, all still blocked). |
 | Dashboard figure count (gate repair) | CORRECTED: main-lane merge had moved the dashboard to 22 figures (Cycle 8 AUC panel inserted as Figure 5) while the gate, talk-track, README, and summary still said 21. Renumbering fixed in Cycle 32; gate green. |
+
+## Addendum — Cycle 41 (2026-11-02 ~06:20 PT): Cot's lane — reconciled, FAILED CLOSED
+
+| Source | Status |
+|---|---|
+| Cot's Baseball Contracts (Baseball Prospectus) — 2026 year-end team sheets | TRIED, RECONCILED, FAILED CLOSED: all 30 team sheets pulled and reconciled against the Spotrac file under the reconcile-first guard; the bases do not line up (detail below), so **no rows were added**. Salaries remain 24/30 Spotrac; forced-seller coverage remains 6/7 (CHC uncovered). Cot's data itself verified accurate — the failure is accounting-basis incompatibility, not data quality. |
+
+### Cycle 41 reconciliation detail
+
+- **Access path.** legacy.baseballprospectus.com serves an Anubis anti-bot
+  challenge to direct fetches (HTTP 200 challenge page, no data; pull not
+  routed around). The Cot's index's per-team data lives in public Google
+  Sheets ("MLB \<Team\> 26 YE" — projected 40-man year-end payrolls through
+  11/1/26). All 30 sheets were exported as CSV at a polite rate (30/30 HTTP
+  200) and cached in the local mirror at `data/raw/cots/` (30 team CSVs +
+  parsed file), following the Spotrac cache pattern. Parsed: 2,240 payroll
+  lines — 1,369 main contract rows plus 871 bonus / buyout /
+  departed-player lines (kept out of roster matching).
+- **Season discovery (material).** The Spotrac file's basis is the **2027**
+  payroll, not 2026: the cached Spotrac pages are titled "2027 \<Team\>
+  Payroll Table" — Spotrac had rolled to the upcoming season when Cycle 25
+  pulled on 2026-10-31. Contracted veterans in the file match Cot's 2027
+  Labor Relations Payroll (LRP) column to the dollar (ATH: Severino
+  $22.000M, Rooker $14.000M, Soderstrom $6,428,571 vs Cot's $6.429M,
+  Butler $5,428,571 vs $5.429M, Wilson $2,928,571 vs $2.929M). All four
+  Cot's columns (LRP / CB tax × 2026 / 2027) were tested as the mapping;
+  LRP 2027 is the only viable one. The file name and metadata say 2026 —
+  flagged here, not silently rewritten.
+- **Result vs the pass bar** (≥95% of matched players within $50k; team
+  totals within ~2% on the mapped basis; all top-5 contracts per team
+  within rounding) — **FAIL on every prong**:
+  - Coverage: only 150 of 927 Spotrac rows (16.2%) have any Cot's LRP-2027
+    counterpart. The other 777 break down as: 501 pre-arbitration rows at
+    Spotrac's flat $1,000,000 placeholder, 209 arbitration projections
+    (round numbers, e.g. Langeliers $7.5M), 58 names absent from the
+    team's Cot's sheet (2027 assignment differences), and 9 veteran rows
+    whose Cot's 2027 cell is an option/FA marker. Cot's publishes
+    contract facts and A1/A2/FA markers for unsigned players — it does
+    not publish projections.
+  - Player agreement: 104/150 matched pairs within $50k = 69.3% (bar
+    95%). Excluding option-year and deferred contracts entirely, the
+    plain-contract subset is 65/76 = 85.5% — still under the bar
+    (signing-bonus proration residuals).
+  - Team totals on matched pairs: 16 of 24 teams differ by more than 2%
+    (CLE −34.5%, MIN −18.5%, BAL −17.0%, LAD −13.0%, SD −12.9%,
+    DET −10.7%, TOR −9.5%).
+  - Top-5 contracts: pass for only 3 of the 17 teams with ≥5 matched
+    pairs (ATH, HOU, PHI).
+- **Why they differ — conventions, not errors.** (1) Option years: Cot's
+  LRP books the guaranteed buyout; Spotrac books the full option salary
+  as exercised — Robert Jr. $2.0M vs $20.0M, Jansen $2.0M vs $12.0M,
+  Clase $2.0M vs $10.0M, Acuña Jr. $10.0M vs $17.0M. (2) Deferred money:
+  Cot's LRP is present-value; Spotrac is nominal — Ohtani $28.216M PV vs
+  $70.0M nominal; the LAD deferred cluster (Snell, Betts, Freeman,
+  Yamamoto, T. Hernández, Edman, Scott, Smith, Díaz) drives LAD's −13.0%.
+  (3) Signing-bonus proration residuals up to ~$1.7M on otherwise plain
+  contracts (Merrill −$1.000M exactly; Weaver, Hoffman, Senga).
+- **Cot's quality spot-checks pass.** CHC (a gap team): Swanson CB/AAV
+  $25,285,714, Imanaga LRP $22,025,000, Happ CB/AAV $20,333,333 — all
+  match independently researched values; every plain escalator contract
+  on the 24 known teams matches Spotrac to Cot's $1k rounding.
+- **Verdict.** FAIL CLOSED under the reconcile-first guard. Filling the 6
+  teams on the Cot's LRP basis would mix present-value / buyout
+  accounting into a nominal / exercised-option column and silently
+  distort the forced-seller shed math. A future fill requires either a
+  full-file basis conversion (all 30 teams from Cot's, losing Spotrac's
+  arb / pre-arb estimates) or a second, separately labeled Cot's dataset
+  — owner's call, not taken here. Raw pulls and the full reconciliation
+  workbook (recon tables) are preserved in the mirror cache and the
+  Cycle 41 workpapers.
