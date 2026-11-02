@@ -1357,3 +1357,60 @@ we have these apis as other agents collab on hardball project!"
   gate ALL PASS (offline). No browser visual QA (standing rule).
 - Next: HS-2 (verdict exhibit + formal proportionality test, only on
   a supported verdict), then OPT-1 per the approved programme order.
+
+## Cycle 47 — Figure 23 rebuilt as data storytelling (F23)
+
+Owner-approved plan ("execute!", 2026-11-02). Figure 23's single
+leaderboard panel became a 9-panel story — "three players, three
+different bets" — inside the same figure number. Explorer-only;
+Story (6 chapters) and Boardroom (15 slides) untouched; total figure
+count unchanged at 23. No NPB→MLB translation factor claimed anywhere.
+
+- **What shipped**
+  - `src/bml_cycle47.py` — computes every new number into
+    `data/fig23_rebuild_2026.json` from the two committed datasets
+    (trio JSON + 340-row leaderboard CSV) and prints a verification
+    table: **14/14 checks** — every trio leaderboard row re-derived
+    from the CSV matches the trio dataset (PA/HR/RBI/BB/SO/AVG for
+    Sato; ERA/IP/SO/BB/SV for both arms), Sato K% and Itoh BB%
+    recomputed from raw counts match, and the fee on $60M reproduces
+    the Cycle 34 worked example ($10.875M) exactly.
+  - Panels: (1) Sato arc — BB% 7.3→9.5→11.1 climbing vs K% flat at
+    ~27% (26.7% in 2026); (2) Itoh arc — IP bars 176.1/196.2/172.2
+    with BB% 5.5/3.6/4.7; (3) Taira conversion — ERA bars by role
+    (1.71 closer → 1.36 starter); (4) Taira workload — IP bars with
+    the +93.8 jump annotated; (5) leaderboard-context percentile
+    dots; (6) Sato K% vs the Central League qualified median (16.0%
+    in 2026); (7) posting-fee curve $10M–$100M from the tier formula;
+    (8) Imai projected vs signed; (9) the posting clock as a drawn
+    timeline (Nov 2 → Dec 1 open, 29 days; Dec 1 → Dec 16 paused in a
+    lockout, 15 days; Dec 1 marked as CBA expiry + demo deadline;
+    Dec 16 17:00 ET signing deadline).
+  - **Leaderboard context computed (2026, own-league qualified
+    boards):** Sato #1 of 19 CL bats in HR (39), RBI (106) and OPS
+    (.992) — 100th percentile three times over; Taira #1 of 11 PL
+    ERA qualifiers (1.36) and #1 of 13 on the 2025 saves board (31);
+    Itoh #2 of 11 in walk rate (4.7%, 90th percentile) but #7 of 11
+    in ERA (3.18, 40th) — the thesis fit is walk suppression, and
+    the figure says exactly that.
+  - Companion HTML: trio cards kept; new Imai expectation-vs-reality
+    strip; clock facts shortened (the timeline is drawn in-figure
+    now); honesty box gains the computed-layer note.
+  - `src/spellcheck_gate.py` WHITELIST += leaderboard (singular),
+    src, py — the gate's sanctioned mechanism for verified spellings.
+- **Data judgment calls, labeled in the figure and honesty box:**
+  Itoh's 2024 BB% (5.5%) is computed from the leaderboard's
+  batters-faced column (710 BF) — the trio dataset carries no 2024
+  BF; his 2025–26 rates cross-check exactly. Taira 2024 stays absent
+  (not on the qualified boards) — never backfilled. Pools are small
+  and qualified-only; ranks are exact, percentiles coarse — labeled.
+- **Verification:** platform clean (ingest 25 sources, curate 17
+  tables, warehouse built), parity r = 0.889 / n = 201 unchanged,
+  gate ALL PASS with Figure 23 present as Figure 23 in Explorer,
+  spellcheck green. One build lesson: the first scratch build ran
+  before the lake was copied in, a lake-dependent panel dropped out
+  and the figures renumbered (Fig. 23 landed as 22) — the gate
+  caught it; rebuilt with the lake present, all green. [VERIFIED]
+- **Next:** the Fig. 23 panels update only when the posting window
+  resolves (signings by Dec 16) or new BIS data lands; HS-2 follows
+  Cycle 46's Hakes–Sauer workpaper.

@@ -1,0 +1,277 @@
+{
+ "built_by": "src/bml_cycle47.py",
+ "sources": [
+  "data/posted_class_2026.json (NPB official BIS trio dataset)",
+  "data/npb_leaderboards_2024_2026_raw.csv (NPB official BIS qualified leaderboards, 340 rows, 2024-2026)"
+ ],
+ "percentile_convention": "rank 1 = best (ties share the best rank); percentile = 100*(n-rank)/(n-1) within the player's own league board",
+ "leaderboard_context_2026": {
+  "pools": {
+   "central_batting_2026": 19,
+   "pacific_pitching_era_2026": 11,
+   "pacific_saves_2025": 13
+  },
+  "sato": {
+   "HR": {
+    "value": "39",
+    "rank": 1,
+    "of": 19,
+    "percentile": 100
+   },
+   "RBI": {
+    "value": "106",
+    "rank": 1,
+    "of": 19,
+    "percentile": 100
+   },
+   "OPS": {
+    "value": "0.992",
+    "rank": 1,
+    "of": 19,
+    "percentile": 100
+   }
+  },
+  "taira": {
+   "ERA": {
+    "value": "1.36",
+    "rank": 1,
+    "of": 11,
+    "percentile": 100
+   },
+   "SV_2025": {
+    "value": "31",
+    "rank": 1,
+    "of": 13,
+    "percentile": 100
+   }
+  },
+  "itoh": {
+   "ERA": {
+    "value": "3.18",
+    "rank": 7,
+    "of": 11,
+    "percentile": 40
+   },
+   "BB_pct": {
+    "value": "4.7%",
+    "rank": 2,
+    "of": 11,
+    "percentile": 90
+   }
+  }
+ },
+ "sato_k_vs_cl_median": [
+  {
+   "year": 2024,
+   "sato_k_pct": 26.8,
+   "cl_median_k_pct": 15.4,
+   "n": 24
+  },
+  {
+   "year": 2025,
+   "sato_k_pct": 27.3,
+   "cl_median_k_pct": 13.9,
+   "n": 18
+  },
+  {
+   "year": 2026,
+   "sato_k_pct": 26.7,
+   "cl_median_k_pct": 16.0,
+   "n": 19
+  }
+ ],
+ "itoh_bb_pct_by_year": [
+  {
+   "year": 2024,
+   "bb": 39,
+   "bf": 710,
+   "bb_pct": 5.5,
+   "posted_bb_pct": null
+  },
+  {
+   "year": 2025,
+   "bb": 29,
+   "bf": 797,
+   "bb_pct": 3.6,
+   "posted_bb_pct": 3.6
+  },
+  {
+   "year": 2026,
+   "bb": 34,
+   "bf": 731,
+   "bb_pct": 4.7,
+   "posted_bb_pct": 4.7
+  }
+ ],
+ "fee_curve": [
+  {
+   "contract_m": 10,
+   "fee_m": 2.0
+  },
+  {
+   "contract_m": 15,
+   "fee_m": 3.0
+  },
+  {
+   "contract_m": 20,
+   "fee_m": 4.0
+  },
+  {
+   "contract_m": 25,
+   "fee_m": 5.0
+  },
+  {
+   "contract_m": 30,
+   "fee_m": 5.875
+  },
+  {
+   "contract_m": 35,
+   "fee_m": 6.75
+  },
+  {
+   "contract_m": 40,
+   "fee_m": 7.625
+  },
+  {
+   "contract_m": 45,
+   "fee_m": 8.5
+  },
+  {
+   "contract_m": 50,
+   "fee_m": 9.375
+  },
+  {
+   "contract_m": 55,
+   "fee_m": 10.125
+  },
+  {
+   "contract_m": 60,
+   "fee_m": 10.875
+  },
+  {
+   "contract_m": 65,
+   "fee_m": 11.625
+  },
+  {
+   "contract_m": 70,
+   "fee_m": 12.375
+  },
+  {
+   "contract_m": 75,
+   "fee_m": 13.125
+  },
+  {
+   "contract_m": 80,
+   "fee_m": 13.875
+  },
+  {
+   "contract_m": 85,
+   "fee_m": 14.625
+  },
+  {
+   "contract_m": 90,
+   "fee_m": 15.375
+  },
+  {
+   "contract_m": 95,
+   "fee_m": 16.125
+  },
+  {
+   "contract_m": 100,
+   "fee_m": 16.875
+  }
+ ],
+ "fee_checkpoints_m": {
+  "10": 2.0,
+  "25": 5.0,
+  "50": 9.375,
+  "60": 10.875,
+  "100": 16.875
+ },
+ "verification": [
+  {
+   "item": "Sato 2024 leaderboard row == trio dataset",
+   "rendered": "PA/HR/RBI/BB/SO/AVG match",
+   "source": "npb_leaderboards_2024_2026_raw.csv vs posted_class_2026.json",
+   "match": true
+  },
+  {
+   "item": "Sato 2025 leaderboard row == trio dataset",
+   "rendered": "PA/HR/RBI/BB/SO/AVG match",
+   "source": "npb_leaderboards_2024_2026_raw.csv vs posted_class_2026.json",
+   "match": true
+  },
+  {
+   "item": "Sato 2026 leaderboard row == trio dataset",
+   "rendered": "PA/HR/RBI/BB/SO/AVG match",
+   "source": "npb_leaderboards_2024_2026_raw.csv vs posted_class_2026.json",
+   "match": true
+  },
+  {
+   "item": "Taira 2025 leaderboard row == trio dataset",
+   "rendered": "ERA/IP/SO/BB/SV match",
+   "source": "npb_leaderboards_2024_2026_raw.csv vs posted_class_2026.json",
+   "match": true
+  },
+  {
+   "item": "Taira 2026 leaderboard row == trio dataset",
+   "rendered": "ERA/IP/SO/BB/SV match",
+   "source": "npb_leaderboards_2024_2026_raw.csv vs posted_class_2026.json",
+   "match": true
+  },
+  {
+   "item": "Itoh 2024 leaderboard row == trio dataset",
+   "rendered": "ERA/IP/SO/BB/SV match",
+   "source": "npb_leaderboards_2024_2026_raw.csv vs posted_class_2026.json",
+   "match": true
+  },
+  {
+   "item": "Itoh 2025 leaderboard row == trio dataset",
+   "rendered": "ERA/IP/SO/BB/SV match",
+   "source": "npb_leaderboards_2024_2026_raw.csv vs posted_class_2026.json",
+   "match": true
+  },
+  {
+   "item": "Itoh 2026 leaderboard row == trio dataset",
+   "rendered": "ERA/IP/SO/BB/SV match",
+   "source": "npb_leaderboards_2024_2026_raw.csv vs posted_class_2026.json",
+   "match": true
+  },
+  {
+   "item": "Sato K% 2024: leaderboard 26.8 == trio dataset 26.8",
+   "rendered": "26.8%",
+   "source": "SO/PA from leaderboard vs K_pct_computed",
+   "match": true
+  },
+  {
+   "item": "Sato K% 2025: leaderboard 27.3 == trio dataset 27.3",
+   "rendered": "27.3%",
+   "source": "SO/PA from leaderboard vs K_pct_computed",
+   "match": true
+  },
+  {
+   "item": "Sato K% 2026: leaderboard 26.7 == trio dataset 26.7",
+   "rendered": "26.7%",
+   "source": "SO/PA from leaderboard vs K_pct_computed",
+   "match": true
+  },
+  {
+   "item": "Itoh BB% 2025: leaderboard 3.6 == trio dataset 3.6",
+   "rendered": "3.6%",
+   "source": "BB/BF from leaderboard vs BB_pct_computed",
+   "match": true
+  },
+  {
+   "item": "Itoh BB% 2026: leaderboard 4.7 == trio dataset 4.7",
+   "rendered": "4.7%",
+   "source": "BB/BF from leaderboard vs BB_pct_computed",
+   "match": true
+  },
+  {
+   "item": "Fee on $60M == $10.875M (Cycle 34 worked example)",
+   "rendered": "$10.875M",
+   "source": "tier formula 20/17.5/15 on $25M bands",
+   "match": true
+  }
+ ]
+}

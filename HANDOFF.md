@@ -220,3 +220,45 @@ $6.19M vs $11.64M in C) and is labeled a contrast, not a price
 effect. Full method, limits, and HS-2 scope: docs/CARPE_SCORECARD.md
 Cycle 46 addendum + docs/BML_LOG.md Cycle 46. Gate ALL PASS; parity
 r = 0.889 / 201.
+
+---
+
+# HANDOFF — Cycle 47: Figure 23 rebuild (F23)
+
+Figure 23 ("The Posted Class") rebuilt from one leaderboard panel
+into a 9-panel story — "three players, three different bets": Sato
+the thesis TEST, Itoh the thesis FIT, Taira the conversion GAMBLE,
+framed by the posting clock. Same figure number; Explorer-only;
+Story/Boardroom untouched; 23 figures total. No NPB→MLB translation
+factor claimed anywhere.
+
+## What shipped
+
+1. **`src/bml_cycle47.py` + `data/fig23_rebuild_2026.json`** — every
+   new number computed from the committed trio JSON + leaderboard
+   CSV, with a printed verification table: 14/14 checks against the
+   trio dataset, incl. the fee on $60M = $10.875M (Cycle 34 example).
+2. **Panels** — Sato arc (BB% climbing, K% flat); Itoh arc (IP bars
+   + BB% line); Taira conversion ERA bars; Taira workload bars
+   (+93.8 IP annotated); leaderboard percentile dots; Sato K% vs CL
+   qualified median; fee curve; Imai projected-vs-signed; posting
+   clock timeline with the Dec 1 lockout pause drawn in.
+3. **Computed context (2026):** Sato #1 of 19 CL bats in HR/RBI/OPS;
+   Taira #1 of 11 PL arms in ERA (#1 of 13 in 2025 saves); Itoh #2
+   of 11 in walk rate, #7 of 11 in ERA — fit = walks, stated plainly.
+4. **Companion HTML** — trio cards kept; Imai expectation-vs-reality
+   strip added; honesty box gains the computed-layer note (Itoh 2024
+   BB% from leaderboard BF; small pools labeled; Taira 2024 absent,
+   never backfilled).
+5. **Docs** — BML_LOG Cycle 47, CARPE_SCORECARD addendum, TALKTRACK
+   Japan Q&A refreshed (ranks, fee-curve checkpoints). Spellcheck
+   WHITELIST += leaderboard/src/py (verified spellings).
+
+## Verification
+
+Platform clean (ingest 25, curate 17 tables), parity r = 0.889/201
+unchanged, gate ALL PASS (Figure 23 present as Figure 23 in
+Explorer; 6 chapters; 15 slides; 8 cards; footer intact), spellcheck
+green. Build note: build the dashboard only with the lake present —
+a lake-less build drops a panel and renumbers figures (the gate
+catches it; Cycle 47 hit this once in scratch and rebuilt).

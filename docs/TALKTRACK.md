@@ -115,18 +115,23 @@ the window closes Dec 16 at 5pm ET, and the clock pauses if the Dec 1
 lockout begins. This is the one part of the 2027 market that resolves
 while we're in the room."
 - **Teruaki Sato (Hanshin, 3B/OF):** .306, 39 HR, 106 RBI, .992 OPS — a
-  Triple Crown — but a 26.7% strikeout rate in a contact league. "That's
-  the exception you price, not the fit you assume. His walk rate rising
-  7.3% → 9.5% → 11.1% is the counterweight."
+  Triple Crown, and #1 among the Central League's 19 qualified bats in
+  all three categories — but a 26.7% strikeout rate against a 16.0%
+  qualified median. "That's the exception you price, not the fit you
+  assume. His walk rate rising 7.3% → 9.5% → 11.1% is the counterweight."
 - **Hiromi Itoh (Nippon-Ham, RHP):** 3.18 ERA, 172.2 IP, 4.7% walk rate
-  (3.6% in 2025) — three straight seasons of 172+ innings. "That is
-  exactly the low-walk, available arm this model rewards."
-- **Kaima Taira (Seibu, RHP):** NPB-best 1.36 ERA in his first year as a
-  starter, one season after 31 saves at a 1.71 ERA. "The question is
-  workload: 146 innings is his career high by about 90."
+  (3.6% in 2025, 5.5% in 2024) — three straight seasons of 172+ innings,
+  and the #2 walk rate among the Pacific League's 11 ERA qualifiers even
+  in a year his ERA ranked only 7th. "That is exactly the low-walk,
+  available arm this model rewards — the fit is the walks, not the ERA."
+- **Kaima Taira (Seibu, RHP):** PL-best 1.36 ERA — #1 of 11 qualifiers —
+  in his first year as a starter, one season after a PL-best 31 saves at
+  a 1.71 ERA. "The question is workload: 146 innings is his career high
+  by about 90 — a +93.8 IP jump in one year."
 - **The fee is real money:** 20% of the first $25M, 17.5% of the next $25M,
-  15% above $50M — on top of the contract. On an illustrative $60M deal
-  that's $10.875M. "Under a hard cap, budget the fee, not just the player."
+  15% above $50M — on top of the contract. The curve in Figure 23:
+  $25M → $5.0M, $50M → $9.375M, $60M → $10.875M, $100M → $16.875M.
+  "Under a hard cap, budget the fee, not just the player."
 - **The caution:** "We claim no NPB-to-MLB translation factor anywhere.
   Tatsuya Imai was projected at 6 years / $150M last winter, signed 3
   years / $54M with Houston, then posted a 4.93 ERA and was moved to the
