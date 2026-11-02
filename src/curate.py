@@ -28,6 +28,12 @@ Sources of truth per table (documented in the report):
   fact_salaries_cots  data/salaries_cots_2027.json (Cycle 44; labeled
                       Cot's LRP-2027 cross-check layer — separate basis,
                       never summed with fact_salaries)
+  fact_il_current     data/il_current_live.json (Cycle 51; grain one
+                      row per currently listed injured player — the
+                      union of the Statyx + FastballAPI live-feed
+                      snapshots in data/raw/, built by
+                      src/bml_cycle51.py; the static history layer
+                      stays fact_il_stints)
 """
 import json
 import re
@@ -202,6 +208,19 @@ def main():
          [("rows == metadata", len(df) == cots["metadata"]["rows"]),
           ("30 teams", df.team.nunique() == 30),
           ("every row labeled cots", bool((df.source == "cots_baseball_prospectus").all()))])
+
+    # Cycle 51: live-feed current IL picture (Statyx + FastballAPI) ------------
+    ilc = load("il_current_live.json")
+    df = pd.DataFrame(ilc["rows"])
+    emit("fact_il_current", df, "one row per currently listed injured player",
+         ["il_current_live.json (Statyx + FastballAPI snapshots, "
+          "data/raw/{statyx,fastballapi}/*_2026-11-02.json, via "
+          "src/bml_cycle51.py)"],
+         [("rows >= 150", len(df) >= 150),
+          ("player_name unique", df.player_name.is_unique),
+          ("every row in at least one feed",
+           bool((df.in_fastball | df.in_statyx).all())),
+          ("pulled_at present", df.pulled_at.notna().all())])
 
     # cap scenario -----------------------------------------------------------------
     cap = load("cap_scenario_2027.json")
