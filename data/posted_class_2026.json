@@ -1,0 +1,211 @@
+{
+ "built_for": "HARDBALL MLB 2027 demo (Dec 1, 2026)",
+ "canonical_source": {
+  "name": "NPB official Baseball Information System (BIS)",
+  "note": "Same URL pattern for 2024/2025. Leaderboard (qualified) tables only — not full rosters. BIS mixes variant kanji (Itoh's name uses U+FA45 in 2025-26); normalize NFKC before matching. 2024 pages parse with a one-row header offset (positional columns).",
+  "urls": [
+   "https://npb.jp/bis/2026/stats/bat_c.html",
+   "https://npb.jp/bis/2026/stats/bat_p.html",
+   "https://npb.jp/bis/2026/stats/pit_c.html",
+   "https://npb.jp/bis/2026/stats/pit_p.html"
+  ]
+ },
+ "data_status": "VERIFIED — pulled live 2026-11-01 ~22:05 PT from NPB official BIS; cross-checked vs AP wire reports",
+ "figure": 23,
+ "players": [
+  {
+   "age": 27,
+   "bats": "L",
+   "fig23_angle": "THE THESIS TEST: Triple Crown power, but a 26.7% K rate in a contact league — the deck's whole thesis says contact travels and whiff risk doesn't. Sato is the exception a GM must price, not a fit to assume.",
+   "name": "Teruaki Sato",
+   "name_ja": "佐藤輝明",
+   "note": "2025 Central League MVP; 2026 Triple Crown (9th in NPB history, first since Murakami 2022); linked to Mets/Yankees/Dodgers/Phillies (Heyman, via NY Post)",
+   "role": "3B / OF",
+   "seasons_bis": [
+    {
+     "2B": 21,
+     "3B": 4,
+     "AB": 451,
+     "AVG": 0.268,
+     "BB": 36,
+     "BB_pct_computed": 7.3,
+     "G": 120,
+     "H": 121,
+     "HR": 16,
+     "K_pct_computed": 26.8,
+     "OBP": 0.327,
+     "OPS_computed": 0.766,
+     "PA": 496,
+     "RBI": 70,
+     "SLG": 0.439,
+     "SO": 133,
+     "year": 2024
+    },
+    {
+     "2B": 34,
+     "3B": 4,
+     "AB": 537,
+     "AVG": 0.277,
+     "BB": 57,
+     "BB_pct_computed": 9.5,
+     "G": 139,
+     "H": 149,
+     "HR": 40,
+     "K_pct_computed": 27.3,
+     "OBP": 0.345,
+     "OPS_computed": 0.924,
+     "PA": 597,
+     "RBI": 102,
+     "SLG": 0.579,
+     "SO": 163,
+     "year": 2025
+    },
+    {
+     "2B": 40,
+     "3B": 3,
+     "AB": 539,
+     "AVG": 0.306,
+     "BB": 68,
+     "BB_pct_computed": 11.1,
+     "G": 143,
+     "H": 165,
+     "HR": 39,
+     "K_pct_computed": 26.7,
+     "OBP": 0.383,
+     "OPS_computed": 0.992,
+     "PA": 614,
+     "RBI": 106,
+     "SLG": 0.609,
+     "SO": 164,
+     "year": 2026
+    }
+   ],
+   "team": "Hanshin Tigers (Central League)"
+  },
+  {
+   "bats": "L",
+   "born": "1999-11-15 (turns 27 on 2026-11-15)",
+   "fig23_angle": "NPB-best 1.36 ERA in his FIRST year as a starter, one season removed from 31 saves. Availability/role question is the price question: 146 IP is his career high by ~90 innings.",
+   "name": "Kaima Taira",
+   "name_ja": "平良海馬",
+   "note": "2020 PL Rookie of the Year; NPB record 39 consecutive scoreless appearances (2021); Passan (Sep 2026): 'might be the best starting pitcher available this winter outside of Tarik Skubal'",
+   "role": "RHP — closer converted to starter in 2026",
+   "seasons_bis": [
+    {
+     "BB": 21,
+     "ERA": 1.71,
+     "G": 54,
+     "H": 43,
+     "HR": 0,
+     "IP": 52.2,
+     "L": 2,
+     "SO": 53,
+     "SV": 31,
+     "W": 4,
+     "WHIP_computed": 1.22,
+     "role": "closer",
+     "year": 2025
+    },
+    {
+     "BB": 45,
+     "ERA": 1.36,
+     "G": 23,
+     "H": 95,
+     "HR": 4,
+     "IP": 146.0,
+     "K9_computed": 8.7,
+     "L": 5,
+     "SO": 141,
+     "SV": 0,
+     "W": 12,
+     "WHIP_computed": 0.96,
+     "role": "starter",
+     "year": 2026
+    }
+   ],
+   "size": "5 ft 8 in",
+   "team": "Saitama Seibu Lions (Pacific League)",
+   "throws": "R"
+  },
+  {
+   "age": 29,
+   "fig23_angle": "THE THESIS FIT: elite walk suppression (4.7% BB in 2026, 3.6% in 2025) + workhorse innings (172-197 IP three straight years) = exactly the low-walk, available arm the cap model wants. The cautionary comp is in the same market: Tatsuya Imai got 3yr/$54M from Houston last winter, then a 4.93 ERA and a bullpen demotion (MLBTR).",
+   "name": "Hiromi Itoh",
+   "name_ja": "伊藤大海",
+   "note": "2025 Sawamura Award (NPB's Cy Young); 2021 Olympic gold; leads all qualified NPB starters in strikeouts over the past six seasons (902, per MLBTR)",
+   "role": "RHP starter",
+   "seasons_bis": [
+    {
+     "BB": 39,
+     "ERA": 2.65,
+     "G": 26,
+     "H": 150,
+     "HR": 14,
+     "IP": 176.1,
+     "L": 5,
+     "SO": 161,
+     "W": 14,
+     "WHIP_computed": 1.07,
+     "year": 2024
+    },
+    {
+     "BB": 29,
+     "BB_pct_computed": 3.6,
+     "ERA": 2.52,
+     "G": 27,
+     "H": 179,
+     "HR": 15,
+     "IP": 196.2,
+     "K_pct_computed": 24.5,
+     "L": 8,
+     "SO": 195,
+     "W": 14,
+     "WHIP_computed": 1.06,
+     "year": 2025
+    },
+    {
+     "BB": 34,
+     "BB_pct_computed": 4.7,
+     "ERA": 3.18,
+     "G": 26,
+     "H": 184,
+     "HR": 16,
+     "IP": 172.2,
+     "K_pct_computed": 21.8,
+     "L": 10,
+     "SO": 159,
+     "W": 10,
+     "WHIP_computed": 1.26,
+     "year": 2026
+    }
+   ],
+   "team": "Hokkaido Nippon-Ham Fighters (Pacific League)",
+   "throws": "R"
+  }
+ ],
+ "posting_facts": {
+  "also_posted_same_day": "Si-Hwan Roh (Hanwha Eagles, KBO) — 30-day window, not NPB; context only",
+  "lockout_interaction": "CBA expires Dec 1, 2026; posting clock pauses during a lockout (per MLBTR/AP)",
+  "negotiation_opens": "2026-11-02",
+  "posted": [
+   "Teruaki Sato (Hanshin Tigers, CL)",
+   "Kaima Taira (Saitama Seibu Lions, PL)",
+   "Hiromi Itoh (Hokkaido Nippon-Ham Fighters, PL)"
+  ],
+  "posting_fee": "20% of first $25M of MLB contract, 17.5% of next $25M, 15% above $50M, plus 15% on bonuses/options actually earned/vested",
+  "signing_deadline": "2026-12-16 17:00 ET",
+  "sources": [
+   "AP via TSN/theScore 2026-11-01/02",
+   "MLB Trade Rumors 2026-11-01",
+   "Sportsnet 2026-11-01"
+  ],
+  "window_days": 45
+ },
+ "title": "The Posted Class — Japan's Window",
+ "verification_notes": [
+  "Sato 2026 BIS line (.306/39 HR/106 RBI/.609 SLG/.383 OBP, 143 G) matches AP, Sportsnet, Yardbarker. NBC Sports carried .308/.385/.613 in 142 G — wire rounding/reporting difference; BIS official is canonical, use BIS.",
+  "Taira 2026 BIS line (1.36 ERA, 12-5, 146.0 IP, 141 K, 45 BB) matches Sportsnet/AP exactly. NBC's 141/46 K/BB differs by one walk; use BIS 45.",
+  "Itoh 2026 BIS: 3.18 ERA, 172.2 IP, 159 K match MLBTR; BIS counts 34 BB vs MLBTR's 32 — BIS canonical. Itoh K% 21.8% and BB% 4.7% computed from BIS BF (731) match MLBTR's stated rates.",
+  "Taira 2024 does not appear on BIS qualified leaderboards (reliever workload); his career line is on his BIS player page — pull in the build cycle if a 2024 row is needed. Do not backfill from memory."
+ ]
+}

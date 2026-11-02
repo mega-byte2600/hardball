@@ -719,3 +719,52 @@ streaming terms, Moses et al. observability).
   says 22 figures, which is still true, so it is untouched.
 - Next: item (e) README demo-runbook rewritten around the three modes;
   item (c) retries only if FanGraphs serves a direct pull again.
+
+## Cycle 34 — FIGURE 23: THE POSTED CLASS (toby, 2026-11-01 ~23:12 PT, overnight sprint)
+- Deadline guard: 2026-11-01, inside the window (closes 2026-12-01). No change.
+- Spotrac probe: single GET of the Tampa Bay payroll page still 403
+  ("Update Your Browser" challenge page). Logged, not routed around.
+  Salaries stay 24/30, forced-seller 6/7; item (c) retries only if a
+  single FanGraphs probe returns 200 in a later cycle.
+- Platform run on current main (1aa7d17a, unmoved since Cycle 33):
+  ingest 20 datasets, 0 failures; Savant volumes in band (expected 651-673,
+  bat-tracking 595-619, sprint 489-506); transactions watermark advanced to
+  2026-11-02; curate 14 tables, all contracts pass, byte-identical to main
+  (no data PR from the platform step); warehouse rebuilt; benchmark parity
+  r = 0.889, 201 matched.
+- Fig. 23 (backlog item e, owner-directed 2026-11-01): the posted class
+  from the ready data package (~/workspace/hardball/fig23/, outside the
+  repo). Committed: src/pull_npb_bis.py (standalone repro pull, lands raw
+  under data/raw/npb_bis/ and never rewrites the curated trio file),
+  an npb_bis source in src/ingest_platform.py (verified live this run:
+  lands 340 rows, byte-identical to the committed leaderboard CSV),
+  data/posted_class_2026.json (verified trio), and
+  data/npb_leaderboards_2024_2026_raw.csv (340-row provenance).
+  Figure 23 is one Plotly figure (2x2: Sato K% 26.8/27.3/26.7, Sato BB%
+  7.3/9.5/11.1, Itoh IP 176.1/196.2/172.2 with BB% 3.6/4.7 on the 2025-26
+  bars, Taira ERA 1.71 closer -> 1.36 starter) plus Explorer-only HTML:
+  trio cards built from the JSON (no hardcoded rates), the posting clock
+  (Nov 1 -> Nov 2 -> Dec 1 lockout pause -> Dec 16 17:00 ET), fee tiers
+  with a $60M illustrative worked example ($10.875M fee, labeled not a
+  predicted price), and the translation honesty box (Imai comp: projected
+  6yr/$150M, signed 3yr/$54M Houston, 4.93 ERA, bullpen demotion — MLBTR).
+  NO NPB-to-MLB translation factor is claimed anywhere. BIS is canonical
+  over wire roundings (Sato .306 not .308; Itoh 34 BB not 32; Taira 45 BB).
+  Itoh's 2024 row shows BB count only (no BB% in the dataset — not
+  invented); Taira has no 2024 qualified row (reliever workload).
+  Placement: Explorer-only, new "The Posted Class" group — Story stays
+  6 chapters, Boardroom stays 15 slides, figures 1-22 unrenumbered, so
+  every prior reference still points at the same figure. Gate moves
+  22 -> 23 (index line, talk-track cap, new posted-class checks: trio
+  JSON present, Figure 23 in Explorer with BIS source label).
+  TALKTRACK gains the back-pocket "What about Japan?" Q&A; README and
+  EXEC_SUMMARY move 22 -> 23 figures; CARPE_SCORECARD gains the NPB BIS
+  kept row; spellcheck whitelist gains the trio/club names (verified
+  spellings against the JSON).
+- Verified by DOM/data checks only (no browser visual QA, per standing
+  rule): dashboard rebuilds with lake; explorer holds figures 1-23 with
+  no duplicates and no missing figure; every Fig. 23 number recomputed
+  from posted_class_2026.json matches the rendered bars/cards; gate ALL
+  PASS; spellcheck green.
+- Next: item (f) README demo-runbook rewritten around the three modes,
+  pointing at Fig. 23 as the live-market exhibit.

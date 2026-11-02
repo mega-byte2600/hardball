@@ -16,6 +16,10 @@ Sources (all keyless):
   transactions MLB transactions, WATERMARK micro-batch: only events
                after data/raw/_watermarks.json's last date are pulled,
                in monthly partitions; the watermark advances on success
+  npb_bis      NPB official BIS leaderboards (bat_c/bat_p/pit_c/pit_p,
+               2024-2026, keyless) — the Fig. 23 raw zone. The verified
+               curated trio lives in data/posted_class_2026.json; this
+               task only lands the raw leaderboard CSV, never rewrites it
   spotrac      serial, cache-first (local mirror cache), stops at the
                first block; status recorded either way
 
@@ -169,6 +173,27 @@ def run_transactions():
     return entries
 
 
+def t_npb_bis():
+    """NPB official BIS leaderboards, 2024-2026 (see src/pull_npb_bis.py
+    for the standalone repro pull with trio extraction). Lands one raw
+    CSV; the curated posted-class dataset is never rewritten here."""
+    frames = []
+    for year in (2024, 2025, 2026):
+        for kind in ("bat_c", "bat_p", "pit_c", "pit_p"):
+            url = f"https://npb.jp/bis/{year}/stats/{kind}.html"
+            r = get(url)  # raises (and stops) on 403/429; single fetch
+            r.encoding = "utf-8"
+            for ti, t in enumerate(pd.read_html(io.StringIO(r.text))):
+                t = t.copy()
+                t["year"] = year
+                t["table"] = f"{kind}[{ti}]"
+                frames.append(t)
+            time.sleep(0.7)
+    out = pd.concat(frames, ignore_index=True)
+    return [land("npb_bis", "leaderboards_2024_2026",
+                 out.to_csv(index=False).encode(), len(out), ext="csv")]
+
+
 def run_spotrac():
     cache = Path.home() / "workspace/github/hardball/data/raw/spotrac"
     if cache.exists():
@@ -203,6 +228,8 @@ def main():
     if not only or "fangraphs" in only:
         tasks += [("fg steamer bat", lambda: t_fangraphs("bat")),
                   ("fg steamer pit", lambda: t_fangraphs("pit"))]
+    if not only or "npb_bis" in only:
+        tasks += [("npb bis leaderboards", t_npb_bis)]
 
     entries, failures = [], []
     with ThreadPoolExecutor(max_workers=args.workers) as ex:

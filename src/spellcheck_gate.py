@@ -53,6 +53,14 @@ WHITELIST = {
     "leaderboards", "milb", "pre", "prs", "qc", "vi", "vii",
     # Cycle 33 percentile-card names — verified against data/fa_shopping_2027.json
     "bauers", "buehler", "lorenzen", "quantrill", "rengifo", "sd",
+    # Cycle 34 posted-class names — verified against data/posted_class_2026.json
+    "teruaki", "sato", "kaima", "taira", "hiromi", "itoh", "tatsuya", "imai",
+    "hanshin", "seibu", "saitama", "nippon", "hokkaido", "hanwha", "roh",
+    "hwan", "sawamura", "npb", "bis", "kbo",
+    # Cycle 34 posted-class vocab — notes/headers/sources from the same file
+    "heyman", "murakami", "passan", "tarik", "skubal", "cy", "sportsnet",
+    "mlbtr", "ap", "ny", "jp", "sep", "avg", "slg", "rbi", "ip", "sv",
+    "rhp", "dataset", "roundings", "comp", "gm", "ft",
 }
 
 

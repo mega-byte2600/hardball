@@ -154,8 +154,8 @@ def main() -> int:
     n_slides = len(re.findall(r'class="slide"', html))
     n_cards = len(re.findall(r'class="pcard"', html))
     explorer_figs = sorted(set(_mode_figs("explorer")))
-    check("dashboard HTML: PRESS PLAY present, 22-chart index intact",
-          "PRESS PLAY" in html and "all 22 real-data charts" in html)
+    check("dashboard HTML: PRESS PLAY present, 23-chart index intact",
+          "PRESS PLAY" in html and "all 23 real-data charts" in html)
     check("dashboard HTML: no stale figure references",
           "see Figure 12)" not in html)
     check("dashboard modes: story has exactly 6 chapters",
@@ -167,11 +167,29 @@ def main() -> int:
           f"explorer={explorer_figs} all={all_figs}")
     check("dashboard modes: 8 percentile player cards",
           n_cards == 8, f"cards={n_cards}")
+    check("dashboard modes: explorer holds Figure 23 with BIS source label",
+          23 in explorer_figs and "NPB official" in html,
+          f"explorer={explorer_figs}")
+
+    # --- posted class: trio dataset present and verified ----------
+    posted = DATA / "posted_class_2026.json"
+    if posted.exists():
+        pj = json.loads(posted.read_text())
+        names = {p["name"] for p in pj["players"]}
+        check("posted class: trio JSON present, 3 players + posting facts",
+              len(pj["players"]) == 3
+              and names == {"Teruaki Sato", "Kaima Taira", "Hiromi Itoh"}
+              and pj["posting_facts"]["signing_deadline"] == "2026-12-16 17:00 ET"
+              and "BIS" in str(pj["canonical_source"]["name"]),
+              f"players={sorted(names)}")
+    else:
+        check("posted class: trio JSON present, 3 players + posting facts", False,
+              "data/posted_class_2026.json missing")
 
     # --- talk track references exist in the merged deck -----------
     tt = (ROOT / "docs" / "TALKTRACK.md").read_text()
     refs = {int(n) for n in re.findall(r"Figure (\d+)", tt)}
-    check("talk track: all figure references <= 22", refs and max(refs) <= 22,
+    check("talk track: all figure references <= 23", refs and max(refs) <= 23,
           f"refs: {sorted(refs)}")
 
 

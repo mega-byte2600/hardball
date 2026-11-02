@@ -1,12 +1,12 @@
 # HARDBALL — Meeting Talk-Track (10 minutes, Figure-by-Figure)
 *For the GP to present to an owner. Every number is real and measured; every
 honesty caveat is already inside the pitch so it survives a skeptical room.
-Figure numbers match the merged 22-figure dashboard (main, v1.0.0-mvp).*
+Figure numbers match the merged 23-figure dashboard (main, v1.0.0-mvp).*
 
 **Weapons:** the dashboard, opened on Figure 1. This page tells you what to
 say and in what order. Don't read it — talk it.
 
-## The three modes (same 22 figures, same numbers, presented three ways)
+## The three modes (same 23 figures, same numbers, presented three ways)
 - **Story (the default landing):** the verdict first, then 6 chapters with one
   figure each — Chapter 1 Figure 3 (skills persist), Chapter 2 Figure 4 (run
   differential describes), Chapter 3 Figure 6 (payroll vs wins), Chapter 4
@@ -19,13 +19,17 @@ say and in what order. Don't read it — talk it.
   Slide 8 Figure 15, Slide 9 Figure 10, Slide 10 Figure 11, Slide 11
   Figure 20, Slide 12 Figure 16, Slide 13 Figure 22, Slide 14 Figure 2,
   Slide 15 Figure 18. Use it in the room.
-- **Explorer (all 22 figures, grouped by task):** Cap Reality (Figures 1, 6,
+- **Explorer (all 23 figures, grouped by task):** Cap Reality (Figures 1, 6,
   9, 10, 11), Build a Roster (Figures 7, 8, 12, 13, 14, 15, 16, 17),
   Shop the FA Class (Figures 21, 22, plus percentile cards for the top
-  bargain free agents), Check the Model (Figures 3, 4, 5, 18, 19, 20),
-  with Pick Your Team (Figure 2) on top. Use it for questions.
-Figure numbers did not change: every reference below still points at the
-same figure it always did.
+  bargain free agents), The Posted Class (Figure 23, plus trio cards, the
+  posting clock, and the translation honesty box), Check the Model
+  (Figures 3, 4, 5, 18, 19, 20), with Pick Your Team (Figure 2) on top.
+  Use it for questions.
+Figures 1–22 did not change: every reference below still points at the
+same figure it always did. Figure 23 is appended, Explorer-only — Story
+stays 6 chapters and Boardroom stays 15 slides, so the posted class adds
+a live-market exhibit without adding a thesis claim.
 
 ---
 
@@ -103,6 +107,32 @@ r = .889. What we *can* show, measured over four years: skills persist,
 luck doesn't. **That's the edge you can act on.**"
 
 ---
+
+## BACK-POCKET Q&A — What about Japan? (Figure 23, Explorer only)
+"The three best NPB players were posted Nov 1 — negotiations open Nov 2,
+the window closes Dec 16 at 5pm ET, and the clock pauses if the Dec 1
+lockout begins. This is the one part of the 2027 market that resolves
+while we're in the room."
+- **Teruaki Sato (Hanshin, 3B/OF):** .306, 39 HR, 106 RBI, .992 OPS — a
+  Triple Crown — but a 26.7% strikeout rate in a contact league. "That's
+  the exception you price, not the fit you assume. His walk rate rising
+  7.3% → 9.5% → 11.1% is the counterweight."
+- **Hiromi Itoh (Nippon-Ham, RHP):** 3.18 ERA, 172.2 IP, 4.7% walk rate
+  (3.6% in 2025) — three straight seasons of 172+ innings. "That is
+  exactly the low-walk, available arm this model rewards."
+- **Kaima Taira (Seibu, RHP):** NPB-best 1.36 ERA in his first year as a
+  starter, one season after 31 saves at a 1.71 ERA. "The question is
+  workload: 146 innings is his career high by about 90."
+- **The fee is real money:** 20% of the first $25M, 17.5% of the next $25M,
+  15% above $50M — on top of the contract. On an illustrative $60M deal
+  that's $10.875M. "Under a hard cap, budget the fee, not just the player."
+- **The caution:** "We claim no NPB-to-MLB translation factor anywhere.
+  Tatsuya Imai was projected at 6 years / $150M last winter, signed 3
+  years / $54M with Houston, then posted a 4.93 ERA and was moved to the
+  bullpen. NPB dominance is evidence, not a projection."
+Source for every line: NPB official BIS (BIS is canonical over wire
+roundings — Sato .306 not .308, Itoh 34 walks not 32); posting facts via
+AP / MLB Trade Rumors / Sportsnet.
 
 ### Back-pocket numbers (for questions)
 - Pooled contact persistence r = 0.84 (95% CI 0.78-0.88); dashboard panel:
