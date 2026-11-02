@@ -154,8 +154,8 @@ def main() -> int:
     n_slides = len(re.findall(r'class="slide"', html))
     n_cards = len(re.findall(r'class="pcard"', html))
     explorer_figs = sorted(set(_mode_figs("explorer")))
-    check("dashboard HTML: PRESS PLAY present, 23-chart index intact",
-          "PRESS PLAY" in html and "all 23 real-data charts" in html)
+    check("dashboard HTML: PRESS PLAY present, 24-chart index intact",
+          "PRESS PLAY" in html and "all 24 real-data charts" in html)
     check("dashboard HTML: no stale figure references",
           "see Figure 12)" not in html)
     check("dashboard modes: story has exactly 6 chapters",
@@ -170,6 +170,24 @@ def main() -> int:
     check("dashboard modes: explorer holds Figure 23 with BIS source label",
           23 in explorer_figs and "NPB official" in html,
           f"explorer={explorer_figs}")
+    check("dashboard modes: explorer holds Figure 24 with HS verdict box",
+          24 in explorer_figs and "INCONCLUSIVE ON MISPRICING" in html
+          and "Hakes" in html,
+          f"explorer={explorer_figs}")
+
+    # --- HS-2 verdict artifact: status + benchmark on record -------
+    hs_path = DATA / "hakes_sauer_verdict.json"
+    if hs_path.exists():
+        hs = json.loads(hs_path.read_text())
+        check("HS-2: verdict artifact present, inconclusive, benchmark recorded",
+              hs["verdict"]["status"] == "INCONCLUSIVE on mispricing"
+              and hs["benchmark_attempt"]["n_team_seasons"] == 480
+              and hs["benchmark_attempt"]["status"].startswith("DEFENSIBLE")
+              and hs["formal_test"]["status"] == "RUN",
+              f"status={hs.get('verdict', {}).get('status')}")
+    else:
+        check("HS-2: verdict artifact present, inconclusive, benchmark recorded",
+              False, "data/hakes_sauer_verdict.json missing")
     footer_sources = ["MLB Stats API", "Baseball Savant", "ESPN", "Steamer",
                       "Spotrac", "Cot's", "Chadwick", "Injury Report",
                       "NPB official BIS", "Baseball-Reference", "Statyx",
@@ -196,7 +214,7 @@ def main() -> int:
     # --- talk track references exist in the merged deck -----------
     tt = (ROOT / "docs" / "TALKTRACK.md").read_text()
     refs = {int(n) for n in re.findall(r"Figure (\d+)", tt)}
-    check("talk track: all figure references <= 23", refs and max(refs) <= 23,
+    check("talk track: all figure references <= 24", refs and max(refs) <= 24,
           f"refs: {sorted(refs)}")
 
 

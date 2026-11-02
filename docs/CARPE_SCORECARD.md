@@ -323,3 +323,65 @@ it, does any headline change.
 - **Kept honest:** small qualified-only pools labeled in the honesty
   box; no NPB→MLB translation factor anywhere; Taira 2024 not
   backfilled (absent from the qualified boards).
+
+## Cycle 48 addendum — HS-2: run-value benchmark, formal test, verdict (2026-11-02)
+
+**The missing piece HS-1 named.** HS-1 deferred the formal
+Hakes–Sauer proportionality test because no OBP/SLG marginal
+run-value benchmark existed in the repo. HS-2 builds one from
+committed data only (`src/bml_cycle48.py`, artifact
+`data/hakes_sauer_verdict.json`), under defensibility criteria fixed
+before the regression was run: both FE coefficients positive, both
+p < 0.10, VIF < 10, ratio CI finite and excluding 0 — else the
+attempt publishes as failed and no test runs.
+
+**Benchmark (survived, labeled aggregate).** Team-season regression
+of runs per PA on OBP and SLG over `fact_team_season` — 480 unique
+team-seasons, 2011–2026 (the committed table carries 29 duplicated
+2026 rows differing only in the payroll cell's formatting; batting
+fields are identical across copies, verified in-build, deduped).
+Season fixed effects (primary): OBP +0.262 (SE 0.023, p ≈ 1.8e-26),
+SLG +0.278 (SE 0.011, p ≈ 1.9e-85), within R² = 0.865; pooled OLS
+sensitivity: OBP +0.199, SLG +0.304, R² = 0.823. VIF 2.45 both;
+corr(OBP, SLG) = 0.77. Benchmark ratio rho = 0.94 (delta-method 95%
+CI 0.72–1.17); pooled ratio 0.66 (0.44–0.88); per-season ratios
+median 1.00. In plain terms: +0.010 of OBP ≈ +15.7 runs per 6,000 PA,
++0.010 of SLG ≈ +16.7. **Ecological limit, stated wherever the
+benchmark is used:** team aggregates split OBP/SLG's joint variation
+(they co-move through batting average), so this aggregate ratio sits
+below what event-level linear-weights analyses of individual plate
+appearances imply. It is the ratio this repo's committed data
+supports — not an event-level run value.
+
+**Formal test (ran; inconclusive by power).** HS-1 spec A refit from
+the committed dataset reproduces HS-1's published coefficients and
+SEs exactly (max abs deviation < 0.01, asserted in code — the
+covariance matrix is only trusted because the refit matches). Wald
+test of beta_OBP − rho·beta_SLG = 0 against the FE benchmark:
+Sample S (Spotrac basis, n = 60): contrast −6.49, SE 8.05, p = 0.42.
+Sample C (Cot's LRP-2027, n = 82): contrast +1.21, SE 9.43,
+p = 0.90. Against the pooled benchmark: p = 0.45 / 0.84. And the
+power statement is the finding: **the set of pricing ratios neither
+sample can reject at 5% spans the entire scanned range [−20, +20]** —
+the test cannot distinguish correct proportional pricing from large
+mispricing in either direction at these samples.
+
+**Verdict (rendered verbatim in Figure 24's verdict box).**
+INCONCLUSIVE on mispricing. The defensible claim is persistence +
+cap-efficiency + low variance — not proven undervaluation. The
+descriptive quartile contrast stands as HS-1 left it (top-quartile
+contact median $/WAR 0.54× / 0.53× the bottom quartile's, both
+bases) and stays labeled a contrast, not a price effect. Design
+limit unchanged: active-contract cross-section, not newly-signed
+free agents; skills are projections; Sample S at the n = 60 floor.
+
+**Claim hygiene (the five owner-facing surfaces).** Grep of the
+dashboard source, EXEC_SUMMARY, TALKTRACK, README, and ONEPAGER for
+unqualified "undervalued" / "mispriced" / "underpriced" assertions
+about contact/OBP found **none** — the surfaces already carry the
+measured language (persistence, cap-efficiency). Hygiene action was
+therefore additive, not corrective: the verdict is now stated where
+a reader could go looking for the stronger claim — EXEC_SUMMARY's
+"do NOT claim" section and TALKTRACK's honesty section both carry
+the inconclusive verdict citing Figure 24, and the dashboard's
+sources box states the tested status of the pricing claim.

@@ -262,3 +262,61 @@ Explorer; 6 chapters; 15 slides; 8 cards; footer intact), spellcheck
 green. Build note: build the dashboard only with the lake present —
 a lake-less build drops a panel and renumbers figures (the gate
 catches it; Cycle 47 hit this once in scratch and rebuilt).
+
+---
+
+# HANDOFF — Cycle 48: HS-2, the Hakes–Sauer verdict exhibit (Figure 24)
+
+Owner-approved MIT-gap programme, increment 2 of 6 (HS-2). The
+verdict exhibit HS-1 promised: a run-value benchmark derived from
+committed data, the formal proportionality test actually run, and
+the verdict rendered as Figure 24 (Explorer-only, Check the Model).
+Dashboard is now **24 figures**; figures 1–23 keep their numbers
+(Figure 24 is appended last in the build order); Story 6 chapters
+and Boardroom 15 slides untouched.
+
+## What shipped
+
+1. **`src/bml_cycle48.py` + `data/hakes_sauer_verdict.json`** — the
+   benchmark attempt under pre-registered fail-closed criteria, the
+   formal test, and the verdict text the dashboard renders verbatim.
+2. **Benchmark — survived, labeled aggregate.** Runs/PA on OBP + SLG,
+   fact_team_season, 480 unique team-seasons 2011–2026 (29 duplicated
+   2026 rows deduped — payroll-cell formatting only, batting fields
+   identical; curate.py unchanged). Season-FE: OBP +0.262
+   (p ≈ 1.8e-26), SLG +0.278 (p ≈ 1.9e-85), within R² = 0.865,
+   VIF 2.45; rho = 0.94 (95% CI 0.72–1.17). Ecological limit labeled:
+   team aggregates split OBP/SLG's joint variation, so rho sits below
+   event-level linear-weights values.
+3. **Formal test — inconclusive by power.** HS-1 spec A refit
+   reproduces HS-1's coefs/SEs exactly (asserted). Wald vs FE rho:
+   S (n = 60) p = 0.42; C (n = 82) p = 0.90. Ratios neither sample
+   can reject at 5% span the full scanned range [−20, +20].
+4. **Verdict (exact, on the panel):** INCONCLUSIVE on mispricing.
+   Defensible claim: persistent + cap-efficient + low-variance —
+   not proven undervaluation. Quartile $/WAR contrast (0.54× / 0.53×)
+   stays labeled descriptive.
+5. **Claim hygiene:** the five owner-facing surfaces contained NO
+   unqualified undervalued/mispriced assertion to replace (grep
+   evidence in the PR body). Additive only: verdict + Figure 24
+   cited in EXEC_SUMMARY's do-NOT-claim section, TALKTRACK honesty
+   section + back-pocket, dashboard sources box. Thesis untouched.
+6. **Counts 23 → 24:** dashboard source (docstring, index, button,
+   Explorer), gate expectations (+ new Figure 24 and HS-2 artifact
+   checks), README, TALKTRACK, EXEC_SUMMARY, ONEPAGER generator
+   (regenerated). Spellcheck WHITELIST += sauer, misprices,
+   mispricing, underprices, workpaper.
+
+## Verification
+
+Platform clean (ingest 25 datasets / 0 failures, curate 17 tables,
+parquets byte-identical to committed), warehouse rebuilt, parity
+r = 0.889 / 201 unchanged, gate ALL PASS (offline) including the new
+Figure 24 + verdict-artifact checks, spellcheck green. Build note
+(same as Cycle 47): build the dashboard only with the lake present —
+a lake-less build drops a panel and renumbers figures (the gate
+catches it).
+
+## Next
+
+OPT-1 (roster optimizer) — programme increment 3 of 6.

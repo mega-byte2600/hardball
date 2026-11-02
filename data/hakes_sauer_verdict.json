@@ -1,0 +1,205 @@
+{
+ "cycle": 48,
+ "study": "HS-2 Hakes-Sauer verdict: run-value benchmark attempt + formal proportionality test",
+ "benchmark_attempt": {
+  "source": "data/curated/fact_team_season.parquet (committed platform table)",
+  "raw_rows_in_table": 509,
+  "dedupe_note": "29 duplicated 2026 team rows in the committed table differ only in the payroll cell (one copy stores a raw tuple string); batting fields are identical across copies. Deduped to 480 unique team-seasons (30 teams x 16 seasons), keeping the numeric-payroll copy.",
+  "dependent_variable": "team runs scored per PA (R / PA)",
+  "seasons": [
+   2011,
+   2026
+  ],
+  "n_team_seasons": 480,
+  "corr_obp_slg": 0.77,
+  "vif": {
+   "OBP": 2.45,
+   "SLG": 2.45
+  },
+  "pooled_ols": {
+   "terms": {
+    "intercept": {
+     "coef": -0.07023261461774073,
+     "se": 0.005779456319867393,
+     "t": -12.152114443067923,
+     "p": 8.630904657406556e-30
+    },
+    "OBP": {
+     "coef": 0.1994212603711692,
+     "se": 0.02738268522055974,
+     "t": 7.282750349897669,
+     "p": 1.360915455234166e-12
+    },
+    "SLG": {
+     "coef": 0.30406542429075145,
+     "se": 0.01261842832384707,
+     "t": 24.096933190650233,
+     "p": 1.6285543553199149e-84
+    }
+   },
+   "r2": 0.8229,
+   "ratio_obp_to_slg": 0.656,
+   "ratio_se_delta": 0.112,
+   "ratio_ci95": [
+    0.436,
+    0.876
+   ]
+  },
+  "season_fe_primary": {
+   "terms": {
+    "OBP": {
+     "coef": 0.26171136979826987,
+     "se": 0.023078177314499484,
+     "t": 11.340209680850432,
+     "p": 1.796498156692228e-26
+    },
+    "SLG": {
+     "coef": 0.2778250139896887,
+     "se": 0.01135762609585532,
+     "t": 24.461539026282434,
+     "p": 1.9354063924941773e-85
+    }
+   },
+   "within_r2": 0.8649,
+   "dof": 463,
+   "ratio_obp_to_slg": 0.942,
+   "ratio_se_delta": 0.116,
+   "ratio_ci95": [
+    0.715,
+    1.169
+   ],
+   "runs_per_6000pa_per_+0.010": {
+    "OBP": 15.7,
+    "SLG": 16.7
+   }
+  },
+  "per_season_ratios": {
+   "median": 0.998,
+   "iqr": [
+    0.751,
+    1.09
+   ],
+   "n_seasons": 16
+  },
+  "pre_registered_criteria": {
+   "fe_both_coefficients_positive": true,
+   "fe_both_p_below_0.10": true,
+   "vif_below_10_both": true,
+   "ratio_ci_finite_and_excludes_zero": true,
+   "n_team_seasons_at_least_300": true
+  },
+  "status": "DEFENSIBLE (team-aggregate benchmark, labeled)",
+  "ecological_limit": "Team-season aggregates: OBP and SLG co-move through batting average (r = 0.77), so the aggregate regression splits their joint variation and prices a point of OBP lower than event-level linear-weights analyses of individual plate appearances do. This is the ratio the repo's committed data supports \u2014 an aggregate benchmark, not an event-level run value. The 60-game 2020 season is included; all variables are per-PA rates and season fixed effects absorb each season's run environment."
+ },
+ "formal_test": {
+  "status": "RUN",
+  "primary_benchmark": "season-FE ratio",
+  "sensitivity_benchmark": "pooled-OLS ratio",
+  "samples": {
+   "S": {
+    "n": 60,
+    "dof": 52,
+    "salary_basis": "Spotrac-basis file data/salaries_2026.json, salary_2026 field (2027 payroll basis per Cycle 41)",
+    "refit_matches_hs1_max_abs_dev": 4.5e-05,
+    "wald_vs_fe_benchmark": {
+     "rho": 0.942,
+     "contrast": -6.488,
+     "se": 8.055,
+     "t": -0.805,
+     "p": 0.4242,
+     "contrast_ci90": [
+      -19.74,
+      6.76
+     ]
+    },
+    "wald_vs_pooled_benchmark": {
+     "rho": 0.656,
+     "contrast": -5.706,
+     "se": 7.553,
+     "t": -0.755,
+     "p": 0.4534,
+     "contrast_ci90": [
+      -18.13,
+      6.72
+     ]
+    },
+    "ratios_not_rejected_at_5pct": {
+     "min": -20.0,
+     "max": 20.0,
+     "scan_range": [
+      -20.0,
+      20.0
+     ],
+     "hit_scan_bound": true,
+     "benchmark_inside": true
+    }
+   },
+   "C": {
+    "n": 82,
+    "dof": 74,
+    "salary_basis": "Cot's LRP-2027, player-aggregated salary_lrp_2027",
+    "refit_matches_hs1_max_abs_dev": 4.7e-05,
+    "wald_vs_fe_benchmark": {
+     "rho": 0.942,
+     "contrast": 1.206,
+     "se": 9.429,
+     "t": 0.128,
+     "p": 0.8986,
+     "contrast_ci90": [
+      -14.31,
+      16.72
+     ]
+    },
+    "wald_vs_pooled_benchmark": {
+     "rho": 0.656,
+     "contrast": 1.844,
+     "se": 8.814,
+     "t": 0.209,
+     "p": 0.8348,
+     "contrast_ci90": [
+      -12.65,
+      16.34
+     ]
+    },
+    "ratios_not_rejected_at_5pct": {
+     "min": -20.0,
+     "max": 20.0,
+     "scan_range": [
+      -20.0,
+      20.0
+     ],
+     "hit_scan_bound": true,
+     "benchmark_inside": true
+    }
+   }
+  }
+ },
+ "quartile_contrast_from_hs1": {
+  "source": "data/hakes_sauer_results.json (Cycle 46), by_contact_pct tables",
+  "note": "Descriptive quartile contrast \u2014 NOT a price effect; no controls for age, position, or contract timing.",
+  "samples": {
+   "S": {
+    "top_quartile_median_dollars_per_war": 8028252.0,
+    "bottom_quartile_median_dollars_per_war": 14979225.0,
+    "ratio": 0.536,
+    "n_top": 15,
+    "n_bottom": 15
+   },
+   "C": {
+    "top_quartile_median_dollars_per_war": 6189076.0,
+    "bottom_quartile_median_dollars_per_war": 11635251.0,
+    "ratio": 0.532,
+    "n_top": 21,
+    "n_bottom": 21
+   }
+  }
+ },
+ "verdict": {
+  "status": "INCONCLUSIVE on mispricing",
+  "body": "The formal Hakes\u2013Sauer proportionality test, run against a run-value benchmark derived from 480 committed team-seasons (2011\u20132026; benchmark OBP/SLG run-value ratio 0.94, 95% CI 0.72\u20131.17), cannot reject correct proportional pricing of OBP relative to SLG in either salary sample (Sample S, Spotrac basis, n = 60: p = 0.42; Sample C, Cot's LRP-2027, n = 82: p = 0.90). It also cannot reject large mispricing in either direction \u2014 at these samples every economically plausible pricing ratio survives the test, so the samples lack the power to settle the question. The descriptive contrast is consistent across both salary bases: top-quartile contact hitters cost about half the median dollars per WAR of the bottom quartile (0.54x in S, 0.53x in C) \u2014 a contrast, not a price effect. The defensible claim is that these skills are persistent and cap-efficient with low variance \u2014 not that they are proven undervalued. Design limit: an active-contract cross-section, not Hakes & Sauer's newly-signed free agents; skills are 2027 projections.",
+  "short": "INCONCLUSIVE on mispricing. The formal proportionality test (run-value benchmark from 480 team-seasons, ratio 0.94) cannot reject correct OBP-vs-SLG pricing in either salary sample (S, n = 60, p = 0.42; C, n = 82, p = 0.90) \u2014 and cannot reject large mispricing either: the samples lack power. What stands: the skills persist, and top-quartile contact hitters cost about half the median $/WAR of the bottom quartile on both salary bases \u2014 a descriptive contrast, not a price effect. The claim is persistent + cap-efficient + low-variance, not proven undervaluation. Design limit: active contracts, not newly-signed free agents.",
+  "defensible_claim": "persistent + cap-efficient + low variance",
+  "not_claimed": "proven market undervaluation of contact/OBP",
+  "design_limit": "active-contract cross-section, not newly-signed FAs; skills are Marcel 2027 projections; Sample S at the n=60 power floor (24 of 30 teams)"
+ }
+}

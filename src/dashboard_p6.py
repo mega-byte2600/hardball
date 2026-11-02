@@ -1,7 +1,7 @@
 """HARDBALL demo dashboard (Plotly HTML) — INTEGRATED build. [P7; script name
 retains the P6 filename for README/repo stability]
 
-Twenty-three figures on real data: the main lane's 13 (payroll/KPI/
+Twenty-four figures on real data: the main lane's 13 (payroll/KPI/
 projections/durability/players/pitching/health/roster/runs/
 sensitivity + skill persistence, value metrics, cap scenario)
 plus the CarpeData/Boardroom 7 (Steamer benchmark, Savant trait
@@ -9,7 +9,9 @@ check, MiLB pipeline, FA shopping list, animated 16-season
 payroll film, pick-your-team explorer, budget-scenario rosters)
 plus the Cycle 30 forced-seller panel
 plus the Cycle 8 title-bar AUC panel
-plus the Cycle 34 posted-class panel (NPB BIS),
+plus the Cycle 34 posted-class panel (NPB BIS)
+plus the Cycle 48 Hakes–Sauer verdict panel (Explorer-only,
+appended last so figures 1–23 keep their numbers),
 presented in three modes (Story, Boardroom, Explorer) with stat cards. Builds from a
 clean clone OFFLINE from committed snapshots (audit G1).
 """
@@ -691,6 +693,108 @@ def panel_benchmark():
         template="plotly_white", height=540)
     return fig
 
+def panel_hs_verdict():
+    """Cycle 48 (HS-2), Figure 24: the Hakes–Sauer verdict exhibit.
+
+    HS-1 (Cycle 46) regressed ln(salary) on projected OBP/SLG/K%/BB%
+    on two committed salary bases and found no significant skill
+    coefficient; HS-2 derived the missing run-value benchmark from
+    480 committed team-seasons and ran the formal proportionality
+    test. Every number renders from data/hakes_sauer_results.json
+    (coefficients/SEs) and data/hakes_sauer_verdict.json (benchmark,
+    Wald tests, quartile contrast, verdict text) so the panel can
+    never drift from the workpaper. The visual point of the forest
+    plots is the intervals crossing zero; the quartile $/WAR bars are
+    a descriptive contrast, labeled as such — not a price effect."""
+    rj = os.path.join(DATA, "hakes_sauer_results.json")
+    vj = os.path.join(DATA, "hakes_sauer_verdict.json")
+    if not (os.path.exists(rj) and os.path.exists(vj)):
+        return None
+    res = json.load(open(rj))
+    ver = json.load(open(vj))
+    samples = [("S", "sample_S_spotrac_basis", "#1d3557", "Sample S — Spotrac basis"),
+               ("C", "sample_C_cots_lrp2027", "#b8860b", "Sample C — Cot's LRP-2027")]
+    bench = ver["benchmark_attempt"]
+    rho = bench["season_fe_primary"]["ratio_obp_to_slg"]
+    rho_ci = bench["season_fe_primary"]["ratio_ci95"]
+
+    fig = make_subplots(
+        rows=2, cols=2,
+        specs=[[{"type": "scatter"}, {"type": "scatter"}],
+               [{"type": "bar", "colspan": 2}, None]],
+        subplot_titles=[
+            "ln(salary) coefficients — OBP and SLG (95% CIs cross zero)",
+            "ln(salary) coefficients — K% and BB% (95% CIs cross zero)",
+            "Descriptive contrast: median $ per WAR by contact quartile (NOT a price effect)",
+            ""],
+        vertical_spacing=0.16, horizontal_spacing=0.10)
+
+    def forest(skills, col):
+        ys, xs, errs, cols, labels = [], [], [], [], []
+        for skey, rkey, color, sname in samples:
+            terms = res[rkey]["spec_A_full_controls"]["terms"]
+            for sk in skills:
+                t = terms[sk]
+                ys.append(f"{sk} · {sname}")
+                xs.append(t["coef"])
+                errs.append(1.96 * t["se"])
+                cols.append(color)
+                labels.append(f"{sk} {t['coef']:+.2f} ± {1.96 * t['se']:.2f} (p = {t['p']:.2f})")
+        fig.add_trace(go.Scatter(
+            x=xs, y=ys, mode="markers", marker=dict(color=cols, size=10),
+            error_x=dict(type="data", array=errs, visible=True, color="#5a6478"),
+            text=labels, hovertemplate="%{text}<extra></extra>",
+            showlegend=False), row=1, col=col)
+        fig.add_vline(x=0, line_dash="dash", line_color="#d50032", row=1, col=col)
+
+    forest(["OBP", "SLG"], 1)
+    forest(["K%", "BB%"], 2)
+
+    qt = ver["quartile_contrast_from_hs1"]["samples"]
+    bx, by, bc, bt = [], [], [], []
+    for skey, sname in [("S", "Sample S (Spotrac)"), ("C", "Sample C (Cot's)")]:
+        q = qt[skey]
+        bx += [f"{sname} — bottom contact quartile", f"{sname} — top contact quartile"]
+        by += [q["bottom_quartile_median_dollars_per_war"] / 1e6,
+               q["top_quartile_median_dollars_per_war"] / 1e6]
+        bc += ["#7a1f1f", "#1b5e20"]
+        bt += [f"${q['bottom_quartile_median_dollars_per_war'] / 1e6:.2f}M",
+               f"${q['top_quartile_median_dollars_per_war'] / 1e6:.2f}M — {q['ratio']:.2f}× the bottom"]
+    fig.add_trace(go.Bar(x=bx, y=by, marker_color=bc, text=bt,
+                         textposition="outside", showlegend=False,
+                         hovertemplate="%{x}<br>%{text}<extra></extra>"),
+                  row=2, col=1)
+    fig.update_yaxes(title_text="Median $ per WAR ($M)", row=2, col=1)
+    fig.update_xaxes(title_text="Coefficient in ln(salary)", row=1, col=1)
+    fig.update_xaxes(title_text="Coefficient in ln(salary)", row=1, col=2)
+    fig.update_layout(
+        title=("The pricing test: we ran Hakes–Sauer on ourselves — the honest verdict is not proven<br>"
+               f"<sub>Every skill coefficient's 95% interval crosses zero on both committed salary bases, and the formal "
+               f"proportionality test (run-value benchmark from {bench['n_team_seasons']} team-seasons: a point of OBP is worth "
+               f"{rho:.2f}× a point of SLG, 95% CI {rho_ci[0]:.2f}–{rho_ci[1]:.2f}) cannot reject correct pricing — or large "
+               f"mispricing. The samples lack power, and the panel says so. Sources: data/hakes_sauer_results.json (Cycle 46) "
+               f"and data/hakes_sauer_verdict.json (Cycle 48).</sub>"),
+        template="plotly_white", height=680)
+    return fig
+
+
+def _hs_verdict_html():
+    """Cycle 48: the HS-2 verdict box under Figure 24 (Explorer only).
+    Text renders verbatim from data/hakes_sauer_verdict.json."""
+    import html as _html
+    ver = json.load(open(os.path.join(DATA, "hakes_sauer_verdict.json")))
+    v = ver["verdict"]
+    return ('<div class="verdict"><h2>THE VERDICT — ' +
+            _html.escape(v["status"].upper()) + "</h2><p>" +
+            _html.escape(v["short"]) + "</p></div>" +
+            '<p class="srcline">Benchmark: team-season runs regression (runs per PA on OBP and SLG, '
+            "season fixed effects) on data/curated/fact_team_season.parquet — a team-aggregate "
+            "benchmark, labeled as such in the workpaper (docs/CARPE_SCORECARD.md, Cycle 48 "
+            "addendum). Salary samples: Spotrac basis n = 60 (24 of 30 teams, at the power "
+            "floor) and Cot's LRP-2027 n = 82 — bases never mixed. Method and full numbers: "
+            "src/bml_cycle48.py, data/hakes_sauer_verdict.json.</p>")
+
+
 def panel_savant():
     """CarpeData: Savant trait stability vs incremental value (Cycle 20)."""
     tj = os.path.join(DATA, "savant_test.json")
@@ -1324,6 +1428,7 @@ def build():
     fig_pipe = panel_pipeline()
     fig_shop = panel_shopping()
     fig_posted = panel_posted()
+    fig_hs = panel_hs_verdict()
     fig_scen = panel_scenarios()
 
     SECTIONS = [
@@ -1350,7 +1455,7 @@ def build():
         ("VII", "The Future", "The pipelines feeding the cheap winners, "
          "the free-agent list to shop from — and the posted class "
          "resolving during the demo window.",
-         [fig_pipe, fig_shop, fig_posted]),
+         [fig_pipe, fig_shop, fig_posted, fig_hs]),
     ]
     flat = [f for _, _, _, figs in SECTIONS for f in figs if f is not None]
 
@@ -1640,7 +1745,7 @@ def build():
                       '<p class="srcline">Source: see the figure footer and the data sources box at '
                       "the foot of this page.</p></section>")
 
-    # --- EXPLORER mode: all 23 figures, grouped by task ---
+    # --- EXPLORER mode: all 24 figures, grouped by task ---
     groups = [
         ("Cap Reality", "What the cap and floor do to every payroll, and what must be shed.",
          [1, 6, 9, 10, 11],
@@ -1654,9 +1759,9 @@ def build():
         ("The Posted Class", "Japan's window, resolving during the demo: three NPB stars posted Nov 1, 2026 — three different bets: the test, the fit, the gamble.",
          [23],
          "Source: NPB official Baseball Information System (BIS) — data/posted_class_2026.json; leaderboard context computed by src/bml_cycle47.py into data/fig23_rebuild_2026.json; posting facts: AP / MLB Trade Rumors / Sportsnet, 2026-11-01."),
-        ("Check the Model", "Persistence, run differential, the title-bar test, the benchmark, and the trait check.",
-         [3, 4, 5, 18, 19, 20],
-         "Source: FanGraphs Steamer benchmark, Baseball Savant leaderboards, and MLB panel data."),
+        ("Check the Model", "Persistence, run differential, the title-bar test, the benchmark, the trait check — and our own pricing test, verdict included.",
+         [3, 4, 5, 18, 19, 20, 24],
+         "Source: FanGraphs Steamer benchmark, Baseball Savant leaderboards, MLB panel data, and the Cycle 46/48 Hakes–Sauer workpaper (committed salary samples + team-season panel)."),
     ]
     explorer = ('<div class="hero-team"><h3>Pick your team first</h3>'
                 "<p>Use the dropdown: every club's 2026 signature against the winning-cheap profile, "
@@ -1671,6 +1776,13 @@ def build():
                          "<p>Ranked by WAR per $10M of prior salary. Bars show where each player sits "
                          "in the committed free-agent pool for that metric.</p></div>")
             explorer += _player_cards()
+        if name == "Check the Model":
+            explorer += ('<div class="task"><h3>The verdict on our own pricing claim</h3>'
+                         "<p>Figure 24 runs the Hakes–Sauer test on this demo's own thesis — "
+                         "and the verdict box below it states exactly what the data supports. "
+                         "Explorer only. Story stays 6 chapters and Boardroom stays 15 slides: "
+                         "this is a claim check, not a new claim.</p></div>")
+            explorer += _hs_verdict_html()
         if name == "The Posted Class":
             explorer += ('<div class="task"><h3>The trio, the clock, and the honesty box</h3>'
                          "<p>Cards, the posting-clock facts, the Imai expectation-vs-reality strip, "
@@ -1776,7 +1888,7 @@ def build():
 <span class="k"><b>K-BB%</b> = strikeouts minus walks = how dominant a pitcher is</span>
 <span class="k"><b>WAR</b> = wins above replacement, the famous player-value stat. Published free by FanGraphs (fWAR) &amp; Baseball-Reference (bWAR), but the two formulas disagree, it is not returned by the MLB API, and it is not a league-published number — so this value panel shows WAR's reproducible inputs (wOBA, wRC+, FIP, K-BB%) instead. Note: the FA shopping list (this build) uses FanGraphs Steamer WAR.</span></div>
 __JS_INCLUDE__
-<div class="figidx"><b>FIGURE INDEX — the story at a glance (all 23 real-data charts below)</b><br>
+<div class="figidx"><b>FIGURE INDEX — the story at a glance (all 24 real-data charts below)</b><br>
 <span>1</span> Press play: 16 seasons of payroll vs wins &nbsp;·&nbsp;
 <span>2</span> Pick your team &nbsp;·&nbsp;
 <span>3</span> The measurable edge — skills persist (contact r=.90) &nbsp;·&nbsp;
@@ -1799,11 +1911,12 @@ __JS_INCLUDE__
 <span>20</span> Value metrics &nbsp;·&nbsp;
 <span>21</span> MiLB pipeline index &nbsp;·&nbsp;
 <span>22</span> The 2027 shopping list &nbsp;·&nbsp;
-<span>23</span> The Posted Class: Japan's window</div>
+<span>23</span> The Posted Class: Japan's window &nbsp;·&nbsp;
+<span>24</span> The pricing test: our own Hakes–Sauer verdict</div>
 <nav class="modenav">
 <button type="button" id="btn-story" class="active" onclick="showMode('story')">Story: the case in 6 chapters</button>
 <button type="button" id="btn-boardroom" onclick="showMode('boardroom')">Boardroom: 15 slides</button>
-<button type="button" id="btn-explorer" onclick="showMode('explorer')">Explorer: all 23 figures by task</button>
+<button type="button" id="btn-explorer" onclick="showMode('explorer')">Explorer: all 24 figures by task</button>
 </nav>
 <div id="mode-story">__STORY__</div>
 <div id="mode-boardroom">__BOARDROOM__</div>
@@ -1838,7 +1951,11 @@ MAE ≈ 14.1 wins, worse than the naive baseline; grouped CV MAE 10.2 (a fold pr
 60-game 2020 season is excluded as a units mismatch — see BML Cycle 19). Player projections:
 backtested Marcel (3-season 5-4-3 + fitted age terms; Cycles 21/24), health-capped, benchmarked
 against Steamer (hitter OBP r = .889; pitcher ERA bias −0.25 after the Cycle 24 fix, disclosed
-on the panel). The product is player-level acquisition, not a team-wins formula.<br><br>
+on the panel). The product is player-level acquisition, not a team-wins formula.
+<b>Pricing claim, tested (Cycles 46/48):</b> our own Hakes–Sauer test of whether the
+market underprices contact/OBP is formally inconclusive at current samples — Figure 24
+carries the coefficients, the test, and the verdict; this page claims persistence and
+cap-efficiency, not proven undervaluation.<br><br>
 <b>ALL DATA &amp; API SOURCES — the full list, with status (2026-11-02).</b>
 Every figure above traces to one of these; nothing else feeds this page.<br>
 <span class="src">MLB Stats API</span> (statsapi.mlb.com) — standings, team

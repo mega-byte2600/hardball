@@ -25,7 +25,7 @@
 </style></head><body>
 <h1>HARDBALL &mdash; Cap-Era Moneyball</h1>
 <p class="sub">Executive one-pager &middot; Prepared for the December 2026 Winter Meetings
-&middot; Generated 2026-11-01 23:29 UTC from committed repo snapshots by
+&middot; Generated 2026-11-02 21:23 UTC from committed repo snapshots by
 <code>src/make_onepager.py</code> &middot; Real data only; no invented numbers.</p>
 
 <p class="thesis">Thesis: under a hard cap, buy the persistent inputs &mdash; contact and
@@ -85,10 +85,10 @@ TEX (927 rows, 864 ID-matched). The gap is labeled in the data, not filled.</li>
 <li><b>WAR</b> is a public stat (FanGraphs fWAR / Baseball-Reference bWAR, free) but the two formulas disagree and the MLB API does not return it; we surface its reproducible inputs (wOBA, wRC+, FIP, K-BB%) rather than inventing a single WAR.</li>
 </ul></div>
 
-<p class="foot"><b>Data QC (this build):</b> 14 curated Parquet tables,
+<p class="foot"><b>Data QC (this build):</b> 17 curated Parquet tables,
 schema-enforced, zero contract failures; benchmark parity reproduced from
 curated tables alone (r&nbsp;=&nbsp;0.889, 201 matched). Sources: MLB Stats API,
 Baseball Savant, FanGraphs Steamer, Spotrac, ESPN cross-check. Full audit trail:
 <code>docs/BML_LOG.md</code>. Interactive demo: <code>dashboard/hardball_demo.html</code>
-(20 figures, builds offline from committed snapshots).</p>
+(24 figures, builds offline from committed snapshots).</p>
 </body></html>
