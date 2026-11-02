@@ -519,6 +519,65 @@ def main() -> int:
     _fig(25, "optimizer panel: floor delta from artifact in the title",
          f"+{d0:.1f} WAR at the floor" in html_qa, f"delta={d0}")
 
+    # --- API-2 feed architecture: event layer (Cycle 55) -----------
+    ile_path = DATA / "il_events.json"
+    if ile_path.exists():
+        ile = json.loads(ile_path.read_text())
+        ev, summ, fap = ile["events"], ile["summary"], ile["fa_pool_summary"]
+        md = ile["metadata"]
+        by_type = lambda lst, t: sum(1 for e in lst
+                                     if e["event_type"] == t)
+        snaps_ok = True
+        for side in ("baseline", "current"):
+            for key in ("fastballapi_injuries", "statyx_injuries"):
+                ref = md[side][key]
+                p = ROOT / ref["file"]
+                if not p.exists():
+                    snaps_ok = False
+                    break
+                env = json.loads(p.read_text())
+                digest = hashlib.sha256(json.dumps(
+                    env["payload"], indent=1, sort_keys=True
+                ).encode()).hexdigest()
+                if digest != ref["payload_sha256"]:
+                    snaps_ok = False
+        check("API-2: il_events.json consistent (counts reconcile, "
+              "snapshots on disk match recorded shas, standings-test "
+              "verdict on record)",
+              summ["events_total"] == len(ev)
+              and summ["new_il"] == by_type(ev, "new_il")
+              and summ["returned"] == by_type(ev, "returned")
+              and summ["status_change"] == by_type(ev, "status_change")
+              and fap["events_total"] == len(ile["fa_pool_events"])
+              and fap["new_il"] == by_type(ile["fa_pool_events"], "new_il")
+              and all(e["in_fa_pool"] or e["scenario_rosters"]
+                      for e in ile["fa_pool_events"])
+              and md["statyx_standings_test"]["verdict"] in
+                  ("dropped", "curated")
+              and snaps_ok,
+              f"events={len(ev)} fa_events={len(ile['fa_pool_events'])} "
+              f"verdict={md['statyx_standings_test']['verdict']}")
+        if fap["events_total"] == 0:
+            frag = "no movement in the FA pool since the baseline pull"
+        else:
+            frag = (f"{fap['new_il']} new IL, {fap['returned']} returned, "
+                    f"{fap['status_change']} status changes (FA pool)")
+        check("API-2: health figure carries the FA-pool movement line "
+              "(Cycle 55)",
+              f"Movement since {md['baseline_date']}" in html_qa
+              and frag in html_qa
+              and f"census (FastballAPI) pulled "
+                  f"{md['census_pulled_date']}" in html_qa
+              and f"moves (Statyx) pulled {md['moves_pulled_date']}"
+                  in html_qa,
+              f"frag={frag!r}")
+    else:
+        check("API-2: il_events.json consistent (counts reconcile, "
+              "snapshots on disk match recorded shas, standings-test "
+              "verdict on record)", False, "data/il_events.json missing")
+        check("API-2: health figure carries the FA-pool movement line "
+              "(Cycle 55)", False, "data/il_events.json missing")
+
     # --- optional live check ---------------------------------------
     if live:
         import requests

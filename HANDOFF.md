@@ -543,3 +543,32 @@ curate 18 tables byte-identical, parity r = 0.889 / 201, dashboard
 
 UNC-2 (uncertainty layer — intervals on scenario WAR + projection
 error bands) — final programme increment.
+## CYCLE 55 — API-2: FEED ARCHITECTURE, CENSUS / EVENT / VALIDATOR (2026-11-02, owner-directed)
+
+FastballAPI is now the **census** (canonical current-IL snapshot),
+Statyx the **event layer** (recent moves compared against the
+Cycle 51 baseline), StatsAPI stays standings of record and
+FastballAPI standings the validator. **Statyx standings tested and
+DROPPED** — only a Statyx-internal team_id (1794–1823), no
+name/code fields, no crosswalk in the repo, 25 of 30 teams per
+season; the snapshot stays raw-only (verdict + evidence in
+`data/il_events.json` metadata). First event comparison (fresh
+pull, 4 FastballAPI credits, all endpoints 200): **0 events** —
+payloads state-identical to baseline; the Statyx page differed
+only in every record's `updated_at` (re-stamped at page
+generation, hand-verified), so landing is state-aware
+(`ok_no_change` in the manifest, no re-land). New outputs:
+`data/il_events.json` + curated `fact_il_events`; the health
+figure carries the movement line under the live-IL table (figure
+count stays 25). Production refresh = `src/refresh_live_feeds.py`
+(20h watermark, 200-credit monthly hard cap from the manifest
+ledger, fail closed; the gate never calls it). Platform: ingest
+25/0, curate **19 tables**, parity r = 0.889 / 201, gate **67
+checks ALL PASS**, spellcheck green.
+
+## Next
+
+Wire `src/refresh_live_feeds.py` into the 6-hourly job so the
+census stays current untouched (parent lane); then UNC-2.
+(Numbered Cycle 55: the parallel lane's UNC-1 took Cycle 54,
+PR #36, while this cycle was in build.)

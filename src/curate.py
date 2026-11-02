@@ -222,6 +222,34 @@ def main():
            bool((df.in_fastball | df.in_statyx).all())),
           ("pulled_at present", df.pulled_at.notna().all())])
 
+    # Cycle 55: feed event layer (census baseline vs current diff) --------------
+    ile_path = DATA / "il_events.json"
+    if ile_path.exists():
+        ile = json.loads(ile_path.read_text())
+        ev_cols = ["event_id", "player_name", "event_type", "feeds",
+                   "status_from", "status_to", "type_from", "type_to",
+                   "statyx_commentary", "in_fa_pool", "fa_player_id",
+                   "scenario_rosters", "baseline_date", "current_date"]
+        ev = pd.DataFrame(ile["events"], columns=ev_cols)
+        ev["feeds"] = ev["feeds"].map(
+            lambda v: ",".join(v) if isinstance(v, list) else v)
+        ev["scenario_rosters"] = ev["scenario_rosters"].map(
+            lambda v: ",".join(v) if isinstance(v, list) else v)
+        emit("fact_il_events", ev,
+             "one row per IL movement event (append-only diff log)",
+             ["il_events.json (src/bml_cycle55.py: baseline vs newest "
+              "landed Statyx + FastballAPI injuries snapshots)"],
+             [("rows == artifact summary",
+               len(ev) == ile["summary"]["events_total"]),
+              ("event types valid",
+               set(ev.event_type) <= {"new_il", "returned",
+                                      "status_change"}),
+              ("fa flags reconcile",
+               int(ev.in_fa_pool.sum())
+               == sum(1 for e in ile["events"] if e["in_fa_pool"]))])
+    else:
+        print("  fact_il_events: SKIPPED (il_events.json absent)")
+
     # cap scenario -----------------------------------------------------------------
     cap = load("cap_scenario_2027.json")
     df = pd.DataFrame(cap["teams"])

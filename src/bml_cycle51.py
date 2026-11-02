@@ -22,6 +22,12 @@ Modes:
            rebuild data/il_current_live.json deterministically.
            This is the path the gate uses — no keys, no network.
 
+Cycle 55: feed roles are fixed — FastballAPI is the CENSUS (this
+artifact's canonical IL snapshot), Statyx the EVENT layer (see
+src/bml_cycle55.py); snapshots resolve to the NEWEST landed stem
+per (source, kind) so refresh-landed snapshots supersede these
+originals; the production refresh path is src/refresh_live_feeds.py.
+
 Keys NEVER appear here: the helpers inject the vault credential
 themselves. If a helper fails, --pull fails closed and writes
 nothing feed-dependent.
@@ -143,13 +149,26 @@ def read_snapshot(source, dataset):
     return env
 
 
+def newest_stem(source, kind):
+    """Newest landed snapshot stem for (source, kind). Cycle 55:
+    refresh-landed snapshots supersede the Cycle 51 originals."""
+    files = sorted((RAW / source).glob(f"{kind}_*.json"))
+    return files[-1].stem if files else f"{kind}_{PULLED_DATE}"
+
+
 def build():
-    envs = {(s, d): read_snapshot(s, d) for s, d in SNAPSHOTS}
-    fb_inj = envs[("fastballapi", f"injuries_{PULLED_DATE}")]["payload"]["data"]
-    fb_std = envs[("fastballapi", f"standings_{PULLED_DATE}")]["payload"]["data"]
-    sx_inj = envs[("statyx", f"injuries_{PULLED_DATE}")]["payload"]["data"]
-    sx_std = envs[("statyx", f"standings_{PULLED_DATE}")]["payload"]["data"]
+    stems = {(s, k): newest_stem(s, k)
+             for s in ("statyx", "fastballapi")
+             for k in ("injuries", "standings")}
+    envs = {(s, stems[(s, k)]): read_snapshot(s, stems[(s, k)])
+            for s in ("statyx", "fastballapi")
+            for k in ("injuries", "standings")}
+    fb_inj = envs[("fastballapi", stems[("fastballapi", "injuries")])]["payload"]["data"]
+    fb_std = envs[("fastballapi", stems[("fastballapi", "standings")])]["payload"]["data"]
+    sx_inj = envs[("statyx", stems[("statyx", "injuries")])]["payload"]["data"]
+    sx_std = envs[("statyx", stems[("statyx", "standings")])]["payload"]["data"]
     pulled_at = max(e["fetched_at"] for e in envs.values())
+    pulled_date = max(e["fetched_at"][:10] for e in envs.values())
 
     # --- union of the two injury feeds, one row per player ---------------
     rows = {}
@@ -160,7 +179,7 @@ def build():
             "statyx_status": None, "type": r.get("type"),
             "detail": r.get("detail"), "side": None,
             "return_date": (r.get("return_date") or "")[:10] or None,
-            "in_fastball": True, "in_statyx": False, "pulled_at": PULLED_DATE}
+            "in_fastball": True, "in_statyx": False, "pulled_at": pulled_date}
     n_overlap = 0
     for r in sx_inj:
         k = norm_name(r["player_name"])
@@ -181,7 +200,7 @@ def build():
                 "detail": r.get("detail"), "side": r.get("side"),
                 "return_date": (r.get("return_date") or "")[:10] or None,
                 "in_fastball": False, "in_statyx": True,
-                "pulled_at": PULLED_DATE}
+                "pulled_at": pulled_date}
     union = sorted(rows.values(), key=lambda r: r["player_name"])
 
     # --- FA pool overlay + static-file comparison -------------------------
@@ -229,20 +248,20 @@ def build():
 
     artifact = {
         "metadata": {
-            "cycle": 51, "pulled_at": pulled_at, "pulled_date": PULLED_DATE,
+            "cycle": 51, "pulled_at": pulled_at, "pulled_date": pulled_date,
             "sources": {
                 "fastballapi": {"injuries_records": len(fb_inj["injuries"]),
                                 "standings_teams": len(fb_std["standings"]),
                                 "credits_spent_this_cycle": 4,
-                                "snapshot_files": [f"data/raw/fastballapi/injuries_{PULLED_DATE}.json",
-                                                   f"data/raw/fastballapi/standings_{PULLED_DATE}.json"]},
+                                "snapshot_files": [f"data/raw/fastballapi/{stems[('fastballapi', 'injuries')]}.json",
+                                                   f"data/raw/fastballapi/{stems[('fastballapi', 'standings')]}.json"]},
                 "statyx": {"injuries_records": len(sx_inj),
                            "standings_rows": len(sx_std),
                            "note": "injuries = first page (limit 50) of the recent-moves feed; "
                                    "standings rows carry no team names, snapshot kept raw only",
                            "credits_spent_this_cycle": 0,
-                           "snapshot_files": [f"data/raw/statyx/injuries_{PULLED_DATE}.json",
-                                              f"data/raw/statyx/standings_{PULLED_DATE}.json"]}},
+                           "snapshot_files": [f"data/raw/statyx/{stems[('statyx', 'injuries')]}.json",
+                                              f"data/raw/statyx/{stems[('statyx', 'standings')]}.json"]}},
             "grain": "one row per currently listed injured player (union of the two feeds)",
             "consumer": "dashboard health panel live-IL sub-panel + curated fact_il_current"},
         "rows": union,

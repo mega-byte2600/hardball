@@ -190,6 +190,18 @@
     "pulled_at present"
    ]
   },
+  "fact_il_events": {
+   "rows": 0,
+   "grain": "one row per IL movement event (append-only diff log)",
+   "inputs": [
+    "il_events.json (src/bml_cycle55.py: baseline vs newest landed Statyx + FastballAPI injuries snapshots)"
+   ],
+   "checks": [
+    "rows == artifact summary",
+    "event types valid",
+    "fa flags reconcile"
+   ]
+  },
   "fact_cap_scenario": {
    "rows": 30,
    "grain": "team (2027 scenario)",
