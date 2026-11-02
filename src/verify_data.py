@@ -154,8 +154,8 @@ def main() -> int:
     n_slides = len(re.findall(r'class="slide"', html))
     n_cards = len(re.findall(r'class="pcard"', html))
     explorer_figs = sorted(set(_mode_figs("explorer")))
-    check("dashboard HTML: PRESS PLAY present, 24-chart index intact",
-          "PRESS PLAY" in html and "all 24 real-data charts" in html)
+    check("dashboard HTML: PRESS PLAY present, 25-chart index intact",
+          "PRESS PLAY" in html and "all 25 real-data charts" in html)
     check("dashboard HTML: no stale figure references",
           "see Figure 12)" not in html)
     check("dashboard modes: story has exactly 6 chapters",
@@ -173,6 +173,10 @@ def main() -> int:
     check("dashboard modes: explorer holds Figure 24 with HS verdict box",
           24 in explorer_figs and "INCONCLUSIVE ON MISPRICING" in html
           and "Hakes" in html,
+          f"explorer={explorer_figs}")
+    check("dashboard modes: explorer holds Figure 25 with optimizer audit",
+          25 in explorer_figs and "optimizer" in html.lower()
+          and "proven optimal" in html,
           f"explorer={explorer_figs}")
 
     # --- HS-2 verdict artifact: status + benchmark on record -------
@@ -214,8 +218,30 @@ def main() -> int:
     # --- talk track references exist in the merged deck -----------
     tt = (ROOT / "docs" / "TALKTRACK.md").read_text()
     refs = {int(n) for n in re.findall(r"Figure (\d+)", tt)}
-    check("talk track: all figure references <= 24", refs and max(refs) <= 24,
+    check("talk track: all figure references <= 25", refs and max(refs) <= 25,
           f"refs: {sorted(refs)}")
+
+    # --- OPT-1 optimizer artifact: comparison on record -----------
+    opt_path = DATA / "optimizer_comparison_2027.json"
+    if opt_path.exists():
+        opt = json.loads(opt_path.read_text())
+        ok = len(opt["budgets"]) == 3
+        for b in opt["budgets"]:
+            ok = ok and len(b["greedy"]["roster"]) == 26
+            ok = ok and len(b["optimizer"]["roster"]) == 26
+            ok = ok and b["greedy"]["spend"] <= b["budget"]
+            ok = ok and b["optimizer"]["spend"] <= b["budget"]
+            ok = ok and b["optimizer"]["total_war"] >= b["greedy"]["total_war"]
+            ok = ok and b["optimizer"]["proven_optimal"]
+            ok = ok and b["optimizer"]["mip_gap"] == 0
+            ok = ok and b["greedy"]["satisfies_15pct_rule"]
+            ok = ok and b["optimizer"]["satisfies_15pct_rule"]
+        check("OPT-1: 3 budgets, 26-man rosters, spend <= budget, optima "
+              "proven, 15% rule holds for greedy and optimizer", ok)
+    else:
+        check("OPT-1: 3 budgets, 26-man rosters, spend <= budget, optima "
+              "proven, 15% rule holds for greedy and optimizer", False,
+              "data/optimizer_comparison_2027.json missing")
 
 
     # --- data platform: curated layer contracts ------------------

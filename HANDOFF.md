@@ -320,3 +320,58 @@ catches it).
 ## Next
 
 OPT-1 (roster optimizer) — programme increment 3 of 6.
+
+---
+# HANDOFF — Cycle 49: OPT-1, the roster optimizer (Figure 25)
+
+Owner-approved MIT-gap programme, increment 3 of 6. OPT-1 puts a real
+optimizer next to Cycle 26's greedy scenario rosters and publishes the
+comparison as **Figure 25** (Explorer-only, Build a Roster).
+**25 figures total**; figures 1–24 keep their numbers; Story
+(6 chapters) and Boardroom (15 slides) unchanged; Figure 16's rosters
+and headline numbers unchanged. GitHub Actions ignored per the owner's
+2026-11-02 directive (minutes exhausted until Dec 1) — local gate,
+platform, and parity carry verification.
+
+## What shipped
+
+1. **`src/bml_cycle49.py` → `data/optimizer_comparison_2027.json`** —
+   greedy reproduction (asserted exact against wow_scenarios.json),
+   the MILP, the DH-restricted sensitivity, full rosters for both
+   methods at all three budgets.
+2. **Figure 25** — grouped bars (greedy / optimizer / DH-restricted)
+   per budget + `_optimizer_html()` facts box (overlap, DH slots,
+   15% rule), all numbers rendered from the artifact.
+3. **Gate** — Figure 25 presence check + an OPT-1 artifact check
+   (26-man rosters, spend <= budget, optima proven, 15% rule holds
+   for both methods); talk-track reference ceiling 24 → 25.
+4. **Counts 24 → 25** — dashboard source, README, TALKTRACK
+   (+ back-pocket Q&A), EXEC_SUMMARY, ONEPAGER (regenerated).
+
+## The numbers (all three optima proven, HiGHS gap 0)
+
+- Floor $171.2M: greedy 42.0 → optimizer **48.9 WAR** (+6.9);
+  Middle $208M: 45.7 → **52.8** (+7.1); Cap $245.3M: 52.3 → **54.8**
+  (+2.5). Overlap 16 / 17 / 21 of 26 names.
+- DH-restricted sensitivity: +5.5 / +5.2 / +0.4 — floor/middle edge is
+  mostly combinatorics; the cap edge is mostly the DH rule (greedy
+  carries Dominic Smith, 0.01 WAR, at DH everywhere; optimizer plays
+  Brandon Lowe, 2.32).
+- 15% per-player rule ($36.795M): binds nobody in the pool (max
+  anchor $35.0M); all greedy rosters satisfy it; enforced in the MILP.
+
+## Verification
+
+Platform clean (ingest 25 datasets / 0 failures, curate 17 tables,
+parquets byte-identical to committed), warehouse rebuilt, parity
+r = 0.889 / 201 unchanged, gate ALL PASS (offline) including the new
+Figure 25 + OPT-1 artifact checks, spellcheck green. Build note
+(same as Cycles 47/48): build the dashboard only with the lake
+present — a lake-less build drops a panel and renumbers figures
+(the gate catches it).
+
+## Next
+
+OPT-2 (optimizer sensitivity + mixed pre-arb+FA floor roster) —
+programme increment 4 of 6. Whether optimizer rosters ever REPLACE
+the greedy ones in Figure 16 is an owner call, queued there.

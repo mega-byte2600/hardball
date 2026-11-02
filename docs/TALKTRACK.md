@@ -1,12 +1,12 @@
 # HARDBALL — Meeting Talk-Track (10 minutes, Figure-by-Figure)
 *For the GP to present to an owner. Every number is real and measured; every
 honesty caveat is already inside the pitch so it survives a skeptical room.
-Figure numbers match the merged 24-figure dashboard (main, v1.0.0-mvp).*
+Figure numbers match the merged 25-figure dashboard (main, v1.0.0-mvp).*
 
 **Weapons:** the dashboard, opened on Figure 1. This page tells you what to
 say and in what order. Don't read it — talk it.
 
-## The three modes (same 24 figures, same numbers, presented three ways)
+## The three modes (same 25 figures, same numbers, presented three ways)
 - **Story (the default landing):** the verdict first, then 6 chapters with one
   figure each — Chapter 1 Figure 3 (skills persist), Chapter 2 Figure 4 (run
   differential describes), Chapter 3 Figure 6 (payroll vs wins), Chapter 4
@@ -19,8 +19,8 @@ say and in what order. Don't read it — talk it.
   Slide 8 Figure 15, Slide 9 Figure 10, Slide 10 Figure 11, Slide 11
   Figure 20, Slide 12 Figure 16, Slide 13 Figure 22, Slide 14 Figure 2,
   Slide 15 Figure 18. Use it in the room.
-- **Explorer (all 24 figures, grouped by task):** Cap Reality (Figures 1, 6,
-  9, 10, 11), Build a Roster (Figures 7, 8, 12, 13, 14, 15, 16, 17),
+- **Explorer (all 25 figures, grouped by task):** Cap Reality (Figures 1, 6,
+  9, 10, 11), Build a Roster (Figures 7, 8, 12, 13, 14, 15, 16, 17, 25),
   Shop the FA Class (Figures 21, 22, plus percentile cards for the top
   bargain free agents), The Posted Class (Figure 23, plus trio cards, the
   posting clock, and the translation honesty box), Check the Model
@@ -32,7 +32,10 @@ stays 6 chapters and Boardroom stays 15 slides, so the posted class adds
 a live-market exhibit without adding a thesis claim. Cycle 48 appends
 Figure 24 the same way: Explorer-only, inside Check the Model — the
 Hakes–Sauer verdict exhibit, a claim check on our own pricing language,
-not a new claim.
+not a new claim. Cycle 49 appends Figure 25 the same way: Explorer-only,
+inside Build a Roster — the exact optimizer's audit of the Cycle 26
+greedy build, a method check on our own roster construction, not a new
+roster claim; Figure 16's rosters are unchanged.
 
 ---
 
@@ -115,6 +118,33 @@ luck doesn't. **That's the edge you can act on.**"
 
 ---
 
+## BACK-POCKET Q&A — Did you optimize the roster, or just fill it greedily? (Figure 25, Explorer only)
+"Both — and we published the difference. Figure 16's rosters are a greedy
+build: best WAR-per-dollar at each position, then upgrades while the
+budget holds. In Cycle 49 we re-solved the identical problem — same 199
+free agents, same Steamer WAR, same prior-contract prices, same quotas —
+as an exact mixed-integer optimization, and the solver proved its optima."
+- **The gap:** Floor 42.0 → **48.9 WAR** (+6.9), Middle 45.7 → **52.8**
+  (+7.1), Cap 52.3 → **54.8** (+2.5). The optimizer's floor roster beats
+  the greedy's middle roster outright — construction quality is worth
+  roughly a budget tier at the tight end.
+- **Where it comes from:** mostly combinatorics — restricted to the
+  greedy's own effective search space, the optimizer still finds +5.5 /
+  +5.2 / +0.4. The rest is one rule the greedy never used: its own code
+  says the DH can be any bat, but with two DH-mapped players in the pool
+  its fallback never fired, so every greedy roster carries Dominic Smith
+  (0.01 WAR) at DH. The optimizer plays Brandon Lowe (2.32 WAR) there.
+- **The 15% rule:** the owners' proposed per-player maximum ($36.8M)
+  binds nobody in this class at prior prices — the dearest anchor is
+  $35.0M — and all three greedy rosters satisfy it. Enforced in the
+  optimizer anyway; the check is on the record in Figure 25.
+- **Why Figure 16 still shows the greedy rosters:** "The audit is the
+  finding. Swapping in the optimizer rosters rewrites the demo's
+  headline numbers — that is an owner's call, queued as OPT-2, not
+  something we slipped in."
+Source for every line: data/optimizer_comparison_2027.json (Cycle 49,
+src/bml_cycle49.py; solver scipy/HiGHS MILP, gap 0 at all three budgets).
+
 ## BACK-POCKET Q&A — What about Japan? (Figure 23, Explorer only)
 "The three best NPB players were posted Nov 1 — negotiations open Nov 2,
 the window closes Dec 16 at 5pm ET, and the clock pauses if the Dec 1
@@ -155,6 +185,11 @@ AP / MLB Trade Rumors / Sportsnet.
   +$96.7M, TB +$75.6M (7 over cap / 15 under floor).
 - Scenario rosters: Floor $171.2M → 42.0 WAR; Middle $208.3M → 45.7 WAR;
   Cap $245.3M → 52.3 WAR (real FA class, prior-AAV price anchors).
+- Optimizer audit (Fig 25): exact MILP on the identical inputs finds
+  48.9 / 52.8 / 54.8 WAR — +6.9 / +7.1 / +2.5 over the greedy builds,
+  optima proven (gap 0); rosters share 16 / 17 / 21 of 26 names; the
+  15%-of-cap per-player rule binds nobody (max anchor $35.0M < $36.8M)
+  and all greedy rosters satisfy it.
 - Benchmark: Marcel vs Steamer hitter OBP r = .889 (201 matched by ID);
   pitcher bias corrected in public (Steamer -0.250 ERA, ours -0.208 pre-fix).
 - Hakes–Sauer pricing test (Fig 24): run-value benchmark from 480

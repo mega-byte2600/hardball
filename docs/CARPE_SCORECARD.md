@@ -385,3 +385,56 @@ a reader could go looking for the stronger claim — EXEC_SUMMARY's
 "do NOT claim" section and TALKTRACK's honesty section both carry
 the inconclusive verdict citing Figure 24, and the dashboard's
 sources box states the tested status of the pricing claim.
+
+## Cycle 49 addendum — OPT-1: exact optimizer vs the Cycle 26 greedy (2026-11-02)
+
+**The question.** Cycle 26's scenario rosters (Figure 16) are greedy
+builds — WAR-per-dollar quota fill, then WAR upgrades while the budget
+holds. OPT-1 asks how much WAR that heuristic leaves on the table, by
+re-solving the identical problem exactly (`src/bml_cycle49.py`,
+artifact `data/optimizer_comparison_2027.json`).
+
+**Identical inputs, asserted in code.** The script imports Cycle 26's
+own builder and re-runs it on the identically constructed pool (2027
+FA class, Steamer WAR + prior-contract AAV: 199 players; POSMAP and
+QUOTAS imported, not copied). Reproduction of
+`data/wow_scenarios.json` is exact — spend to the dollar, WAR to 0.05,
+identical 26 names per budget — and asserted before anything is
+optimized. Prices stay labeled prior-AAV anchors, not predictions.
+
+**Method.** Mixed-integer programming, `scipy.optimize.milp` (HiGHS):
+binary player-slot variables maximizing total Steamer WAR subject to
+exact positional quotas, 26-man roster, spend <= budget, one slot per
+player, and the owners' proposed per-player maximum (prior AAV <= 15%
+of the $245.3M cap = $36.795M) as a hard constraint. All three solves
+prove optimality (MIP gap 0; dual bounds 48.87 / 52.80 / 54.82 against
+incumbents 48.9 / 52.8 / 54.8 after rounding).
+
+**Results (greedy -> optimizer, same budgets).**
+Floor $171.2M: 42.0 -> 48.9 WAR (+6.9, +16.4%), spend $171.0M ->
+$171.1M, 16 of 26 names shared. Middle $208M: 45.7 -> 52.8 (+7.1,
++15.5%), $207.3M -> $207.8M, 17 shared. Cap $245.3M: 52.3 -> 54.8
+(+2.5, +4.8%), $244.6M -> $245.2M, 21 shared. The optimizer's floor
+roster beats the greedy's middle roster outright.
+
+**Decomposition (DH sensitivity).** Cycle 26's code states "DH can be
+any bat", but with two DH-mapped players in the pool its fallback
+never triggers — all three greedy rosters carry Dominic Smith
+(0.01 WAR) at DH. The optimizer's primary run applies the stated rule
+(Brandon Lowe, 2.32 WAR, at DH in all three optima). A DH-restricted
+sensitivity — DH open only to DH-mapped players, exactly the greedy's
+effective search space — still finds +5.5 / +5.2 / +0.4 WAR, so most
+of the edge at the floor and middle is combinatorics; at the cap the
+edge is mostly the DH slot (+2.1 of +2.5), the greedy upgrade pass
+having nearly saturated the rest of the roster.
+
+**The 15% rule.** Binds nobody in this pool at prior-AAV anchors (the
+dearest free agent anchors at $35.0M < $36.795M), and all three greedy
+rosters satisfy it (max AAV $22.0M / $32.0M / $32.0M). It is enforced
+in the optimizer regardless, and the checks are on the record in the
+artifact and in the gate.
+
+**Scope kept.** Figure 16's rosters and every Story/Boardroom number
+are unchanged. Figure 25 (Explorer, Build a Roster) publishes the
+comparison; whether the optimizer rosters replace the greedy ones is
+OPT-2 / owner territory.

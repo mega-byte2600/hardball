@@ -1,98 +1,64 @@
-# Cycle 48 — HS-2: the Hakes–Sauer verdict exhibit (Figure 24)
+# Cycle 49 — OPT-1: roster optimizer (Figure 25)
 
-Owner-approved MIT-gap programme, increment 2 of 6. HS-1 (Cycle 46)
-deferred the formal proportionality test for one reason: no OBP/SLG
-run-value benchmark existed in the repo. HS-2 derives one from
-committed data under pre-registered fail-closed criteria, runs the
-test, and publishes the verdict as **Figure 24** (Explorer-only,
-Check the Model). **24 figures total**; figures 1–23 keep their
-numbers; Story (6 chapters) and Boardroom (15 slides) unchanged.
+Owner-approved MIT-gap programme, increment 3 of 6. A real optimizer
+next to the Cycle 26 greedy builds, comparison published.
+**25 figures total**; figures 1–24 keep their numbers; Story
+(6 chapters) and Boardroom (15 slides) unchanged; Figure 16's
+rosters unchanged. GitHub Actions ignored per the owner's 2026-11-02
+directive (minutes exhausted until Dec 1) — the local gate, platform,
+and parity below carry the verification.
 
-## The benchmark attempt — survived, labeled aggregate
+## The optimizer
 
-- `src/bml_cycle48.py` → `data/hakes_sauer_verdict.json`. Criteria
-  fixed before estimation: FE coefficients > 0, p < 0.10, VIF < 10,
-  ratio CI finite and excluding 0 — else publish the failure and run
-  no test.
-- Runs per PA on OBP + SLG, `fact_team_season`, **480 unique
-  team-seasons 2011–2026** (29 duplicated 2026 rows in the committed
-  table differ only in payroll-cell formatting; batting fields
-  identical — deduped in the analysis, curate.py untouched).
-- Season fixed effects: OBP **+0.262** (p ≈ 1.8e-26), SLG **+0.278**
-  (p ≈ 1.9e-85), within R² = 0.865, VIF 2.45. **rho = 0.94** (95% CI
-  0.72–1.17); pooled sensitivity 0.66 (0.44–0.88); per-season median
-  1.00. Ecological limit labeled on the record: team aggregates
-  split OBP/SLG's joint variation (corr 0.77), so the aggregate
-  ratio sits below event-level linear-weights values.
+- `src/bml_cycle49.py` → `data/optimizer_comparison_2027.json`.
+  MILP via `scipy.optimize.milp` (HiGHS): binary player-slot
+  variables maximizing total Steamer WAR subject to Cycle 26's exact
+  positional quotas, 26-man roster, spend <= budget, one slot per
+  player, and prior AAV <= 15% of the proposed cap ($36.795M).
+- **Identical inputs, asserted**: the script imports Cycle 26's
+  builder and reproduces `wow_scenarios.json` exactly (spend to the
+  dollar, WAR to 0.05, identical 26 names per budget) before
+  optimizing. Same 199-player pool, same Steamer WAR, same prior-AAV
+  anchors (labeled last-price anchors, not predicted salaries).
 
-## The formal test — inconclusive by power
+## Results — all three optima proven (solver gap 0)
 
-- HS-1 spec A refit from the committed dataset reproduces HS-1's
-  published coefficients/SEs **exactly** (asserted in code; the
-  covariance matrix is only trusted because the refit matches).
-- Wald test of beta_OBP − rho·beta_SLG = 0: Sample S (Spotrac basis,
-  n = 60) contrast −6.49, SE 8.05, **p = 0.42**; Sample C (Cot's
-  LRP-2027, n = 82) contrast +1.21, SE 9.43, **p = 0.90**. Pooled
-  benchmark: p = 0.45 / 0.84.
-- The power statement is the finding: the pricing ratios neither
-  sample can reject at 5% span the entire scanned range **[−20, +20]**
-  — correct pricing and large mispricing both survive.
+| Budget | Greedy WAR | Optimizer WAR | Delta | Overlap |
+|---|---|---|---|---|
+| Floor $171.2M | 42.0 ($171.0M) | **48.9** ($171.1M) | +6.9 (+16.4%) | 16/26 |
+| Middle $208.0M | 45.7 ($207.3M) | **52.8** ($207.8M) | +7.1 (+15.5%) | 17/26 |
+| Cap $245.3M | 52.3 ($244.6M) | **54.8** ($245.2M) | +2.5 (+4.8%) | 21/26 |
 
-## Verdict (rendered verbatim in Figure 24's verdict box)
+- **Decomposition**: a DH-restricted sensitivity (DH open only to
+  DH-mapped players — the greedy's effective search space, since its
+  any-bat fallback never triggers with two DH-mapped players in the
+  pool) still finds +5.5 / +5.2 / +0.4. The floor/middle edge is
+  mostly combinatorics; the cap edge is mostly the DH slot: greedy
+  carries Dominic Smith (0.01 WAR) at DH at every budget, the
+  optimizer plays Brandon Lowe (2.32 WAR).
+- **15% per-player rule**: binds nobody in this pool (max anchor
+  $35.0M < $36.795M); all three greedy rosters satisfy it (max AAV
+  $22.0M / $32.0M / $32.0M); enforced as a hard constraint anyway.
 
-**INCONCLUSIVE on mispricing.** The descriptive $/WAR contrast is
-consistent across both bases (top-quartile contact ≈ 0.54× / 0.53×
-the bottom quartile's median $/WAR — a contrast, not a price
-effect). The defensible claim is **persistent + cap-efficient +
-low-variance**, not proven undervaluation. Design limit: active-
-contract cross-section, not newly-signed free agents.
+## Exhibit + docs
 
-## Claim hygiene — sentences changed
-
-Grep of the dashboard source, EXEC_SUMMARY, TALKTRACK, README, and
-ONEPAGER for unqualified "undervalued" / "mispriced" / "underpriced"
-assertions about contact/OBP found **none to replace** — the
-surfaces already carry the measured language. Changes are additive
-verdict citations, listed in full:
-
-- `docs/EXEC_SUMMARY.md` — "What we deliberately do NOT claim" gains:
-  "**We do not claim the market misprices contact/OBP.** We ran our
-  own Hakes–Sauer pricing test (Cycles 46/48, Figure 24): …
-  inconclusive at current samples (n = 60 / 82) … The claim is
-  persistence + cap-efficiency." (plus the 23→24 figure count)
-- `docs/TALKTRACK.md` — honesty section gains: "And we do **not**
-  claim the market misprices these skills — we ran the pricing test
-  on ourselves (Fig 24): formally inconclusive at current samples,
-  so the claim stays persistence and cap-efficiency, not proven
-  undervaluation." Back-pocket gains the test's numbers; modes and
-  counts updated to 24.
-- `src/dashboard_p6.py` — sources box gains: "**Pricing claim,
-  tested (Cycles 46/48):** our own Hakes–Sauer test … is formally
-  inconclusive at current samples — Figure 24 carries the
-  coefficients, the test, and the verdict; this page claims
-  persistence and cap-efficiency, not proven undervaluation."
-
-No thesis sentence was rewritten; winning-cheap via contact + OBP +
-availability stands as strategy.
-
-## Also in this PR
-
-- Counts 23 → 24 in dashboard source (docstring, figure index,
-  Explorer button/group), `src/verify_data.py` (24-chart check, talk
-  track refs ≤ 24, **new** Figure 24 + HS-2 artifact checks),
-  README, EXEC_SUMMARY, and `src/make_onepager.py` (ONEPAGER
-  regenerated: 24 figures, 17 curated tables, parity 0.889/201).
-- Spellcheck WHITELIST += sauer, misprices, mispricing, underprices,
-  workpaper (verified spellings).
-- Docs: CARPE_SCORECARD Cycle 48 addendum, BML_LOG Cycle 48,
-  HANDOFF Cycle 48.
+- **Figure 25** (Explorer, Build a Roster): grouped greedy /
+  optimizer / DH-restricted bars per budget + facts box (overlap, DH
+  slots, 15% rule) — every number rendered from the artifact.
+- CARPE_SCORECARD Cycle 49 addendum (method, decomposition, scope),
+  BML_LOG Cycle 49, HANDOFF Cycle 49 section.
+- Counts 24 → 25: dashboard source (docstring, index, button,
+  Explorer), gate (+ Figure 25 and OPT-1 artifact checks), README,
+  TALKTRACK (+ optimizer back-pocket Q&A), EXEC_SUMMARY, ONEPAGER
+  generator (regenerated). Spellcheck WHITELIST += combinatorics,
+  dh, milp, scipy.
 
 ## Verification
 
-- Platform: ingest 25 datasets / 0 failures, curate 17 tables
-  (parquets byte-identical to committed), warehouse rebuilt.
-- Parity: **r = 0.889 / n = 201** (unchanged).
-- Gate: **ALL CHECKS PASS** (offline) — Figure 24 present in
-  Explorer with the verdict box, footer sources intact, 6 chapters /
-  15 slides / 8 cards unchanged.
-- Spellcheck: green.
+- Platform: ingest 25 datasets / 0 failures; curate 17 tables, all
+  contracts pass, parquets byte-identical to committed; warehouse
+  rebuilt; parity r = 0.889 / 201.
+- Gate: `src/verify_data.py` ALL CHECKS PASS (offline), including the
+  new Figure 25 + OPT-1 artifact checks; spellcheck green; DOM/text
+  checks confirm 25 figures, Figure 25 in Explorer, 6 chapters,
+  15 slides. No browser visual QA (standing rule).
