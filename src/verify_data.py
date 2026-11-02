@@ -243,6 +243,51 @@ def main() -> int:
               "proven, 15% rule holds for greedy and optimizer", False,
               "data/optimizer_comparison_2027.json missing")
 
+    # --- OPT-2 sensitivity artifact: scenarios on record ----------
+    sens_path = DATA / "optimizer_sensitivity_2027.json"
+    if sens_path.exists():
+        s = json.loads(sens_path.read_text())
+        ok = True
+        for scale in ("x0.8", "x1.2"):
+            entries = s["price_sensitivity"][scale]
+            ok = ok and len(entries) == 3
+            for e in entries:
+                ok = ok and len(e["roster"]) == 26
+                ok = ok and e["spend_scenario_prices"] <= e["budget"] + 1
+                ok = ok and e["proven_optimal"] and e["mip_gap"] == 0
+                ok = ok and 0 <= e["n_changed"] <= 26
+        tb = s["targeted_bid_up"]
+        ok = ok and len(tb["roster"]) == 26 and tb["proven_optimal"]
+        ok = ok and tb["spend_scenario_prices"] <= tb["budget"] + 1
+        for e in s["war_haircut"]:
+            ok = ok and len(e["roster"]) == 26 and e["proven_optimal"]
+            ok = ok and e["spend"] <= e["budget"] + 1
+            # re-scored on base WAR, a haircut roster cannot beat the
+            # proven base optimum and cannot score below its own
+            # haircut value
+            ok = ok and e["total_war_haircut"] <= \
+                e["total_war_base_rescore"] + 0.05
+        base_floor = s["base_optimizer"]["The Floor — $171.2M"]
+        for e in s["war_haircut"]:
+            ref = s["base_optimizer"][e["label"]]["total_war"]
+            ok = ok and e["total_war_base_rescore"] <= ref + 0.05
+        m = s["mixed_floor"]
+        ok = ok and len(m["roster"]) == 26
+        ok = ok and m["n_prearb_slots"] + m["n_fa_slots"] == 26
+        ok = ok and m["spend"] <= m["budget"] + 1
+        ok = ok and m["proven_optimal"] and m["mip_gap"] == 0
+        ok = ok and m["total_war"] >= base_floor["total_war"]
+        ok = ok and all(r["prev_aav"] == 1000000 for r in m["roster"]
+                        if r["origin"] == "pre-arb")
+        ok = ok and s["metadata"]["prearb_pool"]["pool_size"] >= 100
+        check("OPT-2: price/targeted/haircut scenarios proven, mixed "
+              "floor 26-man with $1M-placeholder pre-arb slots, spend "
+              "within budget", ok)
+    else:
+        check("OPT-2: price/targeted/haircut scenarios proven, mixed "
+              "floor 26-man with $1M-placeholder pre-arb slots, spend "
+              "within budget", False,
+              "data/optimizer_sensitivity_2027.json missing")
 
     # --- data platform: curated layer contracts ------------------
     rep_path = DATA / "curated" / "_build_report.json"

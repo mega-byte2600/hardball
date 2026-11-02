@@ -40,6 +40,10 @@ WHITELIST = {
     "sauer", "misprices", "mispricing", "underprices", "workpaper",
     # Cycle 49 (OPT-1) vocabulary — verified correct spellings
     "combinatorics", "dh", "milp", "scipy",
+    # Cycle 50 (OPT-2) pre-arb names — verified against data/salaries_2026.json
+    "ashcraft", "bolte", "braxton", "caglianone", "culpepper", "delauter",
+    "dingler", "jac", "kaelen", "keaschall", "kurtz", "messick", "roki",
+    "sasaki", "schlittler",
     # data/tools vocab
     "api", "espn", "mlb", "statsapi", "spotrac", "github", "plotly",
     "sqlite", "csv", "kpi", "kpis", "keyless", "gitignored", "json", "html",

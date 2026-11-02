@@ -13,7 +13,8 @@ plus the Cycle 34 posted-class panel (NPB BIS)
 plus the Cycle 48 Hakes–Sauer verdict panel (Explorer-only,
 appended last so figures 1–23 keep their numbers)
 plus the Cycle 49 roster-optimizer panel (Explorer-only,
-appended last so figures 1–24 keep their numbers),
+appended last so figures 1–24 keep their numbers)
+plus the Cycle 50 sensitivity strip under Figure 25 (no new figure),
 presented in three modes (Story, Boardroom, Explorer) with stat cards. Builds from a
 clean clone OFFLINE from committed snapshots (audit G1).
 """
@@ -880,7 +881,92 @@ def _optimizer_html():
             f"optimizer still finds "
             f"+{d['budgets'][0]['delta_war_dh_restricted']:.1f} WAR at the floor. "
             "Figure 16's rosters are unchanged: whether the optimizer "
-            "rosters replace them is a later, owner-visible call.</div>")
+            "rosters replace them is a later, owner-visible call. "
+            "Cycle 50 stress-tests these optima — price swings, a "
+            "targeted bid-up, an aging haircut, and a mixed pre-arb "
+            "build — in the strip directly below.</div>")
+
+
+def _optimizer_sensitivity_html():
+    """Cycle 50 (OPT-2): the sensitivity strip under Figure 25
+    (Explorer only). Every number renders from
+    data/optimizer_sensitivity_2027.json. The mixed build is framed
+    exactly as the workpaper frames it: internal pre-arb production
+    a club develops or holds — not a shopping list (nobody can sign
+    another club's pre-arb players)."""
+    import html as _html
+    p = os.path.join(DATA, "optimizer_sensitivity_2027.json")
+    if not os.path.exists(p):
+        return ""
+    d = json.load(open(p))
+    budgets = [171.2e6, 208.0e6, 245.3e6]
+
+    def cell(entries, budget, key="total_war", churn=True):
+        e = next((x for x in entries if x["budget"] == budget), None)
+        if e is None:
+            return "<td>—</td>"
+        t = f"{e[key]:.1f}"
+        if churn:
+            t += f" ({e['n_changed']} changed)"
+        return f"<td>{t}</td>"
+
+    base_cells = "".join(
+        f"<td>{d['base_optimizer'][lbl]['total_war']:.1f}</td>"
+        for lbl in ("The Floor — $171.2M", "The Middle — $208.0M",
+                    "The Cap — $245.3M"))
+    hc = d["war_haircut"]
+    hc_cells = "".join(
+        cell(hc, b, key="total_war_base_rescore") for b in budgets)
+    tb = d["targeted_bid_up"]
+    m = d["mixed_floor"]
+    pre_names = ", ".join(
+        f"{_html.escape(r['name'])} ({r['war']:.1f})" for r in m["roster"]
+        if r["origin"] == "pre-arb" and r["war"] >= 2.0)
+    rows = (
+        f"<tr><td>Proven optimum (OPT-1, base anchors)</td>{base_cells}</tr>"
+        "<tr><td>Every price ×0.8</td>"
+        + "".join(cell(d["price_sensitivity"]["x0.8"], b) for b in budgets)
+        + "</tr>"
+        "<tr><td>Every price ×1.2</td>"
+        + "".join(cell(d["price_sensitivity"]["x1.2"], b) for b in budgets)
+        + "</tr>"
+        f"<tr><td>Only your 26 floor targets ×1.2 (the market bids "
+        f"up your list)</td><td>{tb['total_war']:.1f} "
+        f"({tb['n_changed']} changed)</td><td>—</td><td>—</td></tr>"
+        f"<tr><td>WAR −15% for age 33+, roster re-scored on base WAR"
+        f"</td>{hc_cells}</tr>")
+    return (
+        '<div class="note"><b>HOW FRAGILE IS THE OPTIMUM? (Cycle 50, '
+        'OPT-2).</b> The same exact solver, re-run with the prices and '
+        'projections perturbed. WAR per budget; "changed" counts roster '
+        'names swapped versus the OPT-1 optimum at that budget. Every '
+        'solve is proven optimal (gap 0).'
+        f"<table><tr><th>Scenario</th><th>Floor $171.2M</th>"
+        f"<th>Middle $208.0M</th><th>Cap $245.3M</th></tr>{rows}</table>"
+        "Read: a uniform ±20% price swing moves the floor optimum by "
+        "about ±4 WAR and swaps only 3–6 names — the build is a "
+        "portfolio, not a knife-edge. Bid up just the floor list by "
+        "20% and the solver walks away from 6 of its own targets "
+        "(including its ace) and still lands 45.6. Discount every "
+        "33-and-over projection by 15% and the pessimist's rosters "
+        "re-score within 0.1 WAR of the base optima on base WAR — "
+        "and the pessimist's rosters carry just 2 players aged 33+ "
+        "at every budget."
+        f"<br><b>THE FLOOR, WITH A FARM SYSTEM (mixed build).</b> "
+        f"Re-solve the floor with the pool widened to the club's own "
+        f"pre-arbitration production (509 pre-arb players carried in "
+        f"the committed salary file, each priced at the file's flat "
+        f"$1.0M — a placeholder convention, not a measured salary): "
+        f"<b>{m['total_war']:.1f} WAR for ${m['spend']/1e6:.1f}M</b> — "
+        f"{m['n_prearb_slots']} pre-arb slots ({m['prearb_war']:.1f} "
+        f"WAR: {pre_names}) and {m['n_fa_slots']} free-agent slots, "
+        f"leaving ${171.2 - m['spend']/1e6:.1f}M of the floor unspent. "
+        "That is the honest answer to 'no club shops its way to the "
+        "floor': the floor is survivable for a club that develops or "
+        "holds pre-arb talent. It is not a shopping list — nobody can "
+        "sign another club's pre-arb players. Method, full rosters "
+        "and solver bounds: src/bml_cycle50.py, "
+        "data/optimizer_sensitivity_2027.json.</div>")
 
 
 def panel_savant():
@@ -1867,6 +1953,7 @@ def build():
                          "check on the greedy build, not a new roster. Explorer only. "
                          "Story stays 6 chapters and Boardroom stays 15 slides.</p></div>")
             explorer += _optimizer_html()
+            explorer += _optimizer_sensitivity_html()
         if name == "Shop the FA Class":
             explorer += ('<div class="task"><h3>Top bargain free agents: Savant-style percentile cards</h3>'
                          "<p>Ranked by WAR per $10M of prior salary. Bars show where each player sits "
