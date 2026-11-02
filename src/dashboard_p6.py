@@ -1604,12 +1604,18 @@ def panel_scenarios():
     Full 26-man rosters from the real FA class at the floor, the
     middle, and the cap — the proven-optimal builds (Cycle 49 MILP on
     Cycle 26's identical pool, prices and quotas), each headline WAR
-    carrying its Cycle 50 +-20% price-error range. The greedy builds
-    are preserved in the artifact as the benchmark Figure 25 shows."""
+    carrying its Cycle 50 +-20% price-error range and its Cycle 56
+    delivered-WAR range (UNC-2 Monte Carlo over measured projection
+    error and player availability). The greedy builds are preserved
+    in the artifact as the benchmark Figure 25 shows."""
     fj = os.path.join(DATA, "wow_scenarios.json")
     if not os.path.exists(fj):
         return None
     d = json.load(open(fj))
+    uj = os.path.join(DATA, "uncertainty_scenarios_2027.json")
+    unc = {}
+    if os.path.exists(uj):
+        unc = {s["label"]: s for s in json.load(open(uj))["scenarios"]}
     traces, buttons = [], []
     for i, s in enumerate(d["scenarios"]):
         r = s["roster"]
@@ -1625,6 +1631,12 @@ def panel_scenarios():
                        font=dict(size=11.5), height=19),
             visible=(i == 0)))
         rng = s["war_range_prices_pm20"]
+        u = unc.get(s["label"])
+        delivered = (f" Delivered-WAR range (Cycle 56): 10th–90th percentile "
+                     f"{u['p10']}–{u['p90']} WAR, median {u['p50']} — Monte Carlo "
+                     "over measured projection error and player availability; "
+                     "the point above is the full-availability projection."
+                     if u else "")
         title = (f"What does the money buy? {s['label']} — "
                  f"{s['total_war']} WAR proven-optimal ({rng['low']}–{rng['high']} "
                  f"across ±20% price error) for ${s['spend']/1e6:.1f}M<br>"
@@ -1635,17 +1647,20 @@ def panel_scenarios():
                  f"2025-26 IL records, {d['availability_stress']['pool']['mean_avail']}): "
                  "this roster holds "
                  f"{d['availability_stress']['stressed_totals'][s['label']]['war_at_pool_mean_avail']} WAR "
-                 "— injury risk taxes every budget alike. Switch budget:</sub>")
+                 f"— injury risk taxes every budget alike.{delivered} Switch budget:</sub>")
         buttons.append(dict(label=s["label"], method="update",
                             args=[{"visible": [j == i for j in range(len(d["scenarios"]))]},
                                   {"title": {"text": title}}]))
     s0 = d["scenarios"][0]
     rng0 = s0["war_range_prices_pm20"]
+    u0 = unc.get(s0["label"])
+    delivered0 = (f"; delivered-WAR 10th–90th: {u0['p10']}–{u0['p90']} "
+                  f"(Cycle 56)" if u0 else "")
     fig = go.Figure(data=traces)
     fig.update_layout(
         title=(f"What does the money buy? {s0['label']} — {s0['total_war']} WAR "
                f"proven-optimal ({rng0['low']}–{rng0['high']} across ±20% price "
-               f"error) for ${s0['spend']/1e6:.1f}M<br>"
+               f"error{delivered0}) for ${s0['spend']/1e6:.1f}M<br>"
                "<sub>Full 26-man rosters from the real 2027 free-agent class. "
                "The floor roster captures ~89% of the cap roster's WAR — the last "
                "$74.1M buys 5.9 WAR. Switch budget below the chart.</sub>"),
@@ -1909,10 +1924,14 @@ def build():
          "Built entirely from the real 2027 free-agent class, the floor roster buys 48.9 WAR for "
          "$171.1M and the cap roster buys 54.8 WAR for $245.2M: about 89 percent of the talent "
          "for about 70 percent of the money. The builds are proven optimal, and across "
-         "±20% price error the floor holds 45.0 to 53.2 WAR.",
+         "±20% price error the floor holds 45.0 to 53.2 WAR. Delivered WAR runs lower and "
+         "wider: the Monte Carlo over measured projection error and player availability "
+         "puts the floor's median at 39.8 WAR (10th to 90th: 33.0 to 46.9) and the cap's "
+         "at 44.9 (37.6 to 52.4).",
          "Spend to the floor first. The last dollars buy the least talent.",
          "Source: Spotrac free-agent class plus FanGraphs Steamer WAR, prior-contract price anchors; "
-         "exact optimization, Cycle 49 (Figure 25)."),
+         "exact optimization, Cycle 49 (Figure 25); delivered-WAR ranges, Cycle 56 "
+         "(data/uncertainty_scenarios_2027.json)."),
         (18, "Checked in public against the best benchmark we could get.",
          "Our Marcel hitter projections match FanGraphs Steamer at OBP r of 0.889, with 201 hitters "
          "matched by player ID. The pitcher bias found in that check is disclosed on the panel.",
@@ -1993,7 +2012,9 @@ def build():
         ([16], "The floor roster buys 48.9 WAR. The cap roster buys 54.8",
          "A disciplined floor team captures about 89 percent of the cap team's talent for about "
          "70 percent of the money. Proven-optimal builds; across ±20% price error the floor "
-         "holds 45.0–53.2 WAR and the cap 50.4–55.9."),
+         "holds 45.0–53.2 WAR and the cap 50.4–55.9. Delivered-WAR ranges (10th–90th, "
+         "Cycle 56 Monte Carlo over measured projection error and availability): floor "
+         "33.0–46.9, middle 36.0–50.7, cap 37.6–52.4."),
         ([22], "The shopping list ranks the whole free-agent class by projected value",
          "Every name priced off last year's real contract anchor, never a predicted price."),
         ([2], "Pick your team: every club gets the same treatment",
@@ -2018,7 +2039,7 @@ def build():
          "Source: MLB Stats API team data and Spotrac payroll, plus the proposed 2027 cap."),
         ("Build a Roster", "Signatures, durability, projections, health, the roster, and what moves wins — the roster itself is the exact optimizer's proven optimum.",
          [7, 8, 12, 13, 14, 15, 16, 17, 25],
-         "Source: Marcel projections, health caps, and the 2027 roster build from committed files; headline rosters: data/wow_scenarios.json (Cycle 49 exact MILP optimum, promoted Cycle 52; greedy build preserved in the same file as the benchmark); optimizer comparison: data/optimizer_comparison_2027.json (Cycle 49, scipy/HiGHS MILP on the identical pool, prices and quotas)."),
+         "Source: Marcel projections, health caps, and the 2027 roster build from committed files; headline rosters: data/wow_scenarios.json (Cycle 49 exact MILP optimum, promoted Cycle 52; greedy build preserved in the same file as the benchmark); optimizer comparison: data/optimizer_comparison_2027.json (Cycle 49, scipy/HiGHS MILP on the identical pool, prices and quotas); delivered-WAR ranges: data/uncertainty_scenarios_2027.json (Cycle 56)."),
         ("Shop the FA Class", "The farm pipeline behind the cheap winners, the shopping list, and the best values.",
          [21, 22],
          "Source: Spotrac free-agent class and FanGraphs Steamer WAR; prices are prior-contract averages."),

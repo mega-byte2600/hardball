@@ -25,7 +25,7 @@
 </style></head><body>
 <h1>HARDBALL &mdash; Cap-Era Moneyball</h1>
 <p class="sub">Executive one-pager &middot; Prepared for the December 2026 Winter Meetings
-&middot; Generated 2026-11-02 22:06 UTC from committed repo snapshots by
+&middot; Generated 2026-11-02 23:17 UTC from committed repo snapshots by
 <code>src/make_onepager.py</code> &middot; Real data only; no invented numbers.</p>
 
 <p class="thesis">Thesis: under a hard cap, buy the persistent inputs &mdash; contact and
@@ -60,9 +60,9 @@ CLE ($96.7M to add).
 The disciplined winners are the ones the system now forces to spend.</li>
 </ul>
 <h2>What the money buys (2027 FA class only)</h2>
-<table><tr><th>Build</th><th class="num">Spend</th><th class="num">WAR</th>
+<table><tr><th>Build</th><th class="num">Spend</th><th class="num">WAR (delivered 10&ndash;90&dagger;)</th>
 <th class="num">WAR stressed*</th><th class="num">WAR p25*</th></tr>
-<tr><td>The Floor — $171.2M</td><td>$171.1M</td><td>48.9</td><td>44.6</td><td>43.5</td></tr><tr><td>The Middle — $208.0M</td><td>$207.8M</td><td>52.8</td><td>48.1</td><td>47.0</td></tr><tr><td>The Cap — $245.3M</td><td>$245.2M</td><td>54.8</td><td>50.0</td><td>48.8</td></tr></table>
+<tr><td>The Floor — $171.2M</td><td>$171.1M</td><td>48.9 (33.0&ndash;46.9)</td><td>44.6</td><td>43.5</td></tr><tr><td>The Middle — $208.0M</td><td>$207.8M</td><td>52.8 (36.0&ndash;50.7)</td><td>48.1</td><td>47.0</td></tr><tr><td>The Cap — $245.3M</td><td>$245.2M</td><td>54.8 (37.6&ndash;52.4)</td><td>50.0</td><td>48.8</td></tr></table>
 <p style="font-size:10pt">Builds are the proven-optimal rosters (exact MILP,
 Cycle 49; promoted Cycle 52) &mdash; the greedy build is kept as the
 Figure 25 benchmark. Prices are prior-contract AAV anchors (last prices, not predicted
@@ -70,7 +70,10 @@ prices). 26 men each; spend &le; budget, asserted in code. The floor build
 captures 89% of the cap build&rsquo;s WAR &mdash; the last
 $74.1M buys 5.9 WAR. Across &plusmn;20% price error
 the floor build holds 45.0&ndash;53.2 WAR
-and the cap build 50.4&ndash;55.9.</p>
+and the cap build 50.4&ndash;55.9.
+&dagger;Delivered-WAR range: Monte Carlo over measured projection error and
+player availability (Cycle 56); the WAR figure is the full-availability
+projection.</p>
 </div></div>
 
 <div class="honesty"><h2>The honesty box &mdash; what we do NOT claim</h2>
@@ -90,7 +93,7 @@ TEX (927 rows, 864 ID-matched). The gap is labeled in the data, not filled.</li>
 <li><b>WAR</b> is a public stat (FanGraphs fWAR / Baseball-Reference bWAR, free) but the two formulas disagree and the MLB API does not return it; we surface its reproducible inputs (wOBA, wRC+, FIP, K-BB%) rather than inventing a single WAR.</li>
 </ul></div>
 
-<p class="foot"><b>Data QC (this build):</b> 18 curated Parquet tables,
+<p class="foot"><b>Data QC (this build):</b> 19 curated Parquet tables,
 schema-enforced, zero contract failures; benchmark parity reproduced from
 curated tables alone (r&nbsp;=&nbsp;0.889, 201 matched). Sources: MLB Stats API,
 Baseball Savant, FanGraphs Steamer, Spotrac, ESPN cross-check. Full audit trail:

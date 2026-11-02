@@ -374,6 +374,85 @@ def main() -> int:
               "MAEs recompute, verdict follows declared rule)",
               False, "data/unc1_availability_backtest.json missing")
 
+    # --- UNC-2 uncertainty layer (Cycle 56) -----------------------
+    unc2_path = DATA / "uncertainty_scenarios_2027.json"
+    if unc2_path.exists():
+        u2 = json.loads(unc2_path.read_text())
+        u2_by = {s["label"]: s for s in u2["scenarios"]}
+        ep, ap = u2["error_pools"], u2["availability_pools"]
+        ok = (u2["sims"] >= 10000 and len(u2["scenarios"]) == 3)
+        ok = ok and ep["hitters"]["n"] == sum(
+            v["n"] for v in ep["hitters"]["per_target"].values())
+        ok = ok and ep["pitchers"]["n"] == sum(
+            v["n"] for v in ep["pitchers"]["per_target"].values())
+        ok = ok and ep["hitters"]["n"] >= 150 and ep["pitchers"]["n"] >= 40
+        ok = ok and ap["hitters"]["n"] == len(load("projections_2027_health.json"))
+        ok = ok and ap["pitchers"]["n"] == len(
+            load("projections_2027_pitchers.json"))
+        ok = ok and abs(ep["hitters"]["mae_obp"]
+                        - load("marcel_backtest.json")
+                        ["pooled"]["C_age_crossfit"]["mae_obp"]) < 0.0015
+        ok = ok and abs(ep["pitchers"]["mae_era"]
+                        - load("pitcher_backtest.json")
+                        ["pooled"]["C_age_crossfit"]["mae_era"]) < 0.0015
+        for s in wow["scenarios"]:
+            u = u2_by[s["label"]]
+            st = wow["availability_stress"]["stressed_totals"][s["label"]]
+            a = u["sanity_median_vs_point"]
+            ok = ok and u["point_war"] == s["total_war"]
+            ok = ok and (u["p10"] <= u["p20"] <= u["p50"]
+                         <= u["p80"] <= u["p90"])
+            ok = ok and u["sanity_cycle52_stress_inside_interval"][
+                "stressed_total"] == st["war_at_pool_mean_avail"]
+            ok = ok and u["sanity_cycle52_stress_inside_interval"][
+                "inside_p10_p90"] == (
+                    u["p10"] <= st["war_at_pool_mean_avail"] <= u["p90"])
+            ok = ok and abs(a["analytic_delivered_mean"]
+                            - (u["point_war"]
+                               + a["availability_level_effect"]
+                               + a["measured_residual_bias_effect"])) <= 0.15
+            ok = ok and abs(a["simulated_mean_minus_analytic"]) <= 0.1
+        check("UNC-2: uncertainty artifact consistent (pools tie to "
+              "committed backtests + availability files, points tie to "
+              "wow_scenarios, gap decomposition closes, Cycle 52 stress "
+              "inside intervals)",
+              ok, f"sims={u2['sims']} pools H{ep['hitters']['n']}/"
+                  f"P{ep['pitchers']['n']}")
+        fl, md, cp = (u2_by["The Floor — $171.2M"],
+                      u2_by["The Middle — $208.0M"],
+                      u2_by["The Cap — $245.3M"])
+        # Plotly serializes figure JSON with \uXXXX escapes; normalize
+        # (same treatment as the FIG-QA section below).
+        html_u2 = re.sub(r"\\+u([0-9a-fA-F]{4})",
+                         lambda m: chr(int(m.group(1), 16)), html)
+        ok = all(f"10th–90th percentile {u['p10']}–{u['p90']} WAR, "
+                 f"median {u['p50']}" in html_u2
+                 for u in (fl, md, cp))
+        ok = ok and f"delivered-WAR 10th–90th: {fl['p10']}–{fl['p90']}" in html_u2
+        ok = ok and (f"floor's median at {fl['p50']} WAR (10th to 90th: "
+                     f"{fl['p10']} to {fl['p90']})" in html_u2)
+        ok = ok and f"cap's at {cp['p50']} ({cp['p10']} to {cp['p90']})" in html_u2
+        ok = ok and (f"floor {fl['p10']}–{fl['p90']}, middle "
+                     f"{md['p10']}–{md['p90']}, cap {cp['p10']}–{cp['p90']}"
+                     in html_u2)
+        check("UNC-2: dashboard renders the delivered-WAR intervals "
+              "(Figure 16 titles, Story ch. 5, Boardroom slide 12)", ok)
+        one = (ROOT / "docs" / "ONEPAGER.html").read_text(errors="ignore")
+        ok = all(f"{u['point_war']:.1f} ({u['p10']:.1f}&ndash;{u['p90']:.1f})"
+                 in one for u in (fl, md, cp))
+        check("UNC-2: one-pager scenario table carries the intervals", ok)
+    else:
+        check("UNC-2: uncertainty artifact consistent (pools tie to "
+              "committed backtests + availability files, points tie to "
+              "wow_scenarios, gap decomposition closes, Cycle 52 stress "
+              "inside intervals)",
+              False, "data/uncertainty_scenarios_2027.json missing")
+        check("UNC-2: dashboard renders the delivered-WAR intervals "
+              "(Figure 16 titles, Story ch. 5, Boardroom slide 12)",
+              False, "data/uncertainty_scenarios_2027.json missing")
+        check("UNC-2: one-pager scenario table carries the intervals",
+              False, "data/uncertainty_scenarios_2027.json missing")
+
     # --- data platform: curated layer contracts ------------------
     rep_path = DATA / "curated" / "_build_report.json"
     check("platform: curated build report present, no failures",

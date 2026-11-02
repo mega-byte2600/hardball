@@ -1813,3 +1813,48 @@ count unchanged at 23. No NPB→MLB translation factor claimed anywhere.
   lanes touched disjoint files.
 - Next: wire refresh_live_feeds.py into the 6-hourly job (parent
   lane), then UNC-2 (uncertainty layer) — final increment.
+
+## Cycle 56 — UNC-2: uncertainty layer on the scenario rosters (2026-11-02, owner-approved programme)
+- Built: `src/bml_cycle56.py` → `data/uncertainty_scenarios_2027.json`.
+  Seeded Monte Carlo (20,000 draws, seed 20261102; re-runs reproduce
+  the artifact byte for byte): each rostered player's delivered
+  WAR = Steamer WAR × availability draw + rate-error delta at
+  delivered volume. Error pools are the shipped Marcel's measured
+  out-of-sample residuals, recomputed by importing
+  src/bml_cycle21.py / src/bml_cycle24.py and replaying their
+  variant-C cross-fit exactly, asserted against the committed
+  backtest artifacts before simulating (hitters: paired OBP/SLG
+  residuals n=196, MAE 0.0220/0.0453; pitchers: ERA residuals n=59,
+  MAE 0.711). Availability pools: measured 2025-26 IL factors —
+  hitters n=201 (mean 0.912), pitchers n=102 (mean 0.807); per
+  UNC-1's verdict it shapes the distribution only, never the
+  points. Rate → WAR conversion: Cycle 48 run-value slopes
+  (0.2617/0.2778 runs per PA) and Steamer's own fitted runs-to-WAR
+  scale (hitters 0.1132 WAR/run, R² 0.482; pitchers 0.0837,
+  R² 0.215) — no outside constant.
+- Measured: delivered-WAR intervals (10th–90th) — Floor 48.9 →
+  33.0–46.9 (median 39.8, 20th–80th 35.3–44.4); Middle 52.8 →
+  36.0–50.7 (43.2; 38.6–48.1); Cap 54.8 → 37.6–52.4 (44.9;
+  40.0–49.8). Median gap decomposes exactly: availability level
+  −6.8/−7.2/−7.5 + measured residual bias −2.2/−2.3/−2.3 (SLG
+  −0.0078, ERA +0.078 actual-minus-projected); analytic mean
+  reproduces simulated mean within 0.05 WAR. Cycle 52 uniform
+  stress totals (44.6/48.1/50.0) inside all three intervals.
+  Points sit at the ~95th percentile of the delivered
+  distribution — they are full-availability projections, labeled
+  as such wherever the ranges render.
+- Consumers: Figure 16 titles (default + budget buttons), Story
+  ch. 5, Boardroom slide 12, one-pager scenario table (generator
+  asserts UNC-2 points tie to wow_scenarios). Figure count
+  stays 25. README / EXEC_SUMMARY / TALKTRACK reconciled.
+- GATE: ingest 25 datasets / 0 failures; curate 19 tables, all
+  contracts pass; warehouse rebuilt; parity r = 0.889 / 201;
+  gate ALL PASS offline (71 checks, was 68 — three new UNC-2
+  checks) and --live (72); spellcheck green. GitHub Actions
+  ignored per the owner's blackout directive (until Dec 1).
+  No browser visual QA (standing rule).
+- Programme status: MIT-gap programme COMPLETE (HS-1, HS-2,
+  OPT-1, OPT-2, UNC-1, UNC-2 all shipped).
+- Next: wire refresh_live_feeds.py into the 6-hourly job
+  (parent lane); Figure 9 disclosure is an owner item; final
+  release cut before Dec 1.

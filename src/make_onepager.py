@@ -33,6 +33,8 @@ def money(m):
 
 def main():
     wow = load("wow_scenarios.json")
+    unc = load("uncertainty_scenarios_2027.json")
+    unc_by_label = {s["label"]: s for s in unc["scenarios"]}
     cap = load("cap_scenario_2027.json")
     sal = load("salaries_2026.json")
     bench = load("fg_benchmark_2027.json")
@@ -81,10 +83,12 @@ def main():
 
     def scen_row(s):
         st = stress[s["label"]]
+        u = unc_by_label[s["label"]]
+        assert u["point_war"] == s["total_war"], f"{s['label']}: UNC-2 point moved"
         return (
             f"<tr><td>{html.escape(s['label'])}</td>"
             f"<td>{money(s['spend'])}</td>"
-            f"<td>{s['total_war']:.1f}</td>"
+            f"<td>{s['total_war']:.1f} ({u['p10']:.1f}&ndash;{u['p90']:.1f})</td>"
             f"<td>{st['war_at_pool_mean_avail']:.1f}</td>"
             f"<td>{st['war_at_pool_p25_avail']:.1f}</td></tr>"
         )
@@ -159,7 +163,7 @@ n&nbsp;=&nbsp;{n}, mean |diff|&nbsp;=&nbsp;0.010.</li>
 The disciplined winners are the ones the system now forces to spend.</li>
 </ul>
 <h2>What the money buys (2027 FA class only)</h2>
-<table><tr><th>Build</th><th class="num">Spend</th><th class="num">WAR</th>
+<table><tr><th>Build</th><th class="num">Spend</th><th class="num">WAR (delivered 10&ndash;90&dagger;)</th>
 <th class="num">WAR stressed*</th><th class="num">WAR p25*</th></tr>
 {''.join(scen_row(s) for s in scenarios)}</table>
 <p style="font-size:10pt">Builds are the proven-optimal rosters (exact MILP,
@@ -169,7 +173,10 @@ prices). 26 men each; spend &le; budget, asserted in code. The floor build
 captures {ratio:.0%} of the cap build&rsquo;s WAR &mdash; the last
 ${delta_spend:.1f}M buys {delta_war:.1f} WAR. Across &plusmn;20% price error
 the floor build holds {floor_rng['low']:.1f}&ndash;{floor_rng['high']:.1f} WAR
-and the cap build {cap_rng['low']:.1f}&ndash;{cap_rng['high']:.1f}.</p>
+and the cap build {cap_rng['low']:.1f}&ndash;{cap_rng['high']:.1f}.
+&dagger;Delivered-WAR range: Monte Carlo over measured projection error and
+player availability (Cycle 56); the WAR figure is the full-availability
+projection.</p>
 </div></div>
 
 <div class="honesty"><h2>The honesty box &mdash; what we do NOT claim</h2>

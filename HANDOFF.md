@@ -572,3 +572,38 @@ Wire `src/refresh_live_feeds.py` into the 6-hourly job so the
 census stays current untouched (parent lane); then UNC-2.
 (Numbered Cycle 55: the parallel lane's UNC-1 took Cycle 54,
 PR #36, while this cycle was in build.)
+
+---
+## CYCLE 56 — UNC-2: THE UNCERTAINTY LAYER (2026-11-02, owner-approved programme)
+
+The final MIT-gap increment. The headline scenario WAR (48.9 / 52.8 /
+54.8, optimizer rosters since Cycle 52) now carries a delivered-WAR
+range beside its ±20% price-error range, on Figure 16 (default title
++ all three budget buttons), Story chapter 5, Boardroom slide 12,
+and the one-pager's scenario table. **Delivered WAR (10th–90th
+percentile): Floor 33.0–46.9 (median 39.8); Middle 36.0–50.7 (43.2);
+Cap 37.6–52.4 (44.9).** Method: seeded Monte Carlo, 20,000 draws
+(`src/bml_cycle56.py` → `data/uncertainty_scenarios_2027.json`;
+re-runs reproduce the artifact byte for byte) over measured
+projection error — the shipped Marcel's variant-C backtest
+residuals, replayed by importing the Cycle 21/24 scripts and
+asserted against the committed artifacts (hitters n=196, pitchers
+n=59) — and measured player availability (2025–26 IL pools:
+hitters n=201 mean 0.912, pitchers n=102 mean 0.807). Per UNC-1,
+availability shapes the distribution only; the points are
+unchanged and are labeled the full-availability projections
+wherever the ranges render. The median gap decomposes exactly
+(availability level −6.8/−7.2/−7.5; measured residual bias
+−2.2/−2.3/−2.3); Cycle 52 stress totals fall inside all three
+intervals. Gate: **71 checks offline / 72 --live, ALL PASS** (3 new
+UNC-2 checks pin the artifact and every rendered interval);
+platform clean (ingest 25/0, curate 19 tables, parity
+r = 0.889 / 201); spellcheck green; figure count stays 25.
+
+**Programme complete:** HS-1, HS-2, OPT-1, OPT-2, UNC-1, UNC-2.
+
+## Next
+
+Wire `src/refresh_live_feeds.py` into the 6-hourly job (parent
+lane). Figure 9 disclosure remains an owner item. Sportradar
+trial ~Nov 15. Final release cut before Dec 1.

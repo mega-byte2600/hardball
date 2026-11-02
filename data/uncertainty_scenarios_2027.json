@@ -1,0 +1,180 @@
+{
+  "cycle": 56,
+  "study": "UNC-2 \u2014 uncertainty layer on the Cycle 49 optimizer scenario rosters (headline since Cycle 52)",
+  "method": "Seeded Monte Carlo over measured projection error and measured player availability. Each rostered player's delivered WAR = Steamer WAR x an availability draw from the measured 2025-26 IL pools, plus a rate-error delta: a paired Marcel-backtest (OBP, SLG) residual converted to runs with the Cycle 48 run-value slopes and to WAR on Steamer's own fitted runs-to-WAR scale (hitters), or a Marcel-backtest ERA residual converted at delivered IP on the same fitted scale (pitchers).",
+  "seed": 20261102,
+  "sims": 20000,
+  "percentiles": "10/20/50/80/90 of the simulated delivered-WAR totals, rounded to 0.1 WAR for rendering",
+  "error_pools": {
+    "hitters": {
+      "source": "Marcel variant-C cross-fitted residuals (actual - projected), targets 2025 + 2026, replayed from src/bml_cycle21.py against the lake and asserted equal to data/marcel_backtest.json",
+      "n": 196,
+      "per_target": {
+        "2026": {
+          "n": 91,
+          "mae_obp": 0.0233,
+          "mae_slg": 0.047
+        },
+        "2025": {
+          "n": 105,
+          "mae_obp": 0.0209,
+          "mae_slg": 0.0439
+        }
+      },
+      "mae_obp": 0.022,
+      "mae_slg": 0.0453,
+      "bias_actual_minus_proj_obp": 0.0008,
+      "bias_actual_minus_proj_slg": -0.0078,
+      "note": "Residual pairs are drawn together, keeping the measured OBP/SLG error correlation."
+    },
+    "pitchers": {
+      "source": "Marcel variant-C cross-fitted ERA residuals (actual - projected), targets 2025 + 2026, replayed from src/bml_cycle24.py against the lake and asserted equal to data/pitcher_backtest.json",
+      "n": 59,
+      "per_target": {
+        "2026": {
+          "n": 31,
+          "mae_era": 0.853,
+          "bias_actual_minus_proj": 0.103
+        },
+        "2025": {
+          "n": 28,
+          "mae_era": 0.554,
+          "bias_actual_minus_proj": 0.05
+        }
+      },
+      "mae_era": 0.711,
+      "bias_actual_minus_proj_era": 0.078
+    }
+  },
+  "availability_pools": {
+    "hitters": {
+      "source": "data/projections_2027_health.json (Cycle 27 measured 2025-26 IL factors)",
+      "n": 201,
+      "mean": 0.912,
+      "median": 0.945,
+      "p25": 0.89
+    },
+    "pitchers": {
+      "source": "data/projections_2027_pitchers.json (measured 2025-26 IL factors)",
+      "n": 102,
+      "mean": 0.807,
+      "median": 0.918,
+      "p25": 0.629
+    },
+    "unc1_governance": "UNC-1 (Cycle 54) verdict NOT SUPPORTED: the availability cap is a downside adjustment, not a point correction. It therefore shapes this distribution only; no headline point is shifted."
+  },
+  "run_value_slopes": {
+    "source": "data/hakes_sauer_verdict.json, Cycle 48 season fixed-effects benchmark (480 team-seasons)",
+    "runs_per_pa_per_unit_obp": 0.2617,
+    "runs_per_pa_per_unit_slg": 0.2778,
+    "limit": "Team-aggregate slopes applied at player level; the ecological limit labeled in Cycle 48 applies here."
+  },
+  "runs_to_war_scale": {
+    "method": "OLS of Steamer WAR on rate-implied runs above the Steamer pool's rate-weighted league line, fit on Steamer's committed 2027 pool (hitters PA >= 300; pitchers IP >= 40). Only the slope is used: it converts a run delta to a WAR delta on the projection system's own scale. No outside runs-per-win constant is used.",
+    "hitters": {
+      "n": 309,
+      "slope_war_per_run": 0.1132,
+      "intercept": 1.94,
+      "r2": 0.482,
+      "league_obp": 0.328,
+      "league_slg": 0.423
+    },
+    "pitchers": {
+      "n": 557,
+      "slope_war_per_run": 0.0837,
+      "intercept": 0.924,
+      "r2": 0.215,
+      "league_era": 4.109
+    }
+  },
+  "scenarios": [
+    {
+      "label": "The Floor \u2014 $171.2M",
+      "point_war": 48.9,
+      "spend": 171122500,
+      "hitter_war": 25.0,
+      "pitcher_war": 23.9,
+      "p10": 33.0,
+      "p20": 35.3,
+      "p50": 39.8,
+      "p80": 44.4,
+      "p90": 46.9,
+      "simulated_mean": 39.9,
+      "point_percentile_in_simulated_distribution": 94.8,
+      "sanity_median_vs_point": {
+        "median_minus_point": -9.1,
+        "availability_level_effect": -6.8,
+        "measured_residual_bias_effect": -2.2,
+        "analytic_delivered_mean": 39.9,
+        "simulated_mean_minus_analytic": -0.02,
+        "note": "The point is the full-availability Steamer projection; the simulated distribution is delivered WAR. The median sits below the point for two measured reasons: the availability level effect (hitter pool mean 0.912, pitcher pool mean 0.807, each applied to its pool's WAR share) and the residual pools' measured bias (Marcel ran optimistic out of sample: SLG bias -0.0078, ERA bias +0.078 actual-minus-projected). The remainder is median-vs-mean skew. Nothing is re-centered: the headline points are unchanged."
+      },
+      "sanity_cycle52_stress_inside_interval": {
+        "stressed_total": 44.6,
+        "inside_p10_p90": true,
+        "note": "Cycle 52 stress applies the hitter-pool mean factor (0.912) uniformly; UNC-2 samples pitchers from their own pool (mean 0.807), so the simulated median sits below the uniform-stress line by construction. The check is on the interval."
+      }
+    },
+    {
+      "label": "The Middle \u2014 $208.0M",
+      "point_war": 52.8,
+      "spend": 207787500,
+      "hitter_war": 28.4,
+      "pitcher_war": 24.4,
+      "p10": 36.0,
+      "p20": 38.6,
+      "p50": 43.2,
+      "p80": 48.1,
+      "p90": 50.7,
+      "simulated_mean": 43.3,
+      "point_percentile_in_simulated_distribution": 95.0,
+      "sanity_median_vs_point": {
+        "median_minus_point": -9.6,
+        "availability_level_effect": -7.2,
+        "measured_residual_bias_effect": -2.3,
+        "analytic_delivered_mean": 43.3,
+        "simulated_mean_minus_analytic": 0.05,
+        "note": "The point is the full-availability Steamer projection; the simulated distribution is delivered WAR. The median sits below the point for two measured reasons: the availability level effect (hitter pool mean 0.912, pitcher pool mean 0.807, each applied to its pool's WAR share) and the residual pools' measured bias (Marcel ran optimistic out of sample: SLG bias -0.0078, ERA bias +0.078 actual-minus-projected). The remainder is median-vs-mean skew. Nothing is re-centered: the headline points are unchanged."
+      },
+      "sanity_cycle52_stress_inside_interval": {
+        "stressed_total": 48.1,
+        "inside_p10_p90": true,
+        "note": "Cycle 52 stress applies the hitter-pool mean factor (0.912) uniformly; UNC-2 samples pitchers from their own pool (mean 0.807), so the simulated median sits below the uniform-stress line by construction. The check is on the interval."
+      }
+    },
+    {
+      "label": "The Cap \u2014 $245.3M",
+      "point_war": 54.8,
+      "spend": 245187500,
+      "hitter_war": 29.0,
+      "pitcher_war": 25.8,
+      "p10": 37.6,
+      "p20": 40.0,
+      "p50": 44.9,
+      "p80": 49.8,
+      "p90": 52.4,
+      "simulated_mean": 44.9,
+      "point_percentile_in_simulated_distribution": 95.3,
+      "sanity_median_vs_point": {
+        "median_minus_point": -9.9,
+        "availability_level_effect": -7.5,
+        "measured_residual_bias_effect": -2.3,
+        "analytic_delivered_mean": 44.9,
+        "simulated_mean_minus_analytic": 0.0,
+        "note": "The point is the full-availability Steamer projection; the simulated distribution is delivered WAR. The median sits below the point for two measured reasons: the availability level effect (hitter pool mean 0.912, pitcher pool mean 0.807, each applied to its pool's WAR share) and the residual pools' measured bias (Marcel ran optimistic out of sample: SLG bias -0.0078, ERA bias +0.078 actual-minus-projected). The remainder is median-vs-mean skew. Nothing is re-centered: the headline points are unchanged."
+      },
+      "sanity_cycle52_stress_inside_interval": {
+        "stressed_total": 50.0,
+        "inside_p10_p90": true,
+        "note": "Cycle 52 stress applies the hitter-pool mean factor (0.912) uniformly; UNC-2 samples pitchers from their own pool (mean 0.807), so the simulated median sits below the uniform-stress line by construction. The check is on the interval."
+      }
+    }
+  ],
+  "assumptions": [
+    "Player draws are independent across players and across components; correlated shocks (a team-wide injury wave, a league-wide run-environment shift) are not modeled, so the intervals are narrower than a correlated world would give.",
+    "The error pools are the repo Marcel's measured residuals (targets 2025-2026, regulars only: hitters PA >= 300, pitchers IP >= 40 in the target season). Steamer has no in-repo outcome history; the pools price the projection error this repo has actually measured for this class of system, whose hitter rates track Steamer at r = 0.889 (Cycle 22 benchmark).",
+    "Availability draws come from the 2025-26 measured pools and are applied to playing time and WAR alike; a player's own measured factor is not used, because factors exist for only part of any roster (Cycle 27 method note in data/wow_scenarios.json).",
+    "Non-availability playing-time error (benching, role change) is not separately simulated; UNC-1 measured the total Marcel PA error on the FA pool at MAE 46.2 PA (n=39), which is the scale of what is left out.",
+    "The runs-to-WAR scale fits are Steamer's own and are noisy \u2014 the pitcher fit especially (its R2 is recorded in runs_to_war_scale): Steamer pitcher WAR carries role and replacement effects a single ERA line cannot hold. Each slope is the pooled best-linear conversion for a run delta, and the intervals inherit that noise."
+  ]
+}
