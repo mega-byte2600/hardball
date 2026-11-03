@@ -1,15 +1,10 @@
 # HARDBALL — Cap-Era Moneyball Decision Tool
 
-A data-driven answer to the 2027 salary-cap question: **How does a team win
-at a mid-tier, cap-constrained payroll?** Built on real MLB data, measured
-honestly, no invented numbers. Ready for the Winter Meetings (target: **Dec 3,
+A data-driven examination of how MLB organizations convert player skill, performance, health, and payroll information into better decisions. Built on real MLB data, measured honestly, with no invented numbers. Ready for the Winter Meetings (target: **Dec 3,
 2026**; Meetings run Dec 6-11).
 
 ## The one-line thesis (measured, not asserted)
-Buy the **persistent inputs** (contact rate, walk discipline) and low-walk
-arms — not the noisy output (OBP/BA). A player's contact and walk skills carry
-year to year; OBP is BABIP-luck noise. Winning-cheap teams (MIL/TB/CLE)
-over-index on exactly these inputs and win ~95 games at ~1/3-1/4 big-market cost.
+Evaluate the **persistent inputs** (contact rate, walk discipline, and low-walk pitching) alongside performance, health, role, and cost. Winning-efficient organizations provide useful case studies, but the evidence is presented for any MLB team rather than as a mid-market prescription.
 
 ## What you get
 - **DASHBOARD** — 25 figures, self-contained offline HTML (works without
