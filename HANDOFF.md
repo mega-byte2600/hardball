@@ -1344,3 +1344,20 @@ The slate closes. Two parts:
   Remaining before Dec 1: Sportradar trial ~Nov 15 (salaries
   24/30, forced-seller 6/7, CHC shed set uncovered until then);
   final frozen-main release cut.
+
+## Cycle 72 — tracker refresh + Cycle 24 drift re-run (2026-11-03, 24/7 job)
+
+- Tracker ticker refreshed (pulled 2026-11-03 16:15 UTC, window
+  Oct 27–Nov 3): 535 items (335 SIGNED via StatsAPI transactions,
+  200 REPORTED); Google News 503 + Bluesky timeout failed closed.
+  Live feeds otherwise SKIP on their guards (20h watermark, 6d
+  evidence guard) — normal, not failures. Spotrac probe still 403;
+  salaries 24/30.
+- Platform green: ingest 25/25, curate 19 tables, parity r = 0.889 /
+  201 matched. Cycle 24 pitcher backtest re-run: artifact
+  identical — no drift.
+- Dashboard rebuilt from committed snapshots; crest stamp "Data as
+  of Nov 3, 2026 · tracker Nov 3 · injured list Nov 2 · evidence
+  Nov 2". Gate ALL PASS + spellcheck green; PR merged.
+- Remaining before Dec 1: Sportradar trial ~Nov 15 (salaries 24/30,
+  forced-seller 6/7); final frozen-main release cut.
