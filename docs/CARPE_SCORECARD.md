@@ -986,3 +986,76 @@ only current rosters; current-only does not close this gap);
 Spotrac / FanGraphs FA tracker archives (403, never routed
 around); MLBTR FA tracker archives (unprobed — editorial
 tables, scraping method is an owner call).
+
+## Cycle 62 addendum — BLEND-1: Steamer + Marcel blend, honestly benchmarked (2026-11-02)
+
+Slate item 2 of 6. The question: blend Steamer and Marcel
+into one projection set — adopted only if the blend beats
+both parents on held-out actuals (bar pre-committed: 2026
+primary-metric MAE beats BOTH parents for hitters, no worse
+than the best parent for pitchers; weights fit on 2025 only,
+judged on 2026 only). The benchmark page ships either way;
+the adoption is conditional. Artifact:
+`data/projection_blend_2027.json`, built by
+`src/bml_cycle62.py`.
+
+**Step 0 — the Steamer leg of the paired set does not
+exist.** A blend can only be scored where Steamer, Marcel,
+and actuals coexist for a completed season. Probes, all
+2026-11-02:
+
+- The repo holds Steamer only for 2027 (FanGraphs API pull
+  2026-10-31) — a season not yet played. No outcomes exist.
+- FanGraphs API with `season=2026` / `season=2025`: the
+  season parameter is ignored — the response is the current
+  (2027) set (4,166 rows; 4,164 MLBAM IDs in common with the
+  committed 2027 file, differing only at update-noise
+  level). Not a historical source.
+- steamerprojections.com's pre-season archive lists
+  downloads only through 2024, and the Marcel inputs for
+  2023/2024 targets (2020–2022 player lines) are not
+  committed — `fact_stat_lines` begins 2023 — so no earlier
+  paired window can be built either. Its
+  historical-weekly-logs page returned no usable content.
+
+**What could be scored, was scored.** Paired sets from the
+curated warehouse (`fact_stat_lines`, Cycles 21/24 loaders
+mirrored: hitters PA >= 300, pitchers IP >= 40; a player
+enters only with a Marcel projection, a target-season
+actual, and a prior-season actual). Marcel is the shipped
+method (5-4-3 + age term, slopes cross-fitted on the other
+window only). Reproduction anchor: the script first
+regenerates the Cycles 21/24 variant-B backtests from the
+curated table and matches the committed artifacts exactly,
+all four cells, before computing anything new. Paired n:
+hitters 88 (2025) / 80 (2026); pitchers 23 / 22.
+
+Held-out judge window, 2026 (r / RMSE / MAE):
+
+| Forecaster | Hitter OBP | Pitcher ERA |
+|---|---|---|
+| Last season, repeated | .298 / .0329 / .0265 | −.086 / 1.1899 / 1.0177 |
+| Marcel (shipped) | .410 / .0284 / .0237 | −.020 / 1.0928 / .9394 |
+| Steamer | not scored | not scored |
+| Steamer + Marcel blend | not scored | not scored |
+
+(Secondary metrics and the 2025 window are in the artifact:
+Marcel also wins SLG and WHIP in 2026, and both primary
+metrics in 2025.) Marcel beats the naive repeat on every
+error measure in 2026; pitcher ERA ranking was near chance
+for both forecasters that year (n = 22).
+
+**Verdict: blend NOT ADOPTED.** No weights were fit — there
+is nothing legitimate to fit them on. An unscored blend
+cannot meet a bar defined on held-out MAE. Steamer remains
+the published 2027 projection set, Marcel the spine,
+unchanged; no optimizer shadow run (adoption-gated). The
+dashboard gains the benchmark panel the demo never had —
+"How good are these projections?", under Figure 18 in
+Explorer, rendering this table from the artifact: Figure 18
+measures agreement between the two systems; the panel
+measures accuracy against outcomes, and says plainly which
+rows cannot be scored and why. First honest blend test:
+after the 2027 season, when the committed Steamer 2027 set
+can be scored against 2027 actuals on this same paired
+design.

@@ -21,7 +21,7 @@ WHITELIST = {
     # stats & analytics
     "obp", "woba", "wrc", "fip", "babip", "iso", "kbb", "marcel", "statcast",
     "xwoba", "moneyball", "overclaim", "overclaimed", "poka", "yoke",
-    "backtest", "programme", "unc",
+    "backtest", "programme", "unc", "actuals", "rmse",
     "winningcheap", "cheapmediocre", "rundiff", "runscored", "runsallowed",
     "constraint", "offensive", "onbase", "walkrate", "hr", "pa", "m",
     # team names / cities / proper nouns

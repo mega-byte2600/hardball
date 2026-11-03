@@ -432,6 +432,69 @@ def main() -> int:
               "still prior-AAV, 251-class coverage intact)",
               False, "data/price_model_workpaper_2027.json missing")
 
+    # --- BLEND-1 projection benchmark (Cycle 62) ------------------
+    bl_path = DATA / "projection_blend_2027.json"
+    if bl_path.exists():
+        bl = json.loads(bl_path.read_text())
+        ok = (bl["verdict"].startswith("NOT ADOPTED")
+              and bl["blend"]["weights"] is None
+              and bl["blend"]["blended_2027_projections"] is None
+              and bl["shadow_run"] is None
+              and bl["steamer_status"]["status"].startswith("NOT SCOREABLE"))
+        for grp, mets in (("hitters", ("OBP", "SLG")),
+                          ("pitchers", ("ERA", "WHIP"))):
+            for win in ("2025", "2026"):
+                for met in mets:
+                    cell = bl["results"][grp][win][met]
+                    for fc in ("naive", "marcel"):
+                        m = cell[fc]
+                        ok = ok and m["n"] == bl["paired_n"][grp][win] > 0 \
+                            and m["r"] is not None and m["rmse"] > 0 \
+                            and m["mae"] > 0
+                    for fc in ("steamer", "blend"):
+                        ok = ok and cell[fc]["status"] == "not_scored"
+        check("BLEND-1: benchmark artifact complete (four forecasters x "
+              "both groups x both windows, paired n consistent, blend "
+              "not adopted, no weights fit)", ok,
+              f"verdict={bl.get('verdict', '')[:40]}")
+        # the recorded reproduction anchor must equal the committed
+        # Cycles 21/24 variant-B backtests, cell for cell
+        ra = bl["design"]["reproduction_anchor"]
+        mb, pb = load("marcel_backtest.json"), load("pitcher_backtest.json")
+        ok = all(ra[f"hitters_{t}"] == mb["targets"][str(t)]["B_3season"]
+                 and ra[f"pitchers_{t}"] == pb["targets"][str(t)]["B_3season"]
+                 for t in (2025, 2026))
+        # and on the 2026 judge window Marcel must beat the naive on
+        # both primary MAEs, as the panel states
+        ok = ok and bl["results"]["hitters"]["2026"]["OBP"]["marcel"]["mae"] \
+            < bl["results"]["hitters"]["2026"]["OBP"]["naive"]["mae"]
+        ok = ok and bl["results"]["pitchers"]["2026"]["ERA"]["marcel"]["mae"] \
+            < bl["results"]["pitchers"]["2026"]["ERA"]["naive"]["mae"]
+        check("BLEND-1: reproduction anchor matches committed backtests; "
+              "Marcel beats naive on both 2026 primary MAEs", ok)
+        hn = bl["paired_n"]["hitters"]["2026"]
+        pn = bl["paired_n"]["pitchers"]["2026"]
+        check("BLEND-1: dashboard panel under Figure 18 (title, table, "
+              "not-scored rows, blend status verbatim)",
+              "How good are these projections?" in html
+              and "Last season, repeated" in html
+              and "Steamer + Marcel blend" in html
+              and "not scored" in html
+              and "Blend status: not adopted" in html
+              and f"Hitters n = {hn}" in html
+              and f"pitchers n = {pn}" in html)
+    else:
+        check("BLEND-1: benchmark artifact complete (four forecasters x "
+              "both groups x both windows, paired n consistent, blend "
+              "not adopted, no weights fit)", False,
+              "data/projection_blend_2027.json missing")
+        check("BLEND-1: reproduction anchor matches committed backtests; "
+              "Marcel beats naive on both 2026 primary MAEs", False,
+              "data/projection_blend_2027.json missing")
+        check("BLEND-1: dashboard panel under Figure 18 (title, table, "
+              "not-scored rows, blend status verbatim)", False,
+              "data/projection_blend_2027.json missing")
+
     # --- UNC-2 uncertainty layer (Cycle 56) -----------------------
     unc2_path = DATA / "uncertainty_scenarios_2027.json"
     if unc2_path.exists():
