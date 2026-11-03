@@ -1059,3 +1059,70 @@ rows cannot be scored and why. First honest blend test:
 after the 2027 season, when the committed Steamer 2027 set
 can be scored against 2027 actuals on this same paired
 design.
+
+## Cycle 64 addendum — the 2027 Cap Transition ledger (2026-11-02)
+
+Slate item 3 of 6. One decision surface for the proposed
+2027 system ($245.3M cap / $171.2M floor / 15% per-player
+max = $36.795M): `data/cap_transition_2027.json`, one row
+per team, all 30 teams, built by `src/bml_cycle64.py`
+from committed artifacts only — cap scenarios
+(Cycle 22), forced-seller shed sets (Cycle 30), Cot's
+labeled cross-check (Cycle 59-corrected basis), the FA
+optimizer pool (Cycle 44), Steamer 2027 WAR (Cycle 24),
+and the Cycle 50 mixed frame as context.
+
+**Primary basis (Spotrac payroll totals, all 30 teams):
+7 OVER CAP ($358,157,578 over), 15 UNDER FLOOR
+($807,838,582 short), 8 INSIDE THE BAND.** Shed sets
+cover 6 of 7 over-cap teams and clear their gaps
+(NYM $133.6M of contracts / 12.68 WAR; LAD $125.0M /
+8.91; NYY $76.5M / 7.85; PHI $75.0M / 6.59; ATL $27.0M /
+5.15; TOR $40.2M / 3.55). CHC is over the cap by $4.0M
+with no shed set — the row reads "shed set not covered —
+payroll basis gap" (no contract rows; Spotrac page
+failed in Cycle 25). Under-floor rows carry the spend
+gap and the equivalent count of pool signings at the
+pool's median prior salary ($4,500,000, n = 199) —
+labeled arithmetic, not a roster plan. The per-player
+check uses Cot's `cb_2027_aav` (the only committed AAV
+field): 8 contracts above $36,795,000 on 5 teams (LAD
+Tucker $57,196,000 and Ohtani $46,082,000; NYM Soto
+$51,000,000 and Bichette $42,000,000; NYY Bellinger
+$44,750,000 and Judge $40,000,000; PHI Wheeler
+$42,000,000; TEX deGrom $37,000,000). Spotrac salary was
+NOT used for this check — it flags deals whose AAV is
+below the maximum.
+
+**Sensitivity — Cot's published-rows subtotal.** The
+Cot's file carries no team payroll totals, so the
+second basis is the sum of the LRP-2027 rows Cot's
+publishes a dollar figure for — a committed-contract
+subtotal, labeled as such everywhere it appears, never
+called a payroll: 1 OVER CAP (LAD $344,472,000), 6
+INSIDE THE BAND, 23 UNDER FLOOR (subtotal shortfall
+$2,196,341,000). **13 teams change status between the
+two bases** (NYM, NYY, PHI, TOR, ATL, CHC, HOU, BOS,
+DET, ARI, TEX, SF, LAA); the ledger shows both readings
+rather than picking one. Definition sensitivity
+(benefits, pre-arb pool) is NOT modeled — no committed
+team-level figure separates them on either basis; the
+artifact says so in one line.
+
+**Surface.** The ledger leads the Boardroom view as a
+panel rendered from the artifact (`_cap_transition_panel_html`,
+fail-closed if the artifact is absent) — one-line
+summary strip, then the 30-team table with per-row
+basis tags and inline Cot's disagreements. Not a
+figure and not a slide: figure count stays 25,
+Boardroom stays 15 slides. Gate 84 checks ALL PASS
+(3 new CAPLEDGER checks: artifact complete with basis
+labeled on every row; status arithmetic recomputed
+from the committed payrolls with shed coverage, the
+CHC line, spend ceilings, and AAV flags recomputed;
+panel strings verbatim in Boardroom ahead of Slide 1);
+spellcheck green; platform clean (17 tables rebuilt
+byte-identical, 2 skipped on absent raw with committed
+parquets standing, warehouse from 19 tables, parity
+r = 0.889 / 201). Released as v1.1.3 per the Cycle 60
+pattern.

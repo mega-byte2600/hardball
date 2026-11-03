@@ -495,6 +495,99 @@ def main() -> int:
               "not-scored rows, blend status verbatim)", False,
               "data/projection_blend_2027.json missing")
 
+    # --- Cap Transition ledger (Cycle 64) -------------------------
+    ctl_path = DATA / "cap_transition_2027.json"
+    if ctl_path.exists():
+        import math as _math
+        ctl = json.loads(ctl_path.read_text())
+        rows64 = ctl["teams"]
+        cap64 = {t["team"]: t
+                 for t in load("cap_scenario_2027.json")["teams"]}
+        summ64 = ctl["summary"]
+        check("CAPLEDGER: artifact complete (30 rows, basis labeled on "
+              "every row, both summaries reconcile)",
+              len(rows64) == 30
+              and {r["team"] for r in rows64} == set(cap64)
+              and all(r["payroll_basis"] == "Spotrac payroll total"
+                      for r in rows64)
+              and all(r["cots_sensitivity"]["basis"].startswith(
+                          "Cot's published") for r in rows64)
+              and summ64["primary"]["OVER CAP"]["count"] == 7
+              and summ64["primary"]["UNDER FLOOR"]["count"] == 15
+              and summ64["primary"]["INSIDE THE BAND"]["count"] == 8
+              and summ64["cots_published_rows"]["OVER CAP"]["count"] == 1
+              and summ64["status_changes_between_bases"]["count"]
+                  == sum(1 for r in rows64
+                         if not r["cots_sensitivity"]
+                                    ["agrees_with_primary"])
+              and summ64["per_player_flags_total"]
+                  == sum(r["per_player_max_check"]["count"]
+                         for r in rows64),
+              f"rows={len(rows64)}")
+        fa64 = load("fa_shopping_2027.json")["class"]
+        prices64 = sorted(p["prev_aav"] for p in fa64
+                          if p.get("prev_aav")
+                          and p.get("steamer_war") is not None)
+        median64 = prices64[len(prices64) // 2]
+        flags64 = {}
+        for p in load("salaries_cots_2027.json")["players"]:
+            if p.get("cb_2027_aav") and p["cb_2027_aav"] > 36795000:
+                flags64.setdefault(p["team"], set()).add(p["name"])
+        ok64 = len(prices64) == 199 and median64 == 4500000
+        for r in rows64:
+            t = cap64[r["team"]]
+            st = ("OVER CAP" if t["gap_to_cap"] > 0 else
+                  "UNDER FLOOR" if t["gap_to_floor"] > 0 else
+                  "INSIDE THE BAND")
+            a = r["action"]
+            ok64 = ok64 and r["payroll"] == int(round(245300000
+                                                      + t["gap_to_cap"])) \
+                and r["status"] == st
+            if st == "OVER CAP" and a["covered"]:
+                ok64 = ok64 and a["shed_total"] >= t["gap_to_cap"] \
+                    and a["shed_total"] == sum(c["salary_2026"]
+                                               for c in a["contracts"])
+            if st == "OVER CAP" and not a["covered"]:
+                ok64 = ok64 and r["team"] == "CHC" \
+                    and a["statement"] == ("shed set not covered — "
+                                           "payroll basis gap")
+            if st == "UNDER FLOOR":
+                ok64 = ok64 and a["equivalent_signings_at_pool_median"] \
+                    == _math.ceil(t["gap_to_floor"] / median64)
+            code = "CWS" if r["team"] == "CHW" else r["team"]
+            ok64 = ok64 and {f["name"] for f in
+                             r["per_player_max_check"]["flags"]} \
+                == flags64.get(code, set())
+        check("CAPLEDGER: status arithmetic recomputes from committed "
+              "payrolls (shed sets cover their gaps, CHC uncovered, "
+              "spend counts at the pool median, AAV flags recompute)",
+              ok64)
+        board64 = (html.split('id="mode-boardroom"', 1)[1]
+                   if 'id="mode-boardroom"' in html else "")
+        strip64 = ("Primary basis (Spotrac payroll totals): 7 over cap "
+                   "($358.2M over) · 15 under floor ($807.8M short) · "
+                   "8 inside the band.")
+        check("CAPLEDGER: ledger panel leads Boardroom (title, summary "
+              "strip, CHC line, disagreement count verbatim)",
+              "2027 Cap Transition ledger" in board64
+              and strip64 in board64
+              and "shed set not covered — payroll basis gap" in board64
+              and "Status differs from the primary basis for 13 teams"
+                  in board64
+              and -1 < board64.find("2027 Cap Transition ledger")
+                  < board64.find("Slide 1 of 15"))
+    else:
+        check("CAPLEDGER: artifact complete (30 rows, basis labeled on "
+              "every row, both summaries reconcile)", False,
+              "data/cap_transition_2027.json missing")
+        check("CAPLEDGER: status arithmetic recomputes from committed "
+              "payrolls (shed sets cover their gaps, CHC uncovered, "
+              "spend counts at the pool median, AAV flags recompute)",
+              False, "data/cap_transition_2027.json missing")
+        check("CAPLEDGER: ledger panel leads Boardroom (title, summary "
+              "strip, CHC line, disagreement count verbatim)", False,
+              "data/cap_transition_2027.json missing")
+
     # --- UNC-2 uncertainty layer (Cycle 56) -----------------------
     unc2_path = DATA / "uncertainty_scenarios_2027.json"
     if unc2_path.exists():
