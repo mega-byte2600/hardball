@@ -584,8 +584,11 @@ def panel_forced_sellers():
     arithmetically close each over-cap team's gap. Bar = cumulative
     salary of the minimal largest-first shed set; diamond = the gap.
     Arithmetic only, NOT a trade prediction: shedding is assumed to
-    remove the full listed salary. CHC is excluded, not zero — its
-    Spotrac page failed in Cycle 25, so it has no contract rows."""
+    remove the full listed salary. Cycle 74: CHC is covered on
+    Cot's LRP 2027 (its Spotrac page failed in Cycle 25, so it has
+    no Spotrac contract rows) — the set's basis is labeled wherever
+    it renders, and the cross-validation is in
+    data/salary_reconciliation_2027.json."""
     fj = os.path.join(DATA, "forced_sellers_2027.json")
     if not os.path.exists(fj):
         return None
@@ -599,10 +602,16 @@ def panel_forced_sellers():
     gap_m = [t["gap_to_cap"] / 1e6 for t in teams]
     bar_text = [f"{t['n_shed']} contract{'s' if t['n_shed'] > 1 else ''} · "
                 f"${t['shed_total']/1e6:.1f}M" for t in teams]
+    def _shed_line(s):
+        if "salary_2026" in s:
+            return (f"{s['name']} ({s['pos']}) "
+                    f"${s['salary_2026']/1e6:.1f}M")
+        return (f"{s['name']} ({s['pos']}) "
+                f"${s['salary_cots_lrp_2027']/1e6:.1f}M "
+                f"(Cot's LRP 2027)")
     hover = ["<br>".join(
         [f"{t['team']}: gap ${t['gap_to_cap']/1e6:.1f}M"] +
-        [f"{s['name']} ({s['pos']}) ${s['salary_2026']/1e6:.1f}M"
-         for s in t["shed"]]) for t in teams]
+        [_shed_line(s) for s in t["shed"]]) for t in teams]
     fig = go.Figure()
     fig.add_trace(go.Bar(y=labels, x=shed_m, orientation="h",
                          marker_color="#d50032", text=bar_text,
@@ -618,19 +627,24 @@ def panel_forced_sellers():
                "over-cap gap<br><sub>Arithmetic only, not a trade "
                "prediction — shedding is assumed to remove the full "
                "listed salary, and real trades rarely do that · Coverage "
-               "6 of 7 over-cap teams — CHC ($4.0M over) has no contract "
-               "rows because its Spotrac page failed in Cycle 25 · "
-               "Salaries are the Spotrac 2026 Payroll Salary rows as "
-               "committed, gaps are from the cap scenario file</sub>"),
+               "7 of 7 over-cap teams — six on the Spotrac per-player "
+               "rows as committed, CHC on Cot's LRP 2027 (its Spotrac "
+               "page failed in Cycle 25), cross-validated where both "
+               "bases exist: the same shed-set players for 5 of the 6 "
+               "known teams, LAD differing only on Ohtani's deferred "
+               "contract (present value vs nominal), with Cot's team "
+               "totals matching Spotrac's within 0.63% on average, "
+               "worst 3.07%; gaps are from the cap scenario file</sub>"),
         xaxis_title="Salary ($M)", template="plotly_white",
         height=460, margin=dict(l=60, r=40, t=64, b=96),
         xaxis_range=[0, max(shed_m) * 1.35],
         annotations=[dict(x=0.5, y=-0.28, xref="paper", yref="paper",
                           showarrow=False,
                           text="Every covered team closes its gap by "
-                               "shedding at most 3 contracts; TOR and ATL "
-                               "need just 1 — the cap binds through a "
-                               "handful of deals, not a rebuild",
+                               "shedding at most 3 contracts; TOR, ATL "
+                               "and CHC need just 1 — the cap binds "
+                               "through a handful of deals, not a "
+                               "rebuild",
                           font=dict(size=11, color="#4a5a72"))])
     return fig
 
@@ -1114,12 +1128,18 @@ def _cap_transition_panel_html():
         if a["type"] == "shed":
             if not a["covered"]:
                 return _html.escape(a["statement"])
-            names = "; ".join(
-                f"{c['name']} ({_m(c['salary_2026'])}, "
-                f"{c['steamer_war_2027']:.1f} WAR)" for c in a["contracts"])
-            return (f"Shed {a['n_contracts']} contracts · "
-                    f"{_m(a['shed_total'])} · {a['shed_war_total']:.1f} WAR "
-                    f"— {names}")
+            def _cline(c):
+                sal = c.get("salary_2026",
+                            c.get("salary_cots_lrp_2027"))
+                return (f"{c['name']} ({_m(sal)}, "
+                        f"{c['steamer_war_2027']:.1f} WAR)")
+            names = "; ".join(_cline(c) for c in a["contracts"])
+            out = (f"Shed {a['n_contracts']} contracts · "
+                   f"{_m(a['shed_total'])} · {a['shed_war_total']:.1f} WAR "
+                   f"— {names}")
+            if a.get("basis"):
+                out += " · salary basis: Cot's LRP 2027 (Cycle 74)"
+            return out
         if a["type"] == "spend":
             return (f"Spend {_m(a['shortfall'])} · "
                     f"≈{a['equivalent_signings_at_pool_median']} signings "
@@ -1185,9 +1205,11 @@ def _cap_transition_panel_html():
             "are not modeled — no committed team-level figure separates "
             "them on either basis.</p>"
             '<p class="srcline">Source: data/cap_transition_2027.json '
-            "(Cycle 64), built from data/cap_scenario_2027.json, "
+            "(Cycles 64, 74), built from data/cap_scenario_2027.json, "
             "data/forced_sellers_2027.json, data/salaries_cots_2027.json "
-            "and data/fa_shopping_2027.json.</p></div>")
+            "and data/fa_shopping_2027.json; CHC's shed set is "
+            "cross-validated in data/salary_reconciliation_2027.json."
+            "</p></div>")
 
 
 def _health_cards_panel_html():

@@ -500,10 +500,21 @@
    "spotrac_contract_rows": 0,
    "action": {
     "type": "shed",
-    "covered": false,
-    "contracts": [],
-    "statement": "shed set not covered \u2014 payroll basis gap",
-    "reason": "no contract rows in salaries_2026.json (Spotrac page failed in Cycle 25)"
+    "covered": true,
+    "basis": "Cot's LRP 2027 (Cycle 74)",
+    "contracts": [
+     {
+      "name": "Alex Bregman",
+      "pos": "3b",
+      "salary_cots_lrp_2027": 29527000,
+      "steamer_war_2027": 3.26
+     }
+    ],
+    "n_contracts": 1,
+    "shed_total": 29527000,
+    "shed_war_total": 3.26,
+    "payroll_after_shed": 219792956,
+    "method": "minimal largest-first contract prefix covering the cap gap \u2014 computed on Cot's LRP 2027 (Cycle 74); Spotrac per-player rows for CHC do not exist"
    },
    "per_player_max_check": {
     "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",

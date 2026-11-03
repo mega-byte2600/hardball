@@ -177,6 +177,19 @@
     "every row labeled cots"
    ]
   },
+  "fact_salaries_cots_full": {
+   "rows": 2240,
+   "grain": "Cot's sheet row (player or charge) x team \u2014 full parse, LRP 2026 + 2027 figure/marker",
+   "inputs": [
+    "salaries_cots_full_2027.json"
+   ],
+   "checks": [
+    "rows == metadata",
+    "30 teams",
+    "every row labeled cots",
+    "figure rows == Cycle 44 file rows"
+   ]
+  },
   "fact_il_current": {
    "rows": 196,
    "grain": "one row per currently listed injured player",

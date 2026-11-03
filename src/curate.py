@@ -209,6 +209,20 @@ def main():
           ("30 teams", df.team.nunique() == 30),
           ("every row labeled cots", bool((df.source == "cots_baseball_prospectus").all()))])
 
+    # Cycle 74: Cot's full-sheet parse (all rows, figures + markers) -----------
+    cots_full = load("salaries_cots_full_2027.json")
+    df = pd.DataFrame(cots_full["players"])
+    emit("fact_salaries_cots_full", df,
+         "Cot's sheet row (player or charge) x team — full parse, "
+         "LRP 2026 + 2027 figure/marker",
+         ["salaries_cots_full_2027.json"],
+         [("rows == metadata", len(df) == cots_full["metadata"]["rows"]),
+          ("30 teams", df.team.nunique() == 30),
+          ("every row labeled cots",
+           bool((df.source == "cots_baseball_prospectus").all())),
+          ("figure rows == Cycle 44 file rows",
+           int(df.lrp_2027.notna().sum()) == len(cots["players"]))])
+
     # Cycle 51: live-feed current IL picture (Statyx + FastballAPI) ------------
     ilc = load("il_current_live.json")
     df = pd.DataFrame(ilc["rows"])

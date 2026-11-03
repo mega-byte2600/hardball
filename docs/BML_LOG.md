@@ -2480,3 +2480,36 @@ No claim or data changed; dashboard untouched (still 25 figures).
   in-gate, panel placement + verbatim claim + rendered stats,
   no projection-claim wording) + spellcheck green + platform
   clean (curate 19 tables, parity r = 0.889 / 201).
+
+## Cycle 74 — SALARY COMPLETION: the second-basis hackathon (2026-11-03)
+- QUESTION: can the 24/30 Spotrac per-player gap (and the one visible
+  hole, CHC's missing shed set) be closed at demo quality without a
+  new scrape — by validating Cot's as a second basis hard enough to
+  build on? Owner framing: a hackathon challenge to overcome.
+- BUILD: src/bml_cycle74.py parses all 30 Cot's sheets into
+  data/salaries_cots_full_2027.json (2,240 rows; figures where
+  printed, markers where printed, nothing invented) and computes
+  data/salary_reconciliation_2027.json from the raw sheets.
+  Validation inside the build, fail-closed: the 237 figure rows are
+  identical to the Cycle 44 file; the parse matches the independent
+  Cycle 41 parse to the dollar per team; the other six forced-seller
+  entries are asserted byte-identical after the CHC fill.
+- RESULT (all recomputed, two-plus sources): totals reconcile —
+  mean abs diff 0.63%, worst SD +3.07%, 26/30 within 2%. Shed sets
+  agree across three bases on 5 of 6 known teams (AAV: 6 of 6); the
+  one LRP difference (LAD) is Ohtani's deferral, present value vs
+  nominal — labeled, not averaged away. USA TODAY's final-2026 LRD
+  list corroborates externally on a different basis/snapshot
+  (anchors within ~0.5%; WSH −11.2% the largest deviation, a
+  deadline seller; Guerrero Jr. exact at $40,214,286).
+- SHIPPED: CHC shed set on the Cot's LRP basis — Bregman alone,
+  $29,527,000 against the pinned $4,019,956 gap; coverage 7/7;
+  ledger regenerated (only CHC's action changed); Figure 11 +
+  ledger render the set with its basis labeled; claim S17
+  SUPPORTED, N06 corrected and standing; curate 20 tables, parity
+  0.889/201; gate 102 ALL PASS.
+- LEARNED: a blocked source is not a data gap if a second source
+  can be validated to the dollar against everything the first
+  source did publish. The residual risk is basis-mixing, and the
+  defense is labeling: every Cot's-basis number in the demo says
+  so where it renders.

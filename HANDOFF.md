@@ -1404,3 +1404,60 @@ anywhere changes.
   cut time; GitHub release via API). Published file read back
   from the tag tree and probed (exhibit + N04 label, 25 figures,
   crest stamp).
+
+## Cycle 74 — salary completion: Cot's full parse, reconciliation, CHC shed set (2026-11-03)
+
+- The salary gap closed on a second basis (owner's "hackathon"
+  framing; Sportradar trial declined 2026-11-03, superseded by this
+  cycle). src/bml_cycle74.py parses ALL 30 cached Cot's sheets into
+  data/salaries_cots_full_2027.json: 2,240 rows (players + the
+  sheets' non-player charges), 2026 LRP dollars, 2027 LRP figure
+  where printed, status marker (A1–A4 / FA / opt) where the sheet
+  prints a marker instead — never an invented figure. The 237
+  figure rows are identical to the Cycle 44 dataset, and the parse
+  cross-validates against the independent Cycle 41 parse to the
+  dollar on every team. Sheet-internal residuals are reported, not
+  adjusted: 24/30 sheets reconcile within $100; the six larger ones
+  (ATH, BOS, CLE, COL −$7.75M, STL, TB) are the sheets' own —
+  printed totals net out rows for mid-season-traded players.
+- Reconciliation (data/salary_reconciliation_2027.json, recomputed
+  from the raw sheets inside the build): Cot's printed totals vs
+  Spotrac totals — mean abs diff 0.63%, worst SD +3.07%, 26/30
+  within 2%. Three-basis shed sets: NYM/NYY/PHI/TOR/ATL pick
+  identical players on Spotrac, Cot's LRP 2027 and Cot's CBT AAV;
+  LAD agrees on Spotrac + AAV (Ohtani+Tucker) and differs on LRP
+  (Glasnow+Tucker) — Ohtani's deferral at present value vs nominal.
+  USA TODAY's final-2026 LRD list corroborates as a different
+  basis + later snapshot (context only, never merged): the five
+  named anchors agree within ~0.5%; largest full-list deviations
+  WSH −11.2%, MIN −5.4%, CHW −5.2% (deadline sellers — reported,
+  not reconciled away). Player-level: Guerrero Jr. $40,214,286
+  matches USA TODAY's published figure to the dollar. Summary in
+  docs/CARPE_SCORECARD.md.
+- CHC shed set filled, source-labeled (basis cots_lrp_2027): Alex
+  Bregman, $29,527,000 — the sheet itself confirms he is CHC's
+  largest 2027 guarantee (Swanson $28,000,000 second); gap
+  arithmetic pinned in the artifact: $249,319,956 − $245,300,000 =
+  $4,019,956. Forced-seller coverage 7/7; the other six sets are
+  byte-identical. Cap ledger regenerated — only CHC's action
+  changed (covered; payroll after shed $219,792,956; Bregman 3.26
+  Steamer WAR). Claim S17 added (SUPPORTED — register now 17/7/3,
+  0 open, 1 resolved); N06's evidence corrected, claim stands NOT
+  SUPPORTED (no single-basis per-player file covers all 30 teams).
+- Dashboard: Figure 11 renders CHC (bar, hover and Boardroom
+  ledger all carry the Cot's basis label); the coverage copy
+  states both bases with the reconciliation headline. Figure
+  count stays 25.
+- Platform: curate 20 tables (new fact_salaries_cots_full, 2,240
+  rows), contracts pass; parity r = 0.889 / 201.
+- Gate: 102 checks ALL PASS (97 + 5 new CYCLE74 checks recompute
+  the parse identity, the reconciliation, the three-basis sets,
+  the CHC set and the USA TODAY block from the committed salary
+  files) + spellcheck green.
+- Coordination: Cycle 75 landed on main mid-work (7cdd4bb9,
+  release v1.1.9); this branch was rebuilt on the new head and the
+  full chain re-verified there. Release: v1.1.10 per the Cycle 60
+  pattern.
+- Remaining before Dec 1: final frozen-main release cut. The
+  standing "Sportradar trial ~Nov 15" item is CLOSED — declined
+  by the owner; the gap it was meant to close is closed above.

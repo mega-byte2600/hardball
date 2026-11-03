@@ -83,6 +83,7 @@ WHITELIST = {
     # Cycle 64 cap-ledger shed-set names — verified against
     # data/forced_sellers_2027.json / data/salaries_2026.json
     "bichette", "lindor", "ohtani", "tucker", "wheeler", "schwarber",
+    "bregman",
     "bellinger", "guerrero", "vladimir",
     # Cycle 64 cap-ledger visible team codes + first names — codes
     # verified against data/cap_scenario_2027.json, names against
