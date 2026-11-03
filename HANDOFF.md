@@ -1551,3 +1551,5 @@ drift (pooled A MAE ERA 0.744 / WHIP 0.122, unchanged).
 Remaining before Dec 1: final frozen-main release cut (its
 dashboard-footer Sportradar line edit rides along there); the
 owner's open PR #56 (badge removal) is his lane's, untouched.
+- Shipped as PR #57 (toby/cycle77-live-refresh), merged when gate +
+  rebuild verified.
