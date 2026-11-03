@@ -2125,3 +2125,14 @@ count unchanged at 23. No NPB→MLB translation factor claimed anywhere.
   can be scored in a year. The blend question is not dead;
   it is scheduled by the calendar: first honest test after
   the 2027 season, on this same paired design.
+
+## Cycle 63 (V&V record, 2026-11-02) — persistence headlines recomputed
+
+Closed HANDOFF item 4 to the extent committed data allows:
+- contact pooled r: claim 0.84 -> artifact 0.843, lake recompute 0.870 (CONFIRMED)
+- OBP latest-pair r: claim 0.30 -> raw recompute 0.2983, n=80 (CONFIRMED)
+- OBP pooled r: claim 0.53 -> NOT stored in committed artifact; pooled value needs the
+  2022-23 backfill lake rows that are absent here. Per-pair r (0.576/0.591/0.548/0.298)
+  bracket ~0.50 (naive mean 0.503), so 0.53 is plausible but NOT verified on this
+  machine. Flagged, not assumed. Record: data/persistence_recompute_verify.json.
+No claim or data changed; dashboard untouched (still 25 figures).

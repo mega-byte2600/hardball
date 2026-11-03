@@ -1,0 +1,17 @@
+{
+  "check": "Persistence headline V&V (HANDOFF item 4) — 2026-11-02",
+  "artifacts_used": [
+    "data/player_persistence_multiyear.json",
+    "data/persistence_ci.json",
+    "data/player_yoy.json",
+    "data/mlb_lake.db (present seasons 2024-2026 only)"
+  ],
+  "claims_checked": [
+    {"claim": "contact pooled r = 0.84", "committed_artifact_r": 0.843, "lake_recompute_2024_26_r": 0.870, "verdict": "CONFIRMED", "note": "both sources agree with 0.84 within tolerance"},
+    {"claim": "OBP latest-pair (2025->2026) r = 0.30", "committed_r": 0.298, "raw_recompute_r": 0.2983, "verdict": "CONFIRMED", "note": "independently re-derived from 80 player-year pairs in player_yoy.json"},
+    {"claim": "OBP pooled r = 0.53", "committed_value": "not stored", "verdict": "CANNOT REPRODUCE / FLAG", "note": "committed artifact stores only per-pair OBP r (0.576/0.591/0.548/0.298) and pooled_contact_r; the pooled OBP value came from a lake that included 2022-23 backfill. Present lake has only 2024-26. Per-pair values bracket ~0.50 (naive mean 0.503) so 0.53 is plausible but not verifiable on this machine. Source of truth: bml_cycle21_multiyear.py against the full lake."}
+  ],
+  "method": "Pure-stdlib Pearson r. Lake recompute mirrors Cycle 21: pool player-years across adjacent season pairs with 200+ PA both years.",
+  "files_changed": "none — documentation record only, no data or claim edits",
+  "owner_action": "If pooled OBP 0.53 must be staked before Dec 1, re-run bml_cycle21_multiyear.py against a lake containing 2022-23 (backfill) and confirm; otherwise keep the per-pair disclosures as the verified surface."
+}
