@@ -1,135 +1,131 @@
-# HARDBALL — Cap-Era Moneyball Decision Tool
+# Hardball
 
-A data-driven examination of how MLB organizations convert player skill, performance, health, and payroll information into better decisions. Built on real MLB data, measured honestly, with no invented numbers. 
+Hardball is an evidence based MLB decision tool for evaluating player performance, health, role, payroll, and free agency in one auditable workflow.
 
-## The one-line thesis (measured, not asserted)
-Evaluate the **persistent inputs** (contact rate, walk discipline, and low-walk pitching) alongside performance, health, role, and cost. Winning-efficient organizations provide useful case studies, but the evidence is presented for any MLB team rather than as a mid-market prescription.
+It is built for baseball leaders, analysts, and people who want to see how the data supports a roster decision. The goal is not to predict baseball perfectly. The goal is to make the assumptions, evidence, uncertainty, and tradeoffs visible.
 
-## What you get
-- **DASHBOARD** — 25 figures, self-contained offline HTML (works without
-  internet at the meeting). See **How to run**.
-- **Data** — 16-season team panel (2011-2026, 509 team-seasons) + player
-  projections + injury/IL history. All from public APIs, cached locally.
-- **Math** — linear + logistic regression, repeated K-fold validation,
-  sensitivity/elasticity, run-differential (diagnostic) and value metrics
-  (wOBA/wRC+/FIP/K-BB%). Honest negatives logged, nothing overclaimed.
-- **Evidence trail** — `docs/LITERATURE_SPINE.md` (the journals/references the
-  math is built on) + `docs/citations_ledger.json` (30 sourced references with
-  access dates), so every agent and collaborator can audit the research base.
+## Current status
 
-## How to run (3 steps)
-1. `python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt`
-2. `.venv/bin/python src/dashboard_p6.py`  → rebuilds `dashboard/hardball_demo.html`
-3. `open dashboard/hardball_demo.html` (or `python3 -m http.server 8893` then
-   browse `http://127.0.0.1:8893/hardball_demo.html`)
+| Area | Status |
+| --- | --- |
+| MLB team and player data pipeline | Done |
+| Performance, health, payroll, and value metrics | Done |
+| Free agent tracker and MLB eligibility join | Done in source |
+| Official MLB, Statcast, FanGraphs, ESPN, and transaction connectors | Done |
+| Validation, sensitivity analysis, and uncertainty scenarios | Done |
+| Executive dashboard source | Done |
+| Dashboard rebuild after the latest source changes | In progress |
+| Social signals for market awareness | Experimental and unverified |
+| Final rendered dashboard QA and release cleanup | In progress |
 
-## Presenting in 5 minutes
-Open the built file (`open dashboard/hardball_demo.html`) — it is
-self-contained and works offline at the meeting. The same 25 figures and
-the same numbers are presented three ways; pick the mode for the moment,
-not a different deck.
+## What is implemented
 
-- **Story in 5 minutes (the default path).** The file lands on Story:
-  the verdict is on the first screen (thesis + the 3 headline numbers +
-  Pick Your Team). Then walk four chapters and stop: Chapter 1, Figure 3
-  (skills persist — contact and walk discipline carry year to year, OBP
-  does not); Chapter 3, Figure 6 (payroll vs wins — the winning-cheap
-  teams win ~95 at a third to a quarter of big-market payroll);
-  Chapter 5, Figure 16 (what the money buys — the floor build vs the cap
-  build); then the appendix at the end of Story, where the method and
-  honesty box live collapsed. That is the whole case in five minutes.
-- **If the room wants the film first.** Figure 1, PRESS PLAY, is in
-  Boardroom slide 1 and in Explorer under Cap Reality: sixteen seasons
-  of payroll vs wins animate, and the cheap winners stay gold the whole
-  time. Press play before you say a word, then drop back to Story.
-- **Boardroom for the room.** Switch to Boardroom: 15 slides in
-  talk-track order (`docs/TALKTRACK.md`), print-clean via the Print
-  boardroom button. This is the version to leave behind on paper.
-- **Explorer for questions.** Switch to Explorer: all 25 figures,
-  grouped by task instead of by number — Cap Reality, Build a Roster,
-  Shop the FA Class, The Posted Class, Check the Model — with Pick Your
-  Team (Figure 2) on top. Any question from the room lands on a group,
-  not a scroll hunt.
-- **The live-market exhibit: Figure 23.** In Explorer, under The Posted
-  Class: three NPB stars posted Nov 1, 2026 — Sato (Hanshin), Taira
-  (Seibu), Itoh (Nippon-Ham) — with trio cards, the thesis test, the
-  posting clock (posted Nov 1, negotiations Nov 2, clock pauses at the
-  Dec 1 lockout, deadline Dec 16, 17:00 ET), fee tiers, and its own
-  translation honesty box (the Imai caution: no NPB-to-MLB translation
-  factor is claimed anywhere). Use it as the closer: this is the one part
-  of the 2027 market that resolves while the demo window is open.
-  Story stays 6 chapters and Boardroom stays 15 slides — Figure 23 is
-  Explorer-only by design, so it adds a live exhibit without adding a
-  thesis claim.
+The project currently includes:
 
-Where the honesty box lives, every time: the Story appendix (method +
-honesty box, collapsed at the end), Figure 23's translation honesty box
-in Explorer, and the Honest limits above. If a number is challenged,
-the answer is in one of those three places — never off the top of your
-head.
+- A 16 season team panel covering 2011 through 2026 and 509 team seasons.
+- Player projections, injury and injured list history, payroll, and free agent data.
+- Hitting and pitching measures including contact rate, walk discipline, wOBA, wRC+, FIP, and K BB%.
+- Linear and logistic models with repeated K fold validation.
+- Sensitivity and elasticity analysis.
+- Budget scenario rosters, optimizer comparisons, and uncertainty ranges.
+- A free agent tracker joined to official MLB free agent eligibility data.
+- An offline Plotly dashboard with Story, Boardroom, and Explorer views.
+- A literature spine and citations ledger so the research base can be audited.
+- A repeatable connector smoke check for the live public data sources.
 
-## Repo layout
-- `FEATURES.md` — the feature map: every feature, its source script, committed data
-  artifact, gate, and build order. Start here to pick up a thread.
-- `src/` — Python: data ingest, panel builder, model, value metrics, dashboard generator, BML cycles
-- `data/` — real data artifacts (panel CSV, projections JSON, validation outputs)
-- `docs/` — PROBLEM_P4 (cap-era framing), COPYCAT_P5 (KPI evidence), LITERATURE_SPINE,
-  EXEC_SUMMARY (one-pager), BML_LOG (build-measure-learn audit trail),
-  ONEPAGER.html (print-clean executive one-pager, generated by src/make_onepager.py)
-- `dashboard/` — generated artifact (gitignored; rebuild from src/)
+## The working question
 
-## Data sources (all real, all keyless)
-- **MLB Stats API** (`statsapi.mlb.com/api/v1`) — team/player hitting, pitching, standings
-- **ESPN API** — validation/redundancy (cross-checked)
-- **Spotrac** (via MIT-licensed jasonbhorne/mlb-payroll) — payroll
-- **MLB transactions feed** — injury/IL history (35k+ events)
-- `WAR` is a public stat (FanGraphs fWAR / Baseball-Reference bWAR, free) but the
-  two formulas disagree and the MLB API returns none; we show its reproducible
-  inputs (wOBA/wRC+/FIP/K-BB%) and say so on the page (the FA shopping list does
-  use FanGraphs Steamer WAR where available).
+Which inputs remain useful when an organization evaluates performance, availability, role, and cost together?
 
-## Honest limits
-Cross-year TEAM win forecasting is weak (MAE 9-13 wins) and regresses to the
-mean — this matches published literature and is stated on the dashboard. The
-cap/floor are owners' **proposed** 2027 figures (CBA expires Dec 1 2026), not law.
+The project treats contact ability, walk discipline, pitching control, health, and price as decision inputs. It does not claim that one metric or one team model explains winning.
 
-Private repo. Audit trail in `docs/BML_LOG.md`.
+## Data sources
 
-## Integration addendum (2026-10-31) — CarpeData + Boardroom lane merged
-A parallel lane (audit → CarpeData → solutions → finale → Boardroom,
-PRs #1-#5, integrated via PR #6) converged with the main lane on
-2026-10-31. What it adds:
-- **Audit G1–G12 closed**: clean-clone offline dashboard build, BB/9
-  field fix, Arizona code fixes, retracted-metric labeling
-  (formula_prod.json is annotated diagnostic-only), G6 root cause
-  (the 2019 fold predicts the 60-game 2020 season; grouped CV MAE
-  corrected 13.01 → 10.23).
-- **CarpeData**: keyless Baseball Savant + FanGraphs Steamer + MLB
-  minors connectors (src/carpe.py; docs/CARPE_SCORECARD.md). Marcel
-  backtests adopted fitted age terms for hitters AND pitchers
-  (Cycles 21/24); pitcher pool 76 → 102; Steamer benchmark panel.
-- **Real salaries + shopping list** (Cycle 25): Spotrac 2026 salaries
-  (927 rows) and the full 2027 FA class with Steamer WAR.
-- **Boardroom layer** (Cycle 26): animated 16-season payroll film,
-  pick-your-team explorer (all 30 clubs), and budget-scenario rosters
-  — floor $171.2M builds 48.9 WAR vs cap $245.3M at 54.8 WAR
-  (Cycle 52: the proven-optimal rosters headline; the original
-  greedy builds are the Figure 25 benchmark). Delivered-WAR
-  ranges (Cycle 56, UNC-2): 10th–90th percentile 33.0–46.9 at
-  the floor, 36.0–50.7 in the middle, 37.6–52.4 at the cap —
-  Monte Carlo over measured projection error and player
-  availability (data/uncertainty_scenarios_2027.json).
-- Dashboard is now **25 figures in three modes — Story (6 chapters, the default landing),
-  Boardroom (15 slides), Explorer (all 25 figures grouped by task)**; P7 UAT approved
-  at MVP level by the owner 2026-10-31. Figure 23 (Cycle 34, Explorer-only)
-  is the posted NPB class — Sato, Taira, Itoh — from NPB official BIS data.
-  Figure 24 (Cycle 48, Explorer-only) is the Hakes–Sauer verdict exhibit:
-  our own pricing test of the contact/OBP claim, verdict inconclusive —
-  the demo claims persistence and cap-efficiency, not proven undervaluation.
-  Figure 25 (Cycle 49, Explorer-only) is the benchmark comparison: an
-  exact MILP re-solve of the Figure 16 roster problem finds +6.9 /
-  +7.1 / +2.5 WAR over the greedy builds at the same budgets, optima
-  proven. Since Cycle 52 the optimizer rosters headline Figure 16;
-  the greedy builds remain as the benchmark.
-Cycle numbering collided between lanes (two "Cycle 20-24" series) —
-see the integration note in docs/BML_LOG.md.
+The project uses public data and stores reproducible local artifacts.
+
+- MLB Stats API for team, player, hitting, pitching, standings, transactions, and free agent eligibility.
+- Baseball Savant for Statcast and expected statistics.
+- FanGraphs Steamer for projections where available.
+- ESPN for cross checks.
+- Spotrac payroll snapshots through the MIT licensed mlb-payroll project.
+- MLB transaction data for injury and injured list history.
+- NPB official BIS data for the posted player exhibit.
+- Bluesky public search as an experimental social signal only. Social posts are never treated as confirmed transactions.
+
+See docs/CARPE_SCORECARD.md for connector details and docs/citations_ledger.json for the source record.
+
+## Run locally
+
+Create an environment and install the dependencies:
+
+~~~bash
+python3 -m venv .venv
+./.venv/bin/pip install -r requirements.txt
+~~~
+
+Build the dashboard:
+
+~~~bash
+.venv/bin/python src/dashboard_p6.py
+~~~
+
+Open the generated file:
+
+~~~bash
+open dashboard/hardball_demo.html
+~~~
+
+For a local server:
+
+~~~bash
+python3 -m http.server 8893
+~~~
+
+Then open http://127.0.0.1:8893/dashboard/hardball_demo.html.
+
+Run the connector check:
+
+~~~bash
+.venv/bin/python src/check_connectors.py
+~~~
+
+Use --json for machine readable output.
+
+## Dashboard
+
+The dashboard presents the same evidence in three ways:
+
+- **Story** gives the shortest path through the main findings.
+- **Boardroom** organizes the findings as a presentation sequence.
+- **Explorer** lets a user move through the figures by decision question.
+
+The generated HTML is an output artifact. Rebuild it from src/ after changing the source or data.
+
+## Limits
+
+The team win model is a diagnostic tool, not a guaranteed forecast. Cross year win prediction is weak and regresses toward the mean, with reported mean absolute error in the 9 to 13 win range.
+
+Salary caps and budget scenarios are working assumptions, not league rules. WAR is not a single universal formula; FanGraphs and Baseball Reference use different methods. Where a translation is uncertain, the dashboard labels it rather than inventing precision.
+
+The social signal reader is discovery support only. A post, hashtag, or rumor does not establish a signing, injury, value, or transaction.
+
+## Repository map
+
+- src/ contains ingestion, modeling, metrics, validation, and dashboard generation.
+- data/ contains cached public data and model outputs.
+- docs/ contains the literature spine, source ledger, scorecard, talk track, executive summary, and build log.
+- FEATURES.md tracks feature ownership, source files, artifacts, gates, and build order.
+- HANDOFF.md explains how another contributor can continue the work.
+- dashboard/ contains generated outputs and is rebuilt from source.
+
+## Next release work
+
+1. Rebuild the generated dashboard from the current source.
+2. Run the full regression and connector checks against the rebuilt artifact.
+3. Finish the mobile and executive presentation pass.
+4. Decide whether the experimental social lane belongs in the release or remains separate.
+5. Record the release evidence in the build log.
+
+## Mission
+
+I’m on a mission to help baseball organizations make better player, performance, and health decisions through rigorous, evidence based analysis.
