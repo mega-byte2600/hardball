@@ -1919,11 +1919,13 @@ count unchanged at 23. No NPB→MLB translation factor claimed anywhere.
 - Measured (live probes, 2026-11-02): Baseball Almanac —
   robots.txt 200 (permissive), homepage 200, record-book path
   /recbooks/ **403** → stopped; REFERENCE-ONLY (HTML compilation,
-  no API/CSV route). Elias Sports Bureau — homepage 200 via curl
-  (JS-driven corporate page, no static text layer), text fetch
-  refused 403, not retried; no public API/download exists →
-  official-by-citation only. SABR — homepage **429** → stopped
-  (its role is already counted: it publishes Lahman). National
+  no API/CSV route). Elias Sports Bureau — curl to the homepage
+  dropped by the server (HTTP 000, empty reply, curl exit 52),
+  text fetch refused 403, not retried; no public API/download
+  exists →
+  official-by-citation only. SABR — homepage 200 (110,244
+  bytes); nothing separately wired (its role is already
+  counted: it publishes Lahman). National
   Baseball Hall of Fame — homepage 200; museum/editorial site,
   no machine-readable product → REFERENCE-ONLY. The Baseball
   Cube — homepage 200 (evaluated cross-check status stands).
@@ -1967,3 +1969,39 @@ count unchanged at 23. No NPB→MLB translation factor claimed anywhere.
   pending cron-wiring decision, parent lane); Figure 9
   disclosure is an owner item; Sportradar trial ~Nov 15; final
   release cut before Dec 1.
+
+## Cycle 59 — Cycle 58 probe-evidence correction (2026-11-02, docs only)
+
+- Corrected: two probe-evidence lines shipped in Cycle 58 did
+  not match the probe record. SABR homepage — printed "HTTP
+  429 → stopped"; the record shows HTTP 200 (110,244 bytes),
+  re-confirmed on the record this cycle (single GET of
+  https://sabr.org/ with a browser UA: 200, 110,244 bytes —
+  the third agreeing observation, after the Cycle 58
+  completion record and the Cycle 58 builder's re-probe).
+  Elias homepage via curl — printed "HTTP 200 via curl
+  (35,678 bytes)"; the record shows the server drops the curl
+  connection (HTTP 000, empty reply, curl exit 52), likewise
+  re-confirmed this cycle (single GET of
+  https://www.eliassports.com/: 000, 0 bytes, exit 52).
+- Cause, stated plainly: the Cycle 58 probe batch's in-flow
+  result disagreed with its own completion record; the
+  completion record and the re-probes govern.
+- Verdicts unchanged: SABR — homepage answers 200; no separate
+  ingestion is built, because its data role here (it publishes
+  Lahman) is already counted. Elias — no public route;
+  official-by-citation only, resting on the curl refusal plus
+  the text fetch's 403. No demo numbers changed, nothing
+  wired, dashboard footer untouched.
+- Files: docs/CARPE_SCORECARD.md (Cycle 58 entries 3 and 8),
+  docs/DATA_PLATFORM.md (reference-layer section), this log
+  (the Cycle 58 "Measured" bullet, corrected above),
+  HANDOFF.md (Cycle 58 section), PR_BODY.md (errata note
+  appended — the PR #40 record is annotated, not rewritten).
+- GATE: docs only; gate 75 checks offline ALL PASS;
+  spellcheck green; platform spot-check unchanged (warehouse
+  rebuilt from 19 curated tables, parity r = 0.889 / 201);
+  dashboard rebuilds at 25 figures from committed snapshots.
+- Next: unchanged queue — the pending cron-wiring decision
+  (parent lane); Figure 9 owner item; Sportradar trial
+  ~Nov 15; final release cut before Dec 1.

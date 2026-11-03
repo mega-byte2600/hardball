@@ -672,10 +672,11 @@ paper retrieved this cycle); MLB's own branded book is 2013 print;
 no machine-readable edition on MLB properties; the Baseball
 America Almanac 2026 digital edition is password-protected
 (paywalled gap). **Elias Sports Bureau**: no public API, download,
-or data product (homepage 200 via curl; a text fetch refused 403)
+or data product (curl to the homepage dropped by the server —
+HTTP 000, empty reply; a text fetch refused 403)
 — official-by-citation only, now verified rather than assumed.
-**SABR**: homepage 429 → stopped; its data role is already counted
-(it publishes Lahman). **Hall of Fame**: homepage 200, editorial
+**SABR**: homepage 200 (110,244 bytes); nothing separately wired
+— its data role is already counted (it publishes Lahman). **Hall of Fame**: homepage 200, editorial
 site — REFERENCE-ONLY. Historical layer re-confirmed in one place:
 Retrosheet (adopted-solid historical), Lahman via SABR (solid
 historical; Salaries end 2016), Chadwick (ADOPTED, in platform),
@@ -693,6 +694,24 @@ tracked the injured list; Lahman = durability context only) —
 Figure 14's layer stays measured IL data. Gate: **75 checks
 offline, ALL PASS**; platform clean (ingest 25/0, curate 19
 tables, parity r = 0.889 / 201); spellcheck green.
+
+---
+
+## CYCLE 59 — CYCLE 58 PROBE-EVIDENCE CORRECTION (2026-11-02, docs only)
+
+Two evidence lines in the Cycle 58 section above were wrong as
+shipped and are corrected in place (also in the scorecard,
+DATA_PLATFORM, BML_LOG; PR_BODY carries an errata note).
+**SABR**: printed "homepage 429 → stopped" — the homepage
+answers 200 (110,244 bytes; re-probed on the record this
+cycle). Nothing separately wired: its role is Lahman, already
+counted. **Elias**: printed "200 via curl, 35,678 bytes" —
+curl to the homepage is dropped by the server (HTTP 000,
+empty reply; re-probed this cycle); the no-public-route
+verdict stands on that refusal plus the text fetch's 403.
+Cause: the Cycle 58 probe batch's in-flow result disagreed
+with its own completion record; the completion record and the
+re-probes govern. No verdicts, numbers, or wiring changed.
 
 ## Next
 

@@ -25,6 +25,17 @@ logged gaps, never routed around.
 Also logged: the Baseball America Almanac 2026 digital edition
 is password-protected for buyers — a paywalled gap.
 
+> **Errata (Cycle 59, 2026-11-02):** two probe-evidence lines
+> in the table above were wrong as shipped; the verdicts stand.
+> SABR's homepage answered **HTTP 200** (110,244 bytes) — not
+> 429; nothing separate is wired because its role is already
+> counted via Lahman. The Elias homepage via curl was **dropped
+> by the server** (HTTP 000, empty reply, curl exit 52) — not
+> "200 via curl"; the official-by-citation verdict rests on
+> that refusal plus the text fetch's 403. Corrected in the
+> scorecard, DATA_PLATFORM, BML_LOG, and HANDOFF; the Cycle 59
+> BML entry states the cause.
+
 ## Wiring decision — nothing new, on evidence
 
 The candidate job was a records cross-check. Repo-wide grep

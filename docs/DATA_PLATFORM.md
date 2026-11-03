@@ -191,8 +191,10 @@ REFERENCE-ONLY; the official record book is the Elias Sports
 Bureau's print volume (most recent edition located: 2021; no
 machine-readable edition exists on MLB properties); Elias
 itself offers no public API or download — it is
-official-by-citation only; SABR's homepage answered 429 and its
-data role here is already counted (it publishes Lahman). The
+official-by-citation only; SABR's homepage answered 200
+(110,244 bytes, 2026-11-02) and no separate ingestion is built,
+because its data role here is already counted (it publishes
+Lahman). The
 platform's historical layer stays what earlier cycles built:
 Retrosheet and Lahman as historical reference, the Chadwick
 Register adopted as `dim_player_xwalk`, The Baseball Cube as a
