@@ -2005,3 +2005,37 @@ count unchanged at 23. No NPB→MLB translation factor claimed anywhere.
 - Next: unchanged queue — the pending cron-wiring decision
   (parent lane); Figure 9 owner item; Sportradar trial
   ~Nov 15; final release cut before Dec 1.
+
+## Cycle 60 — publish the current dashboard: release v1.1.0 (2026-11-02, owner-directed)
+
+- Prompt: the owner reported the health API feed was not visible
+  on the site. Root cause, verified: `dashboard/hardball_demo.html`
+  is gitignored on main and only enters the repo at release cuts;
+  the newest release tag was v1.0.1 (2026-11-01), whose dashboard
+  predates Cycles 51–59 (zero of: live-IL panel, movement line,
+  optimizer headlines, UNC-2 intervals, evidence footnote).
+- Build: `src/dashboard_p6.py` run offline in a fresh main tree
+  (KPI URL pointed at an invalid host to force committed
+  snapshots; src/kpi.py restored before any push) →
+  dashboard/hardball_demo.html, 5,539,972 bytes.
+- Measured (content probes on the built file, repeated on the
+  published tag tree with identical counts): 25 figures;
+  "Current IL picture" ×2; "Movement since" ×2; "48.9 WAR" ×9,
+  "52.8 WAR" ×4, "54.8 WAR" ×5; ±20% ranges 45.0–53.2 / 48.5–55.5
+  / 50.4–55.9 present; UNC-2 intervals 33.0–46.9 / 36.0–50.7 /
+  37.6–52.4 present; Figure 14 evidence footnote ×1 in its exact
+  wording, href `../docs/EVIDENCE.html` (resolves from dashboard/
+  to docs/EVIDENCE.html — no source fix needed; the Cycle 57 gate
+  check already pins the href); footer names Statyx, FastballAPI,
+  PubMed.
+- Publish: docs PR merged first, then a release commit atop main
+  adding only the generated HTML; tag v1.1.0 at that commit;
+  GitHub release v1.1.0 (assets not uploaded — release uploads
+  return 401; the HTML lives in the tag tree, as in v1.0.1).
+- GATE: 75 checks offline ALL PASS on the publish tree;
+  spellcheck green; warehouse rebuilt from 19 curated tables,
+  parity r = 0.889 / 201.
+- Learn: a merged feature is not a published feature — the demo
+  the owner opens is the release tree, so a user-visible cycle is
+  not done until the built dashboard is re-published. Interim
+  publish only: the December freeze tag is still owed.

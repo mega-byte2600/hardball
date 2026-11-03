@@ -116,6 +116,11 @@ claims, no new thesis.
       sources. Later cycles re-verify only, and report drift if any.
 - [ ] Release tag cut from the frozen main (owner call — no tag exists
       yet). Record the tag + SHA here when cut.
+      Interim record (Cycle 60, 2026-11-02, owner-directed): v1.1.0
+      published from main 7d6128c0 — a release commit atop main adds
+      the built dashboard/hardball_demo.html and tag v1.1.0 points at
+      it (SHA in the GitHub release + goal timeline). This is NOT the
+      freeze tag; the frozen-main tag above is still owed.
 
 ### 2. Demo package (verify from the frozen main, DOM/data checks only)
 - [ ] Dashboard rebuilds offline with the lake: 23 figures, no
@@ -713,10 +718,45 @@ Cause: the Cycle 58 probe batch's in-flow result disagreed
 with its own completion record; the completion record and the
 re-probes govern. No verdicts, numbers, or wiring changed.
 
+---
+
+## CYCLE 60 — PUBLISH THE CURRENT DASHBOARD: RELEASE v1.1.0 (2026-11-02, owner-directed)
+
+The owner reported the health API feed was not visible on the
+site, and he was right: `dashboard/hardball_demo.html` is
+gitignored on main and only enters the repo at release cuts, and
+the newest release tag was **v1.0.1 (2026-11-01)** — a dashboard
+from before Cycles 51–59, with none of the live-IL panel, the
+feed movement line, the optimizer headlines, the UNC-2 ranges,
+or the Figure 14 evidence footnote. Cycle 60 publishes the
+current build.
+
+**Release v1.1.0** = this docs merge, plus a release commit atop
+main adding the one generated file
+`dashboard/hardball_demo.html` (5,539,972 bytes, built offline
+from committed snapshots off main 7d6128c0); tag `v1.1.0` points
+at that release commit, same pattern as the v1.0.1 tree. Built
+file verified by content, in the scratch build and again in the
+published tag tree: 25 figures; "Current IL picture — LIVE feeds
+(Statyx + FastballAPI, pulled 2026-11-02)"; the Cycle 55
+movement line; optimizer headlines 48.9 / 52.8 / 54.8 WAR with
+their ±20% price ranges (floor 45.0–53.2, middle 48.5–55.5, cap
+50.4–55.9); UNC-2 delivered-WAR intervals (floor 10th–90th
+33.0–46.9, middle 36.0–50.7, cap 37.6–52.4); the Figure 14
+footnote in its exact wording with href `../docs/EVIDENCE.html`
+(resolves from `dashboard/` to `docs/EVIDENCE.html`); sources
+footer naming Statyx, FastballAPI, PubMed. No source fix was
+needed — the footnote href already resolved and the Cycle 57
+gate check already pins it. Gate on the publish tree: **75
+checks offline, ALL PASS**; spellcheck green; warehouse parity
+r = 0.889 / 201. This is an interim publish, not the December
+freeze: the freeze tag is still owed (readiness checklist §1).
+
 ## Next
 
 Wire `src/refresh_live_feeds.py` AND
 `src/pull_evidence_surveillance.py` (6-day guard) into the
 6-hourly job — one pending cron-wiring decision (parent lane).
 Figure 9 disclosure remains an owner item. Sportradar trial
-~Nov 15. Final release cut before Dec 1.
+~Nov 15. Final freeze release cut before Dec 1 (v1.1.0 interim
+publish done, Cycle 60).

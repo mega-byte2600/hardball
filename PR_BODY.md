@@ -1,82 +1,44 @@
-# Cycle 58 — Record books & almanacs sweep
+# Cycle 60 — Publish the current dashboard (release v1.1.0)
 
-Owner standing directive (2026-11-02): "use almanacs, record
-books, APIs, open data — it's all about data, the numbers don't
-lie, get them." Source work only: **no claims added, no demo
-numbers changed, figure count stays 25.** Every verdict below is
-from a live probe on 2026-11-02 or a prior cycle's recorded
-verdict; 403/429 stopped the source for the cycle; paywalls are
-logged gaps, never routed around.
+Owner-directed (2026-11-02): the owner could not see the health
+API feed on the site, and he was right. `dashboard/hardball_demo.html`
+is gitignored on main ("Generated dashboard artifacts… neither is
+source") and only enters the repo at release cuts; the newest
+release tag was **v1.0.1 (2026-11-01)**, whose dashboard predates
+Cycles 51–59 and contains none of the live-IL panel, the feed
+movement line, the optimizer headlines, the UNC-2 ranges, or the
+Figure 14 evidence footnote.
 
-## The sweep (full table + evidence in the scorecard addendum)
+## This PR (docs only)
 
-| Source | Verdict |
-|---|---|
-| Baseball Almanac | REFERENCE-ONLY — homepage/robots 200, record-book path `/recbooks/` **403** (stopped); HTML-only, no API/CSV |
-| Official MLB Record Book | REFERENCE-ONLY (print) — Elias's book; latest edition located **2021**; no machine-readable edition on MLB properties |
-| Elias Sports Bureau | NO PUBLIC ROUTE — no API/download/data product; official-by-citation only (verified, not assumed) |
-| Retrosheet | ADOPTED-SOLID, historical (prior evaluation; one-line re-confirmation) |
-| Lahman (via SABR) | SOLID, historical (prior evaluation; Salaries end 2016) |
-| Chadwick Register | ADOPTED, in platform (Cycle 44) |
-| The Baseball Cube | EVALUATED, cross-check only (homepage re-probed 200) |
-| SABR (extra) | NOT PROBED FURTHER — homepage **429**, stopped per rule; role already counted via Lahman |
-| Hall of Fame (extra) | REFERENCE-ONLY — homepage 200; museum/editorial site, no data product |
+- HANDOFF.md: Cycle 60 release note; December readiness checklist
+  gains the interim v1.1.0 record (the freeze tag is still owed).
+- docs/BML_LOG.md: Cycle 60 entry.
+- PR_BODY.md: this file.
 
-Also logged: the Baseball America Almanac 2026 digital edition
-is password-protected for buyers — a paywalled gap.
+## The release (cut from the merge of this PR)
 
-> **Errata (Cycle 59, 2026-11-02):** two probe-evidence lines
-> in the table above were wrong as shipped; the verdicts stand.
-> SABR's homepage answered **HTTP 200** (110,244 bytes) — not
-> 429; nothing separate is wired because its role is already
-> counted via Lahman. The Elias homepage via curl was **dropped
-> by the server** (HTTP 000, empty reply, curl exit 52) — not
-> "200 via curl"; the official-by-citation verdict rests on
-> that refusal plus the text fetch's 403. Corrected in the
-> scorecard, DATA_PLATFORM, BML_LOG, and HANDOFF; the Cycle 59
-> BML entry states the cause.
-
-## Wiring decision — nothing new, on evidence
-
-The candidate job was a records cross-check. Repo-wide grep
-(record language + canonical totals across docs, src, data):
-**the demo states no canonical historical records** — nothing
-to cross-check, and no surface was invented for one. What the
-cycle settles instead:
-
-- **Citation rule:** any record stated in the demo from now on
-  cites the Elias record book or MLB's official publications,
-  by hand. Record books here are citation authority, not ingest.
-- **Dashboard footer unchanged** — it lists active sources
-  only, and none of these became active.
-- **Health & availability lens** (one line per source in the
-  scorecard): the record-book class adds no IL/workload data —
-  Retrosheet never tracked the injured list, Lahman gives
-  durability context only. Figure 14's layer stays measured IL
-  data.
-- One sourced caveat worth knowing: the Retrosheet paper that
-  cites the 2021 Elias book notes a record it establishes was
-  "not even included" in the most recent Elias or Sporting News
-  record books — even the official book is not exhaustive,
-  which is exactly why this project cites records rather than
-  copying them.
+A release commit atop the merged main adds the one generated file
+`dashboard/hardball_demo.html` (5,539,972 bytes, built offline from
+committed snapshots); tag **v1.1.0** points at that commit — the
+same pattern as the v1.0.1 tree. Release assets are not uploaded
+(uploads return 401); the HTML lives in the tag tree.
 
 ## Verification
 
-- Platform: ingest 25 datasets / 0 failures; curate 19 tables,
-  all contracts pass; warehouse rebuilt; parity
-  **r = 0.889 / 201**.
-- Gate: **75 checks offline, ALL PASS** (unchanged — no new
-  rendered pins); spellcheck green; dashboard rebuilds at 25
-  figures from committed snapshots. No browser visual QA
-  (standing rule). GitHub Actions ignored per the owner's
-  blackout directive (until Dec 1).
+Built file probed by content, in the scratch build and again in
+the published tag tree (identical counts): 25 figures;
+"Current IL picture — LIVE feeds (Statyx + FastballAPI, pulled
+2026-11-02)"; the Cycle 55 movement line; headlines 48.9 / 52.8 /
+54.8 WAR with ±20% price ranges (45.0–53.2 / 48.5–55.5 /
+50.4–55.9); UNC-2 delivered-WAR intervals (33.0–46.9 / 36.0–50.7
+/ 37.6–52.4); the Figure 14 footnote in its exact wording with
+href `../docs/EVIDENCE.html`, which resolves from `dashboard/` to
+`docs/EVIDENCE.html` (no source fix needed — the Cycle 57 gate
+check already pins that href); sources footer naming Statyx,
+FastballAPI, PubMed.
 
-## Docs
-
-`docs/CARPE_SCORECARD.md` (Cycle 58 addendum: the complete
-record-book layer in one table, probe evidence, wiring
-decision), `docs/DATA_PLATFORM.md` (reference-layer section),
-`docs/BML_LOG.md`, `HANDOFF.md` (Next unchanged: the pending
-cron-wiring decision, Figure 9 owner item, Sportradar ~Nov 15,
-final release cut).
+Gate on the publish tree: **75 checks offline, ALL PASS**;
+spellcheck green; warehouse parity **r = 0.889 / 201**. No claims,
+figures, or data changed. Interim publish — the December freeze
+tag remains owed.
