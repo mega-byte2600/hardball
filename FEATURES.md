@@ -89,9 +89,9 @@ gate strings appear in the HTML.
 24. Hakes–Sauer verdict (our own pricing test; honest INCONCLUSIVE)
 25. Optimizer audit (MILP vs greedy benchmark)
 
-## Cycle-71 ARBITRAGE layer (Moneyball 2.0) — the newest feature
+## Cycle-71 ARBITRAGE layer (Moneyball 2.0)
 
-What it is: ranks the 2027 free agents by SURPLUS VALUE = projected dollars of
+Ranks the 2027 free agents by SURPLUS VALUE = projected dollars of
 wins (Steamer WAR x market $/WAR) MINUS expected market cost (Spotrac market
 AAV) — the operative number a real front office decides on (Miami Marlins VP of
 Baseball Systems, Posit 2025). Moneyball 2.0 is pricing the whole market against
@@ -108,6 +108,30 @@ one value reality, then trading the gap.
   red = overpriced; value-vs-cost in the labels.
 - Honest caveat: surplus is a valuation, not a settled mispricing — a cheap
   player can be cheap for injury/role/age risk.
+
+## Cycle-73 PREDICTION TRANSPARENCY layer (RBP-style conviction)
+
+Per-project how-trustworthy-before-acting label, the MIT relevance-based
+prediction goal done on committed data (no Mahalanobis reimplementation):
+- `src/bml_cycle73.py` -> `data/prediction_conviction_2027.json`
+- conviction = input_stability from committed PRIOR-season contact%/BB%
+  spread across 2+ years (data/player_yoy.json). 49 HIGH / 30 MEDIUM /
+  1 LOW / 121 NO_PRIOR. The 121 with no committed 2-season record are
+  honestly labeled NO_PRIOR (capped below HIGH), never inflated.
+- Proj_PA is deliberately NOT a signal (uniform 500-PA default = invented
+  axis). Do not reintroduce it.
+- Surface: per-bar label + legend on Figure 12 (2027 projected hitters).
+
+## Savant refinement backtest — ALREADY SHIPPED (read, do not rebuild)
+
+data/savant_test.json (Cycle 20): xwOBA is a better projection INPUT
+(Q1), but every feature family (batted-ball, bat-tracking, all) was
+DROPPED as a projection adjustment (F1-F4) — bat speed (YoY r .92, the
+most stable trait) made projections WORSE out-of-sample. Claim N04 NOT
+SUPPORTED; Figure 19 diagnostics only. If asked "can we add bat speed /
+swing-path / attack-angle?", the honest answer is already committed: NOT
+as a projection feature. Any further work is a product/demo exhibit only
+(novel bat-speed framing), not a modeling claim — an open thread for Toby.
 
 ## The math (built literature-first)
 

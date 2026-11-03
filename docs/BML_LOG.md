@@ -2393,3 +2393,46 @@ No claim or data changed; dashboard untouched (still 25 figures).
   spellcheck green. Shipped as PR + merge (owner pre-approval
   pattern): data/tracker_ticker_2026.json + rebuilt
   dashboard/hardball_demo.html + this log entry.
+
+## Cycle 73 — PREDICTION TRANSPARENCY: the conviction layer (RBP-style, owner request 2026-11-03)
+
+- The MIT/Sloan transparency point, done honestly: a black-box model says a
+  number; relevance-based prediction says HOW TRUSTWORTHY that specific
+  prediction is BEFORE it is acted on (RBP; LITERATURE_SPINE [18]). We
+  adopt the transparency GOAL, computed from committed data rather than
+  reimplementing the Mahalanobis reliability machinery — and we refuse the
+  fake version.
+- DESIGN DECISION the repo should keep: projected playing time (proj_PA) is
+  deliberately NOT a conviction input, because in the committed artifact it
+  is a uniform 500-PA default across all 201 hitters — a projection
+  assumption, not a real workload signal. Feeding it in would be the exact
+  invented differentiator this layer exists to remove. (First draft did
+  exactly that and shipped a degenerate HIGH=49/MEDIUM=151/LOW=1; caught
+  and killed it before commit.)
+- BUILD: src/bml_cycle73.py -> data/prediction_conviction_2027.json. For
+  every 201 hitter: conviction = input_stability from committed PRIOR-
+  season contact% (tight <5.0 pts) + BB% (tight <3.0 pts) across 2+ years
+  (data/player_yoy.json). HIGH=both tight (49), MEDIUM=one tight (30),
+  LOW=neither (1), NO_PRIOR=no committed 2-season record (121). Honest
+  distribution: the 80 players with records are the only ones we can call
+  HIGH/MEDIUM/LOW; the 121 without are labeled NO_PRIOR, capped below HIGH —
+  never an invented high score.
+- DASHBOARD: Figure 12 (2027 projected hitters by OBP) now carries a
+  conviction legend + per-bar label (● high / ○ medium / ▽ low / no prior
+  record) + an in-title explanation. Honest and notable: Judge/Soto/Alvarez
+  render NO_PRIOR because data/player_yoy.json (80 players) has no committed
+  2-season record for them — the layer flags the gap rather than pretending.
+- figure_trace Fig 12 entry + verify_data gate updated to the conviction
+  strings; cycle68 -> cycle69 sequence preserves O01 resolved.
+- GATE: 75 checks ALL PASS + spellcheck green + accuracy monitor.
+- ITEM 2 STATUS: the Savant refinement backtest is ALREADY SHIPPED in this
+  repo (data/savant_test.json, Cycle 20): xwOBA is a better projection INPUT
+  (Q1) but every feature family (batted-ball, bat-tracking, all) was DROPPED
+  as a projection adjustment (Q3 F1-F4) — bat speed, the most stable trait
+  (YoY r .92), made projections WORSE out-of-sample; "no, bat speed does not
+  improve this projection." Surfaced as claim N04 (NOT SUPPORTED) + Figure 19
+  (diagnostics only). NOT a new build — an existing honest negative re-read.
+- TODO handoff (Toby/owner): bat speed / swing-path / attack-angle as
+  open BML question — already ANSWERED NEGATIVE as a projection feature by
+  savant_test.json, so the open thread is product/demo framing only (e.g. a
+  novel bat-speed exhibit), NOT a modeling claim.

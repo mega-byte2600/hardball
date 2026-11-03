@@ -776,8 +776,10 @@ def main() -> int:
          f"covered={covered} uncovered={uncovered}")
     proj27 = load("projections_2027.json")
     top_name = max(proj27, key=lambda r: r["proj_OBP"])["name"]
-    _fig(12, "hitter projections: top-OBP name from artifact leads the panel",
-         top_name in html_qa and "projected hitters by OBP" in html_qa,
+    _fig(12, "hitter projections: top-OBP name leads + conviction layer (Cycle 73)",
+         top_name in html_qa and "projected hitters by OBP" in html_qa
+         and "conviction" in html_qa
+         and "no prior record" in html_qa,
          f"top={top_name}")
     if (DATA / "mlb_lake.db").exists():
         _fig(13, "pitching panel built from the lake, title in HTML",

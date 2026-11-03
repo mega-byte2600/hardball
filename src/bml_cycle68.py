@@ -634,9 +634,10 @@ def trace_figures(html_text):
                      f"CHC the only uncovered team",
          "markers": ["Forced sellers"], "build": "python3 src/dashboard_p6.py"},
         {"figure": 12, "title": "2027 projected hitters by OBP (Marcel)",
-         "artifacts": ["data/projections_2027.json"],
+         "artifacts": ["data/projections_2027.json",
+                       "data/prediction_conviction_2027.json"],
          "headline": f"top OBP: {top_obp}",
-         "markers": [top_obp, "projected hitters by OBP"],
+         "markers": [top_obp, "projected hitters by OBP", "no prior record"],
          "build": "python3 src/dashboard_p6.py"},
         {"figure": 13, "title": "Pitching is the other winning-cheap half",
          "artifacts": ["data/mlb_lake.db (local build artifact, gitignored) "

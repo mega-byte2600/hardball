@@ -173,8 +173,18 @@ def panel_durability():
 
 
 def panel_player_proj():
-    """2027 Marcel projections: top hitters by OBP, colored by team group."""
+    """2027 Marcel projections: top hitters by OBP, colored by team group.
+    Cycle 73 overlay: each bar's label carries the RBP-style CONVICTION
+    (HIGH/MEDIUM/LOW/NO_PRIOR) so the room sees which projections are
+    trustworthy before acting — predicted playing time is a uniform
+    500-PA default here, so conviction comes from committed prior-season
+    input stability only (data/prediction_conviction_2027.json)."""
     proj = pd.read_json(os.path.join(DATA, "projections_2027.json"))
+    conv = {}
+    cj = os.path.join(DATA, "prediction_conviction_2027.json")
+    if os.path.exists(cj):
+        conv = {r["player_id"]: r["conviction"] for r in
+                json.load(open(cj)).get("rows", [])}
     top = proj.sort_values("proj_OBP", ascending=False).head(15)
     def grp(team):
         t = (str(team) or "").upper()
@@ -185,17 +195,33 @@ def panel_player_proj():
         if ab in CHEAP_MEDIOCRE: return "orange"
         return "steelblue"
     colors = [grp(t) for t in top["team"]]
+    def cvlabel(pid):
+        c = conv.get(pid, "NO_PRIOR")
+        mark = {"HIGH": "● high-conviction", "MEDIUM": "○ medium",
+                "LOW": "▽ low", "NO_PRIOR": "no prior record"}[c]
+        return mark
+    labels = [f"{v:.3f} · {cvlabel(pid)}" for v, pid in
+              zip(top["proj_OBP"], top["player_id"])]
     fig = go.Figure(go.Bar(x=top["name"], y=top["proj_OBP"], marker_color=colors,
-                           text=[f"{v:.3f}" for v in top["proj_OBP"]], textposition="outside"))
+                           text=labels, textposition="outside"))
     for label, c in [("Green = winning-cheap (MIL/TB/CLE)", "#1b5e20"),
                      ("Orange = cheap-mediocre (MIA/CHW/STL)", "#e65100"),
                      ("Blue = other", "#1565c0")]:
         fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
                                  marker=dict(color=c, size=10), name=label))
+    fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
+                             marker=dict(color="#37474f", size=10),
+                             name="conviction: ● high · ○ medium · ▽ low · no prior record"))
     fig.update_layout(title="2027 projected hitters by OBP (Marcel, real lake data) — "
-                            "green = winning-cheap team",
+                            "green = winning-cheap team<br>"
+                            "<sub>Conviction (RBP-style transparency, Cycle 73) = stability of a "
+                            "player's committed PRIOR-season contact% + BB% across 2+ years. "
+                            "Players with no committed 2-season record (incl. some stars) are "
+                            "honestly labeled 'no prior record' — never an invented high score. "
+                            "Source: data/prediction_conviction_2027.json.</sub>",
                       xaxis_title="", yaxis_title="Projected OBP",
-                      template="plotly_white", height=440)
+                      template="plotly_white", height=500,
+                      margin=dict(b=180))
     return fig
 
 

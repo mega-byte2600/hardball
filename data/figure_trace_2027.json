@@ -184,12 +184,14 @@
    "figure": 12,
    "title": "2027 projected hitters by OBP (Marcel)",
    "artifacts": [
-    "data/projections_2027.json"
+    "data/projections_2027.json",
+    "data/prediction_conviction_2027.json"
    ],
    "headline": "top OBP: Aaron Judge",
    "markers": [
     "Aaron Judge",
-    "projected hitters by OBP"
+    "projected hitters by OBP",
+    "no prior record"
    ],
    "build": "python3 src/dashboard_p6.py",
    "panel_present": true,
