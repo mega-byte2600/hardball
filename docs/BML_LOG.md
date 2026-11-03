@@ -2513,3 +2513,33 @@ No claim or data changed; dashboard untouched (still 25 figures).
   source did publish. The residual risk is basis-mixing, and the
   defense is labeling: every Cot's-basis number in the demo says
   so where it renders.
+
+## Cycle 76 — visual redesign: MLB colors + Rays secondary
+
+- Presentation-only cycle (owner: "executives looking at this
+  can't be junk"; palette directed in chat, superseding the
+  brass draft). Page is now MLB Navy #041E42 with Rays Navy
+  #092C5C panels, white text, Columbia Blue #8FBCE6 dim text,
+  MLB Red #BF0D3E the single accent, Rays Gold #F5D130 only on
+  the data-as-of stamp, numerals, and the posting-fee line.
+  Fraunces / Inter / IBM Plex Mono via Google Fonts + fallbacks;
+  one central Plotly template in _number() restyles all 25
+  figures (transparent grounds, muted grids, Columbia legend).
+- Group semantics recolored exactly (#1b5e20 -> #43b581,
+  #e65100 -> #e08a3c, #1565c0 -> #8FBCE6, #d50032 -> #BF0D3E);
+  key swatches gate-asserted equal to trace hexes. Figure-data
+  audit: trace x/y/text arrays identical pre/post on 25/25
+  figures — zero data movement. Dashboard 5,645,837 ->
+  5,402,333 bytes.
+- WCAG (computed, also recomputed in the gate): white/ink
+  16.54:1, Columbia/ink 8.27:1, gold/ink 11.06:1, white/panel
+  13.76:1, Columbia/panel 6.88:1, gold/panel 9.20:1, white/
+  accent 6.28:1. Red-on-navy (2.63:1) is non-text chrome only.
+  Numeral labels (chapter/slide) moved red -> gold for exactly
+  this reason (9.20:1 on panel).
+- Gate 107 ALL PASS (+5 Cycle 76 checks; no existing check
+  edited — none pinned an old string). Spellcheck green.
+  Parity r = 0.889 / 201. Release v1.1.11.
+- LEARNED: a theme change is a data change until proven
+  otherwise — the pre/post trace-array diff is the proof, and
+  it is cheap enough to run every time a panel is touched.

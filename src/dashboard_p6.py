@@ -43,33 +43,33 @@ FLOOR = 171_200_000
 
 def _color(team):
     if team in WIN_CHEAP:
-        return "green"
+        return "#43b581"
     if team in CHEAP_MEDIOCRE:
-        return "orange"
-    return "steelblue"
+        return "#e08a3c"
+    return "#8FBCE6"
 
 
 def panel_payroll_wins(df, year=2026):
     d = df[df["season"] == year].dropna(subset=["payroll", "wins"])
     fig = go.Figure()
-    for g, color, name in [("WIN_CHEAP", "green", "Winning-cheap (CLE/TB/MIL)"),
-                           ("CHEAP_MEDIOCRE", "orange", "Cheap-mediocre (MIA/CHW/STL)"),
-                           ("OTHER", "steelblue", "Other")]:
+    for g, color, name in [("WIN_CHEAP", "#43b581", "Winning-cheap (CLE/TB/MIL)"),
+                           ("CHEAP_MEDIOCRE", "#e08a3c", "Cheap-mediocre (MIA/CHW/STL)"),
+                           ("OTHER", "#8FBCE6", "Other")]:
         sub = d[d["group"] == g]
         fig.add_trace(go.Scatter(
             x=sub["payroll"] / 1e6, y=sub["wins"], mode="markers+text",
             name=name, marker=dict(color=color, size=12),
             text=[f"<b>{t}</b>" for t in sub["team"]], textposition="top center"))
-    fig.add_vline(x=CAP / 1e6, line_dash="dash", line_color="red",
+    fig.add_vline(x=CAP / 1e6, line_dash="dash", line_color="#BF0D3E",
                   annotation_text=f"Proposed cap $245.3M", annotation_position="top right")
-    fig.add_vline(x=FLOOR / 1e6, line_dash="dot", line_color="purple",
+    fig.add_vline(x=FLOOR / 1e6, line_dash="dot", line_color="#F5D130",
                   annotation_text=f"Proposed floor $171.2M", annotation_position="bottom right")
     fig.update_layout(title=f"{year} — Payroll ($M) vs Wins: money buys some wins; winning-cheap teams win MORE per $",
                       xaxis_title="Total payroll ($ millions)", yaxis_title="Wins",
                       template="plotly_white", height=520)
-    fig.add_hline(y=81, line_dash="dash", line_color="#d50032", opacity=0.75,
+    fig.add_hline(y=81, line_dash="dash", line_color="#BF0D3E", opacity=0.75,
                   annotation_text="league avg = 81 wins (.500)",
-                  annotation_position="bottom left", annotation_font=dict(color="#d50032", size=11))
+                  annotation_position="bottom left", annotation_font=dict(color="#BF0D3E", size=11))
     return fig
 
 
@@ -83,7 +83,7 @@ def panel_kpi(df, year=2026):
               "HR/PA": "HR / 1000 PA<br><span style='font-weight:400;font-size:10px'>home runs</span>",
               "contact": "Contact %<br><span style='font-weight:400;font-size:10px'>hits ball</span>",
               "K%": "K%<br><span style='font-weight:400;font-size:10px'>strikeouts</span>"}
-    colors = {"WIN_CHEAP": "#1b5e20", "CHEAP_MEDIOCRE": "#e65100", "OTHER": "#1565c0"}
+    colors = {"WIN_CHEAP": "#43b581", "CHEAP_MEDIOCRE": "#e08a3c", "OTHER": "#8FBCE6"}
     gname = {"WIN_CHEAP": "Winning-cheap (MIL·TB·CLE)", "CHEAP_MEDIOCRE": "Cheap-mediocre",
              "OTHER": "Other"}
     fig = make_subplots(rows=1, cols=len(metrics),
@@ -104,34 +104,34 @@ def panel_kpi(df, year=2026):
                       barmode="group",
                       margin=dict(l=40, r=20, t=64, b=96))
     fig.update_xaxes(showticklabels=False, showgrid=False, zeroline=False)
-    fig.update_yaxes(showgrid=True, gridcolor="#eef1f6")
+    fig.update_yaxes(showgrid=True, gridcolor="rgba(255,255,255,0.08)")
     return fig
 
 
 def panel_projections(proj_fname="projections_2026.json"):
     proj = pd.read_json(os.path.join(DATA, proj_fname))
     fig = go.Figure()
-    colors = [("green" if t in WIN_CHEAP else "orange" if t in CHEAP_MEDIOCRE else "steelblue")
+    colors = [("#43b581" if t in WIN_CHEAP else "#e08a3c" if t in CHEAP_MEDIOCRE else "#8FBCE6")
               for t in proj["team"]]
     fig.add_trace(go.Bar(x=proj["team"], y=proj["proj_wins"], marker_color=colors,
                          name="Model fit (in-sample)",
                          text=[f"{v:.0f}" for v in proj["proj_wins"]], textposition="outside"))
-    fig.add_trace(go.Bar(x=proj["team"], y=proj["actual_wins"], marker_color="rgba(213,0,50,0.55)",
+    fig.add_trace(go.Bar(x=proj["team"], y=proj["actual_wins"], marker_color="rgba(191,13,62,0.55)",
                          name="Actual wins",
                          text=[f"{int(v)}" for v in proj["actual_wins"]], textposition="inside"))
     fig.update_layout(title="2026 — Model fit (in-sample) vs actual wins, by team",
                       xaxis_title="Team", yaxis_title="Wins",
                       template="plotly_white", height=460,
                       legend=dict(orientation="h", y=-0.25))
-    fig.add_hline(y=81, line_dash="dash", line_color="#d50032", opacity=0.75,
+    fig.add_hline(y=81, line_dash="dash", line_color="#BF0D3E", opacity=0.75,
                   annotation_text="league avg = 81 wins",
-                  annotation_position="bottom left", annotation_font=dict(color="#d50032", size=11))
+                  annotation_position="bottom left", annotation_font=dict(color="#BF0D3E", size=11))
     fig.add_annotation(x=0, y=0.02, xref="paper", yref="paper", showarrow=False, xanchor="left",
                        text="<i>In-sample fit: the model was trained on the same 2025–26 team "
                             "seasons it scores here, so this is calibration, not a forecast — "
                             "actual wins are shown alongside. Forecast quality is V&V'd in "
                             "Chapter 6 (out-of-sample).</i>",
-                       font=dict(size=11, color="#4a5a72"))
+                       font=dict(size=11, color="#8FBCE6"))
     return fig
 
 
@@ -149,7 +149,7 @@ def panel_durability():
         "Wins per $100M (payroll quartile, 2000-2024)",
         "Wins by payroll quartile (2000-2024)"],
         horizontal_spacing=0.18)
-    colors = ["#2e7d32", "#8bc34a", "#ef6c00", "#1565c0"]
+    colors = ["#43b581", "#79c9a4", "#e08a3c", "#8FBCE6"]
     fig.add_trace(go.Bar(x=labels, y=agg["win100"].values, marker_color=colors,
                          text=[f"{v:.0f}" for v in agg["win100"]], textposition="outside",
                          name="Wins per $100M",
@@ -164,11 +164,11 @@ def panel_durability():
                              "but cheap wins per $, not wins (winning-cheap = both)",
                       template="plotly_white", height=420,
                       margin=dict(l=50, r=20, t=64, b=96))
-    fig.add_hline(y=81, row=1, col=2, line_dash="dash", line_color="#d50032", opacity=0.7,
+    fig.add_hline(y=81, row=1, col=2, line_dash="dash", line_color="#BF0D3E", opacity=0.7,
                   annotation_text="league avg = 81 wins",
-                  annotation_position="bottom left", annotation_font=dict(color="#d50032", size=10))
+                  annotation_position="bottom left", annotation_font=dict(color="#BF0D3E", size=10))
     fig.update_xaxes(showgrid=False)
-    fig.update_yaxes(showgrid=True, gridcolor="#eef1f6")
+    fig.update_yaxes(showgrid=True, gridcolor="rgba(255,255,255,0.08)")
     return fig
 
 
@@ -191,9 +191,9 @@ def panel_player_proj():
         ab = {"NEW YORK YANKEES":"NYY","HOUSTON ASTROS":"HOU","NEW YORK METS":"NYM",
               "MILWAUKEE BREWERS":"MIL","TAMPA BAY RAYS":"TB","ARIZONA DIAMONDBACKS":"AZ",
               "DETROIT TIGERS":"DET","LOS ANGELES DODGERS":"LAD"}.get(t.upper(), (t or "")[:3])
-        if ab in WIN_CHEAP: return "green"
-        if ab in CHEAP_MEDIOCRE: return "orange"
-        return "steelblue"
+        if ab in WIN_CHEAP: return "#43b581"
+        if ab in CHEAP_MEDIOCRE: return "#e08a3c"
+        return "#8FBCE6"
     colors = [grp(t) for t in top["team"]]
     def cvlabel(pid):
         c = conv.get(pid, "NO_PRIOR")
@@ -204,13 +204,13 @@ def panel_player_proj():
               zip(top["proj_OBP"], top["player_id"])]
     fig = go.Figure(go.Bar(x=top["name"], y=top["proj_OBP"], marker_color=colors,
                            text=labels, textposition="outside"))
-    for label, c in [("Green = winning-cheap (MIL/TB/CLE)", "#1b5e20"),
-                     ("Orange = cheap-mediocre (MIA/CHW/STL)", "#e65100"),
-                     ("Blue = other", "#1565c0")]:
+    for label, c in [("Green = winning-cheap (MIL/TB/CLE)", "#43b581"),
+                     ("Orange = cheap-mediocre (MIA/CHW/STL)", "#e08a3c"),
+                     ("Blue = other", "#8FBCE6")]:
         fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
                                  marker=dict(color=c, size=10), name=label))
     fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
-                             marker=dict(color="#37474f", size=10),
+                             marker=dict(color="#9aa3b2", size=10),
                              name="conviction: ● high · ○ medium · ▽ low · no prior record"))
     fig.update_layout(title="2027 projected hitters by OBP (Marcel, real lake data) — "
                             "green = winning-cheap team<br>"
@@ -266,7 +266,7 @@ def panel_pitching():
     metrics = ["ERA", "WHIP", "BB/9"]
     labels = {"ERA":"ERA","WHIP":"WHIP","BB/9":"BB per 9 IP"}
     fig = make_subplots(rows=1, cols=3, subplot_titles=[labels[m] for m in metrics])
-    colors = {"WIN_CHEAP":"#1b5e20","CHEAP_MEDIOCRE":"#e65100","OTHER":"#1565c0"}
+    colors = {"WIN_CHEAP":"#43b581","CHEAP_MEDIOCRE":"#e08a3c","OTHER":"#8FBCE6"}
     for i, m in enumerate(metrics, start=1):
         for grp in ["WIN_CHEAP","CHEAP_MEDIOCRE","OTHER"]:
             fig.add_trace(go.Bar(x=[grp], y=[g.loc[grp, m]], marker_color=colors[grp],
@@ -290,22 +290,22 @@ def panel_health():
               "DETROIT TIGERS":"DET","LOS ANGELES DODGERS":"LAD","MINNESOTA TWINS":"MIN",
               "SEATTLE MARINERS":"SEA","ST. LOUIS CARDINALS":"STL","ATLANTA BRAVES":"ATL",
               "PITTSBURGH PIRATES":"PIT","CHICAGO WHITE SOX":"CHW"}.get(t.upper(), (t or "")[:3])
-        if ab in WIN_CHEAP: return "#1b5e20"
-        if ab in CHEAP_MEDIOCRE: return "#e65100"
-        return "#1565c0"
+        if ab in WIN_CHEAP: return "#43b581"
+        if ab in CHEAP_MEDIOCRE: return "#e08a3c"
+        return "#8FBCE6"
     fig = go.Figure(go.Bar(
         x=top["name"], y=top["pa_penalty_pct"],
         marker_color=[grp(t) for t in top["team"]],
         text=[f"-{v:.0f}% PA" for v in top["pa_penalty_pct"]], textposition="outside"))
     # Explicit legend so the reader knows what each color means
     fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
-                             marker=dict(color="#1b5e20", size=10),
+                             marker=dict(color="#43b581", size=10),
                              name="Green = winning-cheap team (MIL/TB/CLE)"))
     fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
-                             marker=dict(color="#e65100", size=10),
+                             marker=dict(color="#e08a3c", size=10),
                              name="Orange = cheap-mediocre team (MIA/CHW/STL)"))
     fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
-                             marker=dict(color="#1565c0", size=10),
+                             marker=dict(color="#8FBCE6", size=10),
                              name="Blue = other team"))
     fig.update_layout(title="2027 health risk (IL-based PA cap, 2025-26 real injury data) — "
                             "playtime you should NOT count on",
@@ -336,7 +336,7 @@ def panel_health():
     combo.add_trace(go.Table(
         header=dict(values=["Free agent", "Team", "Status (live feed)",
                             "Injury", "Expected return"],
-                    fill_color="#14213d",
+                    fill_color="#0d3568",
                     font=dict(color="white", size=12), align="left"),
         cells=dict(values=[
             [p["name"] for p in players],
@@ -345,7 +345,7 @@ def panel_health():
             [(p["type"] or "") + (" — " + p["detail"] if p["detail"] else "")
              for p in players],
             [p["return_date"] or "" for p in players]],
-            fill_color="#f2f4f8", font=dict(size=12), align="left")),
+            fill_color="#0a2a52", font=dict(size=12, color="#FFFFFF"), align="left")),
         row=2, col=1)
     combo.update_layout(
         title=fig.layout.title.text,
@@ -398,16 +398,16 @@ def panel_roster():
                                         "Proposed pitching core (13) — health-weighted innings"],
                         horizontal_spacing=0.30)
     h = hits.sort_values("proj_OBP", ascending=False).head(13)
-    colors_h = ["#1b5e20" if str(t).upper()[:3] in WIN_CHEAP or t in
+    colors_h = ["#43b581" if str(t).upper()[:3] in WIN_CHEAP or t in
                 {"Milwaukee Brewers","Tampa Bay Rays","Cleveland Guardians"}
-                else "#1565c0" for t in h["team"]]
+                else "#8FBCE6" for t in h["team"]]
     fig.add_trace(go.Bar(y=h["name"], x=h["proj_OBP"], orientation="h",
                          marker_color=colors_h, name="Projected OBP",
                          text=[f"{v:.3f}" for v in h["proj_OBP"]], textposition="inside",
                          insidetextanchor="end"), 1, 1)
     p = pits.sort_values("proj_IP_health", ascending=False).head(13)
-    colors_p = ["#1b5e20" if t in {"Milwaukee Brewers","Tampa Bay Rays","Cleveland Guardians"}
-                else "#1565c0" for t in p["team"]]
+    colors_p = ["#43b581" if t in {"Milwaukee Brewers","Tampa Bay Rays","Cleveland Guardians"}
+                else "#8FBCE6" for t in p["team"]]
     fig.add_trace(go.Bar(y=p["name"], x=p["proj_IP_health"], orientation="h",
                          marker_color=colors_p, name="Projected IP",
                          text=[f"{v:.0f}" for v in p["proj_IP_health"]], textposition="inside",
@@ -417,14 +417,14 @@ def panel_roster():
                       template="plotly_white", height=620,
                       barmode="overlay", bargap=0.15,
                       margin=dict(l=120, r=30, t=64, b=96))
-    fig.update_xaxes(showgrid=True, gridcolor="#eef1f6")
+    fig.update_xaxes(showgrid=True, gridcolor="rgba(255,255,255,0.08)")
     fig.update_yaxes(showgrid=False, automargin=True)
     # legend for the green/blue color meaning
     fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
-                             marker=dict(color="#1b5e20", size=10),
+                             marker=dict(color="#43b581", size=10),
                              name="Green = winning-cheap source team (MIL/TB/CLE)", showlegend=True))
     fig.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
-                             marker=dict(color="#1565c0", size=10),
+                             marker=dict(color="#8FBCE6", size=10),
                              name="Blue = other team", showlegend=True))
     return fig
 
@@ -437,9 +437,9 @@ def panel_runs():
     d = pd.read_json(runs)
     d26 = d[d["season"] == 2026].dropna(subset=["RD", "wins"])
     def grp(team):
-        if team in WIN_CHEAP: return "#1b5e20"
-        if team in CHEAP_MEDIOCRE: return "#e65100"
-        return "#1565c0"
+        if team in WIN_CHEAP: return "#43b581"
+        if team in CHEAP_MEDIOCRE: return "#e08a3c"
+        return "#8FBCE6"
     fig = go.Figure()
     # Clean: markers only, team names on hover (labels overlapped before)
     for gname, sel in [("Winning-cheap (MIL·TB·CLE)", d26["team"].isin(WIN_CHEAP)),
@@ -457,16 +457,16 @@ def panel_runs():
     b, a = _np.polyfit(d26["RD"].values, d26["wins"].values, 1)
     xs = _np.linspace(d26["RD"].min(), d26["RD"].max(), 50)
     fig.add_trace(go.Scatter(x=xs, y=a + b * xs, mode="lines",
-                             line=dict(color="#d50032", dash="dash", width=2),
+                             line=dict(color="#BF0D3E", dash="dash", width=2),
                              name=f"fit: wins ≈ {a:.0f} + {b:.2f}·RunDiff (R² see source)"))
     fig.update_layout(title="The top lever — run differential → wins (2026, real); hover any dot for the team",
                       xaxis_title="Run differential (scored − allowed)",
                       yaxis_title="Wins", template="plotly_white", height=440,
                       xaxis_range=[-150, 350],
                       margin=dict(l=60, r=30, t=64, b=96))
-    fig.add_hline(y=81, line_dash="dot", line_color="#d50032", opacity=0.6,
+    fig.add_hline(y=81, line_dash="dot", line_color="#BF0D3E", opacity=0.6,
                   annotation_text="league avg = 81 wins",
-                  annotation_position="bottom right", annotation_font=dict(color="#d50032", size=11))
+                  annotation_position="bottom right", annotation_font=dict(color="#BF0D3E", size=11))
     return fig
 
 
@@ -498,7 +498,7 @@ def panel_auc():
     base_rate = log["run-diff-only"]["25->26"]["base_rate"]
     fig = go.Figure()
     for r in rows:
-        color = "#1b5e20" if r["label"].startswith("Run differential") else "#1565c0"
+        color = "#43b581" if r["label"].startswith("Run differential") else "#8FBCE6"
         fig.add_trace(go.Bar(
             x=[r["auc"]], y=[r["label"]], orientation="h",
             marker_color=color,
@@ -539,7 +539,7 @@ def panel_sensitivity():
     for feat, v in items:
         labels.append(legend.get(feat, feat))
         dW.append(v["dWins"])
-        colors.append("#1b5e20" if v["dWins"] >= 0 else "#d50032")
+        colors.append("#43b581" if v["dWins"] >= 0 else "#BF0D3E")
     fig = go.Figure(go.Bar(x=dW, y=labels, orientation="h",
                            marker=dict(color=colors),
                            text=[f"{v:+.2f}" for v in dW], textposition="outside"))
@@ -564,18 +564,18 @@ def panel_cap_scenario():
     over = d[d["gap_M"] > 0].head(7)
     under = d[d["gap_M"] < 0].tail(7)
     show = pd.concat([over, under])
-    colors = ["#d50032"] * len(over) + ["#1b5e20"] * len(under)  # red if must cut, green if get pool
+    colors = ["#BF0D3E"] * len(over) + ["#43b581"] * len(under)  # red if must cut, green if get pool
     fig = go.Figure(go.Bar(x=show["team"], y=show["gap_M"], marker_color=colors,
                            text=[f"{v:+.1f}M" for v in show["gap_M"]], textposition="outside"))
-    fig.add_hline(y=0, line_width=1, line_color="#6b7280")
-    fig.add_hline(y=FLOORV - 245.3, line_dash="dot", line_color="#7f1d1d", opacity=0.4)
+    fig.add_hline(y=0, line_width=1, line_color="#7d90ac")
+    fig.add_hline(y=FLOORV - 245.3, line_dash="dot", line_color="#BF0D3E", opacity=0.4)
     fig.update_layout(
         title="Cap-era reality (2026 payroll vs proposed 2027 cap) — red = OVER cap; green = UNDER floor",
         xaxis_title="Team", yaxis_title="Gap to $245.3M cap ($M)", template="plotly_white",
         height=460, margin=dict(l=60, r=40, t=64, b=96),
         annotations=[dict(x=0.5, y=-0.45, xref="paper", yref="paper", showarrow=False,
                           text="2027 hard cap $245.3M · floor $171.2M · CBA expires Dec 1, 2026",
-                          font=dict(size=11, color="#4a5a72"))])
+                          font=dict(size=11, color="#8FBCE6"))])
     return fig
 
 
@@ -614,12 +614,12 @@ def panel_forced_sellers():
         [_shed_line(s) for s in t["shed"]]) for t in teams]
     fig = go.Figure()
     fig.add_trace(go.Bar(y=labels, x=shed_m, orientation="h",
-                         marker_color="#d50032", text=bar_text,
+                         marker_color="#BF0D3E", text=bar_text,
                          textposition="outside", hovertext=hover,
                          hoverinfo="text", name="Shed set"))
     fig.add_trace(go.Scatter(y=labels, x=gap_m, mode="markers",
                              marker=dict(symbol="diamond", size=13,
-                                         color="#14213d"),
+                                         color="#FFFFFF"),
                              hovertext=[f"gap ${g:.1f}M" for g in gap_m],
                              hoverinfo="text", name="Cap gap"))
     fig.update_layout(
@@ -645,7 +645,7 @@ def panel_forced_sellers():
                                "and CHC need just 1 — the cap binds "
                                "through a handful of deals, not a "
                                "rebuild",
-                          font=dict(size=11, color="#4a5a72"))])
+                          font=dict(size=11, color="#8FBCE6"))])
     return fig
 
 
@@ -658,8 +658,8 @@ def panel_value_metrics():
     h = pd.DataFrame(d["hitting"]).sort_values("wRC+", ascending=False).head(12)
     p = pd.DataFrame(d["pitching"]).sort_values("FIP", ascending=True).head(12)
     def c(cd):
-        return ("#1b5e20" if cd in WIN_CHEAP else
-                "#e65100" if cd in CHEAP_MEDIOCRE else "#1565c0")
+        return ("#43b581" if cd in WIN_CHEAP else
+                "#e08a3c" if cd in CHEAP_MEDIOCRE else "#8FBCE6")
     # HORIZONTAL bars: team codes stack cleanly, no vertical-name collision
     fig = make_subplots(rows=2, cols=1, shared_xaxes=False,
                         subplot_titles=("Hitting value — wRC+ (100 = league avg)",
@@ -678,17 +678,17 @@ def panel_value_metrics():
                       margin=dict(l=60, r=40, t=64, b=96))
     # league-average reference lines, mirroring the Figure 21 pattern:
     # wRC+ is an index where 100 = league average; FIP gets the league mean.
-    fig.add_vline(x=100, row=1, col=1, line_dash="dash", line_color="#d50032", opacity=0.75,
+    fig.add_vline(x=100, row=1, col=1, line_dash="dash", line_color="#BF0D3E", opacity=0.75,
                   annotation_text="league avg = 100", annotation_position="top right",
-                  annotation_font=dict(color="#d50032", size=10))
+                  annotation_font=dict(color="#BF0D3E", size=10))
     _fip = [p["FIP"] for p in d["pitching"] if p.get("FIP") is not None]
     league_fip = round(sum(_fip) / len(_fip), 2) if _fip else 3.81
-    fig.add_vline(x=league_fip, row=2, col=1, line_dash="dash", line_color="#d50032", opacity=0.75,
+    fig.add_vline(x=league_fip, row=2, col=1, line_dash="dash", line_color="#BF0D3E", opacity=0.75,
                   annotation_text=f"league avg FIP {league_fip:.2f}",
                   annotation_position="top right",
-                  annotation_font=dict(color="#d50032", size=10))
+                  annotation_font=dict(color="#BF0D3E", size=10))
     fig.update_yaxes(automargin=True)
-    fig.update_xaxes(showgrid=True, gridcolor="#eef1f6", zeroline=True, zerolinecolor="#d7dde8")
+    fig.update_xaxes(showgrid=True, gridcolor="rgba(255,255,255,0.08)", zeroline=True, zerolinecolor="rgba(255,255,255,0.22)")
     return fig
 
 
@@ -714,7 +714,7 @@ def panel_skill_persistence():
     for k in order:
         if k in yoy:
             names.append(labels.get(k, k)); r.append(yoy[k])
-            cols.append("#1b5e20" if yoy[k] >= 0.6 else "#e65100" if yoy[k] >= 0.4 else "#1565c0")
+            cols.append("#43b581" if yoy[k] >= 0.6 else "#e08a3c" if yoy[k] >= 0.4 else "#8FBCE6")
     fig.add_trace(go.Bar(y=names, x=r, orientation="h", marker_color=cols,
                          text=[f"{v:.2f}" for v in r], textposition="outside"))
     title = "The measurable edge: input SKILLS persist year-to-year (2025→2026, real)"
@@ -731,13 +731,13 @@ def panel_skill_persistence():
                       annotations=[
                           dict(x=0.98, y=len(order)-0.5, xref="x", yref="y",
                                showarrow=False, text="▲ contact carries",
-                               font=dict(color="#1b5e20", size=11)),
+                               font=dict(color="#43b581", size=11)),
                           # caption BELOW the chart (never collides with title)
                           dict(x=0.02, y=-0.55, xref="paper", yref="paper",
                                showarrow=False,
                                text=sub or "Buy the persistent inputs (contact+walks), "
                                            "not the noisy output (OBP/BA)",
-                               font=dict(size=11, color="#4a5a72"), xanchor="left")])
+                               font=dict(size=11, color="#8FBCE6"), xanchor="left")])
     return fig
 
 
@@ -754,7 +754,7 @@ def _panel_skill_multipair(multi_path, ci_path):
     for k, lab in skills:
         vals = [per[p][k] for p in pairs if k in per[p]]
         edge = max(vals) if vals else 0
-        col = "#1b5e20" if edge >= 0.6 else "#e65100" if edge >= 0.4 else "#1565c0"
+        col = "#43b581" if edge >= 0.6 else "#e08a3c" if edge >= 0.4 else "#8FBCE6"
         fig.add_trace(go.Bar(x=vals, y=[lab]*len(vals), name=lab, orientation="h",
                              marker_color=col, text=[f"{v:.2f}" for v in vals],
                              textposition="outside", showlegend=False))
@@ -774,7 +774,7 @@ def _panel_skill_multipair(multi_path, ci_path):
                       # caption BELOW the chart (global legend sits under that)
                       annotations=[dict(x=0.02, y=-0.62, xref="paper", yref="paper",
                                         showarrow=False, text=sub,
-                                        font=dict(size=11, color="#4a5a72"), xanchor="left")])
+                                        font=dict(size=11, color="#8FBCE6"), xanchor="left")])
     return fig
 
 
@@ -807,7 +807,7 @@ def panel_benchmark():
                              name="Perfect agreement"))
     fig.add_trace(go.Scatter(
         x=xs, y=ys, mode="markers", name="2027 hitters",
-        marker=dict(color="#1d3557", size=8, opacity=0.75),
+        marker=dict(color="#8FBCE6", size=8, opacity=0.75),
         text=names, hovertemplate="%{text}<br>Steamer OBP %{x:.3f}<br>Marcel OBP %{y:.3f}<extra></extra>"))
     fig.update_layout(
         title=(f"The benchmark: our Marcel vs FanGraphs Steamer 2027 — OBP r = "
@@ -839,8 +839,8 @@ def panel_hs_verdict():
         return None
     res = json.load(open(rj))
     ver = json.load(open(vj))
-    samples = [("S", "sample_S_spotrac_basis", "#1d3557", "Sample S — Spotrac basis"),
-               ("C", "sample_C_cots_lrp2027", "#b8860b", "Sample C — Cot's LRP-2027")]
+    samples = [("S", "sample_S_spotrac_basis", "#8FBCE6", "Sample S — Spotrac basis"),
+               ("C", "sample_C_cots_lrp2027", "#F5D130", "Sample C — Cot's LRP-2027")]
     bench = ver["benchmark_attempt"]
     rho = bench["season_fe_primary"]["ratio_obp_to_slg"]
     rho_ci = bench["season_fe_primary"]["ratio_ci95"]
@@ -869,10 +869,10 @@ def panel_hs_verdict():
                 labels.append(f"{sk} {t['coef']:+.2f} ± {1.96 * t['se']:.2f} (p = {t['p']:.2f})")
         fig.add_trace(go.Scatter(
             x=xs, y=ys, mode="markers", marker=dict(color=cols, size=10),
-            error_x=dict(type="data", array=errs, visible=True, color="#5a6478"),
+            error_x=dict(type="data", array=errs, visible=True, color="#7d90ac"),
             text=labels, hovertemplate="%{text}<extra></extra>",
             showlegend=False), row=1, col=col)
-        fig.add_vline(x=0, line_dash="dash", line_color="#d50032", row=1, col=col)
+        fig.add_vline(x=0, line_dash="dash", line_color="#BF0D3E", row=1, col=col)
 
     forest(["OBP", "SLG"], 1)
     forest(["K%", "BB%"], 2)
@@ -884,7 +884,7 @@ def panel_hs_verdict():
         bx += [f"{sname} — bottom contact quartile", f"{sname} — top contact quartile"]
         by += [q["bottom_quartile_median_dollars_per_war"] / 1e6,
                q["top_quartile_median_dollars_per_war"] / 1e6]
-        bc += ["#7a1f1f", "#1b5e20"]
+        bc += ["#BF0D3E", "#43b581"]
         bt += [f"${q['bottom_quartile_median_dollars_per_war'] / 1e6:.2f}M",
                f"${q['top_quartile_median_dollars_per_war'] / 1e6:.2f}M — {q['ratio']:.2f}× the bottom"]
     fig.add_trace(go.Bar(x=bx, y=by, marker_color=bc, text=bt,
@@ -1059,12 +1059,12 @@ def _bat_speed_exhibit_html():
         f"half of the league sits between {dist['p25']:.1f} and "
         f"{dist['p75']:.1f} mph, and the full range runs "
         f"{dist['min']:.1f} to {dist['max']:.1f} mph.</p>"
-        "<div style=\"position:relative;height:12px;background:#e8ecf3;"
+        "<div style=\"position:relative;height:12px;background:rgba(255,255,255,0.08);"
         "border-radius:4px;margin:10px 0 2px\">"
         f"<div style=\"position:absolute;top:0;bottom:0;left:{band_l:.1f}%;"
-        f"width:{band_w:.1f}%;background:#1d3557;border-radius:4px\"></div>"
+        f"width:{band_w:.1f}%;background:#8FBCE6;border-radius:4px\"></div>"
         f"<div style=\"position:absolute;top:-2px;bottom:-2px;"
-        f"left:{med_l:.1f}%;width:3px;background:#d50032\"></div></div>"
+        f"left:{med_l:.1f}%;width:3px;background:#BF0D3E\"></div></div>"
         f"<p class=\"srcline\">Slowest {dist['min']:.1f} mph · median "
         f"{dist['median']:.1f} (red tick) · fastest {dist['max']:.1f} "
         "mph. Dark band = the middle half of the league.</p>"
@@ -1504,11 +1504,11 @@ def panel_optimizer():
             customdata=[b[key]["spend"] / 1e6 for b in budgets])
 
     fig = go.Figure(data=[
-        series("greedy", "Greedy build (Cycle 26)", "#7a1f1f"),
-        series("optimizer", "Exact optimizer (proven optimal)", "#1d3557",
+        series("greedy", "Greedy build (Cycle 26)", "#BF0D3E"),
+        series("optimizer", "Exact optimizer (proven optimal)", "#8FBCE6",
                delta=True),
         series("optimizer_dh_restricted",
-               "Optimizer, DH restricted to DH-mapped bats", "#b8860b"),
+               "Optimizer, DH restricted to DH-mapped bats", "#F5D130"),
     ])
     f0 = budgets[0]
     fig.update_layout(
@@ -1653,7 +1653,7 @@ def panel_savant():
         if key in stab:
             names.append(label)
             vals.append(stab[key]["mean_r"])
-            colors.append("#8ab6ff" if key.startswith("outcome") else "#1d3557")
+            colors.append("#FFFFFF" if key.startswith("outcome") else "#8FBCE6")
     if not vals:
         return None
     fig = go.Figure(go.Bar(
@@ -1679,8 +1679,8 @@ def panel_pipeline():
     orgs = sorted(orgs, key=lambda o: o["index_avg100"])
     names = [f"{o['org_abbr']} — {o['n_hitters']}H / {o['n_pitchers']}P" for o in orgs]
     vals = [o["index_avg100"] for o in orgs]
-    colors = ["green" if o["org_abbr"] in WIN_CHEAP else
-              "orange" if o["org_abbr"] in CHEAP_MEDIOCRE else "steelblue" for o in orgs]
+    colors = ["#43b581" if o["org_abbr"] in WIN_CHEAP else
+              "#e08a3c" if o["org_abbr"] in CHEAP_MEDIOCRE else "#8FBCE6" for o in orgs]
     hover = [f"{o['org_name']}<br>index {o['index_avg100']} (league avg = 100)<br>"
              f"under-26 AAA/AA: {o['n_hitters']} hitters (wtd OPS {o['wtd_ops']}), "
              f"{o['n_pitchers']} pitchers (wtd ERA {o['wtd_era']})<br>"
@@ -1690,7 +1690,7 @@ def panel_pipeline():
         x=vals, y=names, orientation="h", marker=dict(color=colors),
         text=[f"{v:.0f}" for v in vals], textposition="outside",
         hovertext=hover, hoverinfo="text"))
-    fig.add_vline(x=100, line_dash="dash", line_color="red",
+    fig.add_vline(x=100, line_dash="dash", line_color="#BF0D3E",
                   annotation_text="League average = 100")
     fig.update_layout(
         title=("The pipeline behind winning-cheap: under-26 upper-minors depth, 2026 (Cycle 23)<br>"
@@ -1724,7 +1724,7 @@ def panel_shopping():
         return None
     names = [f"{r['name']} ({r['pos']})" for r in top]
     surp = [float(r["surplus_usd"]) / 1e6 for r in top]
-    colors = ["green" if s > 0 else "#d50032" for s in surp]
+    colors = ["#43b581" if s > 0 else "#BF0D3E" for s in surp]
     labels = [(f"{r['steamer_war']:.1f} WAR · "
                f"value ${r['value_usd']/1e6:.0f}M · "
                f"cost ${r['cost_aav']/1e6:.0f}M · "
@@ -1821,25 +1821,25 @@ def panel_posted():
     # (1,1) Sato career arc — K% vs BB%
     fig.add_trace(go.Scatter(
         x=x3, y=[ss[y]["K_pct_computed"] for y in years],
-        mode="lines+markers+text", line=dict(color="#d50032", width=3),
+        mode="lines+markers+text", line=dict(color="#BF0D3E", width=3),
         marker=dict(size=9),
         text=[f"{ss[y]['K_pct_computed']:.1f}%" for y in years],
         textposition="top center", name="Sato K%", showlegend=False), 1, 1)
     fig.add_trace(go.Scatter(
         x=x3, y=[ss[y]["BB_pct_computed"] for y in years],
-        mode="lines+markers+text", line=dict(color="#1b5e20", width=3),
+        mode="lines+markers+text", line=dict(color="#43b581", width=3),
         marker=dict(size=9),
         text=[f"{ss[y]['BB_pct_computed']:.1f}%" for y in years],
         textposition="bottom center", name="Sato BB%", showlegend=False), 1, 1)
 
     # (1,2) Itoh career arc — IP bars + BB% line (secondary axis)
     fig.add_trace(go.Bar(
-        x=x3, y=[ins[y]["IP"] for y in years], marker_color="#1d3557",
+        x=x3, y=[ins[y]["IP"] for y in years], marker_color="#8FBCE6",
         text=[f"{ins[y]['IP']:.1f} IP · {ins[y]['BB']} BB" for y in years],
         textposition="outside", name="Itoh IP", showlegend=False), 1, 2)
     fig.add_trace(go.Scatter(
         x=x3, y=[ib[y]["bb_pct"] for y in years],
-        mode="lines+markers+text", line=dict(color="#c9a227", width=3),
+        mode="lines+markers+text", line=dict(color="#F5D130", width=3),
         marker=dict(size=9),
         text=[f"{ib[y]['bb_pct']:.1f}% BB" for y in years],
         textposition="top center", name="Itoh BB%", showlegend=False),
@@ -1849,7 +1849,7 @@ def panel_posted():
     fig.add_trace(go.Bar(
         x=["2025 · closer", "2026 · starter"],
         y=[ts[2025]["ERA"], ts[2026]["ERA"]],
-        marker_color=["#e65100", "#1d3557"],
+        marker_color=["#e08a3c", "#8FBCE6"],
         text=[f"{ts[2025]['ERA']:.2f} ERA · 31 SV · 52.2 IP",
               f"{ts[2026]['ERA']:.2f} ERA · 146.0 IP · 12–5"],
         textposition="outside", name="Taira ERA", showlegend=False), 2, 1)
@@ -1858,19 +1858,19 @@ def panel_posted():
     fig.add_trace(go.Bar(
         x=["2025 · closer", "2026 · starter"],
         y=[ts[2025]["IP"], ts[2026]["IP"]],
-        marker_color=["#e65100", "#d50032"],
+        marker_color=["#e08a3c", "#BF0D3E"],
         text=["52.2 IP", "146.0 IP · +93.8 in one year"],
         textposition="outside", name="Taira IP", showlegend=False), 2, 2)
 
     # (3,1) Leaderboard context — percentile dots (built from the
     # computed artifact so the figure can never drift from it)
     dots = [  # first entry renders at the BOTTOM of the axis
-        ("Itoh · ERA — PL arms", ctx["itoh"]["ERA"], "#c9a227"),
-        ("Itoh · walk rate — PL arms", ctx["itoh"]["BB_pct"], "#c9a227"),
-        ("Taira · ERA — PL arms", ctx["taira"]["ERA"], "#1d3557"),
-        ("Sato · RBI — CL bats", ctx["sato"]["RBI"], "#d50032"),
-        ("Sato · OPS — CL bats", ctx["sato"]["OPS"], "#d50032"),
-        ("Sato · home runs — CL bats", ctx["sato"]["HR"], "#d50032"),
+        ("Itoh · ERA — PL arms", ctx["itoh"]["ERA"], "#F5D130"),
+        ("Itoh · walk rate — PL arms", ctx["itoh"]["BB_pct"], "#F5D130"),
+        ("Taira · ERA — PL arms", ctx["taira"]["ERA"], "#8FBCE6"),
+        ("Sato · RBI — CL bats", ctx["sato"]["RBI"], "#BF0D3E"),
+        ("Sato · OPS — CL bats", ctx["sato"]["OPS"], "#BF0D3E"),
+        ("Sato · home runs — CL bats", ctx["sato"]["HR"], "#BF0D3E"),
     ]
     ys, xs, txs, cs = [], [], [], []
     for lab, c, col in dots:
@@ -1892,12 +1892,12 @@ def panel_posted():
     # (3,2) Sato K% vs Central League median K%
     fig.add_trace(go.Bar(
         x=x3, y=[kv[y]["sato_k_pct"] for y in years],
-        marker_color="#d50032",
+        marker_color="#BF0D3E",
         text=[f"{kv[y]['sato_k_pct']:.1f}%" for y in years],
         textposition="outside", name="Sato K%", showlegend=False), 3, 2)
     fig.add_trace(go.Scatter(
         x=x3, y=[kv[y]["cl_median_k_pct"] for y in years],
-        mode="lines+markers+text", line=dict(color="#1d3557", width=3,
+        mode="lines+markers+text", line=dict(color="#8FBCE6", width=3,
                                              dash="dash"),
         marker=dict(size=9),
         text=[f"median {kv[y]['cl_median_k_pct']:.1f}%" for y in years],
@@ -1909,14 +1909,14 @@ def panel_posted():
     fig.add_trace(go.Scatter(
         x=[p["contract_m"] for p in curve],
         y=[p["fee_m"] for p in curve], mode="lines",
-        line=dict(color="#c9a227", width=3), fill="tozeroy",
-        fillcolor="rgba(201,162,39,0.18)", name="Posting fee",
+        line=dict(color="#F5D130", width=3), fill="tozeroy",
+        fillcolor="rgba(245,209,48,0.15)", name="Posting fee",
         showlegend=False), 4, 1)
     ck = rb["fee_checkpoints_m"]
     fig.add_trace(go.Scatter(
         x=[25, 50, 60, 100],
         y=[ck["25"], ck["50"], ck["60"], ck["100"]],
-        mode="markers+text", marker=dict(size=9, color="#14213d"),
+        mode="markers+text", marker=dict(size=9, color="#041E42"),
         text=[f"$25M → ${ck['25']:.2f}M", f"$50M → ${ck['50']:.2f}M",
               f"$60M → ${ck['60']:.3f}M", f"$100M → ${ck['100']:.2f}M"],
         textposition="top center", name="Fee checkpoints",
@@ -1926,7 +1926,7 @@ def panel_posted():
     # dataset's honesty notes; totals only, both are contract totals)
     fig.add_trace(go.Bar(
         x=["Projected (MLBTR)", "Signed (Houston)"],
-        y=[150, 54], marker_color=["#888888", "#d50032"],
+        y=[150, 54], marker_color=["#9aa3b2", "#BF0D3E"],
         text=["6 yr / $150M", "3 yr / $54M"],
         textposition="outside", name="Imai", showlegend=False), 4, 2)
     fig.add_trace(go.Scatter(
@@ -1937,14 +1937,14 @@ def panel_posted():
     # (5,1) The posting clock — day offsets from Nov 1, 2026
     fig.add_trace(go.Bar(
         x=[29], y=["window"], base=[1], orientation="h",
-        marker_color="#c9a227",
+        marker_color="#F5D130",
         text=["Nov 2 → Dec 1 · open · 29 days"],
         textposition="inside", name="Open window", showlegend=False),
         5, 1)
     fig.add_trace(go.Bar(
         x=[15], y=["window"], base=[30], orientation="h",
         marker=dict(color="#cfd8dc",
-                    pattern=dict(shape="/", fgcolor="rgba(20,33,61,0.5)",
+                    pattern=dict(shape="/", fgcolor="rgba(4,30,66,0.55)",
                                  bgcolor="#cfd8dc", size=6)),
         text=["Dec 1 → Dec 16 · paused in a lockout · 15 days"],
         textposition="inside", name="Paused window", showlegend=False),
@@ -1952,7 +1952,7 @@ def panel_posted():
     fig.add_trace(go.Scatter(
         x=[0, 30, 45], y=["window"] * 3, mode="markers+text",
         marker=dict(symbol="diamond", size=11,
-                    color=["#1d3557", "#d50032", "#14213d"]),
+                    color=["#8FBCE6", "#BF0D3E", "#FFFFFF"]),
         text=["Posted<br>Nov 1",
               "Dec 1 · CBA expires — clock pauses · demo deadline",
               "Dec 16 · 17:00 ET<br>signing deadline"],
@@ -2120,10 +2120,10 @@ def panel_animation():
 
     def color(r):
         if r["team"] in ("MIL", "TB", "CLE"):
-            return "#c9a227"
+            return "#43b581"
         if r["payroll_m"] > 260:
-            return "#d50032"
-        return "#14213d"
+            return "#BF0D3E"
+        return "#8FBCE6"
 
     seasons = sorted(d["season"].unique())
     frames, base = [], None
@@ -2143,7 +2143,7 @@ def panel_animation():
     fig = go.Figure(data=[base], frames=frames)
     fig.update_layout(
         title=("PRESS PLAY: 16 seasons of payroll vs wins (2011–2026)<br>"
-               "<sub>Bubble size = wins per $100M. Gold = the winning-cheap three (MIL/TB/CLE); "
+               "<sub>Bubble size = wins per $100M. Green = the winning-cheap three (MIL/TB/CLE); "
                "red = $260M+ payrolls. The gold barely moves — that is the whole thesis in motion. "
                "Source: MLB Stats API panel + Spotrac payrolls (data/panel_2011_2026.csv).</sub>"),
         xaxis=dict(title="Team payroll ($M)", range=[0, 370]),
@@ -2182,14 +2182,14 @@ def panel_team_explorer():
         traces.append(go.Scatterpolar(
             r=vals, theta=labels + [labels[0]], fill="toself",
             name=t["team"], visible=(i == 0),
-            line=dict(color="#14213d", width=2),
-            fillcolor="rgba(20,33,61,0.18)"))
+            line=dict(color="#8FBCE6", width=2),
+            fillcolor="rgba(143,188,230,0.15)"))
     cheap_vals = [cheap[l] for l in labels]
     cheap_vals.append(cheap_vals[0])
     traces.append(go.Scatterpolar(
         r=cheap_vals, theta=labels + [labels[0]], name="Winning-cheap profile",
-        line=dict(color="#c9a227", width=3), fill="toself",
-        fillcolor="rgba(201,162,39,0.13)"))
+        line=dict(color="#43b581", width=3), fill="toself",
+        fillcolor="rgba(67,181,129,0.13)"))
     traces.append(go.Scatterpolar(
         r=[100] * 6, theta=labels + [labels[0]], name="League = 100",
         line=dict(color="#9aa3b2", width=1, dash="dot")))
@@ -2199,7 +2199,7 @@ def panel_team_explorer():
                  f"cap headroom ${t['cap_headroom_m']:.0f}M · pipeline #{t['pipeline_rank']} "
                  f"(top prospect: {t['top_prospect']})<br>"
                  "<sub>Signature indexed to league = 100; higher = more winning-cheap-like on every axis "
-                 "(K% and HR rate inverted). Gold = MIL/TB/CLE average profile. Sources: MLB Stats API 2026 KPIs, "
+                 "(K% and HR rate inverted). Green = MIL/TB/CLE average profile. Sources: MLB Stats API 2026 KPIs, "
                  "Spotrac payroll, Cycle 23 pipeline index. Pick your team:</sub>")
         buttons.append(dict(label=t["team"], method="update",
                             args=[{"visible": vis}, {"title": {"text": title}}]))
@@ -2211,8 +2211,8 @@ def panel_team_explorer():
         updatemenus=[dict(type="dropdown", buttons=buttons, direction="down",
                           x=1.08, xanchor="right", y=1.06, yanchor="top",
                           pad=dict(r=8, t=6), showactive=True, active=0,
-                          font=dict(size=11), bgcolor="#ffffff",
-                          bordercolor="#c9a227", borderwidth=1)],
+                          font=dict(size=11, color="#FFFFFF"), bgcolor="#092C5C",
+                          bordercolor="#43b581", borderwidth=1)],
         template="plotly_white", height=560,
         legend=dict(orientation="h", y=-0.08))
     return fig
@@ -2239,14 +2239,14 @@ def panel_scenarios():
         r = s["roster"]
         traces.append(go.Table(
             header=dict(values=["Pos", "Player", "From", "Steamer WAR", "Prior AAV"],
-                        fill_color="#14213d", font=dict(color="white", size=12),
+                        fill_color="#0d3568", font=dict(color="white", size=12),
                         align="left"),
             cells=dict(values=[[x["pos"] for x in r], [x["name"] for x in r],
                                [x["prev_team"] for x in r],
                                [f"{x['war']:.1f}" for x in r],
                                [f"${x['prev_aav']/1e6:.1f}M" for x in r]],
-                       fill_color="rgba(244,241,234,0.6)", align="left",
-                       font=dict(size=11.5), height=19),
+                       fill_color="rgba(13,53,104,0.55)", align="left",
+                       font=dict(size=11.5, color="#FFFFFF"), height=19),
             visible=(i == 0)))
         rng = s["war_range_prices_pm20"]
         u = unc.get(s["label"])
@@ -2354,12 +2354,56 @@ def build():
     ]
     flat = [f for _, _, _, figs in SECTIONS for f in figs if f is not None]
 
+    # Cycle 76 — noir record-book restyle: one Plotly template applied
+    # centrally to every figure at numbering time. MLB Navy ground,
+    # Rays Navy panel surface, Columbia Blue dim text, MLB Red the
+    # single accent. The template owns chrome only (backgrounds, grid,
+    # fonts, default colorway, hover); trace colors are data semantics
+    # and stay set in the panel code above.
+    _TPL = go.layout.Template(
+        layout=go.Layout(
+            font=dict(family="Inter, system-ui, sans-serif", size=13,
+                      color="#FFFFFF"),
+            title=dict(font=dict(family="Fraunces, Georgia, serif",
+                                 size=16, color="#FFFFFF")),
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(0,0,0,0)",
+            colorway=["#8FBCE6", "#43b581", "#e08a3c", "#BF0D3E",
+                      "#F5D130", "#FFFFFF", "#5b8dd9", "#7d90ac"],
+            xaxis=dict(gridcolor="rgba(255,255,255,0.08)",
+                       zerolinecolor="rgba(255,255,255,0.25)",
+                       linecolor="rgba(255,255,255,0.15)",
+                       tickfont=dict(color="#8FBCE6", size=11),
+                       title=dict(font=dict(color="#8FBCE6"))),
+            yaxis=dict(gridcolor="rgba(255,255,255,0.08)",
+                       zerolinecolor="rgba(255,255,255,0.25)",
+                       linecolor="rgba(255,255,255,0.15)",
+                       tickfont=dict(color="#8FBCE6", size=11),
+                       title=dict(font=dict(color="#8FBCE6"))),
+            polar=dict(bgcolor="rgba(0,0,0,0)",
+                       radialaxis=dict(
+                           gridcolor="rgba(255,255,255,0.08)",
+                           linecolor="rgba(255,255,255,0.15)",
+                           tickfont=dict(color="#8FBCE6", size=11)),
+                       angularaxis=dict(
+                           gridcolor="rgba(255,255,255,0.08)",
+                           linecolor="rgba(255,255,255,0.15)",
+                           tickfont=dict(color="#8FBCE6", size=11))),
+            legend=dict(font=dict(color="#8FBCE6", size=11),
+                        bgcolor="rgba(0,0,0,0)"),
+            hoverlabel=dict(bgcolor="#041E42", bordercolor="#16406e",
+                            font=dict(color="#FFFFFF",
+                                      family="Inter, system-ui, sans-serif")),
+            annotations=[dict(font=dict(color="#FFFFFF"))],
+        ))
+
     def _number(figs):
         """Executive polish + 'Figure N — ' prefix (main-lane viz pass).
 
         Legend BELOW the chart, title alone on top, subtle gridlines.
         Boardroom panels keep their full titles (their caveats live in
-        them); other titles are shortened as before.
+        them); other titles are shortened as before. Cycle 76: the
+        noir template above replaces plotly_white.
         """
         out = []
         for i, fig in enumerate(figs, 1):
@@ -2374,18 +2418,24 @@ def build():
                     short = ". ".join(parts[:2]) + "."
             fig.update_layout(title_text=f"<b>Figure {i}</b> — {short}")
             fig.update_layout(
-                template="plotly_white",
-                font=dict(family="system-ui, sans-serif", size=13, color="#14213d"),
-                title_font=dict(size=15, color="#14213d"),
+                template=_TPL,
+                font=dict(family="Inter, system-ui, sans-serif", size=13,
+                          color="#FFFFFF"),
+                title_font=dict(family="Fraunces, Georgia, serif", size=16,
+                                color="#FFFFFF"),
                 title_x=0.0, title_xanchor="left",
-                paper_bgcolor="white", plot_bgcolor="white",
+                paper_bgcolor="rgba(0,0,0,0)",
+                plot_bgcolor="rgba(0,0,0,0)",
                 margin=dict(l=70, r=30, t=64, b=96),
                 height=max(fig.layout.height or 420, 420),
                 legend=dict(orientation="h", yanchor="top", y=-0.32,
-                            xanchor="center", x=0.5, font=dict(size=11),
-                            bgcolor="rgba(255,255,255,0.7)"),
-                xaxis=dict(gridcolor="#e8ecf3", zerolinecolor="#d6dcea"),
-                yaxis=dict(gridcolor="#e8ecf3", zerolinecolor="#d6dcea"))
+                            xanchor="center", x=0.5,
+                            font=dict(size=11, color="#8FBCE6"),
+                            bgcolor="rgba(0,0,0,0)"),
+                xaxis=dict(gridcolor="rgba(255,255,255,0.08)",
+                           zerolinecolor="rgba(255,255,255,0.25)"),
+                yaxis=dict(gridcolor="rgba(255,255,255,0.08)",
+                           zerolinecolor="rgba(255,255,255,0.25)"))
             out.append(fig)
         return out
 
@@ -2584,7 +2634,7 @@ def build():
                   f'<p class="srcline">{src}</p></section>')
     story += ('<details class="appendix"><summary>Appendix: method and honesty box</summary>'
               '<div class="quant"><b>What the data actually shows</b> &nbsp;'
-              '<span style="font-weight:400;color:#4a5a72">(measured on 509 real team-seasons, 2011-2026)</span><br><br>'
+              '<span style="font-weight:400;color:#8FBCE6">(measured on 509 real team-seasons, 2011-2026)</span><br><br>'
               "<b>1. Run differential drives wins, but only as a diagnostic.</b> The same-season "
               "fit is strong (R² ≈ 0.55) — a better run margin means more wins. It is not a "
               "forward-looking prediction.<br><br>"
@@ -2750,83 +2800,97 @@ def build():
                  "Boardroom stays 15 slides.</p></div>")
     explorer += _claims_panel_html()
 
-    page_template = """<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P7)</title>
-<style>body{font-family:system-ui,sans-serif;margin:0;background:#f4f1ea;color:#14213d}
+    page_template = """<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P7)</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+--ink:#041E42; --ink-hi:#072A52; --ink-deep:#021028;
+--panel:#092C5C; --panel-line:#16406E;
+--paper:#FFFFFF; --paper-dim:#8FBCE6;
+--accent:#BF0D3E; --gold:#F5D130;
+--win:#43B581; --trap:#E08A3C;
+--shadow:0 4px 18px rgba(0,0,0,.35);
+}
+body{font-family:Inter,system-ui,sans-serif;margin:0;background:var(--ink);color:var(--paper)}
+h1,h2,h3{font-family:Fraunces,Georgia,serif}
+a{color:var(--paper-dim);text-underline-offset:2px}
 .hd{max-width:1120px;margin:0 auto;padding:0 20px 40px}
-.crest{background:linear-gradient(135deg,#14213d 0%,#1d3557 60%,#7a1f1f 160%);color:#fff;padding:28px 32px;border-radius:0 0 14px 14px;margin:0 0 4px;box-shadow:0 3px 14px rgba(20,33,61,.25)}
-.crest h1{margin:0;font-size:30px;letter-spacing:1px;color:#fff}
-.crest h2{margin:8px 0 0;font-size:16px;font-weight:400;color:#cbe0ff}
-.crest .asof{margin-top:10px;font-size:12.5px;color:#cbe0ff;letter-spacing:.3px}
-.mlb{background:#d50032;color:#fff;padding:2px 9px;border-radius:5px;font-size:12px;font-weight:700;letter-spacing:.5px}
-.tag{background:#cbe0ff;color:#14213d;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600}
-.note{background:#fff8e1;border-left:4px solid #f9a825;padding:10px 14px;margin:14px 0}
-.bottomline{background:#e8f5e9;border-left:5px solid #1d3557;border-radius:6px;padding:14px 18px;margin:16px 0;font-size:15px}
-.act{background:#14213d;color:#fff;padding:2px 8px;border-radius:4px;font-weight:bold}
-.why{color:#1d3557;font-weight:bold}
-.quant{background:#eef4ff;border-left:5px solid #0d47a1;border-radius:6px;padding:14px 18px;margin:16px 0;font-size:14px}
-.ledger{background:#fff;border:1px solid #d6dcea;border-left:5px solid #7a1f1f;border-radius:8px;padding:14px 18px;margin:16px 0;font-size:13px}
-.ledger h3{margin:0 0 6px;font-size:17px}
+.crest{background:linear-gradient(135deg,var(--ink-hi) 0%,var(--ink) 55%,var(--panel) 130%);color:var(--paper);padding:32px 32px 26px;border-bottom:3px solid var(--accent);border-radius:0 0 14px 14px;margin:0 0 4px;box-shadow:var(--shadow)}
+.crest h1{margin:0;font-size:38px;letter-spacing:1px;color:var(--paper);font-weight:800}
+.crest h2{margin:10px 0 0;font-size:17px;font-weight:400;color:var(--paper-dim)}
+.crest .asof{margin-top:12px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12.5px;color:var(--gold);letter-spacing:.3px}
+.mlb{background:var(--accent);color:#fff;padding:2px 9px;border-radius:5px;font-size:12px;font-weight:700;letter-spacing:.5px}
+.tag{background:var(--accent);color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600}
+.note{background:var(--panel);border-left:4px solid var(--gold);border-radius:0 6px 6px 0;padding:10px 14px;margin:14px 0}
+.bottomline{background:var(--panel);border-left:5px solid var(--win);border-radius:6px;padding:14px 18px;margin:16px 0;font-size:15px}
+.act{background:var(--accent);color:#fff;padding:2px 8px;border-radius:4px;font-weight:bold}
+.why{color:var(--paper-dim);font-weight:bold}
+.quant{background:var(--panel);border-left:5px solid var(--paper-dim);border-radius:6px;padding:14px 18px;margin:16px 0;font-size:14px}
+.ledger{background:var(--panel);border:1px solid var(--panel-line);border-left:5px solid var(--accent);border-radius:8px;padding:14px 18px;margin:16px 0;font-size:13px}
+.ledger h3{margin:0 0 6px;font-size:18px}
 .ledger table{border-collapse:collapse;width:100%;margin:10px 0}
-.ledger th,.ledger td{padding:3px 8px;border-bottom:1px solid #e8ecf3;text-align:left;vertical-align:top;font-size:12.5px}
-.ledger th{color:#14213d;border-bottom:2px solid #c4d3ea}
-.srcbox{background:#14213d;color:#dbe4f3;border-radius:8px;padding:16px 20px;margin:30px 0 8px;font-size:13px;line-height:1.5}
-.srcbox b{color:#fff}
-.src{color:#8ab6ff;font-family:ui-monospace,monospace}
-.keybox{background:#f0f4fa;border:1px solid #c4d3ea;border-radius:6px;padding:10px 14px;margin:14px 0;font-size:12.5px;line-height:1.9}
-.figidx{background:#fff;border:1px solid #d6dcea;border-left:4px solid #1d3557;border-radius:6px;padding:10px 14px;margin:14px 0;font-size:12px;line-height:1.8;color:#14213d}
-.figidx span{display:inline-block;background:#d50032;color:#fff;border-radius:3px;padding:0 5px;margin:0 2px;font-weight:700;font-size:11px;min-width:14px;text-align:center}
+.ledger th,.ledger td{padding:3px 8px;border-bottom:1px solid var(--panel-line);text-align:left;vertical-align:top;font-size:12.5px}
+.ledger th{color:var(--paper);border-bottom:2px solid var(--panel-line)}
+.srcbox{background:var(--ink-deep);color:var(--paper-dim);border:1px solid var(--panel-line);border-radius:8px;padding:16px 20px;margin:30px 0 8px;font-size:13px;line-height:1.5}
+.srcbox b{color:var(--paper)}
+.src{color:var(--paper);font-family:"IBM Plex Mono",ui-monospace,monospace}
+.keybox{background:var(--panel);border:1px solid var(--panel-line);border-radius:6px;padding:10px 14px;margin:14px 0;font-size:12.5px;line-height:1.9}
+.figidx{background:var(--panel);border:1px solid var(--panel-line);border-left:4px solid var(--paper-dim);border-radius:6px;padding:10px 14px;margin:14px 0;font-size:12px;line-height:1.8;color:var(--paper-dim)}
+.figidx span{display:inline-block;background:var(--accent);color:#fff;border-radius:3px;padding:0 5px;margin:0 2px;font-weight:700;font-size:11px;min-width:14px;text-align:center;font-family:"IBM Plex Mono",ui-monospace,monospace}
 .k{margin-right:16px;display:inline-block}
 .sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
 .cards{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 4px}
-.card{flex:1 1 160px;background:#fff;border:1px solid #e3dfd2;border-top:4px solid #d50032;border-radius:10px;padding:14px 16px;box-shadow:0 2px 8px rgba(20,33,61,.06)}
-.card .num{font-size:26px;font-weight:800;color:#14213d;letter-spacing:.2px}
-.card .lab{font-size:12.5px;color:#5a6478;margin-top:3px;line-height:1.35}
-.sec{display:flex;gap:14px;align-items:center;background:linear-gradient(90deg,#14213d,#1d3557);color:#fff;border-radius:10px;padding:13px 20px;margin:30px 0 4px;box-shadow:0 2px 10px rgba(20,33,61,.18)}
-.secnum{font-size:19px;font-weight:800;color:#c9a227;border:2px solid #c9a227;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
-.sec h3{margin:0;font-size:19px;letter-spacing:.4px}
-.sec p{margin:2px 0 0;font-size:13.5px;color:#cbe0ff}
-.panel{background:#fff;border:1px solid #e3dfd2;border-radius:12px;padding:16px 18px 8px;margin:14px 0;box-shadow:0 2px 10px rgba(20,33,61,.05)}
+.card{flex:1 1 160px;background:var(--panel);border:1px solid var(--panel-line);border-top:4px solid var(--accent);border-radius:10px;padding:14px 16px;box-shadow:var(--shadow)}
+.card .num{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:26px;font-weight:600;color:var(--paper);letter-spacing:.2px}
+.card .lab{font-size:12.5px;color:var(--paper-dim);margin-top:3px;line-height:1.35}
+.sec{display:flex;gap:14px;align-items:center;background:linear-gradient(90deg,var(--panel),var(--ink-hi));color:var(--paper);border:1px solid var(--panel-line);border-radius:10px;padding:13px 20px;margin:30px 0 4px;box-shadow:var(--shadow)}
+.secnum{font-family:Fraunces,Georgia,serif;font-size:19px;font-weight:800;color:var(--gold);border:2px solid var(--gold);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.sec h3{margin:0;font-size:20px;letter-spacing:.4px}
+.sec p{margin:2px 0 0;font-size:13.5px;color:var(--paper-dim)}
+.panel{background:var(--panel);border:1px solid var(--panel-line);border-radius:12px;padding:16px 18px 8px;margin:14px 0;box-shadow:var(--shadow)}
+.panel table{border-collapse:collapse}
+.panel th{color:var(--paper-dim);border-bottom:2px solid var(--panel-line);padding:3px 8px;text-align:left}
+.panel td{border-bottom:1px solid var(--panel-line);padding:3px 8px}
 .modenav{display:flex;gap:10px;margin:18px 0}
-.modenav button{flex:1;padding:12px;border:2px solid #1d3557;border-radius:8px;background:#fff;color:#14213d;font-size:15px;font-weight:700;cursor:pointer}
-.modenav button.active{background:#14213d;color:#fff}
-.verdict{background:#14213d;color:#fff;border-radius:10px;padding:18px 22px;margin:16px 0}
-.verdict h2{margin:0 0 6px;color:#fff}
-.verdict p{margin:0;color:#cbe0ff;font-size:15px;line-height:1.5}
+.modenav button{flex:1;padding:12px;border:2px solid var(--panel-line);border-radius:8px;background:transparent;color:var(--paper-dim);font-size:15px;font-weight:700;cursor:pointer;font-family:Inter,system-ui,sans-serif}
+.modenav button.active{background:var(--paper-dim);color:var(--ink);border-color:var(--paper-dim)}
+.verdict{background:linear-gradient(135deg,var(--panel),var(--ink-hi));border:1px solid var(--panel-line);color:var(--paper);border-radius:10px;padding:18px 22px;margin:16px 0}
+.verdict h2{margin:0 0 6px;color:var(--paper)}
+.verdict p{margin:0;color:var(--paper-dim);font-size:15px;line-height:1.5}
 .hero-team h3{margin:24px 0 0}
-.chapter{border-top:3px solid #c9a227;margin:30px 0;padding-top:8px}
-.chapnum{font-weight:800;color:#7a1f1f;letter-spacing:.5px}
-.sowhat{background:#e8f5e9;border-left:5px solid #1d3557;border-radius:6px;padding:12px 16px}
-.srcline{font-size:12.5px;color:#5a6478}
-.appendix{margin:30px 0;border:1px solid #c4d3ea;border-radius:8px;padding:12px 16px;background:#fff}
-.appendix summary{font-weight:800;cursor:pointer}
-.slide{border:1px solid #d6dcea;border-radius:10px;padding:16px 20px;margin:18px 0;background:#fff;page-break-after:always}
-.slidenum{font-weight:800;color:#7a1f1f}
-.task{background:linear-gradient(90deg,#14213d,#1d3557);color:#fff;border-radius:10px;padding:13px 20px;margin:30px 0 4px}
+.chapter{border-top:3px solid var(--accent);margin:30px 0;padding-top:8px}
+.chapnum{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:600;color:var(--gold);letter-spacing:.5px}
+.sowhat{background:var(--panel);border-left:5px solid var(--win);border-radius:6px;padding:12px 16px}
+.srcline{font-size:12.5px;color:var(--paper-dim)}
+.appendix{margin:30px 0;border:1px solid var(--panel-line);border-radius:8px;padding:12px 16px;background:var(--panel)}
+.appendix summary{font-family:Fraunces,Georgia,serif;font-weight:800;cursor:pointer}
+.slide{border:1px solid var(--panel-line);border-radius:10px;padding:16px 20px;margin:18px 0;background:var(--panel);page-break-after:always}
+.slidenum{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:600;color:var(--gold)}
+.task{background:linear-gradient(90deg,var(--panel),var(--ink-hi));border:1px solid var(--panel-line);color:var(--paper);border-radius:10px;padding:13px 20px;margin:30px 0 4px}
 .task h3{margin:0}
-.task p{margin:2px 0 0;color:#cbe0ff;font-size:13.5px}
+.task p{margin:2px 0 0;color:var(--paper-dim);font-size:13.5px}
 .pcards{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
-.pcard{flex:1 1 340px;background:#fff;border:1px solid #e3dfd2;border-top:4px solid #1b5e20;border-radius:10px;padding:14px 16px}
+.pcard{flex:1 1 340px;background:var(--panel);border:1px solid var(--panel-line);border-top:4px solid var(--win);border-radius:10px;padding:14px 16px}
 .pcard h4{margin:0 0 4px;font-size:16px}
-.pcard p{margin:0 0 8px;font-size:13px;color:#5a6478}
+.pcard p{margin:0 0 8px;font-size:13px;color:var(--paper-dim)}
 .pctrow{display:flex;gap:8px;align-items:center;font-size:12.5px;margin:5px 0}
 .pctrow span:first-child{flex:0 0 210px}
-.pctbar{flex:1;background:#e8ecf3;border-radius:4px;height:10px;overflow:hidden}
-.pctbar span{display:block;background:#1b5e20;height:10px}
-.pctnum{flex:0 0 110px;text-align:right;font-weight:700}
-.pctna{color:#5a6478;font-style:italic}
+.pctbar{flex:1;background:rgba(255,255,255,.10);border-radius:4px;height:10px;overflow:hidden}
+.pctbar span{display:block;background:var(--win);height:10px}
+.pctnum{flex:0 0 110px;text-align:right;font-weight:700;font-family:"IBM Plex Mono",ui-monospace,monospace}
+.pctna{color:var(--paper-dim);font-style:italic}
 .ncards{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
-.ncard{flex:1 1 340px;background:#fff;border:1px solid #e3dfd2;border-top:4px solid #7a1f1f;border-radius:10px;padding:14px 16px}
+.ncard{flex:1 1 340px;background:var(--panel);border:1px solid var(--panel-line);border-top:4px solid var(--accent);border-radius:10px;padding:14px 16px}
 .ncard h4{margin:0 0 4px;font-size:16px}
-.ncard p{margin:0 0 8px;font-size:13px;color:#5a6478}
+.ncard p{margin:0 0 8px;font-size:13px;color:var(--paper-dim)}
 .ncard table{border-collapse:collapse;font-size:12.5px;margin:8px 0;width:100%}
-.ncard th,.ncard td{border:1px solid #e3dfd2;padding:3px 6px;text-align:right}
+.ncard th,.ncard td{border:1px solid var(--panel-line);padding:3px 6px;text-align:right}
 .ncard th:first-child,.ncard td:first-child,.ncard td:nth-child(2){text-align:left}
-.npbclock{background:#fff8e1;border-left:4px solid #f9a825;border-radius:6px;padding:12px 16px;margin:14px 0;font-size:14px}
+.npbclock{background:var(--panel);border-left:4px solid var(--gold);border-radius:6px;padding:12px 16px;margin:14px 0;font-size:14px}
 .npbclock h3{margin:0 0 6px}
-.npbhonest{background:#eef4ff;border-left:5px solid #0d47a1;border-radius:6px;padding:14px 18px;margin:14px 0;font-size:14px}
+.npbhonest{background:var(--panel);border-left:5px solid var(--paper-dim);border-radius:6px;padding:14px 18px;margin:16px 0;font-size:14px}
 .npbhonest h3{margin:0 0 6px}
 .evfoot{margin:2px 0 12px}
-@media print{body.print-boardroom #mode-story,body.print-boardroom #mode-explorer,body.print-boardroom .modenav,body.print-boardroom .crest,body.print-boardroom .keybox,body.print-boardroom .figidx,body.print-boardroom .srcbox{display:none}body.print-boardroom button{display:none}}
+@media print{body.print-boardroom #mode-story,body.print-boardroom #mode-explorer,body.print-boardroom .modenav,body.print-boardroom .crest,body.print-boardroom .keybox,body.print-boardroom .figidx,body.print-boardroom .srcbox{display:none}body.print-boardroom button{display:none}body{background:#fff}.slide{background:#fff!important;color:#000!important;border:1px solid #bbb!important}.slide svg text{fill:#000!important}.slide .modebar{display:none!important}}
 </style></head>
 <body>
 <div class="crest">
@@ -2836,11 +2900,11 @@ def build():
 </div>
 <div class="hd">
 <div class="keybox"><b>COLOR KEY (used on every chart below):</b>
-<span class="k"><span class="sw" style="background:#1b5e20"></span> green = <b>winning-cheap</b> (MIL · TB · CLE — the target teams: &gt;85 wins at low payroll)</span>
-<span class="k"><span class="sw" style="background:#e65100"></span> orange = <b>cheap-mediocre</b> (MIA · CHW · STL — the trap: frugal but ~78 wins)</span>
-<span class="k"><span class="sw" style="background:#1565c0"></span> blue = <b>other</b> (all remaining teams)</span>
-<span class="k"><span class="sw" style="background:#d50032"></span> red = cap line / negative signal</span>
-<span class="k"><span class="sw" style="background:#0d47a1"></span> navy = many-color charts (retention, sensitivity)</span></div>
+<span class="k"><span class="sw" style="background:#43b581"></span> green = <b>winning-cheap</b> (MIL · TB · CLE — the target teams: &gt;85 wins at low payroll)</span>
+<span class="k"><span class="sw" style="background:#e08a3c"></span> orange = <b>cheap-mediocre</b> (MIA · CHW · STL — the trap: frugal but ~78 wins)</span>
+<span class="k"><span class="sw" style="background:#8FBCE6"></span> blue = <b>other</b> (all remaining teams)</span>
+<span class="k"><span class="sw" style="background:#BF0D3E"></span> red = cap line / negative signal</span>
+<span class="k"><span class="sw" style="background:#092C5C;border:1px solid #16406E"></span> navy = many-color charts (retention, sensitivity)</span></div>
 <div class="keybox"><b>BASEBALL PLAIN-ENGLISH KEY — every stat on this page, in one glance:</b><br>
 <span class="k"><b>PA</b> = plate appearance — every time a batter steps to the plate (any outcome)</span>
 <span class="k"><b>OBP</b> = how often a batter reaches base (hits + walks)</span>
