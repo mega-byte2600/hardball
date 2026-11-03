@@ -995,6 +995,98 @@ def _benchmark_panel_html():
             "src/bml_cycle62.py.</p></div>")
 
 
+def _bat_speed_exhibit_html():
+    """Cycle 75: the bat-speed exhibit directly under Figure 19 in
+    Explorer — the trait's 2026 distribution and year-to-year
+    stability, as CONTEXT ONLY. Bat speed was tested as a projection
+    adjustment in Cycle 20 and dropped (claim N04, NOT SUPPORTED: it
+    made projections worse out of sample). This panel adds no
+    projection claim and feeds no projection; it renders ONLY from
+    the committed artifact data/bat_speed_exhibit_2027.json, and is
+    omitted entirely when the artifact is absent (fail closed).
+    Not a figure: the count stays 25."""
+    import html as _html
+    path = os.path.join(DATA, "bat_speed_exhibit_2027.json")
+    if not os.path.exists(path):
+        return ""
+    art = json.load(open(path))
+    dist = art["distribution_2026"]
+    stab = art["stability"]["all_matched"]
+    qual = art["stability"]["qualified_250"]
+    tb = art["top_bottom_2026"]
+    rng = dist["max"] - dist["min"]
+    band_l = 100.0 * (dist["p25"] - dist["min"]) / rng
+    band_w = 100.0 * (dist["p75"] - dist["p25"]) / rng
+    med_l = 100.0 * (dist["median"] - dist["min"]) / rng
+
+    def _table(rows):
+        trs = ("<tr><th style=\"text-align:left;padding:2px 10px 2px 0\">"
+               "Player</th><th style=\"padding:2px 8px\">Bat speed</th>"
+               "<th style=\"padding:2px 8px\">Swing length</th>"
+               "<th style=\"padding:2px 8px\">Squared-up</th>"
+               "<th style=\"padding:2px 8px\">Swings</th></tr>")
+        for r in rows:
+            trs += (f"<tr><td>{_html.escape(r['name'])}</td>"
+                    f"<td>{r['avg_bat_speed']:.1f}</td>"
+                    f"<td>{r['swing_length']:.1f} ft</td>"
+                    f"<td>{100.0 * r['squared_up_per_swing']:.1f}%</td>"
+                    f"<td>{r['swings_competitive']}</td></tr>")
+        return ("<table style=\"border-collapse:collapse;font-size:13px;"
+                "margin:8px 0\">" + trs + "</table>")
+
+    return (
+        '<div class="quant"><b>Bat speed, up close — context only.</b>'
+        "<p>Context only — bat speed was tested as a projection "
+        "adjustment and dropped: it made projections worse out of "
+        "sample (claim N04, NOT SUPPORTED). It is not an input to any "
+        "projection on this page.</p>"
+        f"<p>The 2026 Savant board holds {dist['n']} hitters. The "
+        f"median bat speed is {dist['median']:.1f} mph; the middle "
+        f"half of the league sits between {dist['p25']:.1f} and "
+        f"{dist['p75']:.1f} mph, and the full range runs "
+        f"{dist['min']:.1f} to {dist['max']:.1f} mph.</p>"
+        "<div style=\"position:relative;height:12px;background:#e8ecf3;"
+        "border-radius:4px;margin:10px 0 2px\">"
+        f"<div style=\"position:absolute;top:0;bottom:0;left:{band_l:.1f}%;"
+        f"width:{band_w:.1f}%;background:#1d3557;border-radius:4px\"></div>"
+        f"<div style=\"position:absolute;top:-2px;bottom:-2px;"
+        f"left:{med_l:.1f}%;width:3px;background:#d50032\"></div></div>"
+        f"<p class=\"srcline\">Slowest {dist['min']:.1f} mph · median "
+        f"{dist['median']:.1f} (red tick) · fastest {dist['max']:.1f} "
+        "mph. Dark band = the middle half of the league.</p>"
+        f"<p>Bat speed barely changes year to year: matched players "
+        f"correlate r = {stab['pooled']['r']:.3f} pooled across both "
+        f"transitions ({stab['pairs']['2024_2025']['r']:.3f} for "
+        f"2024&rarr;2025, n = {stab['pairs']['2024_2025']['n']}; "
+        f"{stab['pairs']['2025_2026']['r']:.3f} for 2025&rarr;2026, "
+        f"n = {stab['pairs']['2025_2026']['n']}). The Cycle 20 test on "
+        "record reports mean r = 0.921, computed on a qualified set — "
+        f"with a {tb['min_swings']}-competitive-swing minimum in both "
+        f"years, these same boards give "
+        f"{qual['pairs']['2024_2025']['r']:.3f} and "
+        f"{qual['pairs']['2025_2026']['r']:.3f}. The difference is the "
+        "qualification, not the data. Stability is not projection "
+        "value — that is why bat speed appears here as context and "
+        "nowhere as an input.</p>"
+        f"<p>Fastest and slowest swings, 2026 "
+        f"({tb['min_swings']}+ competitive swings; "
+        f"{tb['qualified_n']} hitters qualify):</p>"
+        "<div style=\"display:flex;gap:24px;flex-wrap:wrap\">"
+        f"<div>{_table(tb['fastest'])}</div>"
+        f"<div>{_table(tb['slowest'])}</div></div>"
+        "<p>No team split is printed: no committed player-to-team "
+        "join covers this board (the best covers 135 of 619 "
+        "hitters), so a team profile would be a selected sample "
+        "wearing a team's name.</p>"
+        f"<p class=\"srcline\">Register claim N04: &ldquo;"
+        f"{_html.escape(art['n04']['claim'])}&rdquo; — "
+        f"{_html.escape(art['n04']['status'])} (Cycle 20). Source: "
+        "data/bat_speed_exhibit_2027.json (Cycle 75), computed by "
+        "src/bml_cycle75.py from the committed Baseball Savant "
+        "bat-tracking boards (data/savant_bat_tracking_2024.json, "
+        "_2025, _2026); verdicts in data/savant_test.json.</p></div>")
+
+
 def _cap_transition_panel_html():
     """Cycle 64: the 2027 Cap Transition ledger — the lead decision
     panel at the front of Boardroom. One row per team: payroll on its
@@ -2581,6 +2673,11 @@ def build():
                 explorer += _panel(n, "explorer")
                 if n == 18:
                     explorer += _benchmark_panel_html()
+                if n == 19:
+                    # Cycle 75: the bat-speed exhibit goes directly
+                    # under the Figure 19 (Savant traits) panel — its
+                    # anchor figure. Context only (claim N04).
+                    explorer += _bat_speed_exhibit_html()
         else:
             explorer += "".join(_panel(n, "explorer") for n in nums)
         explorer += f'<p class="srcline">{src}</p>'

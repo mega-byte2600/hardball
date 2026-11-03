@@ -45,6 +45,8 @@ WHITELIST = {
     "ashcraft", "bolte", "braxton", "caglianone", "culpepper", "delauter",
     "dingler", "jac", "kaelen", "keaschall", "kurtz", "messick", "roki",
     "sasaki", "schlittler",
+    # Cycle 75 (bat-speed exhibit) names — verbatim from the Savant board
+    "oneil", "zquez", "adell", "caminero", "heineman", "mph",
     # data/tools vocab
     "api", "espn", "mlb", "statsapi", "spotrac", "github", "plotly",
     "sqlite", "csv", "kpi", "kpis", "keyless", "gitignored", "json", "html",
