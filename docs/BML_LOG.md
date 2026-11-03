@@ -2190,3 +2190,41 @@ No claim or data changed; dashboard untouched (still 25 figures).
   v1.1.3 current release, freeze tag still owed, print pack still
   day-before, gaps carried). Next build on record: FA tracker ticker
   wiring (owner-directed 2026-11-02 evening), then slate 4-6.
+
+## Cycle 66 (tracker ticker, 2026-11-03) — probe stack wired into the dashboard
+- src/pull_tracker_ticker.py -> data/tracker_ticker_2026.json
+  (521 items: 321 SIGNED / 200 REPORTED / 0 BUZZ). SIGNED from
+  StatsAPI transactions, FA codes only, 7-day window; DFA =
+  declared free agency in StatsAPI codes, rendered with its
+  exact move type so a declaration never reads as a signing.
+  REPORTED from MLBTR (main + top-6 teams + top-12 players),
+  MLB.com (top-6 teams), ESPN news + transactions, Google
+  News (generic + top-12 players, redirect links deduped on
+  title+source), RotoWire (5-item cap). Caps in the artifact:
+  12 players, 6 teams, 200 REPORTED stored, 10 BUZZ stored.
+- BUZZ ships EMPTY, honestly: Bluesky Jetstream is the only
+  social source, and its stream read timed out in this runtime
+  on both pull runs (0 events). The panel labels the lane
+  "awaits stream verification" instead of filling it with
+  substitutes. A standalone probe session was lost to runtime
+  instability and contributes no verdict either way.
+- GATE: 87 checks ALL PASS (3 new TICKER checks); spellcheck
+  green (ticker div excluded from the spellcheck scan — wire
+  headlines are quoted third-party copy, verified by source).
+  Platform clean (17 tables rebuilt byte-identical, 2 skipped
+  on absent raw with committed parquets standing; warehouse
+  from 19 tables; parity r = 0.889 / 201). Dashboard rebuilt
+  with the lake present: 25 figures, none missing.
+- CAUGHT BY THE GATE: one StatsAPI transaction (id 947748,
+  TR) carried no description and no player name; the pull now
+  skips such rows and counts them (1 skipped this run) instead
+  of rendering an empty bullet.
+- LEARN: a gate freshness pin must survive later runs — the
+  ticker gate pins pulled_at present-and-parseable, not
+  "today", because the ticker pull is not yet a cron step and
+  a "today" pin would fail every later cron gate run. The
+  panel displays the pull date instead.
+- Dashboard changed -> release v1.1.4 per the Cycle 60
+  pattern. Cron diff that would add the ticker pull to the
+  6-hourly build is proposed in HANDOFF (Next), NOT applied
+  — it awaits the owner's tap.

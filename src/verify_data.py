@@ -942,6 +942,81 @@ def main() -> int:
               "E-utilities (Cycle 57)", False,
               "evidence artifact or page missing")
 
+    # --- Tracker ticker: free-agency wire (Cycle 66) ----------------
+    tk_path = DATA / "tracker_ticker_2026.json"
+    if tk_path.exists():
+        tk = json.loads(tk_path.read_text())
+        tk_md, tk_items = tk["metadata"], tk["items"]
+        tk_signed = [i for i in tk_items if i["lane"] == "SIGNED"]
+        tk_reported = [i for i in tk_items if i["lane"] == "REPORTED"]
+        tk_buzz = [i for i in tk_items if i["lane"] == "BUZZ"]
+        try:
+            from datetime import datetime as _dt
+            _pulled = _dt.fromisoformat(tk_md["pulled_at"])
+            _pulled_ok = _pulled.tzinfo is not None
+        except Exception:
+            _pulled_ok = False
+        # Freshness note: the gate must stay green on later runs, so
+        # it pins pulled_at present-and-parseable, not "today" — the
+        # panel itself displays the pull date for the reader.
+        check("Ticker: artifact consistent (counts reconcile, every "
+              "SIGNED item carries a StatsAPI transaction id, no "
+              "REPORTED/BUZZ item carries one, lanes are the three "
+              "known lanes) (Cycle 66)",
+              _pulled_ok
+              and tk_md["counts"]["signed"] == len(tk_signed)
+              and tk_md["counts"]["reported"] == len(tk_reported)
+              and tk_md["counts"]["buzz"] == len(tk_buzz)
+              and tk_md["counts"]["total"] == len(tk_items)
+              and all(i.get("statsapi_transaction_id") is not None
+                      for i in tk_signed)
+              and all(i.get("statsapi_transaction_id") is None
+                      for i in tk_reported + tk_buzz)
+              and all(i["lane"] in ("SIGNED", "REPORTED", "BUZZ")
+                      and i.get("title") and i.get("source")
+                      for i in tk_items),
+              f"signed={len(tk_signed)} reported={len(tk_reported)} "
+              f"buzz={len(tk_buzz)} pulled={tk_md.get('pulled_at')}")
+        _story = html.split('id="mode-story"', 1)[1]
+        _story = _story.split('id="mode-boardroom"', 1)[0]
+        _tk = _story.find("Free-agency wire — the tracker ticker")
+        _ch1 = _story.find('data-chapter="1"')
+        check("Ticker: panel leads Story mode before Chapter 1, all "
+              "three lane labels + integrity line + pull date "
+              "rendered (Cycle 66)",
+              -1 < _tk < _ch1
+              and "SIGNED — confirmed by MLB StatsAPI" in _story
+              and "REPORTED — newswire and rumor" in _story
+              and "BUZZ — social" in _story
+              and "An item becomes SIGNED only when the MLB StatsAPI "
+                  "transactions feed carries it. REPORTED and BUZZ items "
+                  "are never labeled signings." in _story
+              and tk_md["pulled_at"][:10] in _story,
+              f"panel={_tk} ch1={_ch1}")
+        _signed12 = tk_signed[:12]
+        check("Ticker: SIGNED discipline — every rendered SIGNED item "
+              "carries its exact move type, so a DFA declaration "
+              "cannot read as a signing (Cycle 66)",
+              all(f"[{i['move_type']}]" in _story for i in _signed12)
+              and (not any(i["move_type"].startswith("DFA")
+                           for i in _signed12)
+                   or "Declared free agency" in _story),
+              f"rendered={len(_signed12)}")
+    else:
+        check("Ticker: artifact consistent (counts reconcile, every "
+              "SIGNED item carries a StatsAPI transaction id, no "
+              "REPORTED/BUZZ item carries one, lanes are the three "
+              "known lanes) (Cycle 66)", False,
+              "data/tracker_ticker_2026.json missing")
+        check("Ticker: panel leads Story mode before Chapter 1, all "
+              "three lane labels + integrity line + pull date "
+              "rendered (Cycle 66)", False,
+              "data/tracker_ticker_2026.json missing")
+        check("Ticker: SIGNED discipline — every rendered SIGNED item "
+              "carries its exact move type, so a DFA declaration "
+              "cannot read as a signing (Cycle 66)", False,
+              "data/tracker_ticker_2026.json missing")
+
     # --- optional live check ---------------------------------------
     if live:
         import requests

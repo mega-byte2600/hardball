@@ -976,3 +976,130 @@ run on main 46a2ea44 (release v1.1.3, Cycle 64 ledger live).
   reproducibility & claims pack. Slate 6: wire both refresh scripts
   into the 6h cron + visible "data as of" stamp. Sportradar trial
   ~Nov 15. Final frozen-main release cut before Dec 1.
+
+## Cycle 66 — FA tracker ticker: the probe stack wired into the dashboard (2026-11-03, owner-directed CarpeData)
+
+The probe sweep (~/workspace/hardball/TRACKER_PROBE_2026-11-02.md,
+probed live 2026-11-02 18:03–18:15 PST) is now the dashboard's
+front wire panel. Placement: front of Story mode (the default
+view), ahead of Chapter 1 — a wire panel, not a chapter (Story
+stays 6 chapters) and not a figure (count stays 25).
+
+### The pull: src/pull_tracker_ticker.py -> data/tracker_ticker_2026.json
+
+One pull, all kept sources, polite rates (0.4s between calls),
+fail-closed per source (a block is logged and skipped, never
+retried around). Pulled 2026-11-03 ~06:07 UTC. Items carry
+{pulled_at, lane, source, title, link, player, team,
+statsapi_transaction_id (CONFIRMED only), source_pubdate,
+move_type (CONFIRMED only)}.
+
+CONFIRMED (SIGNED lane): MLB StatsAPI transactions, 7-day window
+2026-10-27..2026-11-03, FA codes only (SFA / DFA / TR / REL /
+CLW / OUT / DES — winter-ball ASG assignments excluded):
+705 rows fetched, 321 kept. Breakdown: DFA declared free agency
+192, OUT 49, REL 28, CLW 20, TR 15, DES 9, SFA signed 9. One
+FA-code row (transaction id 947748, TR) carried no description
+and no player name; it is skipped and counted in the
+per-source note, not rendered as an empty bullet — the gate
+caught it on the first build. Class register
+(freeAgents?season=2026) returned 246 players and is recorded
+as the state table only; moves come from transactions, never
+from the register. ?season=2027 returns empty, as probed.
+
+REPORTED lane (newest 200 stored by pubdate): ESPN news 6
+fetched / 1 kept (FA-keyword filtered, unofficial endpoint);
+ESPN transactions page 1 of 134, 25 kept (cross-check only);
+MLB Trade Rumors main 15/7 + per-team feeds for the top 6
+teams by class count (SD, CHC, TEX, ARI, ATL, TOR) 15 each,
+6/8/2/5/4/3 kept (FA-keyword filtered); MLBTR per-player
+feeds for the top 12 by Steamer WAR, 15 each, 14–15 kept
+(channel title verified to carry the player's last name);
+MLB.com per-team RSS for the same 6 teams, 25 each, 4/2/0/1/
+1/1 kept (FA-keyword filtered; Arizona's feed titles itself
+"D-backs News", carried as an explicit fragment exception);
+RotoWire 5/5 (free-tier cap, as observed); Google News RSS
+generic "MLB free agency when:1d" 100/99 + per-player
+queries (top 12, "when:3d") 11–100 each — links are Google
+redirects, deduped on title+source, never on the redirect
+URL. Caps recorded in the artifact: 12 players, 6 teams,
+200 REPORTED stored, 10 BUZZ stored.
+
+BUZZ lane: Bluesky Jetstream ONLY. Verdict: the stream read
+did NOT complete in this runtime — the stdlib WebSocket
+client's read timed out on both pull runs (TimeoutError, 0
+events), and a standalone probe session was lost to runtime
+instability before returning a result, so it contributes no
+verdict either way. The lane therefore ships EMPTY with a
+plain label ("BUZZ awaits stream verification ... ships
+empty rather than filled with substitutes"). Never faked,
+never substituted: AppView search (403), Reddit (403),
+Mastodon (0 signal) stay dropped, as do GDELT (429),
+NewsAPI/GNews (delayed, dev-only) and X (no free read tier).
+
+### The panel: _ticker_panel_html, front of Story
+
+Renders ONLY from the committed artifact; absent the artifact
+it is omitted entirely (fail closed). Three lanes rendered
+distinctly: SIGNED — confirmed by MLB StatsAPI (each item
+carries its exact move type, so a DFA declaration reads as a
+declaration, never as a signing); REPORTED — newswire and
+rumor; BUZZ — social (empty with the label above). The
+panel states the integrity rule in one line: "An item
+becomes SIGNED only when the MLB StatsAPI transactions
+feed carries it. REPORTED and BUZZ items are never labeled
+signings." Rendered: newest 12 SIGNED, 20 REPORTED, 10 BUZZ.
+
+### Verification
+
+- Gate: 87 checks ALL PASS (84 + 3 new TICKER checks:
+  artifact consistency incl. every SIGNED item carrying a
+  StatsAPI transaction id and no REPORTED/BUZZ item carrying
+  one; panel leads Story before Chapter 1 with all three lane
+  labels + integrity line + pull date; SIGNED discipline with
+  exact move types rendered). Freshness note: the gate pins
+  pulled_at present-and-parseable, NOT "today" — a "today"
+  pin would fail every later cron gate run on a committed
+  artifact, and the ticker pull is not yet a cron step (see
+  proposed diff below); the panel itself displays the pull
+  date for the reader.
+- Spellcheck green. Note: the spellcheck gate now excludes
+  the ticker div from its scan (src/spellcheck_gate.py) —
+  wire headlines are quoted third-party copy, verified by
+  source, not by spelling; the gate still checks all of our
+  own prose elsewhere. Without the exclusion, every player
+  surname on the wire would need a whitelist entry.
+- Platform clean: curate rebuilt 17 tables byte-identical,
+  2 skipped on absent raw with committed parquets standing
+  (the Cycle 64 pattern); all 19 parquets byte-identical to
+  main; warehouse rebuilt from 19 tables; parity r = 0.889 /
+  201 matched. Dashboard rebuilt with the lake present:
+  25 figures, none missing.
+- Release: v1.1.4 per the Cycle 60 pattern (release commit
+  atop main carrying only the rebuilt
+  dashboard/hardball_demo.html; lightweight tag; GitHub
+  release via API; no asset uploads). Published file read
+  back from the release tarball and probed (ticker title,
+  all three lane labels, 25 figures, live-IL panel,
+  benchmark panel, ledger panel, evidence footnote).
+
+## Next
+
+- PROPOSED (owner tap required — NOT applied in this cycle):
+  add the ticker pull to the 6-hourly build, alongside the
+  already-owner-approved item-6 wiring of the two refresh
+  scripts. Exact diff to the cron job body:
+    ... existing steps (Spotrac probe, platform, backlog item) ...
+    + # Cycle 66 ticker (proposed): keep the wire current
+    + python3 src/pull_tracker_ticker.py
+    + python3 src/dashboard_p6.py        # rebuild with the lake present
+    + python3 src/verify_data.py         # gate must pass before any push
+    + # commit data/tracker_ticker_2026.json + dashboard/hardball_demo.html
+    + # only if the gate passes; on gate failure, last good
+    + # dashboard stays live and the failure is reported
+  The parent presents this; it is not applied here.
+- Slate 4: player health cards in the FA shopping list.
+  Slate 5: reproducibility & claims pack. Slate 6: wire both
+  refresh scripts into the 6h cron + visible "data as of"
+  stamp. Sportradar trial ~Nov 15. Final frozen-main release
+  cut before Dec 1.

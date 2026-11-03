@@ -1072,6 +1072,85 @@ def _cap_transition_panel_html():
             "and data/fa_shopping_2027.json.</p></div>")
 
 
+def _ticker_panel_html():
+    """Cycle 66: the free-agency tracker ticker — front of Story mode.
+
+    Renders ONLY from the committed artifact
+    data/tracker_ticker_2026.json; absent the artifact the panel is
+    omitted entirely (fail closed, Cycle 51/57 pattern). Not a
+    figure (count stays 25) and not a chapter (Story stays 6
+    chapters): a wire panel in front of them.
+
+    Three lanes, rendered distinctly:
+      SIGNED   — confirmed by the MLB StatsAPI transactions feed
+                 only; each item carries its exact move type, so a
+                 DFA declaration reads as a declaration, never as a
+                 signing.
+      REPORTED — newswire and rumor (MLBTR, MLB.com, ESPN, Google
+                 News, RotoWire); never labeled a signing.
+      BUZZ     — Bluesky Jetstream only. When the stream read did
+                 not complete in the build, the lane ships EMPTY with
+                 a plain label saying so — never filled with
+                 substitutes.
+    The integrity line states the promotion rule in one sentence.
+    """
+    import html as _html
+    path = os.path.join(DATA, "tracker_ticker_2026.json")
+    if not os.path.exists(path):
+        return ""
+    art = json.load(open(path))
+    md = art["metadata"]
+    counts = md["counts"]
+    items = art["items"]
+    pulled = md["pulled_at"][:10]
+
+    def _li(it, show_move=False):
+        title = _html.escape(it["title"])
+        if it.get("link"):
+            title = ('<a href="' + _html.escape(it["link"], quote=True) +
+                     '">' + title + "</a>")
+        move = (f" <b>[{ _html.escape(it['move_type'])}]</b>"
+                if show_move and it.get("move_type") else "")
+        src = _html.escape(it["source"])
+        pub = _html.escape(it["source_pubdate"][:10])
+        return f"<li>{title}{move} <span class=\"srcline\">({src}, {pub})</span></li>"
+
+    signed = [i for i in items if i["lane"] == "SIGNED"][:12]
+    reported = [i for i in items if i["lane"] == "REPORTED"][:20]
+    buzz = [i for i in items if i["lane"] == "BUZZ"][:10]
+    if md["jetstream"]["status"] == "stream_ok":
+        buzz_note = ("Bluesky Jetstream stream verified in this build; "
+                     "no matching posts in the read window."
+                     if not buzz else "")
+    else:
+        buzz_note = ("BUZZ awaits stream verification: the Bluesky "
+                     "Jetstream read did not complete in this build, "
+                     "so this lane ships empty rather than filled "
+                     "with substitutes.")
+    buzz_html = ("<ul>" + "".join(_li(i) for i in buzz) + "</ul>"
+                 if buzz else f"<p>{buzz_note}</p>")
+    return ('<div class="ticker"><h3>Free-agency wire — the tracker ticker</h3>'
+            f"<p><b>SIGNED {counts['signed']} · REPORTED {counts['reported']} "
+            f"· BUZZ {counts['buzz']}</b> — pulled {pulled}.</p>"
+            "<p>An item becomes SIGNED only when the MLB StatsAPI "
+            "transactions feed carries it. REPORTED and BUZZ items "
+            "are never labeled signings.</p>"
+            "<h4>SIGNED — confirmed by MLB StatsAPI</h4>"
+            "<ul>" + "".join(_li(i, show_move=True) for i in signed) + "</ul>"
+            "<h4>REPORTED — newswire and rumor</h4>"
+            "<ul>" + "".join(_li(i) for i in reported) + "</ul>"
+            "<h4>BUZZ — social</h4>"
+            + buzz_html +
+            '<p class="srcline">Source: data/tracker_ticker_2026.json '
+            "(Cycle 66). CONFIRMED: MLB StatsAPI transactions (FA codes "
+            "SFA / DFA / TR / REL / CLW / OUT / DES) diffed against the "
+            "freeAgents register. REPORTED: MLB Trade Rumors, MLB.com, "
+            "ESPN, Google News, RotoWire. BUZZ: Bluesky Jetstream only. "
+            "Dropped, not wired: GDELT (429), NewsAPI/GNews (delayed, "
+            "dev-only), X (no free read tier), Reddit (403), Mastodon "
+            "(no post signal), Bluesky AppView search (403).</p></div>")
+
+
 def panel_optimizer():
     """Cycle 49 (OPT-1), Figure 25: the optimizer's audit of Cycle 26
     (Cycle 52: benchmark vs headline — the optimum now headlines
@@ -2156,6 +2235,9 @@ def build():
               "<span class=\"why\">Why trust it:</span> real 2025-2026 data (MLB API + Spotrac), model "
               "cross-validated. Not a guarantee — shown honestly below.</div>")
     story += cards
+    # Cycle 66: the tracker ticker leads Story mode (default view) —
+    # a wire panel in front of the chapters, not a chapter itself.
+    story += _ticker_panel_html()
     story += ('<div class="hero-team"><h3>Pick your team first</h3>'
               "<p>Find your club before the story: its 2026 signature against the winning-cheap "
               "profile, its cap headroom, its farm pipeline, and its top prospect.</p></div>")

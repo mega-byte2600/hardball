@@ -94,6 +94,12 @@ def visible_words_from_html(html_path: str):
     """Extract only the words a human reads from the built dashboard HTML."""
     with open(html_path, encoding="utf-8") as f:
         html = f.read()
+    # Cycle 66: the ticker panel quotes third-party wire headlines
+    # (outlet copy, player names) — it is verified by source, not by
+    # spelling, so it is excluded exactly like the plotly JSON blobs.
+    # The gate still checks every word of our own prose elsewhere.
+    html = re.sub(r'<div class="ticker">.*?</div>\s*(?=<div|</div>)', " ",
+                  html, flags=re.S)
     # drop <script>, <style>, and tag markup entirely
     html = re.sub(r"<script.*?</script>", " ", html, flags=re.S | re.I)
     html = re.sub(r"<style.*?</style>", " ", html, flags=re.S | re.I)
