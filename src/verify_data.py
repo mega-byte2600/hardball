@@ -359,6 +359,55 @@ def main() -> int:
               "wording for bat speed", False,
               "bat_speed_exhibit_2027.json missing")
 
+    # --- Cycle 76: noir record-book theme (presentation only) -------
+    _root76 = dict(re.findall(r"--(ink|panel|paper|paper-dim|accent|gold)"
+                              r":\s*(#[0-9A-Fa-f]{6})", html))
+    _want76 = {"ink": "#041e42", "panel": "#092c5c", "paper": "#ffffff",
+               "paper-dim": "#8fbce6", "accent": "#bf0d3e",
+               "gold": "#f5d130"}
+    check("Cycle 76: :root carries the MLB + Rays token palette",
+          {k: v.lower() for k, v in _root76.items()} == _want76,
+          f"tokens={_root76}")
+    check("Cycle 76: no brass, no old page bg, no old ink in the build",
+          "#c9a227" not in html.lower() and "#f4f1ea" not in html.lower()
+          and "#14213d" not in html.lower())
+    _sw76 = [h.lower() for h in re.findall(
+        r'class="sw" style="background:(#[0-9A-Fa-f]{6})"', html)][:4]
+    _grp76 = ["#43b581", "#e08a3c", "#8fbce6", "#bf0d3e"]
+    check("Cycle 76: color-key swatches equal the group trace hexes",
+          _sw76 == _grp76
+          and all(g in html.lower() for g in _grp76),
+          f"swatches={_sw76}")
+
+    def _lum76(hexs):
+        _h = hexs.lstrip("#")
+        _rgb = [int(_h[i:i + 2], 16) / 255 for i in (0, 2, 4)]
+        _f = [(c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4)
+              for c in _rgb]
+        return 0.2126 * _f[0] + 0.7152 * _f[1] + 0.0722 * _f[2]
+
+    def _cr76(a, b):
+        _la, _lb = _lum76(a), _lum76(b)
+        return (max(_la, _lb) + 0.05) / (min(_la, _lb) + 0.05)
+
+    if {k: v.lower() for k, v in _root76.items()} == _want76:
+        _pairs76 = [(_cr76("#ffffff", _want76["ink"]), 4.5, "paper/ink"),
+                    (_cr76("#8fbce6", _want76["ink"]), 4.5, "dim/ink"),
+                    (_cr76("#ffffff", _want76["panel"]), 4.5, "paper/panel"),
+                    (_cr76("#8fbce6", _want76["panel"]), 4.5, "dim/panel"),
+                    (_cr76("#ffffff", _want76["accent"]), 4.5, "paper/accent"),
+                    (_cr76("#f5d130", _want76["ink"]), 3.0, "gold/ink")]
+        _bad76 = [f"{n}={r:.2f}" for r, m, n in _pairs76 if r < m]
+        check("Cycle 76: WCAG contrast minimums met on the token pairs",
+              not _bad76, f"failing: {_bad76}")
+    else:
+        check("Cycle 76: WCAG contrast minimums met on the token pairs",
+              False, "token palette mismatch")
+    check("Cycle 76: record-book type wired (fonts + Fraunces titles + "
+          "transparent figure ground)",
+          "fonts.googleapis.com" in html and "Fraunces" in html
+          and '"paper_bgcolor":"rgba(0,0,0,0)"' in html)
+
     # --- HS-2 verdict artifact: status + benchmark on record -------
     hs_path = DATA / "hakes_sauer_verdict.json"
     if hs_path.exists():

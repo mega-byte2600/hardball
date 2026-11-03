@@ -1461,3 +1461,46 @@ anywhere changes.
 - Remaining before Dec 1: final frozen-main release cut. The
   standing "Sportradar trial ~Nov 15" item is CLOSED — declined
   by the owner; the gap it was meant to close is closed above.
+
+## Cycle 76 — visual redesign: MLB colors + Rays secondary (2026-11-03)
+
+Presentation only (Cycle 33 rule): same data, same numbers, same
+claims. Owner-directed palette, superseding the earlier brass
+draft: MLB Navy #041E42 ground, MLB Red #BF0D3E the single accent
+(crest rule, chapter rules, cap-line/negative semantics), white
+text, Rays Navy #092C5C panels, Columbia Blue #8FBCE6 as dim text
++ links + the "other" group color, Rays Gold #F5D130 sparingly
+(data-as-of stamp, section/slide numerals, the posting-fee line).
+No #c9a227 anywhere in the build — gate-checked.
+
+- Tokens at :root in the page template; component CSS uses var()
+  throughout. Type: Google Fonts (Fraunces display, Inter body,
+  IBM Plex Mono numerals) with local fallbacks; figure titles set
+  in Fraunces via one central Plotly template applied in _number()
+  (transparent grounds, white-8% gridlines, Columbia ticks/legend,
+  ink hover labels, in-family colorway). Trace colors changed only
+  where they carry group semantics: #1b5e20 -> #43b581,
+  #e65100 -> #e08a3c, #1565c0 -> #8FBCE6, cap red #d50032 ->
+  #BF0D3E; the color key swatches carry the same hexes (gate
+  asserts key == traces). Two figure subtitles that named the old
+  animation gold now say "Green" — the winning-cheap bubbles and
+  radar profile are green, matching the key.
+- Data integrity: every figure's trace data arrays (x/y/text/
+  customdata) extracted from the pre- and post-redesign builds —
+  identical on all 25 figures. Boardroom print forces light
+  slides + ink text (incl. SVG text fill) under @media print.
+- WCAG contrasts computed from the tokens: white/#041E42 16.54,
+  #8FBCE6/#041E42 8.27, #F5D130/#041E42 11.06, white/#092C5C
+  13.76, #8FBCE6/#092C5C 6.88, #F5D130/#092C5C 9.20, white/
+  #BF0D3E 6.28 — all text pairs pass 4.5:1. MLB Red on navy
+  (2.63) appears only as non-text chrome (rules, borders); text
+  on red is white.
+- Gate: 107 checks ALL PASS (102 + 5 new Cycle 76 checks: token
+  palette, brass/old-bg absence, key == trace hexes, contrast
+  minimums recomputed in-gate, type wiring). No existing check
+  was edited — none pinned an old presentational string.
+  Spellcheck green; platform parity r = 0.889 / 201, warehouse
+  20 tables. Dashboard 5,645,837 -> 5,402,333 bytes.
+- Release: v1.1.11 per the Cycle 60 pattern. Remaining before
+  Dec 1: final frozen-main release cut (its dashboard-footer
+  Sportradar line edit rides along there).
