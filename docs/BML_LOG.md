@@ -1906,3 +1906,64 @@ count unchanged at 23. No NPB→MLB translation factor claimed anywhere.
   6-hourly job alongside `src/refresh_live_feeds.py` — the same
   pending cron-wiring decision (parent lane); Figure 9
   disclosure is an owner item; final release cut before Dec 1.
+
+## Cycle 58 — record books & almanacs sweep (2026-11-02, owner standing directive)
+
+- Built: nothing new — deliberately. This cycle is source work:
+  the record-book class probed, verdicts logged, and nothing
+  wired that did not earn it (a verified negative is a complete
+  cycle, the Cycles 41/44 pattern). Docs only: scorecard Cycle 58
+  addendum (the sweep table — the project's complete record-book
+  layer in one place), a DATA_PLATFORM reference-layer section,
+  HANDOFF, this entry, PR_BODY.
+- Measured (live probes, 2026-11-02): Baseball Almanac —
+  robots.txt 200 (permissive), homepage 200, record-book path
+  /recbooks/ **403** → stopped; REFERENCE-ONLY (HTML compilation,
+  no API/CSV route). Elias Sports Bureau — homepage 200 via curl
+  (JS-driven corporate page, no static text layer), text fetch
+  refused 403, not retried; no public API/download exists →
+  official-by-citation only. SABR — homepage **429** → stopped
+  (its role is already counted: it publishes Lahman). National
+  Baseball Hall of Fame — homepage 200; museum/editorial site,
+  no machine-readable product → REFERENCE-ONLY. The Baseball
+  Cube — homepage 200 (evaluated cross-check status stands).
+- Learned: "the official MLB record book" is a print object.
+  MLB's records are kept by its official statistician, Elias;
+  the latest record-book edition located is the 2021 "Elias Book
+  of Baseball Records" (cited as a current authority in a
+  Retrosheet research paper retrieved this cycle, which also
+  notes a record it establishes was "not even included" in the
+  most recent Elias or Sporting News books — even the official
+  book is not exhaustive). MLB's own branded record book is a
+  2013 print publication; no record-book PDF exists on MLB's
+  static host (game-notes PDFs only). The Baseball America
+  Almanac 2026 digital edition is password-protected —
+  paywalled, logged as a gap.
+- Learned (wiring test): the candidate job — cross-checking
+  canonical records the demo states — has no object. Repo-wide
+  grep for record language (streak / all-time / single-season /
+  career record / canonical totals) across docs, src, and data:
+  the demo states no canonical historical records. Nothing was
+  invented to give the record books a surface. Citation rule set
+  instead: any future record claim cites Elias / MLB official
+  publications by hand.
+- Learned (health & availability lens, one line each, in the
+  scorecard): the record-book class adds no IL or workload data
+  — Retrosheet never tracked the injured list (transactions
+  froze Nov 2021), Lahman offers season innings/games as
+  durability context only, Chadwick biographical span only,
+  Elias nothing public. Figure 14's availability layer stays
+  measured IL data (Injury Report + the live feeds), not
+  record books.
+- GATE: ingest 25 datasets / 0 failures; curate 19 tables, all
+  contracts pass; warehouse rebuilt; parity r = 0.889 / 201;
+  gate ALL PASS offline (75 checks — unchanged; no new rendered
+  pins, no source became active, dashboard footer untouched);
+  spellcheck green; dashboard rebuilds at 25 figures from
+  committed snapshots. GitHub Actions ignored per the owner's
+  blackout directive. No browser visual QA (standing rule).
+- Next: unchanged queue — wire `src/refresh_live_feeds.py` AND
+  `src/pull_evidence_surveillance.py` into the 6-hourly job (one
+  pending cron-wiring decision, parent lane); Figure 9
+  disclosure is an owner item; Sportradar trial ~Nov 15; final
+  release cut before Dec 1.
