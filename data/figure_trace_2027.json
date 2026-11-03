@@ -202,7 +202,7 @@
    "artifacts": [
     "data/mlb_lake.db (local build artifact, gitignored) -> curated data/curated/fact_stat_lines.parquet"
    ],
-   "headline": "lake present: True; pitching stat_lines rows = 200",
+   "headline": "lake present: True; pitching stat_lines rows = 156",
    "markers": [
     "Pitching is the other winning-cheap half"
    ],
@@ -340,14 +340,15 @@
   },
   {
    "figure": 22,
-   "title": "The shopping list: top 2027 free agents by projected WAR",
+   "title": "The 2027 FA market by SURPLUS VALUE — what wins are really priced at",
    "artifacts": [
-    "data/fa_shopping_2027.json"
+    "data/fa_shopping_2027.json",
+    "data/surplus_value_2027.json"
    ],
-   "headline": "top WAR: Tarik Skubal",
+   "headline": "top surplus: William Contreras",
    "markers": [
-    "Tarik Skubal",
-    "shopping list"
+    "William Contreras",
+    "SURPLUS VALUE"
    ],
    "build": "python3 src/dashboard_p6.py",
    "panel_present": true,

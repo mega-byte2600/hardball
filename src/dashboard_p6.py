@@ -1562,35 +1562,58 @@ def panel_pipeline():
     return fig
 
 def panel_shopping():
-    """Cycle 25: the 2027 free-agent shopping list — Steamer WAR vs the
-    prior contract's AAV (a last-price anchor, never a predicted price)."""
-    fj = os.path.join(DATA, "fa_shopping_2027.json")
+    """Cycle 25 + Cycle 71: the 2027 free-agent shopping list, now rank-ordered
+    by SURPLUS VALUE (Moneyball 2.0 arbitrage).
+
+    Surplus = projected dollars of wins (Steamer WAR x market $/WAR) MINUS
+    the expected market cost (Spotrac market AAV) — the operative number a
+    front office decides on (Marlins VP of Baseball Systems, Aug 2025).
+
+    Every figure is committed data: WAR + market AAV from
+    data/fa_shopping_2027.json; the market $/WAR is the median of the class's
+    OWN implied rate (spotrac_market_aav / steamer_war); the contact-skill
+    discount comes from the committed Hakes–Sauer run (Cycle 46). Nothing
+    invented here.
+    """
+    fj = os.path.join(DATA, "surplus_value_2027.json")
     if not os.path.exists(fj):
         return None
     d = json.load(open(fj))
-    top = d.get("top25_by_war", [])[:15]
+    top = sorted(d.get("top_surplus", [])[:12], key=lambda r: r["surplus_usd"])
     if not top:
         return None
-    top = sorted(top, key=lambda r: r["steamer_war"])
-    names = [f"{r['name']} ({r['pos']}, {r['prev_team']})" for r in top]
-    vals = [r["steamer_war"] for r in top]
-    colors = ["green" if r["fits_indiv_max_at_prior_aav"] else "#d50032" for r in top]
-    labels = [(f"{r['steamer_war']:.1f} WAR · prior AAV ${r['prev_aav']/1e6:.1f}M"
-               if r["prev_aav"] else f"{r['steamer_war']:.1f} WAR") for r in top]
+    names = [f"{r['name']} ({r['pos']})" for r in top]
+    surp = [float(r["surplus_usd"]) / 1e6 for r in top]
+    colors = ["green" if s > 0 else "#d50032" for s in surp]
+    labels = [(f"{r['steamer_war']:.1f} WAR · "
+               f"value ${r['value_usd']/1e6:.0f}M · "
+               f"cost ${r['cost_aav']/1e6:.0f}M · "
+               f"{r['surplus_pct']:+.0f}%") for r in top]
     fig = go.Figure(go.Bar(
-        x=vals, y=names, orientation="h", marker=dict(color=colors),
-        text=labels, textposition="outside"))
-    best = d.get("top15_value_war_per_10m", [])
-    best_txt = "; ".join(f"{r['name']} {r['war_per_10m_prior_aav']}" for r in best[:3])
+        x=surp, y=names, orientation="h", marker=dict(color=colors),
+        text=labels, textposition="outside", cliponaxis=False))
+    sk = d.get("contact_skill_arbitrage") or {}
+    arb_txt = ""
+    if sk.get("top_quartile_contact_usd_per_war"):
+        arb_txt = (f"Contact-skill discount: top-quartile CONTACT hitters "
+                   f"${sk['top_quartile_contact_usd_per_war']/1e6:.1f}M/WAR vs "
+                   f"${sk['bottom_quartile_contact_usd_per_war']/1e6:.1f}M/WAR "
+                   f"for the bottom quartile ({100*sk['top_to_bottom_ratio']:.0f}% "
+                   f"of the cost).")
     fig.update_layout(
-        title=("The shopping list: top 2027 free agents by projected WAR (Cycle 25)<br>"
-               f"<sub>Green = prior AAV fits the 15% individual max ($36.8M) at last price. Prior AAV is an anchor, "
-               f"not a predicted 2027 price. Best value (WAR per $10M of prior AAV): {best_txt}. "
-               f"Sources: Spotrac FA class + 2026 salaries (24/30 team pages pulled; 6 rate-limited, logged), "
-               f"FanGraphs Steamer WAR.</sub>"),
-        xaxis_title="Steamer projected 2027 WAR",
-        template="plotly_white", height=560, margin=dict(l=230),
-        xaxis_range=[0, max(vals) * 1.45])
+        title=("The 2027 FA market by SURPLUS VALUE — what wins are really "
+               f"priced at (Cycle 71)<br><sub>{arb_txt} "
+               f"Surplus = projected wins in dollars at the market rate (WAR "
+               f"x ${d['market_usd_per_war']/1e6:.2f}M) "
+               f"minus expected market cost. Green = surplus-positive "
+               "(market values these below the class's own $/WAR); red = "
+               "overpriced. Valuation, not proven mispricing — a player can be "
+               "cheap because of injury/role/age risk. Sources: Spotrac FA "
+               "market AAV + FanGraphs Steamer WAR (fa_shopping_2027.json); "
+               "Hakes–Sauer Cycle 46 committed $/WAR. See BML_LOG Cycle 71.</sub>"),
+        xaxis_title="surplus value vs expected market cost ($M)",
+        template="plotly_white", height=660, margin=dict(l=200, t=150),
+        xaxis_range=[min(surp) * 1.6, max(max(surp), 0) * 1.35])
     return fig
 
 def panel_posted():

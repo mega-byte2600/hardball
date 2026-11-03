@@ -91,7 +91,7 @@ curate <code>python3 src/curate.py</code> · warehouse
 <tr><td>Figure 10</td><td>Cap-era reality: payroll vs proposed 2027 cap</td><td>data/cap_scenario_2027.json</td><td>over cap 7, under floor 15</td><td>verified</td></tr>
 <tr><td>Figure 11</td><td>Forced sellers — how few big contracts close each gap</td><td>data/forced_sellers_2027.json</td><td>6 covered; CHC the only uncovered team</td><td>verified</td></tr>
 <tr><td>Figure 12</td><td>2027 projected hitters by OBP (Marcel)</td><td>data/projections_2027.json</td><td>top OBP: Aaron Judge</td><td>verified</td></tr>
-<tr><td>Figure 13</td><td>Pitching is the other winning-cheap half</td><td>data/mlb_lake.db (local build artifact, gitignored) -&gt; curated data/curated/fact_stat_lines.parquet</td><td>lake present: True; pitching stat_lines rows = 200</td><td>verified</td></tr>
+<tr><td>Figure 13</td><td>Pitching is the other winning-cheap half</td><td>data/mlb_lake.db (local build artifact, gitignored) -&gt; curated data/curated/fact_stat_lines.parquet</td><td>lake present: True; pitching stat_lines rows = 156</td><td>verified</td></tr>
 <tr><td>Figure 14</td><td>2027 health risk (IL-based PA cap) + live-IL picture</td><td>data/projections_2027_health.json, data/il_current_live.json, data/il_events.json</td><td>live-IL pull 2026-11-02; 13 of 251 FAs injured</td><td>verified</td></tr>
 <tr><td>Figure 15</td><td>Proposed 26-man winning-cheap roster</td><td>data/roster_2027.json</td><td>13 hitters + 13 pitchers</td><td>verified</td></tr>
 <tr><td>Figure 16</td><td>What does the money buy? (scenario rosters)</td><td>data/wow_scenarios.json, data/uncertainty_scenarios_2027.json</td><td>Floor 48.9 WAR; ±20% range 45.0-53.2; delivered 10th-90th 33.0-46.9</td><td>verified</td></tr>
@@ -100,7 +100,7 @@ curate <code>python3 src/curate.py</code> · warehouse
 <tr><td>Figure 19</td><td>Savant traits are rock-stable year-to-year</td><td>data/savant_test.json</td><td>6 trait stabilities</td><td>verified</td></tr>
 <tr><td>Figure 20</td><td>Top value metrics — wOBA/wRC+ &amp; FIP/K-BB%</td><td>data/value_metrics_2026.json</td><td>hitting rows 30; pitching rows 26</td><td>verified</td></tr>
 <tr><td>Figure 21</td><td>The pipeline behind winning-cheap</td><td>data/pipeline_2026.json</td><td>30 organizations</td><td>verified</td></tr>
-<tr><td>Figure 22</td><td>The shopping list: top 2027 free agents by projected WAR</td><td>data/fa_shopping_2027.json</td><td>top WAR: Tarik Skubal</td><td>verified</td></tr>
+<tr><td>Figure 22</td><td>The 2027 FA market by SURPLUS VALUE — what wins are really priced at</td><td>data/fa_shopping_2027.json, data/surplus_value_2027.json</td><td>top surplus: William Contreras</td><td>verified</td></tr>
 <tr><td>Figure 23</td><td>The Posted Class: three players, three different bets</td><td>data/posted_class_2026.json, data/fig23_rebuild_2026.json</td><td>fee checkpoint $60M -&gt; $10.875M; no NPB-to-MLB translation factor claimed</td><td>verified</td></tr>
 <tr><td>Figure 24</td><td>The pricing test: Hakes-Sauer on ourselves</td><td>data/hakes_sauer_verdict.json, data/hakes_sauer_results.json</td><td>480 team-seasons; verdict INCONCLUSIVE on mispricing</td><td>verified</td></tr>
 <tr><td>Figure 25</td><td>Benchmark vs headline: the exact optimum beats the greedy build</td><td>data/optimizer_comparison_2027.json, data/optimizer_sensitivity_2027.json</td><td>floor delta +6.9 WAR; price ranges 45.0-53.2</td><td>verified</td></tr>

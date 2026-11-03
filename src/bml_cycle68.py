@@ -533,6 +533,8 @@ def trace_figures(html_text):
     cap = load("cap_transition_2027.json")
     forced = load("forced_sellers_2027.json")
     shop = load("fa_shopping_2027.json")["class"]
+    # Cycle 71: the shopping figure is now the SURPLUS-VALUE arbitrage panel.
+    surplus_ar = load("surplus_value_2027.json")
     proj27 = load("projections_2027.json")
     proj26 = load("projections_2026.json")
     kpi26 = load("kpi_2026.json")
@@ -564,7 +566,8 @@ def trace_figures(html_text):
         pit_rows = 0
 
     top_obp = max(proj27, key=lambda r: r["proj_OBP"])["name"]
-    top_shop = max(shop, key=lambda r: r.get("steamer_war") or 0)["name"]
+    top_shop = max(surplus_ar.get("top_surplus", []),
+                   key=lambda r: r.get("surplus_usd") or 0)["name"]
     floor = wow["scenarios"][0]
     floor_rng = floor.get("war_range_prices_pm20", {})
     floor_delta = round(
@@ -695,10 +698,10 @@ def trace_figures(html_text):
          "headline": f"{len(pipe)} organizations",
          "markers": ["pipeline behind winning-cheap"],
          "build": "python3 src/dashboard_p6.py"},
-        {"figure": 22, "title": "The shopping list: top 2027 free agents by projected WAR",
-         "artifacts": ["data/fa_shopping_2027.json"],
-         "headline": f"top WAR: {top_shop}",
-         "markers": [top_shop, "shopping list"],
+        {"figure": 22, "title": "The 2027 FA market by SURPLUS VALUE — what wins are really priced at",
+         "artifacts": ["data/fa_shopping_2027.json", "data/surplus_value_2027.json"],
+         "headline": f"top surplus: {top_shop}",
+         "markers": [top_shop, "SURPLUS VALUE"],
          "build": "python3 src/dashboard_p6.py"},
         {"figure": 23, "title": "The Posted Class: three players, three different bets",
          "artifacts": ["data/posted_class_2026.json",

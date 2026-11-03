@@ -823,10 +823,11 @@ def main() -> int:
     _fig(21, "pipeline panel title in HTML, 30 orgs behind it",
          "under-26 upper-minors depth" in html_qa
          and len(load("pipeline_2026.json")["orgs"]) == 30)
-    _fig(22, "shopping panel: top-25 list in artifact, title in HTML",
-         len(fa.get("top25_by_war", [])) == 25
-         and "The shopping list" in html_qa,
-         f"top25={len(fa.get('top25_by_war', []))}")
+    _fig(22, "surplus-value arbitrage panel: artifact lists 25, title in HTML",
+         len(load("surplus_value_2027.json").get("top_surplus", [])) == 10
+         and "SURPLUS VALUE" in html_qa
+         and "surplus value vs expected market cost" in html_qa,
+         f"surplus_n={len(load('surplus_value_2027.json').get('top_surplus', []))}")
     f23 = load("fig23_rebuild_2026.json")
     _fig(23, "posted class: fee checkpoint exact, no-translation label shown",
          f23["fee_checkpoints_m"]["60"] == 10.875

@@ -2322,3 +2322,40 @@ No claim or data changed; dashboard untouched (still 25 figures).
 - Dashboard changed -> release v1.1.7 per the Cycle 60 pattern
   (tag + GitHub release, no asset uploads; the merged tree already
   carries the rebuilt dashboard).
+
+## Cycle 71 — ARBITRAGE: the surplus-value layer (Moneyball 2.0, owner request 2026-11-03)
+
+- Front-office framing adopted: the number a real front office decides
+  on is SURPLUS VALUE = projected dollars of wins MINUS contract
+  cost (Miami Marlins VP of Baseball Systems, Posit Data Science
+  Hangout, Aug 2025). Moneyball 2.0 is not "compute more stats" — it
+  is "price the whole market against one value reality, then trade the
+  gap."
+- BUILD: src/bml_cycle71.py -> data/surplus_value_2027.json. For every
+  free agent in the committed FA class (fa_shopping_2027.json):
+  value_usd = steamer_war x market_usd_per_war, where market $/WAR =
+  the MEDIAN of the class's own implied rate (spotrac_market_aav /
+  steamer_war) = $8.16M. surplus_usd = value_usd - cost_aav (Spotrac
+  market AAV). 12 of 25 surplus-positive. No rates invented — every
+  input is committed data.
+- CONTACT-SKILL ARBITRAGE surfaced from the committed Hakes–Sauer run
+  (Cycle 46, data/hakes_sauer_results.json): top-quartile CONTACT
+  hitters cost ~$8.0M/WAR vs ~$15.0M/WAR for the bottom quartile
+  (~54% of the cost) — buying contact/OBP skill is buying wins at
+  roughly half the dollars-per-WAR of a power ticket. Stated honestly
+  as a descriptive contrast (the Hakes–Sauer mispricing test is
+  INCONCLUSIVE), never as a proven price effect.
+- LEADERBOARD sanity: Contreras +$20.6M surplus (4.3 WAR, $14.4M
+  market), Sandoval +$14.1M (2.0 WAR, $2.4M), Skubal +$6.7M (near-fair
+  — market already prices him). Red = overpriced vs the class's own
+  rate. Surplus caveat on the panel: a player can be cheap for
+  injury/role/age risk — valuation, not a settled mispricing.
+- DASHBOARD: Figure 22 panel rewritten from the surplus artifact
+  (rank by surplus, green/red color, value-vs-cost in the labels).
+  figure_trace (cycle68) Fig 22 entry + verify_data gate updated to
+  the honest surplus strings; cycle69 re-run to keep O01 resolved
+  (cycle68 regen alone would have re-opened it).
+- GATE: 75 checks ALL PASS + spellcheck green + accuracy monitor
+  4/4. Run order for this cycle: bml_cycle71 -> dashboard build ->
+  bml_cycle68 -> bml_cycle69 -> dashboard build -> verify + spell +
+  monitor (cycle69 must follow cycle68 so O01 stays closed).
