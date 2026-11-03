@@ -309,7 +309,24 @@
    "standing_record": "docs/BML_LOG.md Cycle 39 entry; data/persistence_ci.json as shipped."
   }
  ],
- "open_items": [
+ "open_items": [],
+ "corrections_log": [
+  "Cycle 59 corrected two Cycle 58 probe-evidence lines in the scorecard (SABR: HTTP 200, not 429; Elias: connection dropped, not HTTP 200). The verdicts did not change; the correction is recorded in the PR body as an errata block, not a rewrite.",
+  "Cycle 67's spellcheck whitelist splits accented player names at the accent (berr = Berrios, garc = Garcia, nchez = Sanchez, rez = Perez, rquez = Marquez) — a tokenizer artifact, recorded in the cycle note so it is not mistaken for misspellings.",
+  "Cycle 69 closed open item O01 (Figure 9 in-sample label) as RESOLVED: the label shipped in the owner's lane (commit 4219e079) and is carried by the figure's title + caption. No claim statuses changed; the register's counts move from 1 open item to 0 open / 1 resolved."
+ ],
+ "counts": {
+  "supported": 16,
+  "not_supported": 7,
+  "retracted": 3,
+  "open_items": 0,
+  "figures_traced": 25,
+  "figures_verified": 25,
+  "panels_traced": 8,
+  "panels_verified": 8,
+  "resolved_items": 1
+ },
+ "resolved_items": [
   {
    "id": "O01",
    "claim": "Figure 9's 'Model-projected wins' title presents in-sample fitted values without an in-sample / diagnostic label.",
@@ -318,23 +335,11 @@
     "artifact": "data/projections_2026.json + data/formula_prod.json",
     "key_numbers": "30 rows; formula_prod status DIAGNOSTIC ONLY — same-year fit; not a forecast"
    },
-   "status": "OPEN — owner decision pending (label as diagnostic vs leave as is)",
-   "cycle": 53,
-   "date": "2026-11-02"
+   "status": "RESOLVED",
+   "resolution": "The shipped Figure 9 title is '2026 — Model fit (in-sample) vs actual wins, by team' and its caption states 'this is calibration, not a forecast' — the in-sample / diagnostic label the item asked for.",
+   "standing_record": "Owner's lane relabel, commit 4219e079 ('Figure 9 (owner item #1): relabel in-sample model fit as calibration, overlay actual wins'); title + caption verified in src/dashboard_p6.py and the built dashboard.",
+   "resolved_cycle": 69,
+   "date": "2026-11-03"
   }
- ],
- "corrections_log": [
-  "Cycle 59 corrected two Cycle 58 probe-evidence lines in the scorecard (SABR: HTTP 200, not 429; Elias: connection dropped, not HTTP 200). The verdicts did not change; the correction is recorded in the PR body as an errata block, not a rewrite.",
-  "Cycle 67's spellcheck whitelist splits accented player names at the accent (berr = Berrios, garc = Garcia, nchez = Sanchez, rez = Perez, rquez = Marquez) — a tokenizer artifact, recorded in the cycle note so it is not mistaken for misspellings."
- ],
- "counts": {
-  "supported": 16,
-  "not_supported": 7,
-  "retracted": 3,
-  "open_items": 1,
-  "figures_traced": 25,
-  "figures_verified": 25,
-  "panels_traced": 8,
-  "panels_verified": 8
- }
+ ]
 }

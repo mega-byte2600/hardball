@@ -1282,3 +1282,19 @@ its artifact with headline values recomputed at build time.
   (claims panel title, retracted-claims string, 25 figures,
   ticker panel, ledger panel, benchmark panel, health cards,
   footnote).
+
+## Cycle 69 — claims-pack open item O01 resolved (2026-11-03)
+
+Bookkeeping only: the Cycle 68 pack's one open item is closed, not
+decided around. Figure 9's in-sample label shipped in the owner's
+lane (commit 4219e079); the register now records O01 as RESOLVED
+(16 SUPPORTED / 7 NOT SUPPORTED / 3 RETRACTED unchanged, 0 open,
+1 resolved), the Figure 9 trace headline updated, the pack page
+regenerated with a Resolved items section, and the dashboard panel
+paragraph replaced. Gate 93 checks ALL PASS (checks updated, none
+added); spellcheck green; platform clean (ingest 25/0 failures,
+curated byte-identical, parity r = 0.889 / 201); dashboard rebuilt
+(25 figures). Spotrac 403 + FanGraphs 403 (single probes, stopped
+per rule) — salaries stay 24/30, forced-seller 6/7. Release v1.1.7
+per the Cycle 60 pattern. Next: Sportradar trial ~mid-Nov; final
+frozen-main release cut before Dec 1.

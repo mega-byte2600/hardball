@@ -2281,3 +2281,44 @@ No claim or data changed; dashboard untouched (still 25 figures).
   Platform clean (17 curated rebuilt, 19 parquets byte-identical,
   warehouse rebuilt, parity r = 0.889 / 201). Released as v1.1.6 per the
   Cycle 60 pattern; published file probed from the release tarball.
+
+## Cycle 69 — claims-pack open item O01 resolved (2026-11-03)
+
+- BOOKKEEPING ONLY — no new analysis, no claim status changes, no
+  figure changes. The Cycle 68 pack's one open item is closed on the
+  record: Figure 9's in-sample label shipped in the owner's lane
+  (commit 4219e079, "Figure 9 (owner item #1): relabel in-sample
+  model fit as calibration, overlay actual wins"). The shipped
+  title is "2026 — Model fit (in-sample) vs actual wins, by team"
+  and its caption states "this is calibration, not a forecast".
+- BUILD: src/bml_cycle69.py -> data/claims_register.json (open 1 ->
+  0, resolved 1; 16 SUPPORTED / 7 NOT SUPPORTED / 3 RETRACTED
+  unchanged) + data/figure_trace_2027.json (Figure 9 headline now
+  reads "resolved Cycle 69"; 25/25 figures + 8/8 panels still
+  verified) + docs/REPRODUCIBILITY.html regenerated (new Resolved
+  items section, open section now "None — no open items").
+  Dashboard panel paragraph replaced (stale "One item is still
+  open" -> "No items are open", with the O01 resolution note);
+  Story 6 chapters, Boardroom 15 slides, 25 figures all unchanged.
+- GATE: 93 checks ALL PASS (checks updated for the resolved item,
+  none added: register requires O01 resolved + open empty + counts
+  reconcile incl. resolved; panel requires the new paragraph and
+  forbids the stale one; pack page requires the Resolved section);
+  spellcheck green. The gate's evidence-artifact loop now covers
+  resolved_items too, so O01's evidence stays checked.
+- PLATFORM: ingest 25 datasets, 0 failures (Savant bands hold:
+  expected 651-673, bat-tracking 595-619, sprint 489-506;
+  transactions 120,552); curate 19 tables, contracts pass;
+  curated parquets + build report byte-identical to main (no data
+  PR from the platform step); warehouse rebuilt from 19 tables;
+  parity r = 0.889 / 201. Dashboard rebuilt with the lake present:
+  25 figures, none missing.
+- SALARY GAP UNCHANGED: Spotrac probe single GET 403; FanGraphs
+  RosterResource payroll probe single GET 403 (Cloudflare, same as
+  Cycle 32) — both stopped for the run per the rate-limit rule.
+  Salaries stay 24/30, forced-seller 6/7. No routing around either
+  block. Next salary route remains the Sportradar trial (~mid-Nov,
+  timed to cover Dec 1).
+- Dashboard changed -> release v1.1.7 per the Cycle 60 pattern
+  (tag + GitHub release, no asset uploads; the merged tree already
+  carries the rebuilt dashboard).

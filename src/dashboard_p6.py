@@ -1281,6 +1281,8 @@ def _ticker_panel_html():
 
 def _claims_panel_html():
     """Cycle 68: the claims & reproducibility panel — Explorer appendix.
+    Cycle 69: the open-item paragraph now carries the O01 resolution
+    (Figure 9's title already carries the in-sample label).
 
     Renders ONLY from the committed pack artifacts
     data/claims_register.json + data/figure_trace_2027.json; absent
@@ -1312,12 +1314,12 @@ def _claims_panel_html():
             f"All {tr['counts']['figures_verified']} figures and "
             f"{tr['counts']['panels_verified']} panels traced to their artifacts.</p>"
             "<p><b>Retracted — stated plainly:</b></p><ul>" + ret + "</ul>"
-            "<p>One item is still open, not decided here: Figure 9's "
-            "'Model-projected wins' title presents in-sample fitted values "
-            "without an in-sample label. That label is the owner's call "
-            "(open item O01 in the pack).</p>"
+            "<p>No items are open: the one item the pack carried open — "
+            "Figure 9's in-sample label (O01) — is resolved, because the "
+            "figure's title already carries it: 'Model fit (in-sample)'. "
+            "See resolved item O01 in the pack.</p>"
             '<p class="srcline">Source: data/claims_register.json + '
-            "data/figure_trace_2027.json (Cycle 68). The pack page is "
+            "data/figure_trace_2027.json (Cycle 69). The pack page is "
             "generated from the artifacts, never hand-edited.</p></div>")
 
 

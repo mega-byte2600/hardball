@@ -1103,7 +1103,8 @@ def main() -> int:
         _need = {"S01", "S02", "S03", "S04", "S06", "S07", "S09", "S10",
                  "S11", "S12", "N01", "N02", "N03", "N06"}
         _ev_ok = True
-        for c in reg["claims"] + reg["open_items"]:
+        for c in (reg["claims"] + reg["open_items"]
+                  + reg.get("resolved_items", [])):
             # Artifact strings may carry parenthetical section notes;
             # pull the file paths out with a regex, don't split on "+".
             for art in re.findall(r"data/[a-z0-9_./]+\.(?:json|csv)",
@@ -1114,13 +1115,18 @@ def main() -> int:
         check("Claims pack: register present, all required claim ids, "
               "retracted section incl. R01 (R-squared 0.80) + R02 "
               "(UNC-1 point-forecast), every evidence artifact exists, "
-              "open item O01 (Figure 9) recorded, counts reconcile "
-              "(Cycle 68)",
+              "O01 (Figure 9) resolved not open, counts reconcile "
+              "(Cycle 68, O01 resolved Cycle 69)",
               _need <= _ids and _ev_ok
               and {"R01", "R02", "R03"} <= _ret_ids
               and "R-squared 0.80" in _ret_text
               and "point forecasts" in _ret_text
-              and any(o["id"] == "O01" for o in reg["open_items"])
+              and reg["open_items"] == []
+              and any(o["id"] == "O01"
+                      for o in reg.get("resolved_items", []))
+              and reg["counts"]["open_items"] == 0
+              and reg["counts"]["resolved_items"] == len(
+                  reg.get("resolved_items", []))
               and reg["counts"]["supported"] == sum(
                   1 for c in reg["claims"] if c["status"] == "SUPPORTED")
               and reg["counts"]["not_supported"] == sum(
@@ -1148,26 +1154,33 @@ def main() -> int:
               "and what it withdrew" in _ex2
               and "../docs/REPRODUCIBILITY.html" in _ex2
               and "Retracted — stated plainly:" in _ex2
+              and "No items are open" in _ex2
+              and "One item is still open" not in _ex2
               and "R01" in _ex2
               and "Claims &amp; reproducibility — what this demo asserts"
               not in _st2,
               "panel present in explorer" if "Claims &amp; reproducibility"
               in _ex2 else "panel missing from explorer")
         check("Claims pack: pack page exists and carries the register "
-              "counts + the retracted claims (Cycle 68)",
+              "counts + the retracted claims (Cycle 68, O01 resolved "
+              "Cycle 69)",
               (ROOT / "docs" / "REPRODUCIBILITY.html").exists()
               and "R-squared 0.80" in (ROOT / "docs" / "REPRODUCIBILITY.html"
                                        ).read_text(errors="ignore")
               and "Figure 9" in (ROOT / "docs" / "REPRODUCIBILITY.html"
-                                 ).read_text(errors="ignore"),
+                                 ).read_text(errors="ignore")
+              and "Resolved items" in (ROOT / "docs" / "REPRODUCIBILITY.html"
+                                       ).read_text(errors="ignore")
+              and "O01" in (ROOT / "docs" / "REPRODUCIBILITY.html"
+                            ).read_text(errors="ignore"),
               "page present")
     else:
         check("Claims pack: register present, all required claim ids, "
               "retracted section incl. R01 (R-squared 0.80) + R02 "
               "(UNC-1 point-forecast), every evidence artifact exists, "
-              "open item O01 (Figure 9) recorded, counts reconcile "
-              "(Cycle 68)", False, "claims_register.json or "
-              "figure_trace_2027.json missing")
+              "O01 (Figure 9) resolved not open, counts reconcile "
+              "(Cycle 68, O01 resolved Cycle 69)", False,
+              "claims_register.json or figure_trace_2027.json missing")
         check("Claims pack: trace covers all 25 figures + the 8 named "
               "panels, every trace verified (Cycle 68)", False,
               "figure_trace_2027.json missing")

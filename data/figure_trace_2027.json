@@ -9,7 +9,8 @@
   "dashboard": "python3 src/dashboard_p6.py",
   "gate": "python3 src/verify_data.py",
   "spellcheck": "python3 src/spellcheck_gate.py",
-  "this_pack": "python3 src/bml_cycle68.py"
+  "this_pack": "python3 src/bml_cycle68.py",
+  "pack_update": "python3 src/bml_cycle69.py"
  },
  "figures": [
   {
@@ -140,7 +141,7 @@
     "data/projections_2026.json",
     "data/formula_prod.json"
    ],
-   "headline": "30 rows; in-sample fitted values (see open item O01 — label decision pending)",
+   "headline": "30 rows; in-sample fitted values (resolved Cycle 69 — title carries the in-sample label)",
    "markers": [
     "Model fit (in-sample) vs actual wins"
    ],
@@ -517,10 +518,11 @@
   "supported": 16,
   "not_supported": 7,
   "retracted": 3,
-  "open_items": 1,
+  "open_items": 0,
   "figures_traced": 25,
   "figures_verified": 25,
   "panels_traced": 8,
-  "panels_verified": 8
+  "panels_verified": 8,
+  "resolved_items": 1
  }
 }
