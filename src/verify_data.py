@@ -657,6 +657,75 @@ def main() -> int:
         check("API-2: health figure carries the FA-pool movement line "
               "(Cycle 55)", False, "data/il_events.json missing")
 
+    # --- Evidence surveillance: PubMed panel (Cycle 57) ------------
+    ev_path = DATA / "evidence_surveillance.json"
+    ev_page = ROOT / "docs" / "EVIDENCE.html"
+    if ev_path.exists() and ev_page.exists():
+        ev = json.loads(ev_path.read_text())
+        evh = ev_page.read_text(errors="ignore")
+        # the page HTML-escapes text (apostrophes -> &#x27;); compare
+        # against the unescaped rendering
+        evh = (evh.replace("&#x27;", "'").replace("&#39;", "'")
+               .replace("&amp;", "&"))
+        lanes = ev["lanes"]
+        cards = [c for lane in lanes for c in lane["cards"]]
+        check("Evidence: artifact has 4 lanes x 3 cards, counts and "
+              "abstracts recorded (Cycle 57)",
+              len(lanes) == 4
+              and all(len(lane["cards"]) == 3 for lane in lanes)
+              and all(isinstance(lane["found"], int) and lane["found"] >= 3
+                      for lane in lanes)
+              and all(c.get("abstract") and c.get("pmid")
+                      for c in cards)
+              and ev["metadata"].get("run_date")
+              and all(lane.get("query") for lane in lanes),
+              f"lanes={len(lanes)} cards={len(cards)}")
+        check("Evidence: EVIDENCE.html renders every card (lane counts, "
+              "PMID, DOI, Finding) from the artifact (Cycle 57)",
+              all(f"{lane['found']} FOUND" in evh
+                  and lane["heading"] in evh for lane in lanes)
+              and all(c["pmid"] in evh and c["finding"] in evh
+                      and c["headline"] in evh
+                      and (not c.get("doi") or c["doi"] in evh)
+                      for c in cards)
+              and "context, not a model input" in evh,
+              f"cards={len(cards)}")
+        _ev_seg = html.split('id="mode-explorer"', 1)[1]
+        _ev_seg = re.split(r'id="mode-|<div class="srcbox"', _ev_seg)[0]
+        _p14 = _ev_seg.find('data-mode="explorer" data-figure="14"')
+        _pnote = _ev_seg.find(
+            "What the evidence says now</a> — the published research "
+            "on injury recovery and prevention.")
+        _p15 = _ev_seg.find('data-mode="explorer" data-figure="15"')
+        check("Evidence: dashboard footnote under Figure 14 matches "
+              "artifact (exact note text, lane counts, page link) "
+              "(Cycle 57)",
+              '* <a href="../docs/EVIDENCE.html">What the evidence '
+              "says now</a>" in html
+              and "— the published research on injury recovery and "
+                  "prevention." in html
+              and all(f"({lane['found']} found)" in html for lane in lanes)
+              and -1 < _p14 < _pnote < _p15,
+              f"lanes={len(lanes)} p14={_p14} note={_pnote} p15={_p15}")
+        check("Evidence: dashboard footer names PubMed / NCBI "
+              "E-utilities (Cycle 57)",
+              "PubMed / NCBI E-utilities" in html
+              and "evidence_surveillance.json" in html)
+    else:
+        check("Evidence: artifact has 4 lanes x 3 cards, counts and "
+              "abstracts recorded (Cycle 57)", False,
+              "data/evidence_surveillance.json or docs/EVIDENCE.html "
+              "missing")
+        check("Evidence: EVIDENCE.html renders every card (lane counts, "
+              "PMID, DOI, Finding) from the artifact (Cycle 57)", False,
+              "evidence artifact or page missing")
+        check("Evidence: dashboard footnote under Figure 14 matches "
+              "artifact (exact note text, lane counts, page link) "
+              "(Cycle 57)", False, "evidence artifact or page missing")
+        check("Evidence: dashboard footer names PubMed / NCBI "
+              "E-utilities (Cycle 57)", False,
+              "evidence artifact or page missing")
+
     # --- optional live check ---------------------------------------
     if live:
         import requests

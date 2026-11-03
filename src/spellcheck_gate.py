@@ -75,6 +75,9 @@ WHITELIST = {
     # Cycle 45 connected-source names — verified against the providers
     "statyx", "fastballapi", "chadwick", "tank", "sportradar", "mcp", "io",
     "lrp", "metadata", "mlbam", "rapidapi", "retrosheet", "signup",
+    # Cycle 57 evidence-surveillance names/terms — verified against the
+    # provider (PubMed / NCBI NLM E-utilities) and the lane vocabulary
+    "pubmed", "ncbi", "nlm", "nih", "eutils", "ucl", "biologics",
 }
 
 

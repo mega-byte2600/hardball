@@ -1,0 +1,447 @@
+{
+ "metadata": {
+  "source": "PubMed / NCBI E-utilities (esearch + efetch)",
+  "source_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
+  "keyless": true,
+  "tool_param": "hardball",
+  "run_date": "2026-11-02",
+  "generated_at_utc": "2026-11-03 00:26 UTC",
+  "selection_rule": "Per lane: systematic reviews / meta-analyses first (cellular-recovery lane also prefers other reviews), then most recent by publication date; 3 cards per lane.",
+  "cards_per_lane": 3,
+  "context_label": "Literature surveillance \u2014 context, not a model input.",
+  "refresh_guard_days": 6,
+  "pull_script": "src/pull_evidence_surveillance.py",
+  "plain_lines_merged": 12
+ },
+ "lanes": [
+  {
+   "id": "ucl_rtp",
+   "label": "RETURN TO PLAY \u00b7 UCL & THE ELBOW",
+   "heading": "Return to Play After UCL Reconstruction",
+   "query": "\"ulnar collateral ligament\" AND reconstruction AND \"return to play\"",
+   "found": 157,
+   "cards": [
+    {
+     "pmid": "38599535",
+     "authors": [
+      "Jackson GR",
+      "Mowers CC",
+      "Sachdev D",
+      "Knapik DM",
+      "Lapica H",
+      "Sabesan VJ"
+     ],
+     "authors_display": "Jackson GR, Mowers CC, Sachdev D, Knapik DM, Lapica H, Sabesan VJ",
+     "title": "Ulnar Collateral Ligament Reconstruction Is Commonly Performed Using a Palmaris Graft and Provides Favorable Patient Outcomes With Variable Return-to-Play and Postoperative Complication Rates: A Systematic Review.",
+     "journal": "Arthroscopy : the journal of arthroscopic & related surgery : official publication of the Arthroscopy Association of North America and the International Arthroscopy Association",
+     "journal_abbr": "Arthroscopy",
+     "year": 2025,
+     "volume": "41",
+     "issue": "4",
+     "pages": "1099-1112.e1",
+     "doi": "10.1016/j.arthro.2024.03.039",
+     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38599535/",
+     "pub_types": [
+      "Journal Article",
+      "Systematic Review"
+     ],
+     "pub_date": "2025-04-01",
+     "abstract": "PURPOSE: To systematically review the literature to provide an updated evaluation of postoperative clinical outcomes, return to play (RTP), and postoperative complications after primary ulnar collateral ligament reconstruction (UCLR) in throwing and nonthrowing athletes at minimum 2-year follow-up. METHODS: A literature search was performed on November 25, 2023, by querying the Embase, PubMed, and Scopus online databases using the 2020 Preferred Reporting Items for Systematic Reviews and Meta-analyses guidelines. The inclusion criteria consisted of Level I to IV human clinical studies reporting postoperative outcomes and/or complications after primary UCLR with minimum 2-year follow-up. The exclusion criteria consisted of non-English-language studies; biomechanical, animal, and cadaveric studies; review articles; letters to the editor; and studies not reporting postoperative outcomes or complications. Study quality was evaluated using the Methodological Index for Non-Randomized Studies criteria. The incidence of reported complications among the included studies was extracted. Clinical outcome scores included the Kerlan-Jobe Orthopaedic Clinic Shoulder & Elbow (KJOC) score, Andrews-Timmerman (AT) score, and satisfaction score. RTP data were also extracted. RESULTS: A total of 21 studies published from 2006 to 2023, consisting of 2,452 patients (2,420 male patients) with a mean age of 21.7 years (mean range, 12-65 years) and mean follow-up period of 50.5 months (mean range, 24-151.2 months), were included. The mean Methodological Index for Non-Randomized Studies score was 16 (range, 13-20). A total of 46% of patients (1,138 of 2,452) underwent concomitant ulnar nerve transposition. Palmaris graft was the most frequently used method (66.6%; n = 1,799), followed by hamstring graft (26.0%, n = 703). At the final follow-up, mean postoperative KJOC scores ranged from 72.0 to 88.0; mean AT scores, from 83.6 to 98.3; and mean satisfaction scores, from 86.1 to 98.3. The overall RTP rate ranged from 62.5% to 100% at a mean range of 9.5 to 18.5 months. The total incidence of complications ranged from 0% to 31.8%, with 0% to 7.4% of patients undergoing revision surgery. CONCLUSIONS: UCLR was commonly performed using a palmaris graft, with concomitant ulnar nerve transposition reported in 46% of patients. At a mean follow-up of 50.5 months, mean postoperative KJOC scores ranged from 72 to 98.3, AT scores ranged from 83.6 to 98.3, and satisfaction scores ranged from 86.1 to 98.3, with variable RTP rates. LEVEL OF EVIDENCE: Level IV, systematic review of Level II to IV studies.",
+     "abstract_present": true,
+     "citation": "Jackson GR, Mowers CC, Sachdev D, Knapik DM, Lapica H, Sabesan VJ. Ulnar Collateral Ligament Reconstruction Is Commonly Performed Using a Palmaris Graft and Provides Favorable Patient Outcomes With Variable Return-to-Play and Postoperative Complication Rates: A Systematic Review. Arthroscopy. 2025;41(4):1099-1112.e1. doi:10.1016/j.arthro.2024.03.039",
+     "headline": "Tommy John surgery outcomes: what 21 studies and 2,452 patients show",
+     "finding": "Across 21 studies, return-to-play rates after UCL reconstruction ranged from 62.5% to 100%, with returns at 9.5 to 18.5 months. Outcome and satisfaction scores were favorable; complication rates varied widely, from 0% to 31.8%."
+    },
+    {
+     "pmid": "38593928",
+     "authors": [
+      "Peebles LA",
+      "Blackwood NO",
+      "Verma A",
+      "O'Brien MJ",
+      "Lintner DM",
+      "Kraeutler MJ"
+     ],
+     "authors_display": "Peebles LA, Blackwood NO, Verma A, O'Brien MJ, Lintner DM, Kraeutler MJ",
+     "title": "Medial Ulnar Collateral Ligament Reconstruction With Allograft Provides Excellent Clinical Outcomes, High Rates of Return to Play, and a Low Incidence of Postoperative Complications: A Systematic Review.",
+     "journal": "Arthroscopy : the journal of arthroscopic & related surgery : official publication of the Arthroscopy Association of North America and the International Arthroscopy Association",
+     "journal_abbr": "Arthroscopy",
+     "year": 2025,
+     "volume": "41",
+     "issue": "4",
+     "pages": "1113-1122",
+     "doi": "10.1016/j.arthro.2024.03.045",
+     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38593928/",
+     "pub_types": [
+      "Journal Article",
+      "Systematic Review"
+     ],
+     "pub_date": "2025-04-01",
+     "abstract": "PURPOSE: To perform a systematic review evaluating clinical outcomes in patients undergoing medial ulnar collateral ligament reconstruction (MUCLR) with soft-tissue allograft. METHODS: A systematic review of the literature was performed according to the Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) guidelines. The primary outcomes evaluated were patient-reported outcome scores, return to play (RTP) rates, incidence of postoperative complications, and rates of graft rupture or mechanical failure. RESULTS: The literature search identified 395 articles, and 5 studies met final inclusion criteria after full-text review. A total of 274 patients were analyzed in the included studies and follow-up ranged from 3.0 to 7.6 years. Two studies (number of patients = 141) reported outcomes exclusively of MUCLR with allograft, whereas 3 studies (number of patients = 133) reported outcomes in patients undergoing MUCLR with either allograft or autograft. Allograft sources included gracilis, semitendinosus, plantaris, peroneus longus, and palmaris longus. Level of patient athletic competition ranged from recreational athletes to the professional level; however, nonathletes in the setting of trauma were also included. The RTP rate after MUCLR with soft-tissue allograft was 95.3%, and 89.3% of patients returned to a similar or greater level of play postoperatively. The Timmerman-Andrews score was reported in 2 studies, and the means postoperatively ranged from 94.55 to 97. Postoperative complication rates were low (range, 0% to 20%), and there were no reported incidences of allograft rupture or mechanical failure. CONCLUSIONS: Based on the available data, soft-tissue allograft for MUCLR in athletic patient populations provides excellent clinical outcomes, high rates of RTP, and low rates of postoperative complications and graft failure at short-term follow-up. There remains a lack of high-quality evidence directly comparing autograft versus allograft outcomes in elite overhead-throwing athletes to support allograft as an acceptable alternative for MUCLR in this patient population. LEVEL OF EVIDENCE: Level IV, systematic review of Level III-IV studies.",
+     "abstract_present": true,
+     "citation": "Peebles LA, Blackwood NO, Verma A, O'Brien MJ, Lintner DM, Kraeutler MJ. Medial Ulnar Collateral Ligament Reconstruction With Allograft Provides Excellent Clinical Outcomes, High Rates of Return to Play, and a Low Incidence of Postoperative Complications: A Systematic Review. Arthroscopy. 2025;41(4):1113-1122. doi:10.1016/j.arthro.2024.03.045",
+     "headline": "Donor grafts for UCL reconstruction: outcomes review",
+     "finding": "In five studies of donor-tissue grafts, 95.3% of patients returned to play and no graft ruptures were reported. The authors noted a lack of high-quality evidence comparing donor grafts with a patient's own tissue in elite throwers."
+    },
+    {
+     "pmid": "38702939",
+     "authors": [
+      "Buchanan TR",
+      "Hones KM",
+      "Hao KA",
+      "Kamarajugadda S",
+      "Portnoff B",
+      "Wright JO",
+      "King JJ",
+      "Wright TW",
+      "Kim J",
+      "Schoch BS",
+      "Roach RP",
+      "Aibinder WR"
+     ],
+     "authors_display": "Buchanan TR, Hones KM, Hao KA, et al.",
+     "title": "Rehabilitation Protocols in Elbow Medial Ulnar Collateral Ligament Injuries: A Systematic Review of Articles Published in the Last 20 Years.",
+     "journal": "Sports health",
+     "journal_abbr": "Sports Health",
+     "year": 2025,
+     "volume": "17",
+     "issue": "3",
+     "pages": "460-469",
+     "doi": "10.1177/19417381241249125",
+     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38702939/",
+     "pub_types": [
+      "Journal Article",
+      "Systematic Review"
+     ],
+     "pub_date": "2025-01-01",
+     "abstract": "CONTEXT: Elbow medial ulnar collateral ligament (UCL) injuries have become increasingly common in athletes. Despite this, rehabilitation protocols appear to vary drastically, which may explain the clinical equipoise regarding optimal management. OBJECTIVE: This systematic review reports rehabilitation characteristics reported after UCL injuries and compares reported outcomes based on early versus delayed rehabilitation. DATA SOURCES: Our search utilized PubMed/MEDLINE, Embase, Web of Science, and Cochrane to identify all articles on UCL rehabilitation published between January 1, 2002 and October 1, 2022. STUDY SELECTION: Studies in English with \u22655 patients that reported rehabilitation protocols for UCL injuries were evaluated. STUDY DESIGN: Systematic review. LEVEL OF EVIDENCE: Level 4. DATA EXTRACTION: Data included sample characteristics, time to achieve physical therapy milestones, outcome scores, and return-to-play (RTP) rate and timing. RESULTS: Our review included 105 articles with a total of 15,928 elbows (98% male; weighted mean age, 23 years; follow-up, 47 months), with 15,077 treated operatively and 851 treated nonoperatively. The weighted mean time patients spent adhering to nonweightbearing status was 42 days. The mean time until patients were given clearance for active range of motion (ROM) 15 days, full ROM 40 days, and elbow strengthening exercises 32 days. The mean time until all restrictions were lifted was 309 days. The mean time to begin a throwing program was 120 days. Across all rehabilitation characteristics, protocols for patients undergoing nonoperative management started patients on rehabilitation earlier. After UCL reconstruction, earlier active ROM (\u226414 days), elbow strengthening (\u226430 days), no restrictions (\u2264180 days), and throwing (\u2264120 days) postoperatively led to earlier RTP without a negative effect on functional outcome scores. CONCLUSION: Current literature provides a spectrum of protocols for elbow UCL rehabilitation, regardless of management. Nonoperative patients began ROM activities, strengthening, and throwing programs sooner than operative patients, and earlier milestones led to earlier RTP.",
+     "abstract_present": true,
+     "citation": "Buchanan TR, Hones KM, Hao KA, et al. Rehabilitation Protocols in Elbow Medial Ulnar Collateral Ligament Injuries: A Systematic Review of Articles Published in the Last 20 Years. Sports Health. 2025;17(3):460-469. doi:10.1177/19417381241249125",
+     "headline": "Rehab timing after UCL injury: earlier milestones, earlier return",
+     "finding": "Across 105 articles, rehab protocols varied widely. After reconstruction, patients who reached the early milestones sooner \u2014 motion, strengthening, throwing \u2014 returned to play earlier, with no negative effect on outcome scores."
+    }
+   ]
+  },
+  {
+   "id": "prevention_workload",
+   "label": "INJURY PREVENTION & WORKLOAD \u00b7 BASEBALL",
+   "heading": "Injury Prevention and Workload",
+   "query": "baseball AND (\"injury prevention\" OR workload)",
+   "found": 426,
+   "cards": [
+    {
+     "pmid": "42564996",
+     "authors": [
+      "Paul RW",
+      "Anton B",
+      "Meloche M",
+      "Dewes I",
+      "Zhu E",
+      "Pletcher ER",
+      "Thomas SJ"
+     ],
+     "authors_display": "Paul RW, Anton B, Meloche M, et al.",
+     "title": "Effect of Hip Range of Motion Restrictions on Injury in Baseball Players: A Systematic Review.",
+     "journal": "Journal of athletic training",
+     "journal_abbr": "J Athl Train",
+     "year": 2026,
+     "volume": "61",
+     "issue": "8",
+     "pages": "543-551",
+     "doi": "10.4085/1062-6050-0715.25",
+     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42564996/",
+     "pub_types": [
+      "Journal Article",
+      "Systematic Review"
+     ],
+     "pub_date": "2026-08-01",
+     "abstract": "OBJECTIVE: To determine whether restrictions in hip external rotation (ER) or internal rotation (IR) range of motion (ROM) are related to overall injury risk in baseball players. DATA SOURCES: Three databases were systematically searched from inception through September 2024 using the following keywords: hip, acetabular, acetabulum, pelvis, pelvic, and baseball. STUDY SELECTION: Studies were included if the authors evaluated baseball players, assessed clinical hip measures, and related these measures to injury. Two independent reviewers screened 495 studies, with 17 meeting final inclusion criteria. Authors of 13 studies evaluated youth or high school players, and authors of 4 examined professional players. DATA EXTRACTION: Two investigators independently extracted demographic variables, and the primary outcomes included bilateral hip IR and ER ROM measurements and their relationship to injury. Study quality was assessed using the Methodological Index for Non-Randomized Studies (MINORS), with a mean score of 14 \u00b1 3. DATA SYNTHESIS: Analysis included over 4000 players across 17 studies. Compared with injured players, healthy youth or high school players had 2\u00b0 more ER ROM and 3\u00b0 more IR ROM in the stance hip as well as 1\u00b0 more ER ROM and 4\u00b0 more IR ROM in the stride hip. Out of 9 studies in which hip ROM was compared between healthy and injured youth players, authors of 5 studies related stride-leg IR ROM to injury, authors of 2 related stance-leg IR ROM to injury, authors of 3 related stance-leg ER ROM to injury, and authors of 1 related stride-leg ER ROM to injury. CONCLUSIONS: Based on these observations, clinicians may consider monitoring IR ROM of the stride leg and ER ROM of the stance leg in baseball players and consider developing injury-prevention or rehabilitation programs to prevent the onset of hip rotational ROM restrictions. However, due to the heterogeneity of the included studies and the small differences in ROM, no strong clinical recommendation can be made before authors of future prospective studies relate clinically significant hip ROM restrictions to baseball injuries.",
+     "abstract_present": true,
+     "citation": "Paul RW, Anton B, Meloche M, et al. Effect of Hip Range of Motion Restrictions on Injury in Baseball Players: A Systematic Review. J Athl Train. 2026;61(8):543-551. doi:10.4085/1062-6050-0715.25",
+     "headline": "Hip motion and injury risk in baseball players",
+     "finding": "Healthy youth and high school players had slightly more hip rotation than injured players. The authors concluded the differences were small and the studies mixed, so no strong recommendation can be made yet."
+    },
+    {
+     "pmid": "40029165",
+     "authors": [
+      "Paul RW",
+      "Sirch FR",
+      "Vata A",
+      "Zhu E",
+      "Alberta FG",
+      "Erickson BJ",
+      "Thomas SJ"
+     ],
+     "authors_display": "Paul RW, Sirch FR, Vata A, et al.",
+     "title": "Chronic Adaptations of the Shoulder in Baseball Pitchers: A Systematic Review.",
+     "journal": "The American journal of sports medicine",
+     "journal_abbr": "Am J Sports Med",
+     "year": 2025,
+     "volume": "53",
+     "issue": "12",
+     "pages": "2984-2994",
+     "doi": "10.1177/03635465251317202",
+     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40029165/",
+     "pub_types": [
+      "Journal Article",
+      "Systematic Review"
+     ],
+     "pub_date": "2025-10-01",
+     "abstract": "BACKGROUND: Understanding clinical and tissue adaptations to the throwing shoulder is important for optimizing injury prevention and rehabilitation programs in baseball players. PURPOSE/HYPOTHESIS: The purpose of this study was to determine the chronic clinical (range of motion [ROM] and strength) and tissue adaptations of the throwing shoulder in baseball pitchers. It was hypothesized that the throwing shoulder would have increased external rotation (ER) ROM and decreased internal rotation (IR) ROM compared with the nonthrowing shoulder, but that calculations of soft tissue glenohumeral IR deficit (GIRD) and soft tissue ER gain (ERG) would show that the true soft tissue restrictions were instead in the direction of ER ROM. STUDY DESIGN: Systematic review; Level of evidence, 4. METHODS: This systematic review was performed according to PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) guidelines using various keywords related to the shoulder and baseball. Studies were included if chronic adaptations of the shoulder were evaluated bilaterally in nonrecreational baseball pitchers. Outcomes of interest collected include IR and ER ROM measured in 90\u00b0 of shoulder abduction, humeral retroversion (HR), GIRD, ERG, and various structural adaptations. All other chronic adaptations were compiled and reported qualitatively because of the heterogeneity of variables assessed. RESULTS: Overall, 1273 studies were screened and 36 met final inclusion criteria, with 24 studies (67%) evaluating professional pitchers. Across 13 studies and 1101 professional pitchers, the mean clinical GIRD was 10.0\u00b0 and the mean clinical ERG was 6.5\u00b0, leading to a total arc of ROM deficit of 3.5\u00b0 in the throwing shoulder. Across 498 included pitchers with HR measures, the mean bilateral difference in HR was 15.4\u00b0. After calculating soft tissue GIRD, 3 of 4 studies found that pitchers do not have any soft tissue restrictions in IR ROM. In contrast, after calculating soft tissue ERG, all 4 studies found pitchers to have soft tissue restrictions in ER ROM with a mean of 8\u00b0 to 13\u00b0. CONCLUSION: When isolating for soft tissue restrictions through calculation of soft tissue GIRD and ERG, previously reported IR ROM deficits are currently not as prevalent, and soft tissue restrictions in ER ROM are now being observed. Clinicians should focus on better isolating soft tissue restrictions to evaluate whether an athlete has deficits in IR or ER ROM.",
+     "abstract_present": true,
+     "citation": "Paul RW, Sirch FR, Vata A, et al. Chronic Adaptations of the Shoulder in Baseball Pitchers: A Systematic Review. Am J Sports Med. 2025;53(12):2984-2994. doi:10.1177/03635465251317202",
+     "headline": "How a pitcher's throwing shoulder changes over time",
+     "finding": "Measured in a way that isolates soft tissue, the throwing shoulder's limits showed up in outward rotation rather than inward. The authors concluded that reported inward-rotation losses are not as common as once thought."
+    },
+    {
+     "pmid": "42925023",
+     "authors": [
+      "Salamh P",
+      "Plisky P",
+      "Beiting J",
+      "Martin C",
+      "Losciale JM",
+      "Shanley E",
+      "Thigpen CA",
+      "Pinkoski AM",
+      "Fernandez G",
+      "Ward P",
+      "Morrison S",
+      "Prats-Uribe A",
+      "Butler R",
+      "West S",
+      "Bullock G"
+     ],
+     "authors_display": "Salamh P, Plisky P, Beiting J, et al.",
+     "title": "Association of Changes in Game Pitch Count, Pitching Velocity, and Arm Injuries in Collegiate Pitchers.",
+     "journal": "The American journal of sports medicine",
+     "journal_abbr": "Am J Sports Med",
+     "year": 2026,
+     "volume": null,
+     "issue": null,
+     "pages": "3635465261489882",
+     "doi": "10.1177/03635465261489882",
+     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42925023/",
+     "pub_types": [
+      "Journal Article"
+     ],
+     "pub_date": "2026-10-23",
+     "abstract": "BACKGROUND: Baseball pitchers experience a high rate of shoulder and elbow injuries. While there have been several factors associated with arm injuries among pitchers, pitch volume and pitch velocity have garnered a great deal of attention. The associations among pitch counts, pitch velocity, and arm injury have not been well studied. PURPOSE: To assess the association between changes in game pitch count and arm injuries in collegiate baseball pitchers over 1 summer season. The secondary aim was to assess the association between mean in-game fastball pitch velocity and arm injuries in the same baseball pitchers. STUDY DESIGN: Cohort study; Level of evidence, 2. METHODS: Collegiate pitchers were prospectively followed throughout the summer season for game pitch count, pitch velocity, and arm injuries. Bayesian joint models, including time-to-event Cox regressions and multilevel mixed effects regressions, were performed to assess the associations of interest, while competing risks of release and/or retirement were controlled for. Nonlinear relationships were modeled using natural splines. Change in pitch count and pitch velocity was modeled by the change in each pitcher's mean seasonal pitch count or pitch velocity. RESULTS: A total of 187 pitchers were included in this study and followed for a total of 9890 baseball exposure days. A total of 22 pitchers (12%; 95% CI, 7.5%-17.2%) experienced an arm injury, and 4 pitchers (2%; 95% CI, 0.6%-5.4%) were released, voluntarily retired, or reached their innings limit for the season. There was a nonlinear (parabolic shape) positive association of an increased change in pitch count as compared with the pitcher's mean pitch count and arm injuries. Additionally, there was a nonlinear (parabolic shape) positive association between arm injury hazard and a decrease in fastball pitch velocity when compared with the pitcher's mean fastball pitch velocity. CONCLUSION: There was an increased risk for shoulder and elbow injuries with an increase in pitch count as compared with a pitcher's mean pitch count over pitch appearances. Additionally, there was an association between arm injuries and decreased pitch velocity as compared with a pitcher's mean pitch velocity.",
+     "abstract_present": true,
+     "citation": "Salamh P, Plisky P, Beiting J, et al. Association of Changes in Game Pitch Count, Pitching Velocity, and Arm Injuries in Collegiate Pitchers. Am J Sports Med. 2026:3635465261489882. doi:10.1177/03635465261489882",
+     "headline": "Pitch-count jumps and velocity drops linked to arm injuries in college pitchers",
+     "finding": "In 187 collegiate pitchers followed for one summer, arm injury risk rose when a pitcher's pitch counts climbed above his own usual workload. Injuries were also linked to drops in fastball velocity."
+    }
+   ]
+  },
+  {
+   "id": "cellular_recovery",
+   "label": "CELLULAR RECOVERY \u00b7 MUSCLE REGENERATION",
+   "heading": "Muscle Regeneration and Cellular Recovery",
+   "query": "(\"skeletal muscle regeneration\" OR \"satellite cells\") AND (injury OR exercise) AND recovery",
+   "found": 404,
+   "cards": [
+    {
+     "pmid": "42335646",
+     "authors": [
+      "Wang F",
+      "Qin W"
+     ],
+     "authors_display": "Wang F, Qin W",
+     "title": "Immune metabolic remodeling during exercise rehabilitation: Linking skeletal muscle regeneration, bone homeostasis, and systemic immune adaptation.",
+     "journal": "Tissue & cell",
+     "journal_abbr": "Tissue Cell",
+     "year": 2026,
+     "volume": "103",
+     "issue": null,
+     "pages": "103687",
+     "doi": "10.1016/j.tice.2026.103687",
+     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42335646/",
+     "pub_types": [
+      "Journal Article",
+      "Review"
+     ],
+     "pub_date": "2026-11-01",
+     "abstract": "Exercise rehabilitation harnesses immune metabolic remodeling to drive coordinated skeletal muscle regeneration, bone homeostasis, and systemic immune adaptation. Physical activity functions as a controlled metabolic stressor that reprograms immune cell metabolism-shifting macrophages from glycolytic M1 to oxidative M2 phenotypes, expanding regulatory T cells through fatty acid oxidation and ketone body signaling, and modulating neutrophils, NK cells, and B cells via lactate, succinate, itaconate, ROS, NAD\u207a, and gut-derived SCFAs. These metabolic shifts regulate immune cell polarization, efferocytosis, cytokine profiles, and growth factor release (IGF-1, amphiregulin, GDF-15), creating an optimal regenerative niche for satellite cell activation, proliferation, and differentiation in muscle while supporting bone remodeling through mechanosensory osteocyte signaling and osteokine secretion (osteocalcin, sclerostin, RANKL/OPG). Distinct exercise modalities generate characteristic immune-metabolic signatures: aerobic training promotes sustained oxidative phosphorylation and anti-inflammatory tolerance beneficial for both muscle and bone; resistance training induces controlled glycolytic bursts followed by anabolic M2 polarization, muscle hypertrophy, and improved bone microarchitecture; HIIT generates oscillatory stress that trains innate immune memory and enhances muscle-bone resilience. Energy-sensing pathways (AMPK, mTOR, HIF-1\u03b1, SIRT1/3, PGC-1\u03b1) and metabolite checkpoints integrate mechanical loading with immune and endocrine signals to balance pro-regenerative inflammation with timely resolution across the musculoskeletal system. Clinically, this framework enables precision rehabilitation protocols based on immune metabolic phenotyping, lactate kinetics, and skeletal imaging (BMD, microarchitecture) to optimize outcomes in sarcopenia, osteosarcopenia, postoperative recovery, chronic inflammatory diseases, cancer cachexia, and post-viral syndromes. Exercise-induced immune metabolic remodeling thus serves as a master regulator of muscle-bone-immune coupling, offering a mechanism-driven foundation for next-generation rehabilitation medicine that enhances tissue repair, bone quality, and systemic homeostasis.",
+     "abstract_present": true,
+     "citation": "Wang F, Qin W. Immune metabolic remodeling during exercise rehabilitation: Linking skeletal muscle regeneration, bone homeostasis, and systemic immune adaptation. Tissue Cell. 2026;103:103687. doi:10.1016/j.tice.2026.103687",
+     "headline": "How exercise retrains the immune system to help muscle regrow",
+     "finding": "The authors described exercise as a controlled stress that shifts immune cells toward repair mode. That shift creates the conditions that switch on satellite cells, the stem cells that rebuild muscle."
+    },
+    {
+     "pmid": "42463241",
+     "authors": [
+      "Johnson AL",
+      "Bevington RT",
+      "Rumelski S",
+      "Kassamali N",
+      "Parise G"
+     ],
+     "authors_display": "Johnson AL, Bevington RT, Rumelski S, Kassamali N, Parise G",
+     "title": "Muscle satellite cells and aging.",
+     "journal": "American journal of physiology. Cell physiology",
+     "journal_abbr": "Am J Physiol Cell Physiol",
+     "year": 2026,
+     "volume": "331",
+     "issue": "2",
+     "pages": "C497-C511",
+     "doi": "10.1152/ajpcell.00232.2026",
+     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42463241/",
+     "pub_types": [
+      "Journal Article",
+      "Review"
+     ],
+     "pub_date": "2026-08-01",
+     "abstract": "Aging is associated with a progressive decline in skeletal muscle mass and function, contributing to reduced physical capacity in older adults. Central is the deterioration of satellite cells, our tissue-resident muscle stem cells, which participate in adaptation, repair, and regeneration of skeletal muscle. Evidence from in vitro, murine, and human studies indicates an age-related reduction in satellite cell content, notably within type II muscle fibers, alongside impairments in myogenic potential. There is no single causative mechanism behind satellite cell age-related dysfunction, but a convergence of morphological changes and intrinsic and extrinsic factors that affect satellite cell dynamics and its niche. Intrinsic factors such as signaling pathways, cellular senescence, impaired autophagy, mitochondrial dysfunction, and epigenetic modifications can impact satellite cell function. Concurrently, extrinsic factors can impact the satellite cell niche and their function such as systemic circulating factors and vasculature and extracellular matrix remodeling. These age-related alterations can diminish regenerative capacity, blunt hypertrophic responses, and impair recovery from disuse or injury. Satellite cell dysfunction is a pivotal contributor to age-related skeletal muscle decline, frailty, and the quality of life in older adults. Despite growing insights from in vitro and animal models, the key mechanistic changes that underlie human satellite cell dysfunction with age are not fully understood. Improved characterization of age-related satellite cell changes in humans is essential to preserving muscle health across the lifespan.",
+     "abstract_present": true,
+     "citation": "Johnson AL, Bevington RT, Rumelski S, Kassamali N, Parise G. Muscle satellite cells and aging. Am J Physiol Cell Physiol. 2026;331(2):C497-C511. doi:10.1152/ajpcell.00232.2026",
+     "headline": "Muscle stem cells weaken with age",
+     "finding": "The review found that satellite cells \u2014 the muscle's resident stem cells \u2014 decline in number and repair power with age, which diminished the muscle's ability to recover from injury. The authors noted the causes in humans are not yet fully understood."
+    },
+    {
+     "pmid": "42515772",
+     "authors": [
+      "Li X",
+      "Zhao Z",
+      "Yang J",
+      "Zhang Y",
+      "Yao X",
+      "Sun H",
+      "Shen Y"
+     ],
+     "authors_display": "Li X, Zhao Z, Yang J, et al.",
+     "title": "Mechanisms of Impaired Skeletal Muscle Regeneration and Therapeutic Approaches in Aging and Chronic Disease.",
+     "journal": "Pharmaceuticals (Basel, Switzerland)",
+     "journal_abbr": "Pharmaceuticals (Basel)",
+     "year": 2026,
+     "volume": "19",
+     "issue": "7",
+     "pages": null,
+     "doi": "10.3390/ph19071091",
+     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42515772/",
+     "pub_types": [
+      "Journal Article",
+      "Review"
+     ],
+     "pub_date": "2026-07-15",
+     "abstract": "Skeletal muscle regeneration is essential for recovery after injury and for maintaining physical and metabolic function. This capacity declines with aging and is often impaired in chronic diseases, limiting effective repair. This review summarizes the main mechanisms that regulate muscle repair, with a focus on satellite cell activity and its interaction with inflammatory, metabolic, vascular, and fibrotic signals at the molecular and cellular level. We discuss how these processes are disrupted in aging, Duchenne muscular dystrophy, chronic obstructive pulmonary disease, diabetes, chronic kidney disease, and cancer cachexia, leading to delayed repair, reduced myogenic differentiation, and fibrosis. We also review current and emerging strategies to improve muscle regeneration, including exercise, bioactive molecules, physical stimulation, gene-based approaches, engineered biomaterials, and cell or cell-derived therapies. Across these conditions, chronic inflammation, metabolic dysfunction, and fibrotic remodeling appear to be common barriers to effective regeneration. Multi-target therapeutic approaches may offer advantages over single-pathway interventions, although clinical evidence is still limited; initial preclinical results, however, are promising.",
+     "abstract_present": true,
+     "citation": "Li X, Zhao Z, Yang J, et al. Mechanisms of Impaired Skeletal Muscle Regeneration and Therapeutic Approaches in Aging and Chronic Disease. Pharmaceuticals (Basel). 2026;19(7). doi:10.3390/ph19071091",
+     "headline": "Why muscle repair slows in aging and chronic disease",
+     "finding": "Across aging and several chronic diseases, the review found the same barriers to muscle repair: long-running inflammation, metabolic problems, and scar-like tissue buildup. The authors noted that treatments aimed at several barriers at once looked promising in early studies, but clinical evidence is still limited."
+    }
+   ]
+  },
+  {
+   "id": "tendon_biologics",
+   "label": "TENDON HEALING & BIOLOGICS",
+   "heading": "Tendon Healing and Biologics",
+   "query": "(tendon OR ligament) AND (healing OR regeneration) AND (\"platelet-rich plasma\" OR \"growth factors\" OR \"stem cells\") AND (systematic review[pt] OR meta-analysis[pt])",
+   "found": 119,
+   "cards": [
+    {
+     "pmid": "42963566",
+     "authors": [
+      "Sabry AO",
+      "Elmenawi KA",
+      "Ibrahim S",
+      "Johnson C",
+      "Abdelgawad AHK",
+      "Hussein A",
+      "Hamam NG",
+      "Latif R",
+      "Arid M",
+      "Elsafoury Y"
+     ],
+     "authors_display": "Sabry AO, Elmenawi KA, Ibrahim S, et al.",
+     "title": "Recent concepts in biological augmentation for rotator cuff tears: a scoping review.",
+     "journal": "BMC musculoskeletal disorders",
+     "journal_abbr": "BMC Musculoskelet Disord",
+     "year": 2026,
+     "volume": "27",
+     "issue": "1",
+     "pages": null,
+     "doi": "10.1186/s12891-026-10436-5",
+     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42963566/",
+     "pub_types": [
+      "Journal Article",
+      "Scoping Review",
+      "Systematic Review"
+     ],
+     "pub_date": "2026-10-17",
+     "abstract": "BACKGROUND: Surgical repair of rotator cuff tears is common, but failure rates remain a significant clinical challenge, particularly in large or degenerative tears. Augmentation strategies have been developed to enhance the biological and mechanical environment of the repair, aiming to improve healing and reduce retear rates. AIM: To provide a comprehensive scoping review of current biological augmentation strategies for rotator cuff repair, summarizing the underlying rationale, available materials, and recent clinical evidence to guide surgical decision-making. METHODS: A systematic literature search was conducted and keywords related to rotator cuff repair and augmentation were used. Included studies investigated biological or combined biological and synthetic augmentation in human or animal subjects. RESULTS: The search yielded 419 studies for qualitative synthesis. Augmentation techniques were categorized into allografts, xenografts, autografts, platelet-rich plasma (PRP), stem cells, non-tissue grafts, and other biological adjuncts. Human dermal allografts were the most frequently studied augmentation strategy and were associated with favorable healing and clinical outcomes in several studies. Autografts, such as fascia lata and the long head of the biceps tendon, have emerged as promising alternatives with favorable biocompatibility. Evidence for PRP and stem cells remains inconsistent, with no universal consensus on preparation and application techniques. Non-tissue synthetic grafts offer mechanical support but lack long-term data. CONCLUSION: Augmentation provides a valuable tool for improving healing in high-risk rotator cuff repairs. Human dermal allografts and autografts are supported by the strongest and largest amount of current evidence. However, no single strategy is universally superior. Future research should focus on large-scale, standardized comparative trials and combinatory approaches that merge structural support with targeted biologic enhancement.",
+     "abstract_present": true,
+     "citation": "Sabry AO, Elmenawi KA, Ibrahim S, et al. Recent concepts in biological augmentation for rotator cuff tears: a scoping review. BMC Musculoskelet Disord. 2026;27(1). doi:10.1186/s12891-026-10436-5",
+     "headline": "Added tissue and biologics for rotator cuff repair: what the evidence supports",
+     "finding": "Reviewing 419 studies, the authors found the strongest support for human donor grafts and a patient's own tissue in high-risk rotator cuff repairs. Evidence for platelet-rich plasma and stem cells was inconsistent, and no single approach was best for every repair."
+    },
+    {
+     "pmid": "41313368",
+     "authors": [
+      "Migliorini F",
+      "Lucenti L",
+      "Sch\u00e4fer L",
+      "Simeone F",
+      "Pipino G",
+      "Jeyaraman N",
+      "Jeyaraman M"
+     ],
+     "authors_display": "Migliorini F, Lucenti L, Sch\u00e4fer L, et al.",
+     "title": "Autologous platelet concentrate augmentation in anterior cruciate ligament reconstruction: a level I evidence-based meta-analysis.",
+     "journal": "Orthopadie (Heidelberg, Germany)",
+     "journal_abbr": "Orthopadie (Heidelb)",
+     "year": 2026,
+     "volume": "55",
+     "issue": "9",
+     "pages": "745-754",
+     "doi": "10.1007/s00132-025-04748-y",
+     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41313368/",
+     "pub_types": [
+      "Journal Article",
+      "Meta-Analysis",
+      "Review"
+     ],
+     "pub_date": "2026-09-01",
+     "abstract": "INTRODUCTION: Anterior cruciate ligament (ACL) injuries are common in young active individuals and reconstruction remains the standard treatment. Recently, biological augmentation with autologous platelet concentrates (APC) has gained interest given the potential to enhance graft healing. This meta-analysis examined whether the use of APC improves patient-reported outcome measures (PROM) and reduces complications after ACL reconstruction. METHODS: Randomized controlled trials (RCT) comparing standard ACL reconstruction with APC-augmented procedures were included. Eligible articles were peer-reviewed and published in English, German, Italian, French or Spanish. A systematic search of PubMed, Web of Science and Embase was performed in June 2025. Extracted data included demographics, follow-up and PROMs. Methodological quality was assessed using the Cochrane RoB2 tool. Meta-analyses were conducted with Review Manager 5.3, applying inverse variance and Mantel-Haenszel methods. A subgroup analysis was performed for platelet-rich plasma (PRP). RESULTS: A total of 14 RCTs comprising 869 patients met the inclusion criteria. Methodological quality was acceptable, with no study rated as having a high risk of bias. The mean follow-up was 12.2 \u00b1 7.4 months. Baseline features and PROMs were comparable between groups. The use of APC augmentation significantly reduced anterior tibial laxity but the effect size was below the clinical threshold. No significant differences were observed in PROMs or revision rates. CONCLUSION: The current level of I evidence does not support APC augmentation as a means to improve short-term outcomes or reduce complications after ACL reconstruction; however, its safety profile and biological rationale justify further high-quality RCTs with standardized protocols and longer follow-up.",
+     "abstract_present": true,
+     "citation": "Migliorini F, Lucenti L, Sch\u00e4fer L, et al. Autologous platelet concentrate augmentation in anterior cruciate ligament reconstruction: a level I evidence-based meta-analysis. Orthopadie (Heidelb). 2026;55(9):745-754. doi:10.1007/s00132-025-04748-y",
+     "headline": "Platelet concentrates in ACL reconstruction: the level I evidence check",
+     "finding": "Pooling 14 randomized trials (869 patients), the authors found platelet concentrates did not improve patient-reported outcomes or revision rates after ACL reconstruction. They concluded the current level I evidence does not support the add-on."
+    },
+    {
+     "pmid": "40744844",
+     "authors": [
+      "Serag I",
+      "Abouzid M",
+      "Hikal H",
+      "Abdelhadi A",
+      "Abdelaal MN",
+      "Mohamed AG",
+      "Moawad MHED"
+     ],
+     "authors_display": "Serag I, Abouzid M, Hikal H, et al.",
+     "title": "Platelet-rich plasma in anterior cruciate ligament reconstruction: An updated systematic review and quantitative meta-analysis of randomized controlled trials.",
+     "journal": "Chinese journal of traumatology = Zhonghua chuang shang za zhi",
+     "journal_abbr": "Chin J Traumatol",
+     "year": 2026,
+     "volume": "29",
+     "issue": "5",
+     "pages": "358-367",
+     "doi": "10.1016/j.cjtee.2025.02.008",
+     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40744844/",
+     "pub_types": [
+      "Journal Article",
+      "Systematic Review",
+      "Meta-Analysis"
+     ],
+     "pub_date": "2026-09-01",
+     "abstract": "PURPOSE: Anterior cruciate ligament (ACL) injuries significantly impact athletes' careers and quality of life, necessitating ACL reconstruction to restore knee functionality. Platelet-rich plasma (PRP) has been investigated as an adjunct therapy for enhancing recovery post-ACL reconstruction due to its potential pro-regenerative properties. However, the empirical evidence on PRP's efficacy in ACL reconstruction outcomes remains mixed. This study aims to evaluate the effectiveness and safety of PRP vs. control treatments in patients undergoing ACL reconstruction, focusing on pain management and knee function recovery. METHODS: Following Preferred Reporting Items for Systematic Reviews and Meta-Analyses guidelines, we conducted a systematic review and meta-analysis of randomized controlled trials comparing PRP with control interventions post-ACL reconstruction. Comprehensive searches were performed across PubMed, Scopus, Web of Science, and Cochrane Library databases up to July 2024. We used \"platelet-rich plasma\", \"controls\", and \"anterior cruciate ligament reconstruction surgery\" as keywords. Statistical analysis was conducted using RevMan 5.3, employing the inverse variance method under a random effects model. We reported outcomes as mean difference (MD) or standardized with confidence intervals (CI). A p < 0.05 was considered statistically significant. RESULTS: The analysis incorporated data from 18 studies involving 1082 patients. KT-1000 measurements indicated improved knee stability (MD: -0.57 mm, 95% CI: -0.94 to -0.20, p = 0.002). However, no significant improvements were observed in the Lysholm score (MD: 0.68, 95% CI: =1.24 to 2.26, p = 0.484), visual analog scale pain score (MD: -0.34, 95% CI: -0.68 to -0.01, p = 0.057), International Knee Documentation Committee score (MD: 1.08, 95% CI: -1.05 to 3.42, p = 0.298), Tegner score (MD: 0.13, 95% CI: -0.32 to 0.57, p = 0.575), and femoral and tibial tunnel diameters (femoral MD: -0.07 mm, 95% CI: -0.46 to 0.32, p = 0.726; tibial MD: 0.08 mm, 95% CI: -0.60 to 0.75, p = 0.818). CONCLUSION: Our findings provide moderate evidence that PRP can significantly enhance knee stability post-ACL reconstruction. However, further high-quality randomized controlled trials are needed to clarify PRP's overall effectiveness and optimal use in ACL reconstruction rehabilitation protocols.",
+     "abstract_present": true,
+     "citation": "Serag I, Abouzid M, Hikal H, et al. Platelet-rich plasma in anterior cruciate ligament reconstruction: An updated systematic review and quantitative meta-analysis of randomized controlled trials. Chin J Traumatol. 2026;29(5):358-367. doi:10.1016/j.cjtee.2025.02.008",
+     "headline": "Platelet-rich plasma in ACL reconstruction: a small stability gain, mixed results",
+     "finding": "Across 18 randomized trials (1,082 patients), platelet-rich plasma improved measured knee stability but did not significantly improve pain or function scores. The authors called for more high-quality trials."
+    }
+   ]
+  }
+ ]
+}

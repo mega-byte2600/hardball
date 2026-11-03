@@ -732,3 +732,73 @@ ties to the committed backtests, rendered intervals on all three
 dashboard surfaces, one-pager): **68 → 71 offline checks, ALL PASS**
 (72 with --live); platform clean (ingest 25/0, curate 19 tables,
 parity r = 0.889 / 201); spellcheck green.
+
+## Cycle 57 addendum — PubMed evidence surveillance (2026-11-02)
+
+Owner-directed: the APE PFAC toolkit's "What the evidence says now"
+PubMed-surveillance pattern, applied to the injury literature
+behind HARDBALL's availability edge. KEPT source: **PubMed / NCBI
+E-utilities** (keyless, free; `tool=hardball` on every call,
+sequential, one batched efetch per lane; any non-200 fails the
+pull closed).
+
+**Probes (2026-11-02, before lane design):** UCL + reconstruction
++ return to play = 157 (restricted to SR/MA 2020–2026 = 9);
+baseball + injury prevention/workload = 639 as probed (647
+unquoted / 426 with the phrase quoted, re-probed live at build);
+cellular recovery (muscle regeneration / satellite cells) = 404;
+PRP / mechanotransduction / tendon healing + SR/MA = 548 as probed
+(1,159 re-probed with a different grouping) — too broad, tightened.
+
+**Final lanes, queries as run, counts as run (2026-11-02):**
+1. RETURN TO PLAY · UCL & THE ELBOW — `"ulnar collateral ligament"
+   AND reconstruction AND "return to play"` → **157**.
+2. INJURY PREVENTION & WORKLOAD · BASEBALL — `baseball AND
+   ("injury prevention" OR workload)` → **426** (phrase quoted to
+   keep the lane baseball-specific).
+3. CELLULAR RECOVERY · MUSCLE REGENERATION — `("skeletal muscle
+   regeneration" OR "satellite cells") AND (injury OR exercise)
+   AND recovery` → **404**.
+4. TENDON HEALING & BIOLOGICS — `(tendon OR ligament) AND (healing
+   OR regeneration) AND ("platelet-rich plasma" OR "growth
+   factors" OR "stem cells") AND (systematic review[pt] OR
+   meta-analysis[pt])` → **119** (SR/MA filter inside the query).
+
+Selection (deterministic, recorded in the artifact): SR/MA first
+(cellular lane also prefers other reviews), then most recent;
+3 cards per lane; every card stores its abstract. Consumers:
+`docs/EVIDENCE.html` (own page, professional register, AMA
+citations + a plain Finding per card drawn only from the stored
+abstract) and one footnote line under Figure 14 in the dashboard.
+Claim hygiene: the page is labeled "Literature surveillance —
+context, not a model input"; no paper number feeds any model.
+
+**Evidence that cuts against easy assumptions — flagged, not
+fixed (no claim changed):** the biologics lane is a cold shower.
+Two ACL meta-analyses of randomized trials found platelet
+concentrates / PRP did not improve patient-reported outcomes or
+revision rates (level I evidence "does not support" the add-on,
+PMID 41313368) and improved only measured knee stability, not
+pain or function scores (PMID 40744844); a 419-study scoping
+review calls PRP and stem-cell evidence "inconsistent" (PMID
+42963566). The desk's model never priced biologics — availability
+is measured IL time only — but no reader should take the page as
+an endorsement of PRP. Separately, UCL return-to-play rates
+across 21 studies ranged 62.5%–100% (PMID 38599535): a wide
+spread, consistent with the wide delivered-WAR intervals of
+Cycle 56 rather than with any single return timeline.
+
+**IL body-part emphasis check — performed, NOT shipped.** The
+owner asked for one factual intro line naming the body part that
+costs the most IL days, if the data supports a clean split.
+`fact_il_stints` (6,632 stints, 2019–2026) has NO body-part
+field — only free-text `injury` strings (1,556 distinct). 796
+stints (27,385 days) carry no description at all, and a keyword
+map leaves a further 612 stints (31,119 days) unmatched:
+roughly a quarter of all IL days are unclassifiable, and genuine
+multi-part strings exist ("Left ankle sprain and right calf
+strain"). Verdict: no clean split — the line was not forced.
+Indicative only (not shipped anywhere): stints whose text names
+the elbow account for ≈68.8k single-match days vs ≈47.6k for
+shoulder, so the page's lane order (UCL first) already matches
+the data's center of gravity.
