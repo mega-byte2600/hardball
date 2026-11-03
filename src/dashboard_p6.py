@@ -1302,9 +1302,9 @@ def _health_cards_panel_html():
              "<th data-sort=\"num\">WAR per $10M</th>"
              "<th data-sort=\"num\">Delivered WAR per $10M</th>"
              "<th>Evidence</th></tr>" + "".join(trs) + "</table>")
-    return ('<div class="healthcards"><h3>Health cards: what each free '
-            "agent will actually give you</h3>"
-            f"<p>Sorted by delivered WAR — the list no longer ranks by "
+    return ('<div class="healthcards"><h3>Availability-adjusted player value: '
+            "measured contribution after availability</h3>"
+            f"<p>Decision lens: start with projected contribution, discount for measured availability, then compare cost. Sorted by delivered WAR — the list no longer ranks by "
             f"headline WAR alone. Delivered WAR is headline Steamer WAR "
             f"times the player's own measured 2025-26 availability "
             f"(IL days / 364), or the pool mean where he has no IL "
@@ -1397,7 +1397,7 @@ def _ticker_panel_html():
                      "with substitutes.")
     buzz_html = ("<ul>" + "".join(_li(i) for i in buzz) + "</ul>"
                  if buzz else f"<p>{buzz_note}</p>")
-    return ('<div class="ticker"><h3>Free-agency wire — the tracker ticker</h3>'
+    return ('<div class="ticker"><h3>Free-agent market activity</h3>'
             f"<p><b>SIGNED {counts['signed']} · REPORTED {counts['reported']} "
             f"· BUZZ {counts['buzz']}</b> — pulled {pulled}.</p>"
             "<p>An item becomes SIGNED only when the MLB StatsAPI "
@@ -1741,7 +1741,7 @@ def panel_shopping():
                    f"for the bottom quartile ({100*sk['top_to_bottom_ratio']:.0f}% "
                    f"of the cost).")
     fig.update_layout(
-        title=("The 2027 FA market by SURPLUS VALUE — what wins are really "
+        title=("Free-agent decision lens: projected contribution versus market cost — "
                f"priced at (Cycle 71)<br><sub>{arb_txt} "
                f"Surplus = projected wins in dollars at the market rate (WAR "
                f"x ${d['market_usd_per_war']/1e6:.2f}M) "
