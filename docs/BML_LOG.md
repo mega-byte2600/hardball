@@ -2176,3 +2176,17 @@ No claim or data changed; dashboard untouched (still 25 figures).
   payroll would have understated 23 teams below the
   floor by construction. Basis labels are part of the
   number.
+
+## Cycle 65 (checklist refresh, 2026-11-02) — backlog item (g) refreshed
+- No feature build, no claim change, no data change. Platform on main
+  46a2ea44: ingest 25 datasets 0 failures (Savant bands hold;
+  transactions raw 120,553, +198 watermark advance); curate 19 tables,
+  contracts pass, build report byte-identical to committed; warehouse
+  19 tables; parity r = 0.889 / 201; gate 84 checks ALL PASS;
+  spellcheck green; dashboard rebuilds offline with 25 figures.
+- Spotrac probe: single GET, 403 — salaries stay 24/30, forced-seller
+  6/7. One-pager regenerates clean (timestamp only differs).
+- HANDOFF December checklist refreshed to Cycle 65 state (25 figures,
+  v1.1.3 current release, freeze tag still owed, print pack still
+  day-before, gaps carried). Next build on record: FA tracker ticker
+  wiring (owner-directed 2026-11-02 evening), then slate 4-6.

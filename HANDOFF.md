@@ -925,3 +925,54 @@ pack. Slate item 6: wire both refresh scripts into the
 6h cron + visible "data as of" stamp. Sportradar trial
 ~Nov 15 (PRICE-1 contracts-coverage check rides along).
 Final freeze release cut before Dec 1.
+
+## Cycle 65 — December readiness checklist refresh (2026-11-02 ~20:13 PT)
+
+Backlog item (g), refreshed — the Cycle 36 checklist below is still
+the structure; this section brings its status current. Verified this
+run on main 46a2ea44 (release v1.1.3, Cycle 64 ledger live).
+
+### Platform + gate this run (no data PR — nothing moved)
+- Spotrac probe: single GET, 403 (same block page). Logged, moved on.
+  Salaries stay 24/30; forced-seller stays 6/7, CHC uncovered.
+- Ingest: 25 datasets, 0 failures. Savant expected 651-673/season,
+  bat-tracking 595-619, sprint 489-506 — all inside known-good bands.
+  Transactions raw 120,553 (+198 on the watermark since the prior run,
+  live free-agency period); raw-zone only, nothing curated from it.
+- Curate: 19 tables, all contracts pass; build report byte-identical
+  to committed (no curated PR). Warehouse from 19 tables. Parity
+  r = 0.889 / 201 matched, exact. Gate: 84 checks ALL PASS.
+  Spellcheck green. Dashboard rebuilds offline from committed
+  snapshots with all 25 figures (Story 6 chapters default, Boardroom
+  15 slides, Explorer all 25 by task).
+
+### Checklist status, refreshed
+- Freeze / final refresh: still targeted Nov 30; freeze tag still
+  owed. v1.1.3 (main 46a2ea44) is the current published release,
+  NOT the freeze tag.
+- Demo package: 25 figures verified this run; Fig. 23 re-verified
+  via gate (BIS canonical lines); one-pager regenerates clean from
+  committed artifacts (only the generation timestamp differs —
+  headlines 48.9 / 52.8 / 54.8, ledger 7 over / 15 under, salaries
+  24/30, parity r = 0.889 / 201); TALKTRACK refs <= 25 per gate.
+- Print pack: still day-before items — TALKTRACK printed, one-pager
+  printed, README "Presenting in 5 minutes" loaded (three modes +
+  Fig. 23 as the live-market closer, already in README).
+- Known gaps carried, unchanged: salaries 24/30 (Spotrac 403;
+  FanGraphs retry only on a 200 probe, under the Cycle 32
+  reconcile-first guard); forced-seller 6/7; PRICE-1 blocked pending
+  complete per-class signing terms (Sportradar trial ~Nov 15 —
+  verify coverage against the workpaper's criteria first);
+  persistence recompute on record from Cycle 63.
+
+### Remaining build queue
+- FA tracker ticker wiring (owner-directed 2026-11-02 evening;
+  probe on record: StatsAPI transactions + freeAgents register,
+  MLBTR/MLB.com/ESPN/Google News RSS probed live; BUZZ via Bluesky
+  Jetstream reachability-only, stream unverified in sandbox;
+  integrity rule: REPORTED/BUZZ never displays as a signing until
+  StatsAPI transactions confirms it).
+- Slate 4: player health cards in the FA shopping list. Slate 5:
+  reproducibility & claims pack. Slate 6: wire both refresh scripts
+  into the 6h cron + visible "data as of" stamp. Sportradar trial
+  ~Nov 15. Final frozen-main release cut before Dec 1.
