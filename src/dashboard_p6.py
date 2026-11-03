@@ -868,6 +868,32 @@ def _hs_verdict_html():
             "src/bml_cycle48.py, data/hakes_sauer_verdict.json.</p>")
 
 
+def _evidence_note_html():
+    """Cycle 57: one asterisked footnote line directly under the
+    Figure 14 (health) panel in Explorer — Figure 14 is the anchor
+    figure; Figure 14 is the anchor figure.
+    Counts ride inside the note. Renders ONLY from the committed
+    artifact data/evidence_surveillance.json; absent the artifact
+    the note is omitted entirely (fail closed, Cycle 51 pattern).
+    The full page is docs/EVIDENCE.html (src/make_evidence_page.py);
+    the context-not-a-model-input label lives on that page."""
+    path = os.path.join(DATA, "evidence_surveillance.json")
+    if not os.path.exists(path):
+        return ""
+    ev = json.load(open(path))
+    short = {"ucl_rtp": "UCL return to play",
+             "prevention_workload": "injury prevention and workload",
+             "cellular_recovery": "muscle regeneration and cellular "
+                                  "recovery",
+             "tendon_biologics": "tendon healing and biologics"}
+    counts = " &middot; ".join(
+        f'{short[lane["id"]]} ({lane["found"]} found)'
+        for lane in ev["lanes"])
+    return ('<p class="srcline evfoot">* <a href="../docs/EVIDENCE.html">'
+            "What the evidence says now</a> — the published research "
+            "on injury recovery and prevention. " + counts + ".</p>")
+
+
 def panel_optimizer():
     """Cycle 49 (OPT-1), Figure 25: the optimizer's audit of Cycle 26
     (Cycle 52: benchmark vs headline — the optimum now headlines
@@ -2055,9 +2081,17 @@ def build():
                 "with cap headroom, pipeline rank, and top prospect.</p></div>")
     explorer += _panel(2, "explorer")
     for name, desc, nums, src in groups:
-        explorer += (f'<div class="task"><h3>{name}</h3><p>{desc}</p></div>' +
-                     "".join(_panel(n, "explorer") for n in nums) +
-                     f'<p class="srcline">{src}</p>')
+        explorer += f'<div class="task"><h3>{name}</h3><p>{desc}</p></div>'
+        if name == "Build a Roster":
+            # Cycle 57: the evidence footnote goes directly under
+            # the Figure 14 (health) panel — its anchor figure.
+            for n in nums:
+                explorer += _panel(n, "explorer")
+                if n == 14:
+                    explorer += _evidence_note_html()
+        else:
+            explorer += "".join(_panel(n, "explorer") for n in nums)
+        explorer += f'<p class="srcline">{src}</p>'
         if name == "Build a Roster":
             explorer += ('<div class="task"><h3>Benchmark vs headline: the optimizer\'s audit</h3>'
                          "<p>Figure 25 re-solves Figure 16's exact problem with a "
@@ -2156,6 +2190,7 @@ def build():
 .npbclock h3{margin:0 0 6px}
 .npbhonest{background:#eef4ff;border-left:5px solid #0d47a1;border-radius:6px;padding:14px 18px;margin:14px 0;font-size:14px}
 .npbhonest h3{margin:0 0 6px}
+.evfoot{margin:2px 0 12px}
 @media print{body.print-boardroom #mode-story,body.print-boardroom #mode-explorer,body.print-boardroom .modenav,body.print-boardroom .crest,body.print-boardroom .keybox,body.print-boardroom .figidx,body.print-boardroom .srcbox{display:none}body.print-boardroom button{display:none}}
 </style></head>
 <body>
@@ -2309,6 +2344,16 @@ the canonical snapshot behind the same
 current-IL layer and health-figure live picture; its 2026 standings
 snapshot agrees with the committed MLB Stats API picture 30 of 30 on
 wins and runs scored (cross-check in docs/CARPE_SCORECARD.md).<br>
+<span class="src">PubMed / NCBI E-utilities</span>
+(eutils.ncbi.nlm.nih.gov) — literature surveillance for the injury
+science behind the availability edge: four fixed topics (UCL return
+to play; baseball injury prevention and workload; muscle
+regeneration and cellular recovery; tendon healing and biologics),
+three papers each, systematic reviews and meta-analyses first.
+<b>LIVE · keyless</b> (committed snapshot
+data/evidence_surveillance.json, pulled __EVIDENCE_DATE__; full cards
+on docs/EVIDENCE.html). <b>Context only — no paper feeds any figure
+or model.</b><br>
 <b>Not yet connected (not sources of anything on this page):</b> Tank01 —
 deferred (the owner dropped the RapidAPI signup for now; supplement only,
 nothing in the demo depends on it). Sportradar — trial deliberately starts
@@ -2335,10 +2380,15 @@ showMode("story");
 </script>
 </body></html>"""
 
+    ev_date = "not yet pulled"
+    _ev_path = os.path.join(DATA, "evidence_surveillance.json")
+    if os.path.exists(_ev_path):
+        ev_date = json.load(open(_ev_path))["metadata"]["run_date"]
     page = (page_template.replace("__JS_INCLUDE__", js_include)
             .replace("__STORY__", story)
             .replace("__BOARDROOM__", boardroom)
-            .replace("__EXPLORER__", explorer))
+            .replace("__EXPLORER__", explorer)
+            .replace("__EVIDENCE_DATE__", ev_date))
 
     out = os.path.join(REPO, "dashboard", "hardball_demo.html")
     with open(out, "w") as f:
