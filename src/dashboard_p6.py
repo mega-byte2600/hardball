@@ -112,13 +112,24 @@ def panel_projections(proj_fname="projections_2026.json"):
     colors = [("green" if t in WIN_CHEAP else "orange" if t in CHEAP_MEDIOCRE else "steelblue")
               for t in proj["team"]]
     fig.add_trace(go.Bar(x=proj["team"], y=proj["proj_wins"], marker_color=colors,
+                         name="Model fit (in-sample)",
                          text=[f"{v:.0f}" for v in proj["proj_wins"]], textposition="outside"))
-    fig.update_layout(title="2026 — Model-projected wins by team (from hitting KPIs + payroll)",
-                      xaxis_title="Team", yaxis_title="Projected wins",
-                      template="plotly_white", height=460)
+    fig.add_trace(go.Bar(x=proj["team"], y=proj["actual_wins"], marker_color="rgba(213,0,50,0.55)",
+                         name="Actual wins",
+                         text=[f"{int(v)}" for v in proj["actual_wins"]], textposition="inside"))
+    fig.update_layout(title="2026 — Model fit (in-sample) vs actual wins, by team",
+                      xaxis_title="Team", yaxis_title="Wins",
+                      template="plotly_white", height=460,
+                      legend=dict(orientation="h", y=-0.25))
     fig.add_hline(y=81, line_dash="dash", line_color="#d50032", opacity=0.75,
                   annotation_text="league avg = 81 wins",
                   annotation_position="bottom left", annotation_font=dict(color="#d50032", size=11))
+    fig.add_annotation(x=0, y=0.02, xref="paper", yref="paper", showarrow=False, xanchor="left",
+                       text="<i>In-sample fit: the model was trained on the same 2025–26 team "
+                            "seasons it scores here, so this is calibration, not a forecast — "
+                            "actual wins are shown alongside. Forecast quality is V&V'd in "
+                            "Chapter 6 (out-of-sample).</i>",
+                       font=dict(size=11, color="#4a5a72"))
     return fig
 
 

@@ -639,9 +639,11 @@ def main() -> int:
         n_eff = sum(1 for _ in fh) - 1
     _fig(8, "durability: efficiency file row count matches titled 721",
          n_eff == 721 and "721 team-seasons" in html_qa, f"rows={n_eff}")
-    _fig(9, "projected-wins panel: 30 rows in projections_2026, title in HTML",
+    _fig(9, "projected-wins panel: 30 rows in projections_2026, in-sample disclosure + actual-wins trace in HTML",
          len(load("projections_2026.json")) == 30
-         and "Model-projected wins by team" in html_qa)
+         and "Model fit (in-sample) vs actual wins" in html_qa
+         and "In-sample fit" in html_qa
+         and "Actual wins" in html_qa)
     cap_teams = load("cap_scenario_2027.json")["teams"]
     n_over = sum(1 for t in cap_teams if t["gap_to_cap"] > 0)
     _fig(10, "cap scenario: over-cap count from artifact is 7, panel in HTML",
