@@ -374,6 +374,64 @@ def main() -> int:
               "MAEs recompute, verdict follows declared rule)",
               False, "data/unc1_availability_backtest.json missing")
 
+    # --- PRICE-1 price-model workpaper (Cycle 61) -----------------
+    pm_path = DATA / "price_model_workpaper_2027.json"
+    if pm_path.exists():
+        pm = json.loads(pm_path.read_text())
+        ok = (pm["verdict"] == "NOT RUN — TRAINING DATA ABSENT"
+              and pm["bar"]["threshold_fraction"] == 0.10
+              and "UNTESTED" in pm["bar"]["status"]
+              and "2024" in pm["model_design_preregistered"]["validation"]
+              and len(pm["missing_source"]["readiness_criteria"]) >= 3
+              and pm["dashboard_change"] == "none")
+        check("PRICE-1: workpaper on record (verdict NOT RUN — "
+              "training data absent, bar pre-committed at 10%, "
+              "design pre-registered)", ok,
+              f"verdict={pm.get('verdict')}")
+        # survivorship table recomputes from the Cot's strings
+        cots = load("salaries_cots_2027.json")["players"]
+        pat = re.compile(r"^(\d+)\s*y/\$([\d.]+)M\s*\((\d+)-(\d+)\)")
+        spans = {}
+        for r in cots:
+            m = pat.match(r.get("contract") or "")
+            if m:
+                spans.setdefault(2000 + int(m.group(3)), []).append(
+                    int(m.group(1)))
+        sv = pm["survivorship"]
+        ok = (sv["parseable_contracts"] == sum(len(v)
+                                               for v in spans.values()))
+        for cls, span in (("2022", 2023), ("2023", 2024),
+                          ("2024", 2025)):
+            got = spans.get(span, [])
+            rec = sv["classes"][cls]
+            ok = (ok and rec["n_terms_recoverable"] == len(got)
+                  and rec["min_years"] == (min(got) if got else None)
+                  and rec["one_year_deals"]
+                  == sum(1 for y in got if y == 1))
+        check("PRICE-1: survivorship table recomputes from Cot's "
+              "contract strings (24 / 18 / 35, no 1-year deals)",
+              ok)
+        # the incumbent anchor basis must be untouched by the cycle
+        opt = load("optimizer_comparison_2027.json")
+        fa_rows = load("fa_shopping_2027.json")["class"]
+        ok = ("last-price anchor" in opt["metadata"]["price_basis"]
+              and len(fa_rows) == pm["incumbent"]["fa_class_n"] == 251
+              and sum(1 for r in fa_rows if r.get("prev_aav"))
+              == pm["incumbent"]["prev_aav_coverage"])
+        check("PRICE-1: incumbent anchor basis unchanged (optimizer "
+              "still prior-AAV, 251-class coverage intact)", ok)
+    else:
+        check("PRICE-1: workpaper on record (verdict NOT RUN — "
+              "training data absent, bar pre-committed at 10%, "
+              "design pre-registered)",
+              False, "data/price_model_workpaper_2027.json missing")
+        check("PRICE-1: survivorship table recomputes from Cot's "
+              "contract strings (24 / 18 / 35, no 1-year deals)",
+              False, "data/price_model_workpaper_2027.json missing")
+        check("PRICE-1: incumbent anchor basis unchanged (optimizer "
+              "still prior-AAV, 251-class coverage intact)",
+              False, "data/price_model_workpaper_2027.json missing")
+
     # --- UNC-2 uncertainty layer (Cycle 56) -----------------------
     unc2_path = DATA / "uncertainty_scenarios_2027.json"
     if unc2_path.exists():

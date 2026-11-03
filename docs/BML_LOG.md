@@ -2039,3 +2039,41 @@ count unchanged at 23. No NPB→MLB translation factor claimed anywhere.
   the owner opens is the release tree, so a user-visible cycle is
   not done until the built dashboard is re-published. Interim
   publish only: the December freeze tag is still owed.
+
+## Cycle 61 — PRICE-1: predicted-price model, inventory first (2026-11-02, slate item 1 of 6)
+
+- Build: slate item 1 asked for a predicted-price model to
+  replace the optimizer's prior-AAV anchors, switched only if
+  it beat the anchor baseline's held-out MAE by >= 10%
+  (train 2022 + 2023, test 2024 — bar fixed before any fit).
+  Step 0 audited every committed source for a training set of
+  actual signed FA contracts (`src/bml_cycle61.py` ->
+  `data/price_model_workpaper_2027.json`).
+- Measured: the signing census exists without terms (StatsAPI
+  transactions, Cycle 54: 1,645 / 1,849 / 1,659 signings,
+  classes 2022–2024; no dollars, no years). Signed terms exist
+  only as survivors: Cot's contract strings parse for 153
+  players, but by class just 24 (2022) / 18 (2023) / 35 (2024)
+  deals remain on 2027 payrolls — minimum length 3 / 3 / 2
+  years, ZERO 1-year deals in any class, extensions mixed
+  with FA signings. Spotrac's file is the same snapshot shape;
+  HS-1 is active contracts, not signings (its own recorded
+  design limit); no artifact repo-wide carries signing-terms
+  fields.
+- Verdict: NOT RUN — TRAINING DATA ABSENT. No model fit, no
+  numbers invented, no blocked source scraped. Anchors stay
+  as the optimizer input, labeled as before. The workpaper
+  pre-registers the design (target ln(signed AAV); projected
+  WAR / age / position / prior-AAV-as-feature; ridge first;
+  anchor + naive $/WAR baselines; switch mechanics with
+  UNC-2 intervals held on the anchor run until re-derived)
+  and the readiness criteria for the missing source.
+- GATE: 78 checks ALL PASS (3 new PRICE-1 checks: workpaper
+  on record, survivorship recomputes from the Cot's strings,
+  incumbent anchor basis untouched); spellcheck green;
+  warehouse rebuilt from 19 curated tables, parity
+  r = 0.889 / 201. No dashboard change -> no release cut.
+- Learn: the demo's price weakness is a DATA gap, not a
+  modeling gap — the honest fix order is land complete
+  signing terms first (Sportradar coverage check, ~Nov 15),
+  then run the pre-registered fit unchanged.

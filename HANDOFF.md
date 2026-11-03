@@ -151,6 +151,14 @@ claims, no new thesis.
       source=fangraphs_rosterresource per row).
 - [ ] Forced-seller panel stays labeled 6/7 until salaries complete;
       CHC uncovered is stated on the panel, not smoothed over.
+- [ ] Price model (Cycle 61 workpaper): optimizer prices stay on
+      prior-AAV anchors until a complete per-class record of FA
+      signing terms lands (expired short deals included — the
+      Cot's/Spotrac 2027 snapshots hold survivors only: class
+      2022 keeps 24 deals, all >= 3 years). When the Sportradar
+      trial opens (~Nov 15), verify its contracts coverage
+      against the workpaper's readiness criteria before counting
+      it as the source that unblocks PRICE-1.
 - [ ] Persistence figures re-verified before Dec 1: EXEC_SUMMARY quotes
       contact r = 0.84 and OBP r = 0.30 — recompute both from HARDBALL's
       own player-year-over-year computation and confirm r vs R^2
@@ -760,3 +768,50 @@ Wire `src/refresh_live_feeds.py` AND
 Figure 9 disclosure remains an owner item. Sportradar trial
 ~Nov 15. Final freeze release cut before Dec 1 (v1.1.0 interim
 publish done, Cycle 60).
+
+## CYCLE 61 — PRICE-1: PREDICTED-PRICE MODEL, INVENTORY FIRST (2026-11-02, slate item 1 of 6)
+
+Owner-approved elite/asset slate, item 1: replace the
+optimizer's prior-AAV anchors with model-predicted prices —
+only if the model earns the switch in backtest (pre-committed
+bar: train 2022 + 2023, test held-out 2024, held-out MAE at
+least 10% below the anchor baseline's on the same players).
+
+**Verdict: NOT RUN — TRAINING DATA ABSENT. Anchors stay.**
+Step 0 (inventory before modeling, fail closed) found no
+usable training set of actual signed FA contracts in the
+repo. The signing census exists (StatsAPI transactions via
+Cycle 54: 1,645 / 1,849 / 1,659 signings for classes
+2022–2024) but carries no terms. The only signed terms
+anywhere — Cot's contract strings, 153 parseable — are
+survivors on 2027 payrolls: class 2022 keeps 24 deals, all
+>= 3 years; class 2023 keeps 18, all >= 3 years; class 2024
+keeps 35, none 1-year; spans mix extensions with FA
+signings. Training or testing on survivors certifies long
+deals only and prices a class full of short deals — not run.
+No contracts invented; Spotrac / FanGraphs FA trackers stand
+403 and were not touched.
+
+Shipped: `src/bml_cycle61.py` (the reproducible audit) and
+`data/price_model_workpaper_2027.json` — inventory,
+survivorship table, the exact missing source with readiness
+criteria, and the pre-registered model design (target,
+features, form, split, baselines, the 10% bar, switch
+mechanics) so the fit runs unchanged the day terms land.
+Gate gains 3 PRICE-1 checks (workpaper on record;
+survivorship recomputes from the Cot's strings; incumbent
+anchor basis untouched): **78 checks ALL PASS**; spellcheck
+green; warehouse 19 tables; parity r = 0.889 / 201. No
+dashboard change, so **no release cut** (Cycle 60 rule: a
+release is part of a user-visible change; there is none).
+
+## Next
+
+Slate item 2: projection blend + honest benchmark page.
+Sportradar trial ~Nov 15 gains a second job: verify whether
+its contracts coverage includes expired historical deals —
+that, not current salaries alone, is what unblocks PRICE-1
+(readiness criteria in the workpaper). Cron wiring for both
+refresh scripts is approved as slate item 6. Figure 9
+disclosure remains an owner item. Final freeze release cut
+before Dec 1.
