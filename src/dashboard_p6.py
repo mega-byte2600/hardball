@@ -2195,8 +2195,8 @@ def build():
 </style></head>
 <body>
 <div class="crest">
-<h1>⚾ HARDBALL <span class="tag">P7 · ready for Winter Meetings 2026 · target Dec 3</span></h1>
-<h2>Cap-Era Moneyball: win while cheap — buy contact + OBP and low-walk arms, price it against the <b>$245.3M</b> cap</h2>
+<h1>⚾ HARDBALL <span class="tag">P7 · demo ready · target Dec 3</span></h1>
+<h2>How the winning-cheap teams beat the market — priced against the <b>$245.3M</b> cap</h2>
 </div>
 <div class="hd">
 <div class="keybox"><b>COLOR KEY (used on every chart below):</b>
