@@ -33,6 +33,7 @@ import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Optional  # 3.9: use Optional instead of PEP 604 |
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "data" / "raw" / "manifest.jsonl"
@@ -50,7 +51,7 @@ def manifest_entries() -> list[dict]:
             if l.strip()]
 
 
-def last_pull(entries) -> datetime | None:
+def last_pull(entries) -> Optional[datetime]:
     ts = [e["fetched_at"] for e in entries
           if e["source"] in FEED_SOURCES
           and e.get("status") in ("ok", "ok_no_change")]
