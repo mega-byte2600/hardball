@@ -2895,7 +2895,7 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 </style></head>
 <body>
 <div class="crest">
-<h1>⚾ HARDBALL <span class="tag">P7 · demo ready · target Dec 3</span></h1>
+<h1>⚾ HARDBALL </h1>
 <h2>How the winning-cheap teams beat the market — priced against the <b>$245.3M</b> cap</h2>
 <div class="asof">__ASOF__</div>
 </div>
