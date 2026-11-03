@@ -692,12 +692,18 @@ def main() -> int:
                 and r["status"] == st
             if st == "OVER CAP" and a["covered"]:
                 ok64 = ok64 and a["shed_total"] >= t["gap_to_cap"] \
-                    and a["shed_total"] == sum(c["salary_2026"]
-                                               for c in a["contracts"])
+                    and a["shed_total"] == sum(
+                        c.get("salary_2026",
+                              c.get("salary_cots_lrp_2027"))
+                        for c in a["contracts"])
+                if r["team"] == "CHC":
+                    # Cycle 74: CHC's set is on the Cot's basis.
+                    ok64 = ok64 and "Cot's LRP 2027" in a["basis"] \
+                        and a["shed_total"] == 29527000 \
+                        and a["contracts"][0]["name"] == "Alex Bregman"
             if st == "OVER CAP" and not a["covered"]:
-                ok64 = ok64 and r["team"] == "CHC" \
-                    and a["statement"] == ("shed set not covered — "
-                                           "payroll basis gap")
+                # Cycle 74: every over-cap team is covered now.
+                ok64 = False
             if st == "UNDER FLOOR":
                 ok64 = ok64 and a["equivalent_signings_at_pool_median"] \
                     == _math.ceil(t["gap_to_floor"] / median64)
@@ -706,8 +712,9 @@ def main() -> int:
                              r["per_player_max_check"]["flags"]} \
                 == flags64.get(code, set())
         check("CAPLEDGER: status arithmetic recomputes from committed "
-              "payrolls (shed sets cover their gaps, CHC uncovered, "
-              "spend counts at the pool median, AAV flags recompute)",
+              "payrolls (shed sets cover their gaps, CHC covered on "
+              "Cot's LRP 2027, spend counts at the pool median, AAV "
+              "flags recompute)",
               ok64)
         board64 = (html.split('id="mode-boardroom"', 1)[1]
                    if 'id="mode-boardroom"' in html else "")
@@ -715,10 +722,12 @@ def main() -> int:
                    "($358.2M over) · 15 under floor ($807.8M short) · "
                    "8 inside the band.")
         check("CAPLEDGER: ledger panel leads Boardroom (title, summary "
-              "strip, CHC line, disagreement count verbatim)",
+              "strip, CHC Bregman line, disagreement count verbatim)",
               "2027 Cap Transition ledger" in board64
               and strip64 in board64
-              and "shed set not covered — payroll basis gap" in board64
+              and "Alex Bregman ($29.5M" in board64
+              and "salary basis: Cot's LRP 2027 (Cycle 74)" in board64
+              and "shed set not covered" not in board64
               and "Status differs from the primary basis for 13 teams"
                   in board64
               and -1 < board64.find("2027 Cap Transition ledger")
@@ -728,12 +737,161 @@ def main() -> int:
               "every row, both summaries reconcile)", False,
               "data/cap_transition_2027.json missing")
         check("CAPLEDGER: status arithmetic recomputes from committed "
-              "payrolls (shed sets cover their gaps, CHC uncovered, "
-              "spend counts at the pool median, AAV flags recompute)",
+              "payrolls (shed sets cover their gaps, CHC covered on "
+              "Cot's LRP 2027, spend counts at the pool median, AAV "
+              "flags recompute)",
               False, "data/cap_transition_2027.json missing")
         check("CAPLEDGER: ledger panel leads Boardroom (title, summary "
               "strip, CHC line, disagreement count verbatim)", False,
               "data/cap_transition_2027.json missing")
+
+    # --- Cycle 74: salary completion (Cot's full parse, reconciliation) ----
+    _c74_names = [
+        "CYCLE74: full Cot's parse committed (2,240 rows, 30 teams) "
+        "and its 237 figure rows are identical to the Cycle 44 file",
+        "CYCLE74: reconciliation recomputes (Spotrac totals == ledger "
+        "payrolls, Cot's row sums match, mean 0.63% / worst SD 3.07% / "
+        "26 of 30 within 2%, CHC gap $4,019,956 pinned)",
+        "CYCLE74: three-basis shed sets recompute from the committed "
+        "salary files and match the artifact; CHC set is Bregman "
+        "alone on the Cot's LRP basis",
+        "CYCLE74: USA TODAY corroboration present as a different-basis "
+        "snapshot (not a merge source) with the Guerrero Jr. player "
+        "check exact",
+        "CYCLE74: dashboard carries the 7-of-7 coverage copy with the "
+        "reconciliation result and the CHC set"]
+    if (DATA / "salaries_cots_full_2027.json").exists() \
+            and (DATA / "salary_reconciliation_2027.json").exists():
+        cf74 = load("salaries_cots_full_2027.json")
+        recon74 = load("salary_reconciliation_2027.json")
+        rows74 = cf74["players"]
+        fig74 = [r for r in rows74 if r["lrp_2027"] is not None]
+
+        def _n74(team, name, val):
+            return ("CHW" if team in ("CWS", "CHW") else team), name, val
+        check(_c74_names[0],
+              len(rows74) == cf74["metadata"]["rows"] == 2240
+              and len({r["team"] for r in rows74}) == 30
+              and sorted(_n74(r["team"], r["name"], r["lrp_2027"])
+                         for r in fig74)
+                  == sorted(_n74(r["team"], r["name"],
+                                 r["salary_lrp_2027"])
+                            for r in load("salaries_cots_2027.json")
+                            ["players"])
+              and all(r["source"] == "cots_baseball_prospectus"
+                      for r in rows74),
+              f"rows={len(rows74)} figures={len(fig74)}")
+        led74 = {t["team"]: t["payroll"]
+                 for t in load("cap_transition_2027.json")["teams"]}
+        sums74 = {}
+        for r in rows74:
+            sums74[r["team"]] = sums74.get(r["team"], 0) \
+                + (r["lrp_2026"] or 0)
+        ok74 = len(recon74["team_totals"]) == 30
+        diffs74 = []
+        for t in recon74["team_totals"]:
+            d = round(100.0 * (t["cots_sheet_total"] - t["spotrac_total"])
+                      / t["spotrac_total"], 2)
+            diffs74.append(abs(d))
+            ok74 = ok74 and t["spotrac_total"] == led74[t["team"]] \
+                and t["sheet_rows_sum_2026"] == sums74[t["team"]] \
+                and t["diff_pct"] == d
+        summ74 = recon74["totals_summary"]
+        ok74 = ok74 \
+            and summ74["mean_abs_diff_pct"] \
+                == round(sum(diffs74) / len(diffs74), 2) == 0.63 \
+            and summ74["worst_abs_diff_pct"] == max(diffs74) == 3.07 \
+            and summ74["worst_team"] == "SD" \
+            and summ74["within_2pct"] \
+                == sum(1 for d in diffs74 if d <= 2.0) == 26 \
+            and recon74["chc"]["gap_to_cap"] == 4019956 \
+            and recon74["chc"]["payroll_spotrac_total"] \
+                - recon74["chc"]["cap"] == 4019956 \
+            and recon74["chc"]["largest_2027_guarantee"]["name"] \
+                == "Alex Bregman" \
+            and recon74["chc"]["largest_2027_guarantee"]["lrp_2027"] \
+                == 29527000
+        check(_c74_names[1], ok74)
+
+        def _prefix74(pairs, gap):
+            out, tot = [], 0.0
+            for nm, amt in sorted(pairs, key=lambda x: -x[1]):
+                if tot >= gap:
+                    break
+                out.append(nm)
+                tot += amt
+            return sorted(out)
+
+        def _nkey74(name):
+            # same normalization as src/bml_cycle74.py name_key
+            toks = re.sub(r"[^a-z ]", "", name.lower()).split()
+            return " ".join(t for t in toks if t != "jr")
+        sal74 = load("salaries_2026.json")["players"]
+        fs74 = {t["team"]: t
+                for t in load("forced_sellers_2027.json")["teams"]}
+        ok74b = True
+        for cv in recon74["shed_cross_validation"]:
+            team = cv["team"]
+            gap = fs74[team]["gap_to_cap"]
+            spot = _prefix74([(r["name"], r["salary_2026"])
+                              for r in sal74 if r["team"] == team], gap)
+            lrp = _prefix74([(r["name"], r["lrp_2027"])
+                             for r in fig74 if r["team"] == team], gap)
+            aav = _prefix74([(r["name"], r["cb_2027_aav"])
+                             for r in rows74 if r["team"] == team
+                             and r["cb_2027_aav"]], gap)
+            ok74b = ok74b \
+                and sorted(s["name"] for s in cv["spotrac"]["players"]) \
+                    == spot \
+                and sorted(s["name"]
+                           for s in cv["cots_lrp_2027"]["players"]) \
+                    == lrp \
+                and sorted(s["name"]
+                           for s in cv["cots_aav_2027"]["players"]) \
+                    == aav \
+                and cv["lrp_matches_spotrac"] == (
+                    [_nkey74(n) for n in lrp]
+                    == [_nkey74(n) for n in spot]) \
+                and cv["aav_matches_spotrac"] == (
+                    [_nkey74(n) for n in aav]
+                    == [_nkey74(n) for n in spot])
+            if team != "CHC":
+                ok74b = ok74b and sorted(
+                    s["name"] for s in fs74[team]["shed"]) == spot
+        ok74b = ok74b and fs74["CHC"]["covered"] \
+            and fs74["CHC"]["basis"] == "cots_lrp_2027" \
+            and [s["name"] for s in fs74["CHC"]["shed"]] \
+                == ["Alex Bregman"] \
+            and fs74["CHC"]["shed_total"] == 29527000
+        check(_c74_names[2], ok74b)
+        ut74 = recon74["usa_today_corroboration"]
+        guer74 = next(r["salary_2026"] for r in sal74
+                      if r["team"] == "TOR" and "Guerrero" in r["name"])
+        utrows74 = {r["team"]: r for r in ut74["rows"]}
+        ok74c = "Different basis" in ut74["basis_label"] \
+            and "never merged" in ut74["basis_label"] \
+            and ut74["player_check"]["demo_spotrac_row_2027_basis"] \
+                == 40214286 \
+            and ut74["player_check"]["usa_today_2026"] == 40214286 \
+            and ut74["player_check"]["exact_match"] is True \
+            and guer74 == 40214286 \
+            and len(utrows74) == 30 \
+            and ut74["named_checks"]["within_half_pct"] \
+                == ["NYM", "LAD", "CLE", "ATH", "MIA"] \
+            and ut74["named_checks"]["within_3pct"] \
+                == ["NYY", "MIL", "TB"]
+        for _t74 in ("NYM", "LAD", "CLE", "ATH", "MIA"):
+            ok74c = ok74c and abs(utrows74[_t74]["diff_pct"]) <= 0.5 \
+                and utrows74[_t74]["spotrac_total"] == led74[_t74]
+        check(_c74_names[3], ok74c, f"guerrero={guer74}")
+        check(_c74_names[4],
+              "7 of 7 over-cap teams" in html
+              and "0.63% on average, worst 3.07%" in html
+              and "Alex Bregman" in html
+              and "(Cot's LRP 2027)" in html)
+    else:
+        for _nm74 in _c74_names:
+            check(_nm74, False, "Cycle 74 artifacts missing")
 
     # --- UNC-2 uncertainty layer (Cycle 56) -----------------------
     unc2_path = DATA / "uncertainty_scenarios_2027.json"
@@ -891,8 +1049,11 @@ def main() -> int:
     fs = load("forced_sellers_2027.json")["teams"]
     covered = [t["team"] for t in fs if t["covered"]]
     uncovered = [t["team"] for t in fs if not t["covered"]]
-    _fig(11, "forced sellers: 6 covered, CHC the only uncovered team",
-         len(covered) == 6 and uncovered == ["CHC"]
+    chc74 = next(t for t in fs if t["team"] == "CHC")
+    _fig(11, "forced sellers: 7 covered, none uncovered (CHC on "
+             "Cot's LRP 2027, Cycle 74)",
+         len(covered) == 7 and uncovered == []
+         and chc74.get("basis") == "cots_lrp_2027"
          and "Forced sellers" in html_qa,
          f"covered={covered} uncovered={uncovered}")
     proj27 = load("projections_2027.json")

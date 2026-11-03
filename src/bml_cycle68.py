@@ -325,6 +325,37 @@ CLAIMS = [
         "status": "SUPPORTED", "cycle": 22, "date": "2026-10-31",
     },
     {
+        "id": "S17",
+        "claim": "Forced-seller shed sets cover all 7 over-cap "
+                  "teams: six computed on Spotrac per-player rows "
+                  "and CHC on Cot's LRP 2027 (Alex Bregman, "
+                  "$29.5M, covers its $4,019,956 gap), the Cot's "
+                  "basis cross-validated against the six known "
+                  "sets (identical players on the LRP basis for "
+                  "5 of 6, on the CBT-AAV basis for 6 of 6; LAD's "
+                  "LRP difference is Ohtani's deferral at present "
+                  "value vs nominal) with Cot's printed team "
+                  "totals reconciling to Spotrac's (mean abs "
+                  "0.63%, worst 3.07%).",
+        "location": "Figure 11 (shed sets) and the Cap Transition "
+                    "Boardroom (CHC ledger action)",
+        "evidence": {
+            "artifact": "data/salary_reconciliation_2027.json + "
+                        "data/forced_sellers_2027.json + "
+                        "data/salaries_cots_full_2027.json",
+            "key_numbers": "CHC gap $4,019,956 = $249,319,956 − "
+                           "$245,300,000; Bregman $29,527,000 is "
+                           "CHC's largest 2027 guarantee (Swanson "
+                           "$28,000,000 second); totals reconcile "
+                           "mean abs 0.63%, worst SD 3.07%, 26 of "
+                           "30 within 2%; USA TODAY's final-2026 "
+                           "LRD list corroborates the Spotrac "
+                           "totals on a different basis (NYM "
+                           "+0.02%, LAD −0.39%, CLE −0.35%)",
+        },
+        "status": "SUPPORTED", "cycle": 74, "date": "2026-11-03",
+    },
+    {
         "id": "N01",
         "claim": "Prior-contract AAVs predict 2027 free-agent signed "
                   "prices.",
@@ -403,11 +434,15 @@ CLAIMS = [
         "evidence": {
             "artifact": "data/salaries_2026.json (metadata) + "
                         "data/cap_transition_2027.json",
-            "key_numbers": "Per-player rows for 24 of 30 teams; gap "
-                           "teams ARI, BOS, CHC, MIL, TB, TEX "
-                           "(Spotrac page failures). Team payroll "
-                           "totals exist for all 30; CHC is over "
-                           "the cap by $4.0M with no shed set",
+            "key_numbers": "Spotrac per-player rows for 24 of 30 "
+                           "teams; gap teams ARI, BOS, CHC, MIL, "
+                           "TB, TEX (Spotrac page failures). Team "
+                           "payroll totals exist for all 30. "
+                           "Corrected Cycle 74: CHC's shed set IS "
+                           "covered — on the Cot's LRP basis "
+                           "(Bregman $29.5M, claim S17) — but no "
+                           "single-basis per-player file covers "
+                           "all 30 teams, so this claim stands",
         },
         "status": "NOT SUPPORTED", "cycle": 64, "date": "2026-11-02",
     },
@@ -631,7 +666,7 @@ def trace_figures(html_text):
         {"figure": 11, "title": "Forced sellers — how few big contracts close each gap",
          "artifacts": ["data/forced_sellers_2027.json"],
          "headline": f"{sum(1 for t in forced['teams'] if t['covered'])} covered; "
-                     f"CHC the only uncovered team",
+                     f"{sum(1 for t in forced['teams'] if not t['covered'])} uncovered",
          "markers": ["Forced sellers"], "build": "python3 src/dashboard_p6.py"},
         {"figure": 12, "title": "2027 projected hitters by OBP (Marcel)",
          "artifacts": ["data/projections_2027.json",

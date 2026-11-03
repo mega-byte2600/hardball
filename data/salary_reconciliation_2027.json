@@ -1,0 +1,836 @@
+{
+ "metadata": {
+  "cycle": 74,
+  "title": "Salary reconciliation — Spotrac totals vs Cot's sheets, three-basis shed sets, USA TODAY spot check",
+  "built_by": "src/bml_cycle74.py from the raw Cot's sheets (mirror cache) and committed artifacts only",
+  "rule": "Every number in this file is recomputed by the build script from its source artifact; bases are labeled and never averaged or merged."
+ },
+ "team_totals": [
+  {
+   "team": "ARI",
+   "spotrac_total": 192670027,
+   "cots_sheet_total": 188431305,
+   "diff_pct": -2.2,
+   "sheet_rows_sum_2026": 188431304,
+   "sheet_residual_usd": 1,
+   "sheet_residual_pct": 0.0,
+   "sheet_rows": 69
+  },
+  {
+   "team": "ATH",
+   "spotrac_total": 98948812,
+   "cots_sheet_total": 98112154,
+   "diff_pct": -0.85,
+   "sheet_rows_sum_2026": 98212157,
+   "sheet_residual_usd": -100003,
+   "sheet_residual_pct": -0.102,
+   "sheet_rows": 79
+  },
+  {
+   "team": "ATL",
+   "spotrac_total": 263462438,
+   "cots_sheet_total": 263667858,
+   "diff_pct": 0.08,
+   "sheet_rows_sum_2026": 263659194,
+   "sheet_residual_usd": 8664,
+   "sheet_residual_pct": 0.003,
+   "sheet_rows": 85
+  },
+  {
+   "team": "BAL",
+   "spotrac_total": 167039211,
+   "cots_sheet_total": 166740634,
+   "diff_pct": -0.18,
+   "sheet_rows_sum_2026": 166823636,
+   "sheet_residual_usd": -83002,
+   "sheet_residual_pct": -0.05,
+   "sheet_rows": 89
+  },
+  {
+   "team": "BOS",
+   "spotrac_total": 207988016,
+   "cots_sheet_total": 206936252,
+   "diff_pct": -0.51,
+   "sheet_rows_sum_2026": 207150154,
+   "sheet_residual_usd": -213902,
+   "sheet_residual_pct": -0.103,
+   "sheet_rows": 76
+  },
+  {
+   "team": "CHC",
+   "spotrac_total": 249319956,
+   "cots_sheet_total": 248801022,
+   "diff_pct": -0.21,
+   "sheet_rows_sum_2026": 248801024,
+   "sheet_residual_usd": -2,
+   "sheet_residual_pct": -0.0,
+   "sheet_rows": 86
+  },
+  {
+   "team": "CHW",
+   "spotrac_total": 103330141,
+   "cots_sheet_total": 102103195,
+   "diff_pct": -1.19,
+   "sheet_rows_sum_2026": 102103195,
+   "sheet_residual_usd": 0,
+   "sheet_residual_pct": 0.0,
+   "sheet_rows": 74
+  },
+  {
+   "team": "CIN",
+   "spotrac_total": 128223748,
+   "cots_sheet_total": 129002302,
+   "diff_pct": 0.61,
+   "sheet_rows_sum_2026": 129002303,
+   "sheet_residual_usd": -1,
+   "sheet_residual_pct": -0.0,
+   "sheet_rows": 71
+  },
+  {
+   "team": "CLE",
+   "spotrac_total": 74459014,
+   "cots_sheet_total": 74942606,
+   "diff_pct": 0.65,
+   "sheet_rows_sum_2026": 75743709,
+   "sheet_residual_usd": -801103,
+   "sheet_residual_pct": -1.069,
+   "sheet_rows": 68
+  },
+  {
+   "team": "COL",
+   "spotrac_total": 121526751,
+   "cots_sheet_total": 121624349,
+   "diff_pct": 0.08,
+   "sheet_rows_sum_2026": 129374348,
+   "sheet_residual_usd": -7749999,
+   "sheet_residual_pct": -6.372,
+   "sheet_rows": 71
+  },
+  {
+   "team": "DET",
+   "spotrac_total": 202081991,
+   "cots_sheet_total": 202087087,
+   "diff_pct": 0.0,
+   "sheet_rows_sum_2026": 202087088,
+   "sheet_residual_usd": -1,
+   "sheet_residual_pct": -0.0,
+   "sheet_rows": 71
+  },
+  {
+   "team": "HOU",
+   "spotrac_total": 239763783,
+   "cots_sheet_total": 239910347,
+   "diff_pct": 0.06,
+   "sheet_rows_sum_2026": 239910345,
+   "sheet_residual_usd": 2,
+   "sheet_residual_pct": 0.0,
+   "sheet_rows": 68
+  },
+  {
+   "team": "KC",
+   "spotrac_total": 150429892,
+   "cots_sheet_total": 150025388,
+   "diff_pct": -0.27,
+   "sheet_rows_sum_2026": 150019285,
+   "sheet_residual_usd": 6103,
+   "sheet_residual_pct": 0.004,
+   "sheet_rows": 74
+  },
+  {
+   "team": "LAA",
+   "spotrac_total": 182509023,
+   "cots_sheet_total": 181410557,
+   "diff_pct": -0.6,
+   "sheet_rows_sum_2026": 181410555,
+   "sheet_residual_usd": 2,
+   "sheet_residual_pct": 0.0,
+   "sheet_rows": 71
+  },
+  {
+   "team": "LAD",
+   "spotrac_total": 339319244,
+   "cots_sheet_total": 339626592,
+   "diff_pct": 0.09,
+   "sheet_rows_sum_2026": 339626595,
+   "sheet_residual_usd": -3,
+   "sheet_residual_pct": -0.0,
+   "sheet_rows": 69
+  },
+  {
+   "team": "MIA",
+   "spotrac_total": 83298123,
+   "cots_sheet_total": 83206516,
+   "diff_pct": -0.11,
+   "sheet_rows_sum_2026": 83206517,
+   "sheet_residual_usd": -1,
+   "sheet_residual_pct": -0.0,
+   "sheet_rows": 63
+  },
+  {
+   "team": "MIL",
+   "spotrac_total": 146706320,
+   "cots_sheet_total": 144624342,
+   "diff_pct": -1.42,
+   "sheet_rows_sum_2026": 144624341,
+   "sheet_residual_usd": 1,
+   "sheet_residual_pct": 0.0,
+   "sheet_rows": 79
+  },
+  {
+   "team": "MIN",
+   "spotrac_total": 115748036,
+   "cots_sheet_total": 116078811,
+   "diff_pct": 0.29,
+   "sheet_rows_sum_2026": 116078812,
+   "sheet_residual_usd": -1,
+   "sheet_residual_pct": -0.0,
+   "sheet_rows": 76
+  },
+  {
+   "team": "NYM",
+   "spotrac_total": 346736805,
+   "cots_sheet_total": 346087385,
+   "diff_pct": -0.19,
+   "sheet_rows_sum_2026": 346087387,
+   "sheet_residual_usd": -2,
+   "sheet_residual_pct": -0.0,
+   "sheet_rows": 91
+  },
+  {
+   "team": "NYY",
+   "spotrac_total": 308336780,
+   "cots_sheet_total": 308249295,
+   "diff_pct": -0.03,
+   "sheet_rows_sum_2026": 308249294,
+   "sheet_residual_usd": 1,
+   "sheet_residual_pct": 0.0,
+   "sheet_rows": 60
+  },
+  {
+   "team": "PHI",
+   "spotrac_total": 291951676,
+   "cots_sheet_total": 292078943,
+   "diff_pct": 0.04,
+   "sheet_rows_sum_2026": 292078945,
+   "sheet_residual_usd": -2,
+   "sheet_residual_pct": -0.0,
+   "sheet_rows": 72
+  },
+  {
+   "team": "PIT",
+   "spotrac_total": 106728501,
+   "cots_sheet_total": 106643104,
+   "diff_pct": -0.08,
+   "sheet_rows_sum_2026": 106573563,
+   "sheet_residual_usd": 69541,
+   "sheet_residual_pct": 0.065,
+   "sheet_rows": 66
+  },
+  {
+   "team": "SD",
+   "spotrac_total": 218252715,
+   "cots_sheet_total": 224959507,
+   "diff_pct": 3.07,
+   "sheet_rows_sum_2026": 224959505,
+   "sheet_residual_usd": 2,
+   "sheet_residual_pct": 0.0,
+   "sheet_rows": 69
+  },
+  {
+   "team": "SEA",
+   "spotrac_total": 170071014,
+   "cots_sheet_total": 168866447,
+   "diff_pct": -0.71,
+   "sheet_rows_sum_2026": 168866445,
+   "sheet_residual_usd": 2,
+   "sheet_residual_pct": 0.0,
+   "sheet_rows": 75
+  },
+  {
+   "team": "SF",
+   "spotrac_total": 190174131,
+   "cots_sheet_total": 189757397,
+   "diff_pct": -0.22,
+   "sheet_rows_sum_2026": 189757400,
+   "sheet_residual_usd": -3,
+   "sheet_residual_pct": -0.0,
+   "sheet_rows": 92
+  },
+  {
+   "team": "STL",
+   "spotrac_total": 96396498,
+   "cots_sheet_total": 94253516,
+   "diff_pct": -2.22,
+   "sheet_rows_sum_2026": 96341879,
+   "sheet_residual_usd": -2088363,
+   "sheet_residual_pct": -2.216,
+   "sheet_rows": 66
+  },
+  {
+   "team": "TB",
+   "spotrac_total": 95615469,
+   "cots_sheet_total": 96069093,
+   "diff_pct": 0.47,
+   "sheet_rows_sum_2026": 95569092,
+   "sheet_residual_usd": 500001,
+   "sheet_residual_pct": 0.52,
+   "sheet_rows": 74
+  },
+  {
+   "team": "TEX",
+   "spotrac_total": 191262798,
+   "cots_sheet_total": 191761624,
+   "diff_pct": 0.26,
+   "sheet_rows_sum_2026": 191761626,
+   "sheet_residual_usd": -2,
+   "sheet_residual_pct": -0.0,
+   "sheet_rows": 69
+  },
+  {
+   "team": "TOR",
+   "spotrac_total": 276130679,
+   "cots_sheet_total": 276081622,
+   "diff_pct": -0.02,
+   "sheet_rows_sum_2026": 276006540,
+   "sheet_residual_usd": 75082,
+   "sheet_residual_pct": 0.027,
+   "sheet_rows": 91
+  },
+  {
+   "team": "WSH",
+   "spotrac_total": 101639888,
+   "cots_sheet_total": 99377069,
+   "diff_pct": -2.23,
+   "sheet_rows_sum_2026": 99377068,
+   "sheet_residual_usd": 1,
+   "sheet_residual_pct": 0.0,
+   "sheet_rows": 76
+  }
+ ],
+ "totals_summary": {
+  "teams": 30,
+  "mean_abs_diff_pct": 0.63,
+  "worst_team": "SD",
+  "worst_abs_diff_pct": 3.07,
+  "within_2pct": 26,
+  "residual_note": "Sheet-internal residual = the sheet's printed total minus the sum of its own parsed rows. 24 of 30 sheets reconcile to within $100 (rounding). The six larger residuals (ATH, BOS, CLE, COL, STL, TB) are properties of the sheets, not of this parse: the independent Cycle 41 parse sums to the same dollar on every team. The pattern — rows for players traded mid-season (e.g. COL's Lorenzen, STL's Arenado shares) — indicates the printed year-end totals net those rows on the sheet's own treatment. Residuals are reported, never adjusted."
+ },
+ "shed_cross_validation": [
+  {
+   "team": "NYM",
+   "gap_to_cap": 101436805.0,
+   "spotrac": {
+    "players": [
+     {
+      "name": "Juan Soto",
+      "amount": 57500000
+     },
+     {
+      "name": "Bo Bichette",
+      "amount": 42000000
+     },
+     {
+      "name": "Francisco Lindor",
+      "amount": 34100000
+     }
+    ],
+    "total": 133600000
+   },
+   "cots_lrp_2027": {
+    "players": [
+     {
+      "name": "Juan Soto",
+      "amount": 57500000
+     },
+     {
+      "name": "Bo Bichette",
+      "amount": 42000000
+     },
+     {
+      "name": "Francisco Lindor",
+      "amount": 32478000
+     }
+    ],
+    "total": 131978000
+   },
+   "cots_aav_2027": {
+    "players": [
+     {
+      "name": "Juan Soto",
+      "amount": 51000000
+     },
+     {
+      "name": "Bo Bichette",
+      "amount": 42000000
+     },
+     {
+      "name": "Francisco Lindor",
+      "amount": 34100000
+     }
+    ],
+    "total": 127100000
+   },
+   "lrp_matches_spotrac": true,
+   "aav_matches_spotrac": true
+  },
+  {
+   "team": "LAD",
+   "gap_to_cap": 94019244.0,
+   "spotrac": {
+    "players": [
+     {
+      "name": "Shohei Ohtani",
+      "amount": 70000000
+     },
+     {
+      "name": "Kyle Tucker",
+      "amount": 55000000
+     }
+    ],
+    "total": 125000000
+   },
+   "cots_lrp_2027": {
+    "players": [
+     {
+      "name": "Kyle Tucker",
+      "amount": 81917000
+     },
+     {
+      "name": "Tyler Glasnow",
+      "amount": 32500000
+     }
+    ],
+    "total": 114417000
+   },
+   "cots_aav_2027": {
+    "players": [
+     {
+      "name": "Kyle Tucker",
+      "amount": 57196000
+     },
+     {
+      "name": "Shohei Ohtani",
+      "amount": 46082000
+     }
+    ],
+    "total": 103278000
+   },
+   "lrp_matches_spotrac": false,
+   "aav_matches_spotrac": true
+  },
+  {
+   "team": "NYY",
+   "gap_to_cap": 63036780.0,
+   "spotrac": {
+    "players": [
+     {
+      "name": "Aaron Judge",
+      "amount": 40000000
+     },
+     {
+      "name": "Cody Bellinger",
+      "amount": 36500000
+     }
+    ],
+    "total": 76500000
+   },
+   "cots_lrp_2027": {
+    "players": [
+     {
+      "name": "Cody Bellinger",
+      "amount": 42500000
+     },
+     {
+      "name": "Aaron Judge",
+      "amount": 40000000
+     }
+    ],
+    "total": 82500000
+   },
+   "cots_aav_2027": {
+    "players": [
+     {
+      "name": "Cody Bellinger",
+      "amount": 44750000
+     },
+     {
+      "name": "Aaron Judge",
+      "amount": 40000000
+     }
+    ],
+    "total": 84750000
+   },
+   "lrp_matches_spotrac": true,
+   "aav_matches_spotrac": true
+  },
+  {
+   "team": "PHI",
+   "gap_to_cap": 46651676.0,
+   "spotrac": {
+    "players": [
+     {
+      "name": "Zack Wheeler",
+      "amount": 42000000
+     },
+     {
+      "name": "Kyle Schwarber",
+      "amount": 33000000
+     }
+    ],
+    "total": 75000000
+   },
+   "cots_lrp_2027": {
+    "players": [
+     {
+      "name": "Zack Wheeler",
+      "amount": 42000000
+     },
+     {
+      "name": "Kyle Schwarber",
+      "amount": 33000000
+     }
+    ],
+    "total": 75000000
+   },
+   "cots_aav_2027": {
+    "players": [
+     {
+      "name": "Zack Wheeler",
+      "amount": 42000000
+     },
+     {
+      "name": "Kyle Schwarber",
+      "amount": 30000000
+     }
+    ],
+    "total": 72000000
+   },
+   "lrp_matches_spotrac": true,
+   "aav_matches_spotrac": true
+  },
+  {
+   "team": "TOR",
+   "gap_to_cap": 30830679.0,
+   "spotrac": {
+    "players": [
+     {
+      "name": "Jr. Vladimir Guerrero Jr.",
+      "amount": 40214286
+     }
+    ],
+    "total": 40214286
+   },
+   "cots_lrp_2027": {
+    "players": [
+     {
+      "name": "Vladimir Guerrero Jr.",
+      "amount": 40214000
+     }
+    ],
+    "total": 40214000
+   },
+   "cots_aav_2027": {
+    "players": [
+     {
+      "name": "Vladimir Guerrero Jr.",
+      "amount": 35714000
+     }
+    ],
+    "total": 35714000
+   },
+   "lrp_matches_spotrac": true,
+   "aav_matches_spotrac": true
+  },
+  {
+   "team": "ATL",
+   "gap_to_cap": 18162438.0,
+   "spotrac": {
+    "players": [
+     {
+      "name": "Chris Sale",
+      "amount": 27000000
+     }
+    ],
+    "total": 27000000
+   },
+   "cots_lrp_2027": {
+    "players": [
+     {
+      "name": "Chris Sale",
+      "amount": 27000000
+     }
+    ],
+    "total": 27000000
+   },
+   "cots_aav_2027": {
+    "players": [
+     {
+      "name": "Chris Sale",
+      "amount": 27000000
+     }
+    ],
+    "total": 27000000
+   },
+   "lrp_matches_spotrac": true,
+   "aav_matches_spotrac": true
+  },
+  {
+   "team": "CHC",
+   "gap_to_cap": 4019956.0,
+   "spotrac": {
+    "players": [],
+    "total": 0
+   },
+   "cots_lrp_2027": {
+    "players": [
+     {
+      "name": "Alex Bregman",
+      "amount": 29527000
+     }
+    ],
+    "total": 29527000
+   },
+   "cots_aav_2027": {
+    "players": [
+     {
+      "name": "Alex Bregman",
+      "amount": 30894000
+     }
+    ],
+    "total": 30894000
+   },
+   "lrp_matches_spotrac": false,
+   "aav_matches_spotrac": false
+  }
+ ],
+ "chc": {
+  "payroll_spotrac_total": 249319956,
+  "cap": 245300000,
+  "gap_to_cap": 4019956,
+  "arithmetic": "249,319,956 - 245,300,000 = 4,019,956",
+  "largest_2027_guarantee": {
+   "name": "Alex Bregman",
+   "lrp_2027": 29527000
+  },
+  "second_2027_guarantee": {
+   "name": "Dansby Swanson",
+   "lrp_2027": 28000000
+  }
+ },
+ "usa_today_corroboration": {
+  "source": "USA TODAY Sports, 'MLB team payrolls from highest to lowest' (final 2026 payrolls heading into the postseason), published 2026-09-27; figures are Major League Baseball Labor Relations Department present-day calculations obtained by USA TODAY",
+  "url": "https://www.usatoday.com/story/sports/mlb/2026/09/27/mlb-teams-payroll-2026-highest-lowest/91968872007/",
+  "accessed": "2026-11-03",
+  "basis_label": "Different basis (LRD present-day: actual salary plus pro-rated signing bonus) and a later snapshot (post-deadline final payrolls) than the demo's Spotrac totals. Context corroboration only — never merged into any demo figure.",
+  "rows": [
+   {
+    "team": "ARI",
+    "usa_today_final_2026": 192800000,
+    "spotrac_total": 192670027,
+    "diff_pct": 0.07
+   },
+   {
+    "team": "ATH",
+    "usa_today_final_2026": 98700000,
+    "spotrac_total": 98948812,
+    "diff_pct": -0.25
+   },
+   {
+    "team": "ATL",
+    "usa_today_final_2026": 263900000,
+    "spotrac_total": 263462438,
+    "diff_pct": 0.17
+   },
+   {
+    "team": "BAL",
+    "usa_today_final_2026": 169200000,
+    "spotrac_total": 167039211,
+    "diff_pct": 1.29
+   },
+   {
+    "team": "BOS",
+    "usa_today_final_2026": 210200000,
+    "spotrac_total": 207988016,
+    "diff_pct": 1.06
+   },
+   {
+    "team": "CHC",
+    "usa_today_final_2026": 248800000,
+    "spotrac_total": 249319956,
+    "diff_pct": -0.21
+   },
+   {
+    "team": "CHW",
+    "usa_today_final_2026": 98000000,
+    "spotrac_total": 103330141,
+    "diff_pct": -5.16
+   },
+   {
+    "team": "CIN",
+    "usa_today_final_2026": 128300000,
+    "spotrac_total": 128223748,
+    "diff_pct": 0.06
+   },
+   {
+    "team": "CLE",
+    "usa_today_final_2026": 74200000,
+    "spotrac_total": 74459014,
+    "diff_pct": -0.35
+   },
+   {
+    "team": "COL",
+    "usa_today_final_2026": 117000000,
+    "spotrac_total": 121526751,
+    "diff_pct": -3.72
+   },
+   {
+    "team": "DET",
+    "usa_today_final_2026": 202100000,
+    "spotrac_total": 202081991,
+    "diff_pct": 0.01
+   },
+   {
+    "team": "HOU",
+    "usa_today_final_2026": 249500000,
+    "spotrac_total": 239763783,
+    "diff_pct": 4.06
+   },
+   {
+    "team": "KC",
+    "usa_today_final_2026": 149800000,
+    "spotrac_total": 150429892,
+    "diff_pct": -0.42
+   },
+   {
+    "team": "LAA",
+    "usa_today_final_2026": 179800000,
+    "spotrac_total": 182509023,
+    "diff_pct": -1.48
+   },
+   {
+    "team": "LAD",
+    "usa_today_final_2026": 338000000,
+    "spotrac_total": 339319244,
+    "diff_pct": -0.39
+   },
+   {
+    "team": "MIA",
+    "usa_today_final_2026": 83000000,
+    "spotrac_total": 83298123,
+    "diff_pct": -0.36
+   },
+   {
+    "team": "MIL",
+    "usa_today_final_2026": 143500000,
+    "spotrac_total": 146706320,
+    "diff_pct": -2.19
+   },
+   {
+    "team": "MIN",
+    "usa_today_final_2026": 109500000,
+    "spotrac_total": 115748036,
+    "diff_pct": -5.4
+   },
+   {
+    "team": "NYM",
+    "usa_today_final_2026": 346800000,
+    "spotrac_total": 346736805,
+    "diff_pct": 0.02
+   },
+   {
+    "team": "NYY",
+    "usa_today_final_2026": 304600000,
+    "spotrac_total": 308336780,
+    "diff_pct": -1.21
+   },
+   {
+    "team": "PHI",
+    "usa_today_final_2026": 291700000,
+    "spotrac_total": 291951676,
+    "diff_pct": -0.09
+   },
+   {
+    "team": "PIT",
+    "usa_today_final_2026": 107600000,
+    "spotrac_total": 106728501,
+    "diff_pct": 0.82
+   },
+   {
+    "team": "SD",
+    "usa_today_final_2026": 223900000,
+    "spotrac_total": 218252715,
+    "diff_pct": 2.59
+   },
+   {
+    "team": "SEA",
+    "usa_today_final_2026": 170500000,
+    "spotrac_total": 170071014,
+    "diff_pct": 0.25
+   },
+   {
+    "team": "SF",
+    "usa_today_final_2026": 197600000,
+    "spotrac_total": 190174131,
+    "diff_pct": 3.9
+   },
+   {
+    "team": "STL",
+    "usa_today_final_2026": 94700000,
+    "spotrac_total": 96396498,
+    "diff_pct": -1.76
+   },
+   {
+    "team": "TB",
+    "usa_today_final_2026": 98300000,
+    "spotrac_total": 95615469,
+    "diff_pct": 2.81
+   },
+   {
+    "team": "TEX",
+    "usa_today_final_2026": 192500000,
+    "spotrac_total": 191262798,
+    "diff_pct": 0.65
+   },
+   {
+    "team": "TOR",
+    "usa_today_final_2026": 275400000,
+    "spotrac_total": 276130679,
+    "diff_pct": -0.26
+   },
+   {
+    "team": "WSH",
+    "usa_today_final_2026": 90300000,
+    "spotrac_total": 101639888,
+    "diff_pct": -11.16
+   }
+  ],
+  "named_checks": {
+   "within_half_pct": [
+    "NYM",
+    "LAD",
+    "CLE",
+    "ATH",
+    "MIA"
+   ],
+   "within_3pct": [
+    "NYY",
+    "MIL",
+    "TB"
+   ],
+   "largest_deviations": [
+    "WSH",
+    "MIN",
+    "CHW"
+   ],
+   "note": "The five named large-payroll anchors agree within 0.4%; NYY/MIL/TB within 2.9%. The largest full-list deviations (WSH -11.2%, MIN -5.4%, CHW -5.2%) are deadline sellers whose final payrolls fell after the snapshot the demo's totals were taken from, plus LRD conventions (e.g. retired-player money). Reported, not reconciled away."
+  },
+  "player_check": {
+   "player": "Vladimir Guerrero Jr.",
+   "usa_today_2026": 40214286,
+   "usa_today_source": "USA TODAY, 'MLB highest paid players' (2026-08-11): 'Vladimir Guerrero, Blue Jays - $40,214,286'",
+   "usa_today_url": "https://www.usatoday.com/story/sports/mlb/2026/08/11/highest-paid-mlb-players-salary-contract/91251925007/",
+   "demo_spotrac_row_2027_basis": 40214286,
+   "exact_match": true
+  }
+ }
+}

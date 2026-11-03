@@ -139,7 +139,37 @@ def main():
         }
         if status == "OVER CAP":
             fs = forced[team]
-            if fs["covered"]:
+            if fs.get("basis") == "cots_lrp_2027":
+                # Cycle 74: CHC's set is computed on Cot's LRP 2027
+                # (no Spotrac per-player rows exist for CHC). WAR
+                # joins by name through the crosswalk instead of
+                # the (team, salary) Spotrac join.
+                contracts = []
+                war_total = 0.0
+                for s in fs["shed"]:
+                    pid = xwalk.get(s["name"])
+                    w = war_by_id.get(pid)
+                    assert w is not None, (team, s["name"], pid)
+                    war_total += w
+                    contracts.append({
+                        "name": s["name"], "pos": s["pos"],
+                        "salary_cots_lrp_2027":
+                            s["salary_cots_lrp_2027"],
+                        "steamer_war_2027": round(w, 2)})
+                row["action"] = {
+                    "type": "shed", "covered": True,
+                    "basis": "Cot's LRP 2027 (Cycle 74)",
+                    "contracts": contracts,
+                    "n_contracts": fs["n_shed"],
+                    "shed_total": fs["shed_total"],
+                    "shed_war_total": round(war_total, 2),
+                    "payroll_after_shed": payroll - fs["shed_total"],
+                    "method": "minimal largest-first contract "
+                              "prefix covering the cap gap — "
+                              "computed on Cot's LRP 2027 "
+                              "(Cycle 74); Spotrac per-player "
+                              "rows for CHC do not exist"}
+            elif fs["covered"]:
                 contracts = []
                 war_total = 0.0
                 for s in fs["shed"]:

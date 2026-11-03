@@ -171,7 +171,7 @@
    "artifacts": [
     "data/forced_sellers_2027.json"
    ],
-   "headline": "6 covered; CHC the only uncovered team",
+   "headline": "7 covered; 0 uncovered",
    "markers": [
     "Forced sellers"
    ],
@@ -204,7 +204,7 @@
    "artifacts": [
     "data/mlb_lake.db (local build artifact, gitignored) -> curated data/curated/fact_stat_lines.parquet"
    ],
-   "headline": "lake present: True; pitching stat_lines rows = 156",
+   "headline": "lake present: True; pitching stat_lines rows = 200",
    "markers": [
     "Pitching is the other winning-cheap half"
    ],
@@ -414,7 +414,7 @@
    "artifacts": [
     "data/tracker_ticker_2026.json"
    ],
-   "headline": "SIGNED 321 · REPORTED 200 · BUZZ 0",
+   "headline": "SIGNED 335 · REPORTED 200 · BUZZ 0",
    "markers": [
     "Free-agency wire — the tracker ticker",
     "An item becomes SIGNED only when the MLB StatsAPI transactions feed carries it"
@@ -518,7 +518,7 @@
   }
  ],
  "counts": {
-  "supported": 16,
+  "supported": 17,
   "not_supported": 7,
   "retracted": 3,
   "open_items": 0,

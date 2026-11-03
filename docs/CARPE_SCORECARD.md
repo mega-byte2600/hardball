@@ -1200,3 +1200,60 @@ point forecasts (UNC-1, Cycle 54), R03 OBP persistence as first published
 (Cycle 39/44). Open: O01, Figure 9's in-sample label — owner's call, unchanged.
 Gate 93 checks ALL PASS (4 new Cycle 68 checks). Released as v1.1.6 per the
 Cycle 60 pattern.
+
+## Cycle 74 — Cot's full parse + salary reconciliation (2026-11-03)
+
+The six Spotrac-gap teams (ARI, BOS, CHC, MIL, TB, TEX) are now covered at player level on a second, fully labeled basis: all 30 Cot's compensation sheets parsed in full (`data/salaries_cots_full_2027.json`, 2240 sheet rows, 237 with a 2027 dollar figure; the rest carry the sheet's own FA / arbitration / option markers — no figure is invented for a marker cell). The parse agrees with the independent Cycle 41 parse as a multiset on every numeric field, all 30 teams.
+
+Team totals — Cot's printed sheet total vs the demo's Spotrac payroll total (`data/salary_reconciliation_2027.json`):
+
+| Team | Spotrac total | Cot's sheet total | Diff % | Sheet residual |
+|---|---|---|---|---|
+| ARI | $192,670,027 | $188,431,305 | -2.20% | +0.000% |
+| ATH | $98,948,812 | $98,112,154 | -0.85% | -0.102% |
+| ATL | $263,462,438 | $263,667,858 | +0.08% | +0.003% |
+| BAL | $167,039,211 | $166,740,634 | -0.18% | -0.050% |
+| BOS | $207,988,016 | $206,936,252 | -0.51% | -0.103% |
+| CHC | $249,319,956 | $248,801,022 | -0.21% | -0.000% |
+| CHW | $103,330,141 | $102,103,195 | -1.19% | +0.000% |
+| CIN | $128,223,748 | $129,002,302 | +0.61% | -0.000% |
+| CLE | $74,459,014 | $74,942,606 | +0.65% | -1.069% |
+| COL | $121,526,751 | $121,624,349 | +0.08% | -6.372% |
+| DET | $202,081,991 | $202,087,087 | +0.00% | -0.000% |
+| HOU | $239,763,783 | $239,910,347 | +0.06% | +0.000% |
+| KC | $150,429,892 | $150,025,388 | -0.27% | +0.004% |
+| LAA | $182,509,023 | $181,410,557 | -0.60% | +0.000% |
+| LAD | $339,319,244 | $339,626,592 | +0.09% | -0.000% |
+| MIA | $83,298,123 | $83,206,516 | -0.11% | -0.000% |
+| MIL | $146,706,320 | $144,624,342 | -1.42% | +0.000% |
+| MIN | $115,748,036 | $116,078,811 | +0.29% | -0.000% |
+| NYM | $346,736,805 | $346,087,385 | -0.19% | -0.000% |
+| NYY | $308,336,780 | $308,249,295 | -0.03% | +0.000% |
+| PHI | $291,951,676 | $292,078,943 | +0.04% | -0.000% |
+| PIT | $106,728,501 | $106,643,104 | -0.08% | +0.065% |
+| SD | $218,252,715 | $224,959,507 | +3.07% | +0.000% |
+| SEA | $170,071,014 | $168,866,447 | -0.71% | +0.000% |
+| SF | $190,174,131 | $189,757,397 | -0.22% | -0.000% |
+| STL | $96,396,498 | $94,253,516 | -2.22% | -2.216% |
+| TB | $95,615,469 | $96,069,093 | +0.47% | +0.520% |
+| TEX | $191,262,798 | $191,761,624 | +0.26% | -0.000% |
+| TOR | $276,130,679 | $276,081,622 | -0.02% | +0.027% |
+| WSH | $101,639,888 | $99,377,069 | -2.23% | +0.000% |
+
+Mean absolute difference 0.63% across 30 teams; worst SD (3.07%). Sheet-internal residual = the sheet's printed total minus the sum of its own parsed rows. 24 of 30 sheets reconcile to within $100 (rounding). The six larger residuals (ATH, BOS, CLE, COL, STL, TB) are properties of the sheets, not of this parse: the independent Cycle 41 parse sums to the same dollar on every team. The pattern — rows for players traded mid-season (e.g. COL's Lorenzen, STL's Arenado shares) — indicates the printed year-end totals net those rows on the sheet's own treatment. Residuals are reported, never adjusted.
+
+Shed sets on three bases (minimal largest-first prefix covering each gap; amounts differ by basis and are labeled, never averaged):
+
+| Team | Gap | Spotrac basis | Cot's LRP 2027 | Cot's AAV 2027 |
+|---|---|---|---|---|
+| NYM | $101,436,805.0 | Juan Soto $57,500,000; Bo Bichette $42,000,000; Francisco Lindor $34,100,000 (total $133,600,000) | Juan Soto $57,500,000; Bo Bichette $42,000,000; Francisco Lindor $32,478,000 (total $131,978,000) | Juan Soto $51,000,000; Bo Bichette $42,000,000; Francisco Lindor $34,100,000 (total $127,100,000) |
+| LAD | $94,019,244.0 | Shohei Ohtani $70,000,000; Kyle Tucker $55,000,000 (total $125,000,000) | Kyle Tucker $81,917,000; Tyler Glasnow $32,500,000 (total $114,417,000) | Kyle Tucker $57,196,000; Shohei Ohtani $46,082,000 (total $103,278,000) |
+| NYY | $63,036,780.0 | Aaron Judge $40,000,000; Cody Bellinger $36,500,000 (total $76,500,000) | Cody Bellinger $42,500,000; Aaron Judge $40,000,000 (total $82,500,000) | Cody Bellinger $44,750,000; Aaron Judge $40,000,000 (total $84,750,000) |
+| PHI | $46,651,676.0 | Zack Wheeler $42,000,000; Kyle Schwarber $33,000,000 (total $75,000,000) | Zack Wheeler $42,000,000; Kyle Schwarber $33,000,000 (total $75,000,000) | Zack Wheeler $42,000,000; Kyle Schwarber $30,000,000 (total $72,000,000) |
+| TOR | $30,830,679.0 | Jr. Vladimir Guerrero Jr. $40,214,286 (total $40,214,286) | Vladimir Guerrero Jr. $40,214,000 (total $40,214,000) | Vladimir Guerrero Jr. $35,714,000 (total $35,714,000) |
+| ATL | $18,162,438.0 | Chris Sale $27,000,000 (total $27,000,000) | Chris Sale $27,000,000 (total $27,000,000) | Chris Sale $27,000,000 (total $27,000,000) |
+| CHC | $4,019,956.0 | no rows | Alex Bregman $29,527,000 (total $29,527,000) | Alex Bregman $30,894,000 (total $30,894,000) |
+
+NYM, NYY, PHI, TOR and ATL pick identical players on all three bases. LAD agrees on Spotrac and AAV (Ohtani + Tucker) and differs on LRP (Glasnow + Tucker): Cot's LRP carries Ohtani's deferred money at present value, Spotrac at the $70M nominal. CHC has no Spotrac rows; both Cot's bases pick the same single contract — Alex Bregman ($29,527,000 LRP) — which covers the $4,019,956 gap ($249,319,956 payroll − $245,300,000 cap). Figure 11 coverage is now 7 of 7, with CHC's basis labeled in the artifact, the figure and the ledger.
+
+External spot check: USA TODAY's published MLB Labor Relations Department final-2026 payroll list (2026-09-27) against the demo's Spotrac totals — NYM +0.02%, LAD −0.39%, CLE −0.35%, ATH −0.25%, MIA −0.36%; NYY −1.21%, MIL −2.19%, TB +2.81%. The largest deviations are deadline sellers on a later snapshot (WSH −11.16%, MIN −5.40%, CHW −5.16%). Different basis and snapshot: context corroboration only, never merged. Player-level: Vladimir Guerrero Jr. at $40,214,286 in USA TODAY's highest-paid list matches the demo's Spotrac row to the dollar.

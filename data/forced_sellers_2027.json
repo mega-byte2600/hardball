@@ -5,9 +5,10 @@
   "floor_2027": 171200000,
   "sources": [
    "data/cap_scenario_2027.json (gaps)",
-   "data/salaries_2026.json (Spotrac 2026 Payroll Salary column, Cycle 25)"
+   "data/salaries_2026.json (Spotrac 2026 Payroll Salary column, Cycle 25)",
+   "data/salaries_cots_2027.json (Cot's LRP 2027 published figures \u2014 CHC only, Cycle 74)"
   ],
-  "coverage": "6 of 7 over-cap teams; CHC ($4.0M over) has no contract rows \u2014 its Spotrac page failed in Cycle 25 and is logged in salaries metadata",
+  "coverage": "7 of 7 over-cap teams: six on Spotrac per-player rows; CHC on Cot's LRP 2027 (Cycle 74, cross-validated \u2014 see data/salary_reconciliation_2027.json)",
   "salaries_rows": 927,
   "salaries_team_failures": [
    "ARI",
@@ -155,10 +156,22 @@
    "team": "CHC",
    "payroll_M": 249.3,
    "gap_to_cap": 4019956.0,
-   "covered": false,
-   "reason": "no contract rows in salaries_2026.json (Spotrac page failed in Cycle 25)",
-   "n_listed": 0,
-   "shed": []
+   "covered": true,
+   "basis": "cots_lrp_2027",
+   "n_listed": 12,
+   "sum_listed": 117693000,
+   "listed_basis": "Cot's LRP 2027 published figure rows",
+   "n_shed": 1,
+   "shed_total": 29527000,
+   "shed": [
+    {
+     "name": "Alex Bregman",
+     "pos": "3b",
+     "salary_cots_lrp_2027": 29527000,
+     "contract": "5 y/$175M (26-30)*"
+    }
+   ],
+   "note": "Spotrac per-player rows do not exist for CHC (its page failed in Cycle 25 and the site has blocked this environment since). This set is computed by the same minimal largest-first rule on Cot's LRP 2027 published figures (Cycle 74); cross-validation against the six Spotrac-basis sets is in data/salary_reconciliation_2027.json."
   }
  ]
 }

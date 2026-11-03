@@ -112,7 +112,9 @@ def main():
         json.dump(tr, fh, indent=1, ensure_ascii=False)
 
     write_pack_page(reg, tr)
-    print("register: 16 supported, 7 not supported, 3 retracted, "
+    print(f"register: {reg['counts']['supported']} supported, "
+          f"{reg['counts']['not_supported']} not supported, "
+          f"{reg['counts']['retracted']} retracted, "
           "0 open, 1 resolved")
     print("trace: Figure 9 headline updated; 25 figures, 8 panels, "
           "all verified (unchanged)")
