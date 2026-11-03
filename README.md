@@ -75,6 +75,8 @@ the answer is in one of those three places — never off the top of your
 head.
 
 ## Repo layout
+- `FEATURES.md` — the feature map: every feature, its source script, committed data
+  artifact, gate, and build order. Start here to pick up a thread.
 - `src/` — Python: data ingest, panel builder, model, value metrics, dashboard generator, BML cycles
 - `data/` — real data artifacts (panel CSV, projections JSON, validation outputs)
 - `docs/` — PROBLEM_P4 (cap-era framing), COPYCAT_P5 (KPI evidence), LITERATURE_SPINE,
