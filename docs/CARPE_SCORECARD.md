@@ -1185,3 +1185,18 @@ delivered WAR; not a figure (count stays 25), Story stays 6
 chapters, Boardroom stays 15 slides. Gate 89 checks ALL PASS
 (2 new HEALTH checks). Released as v1.1.5 per the Cycle 60
 pattern.
+
+## Cycle 68 addendum — reproducibility & claims pack (slate item 5)
+
+The demo's audit trail, in one place. Artifact: data/claims_register.json
+(16 supported, 7 not supported, 3 retracted, 1 open) + data/figure_trace_2027.json
+(25/25 figures, 8/8 panels verified — headline values recomputed from the
+artifacts and matched to the built HTML) + docs/REPRODUCIBILITY.html
+(generated from those two files). Surface: the "Claims & reproducibility"
+panel closing Explorer, rendering the counts, the three retracted claims in
+full, and the pack link; not a figure (count stays 25).
+Retracted: R01 team-wins R-squared 0.80 (Cycles 18-19), R02 availability-capped
+point forecasts (UNC-1, Cycle 54), R03 OBP persistence as first published
+(Cycle 39/44). Open: O01, Figure 9's in-sample label — owner's call, unchanged.
+Gate 93 checks ALL PASS (4 new Cycle 68 checks). Released as v1.1.6 per the
+Cycle 60 pattern.

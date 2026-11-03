@@ -1098,8 +1098,7 @@ signings." Rendered: newest 12 SIGNED, 20 REPORTED, 10 BUZZ.
     + # only if the gate passes; on gate failure, last good
     + # dashboard stays live and the failure is reported
   The parent presents this; it is not applied here.
-- Slate 4 DONE (Cycle 67, below). Slate 5: reproducibility &
-  claims pack. Slate 6: wire both refresh scripts into the 6h
+- Slate 5 DONE (Cycle 68, below). Slate 6: wire both refresh scripts into the 6h
   cron + visible "data as of" stamp. Sportradar trial ~Nov 15.
   Final frozen-main release cut before Dec 1.
 
@@ -1200,3 +1199,86 @@ Boardroom stays 15 slides).
   back from the release tarball and probed (card section
   title, delivered-WAR field, evidence link, 25 figures,
   ticker panel, ledger panel, benchmark panel, footnote).
+
+## Cycle 68 — reproducibility & claims pack (slate item 5)
+
+The audit trail a league office can check. Assembly + verification,
+no new analysis: every material claim the demo makes now sits in one
+register with its artifact, and every figure and panel is traced to
+its artifact with headline values recomputed at build time.
+
+### The pack: src/bml_cycle68.py -> data/claims_register.json + data/figure_trace_2027.json + docs/REPRODUCIBILITY.html
+
+- Register counts: **16 SUPPORTED, 7 NOT SUPPORTED, 3 RETRACTED,
+  1 open item**. A claim is SUPPORTED only if a committed artifact
+  carries the numbers; a claim that failed its own test is NOT
+  SUPPORTED, not softened.
+- Supported includes the optimizer headlines (48.9/52.8/54.8, gap
+  0.0), the ±20% ranges (45.0-53.2 / 48.5-55.5 / 50.4-55.9), the
+  UNC-2 intervals (33.0-46.9 / 36.0-50.7 / 37.6-52.4), the HS-2 live
+  claim (persistent + cap-efficient + low-variance, NOT proven
+  undervaluation), Marcel-Steamer agreement (r=0.889), held-out
+  Marcel accuracy (OBP MAE 0.0237 vs naive 0.0265, n=80), the
+  salary basis (24/30 Spotrac rows + Cot's cross-check, 13/30
+  change status between bases), health cards (166/65/20), the
+  posted class with no translation factor, the ticker lanes with
+  the integrity rule, the evidence counts as run, and the live-IL
+  picture (13 of 251).
+- Not supported, stated plainly: prior-AAV anchors as predicted
+  prices (Cycle 61, training data absent), the Steamer+Marcel
+  blend (Cycle 62, unscorable), Steamer out-of-sample accuracy
+  (not scoreable), Savant trait adjustments (worse out-of-sample),
+  BRef salary corroboration (71.1% < 80% bar), player-level salary
+  completeness for all 30 teams (24/30), and the proposed cap
+  system as certain law (it is a proposal; CBA expires Dec 1).
+- Retracted, stated plainly, not deleted: (R01) the team-wins
+  R-squared 0.80 claim (Cycles 18-19 — favorable 2-year window;
+  full-panel refit R-squared 0.534, lagged OOS MAE 14.05 vs naive
+  9.76); (R02) availability-capped point forecasts (UNC-1, Cycle
+  54 — pooled MAE 46.2 -> 61.1 capped; the cap is a downside
+  adjustment only); (R03) the OBP persistence figure as first
+  published (Cycle 39 recomputation; Cycle 44 shipped the
+  corrected stack, PR #21 itself never merged).
+- Open item O01 (NOT decided here): Figure 9's "Model-projected
+  wins" title presents in-sample fitted values without an
+  in-sample/diagnostic label — still the owner's call. The trace
+  verifies Figure 9's artifact and panel agree; it does not
+  endorse the title.
+- Trace: **25/25 figures + 8/8 panels verified** — headline values
+  recomputed from artifacts and matched against the built HTML
+  (FIG-QA method, Cycle 53). Two build-time catches, both fixed
+  before shipping: the register's evidence parser split artifact
+  strings on "+" and broke on parenthetical section notes
+  (fixed with a path regex, in the builder and the gate), and the
+  evidence-footnote marker assumed the footnote title was one
+  literal string when it renders as a link (checked as its two
+  halves). No figure trace failed; nothing was papered over.
+- The surface: a "Claims & reproducibility" panel closes Explorer
+  (appendix, not a figure — count stays 25; Story stays 6
+  chapters, Boardroom stays 15 slides), rendering the counts, the
+  three retracted claims in full, and the link to the pack page.
+  The panel fails closed: absent the pack artifacts it renders
+  nothing, so the dashboard build runs in two passes (build,
+  pack, rebuild, re-pack).
+
+### Verification
+
+- Gate: **93 checks ALL PASS** (89 + 4 new Cycle 68 checks:
+  register completeness + evidence existence + counts reconcile;
+  trace coverage 25 + 8, all verified; panel renders in Explorer
+  and not in Story; pack page carries the counts and retracted
+  claims). Spellcheck green.
+- Platform clean: curate rebuilt 17 tables, contracts pass, 2
+  skipped on absent raw with committed parquets standing (the
+  Cycle 64/67 pattern — data/curated/_build_report.json restored
+  from main so the committed report does not regress); all 19
+  parquets byte-identical to main; warehouse rebuilt from 19
+  tables; parity r = 0.889 / 201. Dashboard rebuilt with the lake
+  present: 25 figures, none missing. kpi.py md5-verified pristine.
+- Release: v1.1.6 per the Cycle 60 pattern (release commit atop
+  main carrying only the rebuilt dashboard/hardball_demo.html;
+  lightweight tag; GitHub release via API; no asset uploads).
+  Published file read back from the release tarball and probed
+  (claims panel title, retracted-claims string, 25 figures,
+  ticker panel, ledger panel, benchmark panel, health cards,
+  footnote).

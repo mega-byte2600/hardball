@@ -1,0 +1,340 @@
+{
+ "cycle": 68,
+ "title": "HARDBALL claims register — what the demo asserts, what it does not support, and what it withdrew",
+ "rule": "A claim is SUPPORTED only if a committed artifact carries the numbers. A claim that failed its own test is NOT SUPPORTED, not softened. A claim the demo once made and withdrew is RETRACTED, stated plainly, not deleted.",
+ "claims": [
+  {
+   "id": "S01",
+   "claim": "The exact-optimizer rosters buy 48.9 WAR at the $171.2M floor, 52.8 WAR at the $208.0M middle, and 54.8 WAR at the $245.3M cap, each a proven optimum (solver gap 0.0) of 26 men within budget.",
+   "location": "Figure 16 (scenario rosters) and Figure 25 (optimizer audit)",
+   "evidence": {
+    "artifact": "data/wow_scenarios.json + data/optimizer_comparison_2027.json",
+    "key_numbers": "Floor 48.9 WAR / $171.1M; Middle 52.8 / $207.8M; Cap 54.8 / $245.2M; 26 men each; solver gap 0.0"
+   },
+   "status": "SUPPORTED",
+   "cycle": 49,
+   "date": "2026-11-02"
+  },
+  {
+   "id": "S02",
+   "claim": "The optimizer beats the greedy build at every budget: floor +6.9 WAR (48.9 vs 42.0), middle +7.1 (52.8 vs 45.7), cap +2.5 (54.8 vs 52.3). The greedy build is kept as the labeled benchmark, not hidden.",
+   "location": "Figure 25 (optimizer audit)",
+   "evidence": {
+    "artifact": "data/optimizer_comparison_2027.json",
+    "key_numbers": "Greedy 42.0 / 45.7 / 52.3 WAR; optimizer 48.9 / 52.8 / 54.8 WAR"
+   },
+   "status": "SUPPORTED",
+   "cycle": 49,
+   "date": "2026-11-02"
+  },
+  {
+   "id": "S03",
+   "claim": "The optimizer rosters stay best when prices are wrong by 20%: at uniform price x1.2 the floor still buys 45.0 WAR (above the greedy base 42.0); the full ranges are floor 45.0-53.2, middle 48.5-55.5, cap 50.4-55.9 WAR.",
+   "location": "Figure 25 sensitivity strip",
+   "evidence": {
+    "artifact": "data/optimizer_sensitivity_2027.json",
+    "key_numbers": "Price x0.8 totals 53.2 / 55.5 / 55.9; price x1.2 totals 45.0 / 48.5 / 50.4; all proven optimal (gap 0.0)"
+   },
+   "status": "SUPPORTED",
+   "cycle": 50,
+   "date": "2026-11-02"
+  },
+  {
+   "id": "S04",
+   "claim": "Delivered WAR runs below the headline points: 10th-90th percentile delivered totals are floor 33.0-46.9 (median 39.8), middle 36.0-50.7 (43.2), cap 37.6-52.4 (44.9). The points are full-availability projections, at about the 95th percentile of the delivered distribution; nothing was re-centered.",
+   "location": "Figure 16 (scenario rosters, delivered-WAR ranges)",
+   "evidence": {
+    "artifact": "data/uncertainty_scenarios_2027.json",
+    "key_numbers": "Seeded Monte Carlo, 20,000 draws, seed 20261102; median gaps -9.1 / -9.6 / -9.9 = availability level -6.8 / -7.2 / -7.5 + residual bias -2.2 / -2.3 / -2.3"
+   },
+   "status": "SUPPORTED",
+   "cycle": 56,
+   "date": "2026-11-02"
+  },
+  {
+   "id": "S05",
+   "claim": "Injury risk is a level tax, not a budget effect: at the measured pool-mean availability the stressed totals are 44.6 / 48.1 / 50.0 WAR, and the floor roster still captures about 89% of the cap roster's WAR.",
+   "location": "Figure 16 (availability stress line)",
+   "evidence": {
+    "artifact": "data/wow_scenarios.json (availability_stress)",
+    "key_numbers": "Pool n=201, mean availability 0.912; stressed 44.6 / 48.1 / 50.0; floor/cap ratio 0.892"
+   },
+   "status": "SUPPORTED",
+   "cycle": 52,
+   "date": "2026-11-02"
+  },
+  {
+   "id": "S06",
+   "claim": "The winning-cheap thesis is persistent, cap-efficient, and low-variance — but NOT proven undervaluation: the formal Hakes-Sauer proportionality test is inconclusive by power (Sample S p=0.42, Sample C p=0.90), while the run-value benchmark survives (OBP +0.262, SLG +0.278 per PA; ratio 0.94, 95% CI 0.72-1.17).",
+   "location": "Figure 24 (Hakes-Sauer verdict exhibit + verdict box)",
+   "evidence": {
+    "artifact": "data/hakes_sauer_verdict.json + data/hakes_sauer_results.json",
+    "key_numbers": "480 team-seasons, 2011-2026; S n=60, C n=82; top-quartile contact hitters cost 0.54x / 0.53x median $/WAR (a contrast, not a price effect)"
+   },
+   "status": "SUPPORTED",
+   "cycle": 48,
+   "date": "2026-11-02"
+  },
+  {
+   "id": "S07",
+   "claim": "Our Marcel projections agree with FanGraphs Steamer 2027: hitters 201/201 matched, OBP r=0.889; pitchers 102/102 matched, ERA r=0.636, WHIP r=0.717. This is agreement, not accuracy — no 2027 outcomes exist yet.",
+   "location": "Figure 18 (Marcel-Steamer benchmark)",
+   "evidence": {
+    "artifact": "data/fg_benchmark_2027.json",
+    "key_numbers": "Hitters OBP r=0.889, mean |diff| 0.010; pitchers ERA r=0.636, WHIP r=0.717; joined on MLBAM id only, never by name"
+   },
+   "status": "SUPPORTED",
+   "cycle": 22,
+   "date": "2026-10-31"
+  },
+  {
+   "id": "S08",
+   "claim": "On held-out 2026 actuals, Marcel beats the naive prior-season repeat: hitters (n=80) OBP MAE 0.0237 vs naive 0.0265; pitchers (n=22) ERA MAE 0.9394 vs naive 1.0177.",
+   "location": "Benchmark panel under Figure 18 (Explorer)",
+   "evidence": {
+    "artifact": "data/projection_blend_2027.json",
+    "key_numbers": "Hitters 2026 n=80; pitchers 2026 n=22; age slopes fit on 2025 only, judged on 2026 only"
+   },
+   "status": "SUPPORTED",
+   "cycle": 62,
+   "date": "2026-11-02"
+  },
+  {
+   "id": "S09",
+   "claim": "The salary basis is: Spotrac payroll totals for all 30 teams, with per-player contract rows for 24 of 30 teams (927 rows); Cot's LRP-2027 as a second, labeled basis (237 rows, 30 teams). On the Spotrac basis 7 teams are over the cap ($358.2M over) and 15 under the floor ($807.8M short); 13 of 30 teams change status between the two bases.",
+   "location": "Figure 10 (cap-era reality), Figure 11 (forced sellers), Cap Transition ledger panel",
+   "evidence": {
+    "artifact": "data/cap_transition_2027.json + data/salaries_2026.json + data/salaries_cots_2027.json",
+    "key_numbers": "Spotrac gap teams: ARI, BOS, CHC, MIL, TB, TEX; Cot's basis is a committed-contract subtotal, not a complete payroll"
+   },
+   "status": "SUPPORTED",
+   "cycle": 64,
+   "date": "2026-11-02"
+  },
+  {
+   "id": "S10",
+   "claim": "Availability is measured, not assumed: hitter IL pool n=201 (mean availability 0.912), pitcher pool n=102 (mean 0.807). Health cards cover all 251 free agents (166 measured / 65 no IL record / 20 not matched, never assumed 100%), and ranking by delivered WAR changes the order (Trevor Rogers falls from headline #4 to delivered #6).",
+   "location": "Figure 14 (health) and the health-cards panel in Explorer 'Shop the FA Class'",
+   "evidence": {
+    "artifact": "data/fa_health_cards_2027.json + data/uncertainty_scenarios_2027.json",
+    "key_numbers": "Rogers: 64 IL days, 0.82 availability, 3.04 headline WAR -> 2.41 delivered; per-player intervals NOT derived (pool variance is not player risk)"
+   },
+   "status": "SUPPORTED",
+   "cycle": 67,
+   "date": "2026-11-02"
+  },
+  {
+   "id": "S11",
+   "claim": "The posted class is Sato (Hanshin, 3B/OF), Taira (Seibu, RHP), and Itoh (Nippon-Ham, RHP), posted November 1, 2026, window November 2-December 16, with BIS counting stats as stated. No NPB-to-MLB translation factor is claimed anywhere.",
+   "location": "Figure 23 (The Posted Class)",
+   "evidence": {
+    "artifact": "data/posted_class_2026.json + data/fig23_rebuild_2026.json",
+    "key_numbers": "Sato 2026 .306, 39 HR, 106 RBI, OPS .992; Taira 1.36 ERA, 146.0 IP; Itoh 3.18 ERA, 172.2 IP; fee checkpoint $60M -> $10.875M"
+   },
+   "status": "SUPPORTED",
+   "cycle": 47,
+   "date": "2026-11-02"
+  },
+  {
+   "id": "S12",
+   "claim": "The tracker ticker separates what is confirmed from what is rumored: 321 SIGNED (from 705 FA-code transactions in the pull window), 200 REPORTED, 0 BUZZ. An item becomes SIGNED only when the MLB StatsAPI transactions feed carries it; REPORTED and BUZZ items are never labeled signings. The BUZZ lane ships empty because the Bluesky Jetstream read did not complete — never filled with substitutes.",
+   "location": "Tracker ticker panel, front of Story mode",
+   "evidence": {
+    "artifact": "data/tracker_ticker_2026.json",
+    "key_numbers": "Window 2026-10-27 to 2026-11-03; FA codes SFA / DFA / TR / REL / CLW / OUT / DES; Jetstream status stream_failed (timeout)"
+   },
+   "status": "SUPPORTED",
+   "cycle": 66,
+   "date": "2026-11-03"
+  },
+  {
+   "id": "S13",
+   "claim": "The evidence page reports the published research on injury recovery and prevention, as run on 2026-11-02: UCL return-to-play 157, injury prevention/workload 426, cellular recovery 404, tendon healing/biologics 119 (systematic reviews and meta-analyses). It is literature context for the availability thesis, not a model input, and not a biologics endorsement: the level-I evidence does not support PRP/platelet add-ons.",
+   "location": "Figure 14 footnote and docs/EVIDENCE.html",
+   "evidence": {
+    "artifact": "data/evidence_surveillance.json",
+    "key_numbers": "Query strings recorded verbatim in the artifact; 12 cards (3 per lane); every Finding line drawn only from the stored abstract"
+   },
+   "status": "SUPPORTED",
+   "cycle": 57,
+   "date": "2026-11-02"
+  },
+  {
+   "id": "S14",
+   "claim": "Figure 14's live-IL picture is drawn from the 2026-11-02 Statyx + FastballAPI pull: FastballAPI is the census (190 injury records), Statyx the event layer, MLB StatsAPI the standings of record. 13 of the 251 free agents are currently injured in that snapshot.",
+   "location": "Figure 14 (health), live-IL sub-panel",
+   "evidence": {
+    "artifact": "data/il_current_live.json + data/il_events.json",
+    "key_numbers": "Union 196 players; Fastball/StatsAPI standings agree 30/30; first event comparison: 0 events (state-identical)"
+   },
+   "status": "SUPPORTED",
+   "cycle": 51,
+   "date": "2026-11-02"
+  },
+  {
+   "id": "S15",
+   "claim": "Input skills persist year to year: pooled contact r=0.843 across 457 player-season pairs (2022-2026 windows). The edge the demo buys is the persistent input, not the noisy outcome.",
+   "location": "Figure 3 (skill persistence)",
+   "evidence": {
+    "artifact": "data/persistence_ci.json",
+    "key_numbers": "Pooled contact r=0.843, 95% CI 0.81-0.872, n=457 pairs"
+   },
+   "status": "SUPPORTED",
+   "cycle": 44,
+   "date": "2026-11-02"
+  },
+  {
+   "id": "S16",
+   "claim": "Run differential describes wins in the same season: run-diff-only logistic AUC 0.949 (2025->2026, titled 0.95) and within-season R-squared 0.545. This is diagnostic, not a forward forecast.",
+   "location": "Figure 5 (title-bar test) and Figure 4 (run differential)",
+   "evidence": {
+    "artifact": "data/quant_core.json + data/runs_panel.json",
+    "key_numbers": "Run-diff-only AUC 0.949 (25->26), 0.970 (26->25); within-season R2 0.545"
+   },
+   "status": "SUPPORTED",
+   "cycle": 22,
+   "date": "2026-10-31"
+  },
+  {
+   "id": "N01",
+   "claim": "Prior-contract AAVs predict 2027 free-agent signed prices.",
+   "location": "Figure 16 prices and Figure 25 (anchor label)",
+   "evidence": {
+    "artifact": "data/price_model_workpaper_2027.json",
+    "key_numbers": "Verdict NOT RUN - TRAINING DATA ABSENT: the 5,153-signing census (2022-2024) carries no contract terms; Cot's terms cover survivors only (2022: 24 deals, all 3+ years). Anchors remain the optimizer input, labeled as anchors"
+   },
+   "status": "NOT SUPPORTED",
+   "cycle": 61,
+   "date": "2026-11-02"
+  },
+  {
+   "id": "N02",
+   "claim": "A Steamer + Marcel blend improves on both parents for 2027 projections.",
+   "location": "Benchmark panel under Figure 18 (Explorer)",
+   "evidence": {
+    "artifact": "data/projection_blend_2027.json",
+    "key_numbers": "Verdict NOT ADOPTED: the blend cannot be scored — Steamer exists in-repo only for 2027 (unplayed); FanGraphs API ignores the season parameter. First honest test after the 2027 season"
+   },
+   "status": "NOT SUPPORTED",
+   "cycle": 62,
+   "date": "2026-11-02"
+  },
+  {
+   "id": "N03",
+   "claim": "Steamer's out-of-sample accuracy is scored.",
+   "location": "Figure 18 (benchmark scope note)",
+   "evidence": {
+    "artifact": "data/projection_blend_2027.json (steamer_status)",
+    "key_numbers": "Steamer status NOT SCOREABLE: no held-out Steamer outcomes exist in-repo"
+   },
+   "status": "NOT SUPPORTED",
+   "cycle": 62,
+   "date": "2026-11-02"
+  },
+  {
+   "id": "N04",
+   "claim": "Savant trait adjustments improve Marcel projections.",
+   "location": "Figure 19 (Savant traits) — diagnostics only",
+   "evidence": {
+    "artifact": "data/savant_test.json",
+    "key_numbers": "Bat speed is the most stable trait (YoY r about 0.92) and still made projections worse out-of-sample in both directions on both metrics; nothing adopted"
+   },
+   "status": "NOT SUPPORTED",
+   "cycle": 20,
+   "date": "2026-11-01"
+  },
+  {
+   "id": "N05",
+   "claim": "Baseball-Reference salaries corroborate the Spotrac / Cot's salary basis within tolerance.",
+   "location": "Salary basis notes (Figure 10/11, ledger)",
+   "evidence": {
+    "artifact": "data/salary_recon_cycle44.json",
+    "key_numbers": "114 matched vs Cot's LRP-2026, 71.1% within $50k — under the 80% bar, so no BRef salary dataset ships; disagreements are convention gaps (traded-player shares, deferred/PV), not errors"
+   },
+   "status": "NOT SUPPORTED",
+   "cycle": 44,
+   "date": "2026-11-02"
+  },
+  {
+   "id": "N06",
+   "claim": "The demo's salary data is complete at player level for all 30 teams.",
+   "location": "Figure 10/11 and the ledger (basis note)",
+   "evidence": {
+    "artifact": "data/salaries_2026.json (metadata) + data/cap_transition_2027.json",
+    "key_numbers": "Per-player rows for 24 of 30 teams; gap teams ARI, BOS, CHC, MIL, TB, TEX (Spotrac page failures). Team payroll totals exist for all 30; CHC is over the cap by $4.0M with no shed set"
+   },
+   "status": "NOT SUPPORTED",
+   "cycle": 64,
+   "date": "2026-11-02"
+  },
+  {
+   "id": "N07",
+   "claim": "The proposed $245.3M cap / $171.2M floor / 15% per-player max system is certain to govern 2027.",
+   "location": "Every cap figure in the demo (conditional)",
+   "evidence": {
+    "artifact": "data/cap_transition_2027.json (metadata)",
+    "key_numbers": "System status: owners' proposed system; not law. CBA expires December 1, 2026; the demo conditions every figure on the proposal"
+   },
+   "status": "NOT SUPPORTED",
+   "cycle": 64,
+   "date": "2026-11-02"
+  }
+ ],
+ "retracted": [
+  {
+   "id": "R01",
+   "claim": "A team-level formula predicts wins with R-squared 0.80 and MAE 4.0 wins.",
+   "original_location": "Early dashboard and docs (pre-Cycle 18)",
+   "retraction": "Cycles 18-19: the figure came from a favorable 2-year window. Refit on the full 2011-2026 panel (450 complete rows): repeated K-fold MAE 7.69, R-squared 0.534. The honest use-case spec — predict NEXT season's wins from this season's KPIs — gives in-sample R-squared 0.136 and out-of-sample MAE 14.05 (worse than naive 9.76); grouped CV R-squared -6.1. What survives is player-level acquisition (Marcel + injury caps), not a team-wins formula.",
+   "retracted_cycle": 19,
+   "date": "2026-10-31",
+   "standing_record": "data/formula_prod.json stays annotated 'DIAGNOSTIC ONLY — same-year fit; not a forecast'; the gate pins that annotation."
+  },
+  {
+   "id": "R02",
+   "claim": "Capping projections by measured availability improves point forecasts.",
+   "original_location": "UNC-1 candidate correction (Cycle 54 workpaper)",
+   "retraction": "Cycle 54 backtest, pooled n=39 qualified FA regulars (2022-2024 classes, 5,153 signings screened): flat MAE 95.1 -> 132.3 capped; Marcel MAE 46.2 -> 61.1 capped. The cap helped 65% of the 20 Marcel-overshoot cases, so it is a downside adjustment, not a point correction. It shapes the Cycle 56 delivered-WAR distribution only; no headline point was changed.",
+   "retracted_cycle": 54,
+   "date": "2026-11-02",
+   "standing_record": "data/unc1_availability_backtest.json verdict NOT SUPPORTED; UNC-2 records the governance explicitly."
+  },
+  {
+   "id": "R03",
+   "claim": "The OBP year-over-year persistence figure as first published.",
+   "original_location": "Persistence exhibit (pre-Cycle 44)",
+   "retraction": "Cycle 39 restored-lake recomputation corrected the figure (the 'OBP r about 0.3' claim). The correction's own PR (#21) was never merged; Cycle 44 shipped the corrected accuracy stack instead, and the gate pins the shipped persistence values. The shipped figure is the recomputed one (pooled contact r=0.843, 457 pairs).",
+   "retracted_cycle": 44,
+   "date": "2026-11-02",
+   "standing_record": "docs/BML_LOG.md Cycle 39 entry; data/persistence_ci.json as shipped."
+  }
+ ],
+ "open_items": [
+  {
+   "id": "O01",
+   "claim": "Figure 9's 'Model-projected wins' title presents in-sample fitted values without an in-sample / diagnostic label.",
+   "location": "Figure 9 (model fit vs actual wins)",
+   "evidence": {
+    "artifact": "data/projections_2026.json + data/formula_prod.json",
+    "key_numbers": "30 rows; formula_prod status DIAGNOSTIC ONLY — same-year fit; not a forecast"
+   },
+   "status": "OPEN — owner decision pending (label as diagnostic vs leave as is)",
+   "cycle": 53,
+   "date": "2026-11-02"
+  }
+ ],
+ "corrections_log": [
+  "Cycle 59 corrected two Cycle 58 probe-evidence lines in the scorecard (SABR: HTTP 200, not 429; Elias: connection dropped, not HTTP 200). The verdicts did not change; the correction is recorded in the PR body as an errata block, not a rewrite.",
+  "Cycle 67's spellcheck whitelist splits accented player names at the accent (berr = Berrios, garc = Garcia, nchez = Sanchez, rez = Perez, rquez = Marquez) — a tokenizer artifact, recorded in the cycle note so it is not mistaken for misspellings."
+ ],
+ "counts": {
+  "supported": 16,
+  "not_supported": 7,
+  "retracted": 3,
+  "open_items": 1,
+  "figures_traced": 25,
+  "figures_verified": 25,
+  "panels_traced": 8,
+  "panels_verified": 8
+ }
+}

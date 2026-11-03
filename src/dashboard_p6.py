@@ -1279,6 +1279,48 @@ def _ticker_panel_html():
             "(no post signal), Bluesky AppView search (403).</p></div>")
 
 
+def _claims_panel_html():
+    """Cycle 68: the claims & reproducibility panel — Explorer appendix.
+
+    Renders ONLY from the committed pack artifacts
+    data/claims_register.json + data/figure_trace_2027.json; absent
+    either artifact the panel is omitted entirely (fail closed,
+    Cycle 51/57 pattern). Not a figure (count stays 25) and not a
+    chapter or slide (Story stays 6 chapters, Boardroom stays 15
+    slides). The retracted claims are listed in full: they are
+    evidence the process works, not something to bury.
+    """
+    import html as _html
+    reg_path = os.path.join(DATA, "claims_register.json")
+    tr_path = os.path.join(DATA, "figure_trace_2027.json")
+    if not (os.path.exists(reg_path) and os.path.exists(tr_path)):
+        return ""
+    reg = json.load(open(reg_path))
+    tr = json.load(open(tr_path))
+    c = reg["counts"]
+    ret = "".join(
+        f"<li><b>{_html.escape(r['id'])}:</b> "
+        f"{_html.escape(r['claim'])} "
+        f"<span class=\"srcline\">Withdrawn Cycle {r['retracted_cycle']}.</span></li>"
+        for r in reg["retracted"])
+    return ('<div class="panel"><h3>Claims &amp; reproducibility — what this demo '
+            "asserts, and what it withdrew</h3>"
+            f"<p><b>{c['supported']} supported · {c['not_supported']} not "
+            f"supported · {c['retracted']} retracted</b> — every claim in "
+            "this demo, with the artifact that carries it, in "
+            '<a href="../docs/REPRODUCIBILITY.html">docs/REPRODUCIBILITY.html</a>. '
+            f"All {tr['counts']['figures_verified']} figures and "
+            f"{tr['counts']['panels_verified']} panels traced to their artifacts.</p>"
+            "<p><b>Retracted — stated plainly:</b></p><ul>" + ret + "</ul>"
+            "<p>One item is still open, not decided here: Figure 9's "
+            "'Model-projected wins' title presents in-sample fitted values "
+            "without an in-sample label. That label is the owner's call "
+            "(open item O01 in the pack).</p>"
+            '<p class="srcline">Source: data/claims_register.json + '
+            "data/figure_trace_2027.json (Cycle 68). The pack page is "
+            "generated from the artifacts, never hand-edited.</p></div>")
+
+
 def panel_optimizer():
     """Cycle 49 (OPT-1), Figure 25: the optimizer's audit of Cycle 26
     (Cycle 52: benchmark vs headline — the optimum now headlines
@@ -2529,6 +2571,14 @@ def build():
                          "Story stays 6 chapters and Boardroom stays 15 slides: this is a live-market "
                          "exhibit, not a new thesis claim.</p></div>")
             explorer += _posted_html()
+
+    # Cycle 68: the claims & reproducibility panel closes Explorer —
+    # the appendix, not a figure, chapter, or slide.
+    explorer += ('<div class="task"><h3>Claims &amp; reproducibility — the audit trail</h3>'
+                 "<p>What this demo asserts, what it does not support, and what it withdrew — "
+                 "with the artifact behind each one. Explorer only. Story stays 6 chapters and "
+                 "Boardroom stays 15 slides.</p></div>")
+    explorer += _claims_panel_html()
 
     page_template = """<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P7)</title>
 <style>body{font-family:system-ui,sans-serif;margin:0;background:#f4f1ea;color:#14213d}

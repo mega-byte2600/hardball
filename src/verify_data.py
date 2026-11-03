@@ -1093,6 +1093,91 @@ def main() -> int:
               "anchors (Cycle 67)", False,
               "data/fa_health_cards_2027.json missing")
 
+    # --- Claims & reproducibility pack (Cycle 68) ------------------
+    reg_path = DATA / "claims_register.json"
+    tr_path = DATA / "figure_trace_2027.json"
+    if reg_path.exists() and tr_path.exists():
+        reg = json.loads(reg_path.read_text())
+        tr = json.loads(tr_path.read_text())
+        _ids = {c["id"] for c in reg["claims"]}
+        _need = {"S01", "S02", "S03", "S04", "S06", "S07", "S09", "S10",
+                 "S11", "S12", "N01", "N02", "N03", "N06"}
+        _ev_ok = True
+        for c in reg["claims"] + reg["open_items"]:
+            # Artifact strings may carry parenthetical section notes;
+            # pull the file paths out with a regex, don't split on "+".
+            for art in re.findall(r"data/[a-z0-9_./]+\.(?:json|csv)",
+                                  c["evidence"]["artifact"]):
+                _ev_ok = _ev_ok and (ROOT / art).exists()
+        _ret_ids = {r["id"] for r in reg["retracted"]}
+        _ret_text = json.dumps(reg["retracted"])
+        check("Claims pack: register present, all required claim ids, "
+              "retracted section incl. R01 (R-squared 0.80) + R02 "
+              "(UNC-1 point-forecast), every evidence artifact exists, "
+              "open item O01 (Figure 9) recorded, counts reconcile "
+              "(Cycle 68)",
+              _need <= _ids and _ev_ok
+              and {"R01", "R02", "R03"} <= _ret_ids
+              and "R-squared 0.80" in _ret_text
+              and "point forecasts" in _ret_text
+              and any(o["id"] == "O01" for o in reg["open_items"])
+              and reg["counts"]["supported"] == sum(
+                  1 for c in reg["claims"] if c["status"] == "SUPPORTED")
+              and reg["counts"]["not_supported"] == sum(
+                  1 for c in reg["claims"] if c["status"] == "NOT SUPPORTED")
+              and reg["counts"]["retracted"] == len(reg["retracted"]),
+              f"claims={len(reg['claims'])} retracted={len(reg['retracted'])} "
+              f"ev_ok={_ev_ok}")
+        _figs = tr["figures"]
+        _pans = tr["panels"]
+        check("Claims pack: trace covers all 25 figures + the 8 named "
+              "panels, every trace verified (Cycle 68)",
+              len(_figs) == 25
+              and all(f["status"] == "verified" for f in _figs)
+              and len(_pans) == 8
+              and all(p["status"] == "verified" for p in _pans),
+              f"figs={len(_figs)} panels={len(_pans)}")
+        _ex2 = html.split('id="mode-explorer"', 1)[1]
+        _ex2 = re.split(r'id="mode-|<div class="srcbox"', _ex2)[0]
+        _st2 = html.split('id="mode-story"', 1)[1]
+        _st2 = _st2.split('id="mode-boardroom"', 1)[0]
+        check("Claims pack: panel renders in Explorer (title, counts "
+              "line, retracted list, pack link) and NOT in Story "
+              "(Cycle 68)",
+              "Claims &amp; reproducibility — what this demo asserts, "
+              "and what it withdrew" in _ex2
+              and "../docs/REPRODUCIBILITY.html" in _ex2
+              and "Retracted — stated plainly:" in _ex2
+              and "R01" in _ex2
+              and "Claims &amp; reproducibility — what this demo asserts"
+              not in _st2,
+              "panel present in explorer" if "Claims &amp; reproducibility"
+              in _ex2 else "panel missing from explorer")
+        check("Claims pack: pack page exists and carries the register "
+              "counts + the retracted claims (Cycle 68)",
+              (ROOT / "docs" / "REPRODUCIBILITY.html").exists()
+              and "R-squared 0.80" in (ROOT / "docs" / "REPRODUCIBILITY.html"
+                                       ).read_text(errors="ignore")
+              and "Figure 9" in (ROOT / "docs" / "REPRODUCIBILITY.html"
+                                 ).read_text(errors="ignore"),
+              "page present")
+    else:
+        check("Claims pack: register present, all required claim ids, "
+              "retracted section incl. R01 (R-squared 0.80) + R02 "
+              "(UNC-1 point-forecast), every evidence artifact exists, "
+              "open item O01 (Figure 9) recorded, counts reconcile "
+              "(Cycle 68)", False, "claims_register.json or "
+              "figure_trace_2027.json missing")
+        check("Claims pack: trace covers all 25 figures + the 8 named "
+              "panels, every trace verified (Cycle 68)", False,
+              "figure_trace_2027.json missing")
+        check("Claims pack: panel renders in Explorer (title, counts "
+              "line, retracted list, pack link) and NOT in Story "
+              "(Cycle 68)", False, "pack artifacts missing")
+        check("Claims pack: pack page exists and carries the register "
+              "counts + the retracted claims (Cycle 68)", False,
+              "pack artifacts missing")
+
     # --- optional live check ---------------------------------------
     if live:
         import requests
