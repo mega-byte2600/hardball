@@ -37,6 +37,39 @@ SAVANT = "https://baseballsavant.mlb.com"
 FG = "https://www.fangraphs.com/api"
 MLB = "https://statsapi.mlb.com/api/v1"
 
+def mlb_free_agents(season):
+    """Fetch MLB's official free-agent eligibility list for a completed season.
+
+    This is the roster-status layer for the free-agent tracker. It is kept
+    separate from Spotrac market estimates: MLB supplies eligibility,
+    original club, and status; Spotrac supplies prior AAV and market value.
+    The join key is MLBAM player_id, never a name string.
+    """
+    r = requests.get(
+        f"{MLB}/people/freeAgents",
+        params={"season": str(season)},
+        headers=UA,
+        timeout=60,
+    )
+    r.raise_for_status()
+    rows = []
+    for item in r.json().get("freeAgents", []):
+        player = item.get("player") or {}
+        original = item.get("originalTeam") or {}
+        if not player.get("id"):
+            continue
+        rows.append({
+            "player_id": int(player["id"]),
+            "name": player.get("fullName"),
+            "original_team_id": original.get("id"),
+            "original_team": original.get("name"),
+            "status": item.get("status"),
+            "free_agent_type": item.get("type"),
+            "date": item.get("date"),
+        })
+    rows.sort(key=lambda row: (row.get("name") or "").lower())
+    return _save_json(f"mlb_free_agents_{season}.json", rows)
+
 
 def _save_raw(name, text):
     with open(os.path.join(RAW, name), "w") as f:
@@ -205,6 +238,7 @@ def main():
     fg_steamer("bat")
     fg_steamer("pit")
     player_xwalk_and_ages(lake_ids)
+    mlb_free_agents(2026)
 
 
 if __name__ == "__main__":
