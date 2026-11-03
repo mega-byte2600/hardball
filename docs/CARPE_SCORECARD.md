@@ -1126,3 +1126,31 @@ byte-identical, 2 skipped on absent raw with committed
 parquets standing, warehouse from 19 tables, parity
 r = 0.889 / 201). Released as v1.1.3 per the Cycle 60
 pattern.
+
+## Cycle 66 addendum — the FA tracker ticker (2026-11-03)
+
+The probe stack from TRACKER_PROBE_2026-11-02.md is wired in.
+Kept and live in the build: MLB StatsAPI transactions (FA
+codes SFA / DFA / TR / REL / CLW / OUT / DES, 7-day window,
+321 kept of 705 fetched) diffed against the freeAgents
+register (?season=2026, 246 players; ?season=2027 empty);
+MLB Trade Rumors main + top-6-team + top-12-player RSS;
+MLB.com top-6-team RSS; ESPN news + transactions
+(unofficial public endpoints, cross-check); Google News RSS
+(generic + top-12-player queries, redirect links deduped on
+title+source); RotoWire RSS inside its 5-item free cap.
+BUZZ is Bluesky Jetstream ONLY — and the stream read did
+not complete in this runtime (read timeout, 0 events on both
+pull runs), so the lane ships EMPTY with a plain label, never
+filled with substitutes. Dropped, reaffirmed: GDELT (429),
+NewsAPI/GNews (delayed, dev-only), X (no free read tier),
+Reddit (403), Mastodon (0 signal), Bluesky AppView search
+(403). Integrity rule, structural: an item promotes to
+SIGNED only when the StatsAPI transactions feed carries it;
+REPORTED/BUZZ items are never labeled signings, and DFA
+rows render as declarations via their exact move type.
+Artifact: data/tracker_ticker_2026.json (521 items: 321
+SIGNED / 200 REPORTED / 0 BUZZ). Panel: front of Story
+mode, not a figure (count stays 25), not a chapter (Story
+stays 6). Gate 87 checks ALL PASS (3 new TICKER checks).
+Released as v1.1.4 per the Cycle 60 pattern.
