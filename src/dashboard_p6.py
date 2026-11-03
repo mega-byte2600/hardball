@@ -3062,7 +3062,7 @@ mid-November so its 30-day window covers Dec 1.<br><br>
 <b>Project repo:</b> github.com/mega-byte2600/hardball (private) · audit trail in docs/BML_LOG.md
 (two cycle series converged on 2026-10-31 — see the integration note at the top of the log)
 <div class="about-contact">
-  <div><h3>About the builder</h3><p>I help sports and health organizations turn complex data into clear decisions, compelling stories, and practical strategies that move people.</p></div>
+  <div><h3>About the builder</h3><p>I help leaders in sports, health, and public service turn complex data into clear decisions, compelling stories, and practical strategies.</p></div>
   <div class="about-links" aria-label="Michael Bolton links">
     <a href="https://www.linkedin.com/in/bolton-2600/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/mega-byte2600" target="_blank" rel="noopener">GitHub</a>
