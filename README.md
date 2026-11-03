@@ -1,7 +1,6 @@
 # HARDBALL — Cap-Era Moneyball Decision Tool
 
-A data-driven examination of how MLB organizations convert player skill, performance, health, and payroll information into better decisions. Built on real MLB data, measured honestly, with no invented numbers. Ready for the Winter Meetings (target: **Dec 3,
-2026**; Meetings run Dec 6-11).
+A data-driven examination of how MLB organizations convert player skill, performance, health, and payroll information into better decisions. Built on real MLB data, measured honestly, with no invented numbers. 
 
 ## The one-line thesis (measured, not asserted)
 Evaluate the **persistent inputs** (contact rate, walk discipline, and low-walk pitching) alongside performance, health, role, and cost. Winning-efficient organizations provide useful case studies, but the evidence is presented for any MLB team rather than as a mid-market prescription.
