@@ -2890,6 +2890,7 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 .npbhonest{background:var(--panel);border-left:5px solid var(--paper-dim);border-radius:6px;padding:14px 18px;margin:16px 0;font-size:14px}
 .npbhonest h3{margin:0 0 6px}
 .evfoot{margin:2px 0 12px}
+.about-contact{background:linear-gradient(135deg,var(--panel),var(--ink-hi));border:1px solid var(--panel-line);border-radius:10px;padding:18px 20px;margin:24px 0 8px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}.about-contact h3{margin:0 0 5px;font-size:19px}.about-contact p{margin:0;color:var(--paper-dim);font-size:14px;line-height:1.45;max-width:760px}.about-links{display:flex;gap:10px;flex-wrap:wrap}.about-links a{display:inline-block;border:1px solid var(--panel-line);border-radius:6px;padding:8px 11px;color:var(--paper);text-decoration:none;font-size:12px;font-weight:700}.about-links a:hover,.about-links a:focus{border-color:var(--gold);color:var(--gold)}
 @media print{body.print-boardroom #mode-story,body.print-boardroom #mode-explorer,body.print-boardroom .modenav,body.print-boardroom .crest,body.print-boardroom .keybox,body.print-boardroom .figidx,body.print-boardroom .srcbox{display:none}body.print-boardroom button{display:none}body{background:#fff}.slide{background:#fff!important;color:#000!important;border:1px solid #bbb!important}.slide svg text{fill:#000!important}.slide .modebar{display:none!important}}
 </style></head>
 <body>
@@ -3060,6 +3061,15 @@ nothing in the demo depends on it). Sportradar — trial deliberately starts
 mid-November so its 30-day window covers Dec 1.<br><br>
 <b>Project repo:</b> github.com/mega-byte2600/hardball (private) · audit trail in docs/BML_LOG.md
 (two cycle series converged on 2026-10-31 — see the integration note at the top of the log)
+<div class="about-contact">
+  <div><h3>About the builder</h3><p>Hardball turns baseball and health data into transparent evidence, helping organizations evaluate talent, manage risk, and compete with greater discipline.</p></div>
+  <div class="about-links" aria-label="Michael Bolton links">
+    <a href="https://www.linkedin.com/in/bolton-2600/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/mega-byte2600" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.pfactoolkit.org/" target="_blank" rel="noopener">PFAC Toolkit</a>
+    <a href="https://journeys.dartmouth.edu/michaelboltonmph/" target="_blank" rel="noopener">Dartmouth MPH</a>
+  </div>
+</div>
 </div>
 </div>
 <script>
