@@ -923,3 +923,66 @@ historical depth remains Retrosheet + Lahman + Chadwick,
 already in place. Platform and gate unchanged and re-verified
 this cycle (see BML): ingest 25/0, curate 19 tables, parity
 r = 0.889 / 201, gate 75 checks ALL PASS.
+
+## Cycle 61 addendum — PRICE-1: predicted-price model, inventory first (2026-11-02)
+
+Slate item 1 of 6 (owner-approved elite/asset slate). The
+question: replace the optimizer's prior-AAV price anchors
+(Cycle 49 metadata, on record: "prior-contract AAV (Spotrac) —
+a last-price anchor, NOT a predicted 2027 price") with a model
+that predicts signed AAV — if it earns the switch in backtest.
+The bar was pre-committed before any fit: train classes
+2022 + 2023, test held-out class 2024; the model replaces
+anchors ONLY if its held-out MAE beats the anchor baseline's
+by >= 10% on the same players.
+
+**Step 0 stopped the build — the training set does not exist
+in the repo.** A price model trains on actual signed FA
+contracts (player, class, years, total $, signed AAV). The
+audit (`src/bml_cycle61.py`, artifact
+`data/price_model_workpaper_2027.json`):
+
+- **Signing census: KEPT, but terms-free.** Cycle 54's StatsAPI
+  transactions give every signing's identity + date — classes
+  2022 / 2023 / 2024: 1,645 / 1,849 / 1,659 (5,153 screened).
+  The feed carries no dollars and no years.
+- **Signed terms: SURVIVORS ONLY — rejected as training
+  data.** Cot's contract strings parse for 153 players, but a
+  contract appears only if it still touches a 2027 payroll:
+  class 2022 keeps 24 deals, ALL >= 3 years; class 2023 keeps
+  18, all >= 3 years; class 2024 keeps 35, none of them
+  1-year. Every expired 1–2 year deal — the bulk of every
+  class — is invisible, and spans mix extensions with FA
+  signings. A backtest on survivors would certify the model
+  on long deals only, then price a 251-man class full of
+  short-deal candidates. That is a selection mechanism, not
+  a sample.
+- **Everything else is the wrong shape.** The Spotrac file is
+  the same 2027 snapshot (it is the incumbent anchor source);
+  HS-1's dataset is active contracts vs 2027 projections (its
+  own recorded design limit: "not newly signed FA contracts");
+  the 2027 class file's `spotrac_market_aav` (173 of 251) is
+  another model's unbacktested output. A repo-wide scan finds
+  NO artifact carrying signing-terms fields.
+
+**Verdict: NOT RUN — TRAINING DATA ABSENT.** No fit, no
+invented contracts, no blocked source scraped (Spotrac and
+FanGraphs FA trackers stand 403). Anchors stay, honestly
+labeled as before. The artifact pre-registers the full design
+— target ln(signed AAV); features: pre-signing projected WAR,
+age, position group, prior AAV as a feature; ridge first;
+baselines: the anchor and class-median $/WAR; the 10% bar;
+switch mechanics incl. UNC-2 intervals staying on the
+anchor-priced run until re-derived — plus the readiness
+criteria a landed source must meet (>= 90% of each class's
+census matched to terms, 1-year deals present, extensions
+separable).
+
+**The exact missing source:** complete per-class FA signing
+terms, expired deals included. Routes, with status: Sportradar
+MLB v8 trial (owner plan ~Nov 15 — verify on landing whether
+its contracts coverage reaches expired historical deals or
+only current rosters; current-only does not close this gap);
+Spotrac / FanGraphs FA tracker archives (403, never routed
+around); MLBTR FA tracker archives (unprobed — editorial
+tables, scraping method is an owner call).

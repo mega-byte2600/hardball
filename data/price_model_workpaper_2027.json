@@ -1,0 +1,159 @@
+{
+ "cycle": "61 \u2014 PRICE-1 (elite slate item 1 of 6)",
+ "question": "Can a model predict 2027 FA signed AAV better than the prior-AAV anchors the optimizer prices on today \u2014 proven in backtest before any switch?",
+ "verdict": "NOT RUN \u2014 TRAINING DATA ABSENT",
+ "bar": {
+  "rule": "Model replaces anchors as the optimizer input only if held-out MAE on signed AAV (train classes 2022+2023, test class 2024) is at least 10% lower than the prior-AAV anchor baseline's MAE on the same test players.",
+  "threshold_fraction": 0.1,
+  "status": "UNTESTED \u2014 no fit was run; anchors remain the optimizer input, unchanged."
+ },
+ "incumbent": {
+  "price_basis": "prior-contract AAV (Spotrac) \u2014 a last-price anchor, NOT a predicted 2027 price (same basis and label as Cycle 26)",
+  "optimizer_pool": 199,
+  "fa_class_n": 251,
+  "prev_aav_coverage": 206,
+  "spotrac_market_aav_coverage": 173
+ },
+ "signing_census": {
+  "source": "MLB Stats API transactions via Cycle 54 (data/unc1_availability_backtest.json)",
+  "n_signed": {
+   "2022": 1645,
+   "2023": 1849,
+   "2024": 1659
+  },
+  "n_total": 5153,
+  "carries_terms": false
+ },
+ "survivorship": {
+  "source": "data/salaries_cots_2027.json contract strings, parsed by this script",
+  "cots_rows": 237,
+  "parseable_contracts": 153,
+  "by_span_start": {
+   "2015": 1,
+   "2019": 4,
+   "2020": 3,
+   "2021": 2,
+   "2022": 8,
+   "2023": 24,
+   "2024": 18,
+   "2025": 35,
+   "2026": 58
+  },
+  "classes": {
+   "2022": {
+    "span_start": 2023,
+    "n_terms_recoverable": 24,
+    "min_years": 3,
+    "one_year_deals": 0,
+    "two_year_deals": 0
+   },
+   "2023": {
+    "span_start": 2024,
+    "n_terms_recoverable": 18,
+    "min_years": 3,
+    "one_year_deals": 0,
+    "two_year_deals": 0
+   },
+   "2024": {
+    "span_start": 2025,
+    "n_terms_recoverable": 35,
+    "min_years": 2,
+    "one_year_deals": 0,
+    "two_year_deals": 5
+   }
+  },
+  "bias": "Terms are recoverable ONLY for contracts still touching a 2027 payroll: class 2022 keeps 24 of ~1,645 signings, all >= 3 years; class 2023 keeps 18, all >= 3 years; class 2024 keeps 35, none 1-year \u2014 against a census dominated by short deals. A backtest on survivors cannot certify predictions for the full 2027 class."
+ },
+ "inventory": [
+  {
+   "source": "MLB Stats API transactions, as committed in data/unc1_availability_backtest.json (Cycle 54)",
+   "holds": "Signing census: player + signing date for every 'Signed as Free Agent' transaction, classes 2022-2024 (n_signed 1645 / 1849 / 1659; 5,153 total screened)",
+   "usable_as_training": false,
+   "reason": "Identity and dates only \u2014 the transactions feed carries no contract terms (no years, no dollars). It defines the classes; it cannot price them."
+  },
+  {
+   "source": "data/salaries_cots_2027.json contract strings (Cot's, Cycle 41)",
+   "holds": "153 parseable signed-contract strings ('6 y/$210M (25-30)') with cb_2027_aav, out of 237 player rows on 2027 payrolls",
+   "usable_as_training": false,
+   "reason": "Survivors only: a contract appears only if it still touches a 2027 payroll. Class 2022 keeps 24 deals, ALL >= 3 years \u2014 every 1-2 year deal signed for 2023-24 expired before this snapshot and is invisible. Class 2024 keeps 35, none of them 1-year. Spans also mix extensions with FA signings (no signing-type field). Training or testing on survivors validates the model on long deals only, then applies it to a 251-man class full of short-deal candidates \u2014 a known selection mechanism, not a sample."
+  },
+  {
+   "source": "data/salaries_2026.json (Spotrac-basis, 2027 payroll)",
+   "holds": "927 active-contract salary rows",
+   "usable_as_training": false,
+   "reason": "Same snapshot shape as Cot's: active 2027 contracts, no signing dates, no expired deals. It is the incumbent anchor source, not a training set."
+  },
+  {
+   "source": "data/hakes_sauer_dataset.json (HS-1, Cycle 46)",
+   "holds": "142 hitters: ACTIVE 2027 contract salaries vs 2027 projections",
+   "usable_as_training": false,
+   "reason": "Its own design limit, recorded at build: anchors are active contracts, 'not newly signed FA contracts \u2014 no signing-date field exists in the repo.' Cross-section, not signings."
+  },
+  {
+   "source": "data/fa_shopping_2027.json (the 2027 class)",
+   "holds": "251 FAs; prev_aav on 206; spotrac_market_aav on 173",
+   "usable_as_training": false,
+   "reason": "This is the class TO BE priced. prev_aav is the incumbent anchor; spotrac_market_aav is Spotrac's own unbacktested estimate \u2014 another model's output is not training data."
+  },
+  {
+   "source": "repo-wide scan for signing-terms fields",
+   "holds": "artifacts carrying any of ['signed_aav', 'contract_years', 'signed_years', 'deal_years', 'total_value', 'signing_aav']: NONE",
+   "usable_as_training": false,
+   "reason": "No committed artifact records historical FA signing terms."
+  }
+ ],
+ "missing_source": {
+  "what": "A complete per-class record of FA signing terms \u2014 player (MLBAM id), signing date / class, years, total $, signed AAV \u2014 covering expired short deals as well as live long ones.",
+  "readiness_criteria": [
+   ">= 90% of each class's StatsAPI signing census matched to terms, per class, 2022-2024",
+   "1- and 2-year deals present in proportion (the survivor test: class min_years == 1)",
+   "extensions separable from FA signings (signing-type field or transaction join)",
+   "AAV stated or computable as total $ / years from the same record"
+  ],
+  "candidate_routes": [
+   {
+    "route": "Sportradar MLB v8 trial (owner plan, ~Nov 15)",
+    "status": "NOT YET OPENED \u2014 when it lands, verify FIRST whether its contracts coverage includes expired historical deals or only current rosters; current-roster-only does not close this gap."
+   },
+   {
+    "route": "Spotrac free-agent tracker archives",
+    "status": "BLOCKED \u2014 403 (standing probe result); never routed around."
+   },
+   {
+    "route": "FanGraphs free-agent tracker",
+    "status": "BLOCKED \u2014 403 Cloudflare (Cycle 32); never routed around."
+   },
+   {
+    "route": "MLBTR free-agent tracker archives",
+    "status": "UNPROBED \u2014 editorial tracker tables; scraping method is an owner call, not taken unilaterally."
+   }
+  ]
+ },
+ "model_design_preregistered": {
+  "target": "ln(signed AAV)",
+  "features": [
+   "pre-signing projected WAR (the projection the repo holds for that class year; if a class year's projections are not held, prior-season actual performance \u2014 and the artifact says which)",
+   "age at signing",
+   "position group",
+   "prior AAV (a feature, never the answer)",
+   "contract-market year (class fixed effect)"
+  ],
+  "form": "Ridge regression on ln(AAV) first \u2014 simple, inspectable; gradient boosting runs only if it beats ridge clearly on the same backtest.",
+  "validation": "Train classes 2022 + 2023 -> test held-out class 2024, exact class split, no shuffling across classes.",
+  "baselines": [
+   "prior-AAV anchor on the same test players",
+   "class-median $/WAR x projected WAR (naive)"
+  ],
+  "metrics": "Held-out MAE in $M and %, model vs each baseline, on identical players.",
+  "switch_mechanics_if_bar_met": [
+   "Write data/price_model_2027.json (per-player predicted AAV for the 251, spec, backtest table)",
+   "Re-run the Cycle 49 MILP on predicted prices (same pools / quotas / constraints)",
+   "Re-run Cycle 50 +/-20% sensitivity on the predicted prices",
+   "UNC-2 intervals stay attached to the anchor-priced run until re-derived on predicted prices \u2014 no re-derivation shortcuts",
+   "Dashboard headlines switch with a visible 'prices: model-predicted' label; anchor-priced results preserved as a labeled sensitivity (Cycle 52 swap pattern)",
+   "Dashboard change ships with its own release cut (Cycle 60 lesson)"
+  ]
+ },
+ "dashboard_change": "none",
+ "release": "none \u2014 dashboard unchanged"
+}
