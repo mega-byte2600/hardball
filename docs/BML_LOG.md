@@ -2228,3 +2228,35 @@ No claim or data changed; dashboard untouched (still 25 figures).
   pattern. Cron diff that would add the ticker pull to the
   6-hourly build is proposed in HANDOFF (Next), NOT applied
   — it awaits the owner's tap.
+
+## Cycle 67 — health cards: the shopping list ranks by delivered WAR (slate item 4)
+
+- BUILD: src/bml_cycle67.py -> data/fa_health_cards_2027.json, 251
+  cards. Measured availability from curated fact_il_stints
+  (2025-26 stints, days/364, floored at 0; 3 players capped:
+  Rendon, Jimenez, Graterol). Delivered WAR = Cycle 56 formula at
+  player level (own measured factor, else pool mean, plus the
+  residual-bias term at delivered PA/IP). No per-player intervals
+  — pool-draw intervals would dress pool variance as player risk.
+- SURFACE: Explorer "Shop the FA Class" panel, sortable by
+  delivered WAR, 251 rows + header. Not a figure (25 figures
+  stand), Story 6 chapters, Boardroom 15 slides.
+- NUMBERS THAT MOVE: top 5 by delivered WAR — Skubal 4.86,
+  Contreras 3.79, Rasmussen 2.91, Gray 2.73, Arraez 2.55. Trevor
+  Rogers drops headline #4 -> delivered #6 (3.04 -> 2.41 on 64 IL
+  days). That drop is the buying tool working.
+- HONESTY NOTES: 65 players read "no IL record", never 100%; 20
+  entries (NPB class + Spotrac name fragments) were not joined at
+  all — name-only joins risk false attribution. The risk flag
+  fires often by construction (76 of 166 measured players): the
+  comparison pool includes players with no IL time while the
+  flagged set is conditioned on having IL history. Evidence
+  links go to a lane only where the dominant injury classifies
+  cleanly (73); the rest link to the page top (178).
+- GATE: 89 checks ALL PASS (2 new HEALTH checks: artifact
+  recomputation + ranks, panel in Explorer not Story, four lane
+  anchors). Spellcheck green (161 name tokens verified against
+  the class file before whitelisting). Platform clean (19
+  parquets byte-identical, warehouse rebuilt, parity r = 0.889 /
+  201). Dashboard rebuilt with the lake present: 25 figures.
+- Dashboard changed -> release v1.1.5 per the Cycle 60 pattern.

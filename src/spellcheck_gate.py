@@ -87,6 +87,37 @@ WHITELIST = {
     # data/forced_sellers_2027.json / data/salaries_cots_2027.json
     "ari", "cin", "det", "hou", "laa", "sf", "wsh",
     "bo", "degrom", "shohei", "zack",
+    # Cycle 67 health-cards table: player-name tokens + position
+    # codes, verified against data/fa_shopping_2027.json (accented
+    # names split at the accent: berr = Berrios, garc = Garcia,
+    # nchez = Sanchez, rez = Perez, rquez = Marquez)
+    "abreu", "adolis", "amed", "andujar", "arcia", "arnaud",
+    "arozarena", "arraez", "bassitt", "bednar", "beeks", "berr",
+    "bieber", "bohm", "borucki", "brebbia", "brubaker", "brusdar",
+    "bubic", "candelario", "carrasco", "castellanos", "civale",
+    "clase", "conforto", "corbin", "coulombe", "daulton", "devenski",
+    "dubon", "edmundo", "eflin", "espinal", "estevez", "falefa",
+    "fedde", "flaherty", "fraley", "freeland", "fulmer", "gallen",
+    "garc", "gausman", "ginkel", "giolito", "gleyber", "graterol",
+    "grichuk", "grisham", "gurriel", "happ", "heim", "higashioka",
+    "hiroto", "hoby", "hoskins", "iglesias", "ildemaro", "imanaga",
+    "jalen", "jeffers", "jeimer", "jin", "joc", "jojo", "jt", "junis",
+    "kahnle", "kaito", "keegan", "kenley", "kimbrel", "kiner",
+    "kinley", "kittredge", "kona", "kozono", "lauer", "laureano",
+    "leibrandt", "leiter", "littell", "loaisiga", "mahle", "maile",
+    "maki", "marcell", "marte", "mateo", "matsui", "mccann",
+    "mccutchen", "mikolas", "milner", "moncada", "montas", "morejon",
+    "mountcastle", "nchez", "newcomb", "nicky", "okert", "ozuna",
+    "paddack", "paredes", "pederson", "peralta", "pham", "pivetta",
+    "pomeranz", "puk", "quintana", "rainey", "raisel", "raley", "rea",
+    "refsnyder", "rendon", "rez", "rhys", "rquez", "ryne", "ryosuke",
+    "saiki", "scherzer", "schreiber", "seiya", "senzatela", "seong",
+    "severino", "sewald", "shota", "shugo", "soler", "soroka",
+    "stanek", "strahm", "sugano", "suter", "taijuan", "taillon",
+    "takahashi", "tatsumi", "tellez", "thielbar", "tomoyuki",
+    "treinen", "trivino", "urias", "urquidy", "varsho", "vesia",
+    "wandy", "whitlock", "yarbrough", "yimi", "yoan", "yuki", "zac",
+    "lf", "rp",
 }
 
 

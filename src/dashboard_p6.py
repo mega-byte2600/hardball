@@ -1072,6 +1072,134 @@ def _cap_transition_panel_html():
             "and data/fa_shopping_2027.json.</p></div>")
 
 
+def _health_cards_panel_html():
+    """Cycle 67 (slate item 4): player health cards fused into the
+    FA shopping list — one row per free agent, sorted by delivered
+    WAR. Renders ONLY from the committed artifact
+    data/fa_health_cards_2027.json; absent the artifact the panel
+    is omitted entirely (fail closed, Cycle 51/57 pattern). Not a
+    figure: the count stays 25. Explorer only: Story stays 6
+    chapters and Boardroom stays 15 slides.
+
+    Delivered WAR is the Cycle 56 formula at player level: headline
+    Steamer WAR times the player's own measured 2025-26
+    availability factor (or the pool mean where he has no IL
+    record), plus the measured residual-bias term at delivered
+    volume. Per-player intervals are not shown: a pool-draw
+    interval would present pool variance as player risk, so
+    intervals stay scenario-level only (Cycle 56). Prices stay
+    prior-contract anchors; delivered WAR per $10M is arithmetic
+    on the same anchor.
+    """
+    import html as _html
+    path = os.path.join(DATA, "fa_health_cards_2027.json")
+    if not os.path.exists(path):
+        return ""
+    art = json.load(open(path))
+    cards = art["cards"]
+    md = art["metadata"]["counts"]
+    rows = sorted((c for c in cards if c["delivered_war"] is not None),
+                  key=lambda c: -c["delivered_war"])
+    rows += [c for c in cards if c["delivered_war"] is None]
+
+    def _m(x):
+        return f"${x / 1e6:.1f}M" if x else "—"
+
+    def _avail(c):
+        if c["availability"] is not None:
+            return (f"{c['availability']:.2f} "
+                    f"({c['il_days_2025_26']} days)")
+        if c["player_id"] is None:
+            return "Not matched (no player_id)"
+        return "No IL record"
+
+    def _risk(c):
+        if c["risk_flag"] is True:
+            return "Below pool p25"
+        if c["risk_flag"] is False:
+            return "—"
+        return "Not assessed"
+
+    def _cur(c):
+        cur = c["current_il"]
+        if not cur:
+            return "—"
+        det = f" · {cur['detail']}" if cur["detail"] else ""
+        ret = f" (return {cur['return_date']})" if cur["return_date"] else ""
+        return f"{cur['status']} · {cur['type']}{det}{ret}"
+
+    def _num(x, fmt="{:.2f}"):
+        return fmt.format(x) if x is not None else "—"
+
+    trs = []
+    for c in rows:
+        ev_txt = c["evidence_lane_name"] or "Evidence page"
+        trs.append(
+            f"<tr><td>{c['rank_by_delivered_war'] or '—'}</td>"
+            f"<td><b>{_html.escape(c['name'])}</b> ({c['pos']}, "
+            f"{_html.escape(str(c['prev_team']))})</td>"
+            f"<td data-v=\"{c['headline_war'] or 0:.3f}\">"
+            f"{_num(c['headline_war'])}</td>"
+            f"<td>{_avail(c)}</td>"
+            f"<td data-v=\"{c['delivered_war'] or 0:.3f}\">"
+            f"<b>{_num(c['delivered_war'])}</b></td>"
+            f"<td>{_risk(c)}</td>"
+            f"<td>{_html.escape(_cur(c))}</td>"
+            f"<td>{_m(c['prev_aav'])}</td>"
+            f"<td data-v=\"{c['war_per_10m_prior_aav'] or 0:.2f}\">"
+            f"{_num(c['war_per_10m_prior_aav'])}</td>"
+            f"<td data-v=\"{c['delivered_war_per_10m_prior_aav'] or 0:.2f}\">"
+            f"{_num(c['delivered_war_per_10m_prior_aav'])}</td>"
+            f"<td><a href=\"{_html.escape(c['evidence_link'], quote=True)}\">"
+            f"{_html.escape(ev_txt)}</a></td></tr>")
+    table = ("<table class=\"healthtable\"><tr>"
+             "<th>#</th><th>Player</th>"
+             "<th data-sort=\"num\">Headline WAR</th>"
+             "<th>Availability 2025-26</th>"
+             "<th data-sort=\"num\">Delivered WAR</th>"
+             "<th>Risk flag</th><th>Current IL (2026-11-02)</th>"
+             "<th>Prior AAV (anchor)</th>"
+             "<th data-sort=\"num\">WAR per $10M</th>"
+             "<th data-sort=\"num\">Delivered WAR per $10M</th>"
+             "<th>Evidence</th></tr>" + "".join(trs) + "</table>")
+    return ('<div class="healthcards"><h3>Health cards: what each free '
+            "agent will actually give you</h3>"
+            f"<p>Sorted by delivered WAR — the list no longer ranks by "
+            f"headline WAR alone. Delivered WAR is headline Steamer WAR "
+            f"times the player's own measured 2025-26 availability "
+            f"(IL days / 364), or the pool mean where he has no IL "
+            f"record, plus the measured residual-bias term at "
+            f"delivered volume (Cycle 56 method at player level). "
+            f"Per-player intervals are not shown: intervals stay "
+            f"scenario-level only. Risk flag means measured "
+            f"availability below the pool's 25th percentile for the "
+            f"player's group. Click a numeric column header to "
+            f"re-sort. Coverage: {md['with_measured_availability']} "
+            f"with a measured factor · {md['no_il_record']} with no IL "
+            f"record · {md['not_matched_no_player_id']} not matched "
+            f"(no player_id) · {md['classified_lane']} linked to a "
+            f"specific evidence lane · {md['current_il']} currently "
+            f"on the IL. Prices are prior-contract anchors, not "
+            f"predicted prices.</p>"
+            + table +
+            "<script>(function(){var t=document.querySelector"
+            "('.healthtable');if(!t)return;var ths=t.querySelectorAll"
+            "('th[data-sort]');ths.forEach(function(th,ci){th.style."
+            "cursor='pointer';th.onclick=function(){var tb=t.tBodies[0];"
+            "var rs=Array.prototype.slice.call(tb.rows);var col=th."
+            "cellIndex;rs.sort(function(a,b){var av=parseFloat(a.cells"
+            "[col].getAttribute('data-v')||a.cells[col].textContent);"
+            "var bv=parseFloat(b.cells[col].getAttribute('data-v')||b."
+            "cells[col].textContent);return bv-av;});rs.forEach(function"
+            "(r){tb.appendChild(r);});};});})();</script>"
+            '<p class="srcline">Source: data/fa_health_cards_2027.json '
+            "(Cycle 67), built from data/fa_shopping_2027.json, curated "
+            "fact_il_stints, curated fact_il_current (Statyx + "
+            "FastballAPI, pulled 2026-11-02), FanGraphs Steamer 2027 "
+            "PA/IP, and data/uncertainty_scenarios_2027.json (Cycle 56). "
+            "Evidence: docs/EVIDENCE.html (Cycle 57).</p></div>")
+
+
 def _ticker_panel_html():
     """Cycle 66: the free-agency tracker ticker — front of Story mode.
 
@@ -2377,6 +2505,16 @@ def build():
                          "<p>Ranked by WAR per $10M of prior salary. Bars show where each player sits "
                          "in the committed free-agent pool for that metric.</p></div>")
             explorer += _player_cards()
+            # Cycle 67: health cards — the same class, ranked by
+            # delivered WAR instead of headline WAR. Explorer only.
+            explorer += ('<div class="task"><h3>Health cards: the whole class, '
+                         "ranked by what each player will actually give you</h3>"
+                         "<p>Delivered WAR replaces headline WAR as the sort: "
+                         "measured availability first, price second. "
+                         "Explorer only. Story stays 6 chapters and Boardroom "
+                         "stays 15 slides: this is a buying tool, not a new "
+                         "figure.</p></div>")
+            explorer += _health_cards_panel_html()
         if name == "Check the Model":
             explorer += ('<div class="task"><h3>The verdict on our own pricing claim</h3>'
                          "<p>Figure 24 runs the Hakes–Sauer test on this demo's own thesis — "

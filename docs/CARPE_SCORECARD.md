@@ -1154,3 +1154,34 @@ SIGNED / 200 REPORTED / 0 BUZZ). Panel: front of Story
 mode, not a figure (count stays 25), not a chapter (Story
 stays 6). Gate 87 checks ALL PASS (3 new TICKER checks).
 Released as v1.1.4 per the Cycle 60 pattern.
+
+## Cycle 67 addendum — player health cards in the FA shopping list (slate item 4)
+
+The shopping list now ranks by delivered WAR, not headline WAR.
+Artifact: data/fa_health_cards_2027.json (251 cards, one per class
+entry). Measured availability = max(0, 1 - days/364), days = sum of
+committed days_in_season across the player's 2025-26 stints in
+curated fact_il_stints (Cycle 9 denominator, 2 x 182 days); 166
+measured / 65 no IL record / 20 not matched (no player_id — the
+NPB posted class plus Spotrac name-parsing fragments; no name-only
+join attempted). Delivered WAR = headline Steamer WAR x the
+player's own measured factor (else the UNC-2 pool mean: hitters
+0.912, pitchers 0.807) + the Cycle 56 residual-bias term at
+delivered volume (Steamer 2027 PA/IP). Per-player intervals are
+NOT derived — a pool-draw interval would present pool variance as
+player risk; intervals stay scenario-level only (Cycle 56). Risk
+flag = measured availability below the UNC-2 pool p25 (hitters
+0.890, pitchers 0.629); 76 flagged. Evidence link from the
+dominant injury by keyword only: 73 to a lane (UCL 29, muscle 41,
+tendon 2, workload 1), 178 to the page top (lane anchors added to
+docs/EVIDENCE.html, headings untouched). Current IL by exact-name
+match against curated fact_il_current: 13, matching Cycle 51.
+Prices stay prior-contract anchors; delivered WAR per $10M is
+arithmetic on the same anchor. Top 5 by delivered WAR: Skubal
+4.86, Contreras 3.79, Rasmussen 2.91, Gray 2.73, Arraez 2.55 —
+Trevor Rogers falls from headline #4 (3.04) to delivered #6
+(2.41). Panel: Explorer "Shop the FA Class" group, sortable by
+delivered WAR; not a figure (count stays 25), Story stays 6
+chapters, Boardroom stays 15 slides. Gate 89 checks ALL PASS
+(2 new HEALTH checks). Released as v1.1.5 per the Cycle 60
+pattern.

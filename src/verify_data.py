@@ -1017,6 +1017,82 @@ def main() -> int:
               "cannot read as a signing (Cycle 66)", False,
               "data/tracker_ticker_2026.json missing")
 
+    # --- Health cards: FA shopping list, delivered WAR (Cycle 67) --
+    hc_path = DATA / "fa_health_cards_2027.json"
+    if hc_path.exists():
+        hc = json.loads(hc_path.read_text())
+        hc_cards, hc_md = hc["cards"], hc["metadata"]["counts"]
+        shop_names = sorted(c["name"]
+                            for c in load("fa_shopping_2027.json")["class"])
+        card_names = sorted(c["name"] for c in hc_cards)
+        _re_av = all(
+            c["il_days_2025_26"] is None
+            or abs(c["availability"]
+                   - round(max(0.0, 1.0 - c["il_days_2025_26"] / 364), 4)) <= 0.001
+            for c in hc_cards)
+        _re_del = all(
+            c["delivered_war"] is None
+            or abs(c["delivered_war"]
+                   - (c["headline_war"]
+                      * c["availability_used_for_delivered"]
+                      + (c["residual_term_war"] or 0.0))) <= 0.01
+            for c in hc_cards)
+        _ranks = sorted(c["rank_by_delivered_war"] for c in hc_cards
+                        if c["delivered_war"] is not None)
+        _by_rank = sorted((c for c in hc_cards
+                           if c["delivered_war"] is not None),
+                          key=lambda c: c["rank_by_delivered_war"])
+        _del_sorted = [c["delivered_war"] for c in _by_rank]
+        check("Health cards: 251 cards, names match the class 1:1, "
+              "counts reconcile, availability + delivered WAR recompute "
+              "from artifact fields, delivered ranks 1..N unique and "
+              "ordered (Cycle 67)",
+              len(hc_cards) == 251 and card_names == shop_names
+              and hc_md["with_measured_availability"]
+              + hc_md["no_il_record"]
+              + hc_md["not_matched_no_player_id"] == 251
+              and hc_md["delivered_war_computed"]
+              + hc_md["no_steamer_war"] == 251
+              and hc_md["classified_lane"] + hc_md["page_top_link"] == 251
+              and _re_av and _re_del
+              and _ranks == list(range(1, len(_ranks) + 1))
+              and _del_sorted == sorted(_del_sorted, reverse=True),
+              f"cards={len(hc_cards)} recompute_av={_re_av} "
+              f"recompute_del={_re_del} ranked={len(_ranks)}")
+        _ex_seg = html.split('id="mode-explorer"', 1)[1]
+        _ex_seg = re.split(r'id="mode-|<div class="srcbox"', _ex_seg)[0]
+        _st_seg = html.split('id="mode-story"', 1)[1]
+        _st_seg = _st_seg.split('id="mode-boardroom"', 1)[0]
+        _top_name = max((c for c in hc_cards
+                         if c["delivered_war"] is not None),
+                        key=lambda c: c["delivered_war"])["name"]
+        check("Health cards: panel renders in Explorer (title, "
+              "Delivered WAR column, top delivered name, a lane link) "
+              "and NOT in Story; evidence page carries all four lane "
+              "anchors (Cycle 67)",
+              "Health cards: what each free agent will actually give you"
+              in _ex_seg
+              and "Delivered WAR" in _ex_seg
+              and _top_name in _ex_seg
+              and "../docs/EVIDENCE.html#lane-ucl" in _ex_seg
+              and "Health cards: what each free agent" not in _st_seg
+              and all(a in (ROOT / "docs" / "EVIDENCE.html").read_text(
+                  errors="ignore")
+                      for a in ('id="lane-ucl"', 'id="lane-workload"',
+                                'id="lane-muscle"', 'id="lane-tendon"')),
+              f"top={_top_name}")
+    else:
+        check("Health cards: 251 cards, names match the class 1:1, "
+              "counts reconcile, availability + delivered WAR recompute "
+              "from artifact fields, delivered ranks 1..N unique and "
+              "ordered (Cycle 67)", False,
+              "data/fa_health_cards_2027.json missing")
+        check("Health cards: panel renders in Explorer (title, "
+              "Delivered WAR column, top delivered name, a lane link) "
+              "and NOT in Story; evidence page carries all four lane "
+              "anchors (Cycle 67)", False,
+              "data/fa_health_cards_2027.json missing")
+
     # --- optional live check ---------------------------------------
     if live:
         import requests
