@@ -1,77 +1,71 @@
-# Cycle 57 — Evidence surveillance: PubMed behind Figure 14
+# Cycle 58 — Record books & almanacs sweep
 
-Owner-directed (2026-11-02): the APE PFAC toolkit's "What the evidence
-says now" PubMed-surveillance pattern, applied to the injury
-literature behind HARDBALL's availability edge. Additive only — no
-claim, figure, or model changes; figure count stays 25.
+Owner standing directive (2026-11-02): "use almanacs, record
+books, APIs, open data — it's all about data, the numbers don't
+lie, get them." Source work only: **no claims added, no demo
+numbers changed, figure count stays 25.** Every verdict below is
+from a live probe on 2026-11-02 or a prior cycle's recorded
+verdict; 403/429 stopped the source for the cycle; paywalls are
+logged gaps, never routed around.
 
-## What ships
+## The sweep (full table + evidence in the scorecard addendum)
 
-- **`src/pull_evidence_surveillance.py`** — standalone serving pull
-  (not a platform ingest source). Four fixed lanes on PubMed via
-  NCBI E-utilities (keyless, `tool=hardball`, sequential, fail
-  closed on any non-200, 6-day staleness guard like the feed
-  refresh). Queries and counts as run 2026-11-02, recorded verbatim
-  in the artifact: UCL return to play **157** · baseball injury
-  prevention & workload **426** · cellular recovery / muscle
-  regeneration **404** · tendon healing & biologics **119**
-  (SR/MA filter inside that query). Selection is deterministic —
-  systematic reviews / meta-analyses first, then most recent, 3
-  cards per lane (a re-pull reproduced the identical 12 PMIDs).
-- **`data/evidence_surveillance.json`** — per card: PMID, authors,
-  AMA citation, DOI, PubMed URL, publication types, and the full
-  abstract. **`data/evidence_plain_lines.json`** — the overlay of
-  plain-language headlines/Findings, merged by the pull; the page
-  generator fails closed if a selected card ever lacks one.
-- **`docs/EVIDENCE.html`** via **`src/make_evidence_page.py`**
-  (one-pager pattern, committed artifact only). Professional plain
-  language for front-office readers: lane intros (UCL/PRP glossed
-  once), a per-card **Finding** drawn only from the paper's stored
-  abstract (past tense; author conclusions attributed), AMA
-  citation as the credibility layer. The intro names the anchor:
-  Figure 14 measures the playtime injuries take away; this page is
-  the literature under that measurement. Labeled on the page:
-  **"Literature surveillance — context, not a model input."**
-- **Dashboard**: one asterisked footnote line directly under the
-  Figure 14 panel in Explorer — "* What the evidence says now —
-  the published research on injury recovery and prevention." with
-  the four lane counts inside it and the link to
-  `docs/EVIDENCE.html`. No block, no new panel. Footer gains
-  PubMed / NCBI E-utilities (LIVE · keyless, pull date from the
-  artifact).
+| Source | Verdict |
+|---|---|
+| Baseball Almanac | REFERENCE-ONLY — homepage/robots 200, record-book path `/recbooks/` **403** (stopped); HTML-only, no API/CSV |
+| Official MLB Record Book | REFERENCE-ONLY (print) — Elias's book; latest edition located **2021**; no machine-readable edition on MLB properties |
+| Elias Sports Bureau | NO PUBLIC ROUTE — no API/download/data product; official-by-citation only (verified, not assumed) |
+| Retrosheet | ADOPTED-SOLID, historical (prior evaluation; one-line re-confirmation) |
+| Lahman (via SABR) | SOLID, historical (prior evaluation; Salaries end 2016) |
+| Chadwick Register | ADOPTED, in platform (Cycle 44) |
+| The Baseball Cube | EVALUATED, cross-check only (homepage re-probed 200) |
+| SABR (extra) | NOT PROBED FURTHER — homepage **429**, stopped per rule; role already counted via Lahman |
+| Hall of Fame (extra) | REFERENCE-ONLY — homepage 200; museum/editorial site, no data product |
 
-## Flagged, not fixed (claim hygiene)
+Also logged: the Baseball America Almanac 2026 digital edition
+is password-protected for buyers — a paywalled gap.
 
-- The biologics evidence is weak where it is most marketed: two
-  RCT meta-analyses found platelet concentrates/PRP did not
-  improve patient-reported outcomes after ACL reconstruction
-  (PMIDs 41313368, 40744844); a 419-study scoping review calls
-  PRP/stem-cell evidence inconsistent (PMID 42963566). Recorded in
-  the scorecard; no desk claim touched (the model prices measured
-  IL time only).
-- The owner's data-driven intro line (costliest body part by IL
-  days) was **checked and not shipped**: `fact_il_stints` has no
-  body-part field, and its free-text injury strings leave ≈25% of
-  IL days unclassifiable — no clean split, not forced. Elbow-named
-  stints lead indicatively (≈68.8k vs ≈47.6k shoulder days), so
-  the UCL lane already leads the page. Detail in the scorecard.
+## Wiring decision — nothing new, on evidence
+
+The candidate job was a records cross-check. Repo-wide grep
+(record language + canonical totals across docs, src, data):
+**the demo states no canonical historical records** — nothing
+to cross-check, and no surface was invented for one. What the
+cycle settles instead:
+
+- **Citation rule:** any record stated in the demo from now on
+  cites the Elias record book or MLB's official publications,
+  by hand. Record books here are citation authority, not ingest.
+- **Dashboard footer unchanged** — it lists active sources
+  only, and none of these became active.
+- **Health & availability lens** (one line per source in the
+  scorecard): the record-book class adds no IL/workload data —
+  Retrosheet never tracked the injured list, Lahman gives
+  durability context only. Figure 14's layer stays measured IL
+  data.
+- One sourced caveat worth knowing: the Retrosheet paper that
+  cites the 2021 Elias book notes a record it establishes was
+  "not even included" in the most recent Elias or Sporting News
+  record books — even the official book is not exhaustive,
+  which is exactly why this project cites records rather than
+  copying them.
 
 ## Verification
 
-- Platform: ingest 25 datasets / 0 failures; curate 19 tables, all
-  contracts pass; warehouse rebuilt; parity **r = 0.889 / 201**.
-- Gate: **75 checks offline, ALL PASS** (71 + 4 new evidence
-  checks: artifact integrity; every card's count/PMID/DOI/Finding
-  rendered on the page; the Figure 14 footnote text/counts/link
-  pinned to the artifact and positioned under the panel; footer
-  names PubMed). Spellcheck green. Dashboard rebuilds at 25
-  figures. No browser visual QA (standing rule). GitHub Actions
-  ignored per the owner's blackout directive (until Dec 1).
+- Platform: ingest 25 datasets / 0 failures; curate 19 tables,
+  all contracts pass; warehouse rebuilt; parity
+  **r = 0.889 / 201**.
+- Gate: **75 checks offline, ALL PASS** (unchanged — no new
+  rendered pins); spellcheck green; dashboard rebuilds at 25
+  figures from committed snapshots. No browser visual QA
+  (standing rule). GitHub Actions ignored per the owner's
+  blackout directive (until Dec 1).
 
 ## Docs
 
-`docs/DATA_PLATFORM.md` (literature-surveillance section),
-`docs/CARPE_SCORECARD.md` (Cycle 57 addendum: probes, final
-queries, contrary-evidence flags, body-part check),
-`docs/BML_LOG.md`, `HANDOFF.md` (Next: the evidence refresh joins
-the same pending cron-wiring decision as the feed refresh).
+`docs/CARPE_SCORECARD.md` (Cycle 58 addendum: the complete
+record-book layer in one table, probe evidence, wiring
+decision), `docs/DATA_PLATFORM.md` (reference-layer section),
+`docs/BML_LOG.md`, `HANDOFF.md` (Next unchanged: the pending
+cron-wiring decision, Figure 9 owner item, Sportradar ~Nov 15,
+final release cut).

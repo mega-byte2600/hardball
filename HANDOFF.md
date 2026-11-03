@@ -654,3 +654,50 @@ Wire `src/refresh_live_feeds.py` AND
 6-hourly job — one pending cron-wiring decision (parent lane).
 Figure 9 disclosure remains an owner item. Sportradar trial
 ~Nov 15. Final release cut before Dec 1.
+
+---
+
+## CYCLE 58 — RECORD BOOKS & ALMANACS SWEEP (2026-11-02, owner standing directive)
+
+The record-book class, probed under CarpeData discipline (403/429
+= stop; paywalled = logged gap; every verdict from a page actually
+retrieved 2026-11-02 or a prior cycle's recorded verdict; full
+table in the scorecard's Cycle 58 addendum). **Baseball Almanac**:
+robots 200 + homepage 200, but the record-book path `/recbooks/`
+returned 403 → stopped; HTML-only, no API/CSV — REFERENCE-ONLY.
+**Official MLB Record Book**: a print object kept by the league's
+statistician — the latest edition located is the 2021 "Elias Book
+of Baseball Records" (cited as current in a Retrosheet research
+paper retrieved this cycle); MLB's own branded book is 2013 print;
+no machine-readable edition on MLB properties; the Baseball
+America Almanac 2026 digital edition is password-protected
+(paywalled gap). **Elias Sports Bureau**: no public API, download,
+or data product (homepage 200 via curl; a text fetch refused 403)
+— official-by-citation only, now verified rather than assumed.
+**SABR**: homepage 429 → stopped; its data role is already counted
+(it publishes Lahman). **Hall of Fame**: homepage 200, editorial
+site — REFERENCE-ONLY. Historical layer re-confirmed in one place:
+Retrosheet (adopted-solid historical), Lahman via SABR (solid
+historical; Salaries end 2016), Chadwick (ADOPTED, in platform),
+The Baseball Cube (cross-check only; homepage 200).
+
+**Nothing new wired — on evidence.** The candidate job was a
+records cross-check; a repo-wide grep shows the demo states **no
+canonical historical records**, so there was nothing to cross-check
+and no surface was invented. Citation rule set instead: any record
+stated in the demo cites the Elias record book / MLB official
+publications, by hand. Dashboard footer unchanged (no source became
+active); figure count stays 25; claims unchanged. Health lens: the
+record-book class adds no IL/workload data (Retrosheet never
+tracked the injured list; Lahman = durability context only) —
+Figure 14's layer stays measured IL data. Gate: **75 checks
+offline, ALL PASS**; platform clean (ingest 25/0, curate 19
+tables, parity r = 0.889 / 201); spellcheck green.
+
+## Next
+
+Wire `src/refresh_live_feeds.py` AND
+`src/pull_evidence_surveillance.py` (6-day guard) into the
+6-hourly job — one pending cron-wiring decision (parent lane).
+Figure 9 disclosure remains an owner item. Sportradar trial
+~Nov 15. Final release cut before Dec 1.

@@ -178,6 +178,29 @@ is context, and mixing the two would blur the claim boundary).
   the feed refresh (see HANDOFF Next) — until then it is run by
   hand.
 
+## Record books & the reference layer (Cycle 58)
+
+Not every authoritative source is a feed. The Cycle 58 sweep
+(scorecard addendum) probed the record-book class and wired
+nothing new — on evidence: the demo states no canonical
+historical records, so there was nothing for a record book to
+cross-check, and no surface was invented for one. Verdicts:
+Baseball Almanac (record path HTTP 403; HTML only) and the
+National Baseball Hall of Fame (editorial site) are
+REFERENCE-ONLY; the official record book is the Elias Sports
+Bureau's print volume (most recent edition located: 2021; no
+machine-readable edition exists on MLB properties); Elias
+itself offers no public API or download — it is
+official-by-citation only; SABR's homepage answered 429 and its
+data role here is already counted (it publishes Lahman). The
+platform's historical layer stays what earlier cycles built:
+Retrosheet and Lahman as historical reference, the Chadwick
+Register adopted as `dim_player_xwalk`, The Baseball Cube as a
+salary cross-check only. Rule going forward: any record stated
+in the demo is cited to the Elias record book or MLB's official
+publications, by hand — in this project, record books are
+citation authority, not ingest.
+
 ## Structured and unstructured
 Structured sources (APIs, CSVs) land as JSON/CSV in raw and curate
 into typed tables. Unstructured sources (Spotrac HTML pages) land
