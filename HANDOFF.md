@@ -874,3 +874,54 @@ contracts-coverage check rides along). Cron wiring for
 both refresh scripts is approved as slate item 6. Figure 9
 disclosure remains an owner item. Final freeze release cut
 before Dec 1.
+
+---
+
+# HANDOFF — Cycle 64: the 2027 Cap Transition ledger (slate item 3)
+
+`data/cap_transition_2027.json` (builder `src/bml_cycle64.py`)
+puts all 30 teams on one decision surface for the proposed
+2027 system ($245.3M cap / $171.2M floor / 15% per-player
+max = $36.795M), built from committed artifacts only:
+cap scenarios (Cycle 22), forced-seller shed sets
+(Cycle 30), Cot's labeled cross-check, Steamer 2027 WAR,
+and the optimizer pool (Cycle 44).
+
+- Primary basis (Spotrac payroll totals, 30/30 teams):
+  7 OVER CAP ($358,157,578), 15 UNDER FLOOR
+  ($807,838,582), 8 INSIDE THE BAND. Shed sets cover 6
+  of 7 over-cap teams and clear their gaps (WAR cost:
+  NYM 12.68, LAD 8.91, NYY 7.85, PHI 6.59, ATL 5.15,
+  TOR 3.55). CHC (over by $4,019,956) shows "shed set
+  not covered — payroll basis gap" — no contract rows,
+  Spotrac page failed in Cycle 25.
+- Under-floor rows: spend gap + equivalent signings at
+  the pool median prior salary ($4,500,000, n = 199) —
+  labeled arithmetic, not a recommendation.
+- 15% check on Cot's `cb_2027_aav` (only committed AAV
+  field): 8 contracts above $36,795,000 on 5 teams.
+  Spotrac salary was deliberately not used (it flags
+  deals whose AAV is below the maximum).
+- Sensitivity: the Cot's second basis is the sum of
+  published LRP-2027 dollar rows — a committed-contract
+  SUBTOTAL, labeled everywhere, never a payroll:
+  1 over / 6 in band / 23 under. 13 teams change status
+  between bases; both readings are shown. Definition
+  sensitivity (benefits, pre-arb pool) not modeled —
+  no committed team-level figure separates them.
+- Surface: the ledger panel leads Boardroom (rendered
+  from the artifact, fail-closed if absent); not a
+  figure (25), not a slide (15).
+- Gate: 84 checks ALL PASS (3 new CAPLEDGER checks);
+  spellcheck green; platform clean (17 rebuilt
+  byte-identical, parity r = 0.889 / 201). Released as
+  v1.1.3 per the Cycle 60 pattern.
+
+## Next
+
+Slate item 4: player-level health cards fused into the
+FA shopping list. Slate item 5: reproducibility & claims
+pack. Slate item 6: wire both refresh scripts into the
+6h cron + visible "data as of" stamp. Sportradar trial
+~Nov 15 (PRICE-1 contracts-coverage check rides along).
+Final freeze release cut before Dec 1.

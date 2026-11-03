@@ -2136,3 +2136,43 @@ Closed HANDOFF item 4 to the extent committed data allows:
   bracket ~0.50 (naive mean 0.503), so 0.53 is plausible but NOT verified on this
   machine. Flagged, not assumed. Record: data/persistence_recompute_verify.json.
 No claim or data changed; dashboard untouched (still 25 figures).
+
+## Cycle 64 — slate item 3: the 2027 Cap Transition ledger (2026-11-02)
+
+- BUILD: `data/cap_transition_2027.json` (builder
+  `src/bml_cycle64.py`) — 30 team rows on committed
+  data only: Spotrac payroll totals (Cycle 22 basis),
+  Cycle 30 shed sets with Steamer WAR cost, spend gaps
+  for the 15 under-floor teams as arithmetic at the
+  optimizer pool's price distribution (n = 199, median
+  prior salary $4,500,000), and the 15% per-player
+  check on Cot's AAV (8 contracts, 5 teams).
+- MEASURE (primary basis): 7 over cap ($358.2M over),
+  15 under floor ($807.8M short), 8 inside the band.
+  Shed sets clear 6 of 7 gaps; CHC over by $4.0M with
+  no shed set ("shed set not covered — payroll basis
+  gap"). Sensitivity on the Cot's published-rows
+  subtotal (labeled a committed-contract subtotal,
+  never a payroll): 1 over / 6 in band / 23 under;
+  13 teams change status between bases — the ledger
+  shows both readings. Definition sensitivity
+  (benefits, pre-arb pool) not modeled: no committed
+  team-level figure separates them.
+- SURFACE: the ledger panel leads Boardroom, rendered
+  from the artifact, fail-closed if absent. Not a
+  figure (count stays 25), not a slide (Boardroom
+  stays 15 slides).
+- GATE: 84 checks ALL PASS (3 new CAPLEDGER checks:
+  30 rows with basis labeled on every row; arithmetic
+  recomputed from committed payrolls; panel strings
+  verbatim ahead of Slide 1); spellcheck green;
+  platform clean (17 rebuilt byte-identical, 2 skipped
+  on absent raw, warehouse from 19 tables, parity
+  r = 0.889 / 201). Dashboard changed -> release
+  v1.1.3 per the Cycle 60 pattern.
+- LEARN: the two payroll bases are not two estimates
+  of one payroll — the Cot's file's dollar rows are a
+  committed-contract subtotal, and calling its sum a
+  payroll would have understated 23 teams below the
+  floor by construction. Basis labels are part of the
+  number.

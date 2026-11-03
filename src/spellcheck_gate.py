@@ -78,6 +78,15 @@ WHITELIST = {
     # Cycle 57 evidence-surveillance names/terms — verified against the
     # provider (PubMed / NCBI NLM E-utilities) and the lane vocabulary
     "pubmed", "ncbi", "nlm", "nih", "eutils", "ucl", "biologics",
+    # Cycle 64 cap-ledger shed-set names — verified against
+    # data/forced_sellers_2027.json / data/salaries_2026.json
+    "bichette", "lindor", "ohtani", "tucker", "wheeler", "schwarber",
+    "bellinger", "guerrero", "vladimir",
+    # Cycle 64 cap-ledger visible team codes + first names — codes
+    # verified against data/cap_scenario_2027.json, names against
+    # data/forced_sellers_2027.json / data/salaries_cots_2027.json
+    "ari", "cin", "det", "hou", "laa", "sf", "wsh",
+    "bo", "degrom", "shohei", "zack",
 }
 
 

@@ -16,6 +16,8 @@ plus the Cycle 49 roster-optimizer panel (Explorer-only,
 appended last so figures 1–24 keep their numbers)
 plus the Cycle 50 sensitivity strip under Figure 25 (no new figure),
 plus the Cycle 62 held-out benchmark panel under Figure 18 (no new figure),
+plus the Cycle 64 cap-transition ledger panel at the front of Boardroom
+(no new figure),
 presented in three modes (Story, Boardroom, Explorer) with stat cards. Builds from a
 clean clone OFFLINE from committed snapshots (audit G1).
 """
@@ -965,6 +967,109 @@ def _benchmark_panel_html():
             "reference window are in the artifact; method mirrors the "
             "Cycle 21/24 backtests, reproduced exactly by "
             "src/bml_cycle62.py.</p></div>")
+
+
+def _cap_transition_panel_html():
+    """Cycle 64: the 2027 Cap Transition ledger — the lead decision
+    panel at the front of Boardroom. One row per team: payroll on its
+    labeled basis, status against the proposed cap/floor, the shed set
+    or spend gap, the 15% per-player flags, and the Cot's-basis
+    sensitivity with disagreements marked. Renders ONLY from the
+    committed artifact data/cap_transition_2027.json; absent the
+    artifact the panel is omitted entirely (fail closed, Cycle 51/57/62
+    pattern). Not a figure: the count stays 25."""
+    import html as _html
+    path = os.path.join(DATA, "cap_transition_2027.json")
+    if not os.path.exists(path):
+        return ""
+    art = json.load(open(path))
+    prim = art["summary"]["primary"]
+    cots = art["summary"]["cots_published_rows"]
+    changed = art["summary"]["status_changes_between_bases"]
+    pool = art["pool_price_distribution"]
+
+    def _m(x):
+        return f"${x / 1e6:.1f}M"
+
+    def _action(r):
+        a = r["action"]
+        if a["type"] == "shed":
+            if not a["covered"]:
+                return _html.escape(a["statement"])
+            names = "; ".join(
+                f"{c['name']} ({_m(c['salary_2026'])}, "
+                f"{c['steamer_war_2027']:.1f} WAR)" for c in a["contracts"])
+            return (f"Shed {a['n_contracts']} contracts · "
+                    f"{_m(a['shed_total'])} · {a['shed_war_total']:.1f} WAR "
+                    f"— {names}")
+        if a["type"] == "spend":
+            return (f"Spend {_m(a['shortfall'])} · "
+                    f"≈{a['equivalent_signings_at_pool_median']} signings "
+                    f"at the pool median ({_m(pool['median'])})")
+        if a["nearest_boundary"] == "cap":
+            return (f"Inside the band · {_m(a['distance_to_cap'])} "
+                    f"below the cap")
+        return (f"Inside the band · {_m(a['distance_to_floor'])} "
+                f"above the floor")
+
+    def _distance(r):
+        if r["status"] == "OVER CAP":
+            return f"{_m(r['gap_to_cap'])} over cap"
+        if r["status"] == "UNDER FLOOR":
+            return f"{_m(r['gap_to_floor'])} under floor"
+        return "—"
+
+    rows = []
+    for r in art["teams"]:
+        flags = r["per_player_max_check"]["flags"]
+        flag_txt = ("; ".join(f"{f['name']} {_m(f['aav'])}"
+                              for f in flags) if flags else "None")
+        cs = r["cots_sensitivity"]
+        cots_status = {"OVER CAP": "Over cap", "UNDER FLOOR": "Under floor",
+                       "INSIDE THE BAND": "Inside the band"}[
+                           cs["status_on_subtotal"]]
+        agree = "agrees" if cs["agrees_with_primary"] else "differs"
+        rows.append(
+            f"<tr><td><b>{r['team']}</b></td>"
+            f"<td>{_m(r['payroll'])} · Spotrac</td>"
+            f"<td>{r['status']}</td><td>{_distance(r)}</td>"
+            f"<td>{_action(r)}</td><td>{flag_txt}</td>"
+            f"<td>{_m(cs['published_lrp_subtotal'])} · {cots_status} · "
+            f"{agree}</td></tr>")
+    table = ("<table><tr><th>Team</th><th>Payroll (basis)</th>"
+             "<th>Status</th><th>Distance</th>"
+             "<th>Shed set / spend gap</th>"
+             "<th>15% max flags (Cot's AAV)</th>"
+             "<th>Cot's subtotal (status)</th></tr>"
+             + "".join(rows) + "</table>")
+    return ('<div class="ledger"><h3>2027 Cap Transition ledger</h3>'
+            f"<p><b>Primary basis (Spotrac payroll totals): "
+            f"{prim['OVER CAP']['count']} over cap "
+            f"({_m(prim['OVER CAP']['total_over'])} over) · "
+            f"{prim['UNDER FLOOR']['count']} under floor "
+            f"({_m(prim['UNDER FLOOR']['total_under'])} short) · "
+            f"{prim['INSIDE THE BAND']['count']} inside the band.</b></p>"
+            "<p>Payroll is the Spotrac total for each team. Shed sets are "
+            "the Cycle 30 contract sets, with Steamer 2027 WAR. Spend "
+            "counts are arithmetic at the optimizer pool's median prior "
+            "salary. Per-player flags use Cot's average annual value "
+            "against the $36.8M maximum.</p>"
+            + table +
+            f"<p>Cot's sensitivity: the last column sums only the "
+            f"contract rows Cot's publishes a 2027 dollar figure for — "
+            f"a committed-contract subtotal, not a complete payroll. "
+            f"On that subtotal: {cots['OVER CAP']['count']} over cap · "
+            f"{cots['INSIDE THE BAND']['count']} inside the band · "
+            f"{cots['UNDER FLOOR']['count']} under floor. Status differs "
+            f"from the primary basis for {changed['count']} teams; the "
+            f"table shows both readings.</p>"
+            "<p>Definition sensitivity: benefits and the pre-arb pool "
+            "are not modeled — no committed team-level figure separates "
+            "them on either basis.</p>"
+            '<p class="srcline">Source: data/cap_transition_2027.json '
+            "(Cycle 64), built from data/cap_scenario_2027.json, "
+            "data/forced_sellers_2027.json, data/salaries_cots_2027.json "
+            "and data/fa_shopping_2027.json.</p></div>")
 
 
 def panel_optimizer():
@@ -2124,6 +2229,9 @@ def build():
     ]
     boardroom = ('<p>15 slides, in talk-track order. Print this section for the room: '
                  '<button type="button" onclick="printBoardroom()">Print boardroom</button></p>')
+    # Cycle 64: the Cap Transition ledger leads the Boardroom view —
+    # a panel in front of the slides, not a slide and not a figure.
+    boardroom += _cap_transition_panel_html()
     for i, (nums, head, note) in enumerate(slides, 1):
         boardroom += (f'<section class="slide"><span class="slidenum">Slide {i} of 15</span>'
                       f"<h3>{head}</h3><p>{note}</p>" +
@@ -2215,6 +2323,11 @@ def build():
 .act{background:#14213d;color:#fff;padding:2px 8px;border-radius:4px;font-weight:bold}
 .why{color:#1d3557;font-weight:bold}
 .quant{background:#eef4ff;border-left:5px solid #0d47a1;border-radius:6px;padding:14px 18px;margin:16px 0;font-size:14px}
+.ledger{background:#fff;border:1px solid #d6dcea;border-left:5px solid #7a1f1f;border-radius:8px;padding:14px 18px;margin:16px 0;font-size:13px}
+.ledger h3{margin:0 0 6px;font-size:17px}
+.ledger table{border-collapse:collapse;width:100%;margin:10px 0}
+.ledger th,.ledger td{padding:3px 8px;border-bottom:1px solid #e8ecf3;text-align:left;vertical-align:top;font-size:12.5px}
+.ledger th{color:#14213d;border-bottom:2px solid #c4d3ea}
 .srcbox{background:#14213d;color:#dbe4f3;border-radius:8px;padding:16px 20px;margin:30px 0 8px;font-size:13px;line-height:1.5}
 .srcbox b{color:#fff}
 .src{color:#8ab6ff;font-family:ui-monospace,monospace}

@@ -1,0 +1,1291 @@
+{
+ "metadata": {
+  "cycle": 64,
+  "title": "2027 Cap Transition ledger",
+  "system": {
+   "cap": 245300000,
+   "floor": 171200000,
+   "per_player_max": 36795000,
+   "per_player_pct": 0.15,
+   "status": "owners' proposed system; not law"
+  },
+  "inputs": [
+   "data/cap_scenario_2027.json (Cycle 22 Spotrac payroll totals, all 30 teams)",
+   "data/forced_sellers_2027.json (Cycle 30 shed sets, 6 of 7 over-cap teams)",
+   "data/salaries_2026.json (Spotrac per-player rows, 927, 24 of 30 teams)",
+   "data/fg_steamer_2027_bat.json + data/fg_steamer_2027_pit.json (Steamer 2027 WAR)",
+   "data/salaries_cots_2027.json (Cot's LRP-2027 rows, 237, 30 teams; CBT AAV field)",
+   "data/fa_shopping_2027.json (optimizer pool, 199 players)",
+   "data/optimizer_sensitivity_2027.json (Cycle 50 mixed floor frame)"
+  ],
+  "primary_basis": "Payroll totals are the Spotrac totals in cap_scenario_2027.json (all 30 teams). Per-player Spotrac contract rows exist for 24 of 30 teams; the six without rows are ARI, BOS, CHC, MIL, TB, TEX (Spotrac page failures, logged in salaries_2026.json).",
+  "cots_sensitivity_basis": "Sum of the 237 rows for which Cot's publishes an LRP-2027 dollar figure \u2014 a committed-contract subtotal, not a complete team payroll. Rows for unsigned, arbitration and option players carry markers, not numbers, in Cot's. Statuses on this basis are arithmetic on the subtotal.",
+  "shed_war_method": "Steamer 2027 WAR joined by MLBAM id from salaries_2026.json (player_xwalk.json for the one row with no id); batting + pitching WAR summed for the one two-way player (Ohtani).",
+  "spend_shape_method": "Shortfall divided by the optimizer pool's prior-AAV price points (median and 75th percentile). Arithmetic only.",
+  "mixed_floor_frame": {
+   "source": "data/optimizer_sensitivity_2027.json (Cycle 50)",
+   "total_war": 74.8,
+   "spend": 96200000,
+   "n_prearb_slots": 19,
+   "n_fa_slots": 7,
+   "note": "League-level frame, not team-specific: a 26-man floor roster reaches 74.8 WAR for $96.2M when 19 slots are internal pre-arb production at the $1.0M placeholder. A club cannot sign another club's pre-arb players; the frame shows the floor is survivable with internal production, not a shopping list."
+  },
+  "definition_sensitivity": "Not modeled: no committed team-level figure separates benefits or the pre-arb pool on either basis, so no split is shown."
+ },
+ "pool_price_distribution": {
+  "n": 199,
+  "price_field": "prev_aav (prior-contract AAV anchor, Spotrac FA class)",
+  "min": 780000,
+  "p25": 1525000,
+  "median": 4500000,
+  "mean": 6771091.05,
+  "p75": 10000000,
+  "max": 35000000
+ },
+ "summary": {
+  "primary": {
+   "OVER CAP": {
+    "count": 7,
+    "teams": [
+     "NYM",
+     "LAD",
+     "NYY",
+     "PHI",
+     "TOR",
+     "ATL",
+     "CHC"
+    ],
+    "total_over": 358157578
+   },
+   "UNDER FLOOR": {
+    "count": 15,
+    "teams": [
+     "SEA",
+     "BAL",
+     "KC",
+     "MIL",
+     "CIN",
+     "COL",
+     "MIN",
+     "PIT",
+     "CHW",
+     "WSH",
+     "ATH",
+     "STL",
+     "TB",
+     "MIA",
+     "CLE"
+    ],
+    "total_under": 807838582
+   },
+   "INSIDE THE BAND": {
+    "count": 8,
+    "teams": [
+     "HOU",
+     "SD",
+     "BOS",
+     "DET",
+     "ARI",
+     "TEX",
+     "SF",
+     "LAA"
+    ]
+   }
+  },
+  "cots_published_rows": {
+   "OVER CAP": {
+    "count": 1,
+    "teams": [
+     "LAD"
+    ],
+    "total_over": 99172000
+   },
+   "UNDER FLOOR": {
+    "count": 23,
+    "teams": [
+     "CHC",
+     "HOU",
+     "BOS",
+     "DET",
+     "ARI",
+     "TEX",
+     "SF",
+     "LAA",
+     "SEA",
+     "BAL",
+     "KC",
+     "MIL",
+     "CIN",
+     "COL",
+     "MIN",
+     "PIT",
+     "CHW",
+     "WSH",
+     "ATH",
+     "STL",
+     "TB",
+     "MIA",
+     "CLE"
+    ],
+    "total_under": 2196341000
+   },
+   "INSIDE THE BAND": {
+    "count": 6,
+    "teams": [
+     "NYM",
+     "NYY",
+     "PHI",
+     "TOR",
+     "ATL",
+     "SD"
+    ]
+   }
+  },
+  "status_changes_between_bases": {
+   "count": 13,
+   "teams": [
+    "NYM",
+    "NYY",
+    "PHI",
+    "TOR",
+    "ATL",
+    "CHC",
+    "HOU",
+    "BOS",
+    "DET",
+    "ARI",
+    "TEX",
+    "SF",
+    "LAA"
+   ]
+  },
+  "per_player_flags_total": 8
+ },
+ "teams": [
+  {
+   "team": "NYM",
+   "payroll": 346736805,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "OVER CAP",
+   "gap_to_cap": 101436805.0,
+   "gap_to_floor": -175536805.0,
+   "spotrac_contract_rows": 43,
+   "action": {
+    "type": "shed",
+    "covered": true,
+    "contracts": [
+     {
+      "name": "Juan Soto",
+      "pos": "LF",
+      "salary_2026": 57500000,
+      "steamer_war_2027": 4.88
+     },
+     {
+      "name": "Bo Bichette",
+      "pos": "3B",
+      "salary_2026": 42000000,
+      "steamer_war_2027": 3.17
+     },
+     {
+      "name": "Francisco Lindor",
+      "pos": "SS",
+      "salary_2026": 34100000,
+      "steamer_war_2027": 4.63
+     }
+    ],
+    "n_contracts": 3,
+    "shed_total": 133600000,
+    "shed_war_total": 12.68,
+    "payroll_after_shed": 213136805,
+    "method": "minimal largest-first contract prefix covering the cap gap (Cycle 30)"
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [
+     {
+      "name": "Juan Soto",
+      "contract": "15 y/$765M (25-39)",
+      "aav": 51000000
+     },
+     {
+      "name": "Bo Bichette",
+      "contract": "3 y/$126M (26-28)",
+      "aav": 42000000
+     }
+    ],
+    "count": 2
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "NYM",
+    "published_rows": 10,
+    "published_lrp_subtotal": 239746000,
+    "status_on_subtotal": "INSIDE THE BAND",
+    "amount_over_cap": 0,
+    "amount_under_floor": 0,
+    "agrees_with_primary": false
+   }
+  },
+  {
+   "team": "LAD",
+   "payroll": 339319244,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "OVER CAP",
+   "gap_to_cap": 94019244.0,
+   "gap_to_floor": -168119244.0,
+   "spotrac_contract_rows": 37,
+   "action": {
+    "type": "shed",
+    "covered": true,
+    "contracts": [
+     {
+      "name": "Shohei Ohtani",
+      "pos": "SP  /DH",
+      "salary_2026": 70000000,
+      "steamer_war_2027": 6.47
+     },
+     {
+      "name": "Kyle Tucker",
+      "pos": "RF",
+      "salary_2026": 55000000,
+      "steamer_war_2027": 2.44
+     }
+    ],
+    "n_contracts": 2,
+    "shed_total": 125000000,
+    "shed_war_total": 8.91,
+    "payroll_after_shed": 214319244,
+    "method": "minimal largest-first contract prefix covering the cap gap (Cycle 30)"
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [
+     {
+      "name": "Kyle Tucker",
+      "contract": "4 y/$240M (26-29)*",
+      "aav": 57196000
+     },
+     {
+      "name": "Shohei Ohtani",
+      "contract": "10 y/$700M (24-33)*",
+      "aav": 46082000
+     }
+    ],
+    "count": 2
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "LAD",
+    "published_rows": 14,
+    "published_lrp_subtotal": 344472000,
+    "status_on_subtotal": "OVER CAP",
+    "amount_over_cap": 99172000,
+    "amount_under_floor": 0,
+    "agrees_with_primary": true
+   }
+  },
+  {
+   "team": "NYY",
+   "payroll": 308336780,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "OVER CAP",
+   "gap_to_cap": 63036780.0,
+   "gap_to_floor": -137136780.0,
+   "spotrac_contract_rows": 32,
+   "action": {
+    "type": "shed",
+    "covered": true,
+    "contracts": [
+     {
+      "name": "Aaron Judge",
+      "pos": "RF",
+      "salary_2026": 40000000,
+      "steamer_war_2027": 4.95
+     },
+     {
+      "name": "Cody Bellinger",
+      "pos": "LF",
+      "salary_2026": 36500000,
+      "steamer_war_2027": 2.89
+     }
+    ],
+    "n_contracts": 2,
+    "shed_total": 76500000,
+    "shed_war_total": 7.85,
+    "payroll_after_shed": 231836780,
+    "method": "minimal largest-first contract prefix covering the cap gap (Cycle 30)"
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [
+     {
+      "name": "Cody Bellinger",
+      "contract": "5 y/$162.5M (26-30)",
+      "aav": 44750000
+     },
+     {
+      "name": "Aaron Judge",
+      "contract": "9 y/$360M (23-31)",
+      "aav": 40000000
+     }
+    ],
+    "count": 2
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "NYY",
+    "published_rows": 7,
+    "published_lrp_subtotal": 218833000,
+    "status_on_subtotal": "INSIDE THE BAND",
+    "amount_over_cap": 0,
+    "amount_under_floor": 0,
+    "agrees_with_primary": false
+   }
+  },
+  {
+   "team": "PHI",
+   "payroll": 291951676,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "OVER CAP",
+   "gap_to_cap": 46651676.0,
+   "gap_to_floor": -120751676.0,
+   "spotrac_contract_rows": 36,
+   "action": {
+    "type": "shed",
+    "covered": true,
+    "contracts": [
+     {
+      "name": "Zack Wheeler",
+      "pos": "SP",
+      "salary_2026": 42000000,
+      "steamer_war_2027": 4.56
+     },
+     {
+      "name": "Kyle Schwarber",
+      "pos": "DH",
+      "salary_2026": 33000000,
+      "steamer_war_2027": 2.03
+     }
+    ],
+    "n_contracts": 2,
+    "shed_total": 75000000,
+    "shed_war_total": 6.59,
+    "payroll_after_shed": 216951676,
+    "method": "minimal largest-first contract prefix covering the cap gap (Cycle 30)"
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [
+     {
+      "name": "Zack Wheeler",
+      "contract": "3 y/$126M (25-27)",
+      "aav": 42000000
+     }
+    ],
+    "count": 1
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "PHI",
+    "published_rows": 9,
+    "published_lrp_subtotal": 216383000,
+    "status_on_subtotal": "INSIDE THE BAND",
+    "amount_over_cap": 0,
+    "amount_under_floor": 0,
+    "agrees_with_primary": false
+   }
+  },
+  {
+   "team": "TOR",
+   "payroll": 276130679,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "OVER CAP",
+   "gap_to_cap": 30830679.0,
+   "gap_to_floor": -104930679.0,
+   "spotrac_contract_rows": 39,
+   "action": {
+    "type": "shed",
+    "covered": true,
+    "contracts": [
+     {
+      "name": "Jr. Vladimir Guerrero Jr.",
+      "pos": "1B",
+      "salary_2026": 40214286,
+      "steamer_war_2027": 3.55
+     }
+    ],
+    "n_contracts": 1,
+    "shed_total": 40214286,
+    "shed_war_total": 3.55,
+    "payroll_after_shed": 235916393,
+    "method": "minimal largest-first contract prefix covering the cap gap (Cycle 30)"
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "TOR",
+    "published_rows": 12,
+    "published_lrp_subtotal": 198167000,
+    "status_on_subtotal": "INSIDE THE BAND",
+    "amount_over_cap": 0,
+    "amount_under_floor": 0,
+    "agrees_with_primary": false
+   }
+  },
+  {
+   "team": "ATL",
+   "payroll": 263462438,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "OVER CAP",
+   "gap_to_cap": 18162438.0,
+   "gap_to_floor": -92262438.0,
+   "spotrac_contract_rows": 35,
+   "action": {
+    "type": "shed",
+    "covered": true,
+    "contracts": [
+     {
+      "name": "Chris Sale",
+      "pos": "SP",
+      "salary_2026": 27000000,
+      "steamer_war_2027": 5.15
+     }
+    ],
+    "n_contracts": 1,
+    "shed_total": 27000000,
+    "shed_war_total": 5.15,
+    "payroll_after_shed": 236462438,
+    "method": "minimal largest-first contract prefix covering the cap gap (Cycle 30)"
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "ATL",
+    "published_rows": 11,
+    "published_lrp_subtotal": 176000000,
+    "status_on_subtotal": "INSIDE THE BAND",
+    "amount_over_cap": 0,
+    "amount_under_floor": 0,
+    "agrees_with_primary": false
+   }
+  },
+  {
+   "team": "CHC",
+   "payroll": 249319956,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "OVER CAP",
+   "gap_to_cap": 4019956.0,
+   "gap_to_floor": -78119956.0,
+   "spotrac_contract_rows": 0,
+   "action": {
+    "type": "shed",
+    "covered": false,
+    "contracts": [],
+    "statement": "shed set not covered \u2014 payroll basis gap",
+    "reason": "no contract rows in salaries_2026.json (Spotrac page failed in Cycle 25)"
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "CHC",
+    "published_rows": 12,
+    "published_lrp_subtotal": 117693000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 53507000,
+    "agrees_with_primary": false
+   }
+  },
+  {
+   "team": "HOU",
+   "payroll": 239763783,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "INSIDE THE BAND",
+   "gap_to_cap": -5536217.0,
+   "gap_to_floor": -68563783.0,
+   "spotrac_contract_rows": 38,
+   "action": {
+    "type": "none",
+    "distance_to_cap": 5536217,
+    "distance_to_floor": 68563783,
+    "nearest_boundary": "cap",
+    "statement": "Inside the band on the primary basis."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "HOU",
+    "published_rows": 8,
+    "published_lrp_subtotal": 170566000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 634000,
+    "agrees_with_primary": false
+   }
+  },
+  {
+   "team": "SD",
+   "payroll": 218252715,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "INSIDE THE BAND",
+   "gap_to_cap": -27047285.0,
+   "gap_to_floor": -47052715.0,
+   "spotrac_contract_rows": 36,
+   "action": {
+    "type": "none",
+    "distance_to_cap": 27047285,
+    "distance_to_floor": 47052715,
+    "nearest_boundary": "cap",
+    "statement": "Inside the band on the primary basis."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "SD",
+    "published_rows": 15,
+    "published_lrp_subtotal": 187640000,
+    "status_on_subtotal": "INSIDE THE BAND",
+    "amount_over_cap": 0,
+    "amount_under_floor": 0,
+    "agrees_with_primary": true
+   }
+  },
+  {
+   "team": "BOS",
+   "payroll": 207988016,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "INSIDE THE BAND",
+   "gap_to_cap": -37311984.0,
+   "gap_to_floor": -36788016.0,
+   "spotrac_contract_rows": 0,
+   "action": {
+    "type": "none",
+    "distance_to_cap": 37311984,
+    "distance_to_floor": 36788016,
+    "nearest_boundary": "floor",
+    "statement": "Inside the band on the primary basis."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "BOS",
+    "published_rows": 13,
+    "published_lrp_subtotal": 154159000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 17041000,
+    "agrees_with_primary": false
+   }
+  },
+  {
+   "team": "DET",
+   "payroll": 202081991,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "INSIDE THE BAND",
+   "gap_to_cap": -43218009.0,
+   "gap_to_floor": -30881991.0,
+   "spotrac_contract_rows": 45,
+   "action": {
+    "type": "none",
+    "distance_to_cap": 43218009,
+    "distance_to_floor": 30881991,
+    "nearest_boundary": "floor",
+    "statement": "Inside the band on the primary basis."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "DET",
+    "published_rows": 6,
+    "published_lrp_subtotal": 83910000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 87290000,
+    "agrees_with_primary": false
+   }
+  },
+  {
+   "team": "ARI",
+   "payroll": 192670027,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "INSIDE THE BAND",
+   "gap_to_cap": -52629973.0,
+   "gap_to_floor": -21470027.0,
+   "spotrac_contract_rows": 0,
+   "action": {
+    "type": "none",
+    "distance_to_cap": 52629973,
+    "distance_to_floor": 21470027,
+    "nearest_boundary": "floor",
+    "statement": "Inside the band on the primary basis."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "ARI",
+    "published_rows": 11,
+    "published_lrp_subtotal": 134905000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 36295000,
+    "agrees_with_primary": false
+   }
+  },
+  {
+   "team": "TEX",
+   "payroll": 191262798,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "INSIDE THE BAND",
+   "gap_to_cap": -54037202.0,
+   "gap_to_floor": -20062798.0,
+   "spotrac_contract_rows": 0,
+   "action": {
+    "type": "none",
+    "distance_to_cap": 54037202,
+    "distance_to_floor": 20062798,
+    "nearest_boundary": "floor",
+    "statement": "Inside the band on the primary basis."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [
+     {
+      "name": "Jacob deGrom",
+      "contract": "5 y/$185M (23-27)+28 opt",
+      "aav": 37000000
+     }
+    ],
+    "count": 1
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "TEX",
+    "published_rows": 7,
+    "published_lrp_subtotal": 123250000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 47950000,
+    "agrees_with_primary": false
+   }
+  },
+  {
+   "team": "SF",
+   "payroll": 190174131,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "INSIDE THE BAND",
+   "gap_to_cap": -55125869.0,
+   "gap_to_floor": -18974131.0,
+   "spotrac_contract_rows": 51,
+   "action": {
+    "type": "none",
+    "distance_to_cap": 55125869,
+    "distance_to_floor": 18974131,
+    "nearest_boundary": "floor",
+    "statement": "Inside the band on the primary basis."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "SF",
+    "published_rows": 8,
+    "published_lrp_subtotal": 153973000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 17227000,
+    "agrees_with_primary": false
+   }
+  },
+  {
+   "team": "LAA",
+   "payroll": 182509023,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "INSIDE THE BAND",
+   "gap_to_cap": -62790977.0,
+   "gap_to_floor": -11309023.0,
+   "spotrac_contract_rows": 37,
+   "action": {
+    "type": "none",
+    "distance_to_cap": 62790977,
+    "distance_to_floor": 11309023,
+    "nearest_boundary": "floor",
+    "statement": "Inside the band on the primary basis."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "LAA",
+    "published_rows": 2,
+    "published_lrp_subtotal": 58342000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 112858000,
+    "agrees_with_primary": false
+   }
+  },
+  {
+   "team": "SEA",
+   "payroll": 170071014,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "UNDER FLOOR",
+   "gap_to_cap": -75228986.0,
+   "gap_to_floor": 1128986.0,
+   "spotrac_contract_rows": 43,
+   "action": {
+    "type": "spend",
+    "shortfall": 1128986,
+    "equivalent_signings_at_pool_median": 1,
+    "equivalent_signings_at_pool_p75": 1,
+    "note": "Arithmetic only: the shortfall divided by the optimizer pool's price points. Not a roster plan and not a recommendation."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "SEA",
+    "published_rows": 6,
+    "published_lrp_subtotal": 64168000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 107032000,
+    "agrees_with_primary": true
+   }
+  },
+  {
+   "team": "BAL",
+   "payroll": 167039211,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "UNDER FLOOR",
+   "gap_to_cap": -78260789.0,
+   "gap_to_floor": 4160789.0,
+   "spotrac_contract_rows": 42,
+   "action": {
+    "type": "spend",
+    "shortfall": 4160789,
+    "equivalent_signings_at_pool_median": 1,
+    "equivalent_signings_at_pool_p75": 1,
+    "note": "Arithmetic only: the shortfall divided by the optimizer pool's price points. Not a roster plan and not a recommendation."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "BAL",
+    "published_rows": 9,
+    "published_lrp_subtotal": 90175000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 81025000,
+    "agrees_with_primary": true
+   }
+  },
+  {
+   "team": "KC",
+   "payroll": 150429892,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "UNDER FLOOR",
+   "gap_to_cap": -94870108.0,
+   "gap_to_floor": 20770108.0,
+   "spotrac_contract_rows": 38,
+   "action": {
+    "type": "spend",
+    "shortfall": 20770108,
+    "equivalent_signings_at_pool_median": 5,
+    "equivalent_signings_at_pool_p75": 3,
+    "note": "Arithmetic only: the shortfall divided by the optimizer pool's price points. Not a roster plan and not a recommendation."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "KC",
+    "published_rows": 8,
+    "published_lrp_subtotal": 89767000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 81433000,
+    "agrees_with_primary": true
+   }
+  },
+  {
+   "team": "MIL",
+   "payroll": 146706320,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "UNDER FLOOR",
+   "gap_to_cap": -98593680.0,
+   "gap_to_floor": 24493680.0,
+   "spotrac_contract_rows": 0,
+   "action": {
+    "type": "spend",
+    "shortfall": 24493680,
+    "equivalent_signings_at_pool_median": 6,
+    "equivalent_signings_at_pool_p75": 3,
+    "note": "Arithmetic only: the shortfall divided by the optimizer pool's price points. Not a roster plan and not a recommendation."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "MIL",
+    "published_rows": 8,
+    "published_lrp_subtotal": 46307000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 124893000,
+    "agrees_with_primary": true
+   }
+  },
+  {
+   "team": "CIN",
+   "payroll": 128223748,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "UNDER FLOOR",
+   "gap_to_cap": -117076252.0,
+   "gap_to_floor": 42976252.0,
+   "spotrac_contract_rows": 38,
+   "action": {
+    "type": "spend",
+    "shortfall": 42976252,
+    "equivalent_signings_at_pool_median": 10,
+    "equivalent_signings_at_pool_p75": 5,
+    "note": "Arithmetic only: the shortfall divided by the optimizer pool's price points. Not a roster plan and not a recommendation."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "CIN",
+    "published_rows": 7,
+    "published_lrp_subtotal": 44369000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 126831000,
+    "agrees_with_primary": true
+   }
+  },
+  {
+   "team": "COL",
+   "payroll": 121526751,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "UNDER FLOOR",
+   "gap_to_cap": -123773249.0,
+   "gap_to_floor": 49673249.0,
+   "spotrac_contract_rows": 42,
+   "action": {
+    "type": "spend",
+    "shortfall": 49673249,
+    "equivalent_signings_at_pool_median": 12,
+    "equivalent_signings_at_pool_p75": 5,
+    "note": "Arithmetic only: the shortfall divided by the optimizer pool's price points. Not a roster plan and not a recommendation."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "COL",
+    "published_rows": 7,
+    "published_lrp_subtotal": 55264000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 115936000,
+    "agrees_with_primary": true
+   }
+  },
+  {
+   "team": "MIN",
+   "payroll": 115748036,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "UNDER FLOOR",
+   "gap_to_cap": -129551964.0,
+   "gap_to_floor": 55451964.0,
+   "spotrac_contract_rows": 39,
+   "action": {
+    "type": "spend",
+    "shortfall": 55451964,
+    "equivalent_signings_at_pool_median": 13,
+    "equivalent_signings_at_pool_p75": 6,
+    "note": "Arithmetic only: the shortfall divided by the optimizer pool's price points. Not a roster plan and not a recommendation."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "MIN",
+    "published_rows": 8,
+    "published_lrp_subtotal": 67076000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 104124000,
+    "agrees_with_primary": true
+   }
+  },
+  {
+   "team": "PIT",
+   "payroll": 106728501,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "UNDER FLOOR",
+   "gap_to_cap": -138571499.0,
+   "gap_to_floor": 64471499.0,
+   "spotrac_contract_rows": 39,
+   "action": {
+    "type": "spend",
+    "shortfall": 64471499,
+    "equivalent_signings_at_pool_median": 15,
+    "equivalent_signings_at_pool_p75": 7,
+    "note": "Arithmetic only: the shortfall divided by the optimizer pool's price points. Not a roster plan and not a recommendation."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "PIT",
+    "published_rows": 6,
+    "published_lrp_subtotal": 64495000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 106705000,
+    "agrees_with_primary": true
+   }
+  },
+  {
+   "team": "CHW",
+   "payroll": 103330141,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "UNDER FLOOR",
+   "gap_to_cap": -141969859.0,
+   "gap_to_floor": 67869859.0,
+   "spotrac_contract_rows": 17,
+   "action": {
+    "type": "spend",
+    "shortfall": 67869859,
+    "equivalent_signings_at_pool_median": 16,
+    "equivalent_signings_at_pool_p75": 7,
+    "note": "Arithmetic only: the shortfall divided by the optimizer pool's price points. Not a roster plan and not a recommendation."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "CWS",
+    "published_rows": 6,
+    "published_lrp_subtotal": 73350000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 97850000,
+    "agrees_with_primary": true
+   }
+  },
+  {
+   "team": "WSH",
+   "payroll": 101639888,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "UNDER FLOOR",
+   "gap_to_cap": -143660112.0,
+   "gap_to_floor": 69560112.0,
+   "spotrac_contract_rows": 45,
+   "action": {
+    "type": "spend",
+    "shortfall": 69560112,
+    "equivalent_signings_at_pool_median": 16,
+    "equivalent_signings_at_pool_p75": 7,
+    "note": "Arithmetic only: the shortfall divided by the optimizer pool's price points. Not a roster plan and not a recommendation."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "WSH",
+    "published_rows": 2,
+    "published_lrp_subtotal": 10375000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 160825000,
+    "agrees_with_primary": true
+   }
+  },
+  {
+   "team": "ATH",
+   "payroll": 98948812,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "UNDER FLOOR",
+   "gap_to_cap": -146351188.0,
+   "gap_to_floor": 72251188.0,
+   "spotrac_contract_rows": 40,
+   "action": {
+    "type": "spend",
+    "shortfall": 72251188,
+    "equivalent_signings_at_pool_median": 17,
+    "equivalent_signings_at_pool_p75": 8,
+    "note": "Arithmetic only: the shortfall divided by the optimizer pool's price points. Not a roster plan and not a recommendation."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "ATH",
+    "published_rows": 7,
+    "published_lrp_subtotal": 53537000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 117663000,
+    "agrees_with_primary": true
+   }
+  },
+  {
+   "team": "STL",
+   "payroll": 96396498,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "UNDER FLOOR",
+   "gap_to_cap": -148903502.0,
+   "gap_to_floor": 74803502.0,
+   "spotrac_contract_rows": 40,
+   "action": {
+    "type": "spend",
+    "shortfall": 74803502,
+    "equivalent_signings_at_pool_median": 17,
+    "equivalent_signings_at_pool_p75": 8,
+    "note": "Arithmetic only: the shortfall divided by the optimizer pool's price points. Not a roster plan and not a recommendation."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "STL",
+    "published_rows": 5,
+    "published_lrp_subtotal": 17250000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 153950000,
+    "agrees_with_primary": true
+   }
+  },
+  {
+   "team": "TB",
+   "payroll": 95615469,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "UNDER FLOOR",
+   "gap_to_cap": -149684531.0,
+   "gap_to_floor": 75584531.0,
+   "spotrac_contract_rows": 0,
+   "action": {
+    "type": "spend",
+    "shortfall": 75584531,
+    "equivalent_signings_at_pool_median": 17,
+    "equivalent_signings_at_pool_p75": 8,
+    "note": "Arithmetic only: the shortfall divided by the optimizer pool's price points. Not a roster plan and not a recommendation."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "TB",
+    "published_rows": 5,
+    "published_lrp_subtotal": 25500000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 145700000,
+    "agrees_with_primary": true
+   }
+  },
+  {
+   "team": "MIA",
+   "payroll": 83298123,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "UNDER FLOOR",
+   "gap_to_cap": -162001877.0,
+   "gap_to_floor": 87901877.0,
+   "spotrac_contract_rows": 38,
+   "action": {
+    "type": "spend",
+    "shortfall": 87901877,
+    "equivalent_signings_at_pool_median": 20,
+    "equivalent_signings_at_pool_p75": 9,
+    "note": "Arithmetic only: the shortfall divided by the optimizer pool's price points. Not a roster plan and not a recommendation."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "MIA",
+    "published_rows": 1,
+    "published_lrp_subtotal": 10000000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 161200000,
+    "agrees_with_primary": true
+   }
+  },
+  {
+   "team": "CLE",
+   "payroll": 74459014,
+   "payroll_basis": "Spotrac payroll total",
+   "payroll_source": "data/cap_scenario_2027.json",
+   "status": "UNDER FLOOR",
+   "gap_to_cap": -170840986.0,
+   "gap_to_floor": 96740986.0,
+   "spotrac_contract_rows": 37,
+   "action": {
+    "type": "spend",
+    "shortfall": 96740986,
+    "equivalent_signings_at_pool_median": 22,
+    "equivalent_signings_at_pool_p75": 10,
+    "note": "Arithmetic only: the shortfall divided by the optimizer pool's price points. Not a roster plan and not a recommendation."
+   },
+   "per_player_max_check": {
+    "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
+    "threshold": 36795000,
+    "flags": [],
+    "count": 0
+   },
+   "cots_sensitivity": {
+    "basis": "Cot's published LRP-2027 rows (committed-contract subtotal, not a complete payroll)",
+    "team_code": "CLE",
+    "published_rows": 7,
+    "published_lrp_subtotal": 32828000,
+    "status_on_subtotal": "UNDER FLOOR",
+    "amount_over_cap": 0,
+    "amount_under_floor": 138372000,
+    "agrees_with_primary": true
+   }
+  }
+ ]
+}
