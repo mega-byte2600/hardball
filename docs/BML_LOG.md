@@ -2260,3 +2260,24 @@ No claim or data changed; dashboard untouched (still 25 figures).
   parquets byte-identical, warehouse rebuilt, parity r = 0.889 /
   201). Dashboard rebuilt with the lake present: 25 figures.
 - Dashboard changed -> release v1.1.5 per the Cycle 60 pattern.
+
+## Cycle 68 — reproducibility & claims pack (slate item 5, 2026-11-03)
+- Built: src/bml_cycle68.py -> data/claims_register.json (16 SUPPORTED,
+  7 NOT SUPPORTED, 3 RETRACTED, 1 open), data/figure_trace_2027.json
+  (25/25 figures + 8/8 panels verified, FIG-QA method), docs/REPRODUCIBILITY.html
+  (generated from the two JSONs, never hand-edited numbers).
+- Surface: "Claims & reproducibility" panel closes Explorer (appendix, not a
+  figure; Story 6 chapters, Boardroom 15 slides unchanged); fails closed
+  without the pack artifacts, so the build runs in two passes.
+- Retracted, stated plainly: R01 team-wins R-squared 0.80 (Cycles 18-19),
+  R02 availability-capped point forecasts (UNC-1, Cycle 54), R03 OBP
+  persistence as first published (Cycle 39/44). Open item O01 (Figure 9
+  in-sample label) left for the owner; the trace verifies Figure 9's
+  artifact/panel agreement without endorsing the title.
+- Two builder catches fixed before shipping: evidence-artifact parsing
+  (path regex, not "+" split) and the evidence-footnote marker (title
+  renders as a link; checked as two halves). No figure trace failed.
+- Gate 93 checks ALL PASS (4 new Cycle 68 checks); spellcheck green.
+  Platform clean (17 curated rebuilt, 19 parquets byte-identical,
+  warehouse rebuilt, parity r = 0.889 / 201). Released as v1.1.6 per the
+  Cycle 60 pattern; published file probed from the release tarball.

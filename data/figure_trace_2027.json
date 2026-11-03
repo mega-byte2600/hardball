@@ -1,0 +1,526 @@
+{
+ "cycle": 68,
+ "dashboard": "dashboard/hardball_demo.html (built with the lake present)",
+ "lineage": "ingest (data/raw + manifest.jsonl, local) -> curated parquet (data/curated, 19 tables, schema-enforced) -> warehouse (data/hardball.duckdb, built, gitignored) -> serving (dashboard reads committed JSON artifacts + curated tables; the lake feeds Figure 13 only)",
+ "build_commands": {
+  "ingest": "python3 src/ingest_platform.py",
+  "curate": "python3 src/curate.py",
+  "warehouse": "python3 src/build_warehouse.py",
+  "dashboard": "python3 src/dashboard_p6.py",
+  "gate": "python3 src/verify_data.py",
+  "spellcheck": "python3 src/spellcheck_gate.py",
+  "this_pack": "python3 src/bml_cycle68.py"
+ },
+ "figures": [
+  {
+   "figure": 1,
+   "title": "PRESS PLAY: 16 seasons of payroll vs wins",
+   "artifacts": [
+    "data/panel_2011_2026.csv"
+   ],
+   "headline": "509 team-seasons, seasons 2011-2026",
+   "markers": [
+    "PRESS PLAY"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 2,
+   "title": "Pick your team — 2026 signature vs the winning-cheap profile",
+   "artifacts": [
+    "data/team_explorer.json"
+   ],
+   "headline": "30 teams",
+   "markers": [
+    "pick your team"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 3,
+   "title": "The measurable edge: input SKILLS persist year-to-year",
+   "artifacts": [
+    "data/persistence_ci.json",
+    "data/player_persistence_multiyear.json"
+   ],
+   "headline": "pooled contact r=0.843, 457 pairs",
+   "markers": [
+    "457"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 4,
+   "title": "The top lever — run differential to wins",
+   "artifacts": [
+    "data/runs_panel.json"
+   ],
+   "headline": "2026 slice = 30 rows",
+   "markers": [
+    "run differential"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 5,
+   "title": "The proof it works: run differential alone flags a 90+ win club",
+   "artifacts": [
+    "data/quant_core.json"
+   ],
+   "headline": "run-diff-only AUC 0.949 (titled 0.95)",
+   "markers": [
+    "AUC .95"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 6,
+   "title": "Payroll vs Wins: money buys some wins",
+   "artifacts": [
+    "data/kpi_2026.json"
+   ],
+   "headline": "30 teams; cap $245.3M / floor $171.2M lines",
+   "markers": [
+    "Payroll ($M) vs Wins"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 7,
+   "title": "Copycat-league KPI signature",
+   "artifacts": [
+    "data/kpi_2026.json"
+   ],
+   "headline": "30 teams; contact/K% non-null for all",
+   "markers": [
+    "Copycat-league KPI signature"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 8,
+   "title": "25-year proof: efficiency is durable",
+   "artifacts": [
+    "data/efficiency_2000_2024.csv"
+   ],
+   "headline": "721 team-seasons, 2000-2024",
+   "markers": [
+    "efficiency is durable"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 9,
+   "title": "Model fit (in-sample) vs actual wins, by team",
+   "artifacts": [
+    "data/projections_2026.json",
+    "data/formula_prod.json"
+   ],
+   "headline": "30 rows; in-sample fitted values (see open item O01 — label decision pending)",
+   "markers": [
+    "Model fit (in-sample) vs actual wins"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 10,
+   "title": "Cap-era reality: payroll vs proposed 2027 cap",
+   "artifacts": [
+    "data/cap_scenario_2027.json"
+   ],
+   "headline": "over cap 7, under floor 15",
+   "markers": [
+    "Cap-era reality"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 11,
+   "title": "Forced sellers — how few big contracts close each gap",
+   "artifacts": [
+    "data/forced_sellers_2027.json"
+   ],
+   "headline": "6 covered; CHC the only uncovered team",
+   "markers": [
+    "Forced sellers"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 12,
+   "title": "2027 projected hitters by OBP (Marcel)",
+   "artifacts": [
+    "data/projections_2027.json"
+   ],
+   "headline": "top OBP: Aaron Judge",
+   "markers": [
+    "Aaron Judge",
+    "projected hitters by OBP"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 13,
+   "title": "Pitching is the other winning-cheap half",
+   "artifacts": [
+    "data/mlb_lake.db (local build artifact, gitignored) -> curated data/curated/fact_stat_lines.parquet"
+   ],
+   "headline": "lake present: True; pitching stat_lines rows = 200",
+   "markers": [
+    "Pitching is the other winning-cheap half"
+   ],
+   "build": "python3 src/dashboard_p6.py (with the lake present)",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 14,
+   "title": "2027 health risk (IL-based PA cap) + live-IL picture",
+   "artifacts": [
+    "data/projections_2027_health.json",
+    "data/il_current_live.json",
+    "data/il_events.json"
+   ],
+   "headline": "live-IL pull 2026-11-02; 13 of 251 FAs injured",
+   "markers": [
+    "Current IL picture",
+    "2026-11-02"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 15,
+   "title": "Proposed 26-man winning-cheap roster",
+   "artifacts": [
+    "data/roster_2027.json"
+   ],
+   "headline": "13 hitters + 13 pitchers",
+   "markers": [
+    "Proposed 26-man winning-cheap roster"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 16,
+   "title": "What does the money buy? (scenario rosters)",
+   "artifacts": [
+    "data/wow_scenarios.json",
+    "data/uncertainty_scenarios_2027.json"
+   ],
+   "headline": "Floor 48.9 WAR; ±20% range 45.0-53.2; delivered 10th-90th 33.0-46.9",
+   "markers": [
+    "48.9",
+    "52.8",
+    "54.8"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 17,
+   "title": "What-if: how many wins a lever moves",
+   "artifacts": [
+    "data/robust_validation.json"
+   ],
+   "headline": "9 elasticity levers",
+   "markers": [
+    "how many wins a lever moves"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 18,
+   "title": "The benchmark: our Marcel vs FanGraphs Steamer 2027",
+   "artifacts": [
+    "data/fg_benchmark_2027.json",
+    "data/fg_steamer_2027_bat.json"
+   ],
+   "headline": "OBP r=0.889; top-25 overlap 18/25",
+   "markers": [
+    "0.889"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 19,
+   "title": "Savant traits are rock-stable year-to-year",
+   "artifacts": [
+    "data/savant_test.json"
+   ],
+   "headline": "6 trait stabilities",
+   "markers": [
+    "Savant traits are rock-stable"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 20,
+   "title": "Top value metrics — wOBA/wRC+ & FIP/K-BB%",
+   "artifacts": [
+    "data/value_metrics_2026.json"
+   ],
+   "headline": "hitting rows 30; pitching rows 26",
+   "markers": [
+    "Top value metrics"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 21,
+   "title": "The pipeline behind winning-cheap",
+   "artifacts": [
+    "data/pipeline_2026.json"
+   ],
+   "headline": "30 organizations",
+   "markers": [
+    "pipeline behind winning-cheap"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 22,
+   "title": "The shopping list: top 2027 free agents by projected WAR",
+   "artifacts": [
+    "data/fa_shopping_2027.json"
+   ],
+   "headline": "top WAR: Tarik Skubal",
+   "markers": [
+    "Tarik Skubal",
+    "shopping list"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 23,
+   "title": "The Posted Class: three players, three different bets",
+   "artifacts": [
+    "data/posted_class_2026.json",
+    "data/fig23_rebuild_2026.json"
+   ],
+   "headline": "fee checkpoint $60M -> $10.875M; no NPB-to-MLB translation factor claimed",
+   "markers": [
+    "10.875",
+    "No NPB-to-MLB translation factor is claimed"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 24,
+   "title": "The pricing test: Hakes-Sauer on ourselves",
+   "artifacts": [
+    "data/hakes_sauer_verdict.json",
+    "data/hakes_sauer_results.json"
+   ],
+   "headline": "480 team-seasons; verdict INCONCLUSIVE on mispricing",
+   "markers": [
+    "480",
+    "INCONCLUSIVE"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "figure": 25,
+   "title": "Benchmark vs headline: the exact optimum beats the greedy build",
+   "artifacts": [
+    "data/optimizer_comparison_2027.json",
+    "data/optimizer_sensitivity_2027.json"
+   ],
+   "headline": "floor delta +6.9 WAR; price ranges 45.0-53.2",
+   "markers": [
+    "exact optimum beats the greedy"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "panel_present": true,
+   "markers_missing": [],
+   "status": "verified"
+  }
+ ],
+ "panels": [
+  {
+   "panel": "Tracker ticker (Story lead)",
+   "artifacts": [
+    "data/tracker_ticker_2026.json"
+   ],
+   "headline": "SIGNED 321 · REPORTED 200 · BUZZ 0",
+   "markers": [
+    "Free-agency wire — the tracker ticker",
+    "An item becomes SIGNED only when the MLB StatsAPI transactions feed carries it"
+   ],
+   "build": "python3 src/pull_tracker_ticker.py + src/dashboard_p6.py",
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "panel": "Cap Transition ledger (Boardroom lead)",
+   "artifacts": [
+    "data/cap_transition_2027.json"
+   ],
+   "headline": "primary: 7 over / 15 under / 8 inside",
+   "markers": [
+    "2027 Cap Transition ledger"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "panel": "Held-out benchmark panel (under Figure 18)",
+   "artifacts": [
+    "data/projection_blend_2027.json"
+   ],
+   "headline": "hitters 2026 naive OBP MAE 0.0265 vs Marcel 0.0237",
+   "markers": [
+    "How good are these projections?"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "panel": "Health cards (Explorer, Shop the FA Class)",
+   "artifacts": [
+    "data/fa_health_cards_2027.json"
+   ],
+   "headline": "251 cards; 166 measured / 65 no IL record / 20 not matched",
+   "markers": [
+    "Health cards: what each free agent will actually give you"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "panel": "Evidence footnote (under Figure 14)",
+   "artifacts": [
+    "data/evidence_surveillance.json"
+   ],
+   "headline": "lanes as run: UCL 157, prevention/workload 426, cellular 404, tendon/biologics 119",
+   "markers": [
+    "What the evidence says now",
+    "the published research on injury recovery and prevention.",
+    "../docs/EVIDENCE.html"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "panel": "Optimizer audit (Explorer, Build a Roster)",
+   "artifacts": [
+    "data/optimizer_comparison_2027.json"
+   ],
+   "headline": "floor greedy 42.0 WAR vs optimum 48.9 WAR",
+   "markers": [
+    "BENCHMARK VS HEADLINE (Cycles 49–52)"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "panel": "Hakes-Sauer verdict box (under Figure 24)",
+   "artifacts": [
+    "data/hakes_sauer_verdict.json"
+   ],
+   "headline": "verdict INCONCLUSIVE on mispricing",
+   "markers": [
+    "THE VERDICT"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "markers_missing": [],
+   "status": "verified"
+  },
+  {
+   "panel": "Posted companion (Explorer, The Posted Class)",
+   "artifacts": [
+    "data/posted_class_2026.json"
+   ],
+   "headline": "Sato / Taira / Itoh trio cards + posting clock + fee tiers",
+   "markers": [
+    "The trio, the clock, and the honesty box"
+   ],
+   "build": "python3 src/dashboard_p6.py",
+   "markers_missing": [],
+   "status": "verified"
+  }
+ ],
+ "counts": {
+  "supported": 16,
+  "not_supported": 7,
+  "retracted": 3,
+  "open_items": 1,
+  "figures_traced": 25,
+  "figures_verified": 25,
+  "panels_traced": 8,
+  "panels_verified": 8
+ }
+}
