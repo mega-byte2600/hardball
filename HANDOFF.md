@@ -1098,8 +1098,105 @@ signings." Rendered: newest 12 SIGNED, 20 REPORTED, 10 BUZZ.
     + # only if the gate passes; on gate failure, last good
     + # dashboard stays live and the failure is reported
   The parent presents this; it is not applied here.
-- Slate 4: player health cards in the FA shopping list.
-  Slate 5: reproducibility & claims pack. Slate 6: wire both
-  refresh scripts into the 6h cron + visible "data as of"
-  stamp. Sportradar trial ~Nov 15. Final frozen-main release
-  cut before Dec 1.
+- Slate 4 DONE (Cycle 67, below). Slate 5: reproducibility &
+  claims pack. Slate 6: wire both refresh scripts into the 6h
+  cron + visible "data as of" stamp. Sportradar trial ~Nov 15.
+  Final frozen-main release cut before Dec 1.
+
+## Cycle 67 — player health cards in the FA shopping list (slate item 4)
+
+The shopping list stops ranking by headline WAR alone. Every one
+of the 251 free agents now carries a health card in the Explorer
+"Shop the FA Class" group: measured availability, delivered-WAR
+expectation, risk flag, current-IL status, anchor price with
+delivered WAR per $10M, and an evidence link. Panel, not a
+figure (count stays 25); Explorer only (Story stays 6 chapters,
+Boardroom stays 15 slides).
+
+### The cards: src/bml_cycle67.py -> data/fa_health_cards_2027.json
+
+- Measured availability: the player's 2025-26 IL days = the sum
+  of committed days_in_season across his stints in curated
+  fact_il_stints; availability = max(0, 1 - days/364), 364 the
+  repo's own Cycle 9 denominator (2 x 182 days). Checked: for
+  every FA player the summed days never exceed the calendar-day
+  union of his stint ranges, so overlaps do not inflate the sum.
+  3 players sum above 364 (Rendon, Jimenez, Graterol) and are
+  floored at 0. Coverage: 166 measured / 65 no IL record /
+  20 not matched (no player_id in the shopping file — the
+  NPB posted class plus Spotrac name-parsing fragments like
+  "Robert Jr." — no name-only join was attempted, because a
+  name-only join risks false attribution). No-record players
+  read "no IL record in committed data", never 100%.
+- Delivered-WAR expectation: the Cycle 56 formula at player
+  level. UNC-2 simulated rosters with pool availability draws
+  plus residual draws; the player-level point estimate replaces
+  the draws with their centers: the player's own measured
+  factor where one exists, else the UNC-2 pool mean for his
+  group (hitters 0.912, pitchers 0.807), and the measured mean
+  residuals (OBP +0.0008, SLG -0.0078, ERA +0.078) converted
+  with the Cycle 48 slopes and Steamer's own fitted runs-to-WAR
+  slopes at delivered volume (Steamer 2027 PA/IP by xMLBAMID;
+  all 231 players with Steamer WAR have a PA/IP row).
+  Per-player intervals are NOT derived: a pool-draw interval
+  would present pool variance as player risk, so intervals stay
+  scenario-level only (Cycle 56). Stated in the artifact.
+- Risk flag: measured availability below the UNC-2 pool p25
+  for the group (hitters 0.890, pitchers 0.629). 76 flagged
+  (45 of 65 measured hitters, 31 of 101 measured pitchers).
+  Selection note, stated in the panel: the comparison pool
+  includes players with no IL time while the flagged set is
+  conditioned on having IL history, so the flag fires often —
+  it marks below-quartile availability, not a prediction of
+  future injury.
+- Evidence link: the dominant injury (most 2025-26 IL days)
+  classified by keyword only — 73 linked to a lane (UCL 29,
+  muscle 41, tendon 2, workload 1), 178 to the page top.
+  docs/EVIDENCE.html gained the four lane anchors (id only;
+  headings, counts, PMIDs untouched — the Cycle 57 gate checks
+  still pass). Current IL: exact-name match against curated
+  fact_il_current, 13 matches, no duplicate names, matching
+  the Cycle 51 count.
+- Prices stay anchors (Cycle 61 left them untouched):
+  delivered WAR per $10M is arithmetic on the same prior AAV.
+
+### The difference it makes (top 5)
+
+- By headline WAR: Skubal 5.66, Contreras 4.29, Rasmussen
+  3.74, Trevor Rogers 3.04, Sonny Gray 2.97.
+- By delivered WAR: Skubal 4.86, Contreras 3.79, Rasmussen
+  2.91, Sonny Gray 2.73, Luis Arraez 2.55. Rogers falls to
+  6th (2.41) — 64 IL days at 0.82 availability on a 3.04
+  headline. That drop is the buying tool working.
+- Example card, quoted exactly: Garrett Whitlock (RP, BOS) —
+  headline 0.83 WAR, 34 IL days, availability 0.91, delivered
+  0.71 WAR; dominant injury "Right elbow inflammation"
+  (UCL & elbow lane); currently Out with a leg fracture,
+  return 2027-02-01 (live snapshot 2026-11-02).
+
+### Verification
+
+- Gate: 89 checks ALL PASS (87 + 2 new HEALTH checks:
+  artifact consistency with availability + delivered WAR
+  recomputed from artifact fields and delivered ranks 1..231
+  unique and ordered; panel renders in Explorer with the
+  title, Delivered WAR column, top delivered name and a lane
+  link, and not in Story; evidence page carries all four lane
+  anchors). Spellcheck green — 161 player-name tokens and
+  position codes added to the whitelist, each verified
+  against data/fa_shopping_2027.json (accented names split at
+  the accent: berr = Berrios, garc = Garcia, nchez = Sanchez,
+  rez = Perez, rquez = Marquez).
+- Platform clean: curate rebuilt 17 tables byte-identical, 2
+  skipped on absent raw with committed parquets standing (the
+  Cycle 64 pattern); all 19 parquets byte-identical to main;
+  warehouse rebuilt from 19 tables; parity r = 0.889 / 201.
+  Dashboard rebuilt with the lake present: 25 figures, none
+  missing; health table renders 251 rows + header.
+- Release: v1.1.5 per the Cycle 60 pattern (release commit
+  atop main carrying only the rebuilt
+  dashboard/hardball_demo.html; lightweight tag; GitHub
+  release via API; no asset uploads). Published file read
+  back from the release tarball and probed (card section
+  title, delivered-WAR field, evidence link, 25 figures,
+  ticker panel, ledger panel, benchmark panel, footnote).
