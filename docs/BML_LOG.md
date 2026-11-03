@@ -2359,3 +2359,37 @@ No claim or data changed; dashboard untouched (still 25 figures).
   4/4. Run order for this cycle: bml_cycle71 -> dashboard build ->
   bml_cycle68 -> bml_cycle69 -> dashboard build -> verify + spell +
   monitor (cycle69 must follow cycle68 so O01 stays closed).
+
+## Cycle 72 — tracker refresh + Cycle 24 drift re-run (2026-11-03, 24/7 job)
+
+- SPOTRAC PROBE: single GET of the Tampa Bay 2026 payroll page -> HTTP
+  403 (browser UA). Logged, not routed around. Salaries stay 24/30,
+  forced-seller coverage 6/7 (CHC uncovered) until the Sportradar
+  trial ~Nov 15.
+- LIVE FEEDS (step 2b): refresh_live_feeds SKIP (last pull 17.6h old,
+  < 20h watermark — normal); evidence surveillance SKIP (artifact
+  1d old, < 6d guard — normal). Tracker ticker pulled 2026-11-03
+  16:15 UTC (window Oct 27–Nov 3, class register 246): StatsAPI
+  SIGNED lane + MLBTR + MLB.com + RotoWire OK; Google News 503 on
+  every lane and Bluesky Jetstream timeout failed closed per source
+  (logged, skipped, never routed around). Artifact: 535 items
+  (335 SIGNED, 200 REPORTED), down from the committed 257,671 bytes
+  to 222,531 on window roll.
+- PLATFORM: ingest 25 datasets, 0 failures; row counts at known-good
+  levels (Savant expected 651–673/season, bat-tracking 595–619,
+  sprint 489–506). Curate: 19 tables, all contracts pass. Warehouse
+  rebuilt. benchmark_parity: r = 0.889, 201 matched — exact, no
+  upstream drift. No curated table changed vs main; no platform PR.
+- BACKLOG (h — all of a–g already shipped, incl. Fig. 23 in Cycle 47
+  and the README runbook on main): Cycle 24 pitcher Marcel backtest
+  re-run against the refreshed lake. Output data/pitcher_backtest.json
+  IDENTICAL to the committed artifact (pooled A MAE ERA 0.744 /
+  WHIP 0.122; B 0.715 / 0.120; C 0.711 / 0.120) — no drift.
+- DASHBOARD: rebuilt offline (KPI URL pointed at an invalid host to
+  force committed snapshots; src/kpi.py verified byte-identical to
+  main afterwards). Crest stamp now reads "Data as of Nov 3, 2026 ·
+  tracker Nov 3 · injured list Nov 2 · evidence Nov 2".
+- GATE: verify_data.py ALL CHECKS PASS (94 PASS lines) +
+  spellcheck green. Shipped as PR + merge (owner pre-approval
+  pattern): data/tracker_ticker_2026.json + rebuilt
+  dashboard/hardball_demo.html + this log entry.
