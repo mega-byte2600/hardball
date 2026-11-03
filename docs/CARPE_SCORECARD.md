@@ -851,10 +851,11 @@ is the citation authority for durability records if a figure
 ever cites one; nothing ingestible.*
 
 **3. Elias Sports Bureau — NO PUBLIC ROUTE (official-by-citation
-only).** Probes: homepage HTTP 200 via curl (35,678 bytes, a
-JavaScript-driven corporate page with no static text layer); a
-text fetch of the same page was refused (HTTP 403) and was not
-retried. The site offers no public API, download, or data
+only).** Probes: a curl request to the homepage was dropped by
+the server (HTTP 000 — empty reply, curl exit 52); a text fetch
+of the same page was refused (HTTP 403) and was not retried.
+Two attempts, two different refusals — no public route either
+way. The site offers no public API, download, or data
 product; Elias serves MLB and other leagues under contract, and
 its numbers reach the public as citations ("according to the
 Elias Sports Bureau") and via its print record book (entry 2).
@@ -892,10 +893,11 @@ basis from the demo's Spotrac AAV, so cross-checks only, never
 blended. *Health: nothing for availability in our use; it is a
 salary layer.*
 
-**8. SABR (extra) — NOT PROBED FURTHER.** Homepage returned
-**HTTP 429** (rate limited) on 2026-11-02 → stopped per rule.
-SABR's data role in this project is already counted at entry 5:
-it publishes the Lahman database. *Health: via Lahman only.*
+**8. SABR (extra) — NO SEPARATE INGESTION; ROLE ALREADY
+COUNTED.** Homepage answered HTTP 200 (110,244 bytes) on
+2026-11-02. Nothing separate is wired in: SABR's data role in
+this project is already counted at entry 5 — it publishes the
+Lahman database. *Health: via Lahman only.*
 
 **9. National Baseball Hall of Fame (extra) — REFERENCE-ONLY.**
 Homepage HTTP 200 (2026-11-02). A museum / editorial site —
