@@ -802,3 +802,122 @@ Indicative only (not shipped anywhere): stints whose text names
 the elbow account for ≈68.8k single-match days vs ≈47.6k for
 shoulder, so the page's lane order (UCL first) already matches
 the data's center of gravity.
+
+## Cycle 58 addendum — record books & almanacs sweep (2026-11-02)
+
+Owner standing directive (2026-11-02): "use almanacs, record
+books, APIs, open data — it's all about data, the numbers don't
+lie, get them." This cycle swept the record-book class. Discipline
+as always: live probe per source; a 403/429 stops that source for
+the cycle; paywalled = a logged gap, never routed around; every
+assertion below comes from a page or file actually retrieved in
+this cycle (2026-11-02) or from a prior cycle's recorded verdict,
+cited as such. Each entry ends with the health & availability
+lens: what the source adds to Figure 14 / the evidence page.
+
+**1. Baseball Almanac (baseball-almanac.com) — REFERENCE-ONLY,
+not ingested.** Probes: `robots.txt` HTTP 200 (permissive —
+disallows only admin paths); homepage HTTP 200 (HTML, ~114 KB);
+the record-book path `/recbooks/` returned **HTTP 403** → source
+stopped for the cycle per rule. What it is: a long-running
+one-editor HTML compilation — record books, year-by-year
+standings and leader boards, player registers. There is no API,
+CSV, or bulk route on the site; the content is ad-supported HTML
+pages. With the record path blocked and no machine-readable
+route, there is nothing to ingest honestly; it remains citable
+by hand. *Health: no IL or workload dataset — historical
+narrative only.*
+
+**2. The official MLB Record Book — REFERENCE-ONLY (print).**
+"Official" runs through the league's statistician: the record
+book is the Elias Sports Bureau's print volume. The most recent
+edition located is the **2021 "Elias Book of Baseball Records"**,
+cited as a current authority in a Retrosheet research paper
+retrieved this cycle (Palmer & Krabbenhoft, "Amazing Strikeout
+Streaks," retrosheet.org, Sept 2026) — which also notes, as a
+coverage caveat, that the consecutive-innings strikeout record
+it establishes "was not even included" in the most recent Elias
+or Sporting News record books: even the official book is not
+exhaustive, one more reason this project cites records rather
+than copying them. MLB's own branded entry is "The Major League
+Baseball Ultimate Book of Records" (an official MLB publication,
+2013, print). **No official machine-readable edition exists on
+MLB properties**: searches of MLB's static file host surfaced
+team game-notes PDFs only, no record-book PDF. The commercial
+almanac market is closed too: the Baseball America Almanac 2026
+digital edition is password-protected for buyers (its own page,
+retrieved this cycle) — a paywalled gap, logged. *Health: print
+is the citation authority for durability records if a figure
+ever cites one; nothing ingestible.*
+
+**3. Elias Sports Bureau — NO PUBLIC ROUTE (official-by-citation
+only).** Probes: homepage HTTP 200 via curl (35,678 bytes, a
+JavaScript-driven corporate page with no static text layer); a
+text fetch of the same page was refused (HTTP 403) and was not
+retried. The site offers no public API, download, or data
+product; Elias serves MLB and other leagues under contract, and
+its numbers reach the public as citations ("according to the
+Elias Sports Bureau") and via its print record book (entry 2).
+The expected verdict, now verified rather than assumed.
+*Health: nothing accessible — no IL or workload product is
+public.*
+
+**4. Retrosheet — ADOPTED-SOLID, HISTORICAL** (prior evaluation,
+2026-11-02 free-source pass; not re-probed). Play-by-play /
+event data 1897–2025 (~16.76M plays; commercial use allowed
+with attribution) — the historical layer's deepest source, and
+its research papers supplied this cycle's citation trail to the
+Elias record book. *Health: event data could support historical
+workload reconstruction, but Retrosheet never tracked the
+disabled/injured list and its transactions file froze in Nov
+2021 (same prior evaluation) — no IL history.*
+
+**5. Lahman database (via SABR) — SOLID, HISTORICAL** (prior
+evaluation; not re-probed). Season-level batting / pitching /
+fielding plus biographical tables, v2025 (1871–2025, now
+including Negro Leagues data); its Salaries table is real but
+ends 2016. *Health: season innings/games totals are durability
+context only; no IL records.*
+
+**6. Chadwick Register — ADOPTED, IN PLATFORM** (Cycle 44, in
+the scorecard above). 527,990 person rows; curated
+`dim_player_xwalk` (137,320 MLBAM-keyed rows); join proof
+379/379. *Health: biographical span (debut / final game) only —
+no IL data.*
+
+**7. The Baseball Cube — EVALUATED, CROSS-CHECK ONLY**
+(Cycle 41/44 passes; homepage re-probed HTTP 200 this cycle).
+Player-level salary CSVs on an opening-day basis — a different
+basis from the demo's Spotrac AAV, so cross-checks only, never
+blended. *Health: nothing for availability in our use; it is a
+salary layer.*
+
+**8. SABR (extra) — NOT PROBED FURTHER.** Homepage returned
+**HTTP 429** (rate limited) on 2026-11-02 → stopped per rule.
+SABR's data role in this project is already counted at entry 5:
+it publishes the Lahman database. *Health: via Lahman only.*
+
+**9. National Baseball Hall of Fame (extra) — REFERENCE-ONLY.**
+Homepage HTTP 200 (2026-11-02). A museum / editorial site —
+plaques, exhibits, stories — with no API, download, or
+machine-readable records product on offer. *Health: editorial
+features only, no data.*
+
+**Wiring decision: nothing new wires in — on evidence, not by
+default.** The candidate job was a records cross-check, so the
+repo was searched first (repo-wide grep for record language —
+streak / all-time / single-season / career record / the
+canonical totals — across docs, src, and data artifacts,
+2026-11-02): **the demo states no canonical historical
+records**, so there is nothing for a record book to cross-check,
+and no surface was invented for one. What the sweep settles:
+(a) the citation authority is named and verified — a record
+stated anywhere in the demo from now on cites the Elias record
+book or MLB's official publications, by hand; (b) Baseball
+Almanac and the Hall of Fame stand as reference-only;
+(c) the dashboard footer is UNCHANGED (it lists active sources
+only; none of these became active); (d) the platform's
+historical depth remains Retrosheet + Lahman + Chadwick,
+already in place. Platform and gate unchanged and re-verified
+this cycle (see BML): ingest 25/0, curate 19 tables, parity
+r = 0.889 / 201, gate 75 checks ALL PASS.
