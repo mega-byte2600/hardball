@@ -1858,3 +1858,51 @@ count unchanged at 23. No NPB→MLB translation factor claimed anywhere.
 - Next: wire refresh_live_feeds.py into the 6-hourly job
   (parent lane); Figure 9 disclosure is an owner item; final
   release cut before Dec 1.
+
+---
+## Cycle 57 — evidence surveillance: PubMed behind Figure 14 (2026-11-02, owner-directed)
+- Built: `src/pull_evidence_surveillance.py` — four fixed PubMed
+  lanes via NCBI E-utilities (keyless, `tool=hardball`, fail
+  closed on any non-200, 6-day staleness guard). Deterministic
+  selection (SR/MA first, then most recent; 3 cards/lane);
+  abstracts stored per card in `data/evidence_surveillance.json`.
+  Plain headlines/Findings live in the overlay
+  `data/evidence_plain_lines.json`, merged by the pull; the page
+  generator fails closed if a selected card lacks one.
+- Built: `docs/EVIDENCE.html` via `src/make_evidence_page.py`
+  (one-pager pattern, committed artifacts only) — professional
+  plain language, lane intros, a Finding per card drawn ONLY from
+  its stored abstract, AMA citation + DOI + PubMed link as the
+  credibility layer, labeled "Literature surveillance — context,
+  not a model input." The page intro names its anchor: Figure 14
+  measures the playtime injuries take away; this page is the
+  literature under that measurement. Dashboard: one asterisked
+  footnote line under the Figure 14 panel with the four lane
+  counts and the page link (owner's final form — no block, no
+  panel chrome); footer gains PubMed / NCBI E-utilities.
+- Measured: lane counts as run 2026-11-02 — UCL return to play
+  157; baseball prevention & workload 426; cellular recovery
+  404; tendon healing & biologics 119 (SR/MA in query). Re-pull
+  reproduced the identical 12 PMIDs (selection is deterministic).
+- Learned (flagged, no claim changed): the biologics evidence is
+  weak where it is most marketed — two RCT meta-analyses found no
+  patient-reported-outcome benefit for platelet concentrates/PRP
+  in ACL reconstruction; a 419-study scoping review calls the
+  PRP/stem-cell evidence inconsistent. UCL return-to-play across
+  21 studies spans 62.5%–100% — wide, like the Cycle 56
+  delivered-WAR intervals. Also: `fact_il_stints` has no
+  body-part field and its free-text injury strings do not support
+  a clean body-part split of IL days (≈25% of days
+  unclassifiable) — the owner's data-driven intro line was
+  checked and NOT shipped rather than forced (see scorecard).
+- GATE: ingest 25 datasets / 0 failures; curate 19 tables, all
+  contracts pass; warehouse rebuilt; parity r = 0.889 / 201;
+  gate ALL PASS offline (75 checks, was 71 — four new evidence
+  checks pin the artifact, every rendered card on the page, the
+  Figure 14 footnote, and the footer); spellcheck green. GitHub
+  Actions ignored per the owner's blackout directive. No browser
+  visual QA (standing rule).
+- Next: wire `src/pull_evidence_surveillance.py` into the
+  6-hourly job alongside `src/refresh_live_feeds.py` — the same
+  pending cron-wiring decision (parent lane); Figure 9
+  disclosure is an owner item; final release cut before Dec 1.
