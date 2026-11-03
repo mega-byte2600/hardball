@@ -1,0 +1,274 @@
+{
+ "cycle": 75,
+ "title": "Bat-speed exhibit \u2014 distribution and stability (context only)",
+ "generated_by": "src/bml_cycle75.py",
+ "sources": {
+  "boards": [
+   "data/savant_bat_tracking_2024.json",
+   "data/savant_bat_tracking_2025.json",
+   "data/savant_bat_tracking_2026.json"
+  ],
+  "verdicts": "data/savant_test.json (Cycle 20)",
+  "register": "data/claims_register.json (claim N04)"
+ },
+ "reconciliation": {
+  "mirror_found": true,
+  "years": {
+   "2024": {
+    "repo_rows": 595,
+    "mirror_rows": 595,
+    "matched": 595,
+    "avg_bat_speed_exact": 595,
+    "swing_length_exact": 595
+   },
+   "2025": {
+    "repo_rows": 619,
+    "mirror_rows": 619,
+    "matched": 619,
+    "avg_bat_speed_exact": 619,
+    "swing_length_exact": 619
+   },
+   "2026": {
+    "repo_rows": 619,
+    "mirror_rows": 619,
+    "matched": 619,
+    "avg_bat_speed_exact": 619,
+    "swing_length_exact": 619
+   }
+  }
+ },
+ "stability": {
+  "all_matched": {
+   "pairs": {
+    "2024_2025": {
+     "n": 490,
+     "r": 0.908397
+    },
+    "2025_2026": {
+     "n": 487,
+     "r": 0.905006
+    }
+   },
+   "pooled": {
+    "n_pairs": 977,
+    "r": 0.907032
+   },
+   "method": "Pearson r of avg_bat_speed, players matched by player_id across the committed boards as published (no added filter); pooled = both transitions concatenated"
+  },
+  "qualified_250": {
+   "pairs": {
+    "2024_2025": {
+     "n": 298,
+     "r": 0.922316
+    },
+    "2025_2026": {
+     "n": 293,
+     "r": 0.92928
+    }
+   },
+   "pooled": {
+    "n_pairs": 591,
+    "r": 0.925343
+   },
+   "method": "same computation with a >=250 competitive-swing minimum in both seasons"
+  },
+  "savant_test_committed": {
+   "yoy_r_by_pair": [
+    0.919,
+    0.924
+   ],
+   "mean_r": 0.921
+  },
+  "note": "The Cycle 20 committed mean (0.921) sits on a qualified basis: with a >=250-swing minimum in both seasons these boards give 0.922 and 0.929. The unqualified matched computation gives 0.907 pooled. The difference is the qualification, not the data."
+ },
+ "distribution_2026": {
+  "n": 619,
+  "min": 61.7249,
+  "p10": 68.4471,
+  "p25": 69.9459,
+  "median": 71.8219,
+  "mean": 71.7747,
+  "sd": 2.6804,
+  "p75": 73.6016,
+  "p90": 75.1014,
+  "max": 79.4485
+ },
+ "top_bottom_2026": {
+  "min_swings": 250,
+  "qualified_n": 403,
+  "fastest": [
+   {
+    "player_id": 691406,
+    "name": "Caminero, Junior",
+    "avg_bat_speed": 79.4485,
+    "swing_length": 8.7105,
+    "squared_up_per_swing": 0.2293,
+    "blast_per_swing": 0.1852,
+    "swings_competitive": 1064
+   },
+   {
+    "player_id": 691023,
+    "name": "Walker, Jordan",
+    "avg_bat_speed": 79.2622,
+    "swing_length": 8.3365,
+    "squared_up_per_swing": 0.1982,
+    "blast_per_swing": 0.1545,
+    "swings_competitive": 1100
+   },
+   {
+    "player_id": 701762,
+    "name": "Kurtz, Nick",
+    "avg_bat_speed": 78.1918,
+    "swing_length": 7.7592,
+    "squared_up_per_swing": 0.1692,
+    "blast_per_swing": 0.1392,
+    "swings_competitive": 668
+   },
+   {
+    "player_id": 701358,
+    "name": "Smith, Cam",
+    "avg_bat_speed": 77.9324,
+    "swing_length": 7.6929,
+    "squared_up_per_swing": 0.1685,
+    "blast_per_swing": 0.1146,
+    "swings_competitive": 1021
+   },
+   {
+    "player_id": 665833,
+    "name": "Cruz, Oneil",
+    "avg_bat_speed": 77.7034,
+    "swing_length": 7.5316,
+    "squared_up_per_swing": 0.2031,
+    "blast_per_swing": 0.1435,
+    "swings_competitive": 655
+   },
+   {
+    "player_id": 669003,
+    "name": "Mitchell, Garrett",
+    "avg_bat_speed": 77.638,
+    "swing_length": 7.2523,
+    "squared_up_per_swing": 0.2116,
+    "blast_per_swing": 0.1548,
+    "swings_competitive": 827
+   },
+   {
+    "player_id": 666176,
+    "name": "Adell, Jo",
+    "avg_bat_speed": 77.4245,
+    "swing_length": 7.7142,
+    "squared_up_per_swing": 0.1818,
+    "blast_per_swing": 0.1229,
+    "swings_competitive": 1221
+   },
+   {
+    "player_id": 673357,
+    "name": "Robert Jr., Luis",
+    "avg_bat_speed": 77.2503,
+    "swing_length": 7.7217,
+    "squared_up_per_swing": 0.188,
+    "blast_per_swing": 0.1178,
+    "swings_competitive": 399
+   }
+  ],
+  "slowest": [
+   {
+    "player_id": 680757,
+    "name": "Kwan, Steven",
+    "avg_bat_speed": 62.401,
+    "swing_length": 6.167,
+    "squared_up_per_swing": 0.4293,
+    "blast_per_swing": 0.0163,
+    "swings_competitive": 799
+   },
+   {
+    "player_id": 650333,
+    "name": "Arraez, Luis",
+    "avg_bat_speed": 63.1128,
+    "swing_length": 5.8693,
+    "squared_up_per_swing": 0.4255,
+    "blast_per_swing": 0.0166,
+    "swings_competitive": 1027
+   },
+   {
+    "player_id": 805779,
+    "name": "Wilson, Jacob",
+    "avg_bat_speed": 64.6858,
+    "swing_length": 6.2255,
+    "squared_up_per_swing": 0.3296,
+    "blast_per_swing": 0.0615,
+    "swings_competitive": 537
+   },
+   {
+    "player_id": 623168,
+    "name": "Heineman, Tyler",
+    "avg_bat_speed": 65.0144,
+    "swing_length": 7.0246,
+    "squared_up_per_swing": 0.2679,
+    "blast_per_swing": 0.0218,
+    "swings_competitive": 321
+   },
+   {
+    "player_id": 802415,
+    "name": "Simpson, Chandler",
+    "avg_bat_speed": 65.0875,
+    "swing_length": 6.569,
+    "squared_up_per_swing": 0.4193,
+    "blast_per_swing": 0.0254,
+    "swings_competitive": 787
+   },
+   {
+    "player_id": 624428,
+    "name": "Frazier, Adam",
+    "avg_bat_speed": 65.1703,
+    "swing_length": 6.8321,
+    "squared_up_per_swing": 0.2383,
+    "blast_per_swing": 0.0273,
+    "swings_competitive": 256
+   },
+   {
+    "player_id": 543877,
+    "name": "V\u00e1zquez, Christian",
+    "avg_bat_speed": 65.5571,
+    "swing_length": 6.7059,
+    "squared_up_per_swing": 0.2967,
+    "blast_per_swing": 0.0561,
+    "swings_competitive": 428
+   },
+   {
+    "player_id": 663494,
+    "name": "Torres, Bryan",
+    "avg_bat_speed": 65.8268,
+    "swing_length": 6.4847,
+    "squared_up_per_swing": 0.3182,
+    "blast_per_swing": 0.0315,
+    "swings_competitive": 286
+   }
+  ]
+ },
+ "team_lens": {
+  "status": "cut",
+  "reason": "No committed player-to-team join covers the 2026 board: fact_stat_lines 2026 hitting covers a selected subset, the Steamer 2027 file carries no team for any board player, and fact_proj_hitters is a 201-player benchmark subset. A team split on ~22% coverage would be a selected-sample mean presented as a team profile, so no team lens is printed.",
+  "coverage": {
+   "board_players_2026": 619,
+   "fact_stat_lines_2026_hitting": {
+    "players": 135,
+    "board_covered": 135
+   },
+   "fact_proj_hitters": {
+    "players": 201,
+    "board_covered": 199
+   },
+   "steamer_2027_bat": {
+    "board_rows": 618,
+    "team_nonnull": 0
+   }
+  }
+ },
+ "n04": {
+  "claim": "Savant trait adjustments improve Marcel projections.",
+  "status": "NOT SUPPORTED",
+  "key_numbers": "Bat speed is the most stable trait (YoY r about 0.92) and still made projections worse out-of-sample in both directions on both metrics; nothing adopted",
+  "location": "Figure 19 (Savant traits) \u2014 diagnostics only",
+  "f3_verdict": "DROPPED. Worsened OOS MAE in BOTH directions on BOTH metrics despite being the most stable trait family \u2014 Marcel's outcome history already prices bat speed. The literature spine's open question is answered: no, bat speed does not improve this projection."
+ }
+}

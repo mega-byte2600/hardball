@@ -2436,3 +2436,47 @@ No claim or data changed; dashboard untouched (still 25 figures).
   open BML question — already ANSWERED NEGATIVE as a projection feature by
   savant_test.json, so the open thread is product/demo framing only (e.g. a
   novel bat-speed exhibit), NOT a modeling claim.
+
+## Cycle 75 — BAT-SPEED EXHIBIT: the trait as context, never as a claim (2026-11-03)
+
+- QUESTION (from the Cycle 73 TODO handoff): bat speed / swing-path /
+  attack-angle as an open product thread. The modeling question was
+  already answered negative by Cycle 20 (data/savant_test.json,
+  claim N04 NOT SUPPORTED), so this cycle builds the demo exhibit
+  only — no projection claim added anywhere, nothing re-tested.
+- DATA: committed Savant bat-tracking boards
+  (data/savant_bat_tracking_2024/2025/2026.json; 595/619/619
+  players). CORROBORATION: reconciled against the platform raw
+  cache (mirror CSVs of the same boards) — counts equal and
+  avg_bat_speed + swing_length EXACT for every matched player,
+  1,833 of 1,833 player-seasons. Pitch-level attack-angle /
+  swing-tilt columns are not in the committed data; the exhibit
+  is scoped to bat speed + swing length + squared-up/blast and
+  does not show or promise attack angle.
+- MATH (all recomputed in the gate from the boards; artifact by
+  src/bml_cycle75.py -> data/bat_speed_exhibit_2027.json):
+  stability of avg_bat_speed, players matched by player_id —
+  2024->2025 r = 0.908 (n = 490), 2025->2026 r = 0.905 (n = 487),
+  pooled r = 0.907 (977 pairs). Cycle 20's committed 0.921
+  (yoy_r_by_pair 0.919/0.924) reconciles as qualification: with
+  a >=250-competitive-swing minimum in both seasons the same
+  boards give 0.922 / 0.929 (pooled 0.925). The exhibit prints
+  the recomputed values and the reconciliation, never the .92
+  copied. 2026 distribution (n = 619): median 71.8 mph, middle
+  half 70.0-73.6, range 61.7-79.4. Fastest/slowest tables at
+  >=250 competitive swings (403 qualify): fastest Caminero
+  79.4 mph; slowest Kwan 62.4.
+- TEAM LENS: CUT on coverage evidence, recorded in the artifact:
+  fact_stat_lines 2026 hitting covers 135 of 619 board players
+  (selected subset), Steamer 2027 carries Team for 0 of 618,
+  fact_proj_hitters covers 199 (benchmark subset). No team split
+  printed rather than a partial one wearing team names.
+- DASHBOARD: companion panel directly under Figure 19 in
+  Explorer ("Bat speed, up close — context only"), rendered only
+  from the artifact, fail-closed when absent. Carries the N04
+  label and the register claim verbatim with its NOT SUPPORTED
+  status. Figure count stays 25; Story/Boardroom untouched.
+- GATE: 97 checks ALL PASS (94 + 3 Cycle 75: artifact recompute
+  in-gate, panel placement + verbatim claim + rendered stats,
+  no projection-claim wording) + spellcheck green + platform
+  clean (curate 19 tables, parity r = 0.889 / 201).

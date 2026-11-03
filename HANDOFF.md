@@ -1361,3 +1361,46 @@ The slate closes. Two parts:
   Nov 2". Gate ALL PASS + spellcheck green; PR merged.
 - Remaining before Dec 1: Sportradar trial ~Nov 15 (salaries 24/30,
   forced-seller 6/7); final frozen-main release cut.
+
+## Cycle 75 — bat-speed exhibit under Figure 19 (2026-11-03)
+
+The Cycle 73 TODO handoff, executed as product framing only. A
+companion exhibit now sits directly under Figure 19 in Explorer:
+the 2026 bat-speed distribution and the trait's year-to-year
+stability, labeled context only. Bat speed stays OUT of every
+projection — Cycle 20 tested it as an adjustment and dropped it
+(claim N04, NOT SUPPORTED); the exhibit quotes the register claim
+verbatim and carries the NOT SUPPORTED status on its face.
+Figure count stays 25; Story stays 6 chapters; no headline
+anywhere changes.
+
+- Artifact: src/bml_cycle75.py -> data/bat_speed_exhibit_2027.json.
+  Every printed number is computed from the committed Savant
+  bat-tracking boards; no hand-entered values (the N04 text is
+  copied from the register by the script).
+- Corroboration (owner directive: all math validated, two
+  sources): the repo boards reconcile EXACTLY against the
+  platform raw cache — 595/619/619 players, avg_bat_speed and
+  swing_length identical for every player, all three years.
+  Stability computed two ways: per transition r = 0.908
+  (2024->2025, n = 490) and 0.905 (2025->2026, n = 487); pooled
+  r = 0.907 (977 pairs). The Cycle 20 committed 0.921 reconciles
+  as a qualification difference: with a >=250-competitive-swing
+  minimum in both years the same boards give 0.922 / 0.929.
+- Team lens CUT: no committed player-to-team join covers the
+  board (fact_stat_lines 2026 hitting covers 135 of 619, a
+  selected subset; the Steamer 2027 file carries no team for any
+  board player). The panel states this in one line instead of
+  printing a selected-sample split. Attack angle / swing tilt
+  are not in the committed data and are not shown.
+- Gate: 97 checks ALL PASS (94 + 3 new Cycle 75 checks: the
+  artifact recomputes from the boards in the gate itself; the
+  panel renders in Explorer only with the N04 label and the
+  verbatim register claim; no projection-claim wording).
+  Spellcheck green. Platform: curate 19 tables, parity
+  r = 0.889 / 201.
+- Release: per the Cycle 60 pattern (release commit atop main
+  carrying only the rebuilt dashboard; lightweight tag taken at
+  cut time; GitHub release via API). Published file read back
+  from the tag tree and probed (exhibit + N04 label, 25 figures,
+  crest stamp).

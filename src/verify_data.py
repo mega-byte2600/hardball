@@ -238,6 +238,127 @@ def main() -> int:
         check("Cycle 70: crest data-as-of stamp, every date traced to "
               "its feed artifact", False, "a feed artifact is missing")
 
+    # --- Cycle 75: bat-speed exhibit (context only, claim N04) -----
+    _bs_path = DATA / "bat_speed_exhibit_2027.json"
+    if _bs_path.exists():
+        import math as _math
+
+        def _pearson75(xs, ys):
+            _n = len(xs)
+            _mx = _math.fsum(xs) / _n
+            _my = _math.fsum(ys) / _n
+            _sxy = _math.fsum((x - _mx) * (y - _my)
+                              for x, y in zip(xs, ys))
+            _sxx = _math.fsum((x - _mx) ** 2 for x in xs)
+            _syy = _math.fsum((y - _my) ** 2 for y in ys)
+            return _sxy / _math.sqrt(_sxx * _syy)
+
+        def _quant75(vals, q):
+            _sv = sorted(vals)
+            _pos = q * (len(_sv) - 1)
+            _lo = int(_math.floor(_pos))
+            _hi = min(_lo + 1, len(_sv) - 1)
+            return _sv[_lo] * (1 - (_pos - _lo)) + _sv[_hi] * (_pos - _lo)
+
+        _bs = json.loads(_bs_path.read_text())
+        _boards75 = {}
+        for _y in (2024, 2025, 2026):
+            _boards75[_y] = {int(r["player_id"]): r for r in json.loads(
+                (DATA / f"savant_bat_tracking_{_y}.json").read_text())}
+        _px, _py, _pair_r, _pair_n = [], [], {}, {}
+        for _a, _b in ((2024, 2025), (2025, 2026)):
+            _ids = [p for p in _boards75[_a] if p in _boards75[_b]]
+            _xs = [float(_boards75[_a][p]["avg_bat_speed"]) for p in _ids]
+            _ys = [float(_boards75[_b][p]["avg_bat_speed"]) for p in _ids]
+            _pair_r[f"{_a}_{_b}"] = _pearson75(_xs, _ys)
+            _pair_n[f"{_a}_{_b}"] = len(_ids)
+            _px += _xs
+            _py += _ys
+        _pool_r = _pearson75(_px, _py)
+        _stab = _bs["stability"]["all_matched"]
+        _ok_stab = (
+            abs(_pair_r["2024_2025"] - _stab["pairs"]["2024_2025"]["r"])
+            < 1e-4
+            and abs(_pair_r["2025_2026"]
+                    - _stab["pairs"]["2025_2026"]["r"]) < 1e-4
+            and abs(_pool_r - _stab["pooled"]["r"]) < 1e-4
+            and _stab["pairs"]["2024_2025"]["n"] == _pair_n["2024_2025"]
+            and _stab["pairs"]["2025_2026"]["n"] == _pair_n["2025_2026"]
+            and _stab["pooled"]["n_pairs"] == len(_px))
+        _vals26 = [float(r["avg_bat_speed"])
+                   for r in _boards75[2026].values()]
+        _dist = _bs["distribution_2026"]
+        _ok_dist = (_dist["n"] == len(_vals26) and all(
+            abs(_quant75(_vals26, q) - _dist[k]) < 1e-3
+            for q, k in ((0.0, "min"), (0.25, "p25"), (0.5, "median"),
+                         (0.75, "p75"), (1.0, "max"))))
+        _minsw = _bs["top_bottom_2026"]["min_swings"]
+        _qual75 = [r for r in _boards75[2026].values()
+                   if r["swings_competitive"] >= _minsw]
+        _fast = sorted(_qual75,
+                       key=lambda r: -float(r["avg_bat_speed"]))[:8]
+        _slow = sorted(_qual75,
+                       key=lambda r: float(r["avg_bat_speed"]))[:8]
+        _ok_tb = (
+            [r["name"] for r in _fast]
+            == [r["name"] for r in _bs["top_bottom_2026"]["fastest"]]
+            and [r["name"] for r in _slow]
+            == [r["name"] for r in _bs["top_bottom_2026"]["slowest"]]
+            and _bs["top_bottom_2026"]["qualified_n"] == len(_qual75))
+        check("Cycle 75: exhibit artifact recomputes from the "
+              "committed boards (stability per-pair + pooled, "
+              "distribution, top/bottom)",
+              _ok_stab and _ok_dist and _ok_tb,
+              f"stab={_ok_stab} dist={_ok_dist} tb={_ok_tb} "
+              f"pooled r recomputed {_pool_r:.6f} vs artifact "
+              f"{_stab['pooled']['r']}")
+        _ex75 = html.split('id="mode-explorer"', 1)[1]
+        _ex75 = re.split(r'id="mode-|<div class="srcbox"', _ex75)[0]
+        _st75 = html.split('id="mode-story"', 1)[1]
+        _st75 = _st75.split('id="mode-boardroom"', 1)[0]
+        _mi = _ex75.find("Bat speed, up close")
+        _seg = ""
+        if _mi >= 0:
+            _rest = _ex75[_mi:]
+            _cut = _rest.find('class="panel"')
+            _seg = _rest[:_cut] if _cut > 0 else _rest[:8000]
+        _reg75 = json.loads((DATA / "claims_register.json").read_text())
+        _n04 = next(c for c in _reg75["claims"] if c["id"] == "N04")
+        check("Cycle 75: exhibit renders under Figure 19 in Explorer "
+              "only, N04 label present, register claim quoted "
+              "verbatim, rendered stats match the artifact",
+              _mi >= 0 and "Bat speed, up close" not in _st75
+              and "Context only — bat speed was tested as a "
+              "projection adjustment and dropped" in _seg
+              and "NOT SUPPORTED" in _seg
+              and _n04["claim"] in _seg
+              and f"{_stab['pooled']['r']:.3f}" in _seg
+              and f"{_dist['median']:.1f}" in _seg
+              and _bs["top_bottom_2026"]["fastest"][0]["name"] in _seg
+              and _bs["top_bottom_2026"]["slowest"][0]["name"] in _seg,
+              "panel present in explorer" if _mi >= 0
+              else "panel missing from explorer")
+        check("Cycle 75: exhibit carries no projection-claim "
+              "wording for bat speed",
+              _mi >= 0
+              and "improves projection" not in _seg.lower()
+              and "improve projections" not in _seg.lower()
+              and "better projection" not in _seg.lower()
+              and "boosts projection" not in _seg.lower(),
+              "banned wording found in the exhibit segment")
+    else:
+        check("Cycle 75: exhibit artifact recomputes from the "
+              "committed boards (stability per-pair + pooled, "
+              "distribution, top/bottom)", False,
+              "bat_speed_exhibit_2027.json missing")
+        check("Cycle 75: exhibit renders under Figure 19 in Explorer "
+              "only, N04 label present, register claim quoted "
+              "verbatim, rendered stats match the artifact", False,
+              "bat_speed_exhibit_2027.json missing")
+        check("Cycle 75: exhibit carries no projection-claim "
+              "wording for bat speed", False,
+              "bat_speed_exhibit_2027.json missing")
+
     # --- HS-2 verdict artifact: status + benchmark on record -------
     hs_path = DATA / "hakes_sauer_verdict.json"
     if hs_path.exists():
