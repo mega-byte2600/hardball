@@ -14,6 +14,7 @@ under `data/`; raw payloads archived under `data/raw/` (gitignored).
 |---|---|---|
 | MLB Stats API — historical seasons | `/stats` qualified leaders, 2023+2024 | Extended the lake 2023–2026 → enabled the Cycle 21 Marcel backtest |
 | MLB Stats API — people | `/people?personIds=` batched | Real birthdates/ages for all 379 lake players (`player_ages.json`) |
+| MLB Stats API — free agents | `/people/freeAgents?season=2026` | Canonical eligibility, original club, status, and free-agent type for the tracker; joined to Spotrac by MLBAM id |
 | MLB Stats API — minors | `/teams?sportId=11/12`, `/stats` per affiliate | Cycle 23 pipeline index (AAA/AA under-26 depth, 30 orgs) |
 | Baseball Savant — expected stats | `/expected_statistics?...&csv=true` 2023–2026 | Cycle 20 Q1: xwOBA beats actual wOBA as next-year input (all 3 pairs) |
 | Baseball Savant — batted ball | `/statcast_leaderboard?...&csv=true` 2023–2026 | EV/barrels/sweet-spot; Cycle 20 Q2/Q3 |
@@ -1257,3 +1258,21 @@ Shed sets on three bases (minimal largest-first prefix covering each gap; amount
 NYM, NYY, PHI, TOR and ATL pick identical players on all three bases. LAD agrees on Spotrac and AAV (Ohtani + Tucker) and differs on LRP (Glasnow + Tucker): Cot's LRP carries Ohtani's deferred money at present value, Spotrac at the $70M nominal. CHC has no Spotrac rows; both Cot's bases pick the same single contract — Alex Bregman ($29,527,000 LRP) — which covers the $4,019,956 gap ($249,319,956 payroll − $245,300,000 cap). Figure 11 coverage is now 7 of 7, with CHC's basis labeled in the artifact, the figure and the ledger.
 
 External spot check: USA TODAY's published MLB Labor Relations Department final-2026 payroll list (2026-09-27) against the demo's Spotrac totals — NYM +0.02%, LAD −0.39%, CLE −0.35%, ATH −0.25%, MIA −0.36%; NYY −1.21%, MIL −2.19%, TB +2.81%. The largest deviations are deadline sellers on a later snapshot (WSH −11.16%, MIN −5.40%, CHW −5.16%). Different basis and snapshot: context corroboration only, never merged. Player-level: Vladimir Guerrero Jr. at $40,214,286 in USA TODAY's highest-paid list matches the demo's Spotrac row to the dollar.
+
+## LIVE CONNECTOR CHECK — 2026-11-03
+
+A direct connectivity check was run before the tracker integration commit:
+
+| Endpoint | Result | Role |
+|---|---|---|
+| MLB Stats API /people/freeAgents?season=2026 | HTTP 200 | Official eligibility/status layer |
+| MLB Stats API /transactions?startDate=2026-11-01&endDate=2026-11-03&sportId=1 | HTTP 200 | Transaction and signing context |
+| Baseball Savant CSV leaderboard | HTTP 200 | Statcast metrics |
+| FanGraphs projections endpoint | HTTP 200 | Projection benchmark snapshot |
+| Spotrac | No public API; cached page pulls remain rate-limited | Market and prior-AAV layer only |
+
+The tracker now keeps these roles separate: MLB determines who is eligible and
+what status they have; Spotrac supplies market and prior-contract fields; FanGraphs
+supplies projected WAR. No source is silently treated as authoritative for fields
+it does not publish.
+
