@@ -2077,3 +2077,51 @@ count unchanged at 23. No NPB→MLB translation factor claimed anywhere.
   modeling gap — the honest fix order is land complete
   signing terms first (Sportradar coverage check, ~Nov 15),
   then run the pre-registered fit unchanged.
+
+## Cycle 62 — BLEND-1: projection blend + the benchmark page (2026-11-02, slate item 2 of 6)
+
+- Build: slate item 2 asked for a Steamer + Marcel blend,
+  adopted only if it beat both parents on held-out actuals
+  (bar fixed before results: weights fit on 2025, judged on
+  2026; hitter MAE must beat both parents, pitcher MAE no
+  worse than the best parent), plus the honest benchmark
+  page either way (`src/bml_cycle62.py` ->
+  `data/projection_blend_2027.json`).
+- Measured: the Steamer leg of any paired set is absent —
+  the repo holds Steamer only for 2027 (no outcomes exist);
+  the FanGraphs API ignores its season parameter (probe:
+  the "2026" response is the current set, 4,164 IDs in
+  common with the committed 2027 file at update-noise
+  distance); Steamer's own pre-season archive ends at 2024
+  and the Marcel inputs for those targets are not committed
+  (fact_stat_lines begins 2023). The scoreable forecasters
+  were scored on paired sets from the curated warehouse
+  (hitters n = 88 / 80, pitchers n = 23 / 22 for 2025 /
+  2026; Cycles 21/24 variant-B backtests regenerated from
+  fact_stat_lines and matched to the committed artifacts
+  exactly before any new number was computed). 2026 judge
+  window: hitter OBP MAE naive .0265 vs Marcel .0237
+  (r .298 vs .410); pitcher ERA MAE naive 1.0177 vs Marcel
+  .9394 (r −.086 vs −.020 — ranking near chance for both,
+  n = 22).
+- Verdict: blend NOT ADOPTED — unscored cannot meet a
+  held-out bar; no weights fit, no shadow run. Steamer
+  stays the published 2027 set, Marcel the spine. The
+  dashboard gains the benchmark panel under Figure 18
+  ("How good are these projections?") rendering the table
+  from the artifact — agreement (Fig. 18) is not accuracy,
+  and the panel says which rows cannot be scored and why.
+- GATE: 81 checks ALL PASS (3 new BLEND-1 checks: artifact
+  complete for all four forecasters, reproduction anchor
+  matches the committed backtests, panel strings verbatim);
+  spellcheck green; platform: 17 rebuilt tables
+  byte-identical (2 skipped in the clean tree — raw absent,
+  committed parquets stand), warehouse from 19 tables,
+  parity r = 0.889 / 201. Dashboard changed -> release
+  v1.1.2 per the Cycle 60 pattern.
+- Learn: a projection system's accuracy history is an
+  asset that has to be captured when the projections are
+  pulled — Steamer 2027 is committed today precisely so it
+  can be scored in a year. The blend question is not dead;
+  it is scheduled by the calendar: first honest test after
+  the 2027 season, on this same paired design.

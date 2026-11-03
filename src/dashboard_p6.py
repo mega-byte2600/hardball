@@ -15,6 +15,7 @@ appended last so figures 1–23 keep their numbers)
 plus the Cycle 49 roster-optimizer panel (Explorer-only,
 appended last so figures 1–24 keep their numbers)
 plus the Cycle 50 sensitivity strip under Figure 25 (no new figure),
+plus the Cycle 62 held-out benchmark panel under Figure 18 (no new figure),
 presented in three modes (Story, Boardroom, Explorer) with stat cards. Builds from a
 clean clone OFFLINE from committed snapshots (audit G1).
 """
@@ -892,6 +893,67 @@ def _evidence_note_html():
     return ('<p class="srcline evfoot">* <a href="../docs/EVIDENCE.html">'
             "What the evidence says now</a> — the published research "
             "on injury recovery and prevention. " + counts + ".</p>")
+
+
+def _benchmark_panel_html():
+    """Cycle 62 (BLEND-1): the held-out accuracy panel directly under
+    Figure 18 (the Marcel–Steamer benchmark) in Explorer — Figure 18
+    shows agreement between the two systems; this panel shows accuracy
+    against outcomes, which is a different thing. Renders ONLY from
+    the committed artifact data/projection_blend_2027.json; absent the
+    artifact the panel is omitted entirely (fail closed, Cycle 51/57
+    pattern). Not a figure: the count stays 25."""
+    path = os.path.join(DATA, "projection_blend_2027.json")
+    if not os.path.exists(path):
+        return ""
+    art = json.load(open(path))
+    res = art["results"]
+    hn = art["paired_n"]["hitters"]["2026"]
+    pn = art["paired_n"]["pitchers"]["2026"]
+    ho = res["hitters"]["2026"]["OBP"]
+    pe = res["pitchers"]["2026"]["ERA"]
+
+    def _row(label, h, p):
+        if "mae" not in h:
+            return (f"<tr><td>{label}</td><td colspan=\"3\">not scored</td>"
+                    f"<td colspan=\"3\">not scored</td></tr>")
+        return (f"<tr><td>{label}</td>"
+                f"<td>{h['r']:.3f}</td><td>{h['rmse']:.3f}</td><td>{h['mae']:.3f}</td>"
+                f"<td>{p['r']:.3f}</td><td>{p['rmse']:.3f}</td><td>{p['mae']:.3f}</td></tr>")
+
+    table = ("<table style=\"border-collapse:collapse;font-size:13px;margin:8px 0\">"
+             "<tr><th style=\"text-align:left;padding:2px 10px 2px 0\">Forecaster</th>"
+             "<th style=\"padding:2px 8px\">Hitter OBP r</th>"
+             "<th style=\"padding:2px 8px\">RMSE</th>"
+             "<th style=\"padding:2px 8px\">MAE</th>"
+             "<th style=\"padding:2px 8px\">Pitcher ERA r</th>"
+             "<th style=\"padding:2px 8px\">RMSE</th>"
+             "<th style=\"padding:2px 8px\">MAE</th></tr>"
+             + _row("Last season, repeated", ho["naive"], pe["naive"])
+             + _row("Marcel (this demo)", ho["marcel"], pe["marcel"])
+             + _row("Steamer", ho["steamer"], pe["steamer"])
+             + _row("Steamer + Marcel blend", ho["blend"], pe["blend"])
+             + "</table>")
+    return ('<div class="quant"><b>How good are these projections?</b>'
+            f"<p>Held-out window: the 2026 season, scored against actuals, "
+            f"with every projection built only from 2023–2025 data. "
+            f"Hitters n = {hn} (OBP); pitchers n = {pn} (ERA).</p>"
+            + table +
+            "<p>Marcel beat repeating last season on every error measure in "
+            "2026. Pitcher ERA ranking was near chance for both forecasters "
+            "that year (n = 22).</p>"
+            "<p>Steamer — not scored: this demo holds Steamer only for 2027, "
+            "a season not yet played, so it has no outcomes to score "
+            "against. Figure 18 above measures agreement with Marcel, not "
+            "accuracy.</p>"
+            "<p>Blend status: not adopted — a blend can only be checked "
+            "where both systems have outcomes. Steamer remains the "
+            "benchmark and Marcel the spine, unchanged.</p>"
+            '<p class="srcline">Source: data/projection_blend_2027.json '
+            "(Cycle 62). Secondary metrics (SLG, WHIP) and the 2025 "
+            "reference window are in the artifact; method mirrors the "
+            "Cycle 21/24 backtests, reproduced exactly by "
+            "src/bml_cycle62.py.</p></div>")
 
 
 def panel_optimizer():
@@ -2089,6 +2151,14 @@ def build():
                 explorer += _panel(n, "explorer")
                 if n == 14:
                     explorer += _evidence_note_html()
+        elif name == "Check the Model":
+            # Cycle 62: the held-out benchmark panel goes directly
+            # under the Figure 18 (benchmark) panel — its anchor
+            # figure. Agreement (Fig. 18) vs accuracy (this panel).
+            for n in nums:
+                explorer += _panel(n, "explorer")
+                if n == 18:
+                    explorer += _benchmark_panel_html()
         else:
             explorer += "".join(_panel(n, "explorer") for n in nums)
         explorer += f'<p class="srcline">{src}</p>'

@@ -1,0 +1,274 @@
+{
+  "cycle": "62 \u2014 BLEND-1 (elite slate item 2 of 6)",
+  "question": "Does a Steamer + Marcel blend beat both parents on held-out actuals \u2014 and what is the honest accuracy table for the projections this demo publishes?",
+  "design": {
+    "paired_sets": "fact_stat_lines (curated warehouse), Cycles 21/24 loaders mirrored: hitters PA>=300 in every season used; pitchers IP>=40 in every season used. A player enters a window only with a Marcel projection, a target-season actual, and a prior-season actual.",
+    "windows": "2025 = training/reference window (where blend weights would have been fit); 2026 = held-out judge window.",
+    "forecasters": {
+      "naive": "prior-season (T-1) actual line, repeated",
+      "marcel": "shipped method (Cycles 4/11): 5-4-3 weights, shipped league constants, age term with slopes cross-fitted on the other window only",
+      "steamer": "scoreable only where a Steamer projection and the season's outcomes both exist",
+      "blend": "convex Steamer/Marcel combination; weights fit on 2025 only, judged on 2026 only"
+    },
+    "metrics": "Pearson r, RMSE, MAE; primary = hitter OBP, pitcher ERA; secondary = SLG, WHIP",
+    "bar": "Adopt the blend as a published 2027 projection set ONLY if its 2026 primary-metric MAE beats BOTH parents for hitters and is no worse than the best parent for pitchers. An unscoreable blend cannot meet the bar.",
+    "reproduction_anchor": {
+      "hitters_2025": {
+        "n": 105,
+        "mae_obp": 0.0211,
+        "mae_slg": 0.0439
+      },
+      "pitchers_2025": {
+        "ERA": {
+          "n": 28,
+          "mae": 0.561,
+          "bias_proj_minus_actual": -0.152
+        },
+        "WHIP": {
+          "n": 28,
+          "mae": 0.099,
+          "bias_proj_minus_actual": -0.009
+        }
+      },
+      "hitters_2026": {
+        "n": 91,
+        "mae_obp": 0.0244,
+        "mae_slg": 0.0501
+      },
+      "pitchers_2026": {
+        "ERA": {
+          "n": 31,
+          "mae": 0.855,
+          "bias_proj_minus_actual": -0.252
+        },
+        "WHIP": {
+          "n": 31,
+          "mae": 0.139,
+          "bias_proj_minus_actual": -0.059
+        }
+      }
+    }
+  },
+  "paired_n": {
+    "hitters": {
+      "2026": 80,
+      "2025": 88
+    },
+    "pitchers": {
+      "2026": 22,
+      "2025": 23
+    }
+  },
+  "results": {
+    "hitters": {
+      "2026": {
+        "OBP": {
+          "naive": {
+            "n": 80,
+            "r": 0.298,
+            "rmse": 0.0329,
+            "mae": 0.0265
+          },
+          "marcel": {
+            "n": 80,
+            "r": 0.41,
+            "rmse": 0.0284,
+            "mae": 0.0237
+          },
+          "steamer": {
+            "status": "not_scored",
+            "reason": "no Steamer projections exist for a completed season (see steamer_status); a blend of an unscored parent cannot be scored either"
+          },
+          "blend": {
+            "status": "not_scored",
+            "reason": "no Steamer projections exist for a completed season (see steamer_status); a blend of an unscored parent cannot be scored either"
+          }
+        },
+        "SLG": {
+          "naive": {
+            "n": 80,
+            "r": 0.363,
+            "rmse": 0.0668,
+            "mae": 0.0518
+          },
+          "marcel": {
+            "n": 80,
+            "r": 0.442,
+            "rmse": 0.0586,
+            "mae": 0.0462
+          },
+          "steamer": {
+            "status": "not_scored",
+            "reason": "no Steamer projections exist for a completed season (see steamer_status); a blend of an unscored parent cannot be scored either"
+          },
+          "blend": {
+            "status": "not_scored",
+            "reason": "no Steamer projections exist for a completed season (see steamer_status); a blend of an unscored parent cannot be scored either"
+          }
+        },
+        "_age_slopes_fit_on": 2025
+      },
+      "2025": {
+        "OBP": {
+          "naive": {
+            "n": 88,
+            "r": 0.574,
+            "rmse": 0.0279,
+            "mae": 0.0214
+          },
+          "marcel": {
+            "n": 88,
+            "r": 0.597,
+            "rmse": 0.0264,
+            "mae": 0.0198
+          },
+          "steamer": {
+            "status": "not_scored",
+            "reason": "no Steamer projections exist for a completed season (see steamer_status); a blend of an unscored parent cannot be scored either"
+          },
+          "blend": {
+            "status": "not_scored",
+            "reason": "no Steamer projections exist for a completed season (see steamer_status); a blend of an unscored parent cannot be scored either"
+          }
+        },
+        "SLG": {
+          "naive": {
+            "n": 88,
+            "r": 0.593,
+            "rmse": 0.0568,
+            "mae": 0.0446
+          },
+          "marcel": {
+            "n": 88,
+            "r": 0.58,
+            "rmse": 0.055,
+            "mae": 0.0407
+          },
+          "steamer": {
+            "status": "not_scored",
+            "reason": "no Steamer projections exist for a completed season (see steamer_status); a blend of an unscored parent cannot be scored either"
+          },
+          "blend": {
+            "status": "not_scored",
+            "reason": "no Steamer projections exist for a completed season (see steamer_status); a blend of an unscored parent cannot be scored either"
+          }
+        },
+        "_age_slopes_fit_on": 2026
+      }
+    },
+    "pitchers": {
+      "2026": {
+        "ERA": {
+          "naive": {
+            "n": 22,
+            "r": -0.086,
+            "rmse": 1.1899,
+            "mae": 1.0177
+          },
+          "marcel": {
+            "n": 22,
+            "r": -0.02,
+            "rmse": 1.0928,
+            "mae": 0.9394
+          },
+          "steamer": {
+            "status": "not_scored",
+            "reason": "no Steamer projections exist for a completed season (see steamer_status); a blend of an unscored parent cannot be scored either"
+          },
+          "blend": {
+            "status": "not_scored",
+            "reason": "no Steamer projections exist for a completed season (see steamer_status); a blend of an unscored parent cannot be scored either"
+          }
+        },
+        "WHIP": {
+          "naive": {
+            "n": 22,
+            "r": 0.266,
+            "rmse": 0.1746,
+            "mae": 0.1541
+          },
+          "marcel": {
+            "n": 22,
+            "r": 0.353,
+            "rmse": 0.1561,
+            "mae": 0.1379
+          },
+          "steamer": {
+            "status": "not_scored",
+            "reason": "no Steamer projections exist for a completed season (see steamer_status); a blend of an unscored parent cannot be scored either"
+          },
+          "blend": {
+            "status": "not_scored",
+            "reason": "no Steamer projections exist for a completed season (see steamer_status); a blend of an unscored parent cannot be scored either"
+          }
+        },
+        "_age_slopes_fit_on": 2025
+      },
+      "2025": {
+        "ERA": {
+          "naive": {
+            "n": 23,
+            "r": 0.606,
+            "rmse": 0.683,
+            "mae": 0.5761
+          },
+          "marcel": {
+            "n": 23,
+            "r": 0.656,
+            "rmse": 0.6545,
+            "mae": 0.5495
+          },
+          "steamer": {
+            "status": "not_scored",
+            "reason": "no Steamer projections exist for a completed season (see steamer_status); a blend of an unscored parent cannot be scored either"
+          },
+          "blend": {
+            "status": "not_scored",
+            "reason": "no Steamer projections exist for a completed season (see steamer_status); a blend of an unscored parent cannot be scored either"
+          }
+        },
+        "WHIP": {
+          "naive": {
+            "n": 23,
+            "r": 0.303,
+            "rmse": 0.1403,
+            "mae": 0.1187
+          },
+          "marcel": {
+            "n": 23,
+            "r": 0.451,
+            "rmse": 0.1251,
+            "mae": 0.1041
+          },
+          "steamer": {
+            "status": "not_scored",
+            "reason": "no Steamer projections exist for a completed season (see steamer_status); a blend of an unscored parent cannot be scored either"
+          },
+          "blend": {
+            "status": "not_scored",
+            "reason": "no Steamer projections exist for a completed season (see steamer_status); a blend of an unscored parent cannot be scored either"
+          }
+        },
+        "_age_slopes_fit_on": 2026
+      }
+    }
+  },
+  "steamer_status": {
+    "status": "NOT SCOREABLE \u2014 no held-out Steamer outcomes exist",
+    "evidence": [
+      "The repo holds Steamer only for 2027 (data/fg_steamer_2027_bat.json + fg_steamer_2027_pit.json, FanGraphs API pull 2026-10-31): a season not yet played, so no outcomes exist to score it against.",
+      "FanGraphs API probed 2026-11-02 with season=2026 and season=2025: the season parameter is ignored \u2014 the response is the current (2027) set (4,166 rows; 4,164 MLBAM IDs in common with the committed 2027 file, differing only at update-noise level).",
+      "steamerprojections.com's pre-season archive lists downloads only through 2024; the Marcel inputs for 2023/2024 targets (2020-2022 player lines) are not committed \u2014 fact_stat_lines begins 2023 \u2014 so no earlier paired window can be built either. Its historical-weekly-logs page returned no usable content."
+    ],
+    "agreement_not_accuracy": "What exists for Steamer is agreement with Marcel on 2027 (OBP r = 0.889, mean |diff| 0.010, n = 201 \u2014 data/fg_benchmark_2027.json), already shown on Figure 18 and labeled there as agreement, not accuracy."
+  },
+  "blend": {
+    "weights": null,
+    "weights_status": "NOT FIT \u2014 fitting requires Steamer projections for a completed season; none exist (see steamer_status).",
+    "blended_2027_projections": null
+  },
+  "verdict": "NOT ADOPTED \u2014 the blend cannot be scored, so the pre-committed bar cannot be met. Steamer remains the published 2027 projection set and Marcel the in-house spine, unchanged. No optimizer shadow run (adoption-gated).",
+  "recommendation": "Do not rewire the stack onto a blend now; the first honest test arrives after the 2027 season, when the committed Steamer 2027 set can be scored against 2027 actuals on this same paired design.",
+  "dashboard_change": "New benchmark panel under Figure 18 (Explorer, Check the Model): the held-out accuracy table for the scoreable forecasters, with Steamer and the blend shown as not scored, with the reason.",
+  "shadow_run": null
+}

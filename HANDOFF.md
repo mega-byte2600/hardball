@@ -815,3 +815,62 @@ that, not current salaries alone, is what unblocks PRICE-1
 refresh scripts is approved as slate item 6. Figure 9
 disclosure remains an owner item. Final freeze release cut
 before Dec 1.
+
+## CYCLE 62 — BLEND-1: PROJECTION BLEND + BENCHMARK PAGE (2026-11-02, slate item 2 of 6)
+
+Owner-approved slate, item 2: a Steamer + Marcel blend,
+adopted only if it beats both parents on held-out actuals
+(pre-committed bar: weights fit on 2025 only, judged on
+2026 only; hitter primary MAE beats both parents, pitcher
+no worse than the best parent), plus the honest benchmark
+page either way.
+
+**Verdict: blend NOT ADOPTED — it cannot be scored.**
+Step 0 found no paired set containing Steamer: the repo
+holds Steamer only for 2027 (a season not yet played); the
+FanGraphs API ignores its season parameter (probed
+2026-11-02 — the "2026" response is the current set);
+Steamer's pre-season archive ends at 2024 and the Marcel
+inputs for those targets (2020–2022 player lines) are not
+committed. No weights were fit and no shadow run was made
+(both adoption-gated). Steamer remains the published 2027
+projection set and Marcel the spine, unchanged.
+
+What shipped: `src/bml_cycle62.py` +
+`data/projection_blend_2027.json` — the paired benchmark
+that CAN be run, built from the curated warehouse with the
+Cycles 21/24 loaders mirrored (hitters PA >= 300, pitchers
+IP >= 40; paired n: hitters 88/80, pitchers 23/22 for
+2025/2026), opening with a reproduction assertion: the
+variant-B backtests regenerate from fact_stat_lines and
+match the committed artifacts exactly. Judge window 2026:
+hitter OBP — naive r .298 / MAE .0265, Marcel r .410 /
+MAE .0237; pitcher ERA — naive r −.086 / MAE 1.0177,
+Marcel r −.020 / MAE .9394 (ranking near chance for both,
+n = 22; stated on the panel, not hidden). Dashboard: the
+benchmark panel "How good are these projections?" under
+Figure 18 in Explorer (not a figure; count stays 25),
+rendering the table from the artifact with Steamer and the
+blend shown as not scored, with the reason. Gate gains 3
+BLEND-1 checks: **81 checks ALL PASS**; spellcheck green;
+platform clean (17 tables rebuilt byte-identical, 2
+skipped on absent raw with committed parquets standing;
+warehouse 19 tables; parity r = 0.889 / 201). Dashboard
+changed, so **release v1.1.2** is cut on the merged tree
+per the Cycle 60 pattern and the published copy probed
+from the release tarball.
+
+Recommendation on record (artifact + scorecard): do NOT
+rewire the stack onto a blend now; the first honest test
+arrives after the 2027 season, when the committed Steamer
+2027 set can be scored against 2027 actuals on this same
+paired design.
+
+## Next
+
+Slate item 3: the 2027 Cap Transition ledger as the lead
+decision surface. Sportradar trial ~Nov 15 (PRICE-1
+contracts-coverage check rides along). Cron wiring for
+both refresh scripts is approved as slate item 6. Figure 9
+disclosure remains an owner item. Final freeze release cut
+before Dec 1.
