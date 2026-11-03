@@ -32,6 +32,8 @@ import sqlite3
 import pandas as pd
 import requests
 
+from carpe import mlb_free_agents
+
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(REPO, "data")
 RAW = os.path.join(DATA, "raw", "spotrac")
@@ -165,17 +167,28 @@ def load_salaries(reg):
 
 
 def load_fa_class(reg):
+    # Spotrac remains the market and prior-AAV layer. MLB is the canonical
+    # eligibility/status layer; keep both visible and join only by MLBAM id.
+    official = {r["player_id"]: r for r in mlb_free_agents(2026)}
     html = fetch("https://www.spotrac.com/mlb/free-agents/2027/", "fa2027.html")
     t = pd.read_html(io.StringIO(html))[0]
     pcol = [c for c in t.columns if "Player" in str(c)][0]
     out = []
     for _, row in t.iterrows():
         name, qoi = _full_name(row[pcol])
-        out.append({"name": name, "player_id": resolve(reg, name), "pos": row["Pos"],
+        player_id = resolve(reg, name)
+        mlb = official.get(player_id) if player_id else None
+        out.append({"name": name, "player_id": player_id, "pos": row["Pos"],
                     "age": float(row["Age"]) if pd.notna(row["Age"]) else None,
                     "prev_team": row["Prev Team"], "prev_aav": _money(row["Prev AAV"]),
                     "type": row["Type"], "qoi": qoi,
-                    "spotrac_market_aav": _money(row["Market Value  AAV"])})
+                    "spotrac_market_aav": _money(row["Market Value  AAV"]),
+                    "mlb_free_agent_status": mlb.get("status") if mlb else None,
+                    "mlb_free_agent_type": mlb.get("free_agent_type") if mlb else None,
+                    "mlb_original_team": mlb.get("original_team") if mlb else None,
+                    "mlb_free_agent_date": mlb.get("date") if mlb else None,
+                    "mlb_status_source": "MLB Stats API /people/freeAgents"
+                    if mlb else None})
     return out
 
 
@@ -230,7 +243,7 @@ def main():
     value = sorted((r for r in fa if r["war_per_10m_prior_aav"] is not None
                     and r["steamer_war"] >= 2.0),
                    key=lambda r: -r["war_per_10m_prior_aav"])
-    fa_out = {"metadata": {"source": "Spotrac 2027 free-agents page + FanGraphs Steamer 2027 (WAR), pulled 2026-10-31",
+    fa_out = {"metadata": {"source": "Spotrac 2027 free-agents page + MLB Stats API free-agent eligibility + FanGraphs Steamer 2027 (WAR)",
                            "class_n": len(fa),
                            "with_steamer_war": len(ranked),
                            "id_matched": sum(1 for r in fa if r["player_id"]),
