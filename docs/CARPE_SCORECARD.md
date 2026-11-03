@@ -1276,3 +1276,5 @@ what status they have; Spotrac supplies market and prior-contract fields; FanGra
 supplies projected WAR. No source is silently treated as authoritative for fields
 it does not publish.
 
+Repeat the check with `.venv/bin/python src/check_connectors.py` (add `--json` for machine-readable output).
+
