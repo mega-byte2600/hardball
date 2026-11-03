@@ -1504,3 +1504,50 @@ No #c9a227 anywhere in the build — gate-checked.
 - Release: v1.1.11 per the Cycle 60 pattern. Remaining before
   Dec 1: final frozen-main release cut (its dashboard-footer
   Sportradar line edit rides along there).
+
+## Cycle 77 — live refresh (Nov 3) + gate alignment to the owner's polish lane (2026-11-03)
+
+Spotrac probe: 403 (browser UA, single GET) — logged, moved on, per
+standing rule. The salary gap stays closed on the Cycle 74 Cot's basis;
+no new Spotrac pull was attempted around the block.
+
+Live refresh (Cycle 70 cadence): FastballAPI + Statyx pulled Nov 3
+(20h watermark passed; 16 Fastball credits MTD, cap 200). IL union
+196 -> 182 (Fastball 190 -> 175, Statyx page 50 -> 16, overlap 9);
+FA-pool movement since Nov 2: 1 new IL, 7 returned, 3 status
+changes. Tracker re-pulled Nov 3 22:23 UTC: 535 -> 562 items
+(StatsAPI transactions ok, 362 SIGNED kept; MLBTR/MLB.com/ESPN/
+RotoWire ok; Google News 503 across all queries — logged and
+skipped per source, never routed around; Bluesky Jetstream timed
+out, so BUZZ ships empty per design). Evidence: SKIP (artifact
+Nov 2, inside the 6-day guard). Crest stamp now "Data as of
+Nov 3, 2026 · tracker Nov 3 · injured list Nov 3 · evidence Nov 2".
+Manifest committed feed-only (16 lines); this run's platform-ingest
+entries reference local-only raw files and were left out of the
+committed ledger.
+
+Gate alignment (mechanical, owner's own wording): the owner's
+parallel-lane polish commit f85f308f5b retitled three panels
+without updating the gate, so a fresh build from main head failed
+3 title-string checks while every other assertion in those checks
+passed and the committed dashboard still carried the old titles.
+This cycle adopts the owner's titles verbatim in verify_data.py
+(ticker "Free-agent market activity", health-cards
+"Availability-adjusted player value: measured contribution after
+availability", Fig 22 "Free-agent decision lens: projected
+contribution versus market cost") and whitelists the owner's Nov 3
+README/About vocabulary in spellcheck_gate.py (auditable,
+workflow, Bluesky, hashtag, LinkedIn, PFAC, QA, http, txt, venv,
+i'm — each verified in context; the pre-existing spellcheck
+failure on the committed dashboard is likewise from that lane,
+not from this refresh). No other gate assertion changed.
+Gate: ALL PASS; spellcheck green; platform clean (ingest 25/0,
+curate 20 tables, parity r = 0.889 / 201).
+
+Backlog (step 4h — items a–g all done or superseded by the owner's
+lane): Cycle 24 pitcher backtest re-run — artifact identical, no
+drift (pooled A MAE ERA 0.744 / WHIP 0.122, unchanged).
+
+Remaining before Dec 1: final frozen-main release cut (its
+dashboard-footer Sportradar line edit rides along there); the
+owner's open PR #56 (badge removal) is his lane's, untouched.

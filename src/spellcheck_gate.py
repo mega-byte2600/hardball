@@ -77,6 +77,15 @@ WHITELIST = {
     # Cycle 45 connected-source names — verified against the providers
     "statyx", "fastballapi", "chadwick", "tank", "sportradar", "mcp", "io",
     "lrp", "metadata", "mlbam", "rapidapi", "retrosheet", "signup",
+    # Owner-lane Nov 3 vocabulary (Cycle 77 gate alignment): README
+    # rewrite + dashboard About block + social-signals doc. Each term
+    # verified in context — auditable/workflow are English words;
+    # Bluesky/LinkedIn are platform names; PFAC is the toolkit's
+    # acronym; QA is the quality-assurance abbreviation; http/txt/
+    # venv are the protocol/extension/venv tokens in README command
+    # lines; i'm is the About-block contraction.
+    "auditable", "workflow", "bluesky", "hashtag", "linkedin", "pfac",
+    "qa", "http", "txt", "venv", "i’m",
     # Cycle 57 evidence-surveillance names/terms — verified against the
     # provider (PubMed / NCBI NLM E-utilities) and the lane vocabulary
     "pubmed", "ncbi", "nlm", "nih", "eutils", "ucl", "biologics",
