@@ -2588,6 +2588,7 @@ def build():
 .crest{background:linear-gradient(135deg,#14213d 0%,#1d3557 60%,#7a1f1f 160%);color:#fff;padding:28px 32px;border-radius:0 0 14px 14px;margin:0 0 4px;box-shadow:0 3px 14px rgba(20,33,61,.25)}
 .crest h1{margin:0;font-size:30px;letter-spacing:1px;color:#fff}
 .crest h2{margin:8px 0 0;font-size:16px;font-weight:400;color:#cbe0ff}
+.crest .asof{margin-top:10px;font-size:12.5px;color:#cbe0ff;letter-spacing:.3px}
 .mlb{background:#d50032;color:#fff;padding:2px 9px;border-radius:5px;font-size:12px;font-weight:700;letter-spacing:.5px}
 .tag{background:#cbe0ff;color:#14213d;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600}
 .note{background:#fff8e1;border-left:4px solid #f9a825;padding:10px 14px;margin:14px 0}
@@ -2663,6 +2664,7 @@ def build():
 <div class="crest">
 <h1>⚾ HARDBALL <span class="tag">P7 · demo ready · target Dec 3</span></h1>
 <h2>How the winning-cheap teams beat the market — priced against the <b>$245.3M</b> cap</h2>
+<div class="asof">__ASOF__</div>
 </div>
 <div class="hd">
 <div class="keybox"><b>COLOR KEY (used on every chart below):</b>
@@ -2850,11 +2852,52 @@ showMode("story");
     _ev_path = os.path.join(DATA, "evidence_surveillance.json")
     if os.path.exists(_ev_path):
         ev_date = json.load(open(_ev_path))["metadata"]["run_date"]
+
+    # Cycle 70 — "data as of" stamp: every date read from its own
+    # committed feed artifact at build time; a missing artifact reads
+    # "not yet pulled" for that feed, never a guessed date.
+    _MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+    def _md(iso):
+        _y, _m, _d = iso[:10].split("-")
+        return f"{_MON[int(_m) - 1]} {int(_d)}"
+
+    def _feed_date(fname, *keys):
+        _p = os.path.join(DATA, fname)
+        if not os.path.exists(_p):
+            return None
+        try:
+            _d = json.load(open(_p))
+            for _k in keys:
+                _d = _d[_k]
+            return str(_d)[:10]
+        except Exception:
+            return None
+
+    _tk_date = _feed_date("tracker_ticker_2026.json", "metadata", "pulled_at")
+    _il_date = _feed_date("il_current_live.json", "metadata", "pulled_at")
+    _ev_iso = ev_date if ev_date != "not yet pulled" else None
+    _segs = []
+    if _tk_date:
+        _segs.append(f"tracker {_md(_tk_date)}")
+    if _il_date:
+        _segs.append(f"injured list {_md(_il_date)}")
+    if _ev_iso:
+        _segs.append(f"evidence {_md(_ev_iso)}")
+    _all_dates = [d for d in (_tk_date, _il_date, _ev_iso) if d]
+    if _all_dates:
+        _head = max(_all_dates)
+        asof = (f"Data as of {_md(_head)}, {_head[:4]} · "
+                + " · ".join(_segs))
+    else:
+        asof = "Data as of — not yet pulled"
     page = (page_template.replace("__JS_INCLUDE__", js_include)
             .replace("__STORY__", story)
             .replace("__BOARDROOM__", boardroom)
             .replace("__EXPLORER__", explorer)
-            .replace("__EVIDENCE_DATE__", ev_date))
+            .replace("__EVIDENCE_DATE__", ev_date)
+            .replace("__ASOF__", asof))
 
     out = os.path.join(REPO, "dashboard", "hardball_demo.html")
     with open(out, "w") as f:
