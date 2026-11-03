@@ -212,6 +212,32 @@ def main() -> int:
           and "floor roster buys 42.0 WAR" not in html
           and "cap roster buys 52.3" not in html)
 
+    # --- Cycle 70: "data as of" stamp traces to the feed artifacts --
+    _tk_p = DATA / "tracker_ticker_2026.json"
+    _il_p = DATA / "il_current_live.json"
+    _ev_p = DATA / "evidence_surveillance.json"
+    if _tk_p.exists() and _il_p.exists() and _ev_p.exists():
+        _MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+        def _md70(iso):
+            _y, _m, _d = iso[:10].split("-")
+            return f"{_MON[int(_m) - 1]} {int(_d)}"
+
+        _tk_d = json.loads(_tk_p.read_text())["metadata"]["pulled_at"][:10]
+        _il_d = json.loads(_il_p.read_text())["metadata"]["pulled_at"][:10]
+        _ev_d = json.loads(_ev_p.read_text())["metadata"]["run_date"][:10]
+        _head70 = max(_tk_d, _il_d, _ev_d)
+        _stamp70 = (f"Data as of {_md70(_head70)}, {_head70[:4]} · "
+                    f"tracker {_md70(_tk_d)} · injured list {_md70(_il_d)}"
+                    f" · evidence {_md70(_ev_d)}")
+        check("Cycle 70: crest data-as-of stamp, every date traced to "
+              "its feed artifact", _stamp70 in html,
+              f"want: {_stamp70}")
+    else:
+        check("Cycle 70: crest data-as-of stamp, every date traced to "
+              "its feed artifact", False, "a feed artifact is missing")
+
     # --- HS-2 verdict artifact: status + benchmark on record -------
     hs_path = DATA / "hakes_sauer_verdict.json"
     if hs_path.exists():
