@@ -2283,8 +2283,18 @@ def panel_scenarios():
                "<sub>Full 26-man rosters from the real 2027 free-agent class. "
                "The floor roster captures ~89% of the cap roster's WAR — the last "
                "$74.1M buys 5.9 WAR. Switch budget below the chart.</sub>"),
-        updatemenus=[dict(buttons=buttons, direction="right", x=0.0, y=-0.03,
-                          showactive=True, active=0)],
+        updatemenus=[dict(
+            buttons=buttons,
+            direction="right",
+            x=0.0,
+            y=-0.03,
+            showactive=True,
+            active=0,
+            bgcolor="#092C5C",
+            bordercolor="#8FBCE6",
+            borderwidth=1,
+            font=dict(color="#FFFFFF", size=14),
+        )],
         template="plotly_white", height=700, margin=dict(t=110, b=60))
     return fig
 
@@ -2293,6 +2303,8 @@ def build():
     # G1 (audit): offline fallback — a clean clone with no network must
     # still build from the committed KPI snapshots.
     try:
+        if os.environ.get("HARDBALL_OFFLINE_BUILD") == "1":
+            raise RuntimeError("offline build requested")
         df = kpi_mod.kpi_frame()
     except Exception as e:
         print(f"kpi live fetch failed ({e}); using committed data/kpi_*.json snapshots")
@@ -2801,7 +2813,7 @@ def build():
                  "Boardroom stays 15 slides.</p></div>")
     explorer += _claims_panel_html()
 
-    page_template = """<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — MLB Decision Intelligence</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    page_template = """<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Major League Baseball (MLB) Decision Intelligence</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
 --ink:#041E42; --ink-hi:#072A52; --ink-deep:#021028;
@@ -2896,7 +2908,7 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 </style></head>
 <body>
 <div class="crest">
-<span class="eyebrow">MLB DECISION INTELLIGENCE</span>
+<span class="eyebrow">MAJOR LEAGUE BASEBALL (MLB) DECISION INTELLIGENCE</span>
 <h1><span class="ball-mark" aria-hidden="true">⚾</span> HARDBALL </h1>
 <h2>Evidence for better player, performance, health, and roster decisions.</h2>
 <div class="asof">__ASOF__</div>
@@ -3143,7 +3155,7 @@ showMode("story");
             .replace("__ASOF__", asof))
     # Public surface hygiene: keep internal cycle and development labels out of the rendered product.
     page = re.sub(r"\\b(?:BML\\s+)?Cycle\\s+\\d+(?:\\s*[–-]\\s*\\d+)?(?:\\s*/\\s*\\d+)?", "", page, flags=re.IGNORECASE)
-    page = re.sub(r"\\(\\s*[,;:]?\\s*\\)", "", page)
+    page = re.sub(r"\(\s*[,;:]?\s*\)", "", page)
     page = page.replace("(, ", "(").replace("  ", " ")
     page = page.replace("CarpeData", "data connector").replace("RBP-style", "confidence")
 
