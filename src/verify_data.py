@@ -775,7 +775,7 @@ def main() -> int:
               "2027 Cap Transition ledger" in board64
               and strip64 in board64
               and "Alex Bregman ($29.5M" in board64
-              and "salary basis: Cot's LRP 2027 (Cycle 74)" in board64
+              and "salary basis: Cot's LRP 2027" in board64
               and "shed set not covered" not in board64
               and "Status differs from the primary basis for 13 teams"
                   in board64
@@ -1156,7 +1156,7 @@ def main() -> int:
     _fig(21, "pipeline panel title in HTML, 30 orgs behind it",
          "under-26 upper-minors depth" in html_qa
          and len(load("pipeline_2026.json")["orgs"]) == 30)
-    _fig(22, "surplus-value arbitrage panel: artifact lists 25, title in HTML",
+    _fig(22, "surplus-value arbitrage panel: artifact lists 10, title in HTML",
          len(load("surplus_value_2027.json").get("top_surplus", [])) == 10
          and "SURPLUS VALUE" in html_qa
          and "surplus value vs expected market cost" in html_qa,
@@ -1339,7 +1339,7 @@ def main() -> int:
               f"buzz={len(tk_buzz)} pulled={tk_md.get('pulled_at')}")
         _story = html.split('id="mode-story"', 1)[1]
         _story = _story.split('id="mode-boardroom"', 1)[0]
-        _tk = _story.find("Free-agency wire — the tracker ticker")
+        _tk = _story.find("Free-agent market activity")
         _ch1 = _story.find('data-chapter="1"')
         check("Ticker: panel leads Story mode before Chapter 1, all "
               "three lane labels + integrity line + pull date "
@@ -1593,3 +1593,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
