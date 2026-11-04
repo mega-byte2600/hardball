@@ -2813,6 +2813,14 @@ def build():
                   f"<h3>{head}</h3><p>{note}</p>" + _panel(num, "story") +
                   f'<p class="sowhat"><b>So what for the owner:</b> {sowhat}</p>'
                   f'<p class="srcline">{src}</p></section>')
+        if num == 4:
+            story += """<details class="panel" id="team-errors">
+  <summary><strong>Do teams with fewer errors win more?</strong></summary>
+  <p>Ten fewer errors were associated with about 0.9 more wins per 162 games after accounting for club, season, offense and pitching (approximate 95% confidence interval: 0.5 to 1.3 wins).</p>
+  <label>View <select><option value="models">Model comparison</option><option value="points">Team seasons</option></select></label>
+  <div class="errors-plot" aria-label="Team errors and wins chart"></div>
+  <p class="srcline">450 Major League Baseball club seasons, 2011–2025. Errors and wins are scaled to 162 games. Model intervals account for clustering by club and season. The association is historical. Source: <a href="https://statsapi.mlb.com/api/v1/teams/stats?stats=season&amp;group=fielding&amp;sportIds=1&amp;season=2025&amp;gameType=R">MLB Stats API</a>.</p>
+</details><script src="assets/team-errors.js" defer></script>"""
     story += ('<details class="appendix"><summary>Appendix: method and honesty box</summary>'
               '<div class="quant"><b>What the data actually shows</b> &nbsp;'
               '<span style="font-weight:400;color:#8FBCE6">(measured on 509 real team-seasons, 2011-2026)</span><br><br>'
