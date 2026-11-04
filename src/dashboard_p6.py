@@ -250,7 +250,10 @@ def panel_pitching():
     for season, team, sjson in con.execute("SELECT season,team,stat_json FROM stat_lines WHERE group_name='pitching'"):
         s = J.loads(sjson)
         rows.append({"season": season, "code": TEAM.get(team, team), "IP": s.get("inningsPitched"),
-                     "ERA": s.get("era"), "WHIP": s.get("whip"), "BB": s.get("walks")})
+                     "ERA": s.get("era"), "WHIP": s.get("whip"),
+                     # MLB Stats API names pitcher walks `baseOnBalls`.
+                     # Keep the older `walks` fallback for committed snapshots.
+                     "BB": s.get("baseOnBalls", s.get("walks"))})
     con.close()
     d = pd.DataFrame(rows)
     for c in ["IP", "ERA", "WHIP", "BB"]:
@@ -2294,10 +2297,12 @@ def panel_scenarios():
             y=-0.03,
             showactive=True,
             active=0,
-            bgcolor="#092C5C",
+            # Plotly gives the active button a light selection surface.
+            # Use dark ink so Floor, Middle, and Cap remain readable.
+            bgcolor="#DDE7F2",
             bordercolor="#8FBCE6",
             borderwidth=1,
-            font=dict(color="#FFFFFF", size=14),
+            font=dict(color="#041E42", size=14),
         )],
         template="plotly_white", height=700, margin=dict(t=110, b=60))
     return fig
@@ -2489,6 +2494,22 @@ def build():
                     "<p>Figure " + str(num) + " is not available in this build: "
                     "it needs the lake file, which is not committed.</p></div>")
         fig = by_num[num]
+        # Boardroom slides need a decision-sized view. Figure 14 also carries
+        # a 251-player live table for Explorer; embedding that table in a
+        # slide makes the chart collapse or appear cut off on phones. Keep
+        # the full table in Explorer and show the chart plus its legend here.
+        if mode == "boardroom" and num == 14 and len(fig.data) > 4:
+            compact = go.Figure(data=list(fig.data[:4]))
+            compact.update_layout(
+                title=fig.layout.title.text,
+                template=fig.layout.template,
+                height=480,
+                showlegend=True,
+                legend=dict(orientation="h", yanchor="top", y=-0.24,
+                            xanchor="center", x=0.5),
+                margin=dict(l=60, r=24, t=72, b=110),
+            )
+            fig = compact
         return ('<div class="panel" data-mode="' + mode +
                 '" data-figure="' + str(num) + '">' +
                 fig.to_html(full_html=False, include_plotlyjs=False) +
@@ -2901,7 +2922,7 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 .npbhonest h3{margin:0 0 6px}
 .evfoot{margin:2px 0 12px}
 .about-contact{background:linear-gradient(135deg,var(--panel),var(--ink-hi));border:1px solid var(--panel-line);border-top:3px solid var(--gold);border-radius:10px;padding:22px 24px;margin:24px 0 8px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:center}.about-kicker{display:block;margin-bottom:7px;color:var(--gold);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}.about-contact h3{margin:0 0 7px;font-size:22px;letter-spacing:.1px}.about-contact p{margin:0;color:var(--paper-dim);font-size:14px;line-height:1.55;max-width:720px}.about-email{display:inline-block;margin-top:14px;color:var(--paper);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13px;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:3px}.about-email:hover,.about-email:focus{color:var(--gold)}.about-links{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;max-width:360px}.about-links a{display:inline-block;border:1px solid var(--panel-line);border-radius:6px;padding:9px 11px;color:var(--paper);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap}.about-links a:hover,.about-links a:focus{border-color:var(--gold);color:var(--gold)}.about-links a.primary{background:var(--gold);border-color:var(--gold);color:var(--ink);}.about-links a.primary:hover,.about-links a.primary:focus{background:var(--paper);border-color:var(--paper);color:var(--ink)}@media(max-width:720px){.about-contact{grid-template-columns:1fr;padding:20px}.about-links{justify-content:flex-start;max-width:none}}
-@media(max-width:720px){body{font-size:15px;overflow-x:hidden}.crest{padding:24px 18px 20px}.crest h1{font-size:31px;letter-spacing:.5px}.crest h2{font-size:15px;line-height:1.45}.crest .asof{font-size:11px;line-height:1.45}.hd{padding:0 12px 28px}.keybox{padding:10px 11px;font-size:12px;line-height:1.65}.figidx{padding:10px 11px;font-size:11px;line-height:1.7}.figidx span{margin:2px 1px}.modenav{display:grid;grid-template-columns:1fr;gap:8px}.modenav button{min-height:48px;padding:12px 10px;font-size:14px}.slide{padding:14px 12px;overflow:hidden}.about-contact{padding:20px}.about-links{justify-content:flex-start;max-width:none}.about-links a{min-height:44px;display:inline-flex;align-items:center}.srcbox{font-size:12px;line-height:1.55;overflow-wrap:anywhere}table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}}@media(min-width:721px) and (max-width:1024px){.crest{padding:28px 24px 22px}.hd{padding:0 16px 32px}.modenav button{min-height:48px}}@media print{body.print-boardroom #mode-story,body.print-boardroom #mode-explorer,body.print-boardroom .modenav,body.print-boardroom .crest,body.print-boardroom .keybox,body.print-boardroom .figidx,body.print-boardroom .srcbox{display:none}body.print-boardroom button{display:none}body{background:#fff}.slide{background:#fff!important;color:#000!important;border:1px solid #bbb!important}.slide svg text{fill:#000!important}.slide .modebar{display:none!important}}
+@media(max-width:720px){body{font-size:15px;overflow-x:hidden}.crest{padding:24px 18px 20px}.crest h1{font-size:31px;letter-spacing:.5px}.crest h2{font-size:15px;line-height:1.45}.crest .asof{font-size:11px;line-height:1.45}.hd{padding:0 12px 28px}.keybox{padding:10px 11px;font-size:12px;line-height:1.65}.figidx{padding:10px 11px;font-size:11px;line-height:1.7}.figidx span{margin:2px 1px}.modenav{display:grid;grid-template-columns:1fr;gap:8px}.modenav button{min-height:48px;padding:12px 10px;font-size:14px}.slide{padding:14px 12px;overflow:visible}.about-contact{padding:20px}.about-links{justify-content:flex-start;max-width:none}.about-links a{min-height:44px;display:inline-flex;align-items:center}.srcbox{font-size:12px;line-height:1.55;overflow-wrap:anywhere}table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}}@media(min-width:721px) and (max-width:1024px){.crest{padding:28px 24px 22px}.hd{padding:0 16px 32px}.modenav button{min-height:48px}}@media print{body.print-boardroom #mode-story,body.print-boardroom #mode-explorer,body.print-boardroom .modenav,body.print-boardroom .crest,body.print-boardroom .keybox,body.print-boardroom .figidx,body.print-boardroom .srcbox{display:none}body.print-boardroom button{display:none}body{background:#fff}.slide{background:#fff!important;color:#000!important;border:1px solid #bbb!important}.slide svg text{fill:#000!important}.slide .modebar{display:none!important}}
 </style></head>
 <body>
 <div class="crest">
