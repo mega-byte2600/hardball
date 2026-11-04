@@ -3060,8 +3060,7 @@ or model.</b><br>
 deferred (the owner dropped the RapidAPI signup for now; supplement only,
 nothing in the demo depends on it). Sportradar — trial deliberately starts
 mid-November so its 30-day window covers Dec 1.<br><br>
-<b>Project repo:</b> github.com/mega-byte2600/hardball (private) · audit trail in docs/BML_LOG.md
-(two cycle series converged on 2026-10-31 — see the integration note at the top of the log)
+<b>Project repo:</b> github.com/mega-byte2600/hardball · public source and audit trail
 <div class="about-contact">
   <div><h3>About / Contact</h3><p>I help baseball organizations make player, performance, and health decisions through rigorous analysis of evidence that turns data into action.</p></div>
   <div class="about-links" aria-label="About and contact links">
