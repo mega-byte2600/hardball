@@ -52,7 +52,7 @@ The project uses public data and stores reproducible local artifacts.
 - NPB official BIS data for the posted player exhibit.
 - Bluesky public search as an experimental social signal only. Social posts are never treated as confirmed transactions.
 
-See docs/CARPE_SCORECARD.md for connector details and docs/citations_ledger.json for the source record.
+See docs/CARPE_SCORECARD.md for connector details, docs/citations_ledger.json for the source record, and docs/GLOSSARY.md for acronym and metric definitions.
 
 ## Run locally
 
