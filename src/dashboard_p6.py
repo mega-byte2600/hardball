@@ -3062,8 +3062,8 @@ mid-November so its 30-day window covers Dec 1.<br><br>
 <b>Project repo:</b> github.com/mega-byte2600/hardball (private) · audit trail in docs/BML_LOG.md
 (two cycle series converged on 2026-10-31 — see the integration note at the top of the log)
 <div class="about-contact">
-  <div><h3>About the builder</h3><p>I’m on a mission to help baseball organizations make better player, performance, and health decisions through rigorous, evidence-based analysis.</p></div>
-  <div class="about-links" aria-label="Michael Bolton links">
+  <div><h3>About / Contact</h3><p>I help baseball organizations make player, performance, and health decisions through rigorous analysis of evidence that turns data into action.</p></div>
+  <div class="about-links" aria-label="About and contact links">
     <a href="https://www.linkedin.com/in/bolton-2600/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/mega-byte2600" target="_blank" rel="noopener">GitHub</a>
     <a href="https://www.pfactoolkit.org/" target="_blank" rel="noopener">PFAC Toolkit</a>
