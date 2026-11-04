@@ -990,8 +990,8 @@ def _evidence_note_html():
         f'{short[lane["id"]]} ({lane["found"]} found)'
         for lane in ev["lanes"])
     return ('<p class="srcline evfoot">* <a href="../docs/EVIDENCE.html">'
-            "What the evidence says now</a> — the published research "
-            "on injury recovery and prevention. " + counts + ".</p>")
+            "Figure 14 evidence: What the evidence says now</a> — PubMed "
+            "research on injury recovery and prevention. " + counts + ".</p>")
 
 
 def _benchmark_panel_html():
