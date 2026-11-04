@@ -23,6 +23,7 @@ clean clone OFFLINE from committed snapshots (audit G1).
 """
 import json
 import os
+import re
 
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
@@ -2800,7 +2801,7 @@ def build():
                  "Boardroom stays 15 slides.</p></div>")
     explorer += _claims_panel_html()
 
-    page_template = """<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Demo (P7)</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    page_template = """<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — MLB Decision Intelligence</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
 --ink:#041E42; --ink-hi:#072A52; --ink-deep:#021028;
@@ -2815,7 +2816,7 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif}
 a{color:var(--paper-dim);text-underline-offset:2px}
 .hd{max-width:1120px;margin:0 auto;padding:0 20px 40px}
 .crest{background:linear-gradient(135deg,var(--ink-hi) 0%,var(--ink) 55%,var(--panel) 130%);color:var(--paper);padding:32px 32px 26px;border-bottom:3px solid var(--accent);border-radius:0 0 14px 14px;margin:0 0 4px;box-shadow:var(--shadow)}
-.crest h1{margin:0;font-size:38px;letter-spacing:1px;color:var(--paper);font-weight:800}
+.crest h1{margin:0;font-size:38px;letter-spacing:1px;color:var(--paper);font-weight:800}.crest .eyebrow{display:block;margin-bottom:8px;color:var(--gold);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;font-weight:700;letter-spacing:1.8px}.crest .ball-mark{font-size:1.35em;display:inline-block;vertical-align:-.08em;line-height:.8}
 .crest h2{margin:10px 0 0;font-size:17px;font-weight:400;color:var(--paper-dim)}
 .crest .asof{margin-top:12px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12.5px;color:var(--gold);letter-spacing:.3px}
 .mlb{background:var(--accent);color:#fff;padding:2px 9px;border-radius:5px;font-size:12px;font-weight:700;letter-spacing:.5px}
@@ -2890,19 +2891,20 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 .npbhonest{background:var(--panel);border-left:5px solid var(--paper-dim);border-radius:6px;padding:14px 18px;margin:16px 0;font-size:14px}
 .npbhonest h3{margin:0 0 6px}
 .evfoot{margin:2px 0 12px}
-.about-contact{background:linear-gradient(135deg,var(--panel),var(--ink-hi));border:1px solid var(--panel-line);border-radius:10px;padding:18px 20px;margin:24px 0 8px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}.about-contact h3{margin:0 0 5px;font-size:19px}.about-contact p{margin:0;color:var(--paper-dim);font-size:14px;line-height:1.45;max-width:760px}.about-links{display:flex;gap:10px;flex-wrap:wrap}.about-links a{display:inline-block;border:1px solid var(--panel-line);border-radius:6px;padding:8px 11px;color:var(--paper);text-decoration:none;font-size:12px;font-weight:700}.about-links a:hover,.about-links a:focus{border-color:var(--gold);color:var(--gold)}
-@media print{body.print-boardroom #mode-story,body.print-boardroom #mode-explorer,body.print-boardroom .modenav,body.print-boardroom .crest,body.print-boardroom .keybox,body.print-boardroom .figidx,body.print-boardroom .srcbox{display:none}body.print-boardroom button{display:none}body{background:#fff}.slide{background:#fff!important;color:#000!important;border:1px solid #bbb!important}.slide svg text{fill:#000!important}.slide .modebar{display:none!important}}
+.about-contact{background:linear-gradient(135deg,var(--panel),var(--ink-hi));border:1px solid var(--panel-line);border-top:3px solid var(--gold);border-radius:10px;padding:22px 24px;margin:24px 0 8px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:center}.about-kicker{display:block;margin-bottom:7px;color:var(--gold);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}.about-contact h3{margin:0 0 7px;font-size:22px;letter-spacing:.1px}.about-contact p{margin:0;color:var(--paper-dim);font-size:14px;line-height:1.55;max-width:720px}.about-email{display:inline-block;margin-top:14px;color:var(--paper);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13px;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:3px}.about-email:hover,.about-email:focus{color:var(--gold)}.about-links{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;max-width:360px}.about-links a{display:inline-block;border:1px solid var(--panel-line);border-radius:6px;padding:9px 11px;color:var(--paper);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap}.about-links a:hover,.about-links a:focus{border-color:var(--gold);color:var(--gold)}.about-links a.primary{background:var(--gold);border-color:var(--gold);color:var(--ink);}.about-links a.primary:hover,.about-links a.primary:focus{background:var(--paper);border-color:var(--paper);color:var(--ink)}@media(max-width:720px){.about-contact{grid-template-columns:1fr;padding:20px}.about-links{justify-content:flex-start;max-width:none}}
+@media(max-width:720px){body{font-size:15px;overflow-x:hidden}.crest{padding:24px 18px 20px}.crest h1{font-size:31px;letter-spacing:.5px}.crest h2{font-size:15px;line-height:1.45}.crest .asof{font-size:11px;line-height:1.45}.hd{padding:0 12px 28px}.keybox{padding:10px 11px;font-size:12px;line-height:1.65}.figidx{padding:10px 11px;font-size:11px;line-height:1.7}.figidx span{margin:2px 1px}.modenav{display:grid;grid-template-columns:1fr;gap:8px}.modenav button{min-height:48px;padding:12px 10px;font-size:14px}.slide{padding:14px 12px;overflow:hidden}.about-contact{padding:20px}.about-links{justify-content:flex-start;max-width:none}.about-links a{min-height:44px;display:inline-flex;align-items:center}.srcbox{font-size:12px;line-height:1.55;overflow-wrap:anywhere}table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}}@media(min-width:721px) and (max-width:1024px){.crest{padding:28px 24px 22px}.hd{padding:0 16px 32px}.modenav button{min-height:48px}}@media print{body.print-boardroom #mode-story,body.print-boardroom #mode-explorer,body.print-boardroom .modenav,body.print-boardroom .crest,body.print-boardroom .keybox,body.print-boardroom .figidx,body.print-boardroom .srcbox{display:none}body.print-boardroom button{display:none}body{background:#fff}.slide{background:#fff!important;color:#000!important;border:1px solid #bbb!important}.slide svg text{fill:#000!important}.slide .modebar{display:none!important}}
 </style></head>
 <body>
 <div class="crest">
-<h1>⚾ HARDBALL <span class="tag">P7 · demo ready · target Dec 3</span></h1>
-<h2>How the winning-cheap teams beat the market — priced against the <b>$245.3M</b> cap</h2>
+<span class="eyebrow">MLB DECISION INTELLIGENCE</span>
+<h1><span class="ball-mark" aria-hidden="true">⚾</span> HARDBALL </h1>
+<h2>Evidence for better player, performance, health, and roster decisions.</h2>
 <div class="asof">__ASOF__</div>
 </div>
 <div class="hd">
 <div class="keybox"><b>COLOR KEY (used on every chart below):</b>
-<span class="k"><span class="sw" style="background:#43b581"></span> green = <b>winning-cheap</b> (MIL · TB · CLE — the target teams: &gt;85 wins at low payroll)</span>
-<span class="k"><span class="sw" style="background:#e08a3c"></span> orange = <b>cheap-mediocre</b> (MIA · CHW · STL — the trap: frugal but ~78 wins)</span>
+<span class="k"><span class="sw" style="background:#43b581"></span> green = <b>efficient case study</b> (MIL · TB · CLE — high wins at lower payroll)</span>
+<span class="k"><span class="sw" style="background:#e08a3c"></span> orange = <b>comparison case</b> (MIA · CHW · STL — lower payroll without the same results)</span>
 <span class="k"><span class="sw" style="background:#8FBCE6"></span> blue = <b>other</b> (all remaining teams)</span>
 <span class="k"><span class="sw" style="background:#BF0D3E"></span> red = cap line / negative signal</span>
 <span class="k"><span class="sw" style="background:#092C5C;border:1px solid #16406E"></span> navy = many-color charts (retention, sensitivity)</span></div>
@@ -3059,12 +3061,11 @@ or model.</b><br>
 deferred (the owner dropped the RapidAPI signup for now; supplement only,
 nothing in the demo depends on it). Sportradar — trial deliberately starts
 mid-November so its 30-day window covers Dec 1.<br><br>
-<b>Project repo:</b> github.com/mega-byte2600/hardball (private) · audit trail in docs/BML_LOG.md
-(two cycle series converged on 2026-10-31 — see the integration note at the top of the log)
+<b>Project repo:</b> github.com/mega-byte2600/hardball · public source and audit trail
 <div class="about-contact">
-  <div><h3>About the builder</h3><p>I’m on a mission to help baseball organizations make better player, performance, and health decisions through rigorous, evidence-based analysis.</p></div>
-  <div class="about-links" aria-label="Michael Bolton links">
-    <a href="https://www.linkedin.com/in/bolton-2600/" target="_blank" rel="noopener">LinkedIn</a>
+  <div><span class="about-kicker">About / Contact</span><h3>Evidence that moves the game forward.</h3><p>I help baseball organizations make player, performance, and health decisions through rigorous analysis of evidence that turns data into action.</p><a class="about-email" href="mailto:michael.bolton.ph@dartmouth.edu">michael.bolton.ph@dartmouth.edu</a></div>
+  <div class="about-links" aria-label="Professional links">
+    <a class="primary" href="https://www.linkedin.com/in/bolton-2600/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/mega-byte2600" target="_blank" rel="noopener">GitHub</a>
     <a href="https://www.pfactoolkit.org/" target="_blank" rel="noopener">PFAC Toolkit</a>
     <a href="https://journeys.dartmouth.edu/michaelboltonmph/" target="_blank" rel="noopener">Dartmouth MPH</a>
@@ -3140,6 +3141,11 @@ showMode("story");
             .replace("__EXPLORER__", explorer)
             .replace("__EVIDENCE_DATE__", ev_date)
             .replace("__ASOF__", asof))
+    # Public surface hygiene: keep internal cycle and development labels out of the rendered product.
+    page = re.sub(r"\\b(?:BML\\s+)?Cycle\\s+\\d+(?:\\s*[–-]\\s*\\d+)?(?:\\s*/\\s*\\d+)?", "", page, flags=re.IGNORECASE)
+    page = re.sub(r"\\(\\s*[,;:]?\\s*\\)", "", page)
+    page = page.replace("(, ", "(").replace("  ", " ")
+    page = page.replace("CarpeData", "data connector").replace("RBP-style", "confidence")
 
     out = os.path.join(REPO, "dashboard", "hardball_demo.html")
     with open(out, "w") as f:
