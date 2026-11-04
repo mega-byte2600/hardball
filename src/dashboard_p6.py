@@ -3264,7 +3264,11 @@ showMode("story");
             .replace("__ASOF__", asof))
     # Public surface hygiene: keep internal cycle and development labels out of the rendered product.
     page = re.sub(r"\b(?:BML\s+)?Cycle\s+\d+(?:\s*[–-]\s*\d+)?(?:\s*/\s*\d+)?", "", page, flags=re.IGNORECASE)
-    page = re.sub(r"\(\s*[,;:]?\s*\)", "", page)
+    # Do not strip empty parentheses globally: the generated page contains
+    # JavaScript calls and declarations such as `showMode()` and
+    # `function () { ... }`. Removing those characters corrupts the runtime
+    # and makes every hidden mode appear blank. Internal cycle labels are
+    # already removed by the targeted expression above.
     page = page.replace("(, ", "(").replace("  ", " ")
     page = page.replace("CarpeData", "data connector").replace("RBP-style", "confidence")
 
