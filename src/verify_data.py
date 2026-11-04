@@ -1271,15 +1271,15 @@ def main() -> int:
         _ev_seg = re.split(r'id="mode-|<div class="srcbox"', _ev_seg)[0]
         _p14 = _ev_seg.find('data-mode="explorer" data-figure="14"')
         _pnote = _ev_seg.find(
-            "What the evidence says now</a> — the published research "
-            "on injury recovery and prevention.")
+            "Figure 14 evidence: What the evidence says now</a> — PubMed "
+            "research on injury recovery and prevention.")
         _p15 = _ev_seg.find('data-mode="explorer" data-figure="15"')
         check("Evidence: dashboard footnote under Figure 14 matches "
               "artifact (exact note text, lane counts, page link) "
               "(Cycle 57)",
-              '* <a href="../docs/EVIDENCE.html">What the evidence '
-              "says now</a>" in html
-              and "— the published research on injury recovery and "
+              '* <a href="../docs/EVIDENCE.html">Figure 14 evidence: '
+              "What the evidence says now</a>" in html
+              and "— PubMed research on injury recovery and "
                   "prevention." in html
               and all(f"({lane['found']} found)" in html for lane in lanes)
               and -1 < _p14 < _pnote < _p15,
