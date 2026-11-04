@@ -2891,7 +2891,7 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 .npbhonest{background:var(--panel);border-left:5px solid var(--paper-dim);border-radius:6px;padding:14px 18px;margin:16px 0;font-size:14px}
 .npbhonest h3{margin:0 0 6px}
 .evfoot{margin:2px 0 12px}
-.about-contact{background:linear-gradient(135deg,var(--panel),var(--ink-hi));border:1px solid var(--panel-line);border-radius:10px;padding:18px 20px;margin:24px 0 8px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}.about-contact h3{margin:0 0 5px;font-size:19px}.about-contact p{margin:0;color:var(--paper-dim);font-size:14px;line-height:1.45;max-width:760px}.about-links{display:flex;gap:10px;flex-wrap:wrap}.about-links a{display:inline-block;border:1px solid var(--panel-line);border-radius:6px;padding:8px 11px;color:var(--paper);text-decoration:none;font-size:12px;font-weight:700}.about-links a:hover,.about-links a:focus{border-color:var(--gold);color:var(--gold)}
+.about-contact{background:linear-gradient(135deg,var(--panel),var(--ink-hi));border:1px solid var(--panel-line);border-top:3px solid var(--gold);border-radius:10px;padding:22px 24px;margin:24px 0 8px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:center}.about-kicker{display:block;margin-bottom:7px;color:var(--gold);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}.about-contact h3{margin:0 0 7px;font-size:22px;letter-spacing:.1px}.about-contact p{margin:0;color:var(--paper-dim);font-size:14px;line-height:1.55;max-width:720px}.about-email{display:inline-block;margin-top:14px;color:var(--paper);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13px;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:3px}.about-email:hover,.about-email:focus{color:var(--gold)}.about-links{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;max-width:360px}.about-links a{display:inline-block;border:1px solid var(--panel-line);border-radius:6px;padding:9px 11px;color:var(--paper);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap}.about-links a:hover,.about-links a:focus{border-color:var(--gold);color:var(--gold)}.about-links a.primary{background:var(--gold);border-color:var(--gold);color:var(--ink);}.about-links a.primary:hover,.about-links a.primary:focus{background:var(--paper);border-color:var(--paper);color:var(--ink)}@media(max-width:720px){.about-contact{grid-template-columns:1fr;padding:20px}.about-links{justify-content:flex-start;max-width:none}}
 @media print{body.print-boardroom #mode-story,body.print-boardroom #mode-explorer,body.print-boardroom .modenav,body.print-boardroom .crest,body.print-boardroom .keybox,body.print-boardroom .figidx,body.print-boardroom .srcbox{display:none}body.print-boardroom button{display:none}body{background:#fff}.slide{background:#fff!important;color:#000!important;border:1px solid #bbb!important}.slide svg text{fill:#000!important}.slide .modebar{display:none!important}}
 </style></head>
 <body>
@@ -3062,13 +3062,12 @@ nothing in the demo depends on it). Sportradar — trial deliberately starts
 mid-November so its 30-day window covers Dec 1.<br><br>
 <b>Project repo:</b> github.com/mega-byte2600/hardball · public source and audit trail
 <div class="about-contact">
-  <div><h3>About / Contact</h3><p>I help baseball organizations make player, performance, and health decisions through rigorous analysis of evidence that turns data into action.</p></div>
-  <div class="about-links" aria-label="About and contact links">
-    <a href="https://www.linkedin.com/in/bolton-2600/" target="_blank" rel="noopener">LinkedIn</a>
+  <div><span class="about-kicker">About / Contact</span><h3>Evidence that moves the game forward.</h3><p>I help baseball organizations make player, performance, and health decisions through rigorous analysis of evidence that turns data into action.</p><a class="about-email" href="mailto:michael.bolton.ph@dartmouth.edu">michael.bolton.ph@dartmouth.edu</a></div>
+  <div class="about-links" aria-label="Professional links">
+    <a class="primary" href="https://www.linkedin.com/in/bolton-2600/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/mega-byte2600" target="_blank" rel="noopener">GitHub</a>
     <a href="https://www.pfactoolkit.org/" target="_blank" rel="noopener">PFAC Toolkit</a>
     <a href="https://journeys.dartmouth.edu/michaelboltonmph/" target="_blank" rel="noopener">Dartmouth MPH</a>
-    <a href="mailto:michael.bolton.ph@dartmouth.edu">Email</a>
   </div>
 </div>
 </div>
