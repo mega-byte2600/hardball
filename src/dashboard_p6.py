@@ -749,9 +749,10 @@ def panel_skill_persistence():
                f"{pooled['n_pairs']} player-year pairs")
     fig.update_layout(title=title,
                       xaxis_title="Year-over-year correlation (r) · 0 = none · 1 = perfect",
-                      yaxis_title="Skill or outcome measured",
+                      yaxis_title="Skill / metric",
                       xaxis_range=[0, 1.1], template="plotly_white", height=380,
-                      margin=dict(l=140, t=50, b=104),
+                      # Keep the vertical axis title clear of the category labels on narrow screens.
+                      margin=dict(l=200, t=50, b=104),
                       annotations=[
                           dict(x=0.98, y=len(order)-0.5, xref="x", yref="y",
                                showarrow=False, text="▲ contact carries",
@@ -792,9 +793,10 @@ def _panel_skill_multipair(multi_path, ci_path):
     fig.update_layout(title=f"The measurable edge: input SKILLS persist year-to-year "
                             f"({len(pairs)} real season pairs, {n_players} players)",
                       xaxis_title="Year-over-year correlation (r) · 0 = none · 1 = perfect",
-                      yaxis_title="Skill or outcome measured",
+                      yaxis_title="Skill / metric",
                       xaxis_range=[0, 1.1], template="plotly_white", height=400,
-                      margin=dict(l=140, t=50, b=104),
+                      # Keep the vertical axis title clear of the category labels on narrow screens.
+                      margin=dict(l=200, t=50, b=104),
                       bargap=0.35,
                       # caption BELOW the chart (global legend sits under that)
                       annotations=[dict(x=0.02, y=-0.62, xref="paper", yref="paper",
@@ -3046,7 +3048,7 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 .sowhat{background:var(--panel);border-left:5px solid var(--win);border-radius:6px;padding:12px 16px}
 .srcline{font-size:12.5px;color:var(--paper-dim)}
 .ticker-strip{overflow:hidden;background:var(--ink-deep);border:1px solid var(--panel-line);border-left:4px solid var(--gold);border-radius:8px;margin:10px 0 14px;white-space:nowrap}
-.ticker-track{display:inline-block;white-space:nowrap;animation:ticker-scroll 150s linear infinite;padding:8px 0}
+.ticker-track{display:inline-block;white-space:nowrap;animation:ticker-scroll 210s linear infinite;padding:8px 0}
 .ticker-track:hover{animation-play-state:paused}
 .tick-item{display:inline-block;margin:0 22px 0 0;font-size:13px;color:var(--paper);vertical-align:middle}
 .tick-item a{color:var(--paper);text-decoration:none}
@@ -3355,7 +3357,9 @@ showMode("story");
     page = page.replace("(, ", "(").replace("  ", " ")
     page = page.replace("CarpeData", "data connector").replace("RBP-style", "confidence")
 
-    out = os.path.join(REPO, "dashboard", "hardball_demo.html")
+    # Publish the dashboard as the directory index so the shareable URL is
+    # https://mega-byte2600.github.io/hardball/dashboard/.
+    out = os.path.join(REPO, "dashboard", "index.html")
     with open(out, "w") as f:
         f.write(page)
     print(f"dashboard written: {out} ({os.path.getsize(out)} bytes)")
