@@ -729,8 +729,11 @@ def panel_skill_persistence():
         if k in yoy:
             names.append(labels.get(k, k)); r.append(yoy[k])
             cols.append("#43b581" if yoy[k] >= 0.6 else "#e08a3c" if yoy[k] >= 0.4 else "#8FBCE6")
-    fig.add_trace(go.Bar(y=names, x=r, orientation="h", marker_color=cols,
-                         text=[f"{v:.2f}" for v in r], textposition="outside"))
+    fig.add_trace(go.Bar(
+        y=names, x=r, orientation="h", marker_color=cols,
+        text=[f"r = {v:.2f}" for v in r], textposition="outside",
+        hovertemplate="%{y}<br>Year-over-year correlation: r = %{x:.2f}<br>"
+                      "0 = no carryover · 1 = perfect carryover<extra></extra>"))
     title = "The measurable edge: input SKILLS persist year-to-year (2025→2026, real)"
     sub = ""
     if pooled:
@@ -739,7 +742,8 @@ def panel_skill_persistence():
                f"(95% CI {pooled['ci95'][0]:.2f}-{pooled['ci95'][1]:.2f}), "
                f"{pooled['n_pairs']} player-year pairs")
     fig.update_layout(title=title,
-                      xaxis_title="Year-over-year persistence (r)",
+                      xaxis_title="Year-over-year correlation (r) · 0 = none · 1 = perfect",
+                      yaxis_title="Skill or outcome measured",
                       xaxis_range=[0, 1.1], template="plotly_white", height=380,
                       margin=dict(l=140, t=50, b=104),
                       annotations=[
@@ -749,8 +753,8 @@ def panel_skill_persistence():
                           # caption BELOW the chart (never collides with title)
                           dict(x=0.02, y=-0.55, xref="paper", yref="paper",
                                showarrow=False,
-                               text=sub or "Buy the persistent inputs (contact+walks), "
-                                           "not the noisy output (OBP/BA)",
+                               text=sub or "Read the bar length: longer = more repeatable next year. "
+                                           "Buy persistent inputs (contact + walks), not noisy output (OBP/BA).",
                                font=dict(size=11, color="#8FBCE6"), xanchor="left")])
     return fig
 
@@ -781,7 +785,8 @@ def _panel_skill_multipair(multi_path, ci_path):
                 f"(95% CI {pooled['ci95'][0]:.2f}-{pooled['ci95'][1]:.2f})")
     fig.update_layout(title=f"The measurable edge: input SKILLS persist year-to-year "
                             f"({len(pairs)} real season pairs, {n_players} players)",
-                      xaxis_title="Year-over-year persistence (r)",
+                      xaxis_title="Year-over-year correlation (r) · 0 = none · 1 = perfect",
+                      yaxis_title="Skill or outcome measured",
                       xaxis_range=[0, 1.1], template="plotly_white", height=400,
                       margin=dict(l=140, t=50, b=104),
                       bargap=0.35,
@@ -870,6 +875,24 @@ def panel_hs_verdict():
             ""],
         vertical_spacing=0.16, horizontal_spacing=0.10)
 
+    # Keep the two forest-plot subtitles inside their own columns. Plotly's
+    # default single-line annotations overlap across columns at presentation
+    # width, which makes the coefficients unreadable.
+    for annotation in fig.layout.annotations:
+        title = str(annotation.text or "")
+        words, lines, line = title.split(), [], ""
+        for word in words:
+            candidate = (line + " " + word).strip()
+            if line and len(candidate) > 36:
+                lines.append(line)
+                line = word
+            else:
+                line = candidate
+        if line:
+            lines.append(line)
+        annotation.text = "<br>".join(lines)
+        annotation.font = dict(size=12, color="#FFFFFF")
+
     def forest(skills, col):
         ys, xs, errs, cols, labels = [], [], [], [], []
         for skey, rkey, color, sname in samples:
@@ -915,7 +938,8 @@ def panel_hs_verdict():
                f"{rho:.2f}× a point of SLG, 95% CI {rho_ci[0]:.2f}–{rho_ci[1]:.2f}) cannot reject correct pricing — or large "
                f"mispricing. The samples lack power, and the panel says so. Sources: data/hakes_sauer_results.json (Cycle 46) "
                f"and data/hakes_sauer_verdict.json (Cycle 48).</sub>"),
-        template="plotly_white", height=680)
+        template="plotly_white", height=680,
+        margin=dict(l=70, r=30, t=150, b=110))
     return fig
 
 
@@ -1913,6 +1937,25 @@ def panel_posted():
             "The clock: Nov 2 → Dec 16, with the Dec 1 lockout pause cut into the middle"],
         horizontal_spacing=0.13, vertical_spacing=0.085)
 
+    # Plotly places subplot titles inside each plot cell. Long editorial
+    # titles therefore collide when two columns share a row (especially in
+    # the Boardroom slide). Wrap and slightly reduce them while keeping the
+    # underlying chart and wording unchanged.
+    for annotation in fig.layout.annotations:
+        title = str(annotation.text or "")
+        words, lines, line = title.split(), [], ""
+        for word in words:
+            candidate = (line + " " + word).strip()
+            if line and len(candidate) > 42:
+                lines.append(line)
+                line = word
+            else:
+                line = candidate
+        if line:
+            lines.append(line)
+        annotation.text = "<br>".join(lines)
+        annotation.font = dict(size=12, color="#FFFFFF")
+
     # (1,1) Sato career arc — K% vs BB%
     fig.add_trace(go.Scatter(
         x=x3, y=[ss[y]["K_pct_computed"] for y in years],
@@ -2841,6 +2884,8 @@ def build():
         ("Cap Reality", "What the cap and floor do to every payroll, and what must be shed.",
          [1, 6, 9, 10, 11],
          "Source: MLB Stats API team data and Spotrac payroll, plus the proposed 2027 cap."),
+        ("Pick Your Team", "Every club gets the same signature, cap, pipeline, and prospect view.",
+         [2], "Source: MLB Stats API team data and the committed winning-cheap profile."),
         ("Build a Roster", "Signatures, durability, projections, health, the roster, and what moves wins — the roster itself is the exact optimizer's proven optimum.",
          [7, 8, 12, 13, 14, 15, 16, 17, 25],
          "Source: Marcel projections, health caps, and the 2027 roster build from committed files; headline rosters: data/wow_scenarios.json (Cycle 49 exact MILP optimum, promoted Cycle 52; greedy build preserved in the same file as the benchmark); optimizer comparison: data/optimizer_comparison_2027.json (Cycle 49, scipy/HiGHS MILP on the identical pool, prices and quotas); delivered-WAR ranges: data/uncertainty_scenarios_2027.json (Cycle 56)."),
@@ -2857,33 +2902,29 @@ def build():
     explorer = ('<div class="hero-team"><h3>Pick your team first</h3>'
                 "<p>Use the dropdown: every club's 2026 signature against the winning-cheap profile, "
                 "with cap headroom, pipeline rank, and top prospect.</p></div>")
-    explorer += _panel(2, "explorer")
+    # The Explorer is a reading surface, not a task board: keep every figure
+    # in numerical order so the Figure Index, captions, and conversation all
+    # point to the same place. The task label remains as a light section
+    # marker when the ordered sequence enters a new analytical lane.
+    by_figure = {}
     for name, desc, nums, src in groups:
-        explorer += f'<div class="task"><h3>{name}</h3><p>{desc}</p></div>'
-        if name == "Build a Roster":
-            # Cycle 57: the evidence footnote goes directly under
-            # the Figure 14 (health) panel — its anchor figure.
-            for n in nums:
-                explorer += _panel(n, "explorer")
-                if n == 14:
-                    explorer += _evidence_note_html()
-        elif name == "Check the Model":
-            # Cycle 62: the held-out benchmark panel goes directly
-            # under the Figure 18 (benchmark) panel — its anchor
-            # figure. Agreement (Fig. 18) vs accuracy (this panel).
-            for n in nums:
-                explorer += _panel(n, "explorer")
-                if n == 18:
-                    explorer += _benchmark_panel_html()
-                if n == 19:
-                    # Cycle 75: the bat-speed exhibit goes directly
-                    # under the Figure 19 (Savant traits) panel — its
-                    # anchor figure. Context only (claim N04).
-                    explorer += _bat_speed_exhibit_html()
-        else:
-            explorer += "".join(_panel(n, "explorer") for n in nums)
-        explorer += f'<p class="srcline">{src}</p>'
-        if name == "Build a Roster":
+        for n in nums:
+            by_figure[n] = (name, desc, src)
+    last_group = None
+    for n in sorted(by_figure):
+        name, desc, src = by_figure[n]
+        if name != last_group:
+            explorer += (f'<div class="task"><h3>{name}</h3><p>{desc}</p>'
+                         f'<p class="srcline">{src}</p></div>')
+            last_group = name
+        explorer += _panel(n, "explorer")
+        if n == 14:
+            explorer += _evidence_note_html()
+        if n == 18:
+            explorer += _benchmark_panel_html()
+        if n == 19:
+            explorer += _bat_speed_exhibit_html()
+        if n == 25:
             explorer += ('<div class="task"><h3>Benchmark vs headline: the optimizer\'s audit</h3>'
                          "<p>Figure 25 re-solves Figure 16's exact problem with a "
                          "mixed-integer optimizer and proves the optima. Since Cycle 52 "
@@ -2892,7 +2933,7 @@ def build():
                          "Story stays 6 chapters and Boardroom stays 15 slides.</p></div>")
             explorer += _optimizer_html()
             explorer += _optimizer_sensitivity_html()
-        if name == "Shop the FA Class":
+        if n == 22:
             explorer += ('<div class="task"><h3>Top bargain free agents: Savant-style percentile cards</h3>'
                          "<p>Ranked by WAR per $10M of prior salary. Bars show where each player sits "
                          "in the committed free-agent pool for that metric.</p></div>")
@@ -2906,14 +2947,14 @@ def build():
                          "stays 15 slides: this is a buying tool, not a new "
                          "figure.</p></div>")
             explorer += _health_cards_panel_html()
-        if name == "Check the Model":
+        if n == 24:
             explorer += ('<div class="task"><h3>The verdict on our own pricing claim</h3>'
                          "<p>Figure 24 runs the Hakes–Sauer test on this demo's own thesis — "
                          "and the verdict box below it states exactly what the data supports. "
                          "Explorer only. Story stays 6 chapters and Boardroom stays 15 slides: "
                          "this is a claim check, not a new claim.</p></div>")
             explorer += _hs_verdict_html()
-        if name == "The Posted Class":
+        if n == 23:
             explorer += ('<div class="task"><h3>The trio, the clock, and the honesty box</h3>'
                          "<p>Cards, the posting-clock facts, the Imai expectation-vs-reality strip, "
                          "and the honesty box below Figure 23 — Explorer only. "
@@ -2991,7 +3032,7 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 .sowhat{background:var(--panel);border-left:5px solid var(--win);border-radius:6px;padding:12px 16px}
 .srcline{font-size:12.5px;color:var(--paper-dim)}
 .ticker-strip{overflow:hidden;background:var(--ink-deep);border:1px solid var(--panel-line);border-left:4px solid var(--gold);border-radius:8px;margin:10px 0 14px;white-space:nowrap}
-.ticker-track{display:inline-block;white-space:nowrap;animation:ticker-scroll 90s linear infinite;padding:8px 0}
+.ticker-track{display:inline-block;white-space:nowrap;animation:ticker-scroll 150s linear infinite;padding:8px 0}
 .ticker-track:hover{animation-play-state:paused}
 .tick-item{display:inline-block;margin:0 22px 0 0;font-size:13px;color:var(--paper);vertical-align:middle}
 .tick-item a{color:var(--paper);text-decoration:none}
