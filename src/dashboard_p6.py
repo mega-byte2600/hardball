@@ -4,19 +4,19 @@ retains the P6 filename for README/repo stability]
 Twenty-five figures on real data: the main lane's 13 (payroll/KPI/
 projections/durability/players/pitching/health/roster/runs/
 sensitivity + skill persistence, value metrics, cap scenario)
-plus the CarpeData/Boardroom 7 (Steamer benchmark, Savant trait
+plus the data connectors/Boardroom 7 (Steamer benchmark, Savant trait
 check, MiLB pipeline, FA shopping list, animated 16-season
 payroll film, pick-your-team explorer, budget-scenario rosters)
-plus the Cycle 30 forced-seller panel
-plus the Cycle 8 title-bar AUC panel
-plus the Cycle 34 posted-class panel (NPB BIS)
-plus the Cycle 48 Hakes–Sauer verdict panel (Explorer-only,
+plus the  forced-seller panel
+plus the  title-bar AUC panel
+plus the  posted-class panel (NPB BIS)
+plus the  Hakes–Sauer verdict panel (Explorer-only,
 appended last so figures 1–23 keep their numbers)
-plus the Cycle 49 roster-optimizer panel (Explorer-only,
+plus the  roster-optimizer panel (Explorer-only,
 appended last so figures 1–24 keep their numbers)
-plus the Cycle 50 sensitivity strip under Figure 25 (no new figure),
-plus the Cycle 62 held-out benchmark panel under Figure 18 (no new figure),
-plus the Cycle 64 cap-transition ledger panel at the front of Boardroom
+plus the  sensitivity strip under Figure 25 (no new figure),
+plus the  held-out benchmark panel under Figure 18 (no new figure),
+plus the  cap-transition ledger panel at the front of Boardroom
 (no new figure),
 presented in three modes (Story, Boardroom, Explorer) with stat cards. Builds from a
 clean clone OFFLINE from committed snapshots (audit G1).
@@ -174,7 +174,7 @@ def panel_durability():
 
 def panel_player_proj():
     """2027 Marcel projections: top hitters by OBP, colored by team group.
-    Cycle 73 overlay: each bar's label carries the RBP-style CONVICTION
+     overlay: each bar's label carries the confidence CONVICTION
     (HIGH/MEDIUM/LOW/NO_PRIOR) so the room sees which projections are
     trustworthy before acting — predicted playing time is a uniform
     500-PA default here, so conviction comes from committed prior-season
@@ -214,7 +214,7 @@ def panel_player_proj():
                              name="conviction: ● high · ○ medium · ▽ low · no prior record"))
     fig.update_layout(title="2027 projected hitters by OBP (Marcel, real lake data) — "
                             "green = winning-cheap team<br>"
-                            "<sub>Conviction (RBP-style transparency, Cycle 73) = stability of a "
+                            "<sub>Conviction (confidence transparency, ) = stability of a "
                             "player's committed PRIOR-season contact% + BB% across 2+ years. "
                             "Players with no committed 2-season record (incl. some stars) are "
                             "honestly labeled 'no prior record' — never an invented high score. "
@@ -311,7 +311,7 @@ def panel_health():
                             "playtime you should NOT count on",
                       xaxis_title="", yaxis_title="Projected PA reduction (%)",
                       template="plotly_white", height=400)
-    # Cycle 51 (API-1): live-feed sub-panel — the Statyx + FastballAPI
+    #  (API-1): live-feed sub-panel — the Statyx + FastballAPI
     # current-IL picture for the 2027 FA pool, rendered ONLY from the
     # committed artifact data/il_current_live.json (built by
     # src/bml_cycle51.py from the dated raw snapshots). Absent the
@@ -351,9 +351,9 @@ def panel_health():
         title=fig.layout.title.text,
         xaxis_title="", yaxis_title="Projected PA reduction (%)",
         template="plotly_white", height=760, showlegend=True)
-    # Cycle 55: movement line from the event layer (data/il_events.json,
+    # : movement line from the event layer (data/il_events.json,
     # built by src/bml_cycle55.py) under the live-IL table. Absent the
-    # artifact, the panel keeps the Cycle 51 two-row shape — fail closed.
+    # artifact, the panel keeps the  two-row shape — fail closed.
     ev_path = os.path.join(DATA, "il_events.json")
     if not os.path.exists(ev_path):
         return combo
@@ -471,7 +471,7 @@ def panel_runs():
 
 
 def panel_auc():
-    """Title-bar test (Cycle 8): can the model flag a 90+ win team before
+    """Title-bar test (): can the model flag a 90+ win team before
     the season? Reads the persisted logistic results from quant_core.json
     (run-diff-only / KPIs+PythE, both year-directions). A single honest
     panel for the single most decision-relevant number."""
@@ -580,12 +580,12 @@ def panel_cap_scenario():
 
 
 def panel_forced_sellers():
-    """Cycle 30: the forced sellers — the fewest big contracts that
+    """: the forced sellers — the fewest big contracts that
     arithmetically close each over-cap team's gap. Bar = cumulative
     salary of the minimal largest-first shed set; diamond = the gap.
     Arithmetic only, NOT a trade prediction: shedding is assumed to
-    remove the full listed salary. Cycle 74: CHC is covered on
-    Cot's LRP 2027 (its Spotrac page failed in Cycle 25, so it has
+    remove the full listed salary. : CHC is covered on
+    Cot's LRP 2027 (its Spotrac page failed in , so it has
     no Spotrac contract rows) — the set's basis is labeled wherever
     it renders, and the cross-validation is in
     data/salary_reconciliation_2027.json."""
@@ -629,7 +629,7 @@ def panel_forced_sellers():
                "listed salary, and real trades rarely do that · Coverage "
                "7 of 7 over-cap teams — six on the Spotrac per-player "
                "rows as committed, CHC on Cot's LRP 2027 (its Spotrac "
-               "page failed in Cycle 25), cross-validated where both "
+               "page failed in ), cross-validated where both "
                "bases exist: the same shed-set players for 5 of the 6 "
                "known teams, LAD differing only on Ohtani's deferred "
                "contract (present value vs nominal), with Cot's team "
@@ -779,7 +779,7 @@ def _panel_skill_multipair(multi_path, ci_path):
 
 
 def panel_benchmark():
-    """CarpeData: our Marcel vs FanGraphs Steamer 2027 (Cycle 22).
+    """data connectors: our Marcel vs FanGraphs Steamer 2027 ().
 
     Paired by MLBAM player_id == xMLBAMID only. Stats box comes from
     data/fg_benchmark_2027.json so the panel can never drift from the
@@ -821,9 +821,9 @@ def panel_benchmark():
     return fig
 
 def panel_hs_verdict():
-    """Cycle 48 (HS-2), Figure 24: the Hakes–Sauer verdict exhibit.
+    """ (HS-2), Figure 24: the Hakes–Sauer verdict exhibit.
 
-    HS-1 (Cycle 46) regressed ln(salary) on projected OBP/SLG/K%/BB%
+    HS-1 () regressed ln(salary) on projected OBP/SLG/K%/BB%
     on two committed salary bases and found no significant skill
     coefficient; HS-2 derived the missing run-value benchmark from
     480 committed team-seasons and ran the formal proportionality
@@ -899,14 +899,14 @@ def panel_hs_verdict():
                f"<sub>Every skill coefficient's 95% interval crosses zero on both committed salary bases, and the formal "
                f"proportionality test (run-value benchmark from {bench['n_team_seasons']} team-seasons: a point of OBP is worth "
                f"{rho:.2f}× a point of SLG, 95% CI {rho_ci[0]:.2f}–{rho_ci[1]:.2f}) cannot reject correct pricing — or large "
-               f"mispricing. The samples lack power, and the panel says so. Sources: data/hakes_sauer_results.json (Cycle 46) "
-               f"and data/hakes_sauer_verdict.json (Cycle 48).</sub>"),
+               f"mispricing. The samples lack power, and the panel says so. Sources: data/hakes_sauer_results.json () "
+               f"and data/hakes_sauer_verdict.json ().</sub>"),
         template="plotly_white", height=680)
     return fig
 
 
 def _hs_verdict_html():
-    """Cycle 48: the HS-2 verdict box under Figure 24 (Explorer only).
+    """: the HS-2 verdict box under Figure 24 (Explorer only).
     Text renders verbatim from data/hakes_sauer_verdict.json."""
     import html as _html
     ver = json.load(open(os.path.join(DATA, "hakes_sauer_verdict.json")))
@@ -916,19 +916,19 @@ def _hs_verdict_html():
             _html.escape(v["short"]) + "</p></div>" +
             '<p class="srcline">Benchmark: team-season runs regression (runs per PA on OBP and SLG, '
             "season fixed effects) on data/curated/fact_team_season.parquet — a team-aggregate "
-            "benchmark, labeled as such in the workpaper (docs/CARPE_SCORECARD.md, Cycle 48 "
+            "benchmark, labeled as such in the workpaper (docs/CARPE_SCORECARD.md,  "
             "addendum). Salary samples: Spotrac basis n = 60 (24 of 30 teams, at the power "
             "floor) and Cot's LRP-2027 n = 82 — bases never mixed. Method and full numbers: "
             "src/bml_cycle48.py, data/hakes_sauer_verdict.json.</p>")
 
 
 def _evidence_note_html():
-    """Cycle 57: one asterisked footnote line directly under the
+    """: one asterisked footnote line directly under the
     Figure 14 (health) panel in Explorer — Figure 14 is the anchor
     figure; Figure 14 is the anchor figure.
     Counts ride inside the note. Renders ONLY from the committed
     artifact data/evidence_surveillance.json; absent the artifact
-    the note is omitted entirely (fail closed, Cycle 51 pattern).
+    the note is omitted entirely (fail closed,  pattern).
     The full page is docs/EVIDENCE.html (src/make_evidence_page.py);
     the context-not-a-model-input label lives on that page."""
     path = os.path.join(DATA, "evidence_surveillance.json")
@@ -949,12 +949,12 @@ def _evidence_note_html():
 
 
 def _benchmark_panel_html():
-    """Cycle 62 (BLEND-1): the held-out accuracy panel directly under
+    """ (BLEND-1): the held-out accuracy panel directly under
     Figure 18 (the Marcel–Steamer benchmark) in Explorer — Figure 18
     shows agreement between the two systems; this panel shows accuracy
     against outcomes, which is a different thing. Renders ONLY from
     the committed artifact data/projection_blend_2027.json; absent the
-    artifact the panel is omitted entirely (fail closed, Cycle 51/57
+    artifact the panel is omitted entirely (fail closed, /57
     pattern). Not a figure: the count stays 25."""
     path = os.path.join(DATA, "projection_blend_2027.json")
     if not os.path.exists(path):
@@ -1003,17 +1003,17 @@ def _benchmark_panel_html():
             "where both systems have outcomes. Steamer remains the "
             "benchmark and Marcel the spine, unchanged.</p>"
             '<p class="srcline">Source: data/projection_blend_2027.json '
-            "(Cycle 62). Secondary metrics (SLG, WHIP) and the 2025 "
+            "(). Secondary metrics (SLG, WHIP) and the 2025 "
             "reference window are in the artifact; method mirrors the "
-            "Cycle 21/24 backtests, reproduced exactly by "
+            "/24 backtests, reproduced exactly by "
             "src/bml_cycle62.py.</p></div>")
 
 
 def _bat_speed_exhibit_html():
-    """Cycle 75: the bat-speed exhibit directly under Figure 19 in
+    """: the bat-speed exhibit directly under Figure 19 in
     Explorer — the trait's 2026 distribution and year-to-year
     stability, as CONTEXT ONLY. Bat speed was tested as a projection
-    adjustment in Cycle 20 and dropped (claim N04, NOT SUPPORTED: it
+    adjustment in  and dropped (claim N04, NOT SUPPORTED: it
     made projections worse out of sample). This panel adds no
     projection claim and feeds no projection; it renders ONLY from
     the committed artifact data/bat_speed_exhibit_2027.json, and is
@@ -1073,7 +1073,7 @@ def _bat_speed_exhibit_html():
         f"transitions ({stab['pairs']['2024_2025']['r']:.3f} for "
         f"2024&rarr;2025, n = {stab['pairs']['2024_2025']['n']}; "
         f"{stab['pairs']['2025_2026']['r']:.3f} for 2025&rarr;2026, "
-        f"n = {stab['pairs']['2025_2026']['n']}). The Cycle 20 test on "
+        f"n = {stab['pairs']['2025_2026']['n']}). The  test on "
         "record reports mean r = 0.921, computed on a qualified set — "
         f"with a {tb['min_swings']}-competitive-swing minimum in both "
         f"years, these same boards give "
@@ -1094,21 +1094,21 @@ def _bat_speed_exhibit_html():
         "wearing a team's name.</p>"
         f"<p class=\"srcline\">Register claim N04: &ldquo;"
         f"{_html.escape(art['n04']['claim'])}&rdquo; — "
-        f"{_html.escape(art['n04']['status'])} (Cycle 20). Source: "
-        "data/bat_speed_exhibit_2027.json (Cycle 75), computed by "
+        f"{_html.escape(art['n04']['status'])} (). Source: "
+        "data/bat_speed_exhibit_2027.json (), computed by "
         "src/bml_cycle75.py from the committed Baseball Savant "
         "bat-tracking boards (data/savant_bat_tracking_2024.json, "
         "_2025, _2026); verdicts in data/savant_test.json.</p></div>")
 
 
 def _cap_transition_panel_html():
-    """Cycle 64: the 2027 Cap Transition ledger — the lead decision
+    """: the 2027 Cap Transition ledger — the lead decision
     panel at the front of Boardroom. One row per team: payroll on its
     labeled basis, status against the proposed cap/floor, the shed set
     or spend gap, the 15% per-player flags, and the Cot's-basis
     sensitivity with disagreements marked. Renders ONLY from the
     committed artifact data/cap_transition_2027.json; absent the
-    artifact the panel is omitted entirely (fail closed, Cycle 51/57/62
+    artifact the panel is omitted entirely (fail closed, /57/62
     pattern). Not a figure: the count stays 25."""
     import html as _html
     path = os.path.join(DATA, "cap_transition_2027.json")
@@ -1138,7 +1138,7 @@ def _cap_transition_panel_html():
                    f"{_m(a['shed_total'])} · {a['shed_war_total']:.1f} WAR "
                    f"— {names}")
             if a.get("basis"):
-                out += " · salary basis: Cot's LRP 2027 (Cycle 74)"
+                out += " · salary basis: Cot's LRP 2027 ()"
             return out
         if a["type"] == "spend":
             return (f"Spend {_m(a['shortfall'])} · "
@@ -1188,7 +1188,7 @@ def _cap_transition_panel_html():
             f"({_m(prim['UNDER FLOOR']['total_under'])} short) · "
             f"{prim['INSIDE THE BAND']['count']} inside the band.</b></p>"
             "<p>Payroll is the Spotrac total for each team. Shed sets are "
-            "the Cycle 30 contract sets, with Steamer 2027 WAR. Spend "
+            "the  contract sets, with Steamer 2027 WAR. Spend "
             "counts are arithmetic at the optimizer pool's median prior "
             "salary. Per-player flags use Cot's average annual value "
             "against the $36.8M maximum.</p>"
@@ -1213,21 +1213,21 @@ def _cap_transition_panel_html():
 
 
 def _health_cards_panel_html():
-    """Cycle 67 (slate item 4): player health cards fused into the
+    """ (slate item 4): player health cards fused into the
     FA shopping list — one row per free agent, sorted by delivered
     WAR. Renders ONLY from the committed artifact
     data/fa_health_cards_2027.json; absent the artifact the panel
-    is omitted entirely (fail closed, Cycle 51/57 pattern). Not a
+    is omitted entirely (fail closed, /57 pattern). Not a
     figure: the count stays 25. Explorer only: Story stays 6
     chapters and Boardroom stays 15 slides.
 
-    Delivered WAR is the Cycle 56 formula at player level: headline
+    Delivered WAR is the  formula at player level: headline
     Steamer WAR times the player's own measured 2025-26
     availability factor (or the pool mean where he has no IL
     record), plus the measured residual-bias term at delivered
     volume. Per-player intervals are not shown: a pool-draw
     interval would present pool variance as player risk, so
-    intervals stay scenario-level only (Cycle 56). Prices stay
+    intervals stay scenario-level only (). Prices stay
     prior-contract anchors; delivered WAR per $10M is arithmetic
     on the same anchor.
     """
@@ -1309,7 +1309,7 @@ def _health_cards_panel_html():
             f"times the player's own measured 2025-26 availability "
             f"(IL days / 364), or the pool mean where he has no IL "
             f"record, plus the measured residual-bias term at "
-            f"delivered volume (Cycle 56 method at player level). "
+            f"delivered volume ( method at player level). "
             f"Per-player intervals are not shown: intervals stay "
             f"scenario-level only. Risk flag means measured "
             f"availability below the pool's 25th percentile for the "
@@ -1333,19 +1333,19 @@ def _health_cards_panel_html():
             "cells[col].textContent);return bv-av;});rs.forEach(function"
             "(r){tb.appendChild(r);});};});})();</script>"
             '<p class="srcline">Source: data/fa_health_cards_2027.json '
-            "(Cycle 67), built from data/fa_shopping_2027.json, curated "
+            "(), built from data/fa_shopping_2027.json, curated "
             "fact_il_stints, curated fact_il_current (Statyx + "
             "FastballAPI, pulled 2026-11-02), FanGraphs Steamer 2027 "
-            "PA/IP, and data/uncertainty_scenarios_2027.json (Cycle 56). "
-            "Evidence: docs/EVIDENCE.html (Cycle 57).</p></div>")
+            "PA/IP, and data/uncertainty_scenarios_2027.json (). "
+            "Evidence: docs/EVIDENCE.html ().</p></div>")
 
 
 def _ticker_panel_html():
-    """Cycle 66: the free-agency tracker ticker — front of Story mode.
+    """: the free-agency tracker ticker — front of Story mode.
 
     Renders ONLY from the committed artifact
     data/tracker_ticker_2026.json; absent the artifact the panel is
-    omitted entirely (fail closed, Cycle 51/57 pattern). Not a
+    omitted entirely (fail closed, /57 pattern). Not a
     figure (count stays 25) and not a chapter (Story stays 6
     chapters): a wire panel in front of them.
 
@@ -1410,7 +1410,7 @@ def _ticker_panel_html():
             "<h4>BUZZ — social</h4>"
             + buzz_html +
             '<p class="srcline">Source: data/tracker_ticker_2026.json '
-            "(Cycle 66). CONFIRMED: MLB StatsAPI transactions (FA codes "
+            "(). CONFIRMED: MLB StatsAPI transactions (FA codes "
             "SFA / DFA / TR / REL / CLW / OUT / DES) diffed against the "
             "freeAgents register. REPORTED: MLB Trade Rumors, MLB.com, "
             "ESPN, Google News, RotoWire. BUZZ: Bluesky Jetstream only. "
@@ -1420,14 +1420,14 @@ def _ticker_panel_html():
 
 
 def _claims_panel_html():
-    """Cycle 68: the claims & reproducibility panel — Explorer appendix.
-    Cycle 69: the open-item paragraph now carries the O01 resolution
+    """: the claims & reproducibility panel — Explorer appendix.
+    : the open-item paragraph now carries the O01 resolution
     (Figure 9's title already carries the in-sample label).
 
     Renders ONLY from the committed pack artifacts
     data/claims_register.json + data/figure_trace_2027.json; absent
     either artifact the panel is omitted entirely (fail closed,
-    Cycle 51/57 pattern). Not a figure (count stays 25) and not a
+    /57 pattern). Not a figure (count stays 25) and not a
     chapter or slide (Story stays 6 chapters, Boardroom stays 15
     slides). The retracted claims are listed in full: they are
     evidence the process works, not something to bury.
@@ -1459,16 +1459,16 @@ def _claims_panel_html():
             "figure's title already carries it: 'Model fit (in-sample)'. "
             "See resolved item O01 in the pack.</p>"
             '<p class="srcline">Source: data/claims_register.json + '
-            "data/figure_trace_2027.json (Cycle 69). The pack page is "
+            "data/figure_trace_2027.json (). The pack page is "
             "generated from the artifacts, never hand-edited.</p></div>")
 
 
 def panel_optimizer():
-    """Cycle 49 (OPT-1), Figure 25: the optimizer's audit of Cycle 26
-    (Cycle 52: benchmark vs headline — the optimum now headlines
+    """ (OPT-1), Figure 25: the optimizer's audit of 
+    (: benchmark vs headline — the optimum now headlines
     Figure 16 and the greedy build is the benchmark).
 
-    Cycle 26 built the three budget rosters greedily (WAR-per-dollar
+     built the three budget rosters greedily (WAR-per-dollar
     quota fill + upgrades). OPT-1 re-solves the identical problem —
     same 199-player FA pool, same Steamer WAR, same prior-AAV anchors,
     same positional quotas — as a mixed-integer program
@@ -1477,8 +1477,8 @@ def panel_optimizer():
     optima (gap 0 at all three budgets). Every number renders from
     data/optimizer_comparison_2027.json so the panel can never drift
     from the workpaper. The DH-restricted series is the sensitivity
-    that isolates Cycle 26's own stated DH rule ("DH can be any bat")
-    — a freedom its greedy never actually used. Cycle 52 promotes the
+    that isolates 's own stated DH rule ("DH can be any bat")
+    — a freedom its greedy never actually used.  promotes the
     optimizer rosters to the Figure 16 headline; this panel is the
     benchmark comparison behind the promotion."""
     cj = os.path.join(DATA, "optimizer_comparison_2027.json")
@@ -1504,7 +1504,7 @@ def panel_optimizer():
             customdata=[b[key]["spend"] / 1e6 for b in budgets])
 
     fig = go.Figure(data=[
-        series("greedy", "Greedy build (Cycle 26)", "#BF0D3E"),
+        series("greedy", "Greedy build ()", "#BF0D3E"),
         series("optimizer", "Exact optimizer (proven optimal)", "#8FBCE6",
                delta=True),
         series("optimizer_dh_restricted",
@@ -1517,14 +1517,14 @@ def panel_optimizer():
                f"+{budgets[1]['delta_war']:.1f} in the middle, "
                f"+{budgets[2]['delta_war']:.1f} at the cap, all three optima proven; "
                f"same pool, prices and quotas as Figure 16 — "
-               f"data/optimizer_comparison_2027.json (Cycle 49)."),
+               f"data/optimizer_comparison_2027.json ()."),
         barmode="group", template="plotly_white", height=560,
         yaxis_title="Total Steamer WAR (26-man roster)")
     return fig
 
 
 def _optimizer_html():
-    """Cycle 49: the OPT-1 facts box under the Build a Roster group
+    """: the OPT-1 facts box under the Build a Roster group
     (Explorer only). Text renders from data/optimizer_comparison_2027.json."""
     import html as _html
     d = json.load(open(os.path.join(DATA, "optimizer_comparison_2027.json")))
@@ -1549,15 +1549,15 @@ def _optimizer_html():
             f"restricted to the greedy's own effective search space the "
             f"optimizer still finds "
             f"+{d['budgets'][0]['delta_war_dh_restricted']:.1f} WAR at the floor. "
-            "Since Cycle 52, Figure 16 headlines the optimizer "
+            "Since , Figure 16 headlines the optimizer "
             "rosters; the greedy builds remain here as the benchmark. "
-            "Cycle 50 stress-tests these optima — price swings, a "
+            " stress-tests these optima — price swings, a "
             "targeted bid-up, an aging haircut, and a mixed pre-arb "
             "build — in the strip directly below.</div>")
 
 
 def _optimizer_sensitivity_html():
-    """Cycle 50 (OPT-2): the sensitivity strip under Figure 25
+    """ (OPT-2): the sensitivity strip under Figure 25
     (Explorer only). Every number renders from
     data/optimizer_sensitivity_2027.json. The mixed build is framed
     exactly as the workpaper frames it: internal pre-arb production
@@ -1605,7 +1605,7 @@ def _optimizer_sensitivity_html():
         f"<tr><td>WAR −15% for age 33+, roster re-scored on base WAR"
         f"</td>{hc_cells}</tr>")
     return (
-        '<div class="note"><b>HOW FRAGILE IS THE OPTIMUM? (Cycle 50, '
+        '<div class="note"><b>HOW FRAGILE IS THE OPTIMUM? (, '
         'OPT-2).</b> The same exact solver, re-run with the prices and '
         'projections perturbed. WAR per budget; "changed" counts roster '
         'names swapped versus the OPT-1 optimum at that budget. Every '
@@ -1639,7 +1639,7 @@ def _optimizer_sensitivity_html():
 
 
 def panel_savant():
-    """CarpeData: Savant trait stability vs incremental value (Cycle 20)."""
+    """data connectors: Savant trait stability vs incremental value ()."""
     tj = os.path.join(DATA, "savant_test.json")
     if not os.path.exists(tj):
         return None
@@ -1661,7 +1661,7 @@ def panel_savant():
         text=[f"r = {v:.2f}" for v in vals], textposition="outside"))
     fig.update_layout(
         title=("Savant traits are rock-stable year-to-year (dark) — far more than outcomes (light)<br>"
-               "<sub>But Cycle 20 tested them honestly: adding bat speed / barrels / xwOBA luck to Marcel made "
+               "<sub>But  tested them honestly: adding bat speed / barrels / xwOBA luck to Marcel made "
                "out-of-sample projections WORSE. Marcel's outcome history already prices the traits — so Savant "
                "is shown here as diagnostics, not sold as a projection input. Source: Baseball Savant, 2024-2026.</sub>"),
         xaxis_title="Year-to-year correlation (player level)", xaxis_range=[0, 1.12],
@@ -1669,7 +1669,7 @@ def panel_savant():
     return fig
 
 def panel_pipeline():
-    """CarpeData: MiLB upper-minors pipeline index by org (Cycle 23)."""
+    """data connectors: MiLB upper-minors pipeline index by org ()."""
     pj = os.path.join(DATA, "pipeline_2026.json")
     if not os.path.exists(pj):
         return None
@@ -1693,7 +1693,7 @@ def panel_pipeline():
     fig.add_vline(x=100, line_dash="dash", line_color="#BF0D3E",
                   annotation_text="League average = 100")
     fig.update_layout(
-        title=("The pipeline behind winning-cheap: under-26 upper-minors depth, 2026 (Cycle 23)<br>"
+        title=("The pipeline behind winning-cheap: under-26 upper-minors depth, 2026 ()<br>"
                "<sub>Qualified AAA/AA hitters (≥150 PA) and pitchers (≥40 IP), age from real birthdates, "
                "volume × quality vs league. Green = winning-cheap orgs. Upper minors only — near-MLB depth, "
                "not total farm quality. Source: MLB Stats API minor-league endpoints.</sub>"),
@@ -1702,7 +1702,7 @@ def panel_pipeline():
     return fig
 
 def panel_shopping():
-    """Cycle 25 + Cycle 71: the 2027 free-agent shopping list, now rank-ordered
+    """ + : the 2027 free-agent shopping list, now rank-ordered
     by SURPLUS VALUE (Moneyball 2.0 arbitrage).
 
     Surplus = projected dollars of wins (Steamer WAR x market $/WAR) MINUS
@@ -1712,7 +1712,7 @@ def panel_shopping():
     Every figure is committed data: WAR + market AAV from
     data/fa_shopping_2027.json; the market $/WAR is the median of the class's
     OWN implied rate (spotrac_market_aav / steamer_war); the contact-skill
-    discount comes from the committed Hakes–Sauer run (Cycle 46). Nothing
+    discount comes from the committed Hakes–Sauer run (). Nothing
     invented here.
     """
     fj = os.path.join(DATA, "surplus_value_2027.json")
@@ -1742,7 +1742,7 @@ def panel_shopping():
                    f"of the cost).")
     fig.update_layout(
         title=("Free-agent decision lens: projected contribution versus market cost — "
-               f"priced at (Cycle 71)<br><sub>{arb_txt} "
+               f"priced at ()<br><sub>{arb_txt} "
                f"Surplus = projected wins in dollars at the market rate (WAR "
                f"x ${d['market_usd_per_war']/1e6:.2f}M) "
                f"minus expected market cost. Green = surplus-positive "
@@ -1750,14 +1750,14 @@ def panel_shopping():
                "overpriced. Valuation, not proven mispricing — a player can be "
                "cheap because of injury/role/age risk. Sources: Spotrac FA "
                "market AAV + FanGraphs Steamer WAR (fa_shopping_2027.json); "
-               "Hakes–Sauer Cycle 46 committed $/WAR. See BML_LOG Cycle 71.</sub>"),
+               "Hakes–Sauer  committed $/WAR. See BML_LOG .</sub>"),
         xaxis_title="surplus value vs expected market cost ($M)",
         template="plotly_white", height=660, margin=dict(l=200, t=150),
         xaxis_range=[min(surp) * 1.6, max(max(surp), 0) * 1.35])
     return fig
 
 def panel_posted():
-    """Cycle 47 rebuild, Figure 23: the posted class — three players,
+    """ rebuild, Figure 23: the posted class — three players,
     three different bets. Sato is the thesis TEST (Triple Crown power
     whose 26.7% K rate sits ~11 points above the Central League
     qualified median), Itoh is the thesis FIT (#2 of 11 Pacific League
@@ -1986,7 +1986,7 @@ def panel_posted():
 
 
 def _posted_html():
-    """Cycle 34, Figure 23 companion HTML (Explorer only): trio cards,
+    """, Figure 23 companion HTML (Explorer only): trio cards,
     the posting clock + fee tiers, and the translation honesty box.
     Every number comes from data/posted_class_2026.json; the fee worked
     example is arithmetic on that file's published tiers, labeled as an
@@ -2084,7 +2084,7 @@ def _posted_html():
         "appear on qualified boards (reliever workload) so no 2024 row is "
         "shown for him; no NPB salary data is used — in the posting market "
         "the fee, not a salary, is the cost.</p>"
-        "<p>Cycle 47 computed layer: the ranks and percentiles in Figure 23 "
+        "<p> computed layer: the ranks and percentiles in Figure 23 "
         "come from src/bml_cycle47.py (output: data/fig23_rebuild_2026.json), "
         "verified 14/14 against the trio dataset. Pools are the player's own "
         "league board and are small — 19 Central League bats and 11 Pacific "
@@ -2105,7 +2105,7 @@ def _posted_html():
 
 
 def panel_animation():
-    """Cycle 26: 16 seasons of payroll vs wins, animated. Press play —
+    """: 16 seasons of payroll vs wins, animated. Press play —
     the cap era arrives and the gold dots (MIL/TB/CLE) never move."""
     p = os.path.join(DATA, "panel_2011_2026.csv")
     if not os.path.exists(p):
@@ -2165,7 +2165,7 @@ def panel_animation():
     return fig
 
 def panel_team_explorer():
-    """Cycle 26: pick your team — its 2026 signature vs the winning-cheap
+    """: pick your team — its 2026 signature vs the winning-cheap
     profile, with payroll, cap headroom, and pipeline rank."""
     fj = os.path.join(DATA, "team_explorer.json")
     if not os.path.exists(fj):
@@ -2200,7 +2200,7 @@ def panel_team_explorer():
                  f"(top prospect: {t['top_prospect']})<br>"
                  "<sub>Signature indexed to league = 100; higher = more winning-cheap-like on every axis "
                  "(K% and HR rate inverted). Green = MIL/TB/CLE average profile. Sources: MLB Stats API 2026 KPIs, "
-                 "Spotrac payroll, Cycle 23 pipeline index. Pick your team:</sub>")
+                 "Spotrac payroll,  pipeline index. Pick your team:</sub>")
         buttons.append(dict(label=t["team"], method="update",
                             args=[{"visible": vis}, {"title": {"text": title}}]))
     t0 = d["teams"][0]
@@ -2218,11 +2218,11 @@ def panel_team_explorer():
     return fig
 
 def panel_scenarios():
-    """Cycle 26, headline promoted Cycle 52: what does the money buy?
+    """, headline promoted : what does the money buy?
     Full 26-man rosters from the real FA class at the floor, the
-    middle, and the cap — the proven-optimal builds (Cycle 49 MILP on
-    Cycle 26's identical pool, prices and quotas), each headline WAR
-    carrying its Cycle 50 +-20% price-error range and its Cycle 56
+    middle, and the cap — the proven-optimal builds ( MILP on
+    's identical pool, prices and quotas), each headline WAR
+    carrying its  +-20% price-error range and its 
     delivered-WAR range (UNC-2 Monte Carlo over measured projection
     error and player availability). The greedy builds are preserved
     in the artifact as the benchmark Figure 25 shows."""
@@ -2250,7 +2250,7 @@ def panel_scenarios():
             visible=(i == 0)))
         rng = s["war_range_prices_pm20"]
         u = unc.get(s["label"])
-        delivered = (f" Delivered-WAR range (Cycle 56): 10th–90th percentile "
+        delivered = (f" Delivered-WAR range (): 10th–90th percentile "
                      f"{u['p10']}–{u['p90']} WAR, median {u['p50']} — Monte Carlo "
                      "over measured projection error and player availability; "
                      "the point above is the full-availability projection."
@@ -2258,9 +2258,9 @@ def panel_scenarios():
         title = (f"What does the money buy? {s['label']} — "
                  f"{s['total_war']} WAR proven-optimal ({rng['low']}–{rng['high']} "
                  f"across ±20% price error) for ${s['spend']/1e6:.1f}M<br>"
-                 "<sub>Exact optimizer (Cycle 49); the greedy build is the benchmark "
+                 "<sub>Exact optimizer (); the greedy build is the benchmark "
                  "in Figure 25. Prices are prior-contract AAVs: last-price anchors, "
-                 "not predicted 2027 salaries. Availability stress (Cycle 27: WAR "
+                 "not predicted 2027 salaries. Availability stress (: WAR "
                  "scaled by the mean availability measured from 201 real players' "
                  f"2025-26 IL records, {d['availability_stress']['pool']['mean_avail']}): "
                  "this roster holds "
@@ -2273,7 +2273,7 @@ def panel_scenarios():
     rng0 = s0["war_range_prices_pm20"]
     u0 = unc.get(s0["label"])
     delivered0 = (f"; delivered-WAR 10th–90th: {u0['p10']}–{u0['p90']} "
-                  f"(Cycle 56)" if u0 else "")
+                  f"()" if u0 else "")
     fig = go.Figure(data=traces)
     fig.update_layout(
         title=(f"What does the money buy? {s0['label']} — {s0['total_war']} WAR "
@@ -2354,7 +2354,7 @@ def build():
     ]
     flat = [f for _, _, _, figs in SECTIONS for f in figs if f is not None]
 
-    # Cycle 76 — noir record-book restyle: one Plotly template applied
+    #  — noir record-book restyle: one Plotly template applied
     # centrally to every figure at numbering time. MLB Navy ground,
     # Rays Navy panel surface, Columbia Blue dim text, MLB Red the
     # single accent. The template owns chrome only (backgrounds, grid,
@@ -2402,7 +2402,7 @@ def build():
 
         Legend BELOW the chart, title alone on top, subtle gridlines.
         Boardroom panels keep their full titles (their caveats live in
-        them); other titles are shortened as before. Cycle 76: the
+        them); other titles are shortened as before. : the
         noir template above replaces plotly_white.
         """
         out = []
@@ -2598,7 +2598,7 @@ def build():
          "at 44.9 (37.6 to 52.4).",
          "Spend to the floor first. The last dollars buy the least talent.",
          "Source: Spotrac free-agent class plus FanGraphs Steamer WAR, prior-contract price anchors; "
-         "exact optimization, Cycle 49 (Figure 25); delivered-WAR ranges, Cycle 56 "
+         "exact optimization,  (Figure 25); delivered-WAR ranges,  "
          "(data/uncertainty_scenarios_2027.json)."),
         (18, "Checked in public against the best benchmark we could get.",
          "Our Marcel hitter projections match FanGraphs Steamer at OBP r of 0.889, with 201 hitters "
@@ -2620,7 +2620,7 @@ def build():
               "<span class=\"why\">Why trust it:</span> real 2025-2026 data (MLB API + Spotrac), model "
               "cross-validated. Not a guarantee — shown honestly below.</div>")
     story += cards
-    # Cycle 66: the tracker ticker leads Story mode (default view) —
+    # : the tracker ticker leads Story mode (default view) —
     # a wire panel in front of the chapters, not a chapter itself.
     story += _ticker_panel_html()
     story += ('<div class="hero-team"><h3>Pick your team first</h3>'
@@ -2684,7 +2684,7 @@ def build():
          "A disciplined floor team captures about 89 percent of the cap team's talent for about "
          "70 percent of the money. Proven-optimal builds; across ±20% price error the floor "
          "holds 45.0–53.2 WAR and the cap 50.4–55.9. Delivered-WAR ranges (10th–90th, "
-         "Cycle 56 Monte Carlo over measured projection error and availability): floor "
+         " Monte Carlo over measured projection error and availability): floor "
          "33.0–46.9, middle 36.0–50.7, cap 37.6–52.4."),
         ([22], "The shopping list ranks the whole free-agent class by projected value",
          "Every name priced off last year's real contract anchor, never a predicted price."),
@@ -2696,7 +2696,7 @@ def build():
     ]
     boardroom = ('<p>15 slides, in talk-track order. Print this section for the room: '
                  '<button type="button" onclick="printBoardroom()">Print boardroom</button></p>')
-    # Cycle 64: the Cap Transition ledger leads the Boardroom view —
+    # : the Cap Transition ledger leads the Boardroom view —
     # a panel in front of the slides, not a slide and not a figure.
     boardroom += _cap_transition_panel_html()
     for i, (nums, head, note) in enumerate(slides, 1):
@@ -2713,7 +2713,7 @@ def build():
          "Source: MLB Stats API team data and Spotrac payroll, plus the proposed 2027 cap."),
         ("Build a Roster", "Signatures, durability, projections, health, the roster, and what moves wins — the roster itself is the exact optimizer's proven optimum.",
          [7, 8, 12, 13, 14, 15, 16, 17, 25],
-         "Source: Marcel projections, health caps, and the 2027 roster build from committed files; headline rosters: data/wow_scenarios.json (Cycle 49 exact MILP optimum, promoted Cycle 52; greedy build preserved in the same file as the benchmark); optimizer comparison: data/optimizer_comparison_2027.json (Cycle 49, scipy/HiGHS MILP on the identical pool, prices and quotas); delivered-WAR ranges: data/uncertainty_scenarios_2027.json (Cycle 56)."),
+         "Source: Marcel projections, health caps, and the 2027 roster build from committed files; headline rosters: data/wow_scenarios.json ( exact MILP optimum, promoted ; greedy build preserved in the same file as the benchmark); optimizer comparison: data/optimizer_comparison_2027.json (, scipy/HiGHS MILP on the identical pool, prices and quotas); delivered-WAR ranges: data/uncertainty_scenarios_2027.json ()."),
         ("Shop the FA Class", "The farm pipeline behind the cheap winners, the shopping list, and the best values.",
          [21, 22],
          "Source: Spotrac free-agent class and FanGraphs Steamer WAR; prices are prior-contract averages."),
@@ -2722,7 +2722,7 @@ def build():
          "Source: NPB official Baseball Information System (BIS) — data/posted_class_2026.json; leaderboard context computed by src/bml_cycle47.py into data/fig23_rebuild_2026.json; posting facts: AP / MLB Trade Rumors / Sportsnet, 2026-11-01."),
         ("Check the Model", "Persistence, run differential, the title-bar test, the benchmark, the trait check — and our own pricing test, verdict included.",
          [3, 4, 5, 18, 19, 20, 24],
-         "Source: FanGraphs Steamer benchmark, Baseball Savant leaderboards, MLB panel data, and the Cycle 46/48 Hakes–Sauer workpaper (committed salary samples + team-season panel)."),
+         "Source: FanGraphs Steamer benchmark, Baseball Savant leaderboards, MLB panel data, and the /48 Hakes–Sauer workpaper (committed salary samples + team-season panel)."),
     ]
     explorer = ('<div class="hero-team"><h3>Pick your team first</h3>'
                 "<p>Use the dropdown: every club's 2026 signature against the winning-cheap profile, "
@@ -2731,14 +2731,14 @@ def build():
     for name, desc, nums, src in groups:
         explorer += f'<div class="task"><h3>{name}</h3><p>{desc}</p></div>'
         if name == "Build a Roster":
-            # Cycle 57: the evidence footnote goes directly under
+            # : the evidence footnote goes directly under
             # the Figure 14 (health) panel — its anchor figure.
             for n in nums:
                 explorer += _panel(n, "explorer")
                 if n == 14:
                     explorer += _evidence_note_html()
         elif name == "Check the Model":
-            # Cycle 62: the held-out benchmark panel goes directly
+            # : the held-out benchmark panel goes directly
             # under the Figure 18 (benchmark) panel — its anchor
             # figure. Agreement (Fig. 18) vs accuracy (this panel).
             for n in nums:
@@ -2746,7 +2746,7 @@ def build():
                 if n == 18:
                     explorer += _benchmark_panel_html()
                 if n == 19:
-                    # Cycle 75: the bat-speed exhibit goes directly
+                    # : the bat-speed exhibit goes directly
                     # under the Figure 19 (Savant traits) panel — its
                     # anchor figure. Context only (claim N04).
                     explorer += _bat_speed_exhibit_html()
@@ -2756,7 +2756,7 @@ def build():
         if name == "Build a Roster":
             explorer += ('<div class="task"><h3>Benchmark vs headline: the optimizer\'s audit</h3>'
                          "<p>Figure 25 re-solves Figure 16's exact problem with a "
-                         "mixed-integer optimizer and proves the optima. Since Cycle 52 "
+                         "mixed-integer optimizer and proves the optima. Since  "
                          "those optima are Figure 16's headline rosters; the greedy "
                          "build remains as the benchmark. Explorer only. "
                          "Story stays 6 chapters and Boardroom stays 15 slides.</p></div>")
@@ -2767,7 +2767,7 @@ def build():
                          "<p>Ranked by WAR per $10M of prior salary. Bars show where each player sits "
                          "in the committed free-agent pool for that metric.</p></div>")
             explorer += _player_cards()
-            # Cycle 67: health cards — the same class, ranked by
+            # : health cards — the same class, ranked by
             # delivered WAR instead of headline WAR. Explorer only.
             explorer += ('<div class="task"><h3>Health cards: the whole class, '
                          "ranked by what each player will actually give you</h3>"
@@ -2792,7 +2792,7 @@ def build():
                          "exhibit, not a new thesis claim.</p></div>")
             explorer += _posted_html()
 
-    # Cycle 68: the claims & reproducibility panel closes Explorer —
+    # : the claims & reproducibility panel closes Explorer —
     # the appendix, not a figure, chapter, or slide.
     explorer += ('<div class="task"><h3>Claims &amp; reproducibility — the audit trail</h3>'
                  "<p>What this demo asserts, what it does not support, and what it withdrew — "
@@ -2895,7 +2895,7 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 </style></head>
 <body>
 <div class="crest">
-<h1>⚾ HARDBALL <span class="tag">P7 · demo ready · target Dec 3</span></h1>
+<h1>⚾ HARDBALL </h1>
 <h2>How the winning-cheap teams beat the market — priced against the <b>$245.3M</b> cap</h2>
 <div class="asof">__ASOF__</div>
 </div>
@@ -2966,11 +2966,11 @@ site.web.api.espn.com</span> (2025 validation set: 131 players cross-checked, HR
 a rate limit, logged in data/salaries_2026.json). <b>Injury/health:</b> MLB
 transactions feed (35,000+ events 2025-2026, IL days per player). <b>MLB color/look:</b> league
 branding only, for presentation.<br>
-<b>NPB posted class (Cycle 34, keyless):</b> <span class="src">NPB official BIS
+<b>NPB posted class (, keyless):</b> <span class="src">NPB official BIS
 (npb.jp/bis)</span> — 2024–2026 qualified leaderboards (340 rows) plus the
 posted trio (Sato / Taira / Itoh, posted Nov 1, 2026); BIS is canonical over
 wire roundings, and no NPB-to-MLB translation factor is claimed anywhere.<br>
-<b>CarpeData layer (2026-10-31, all keyless):</b> <span class="src">Baseball Savant</span>
+<b>data connectors layer (2026-10-31, all keyless):</b> <span class="src">Baseball Savant</span>
 leaderboards by player_id — expected stats (xwOBA), batted ball (EV/barrels), bat tracking
 2024-2026, sprint speed, arm strength; <span class="src">FanGraphs API</span> — Steamer 2027
 projections (the benchmark panel; ZiPS returned empty via the API and is not claimed) and the
@@ -2981,9 +2981,9 @@ not a forecast — a same-year production formula once recorded CV MAE 4.3 / R²
 two-season window; on the full 2011-2026 panel it does not generalize, and it is labeled
 diagnostic-only in data/formula_prod.json). KPI-only next-year forecasting: out-of-sample
 MAE ≈ 14.1 wins, worse than the naive baseline; grouped CV MAE 10.2 (a fold predicting the
-60-game 2020 season is excluded as a units mismatch — see BML Cycle 19). Player projections:
+60-game 2020 season is excluded as a units mismatch — see BML ). Player projections:
 backtested Marcel (3-season 5-4-3 + fitted age terms; Cycles 21/24), health-capped, benchmarked
-against Steamer (hitter OBP r = .889; pitcher ERA bias −0.25 after the Cycle 24 fix, disclosed
+against Steamer (hitter OBP r = .889; pitcher ERA bias −0.25 after the  fix, disclosed
 on the panel). The product is player-level acquisition, not a team-wins formula.
 <b>Pricing claim, tested (Cycles 46/48):</b> our own Hakes–Sauer test of whether the
 market underprices contact/OBP is formally inconclusive at current samples — Figure 24
@@ -3022,25 +3022,25 @@ transactions. <b>Committed · availability cross-check layer.</b><br>
 Taira / Itoh) and 2024–2026 leaderboards, 340 rows. <b>Committed ·
 keyless.</b><br>
 <span class="src">Baseball-Reference</span> WAR daily files — WAR context and
-a salary cross-check. <b>Salary use FAILED CLOSED (Cycle 44):</b> only 71.1%
+a salary cross-check. <b>Salary use FAILED CLOSED ():</b> only 71.1%
 of matched salaries agreed within $50k against the 80% bar, so no
 Baseball-Reference salary data is used anywhere on this page; the files are
 kept raw for WAR checks only.<br>
 <span class="src">Statyx</span> (api.statyx.io) — live MLB injuries
-(recent-moves feed). <b>SERVING since Cycle 51 (2026-11-02) — the EVENT
-layer (Cycle 55)</b>: its moves are compared against the FastballAPI
+(recent-moves feed). <b>SERVING since  (2026-11-02) — the EVENT
+layer ()</b>: its moves are compared against the FastballAPI
 census for the health figure's movement line (curated table
 fact_il_events), and with FastballAPI it feeds the current-IL layer
 (curated table fact_il_current, 196 players) and the health figure's
 live-IL picture — 13 of the 251 free agents currently listed injured,
 pulled 2026-11-02 (injuries page answered 200 with 50 recent-move
 records, 44 of them also on FastballAPI's full list). Its standings
-payload was tested in Cycle 55 and dropped as a source (only a
+payload was tested in  and dropped as a source (only a
 Statyx-internal team_id, no crosswalk to MLB teams, 25 of 30 teams
 covered) — kept raw only.<br>
 <span class="src">FastballAPI</span> (mcp.fastballapi.com) — live injuries and
-standings plus pitch-level history back to 2015. <b>SERVING since Cycle 51
-(2026-11-02) — the CENSUS (Cycle 55)</b>: the full 190-record IL list is
+standings plus pitch-level history back to 2015. <b>SERVING since 
+(2026-11-02) — the CENSUS ()</b>: the full 190-record IL list is
 the canonical snapshot behind the same
 current-IL layer and health-figure live picture; its 2026 standings
 snapshot agrees with the committed MLB Stats API picture 30 of 30 on
@@ -3095,7 +3095,7 @@ showMode("story");
     if os.path.exists(_ev_path):
         ev_date = json.load(open(_ev_path))["metadata"]["run_date"]
 
-    # Cycle 70 — "data as of" stamp: every date read from its own
+    #  — "data as of" stamp: every date read from its own
     # committed feed artifact at build time; a missing artifact reads
     # "not yet pulled" for that feed, never a guessed date.
     _MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
