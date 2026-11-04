@@ -2707,3 +2707,45 @@ No claim or data changed; dashboard untouched (still 25 figures).
   untouched: #57 (Cycle 77 live refresh, predates the Cycle 78
   restore and the current main) and #58 (parallel-lane ticker
   trigger).
+
+## Cycle 81 — tracker refresh + December checklist refresh (24/7 job, 2026-11-04 ~08:15 PT)
+
+- DEADLINE GUARD: 2026-11-04, inside the build window (closes Dec 1).
+- SPOTRAC PROBE: single GET of the Rays 2026 payroll page -> 403
+  (browser UA). Logged, moved on; salaries stay 24/30 on the Spotrac
+  basis + Cot's second basis (Cycle 74, 7/7 shed sets). FanGraphs
+  not re-probed; backlog item (c) stays failed-closed per its guard.
+- LIVE FEEDS: refresh_live_feeds.py SKIP (last pull 2026-11-03
+  22:23 UTC, 17.9h old, < 20h watermark); pull_evidence_surveillance.py
+  SKIP (artifact Nov 2, 2d old, < 6d guard). Both SKIP lines are
+  normal outcomes, not failures. EVIDENCE.html untouched.
+- TICKER: pull_tracker_ticker.py OK — window 2026-10-28..2026-11-04,
+  SIGNED 369 -> 805, REPORTED 200, BUZZ 0, total 569 -> 1005. The
+  +436 investigated before shipping: all dated Nov 2-4, no old item
+  lost, driven by the post-season DFA wave (DFA 234 -> 659). The 5
+  duplicate transaction ids are unchanged from Cycle 80 (bilateral
+  trade rows). Jetstream handshake 403 fail-closed; Google News 200.
+- PLATFORM: ingest_platform.py 25 datasets, 0 failures; Savant
+  bands hold (expected 651-673, bat-tracking 595-619, sprint
+  489-506). Transactions raw 121,411 -> 121,908 (raw-zone only).
+  curate.py 20 tables, contracts pass; _build_report.json identical
+  to main's, so no curated table changed materially and none is
+  shipped. build_warehouse.py rebuilt; query.py benchmark_parity
+  r = 0.889, 201 matched — exact.
+- DASHBOARD: rebuilt with the lake present and
+  HARDBALL_OFFLINE_BUILD=1. Census: 25 unique figures, zero
+  data-figure-missing markers. Crest stamp "Data as of Nov 4, 2026
+  · tracker Nov 4 · injured list Nov 3 · evidence Nov 2".
+  dashboard/hardball_demo.html kept as a byte-identical copy of
+  dashboard/index.html (the #81 sync invariant).
+- GATE: src/verify_data.py 107 checks ALL PASS on the first run;
+  spellcheck green. No gate fix needed this cycle.
+- BACKLOG ITEM (g) REFRESHED: HANDOFF.md gains a Cycle 81 December
+  readiness checklist refresh. Freeze tag still owed; v1.1.12 is the
+  current published release, not the freeze tag. Sportradar footer
+  line correction still rides with the freeze cut (trial declined
+  by the owner 2026-11-03).
+- NEXT: final frozen-main release cut before Dec 1. Open PRs left
+  untouched: #57 (Cycle 77 live refresh, predates the Cycle 78
+  restore and the current main) and #58 (parallel-lane ticker
+  trigger).

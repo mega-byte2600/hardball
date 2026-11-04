@@ -1660,3 +1660,87 @@ relabeled; release v1.1.12 current, Cycle 78's restore).
 - Final frozen-main release cut before Dec 1 (with the Sportradar
   footer-line correction riding along). After Dec 1 the deadline
   guard fires and this job goes silent.
+
+## Cycle 81 — tracker refresh + December checklist refresh (2026-11-04 ~08:15 PT, 24/7 job)
+
+### Base
+- Main b11702eb (Cycle 80 merge) unmoved at run start. Note on
+  method: the API tarball download 404'd on the codeload redirect
+  (surrogate bearer does not carry across the redirect), so the
+  base was verified another way — the Cycle 80 work tree's tracked
+  files were compared blob-by-blob against main's recursive tree
+  via the API: all 234 blobs identical, no missing files. That
+  verified tree is the base for this cycle's branch.
+
+### Platform + gate this run (ticker + dashboard shipped)
+- Spotrac probe: single GET of the Rays 2026 payroll page -> 403
+  (browser UA). Logged, moved on; salaries stay 24/30 on the
+  Spotrac basis (6 team failures ARI/BOS/CHC/MIL/TB/TEX in the
+  artifact metadata) + Cot's second basis (Cycle 74, 7/7 shed
+  sets). FanGraphs not re-probed: item (c) stays failed-closed
+  per its guard; retry only on a 200 probe.
+- LIVE FEEDS: refresh_live_feeds.py SKIP (last pull Nov 3 22:23
+  UTC, 17.9h old, < 20h watermark); pull_evidence_surveillance.py
+  SKIP (artifact Nov 2, 2d old, < 6d guard). Both SKIP lines are
+  normal outcomes, not failures. No new evidence artifact, so
+  docs/EVIDENCE.html is untouched.
+- TICKER: pull_tracker_ticker.py OK — window still
+  2026-10-28..2026-11-04, SIGNED 369 -> 805, REPORTED 200, BUZZ 0,
+  total 569 -> 1005. The +436 SIGNED rows were investigated
+  before shipping, not just counted: every one is dated Nov 2-4,
+  none of the old 369 was lost, and the increase is the
+  post-season DFA wave (DFA declarations 234 -> 659; the rest
+  Nov 3-4 releases and new signings, e.g. Many Ramirez SFA Nov 4).
+  The 5 duplicate transaction ids are unchanged from Cycle 80 —
+  the known bilateral-trade rows (one row per side of a trade),
+  not a new defect. Bluesky Jetstream handshake 403 is the
+  script's designed fail-closed behavior (logged, skipped, never
+  routed around); Google News answered 200 this run.
+- PLATFORM: ingest_platform.py 25 datasets, 0 failures; Savant
+  expected 651-673/season, bat-tracking 595-619, sprint 489-506 —
+  all inside the known-good bands, no silent-source move.
+  Transactions raw 121,411 -> 121,908 (the ticker wave above;
+  raw-zone only). curate.py 20 tables, all contracts pass;
+  _build_report.json identical to main's, so no curated table
+  changed materially and none is shipped. Routine ingest manifest
+  appends were restored, not shipped, matching Cycle 80 practice.
+  build_warehouse.py rebuilt; query.py benchmark_parity
+  r = 0.889, 201 matched — exact.
+- DASHBOARD: rebuilt with the lake present and
+  HARDBALL_OFFLINE_BUILD=1 (committed snapshots forced). Census:
+  25 unique figures, zero data-figure-missing markers; Story 6
+  chapters, Boardroom <=15 slides, Explorer all 25 by task, 8
+  percentile player cards. Crest stamp reads "Data as of Nov 4,
+  2026 · tracker Nov 4 · injured list Nov 3 · evidence Nov 2".
+  dashboard/hardball_demo.html kept as a byte-identical copy of
+  dashboard/index.html (the #81 sync invariant).
+- GATE: src/verify_data.py 107 checks ALL PASS on the first run
+  (no gate fix needed this cycle); spellcheck green.
+
+### Checklist status, refreshed
+- Freeze / final refresh: still targeted Nov 30; freeze tag still
+  owed. v1.1.12 (Cycle 78 restore) is the current published
+  release, NOT the freeze tag.
+- Demo package: 25 figures verified this run; Fig. 23 re-verified
+  via gate (BIS canonical lines); one-pager and talk-track
+  unchanged this run (gate checks talk-track refs <= 25);
+  README "Presenting in 5 minutes" current (Cycle 79).
+- Print pack: still day-before items — TALKTRACK printed,
+  one-pager printed, README "Presenting in 5 minutes" loaded.
+- Known gaps carried, unchanged: salaries 24/30 (Spotrac 403;
+  FanGraphs retry only on a 200 probe, under the Cycle 32
+  reconcile-first guard); forced-seller 6/7 on the Spotrac basis,
+  7/7 on Cot's second basis; PRICE-1 blocked pending complete
+  per-class signing terms (Sportradar trial DECLINED by the owner
+  2026-11-03 — do not raise it again; the dashboard footer line
+  that still says the trial starts mid-November is corrected at
+  the freeze cut, per the Cycle 77 note); persistence recompute
+  on record from Cycle 63.
+- Open PRs left untouched: #57 (Cycle 77 live refresh, predates
+  the Cycle 78 restore and the current main) and #58
+  (parallel-lane ticker trigger).
+
+### Remaining build queue
+- Final frozen-main release cut before Dec 1 (with the Sportradar
+  footer-line correction riding along). After Dec 1 the deadline
+  guard fires and this job goes silent.
