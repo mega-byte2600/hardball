@@ -2576,3 +2576,76 @@ No claim or data changed; dashboard untouched (still 25 figures).
   Any build that will be committed must run with the lake
   present, and the figure census (25 uniques, zero
   data-figure-missing markers) is the cheap proof.
+
+## Cycle 79 — tracker refresh + README demo runbook (24/7 job, 2026-11-03 evening PT)
+
+- DEADLINE GUARD: 2026-11-03, inside the build window (closes Dec 1).
+- SPOTRAC PROBE: single GET of the Rays 2026 payroll page -> 403
+  (browser UA). Logged, moved on; salaries stay 24/30 on the Spotrac
+  basis + Cot's second basis (Cycle 74, 7/7 shed sets). FanGraphs
+  payroll page probed once -> 403 Cloudflare, so backlog item (c)
+  stays failed-closed per its guard; no retry.
+- LIVE FEEDS: refresh_live_feeds.py SKIP (last pull 5.9h old, < 20h
+  watermark); pull_evidence_surveillance.py SKIP (artifact 1d old,
+  < 6d guard). Both SKIP lines are normal outcomes, not failures.
+  No new evidence artifact, so docs/EVIDENCE.html is untouched.
+- TICKER: pull_tracker_ticker.py OK — window rolled to
+  2026-10-28..2026-11-04, SIGNED 362 -> 367, REPORTED 200, BUZZ 0,
+  total 562 -> 567. New SIGNED items: one MLB release (Marlins RHP
+  Bradley Blalock), one minor-league signing (Rangers RHP Enrique
+  Pantoja), the rest minor-league DFA declarations. Google News
+  503 on all queries and the Bluesky Jetstream timeout are the
+  script's designed fail-closed behavior (logged, skipped, never
+  routed around); the lanes shipped exactly as the script records.
+- PLATFORM: ingest_platform.py 25 datasets, 0 failures; Savant
+  expected 651-673/season, bat-tracking 595-619, sprint 489-506 —
+  all inside the known-good bands, no silent-source move. curate.py
+  20 tables, all contracts pass; the _build_report.json is
+  byte-identical in counts to the committed report, so no curated
+  table changed materially and none is shipped. build_warehouse.py
+  rebuilt; query.py benchmark_parity r = 0.889, 201 matched — exact.
+- DASHBOARD: rebuilt with the lake present and
+  HARDBALL_OFFLINE_BUILD=1 (the current form of the forced-snapshot
+  pattern). Census: 25 unique figures, zero data-figure-missing
+  markers. Crest stamp now reads "Data as of Nov 4, 2026 · tracker
+  Nov 4 · injured list Nov 3 · evidence Nov 2". Gate
+  src/verify_data.py: ALL CHECKS PASS (the two pre-rebuild FAILs
+  were the stale stamp and stale ticker pull date, both resolved
+  by the rebuild — not source breaks).
+- SPELLCHECK: failed on one token, "edu" — a pre-existing artifact,
+  not from this cycle: it is the TLD fragment of the About contact
+  email (michael.bolton.ph@dartmouth.edu) as tokenized from the
+  built HTML, present in the previously committed artifact too.
+  Mechanical fix: "edu" added to WHITELIST in
+  src/spellcheck_gate.py with the source line cited. Spellcheck
+  now OK. No contact text was changed.
+- BACKLOG ITEM (f) DONE: README "Presenting in 5 minutes" — open
+  the file (Story is the default landing), press play on the
+  payroll-vs-wins animation, verdict first + 6 chapters, Boardroom
+  for the room (15 slides, print-clean), Explorer for questions
+  (all 25 figures by task, Pick Your Team on top), The Posted Class
+  (Figure 23, Explorer-only) as the live-market exhibit, and where
+  the honesty box lives (Story appendix + Explorer Claims &
+  reproducibility + the Figure 23 translation box). Every mode
+  count and chapter mapping was verified against the rebuilt
+  artifact and docs/TALKTRACK.md; no new numbers.
+- NEXT: backlog item (g) — December readiness checklist refresh in
+  HANDOFF.md. Open PRs left untouched: #57 (Cycle 77 live refresh,
+  predates the Cycle 78 restore and the current main) and #58
+  (parallel-lane ticker trigger).
+- REBASE NOTE (same cycle, before merge): main moved mid-work via
+  PR #80 (README rewrite, Figure 3 readability, ticker slowed
+  150s -> 210s, dashboard now published as dashboard/index.html)
+  and PR #81 (legacy dashboard sync). The first PR (#82, from old
+  main 9daf496d) was superseded, not merged: this cycle was rebuilt
+  from the new head c16079b4 with the new builder, so the artifact
+  carries the Figure 3 fix. The build writes dashboard/index.html;
+  dashboard/hardball_demo.html is kept as a byte-identical copy
+  (the #81 sync invariant; the root index and the gate both read
+  it). Gates re-run green on the rebuilt pair.
+- SPELLCHECK NOTE (rebase): the new main's README carries the live
+  dashboard URL as bare prose, tokenizing to "https" — "http" was
+  already whitelisted but "https" was not, so the rebuilt pair
+  failed spellcheck on that one token. Same mechanical class as
+  the "edu" fix above: "https" added to WHITELIST (URL scheme,
+  not a typo). Spellcheck now OK; verify_data.py ALL CHECKS PASS.

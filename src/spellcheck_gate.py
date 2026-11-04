@@ -31,7 +31,7 @@ WHITELIST = {
     # proper nouns in the About/contact prose (brands, pronoun contraction)
     "linkedin", "pfac", "dartmouth", "mph", "i’m", "i'm", "github",
     # tech / repo vocabulary introduced by the README review
-    "auditable", "hashtag", "http", "qa", "txt", "venv", "workflow",
+    "auditable", "hashtag", "http", "https", "qa", "txt", "venv", "workflow",
     "bluesky", "jetstream",
     "nym", "mets", "nyy", "yankees", "phi", "phillies", "atl", "braves",
     "bal", "orioles", "bos", "red", "chc", "cubs", "cincinnati", "reds",
@@ -52,6 +52,10 @@ WHITELIST = {
     "sasaki", "schlittler",
     # Cycle 75 (bat-speed exhibit) names — verbatim from the Savant board
     "oneil", "zquez", "adell", "caminero", "heineman", "mph",
+    # Cycle 79: "edu" is the TLD fragment of the About contact email
+    # (michael.bolton.ph@dartmouth.edu) as tokenized from the built HTML;
+    # the address itself is spelled correctly in src/dashboard_p6.py.
+    "edu",
     # data/tools vocab
     "api", "espn", "mlb", "statsapi", "spotrac", "github", "plotly",
     "sqlite", "csv", "kpi", "kpis", "keyless", "gitignored", "json", "html",
