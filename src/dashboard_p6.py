@@ -328,7 +328,7 @@ def panel_health():
     ov = live["fa_overlay"]
     players = ov["players"]
     combo = make_subplots(
-        rows=2, cols=1, row_heights=[0.52, 0.48], vertical_spacing=0.14,
+        rows=2, cols=1, row_heights=[0.58, 0.42], vertical_spacing=0.07,
         specs=[[{"type": "bar"}], [{"type": "table"}]],
         subplot_titles=[
             "",
@@ -354,7 +354,12 @@ def panel_health():
     combo.update_layout(
         title=fig.layout.title.text,
         xaxis_title="", yaxis_title="Projected PA reduction (%)",
-        template="plotly_white", height=760, showlegend=True)
+        template="plotly_white", height=680, showlegend=True,
+        margin=dict(l=64, r=24, t=84, b=76),
+        legend=dict(orientation="h", yanchor="top", y=-0.16,
+                    xanchor="center", x=0.5))
+    combo.update_xaxes(automargin=True, tickangle=-35, row=1, col=1)
+    combo.update_yaxes(automargin=True, range=[0, 65], row=1, col=1)
     # Cycle 55: movement line from the event layer (data/il_events.json,
     # built by src/bml_cycle55.py) under the live-IL table. Absent the
     # artifact, the panel keeps the Cycle 51 two-row shape — fail closed.
@@ -368,8 +373,8 @@ def panel_health():
                    f"{live['metadata']['pulled_date']}): {ov['n_matched']} of "
                    f"{ov['fa_pool_size']} free agents currently listed injured")
     combo3 = make_subplots(
-        rows=3, cols=1, row_heights=[0.44, 0.42, 0.14],
-        vertical_spacing=0.10,
+        rows=3, cols=1, row_heights=[0.52, 0.34, 0.14],
+        vertical_spacing=0.06,
         specs=[[{"type": "bar"}], [{"type": "table"}],
                [{"type": "scatter"}]],
         subplot_titles=["", table_title, ""])
@@ -384,7 +389,12 @@ def panel_health():
     combo3.update_layout(
         title=fig.layout.title.text,
         xaxis_title="", yaxis_title="Projected PA reduction (%)",
-        template="plotly_white", height=830, showlegend=True)
+        template="plotly_white", height=700, showlegend=True,
+        margin=dict(l=64, r=24, t=84, b=96),
+        legend=dict(orientation="h", yanchor="top", y=-0.12,
+                    xanchor="center", x=0.5))
+    combo3.update_xaxes(automargin=True, tickangle=-35, row=1, col=1)
+    combo3.update_yaxes(automargin=True, range=[0, 65], row=1, col=1)
     return combo3
 
 
@@ -2505,9 +2515,16 @@ def build():
                 template=fig.layout.template,
                 height=480,
                 showlegend=True,
+                barmode="group",
                 legend=dict(orientation="h", yanchor="top", y=-0.24,
                             xanchor="center", x=0.5),
-                margin=dict(l=60, r=24, t=72, b=110),
+                margin=dict(l=64, r=24, t=72, b=120),
+                xaxis=dict(title="", automargin=True, tickangle=-35,
+                           tickfont=dict(color="#8FBCE6", size=11)),
+                yaxis=dict(title="Projected PA reduction (%)", range=[0, 65],
+                           automargin=True,
+                           gridcolor="rgba(255,255,255,0.08)",
+                           zerolinecolor="rgba(255,255,255,0.25)"),
             )
             fig = compact
         return ('<div class="panel" data-mode="' + mode +
