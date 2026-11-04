@@ -29,6 +29,7 @@ The public story should answer three questions in order:
 - Use generous whitespace around dense charts.
 - Keep the primary contact action visually distinct from secondary profile links.
 - Preserve the current Story, Boardroom, and Explorer modes. They are different reading speeds for the same evidence, not separate products.
+- Treat iPhone and iPad as the primary reading surfaces: stack controls, preserve touch targets, prevent page-wide overflow, and keep chart context readable without zooming.
 - Keep mobile layouts single column where content becomes compressed.
 
 ## Information flow
