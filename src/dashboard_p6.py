@@ -2801,7 +2801,7 @@ def build():
                  "Boardroom stays 15 slides.</p></div>")
     explorer += _claims_panel_html()
 
-    page_template = """<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Cap-Era Moneyball Decision Tool</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    page_template = """<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — MLB Decision Intelligence</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
 --ink:#041E42; --ink-hi:#072A52; --ink-deep:#021028;
@@ -2816,7 +2816,7 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif}
 a{color:var(--paper-dim);text-underline-offset:2px}
 .hd{max-width:1120px;margin:0 auto;padding:0 20px 40px}
 .crest{background:linear-gradient(135deg,var(--ink-hi) 0%,var(--ink) 55%,var(--panel) 130%);color:var(--paper);padding:32px 32px 26px;border-bottom:3px solid var(--accent);border-radius:0 0 14px 14px;margin:0 0 4px;box-shadow:var(--shadow)}
-.crest h1{margin:0;font-size:38px;letter-spacing:1px;color:var(--paper);font-weight:800}.crest .ball-mark{font-size:1.35em;display:inline-block;vertical-align:-.08em;line-height:.8}
+.crest h1{margin:0;font-size:38px;letter-spacing:1px;color:var(--paper);font-weight:800}.crest .eyebrow{display:block;margin-bottom:8px;color:var(--gold);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;font-weight:700;letter-spacing:1.8px}.crest .ball-mark{font-size:1.35em;display:inline-block;vertical-align:-.08em;line-height:.8}
 .crest h2{margin:10px 0 0;font-size:17px;font-weight:400;color:var(--paper-dim)}
 .crest .asof{margin-top:12px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12.5px;color:var(--gold);letter-spacing:.3px}
 .mlb{background:var(--accent);color:#fff;padding:2px 9px;border-radius:5px;font-size:12px;font-weight:700;letter-spacing:.5px}
@@ -2896,14 +2896,15 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 </style></head>
 <body>
 <div class="crest">
+<span class="eyebrow">MLB DECISION INTELLIGENCE</span>
 <h1><span class="ball-mark" aria-hidden="true">⚾</span> HARDBALL </h1>
-<h2>How the winning-cheap teams beat the market — priced against the <b>$245.3M</b> cap</h2>
+<h2>Evidence for better player, performance, health, and roster decisions.</h2>
 <div class="asof">__ASOF__</div>
 </div>
 <div class="hd">
 <div class="keybox"><b>COLOR KEY (used on every chart below):</b>
-<span class="k"><span class="sw" style="background:#43b581"></span> green = <b>winning-cheap</b> (MIL · TB · CLE — the target teams: &gt;85 wins at low payroll)</span>
-<span class="k"><span class="sw" style="background:#e08a3c"></span> orange = <b>cheap-mediocre</b> (MIA · CHW · STL — the trap: frugal but ~78 wins)</span>
+<span class="k"><span class="sw" style="background:#43b581"></span> green = <b>efficient case study</b> (MIL · TB · CLE — high wins at lower payroll)</span>
+<span class="k"><span class="sw" style="background:#e08a3c"></span> orange = <b>comparison case</b> (MIA · CHW · STL — lower payroll without the same results)</span>
 <span class="k"><span class="sw" style="background:#8FBCE6"></span> blue = <b>other</b> (all remaining teams)</span>
 <span class="k"><span class="sw" style="background:#BF0D3E"></span> red = cap line / negative signal</span>
 <span class="k"><span class="sw" style="background:#092C5C;border:1px solid #16406E"></span> navy = many-color charts (retention, sensitivity)</span></div>
