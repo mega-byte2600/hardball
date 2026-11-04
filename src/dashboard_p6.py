@@ -2508,7 +2508,11 @@ def build():
          "resolving during the demo window.",
          [fig_pipe, fig_shop, fig_posted, fig_hs, fig_opt]),
     ]
-    flat = [f for _, _, _, figs in SECTIONS for f in figs if f is not None]
+    # Keep None slots in the numbered sequence. A clean clone can omit the
+    # local lake-backed pitching panel, but silently renumbering every later
+    # figure makes the index, captions, and Explorer disagree. The missing
+    # slot is rendered as an explicit Figure 13 placeholder instead.
+    flat = [f for _, _, _, figs in SECTIONS for f in figs]
 
     # Cycle 76 — noir record-book restyle: one Plotly template applied
     # centrally to every figure at numbering time. MLB Navy ground,
@@ -2563,6 +2567,9 @@ def build():
         """
         out = []
         for i, fig in enumerate(figs, 1):
+            if fig is None:
+                out.append(None)
+                continue
             old = (fig.layout.title.text or "").replace("<b>", "").replace("</b>", "")
             short = old
             if not (old.startswith("PRESS PLAY") or
@@ -2620,10 +2627,11 @@ def build():
     by_num = {i + 1: f for i, f in enumerate(numbered_figs)}
 
     def _panel(num, mode):
-        if num not in by_num:
+        if num not in by_num or by_num[num] is None:
             # Lake-less builds omit the pitching panel gracefully (G1);
             # say so instead of breaking the build or renumbering silently.
             return ('<div class="panel" data-mode="' + mode +
+                    '" data-figure="' + str(num) +
                     '" data-figure-missing="' + str(num) + '">'
                     "<p>Figure " + str(num) + " is not available in this build: "
                     "it needs the lake file, which is not committed.</p></div>")
