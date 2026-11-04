@@ -3191,6 +3191,16 @@ function showMode(id) {
     document.getElementById("mode-" + modes[i]).style.display = (modes[i] === id) ? "block" : "none";
     document.getElementById("btn-" + modes[i]).className = (modes[i] === id) ? "active" : "";
   }
+  // Plotly measures its parent while the other modes are hidden. Resize after
+  // reveal so Boardroom and Explorer charts cannot render as blank canvases.
+  if (window.Plotly) {
+    window.setTimeout(function () {
+      var plots = document.querySelectorAll("#mode-" + id + " .plotly-graph-div");
+      for (var j = 0; j < plots.length; j++) {
+        try { window.Plotly.Plots.resize(plots[j]); } catch (e) { /* chart remains usable */ }
+      }
+    }, 60);
+  }
 }
 function printBoardroom() {
   showMode("boardroom");
