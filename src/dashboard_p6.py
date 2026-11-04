@@ -2991,7 +2991,7 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 .sowhat{background:var(--panel);border-left:5px solid var(--win);border-radius:6px;padding:12px 16px}
 .srcline{font-size:12.5px;color:var(--paper-dim)}
 .ticker-strip{overflow:hidden;background:var(--ink-deep);border:1px solid var(--panel-line);border-left:4px solid var(--gold);border-radius:8px;margin:10px 0 14px;white-space:nowrap}
-.ticker-track{display:inline-block;white-space:nowrap;animation:ticker-scroll 90s linear infinite;padding:8px 0}
+.ticker-track{display:inline-block;white-space:nowrap;animation:ticker-scroll 150s linear infinite;padding:8px 0}
 .ticker-track:hover{animation-play-state:paused}
 .tick-item{display:inline-block;margin:0 22px 0 0;font-size:13px;color:var(--paper);vertical-align:middle}
 .tick-item a{color:var(--paper);text-decoration:none}
