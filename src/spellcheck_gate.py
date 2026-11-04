@@ -95,6 +95,10 @@ WHITELIST = {
     # lines; i'm is the About-block contraction.
     "auditable", "workflow", "bluesky", "hashtag", "linkedin", "pfac",
     "qa", "http", "txt", "venv", "i’m",
+    # Cycle 82: SABR Defensive Index (Rawlings Gold Glove criteria,
+    # cited in the Explorer fielding panel) — SABR is the Society for
+    # American Baseball Research; the term is correct, not a typo.
+    "sabr",
     # Cycle 57 evidence-surveillance names/terms — verified against the
     # provider (PubMed / NCBI NLM E-utilities) and the lane vocabulary
     "pubmed", "ncbi", "nlm", "nih", "eutils", "ucl", "biologics",
