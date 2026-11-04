@@ -2212,8 +2212,12 @@ def panel_team_explorer():
         updatemenus=[dict(type="dropdown", buttons=buttons, direction="down",
                           x=1.08, xanchor="right", y=1.06, yanchor="top",
                           pad=dict(r=8, t=6), showactive=True, active=0,
-                          font=dict(size=11, color="#FFFFFF"), bgcolor="#092C5C",
-                          bordercolor="#43b581", borderwidth=1)],
+                          # Plotly renders the active dropdown item on a
+                          # light surface. Use dark ink here so both the
+                          # closed control and the open selection remain
+                          # readable instead of white-on-white.
+                          font=dict(size=11, color="#041E42"), bgcolor="#DDE7F2",
+                          bordercolor="#8FBCE6", borderwidth=1)],
         template="plotly_white", height=560,
         legend=dict(orientation="h", y=-0.08))
     return fig
