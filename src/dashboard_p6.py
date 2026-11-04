@@ -2794,19 +2794,11 @@ def build():
          "Trust the player projections because they were checked in the open, limits included.",
          "Source: FanGraphs Steamer 2027 projections, ID-matched."),
     ]
-    story = ('<div class="verdict"><h2>The verdict</h2>'
-             "<p>Win while cheap: buy contact plus on-base percentage and low-walk arms, and price "
-             "it against the proposed $245.3M cap. The winning-cheap teams prove it on real data, "
-             "and the cap now rewards exactly that discipline.</p></div>")
-    story += ('<div class="bottomline"><b>BOTTOM LINE (read this first):</b> A team can win at '
-              "mid-tier payroll by spending on <b>contact + getting on base (OBP)</b> and "
-              "<b>low-walk arms</b>, not power. Winning-cheap teams (MIL/TB/CLE) had "
-              "<b>higher OBP, more contact, fewer strikeouts, fewer home runs AND elite team pitching</b> "
-              "— yet won ~95 games on average vs ~79 for the rest of the league, at about a third of "
-              "the biggest payrolls. <span class=\"act\">Owner action:</span> "
-              "build the roster around OBP/contact + control pitchers, not the big power salary. "
-              "<span class=\"why\">Why trust it:</span> real 2025-2026 data (MLB API + Spotrac), model "
-              "cross-validated. Not a guarantee — shown honestly below.</div>")
+    story = ('<div class="verdict"><h2>Where did lower-payroll winners find value?</h2>'
+             "<p>Milwaukee, Tampa Bay, and Cleveland averaged about 95 wins versus 79 for the "
+             "rest of the league, at roughly a third of the biggest payrolls. Their lineups "
+             "made more contact and got on base more often, and their pitchers issued fewer walks. "
+             "Explore what those skills could buy under the proposed payroll cap.</p></div>")
     # The market wire is the first operational panel after the verdict,
     # before player cards and Chapter 1, so a new reader sees what changed
     # before being asked to interpret the longer story.
