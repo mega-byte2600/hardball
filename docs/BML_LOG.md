@@ -2749,3 +2749,50 @@ No claim or data changed; dashboard untouched (still 25 figures).
   untouched: #57 (Cycle 77 live refresh, predates the Cycle 78
   restore and the current main) and #58 (parallel-lane ticker
   trigger).
+
+## Cycle 82 — live refresh (Nov 4) + December checklist refresh (24/7 job, 2026-11-04 ~14:15 PT)
+- DEADLINE GUARD: 2026-11-04, inside the build window (closes Dec 1).
+- BASE: main 9c52a75d (Cycle 81 merge + parallel-lane PR #87 Story
+  opening). Tarball 404 on the codeload redirect again; base
+  verified blob-by-blob (git blob hashes) via the API recursive
+  tree after syncing PR #87's src/dashboard_p6.py — zero diffs.
+- SPOTRAC PROBE: single GET of the Rays 2026 payroll page -> 403
+  (browser UA). Logged, moved on; salaries stay 24/30 on the Spotrac
+  basis + Cot's second basis (Cycle 74, 7/7 shed sets). FanGraphs
+  not re-probed; backlog item (c) stays failed-closed per its guard.
+- LIVE FEEDS: refresh_live_feeds.py OK (past the 20h watermark) —
+  4 credits (20 MTD, November cap 200); Fastball injuries 145,
+  Statyx page 50, union 164, standings 30/30 agree; FA overlay
+  9/251 (1 differs from static). Evidence SKIP (artifact Nov 2,
+  2d old, < 6d guard) — normal outcome. EVIDENCE.html untouched.
+- IL UNION 182 -> 164 INVESTIGATED: Fastball 175 -> 145, Statyx
+  16 -> 50, overlap 9 -> 31; 30 names out (post-season IL clearing),
+  12 Statyx-only names in; both feeds 200, no block; substantive
+  status changes few (Zerpa 60-Day-IL -> Out, Romy Gonzalez
+  Day-To-Day -> Out). fact_il_events 123 -> 133 corroborates.
+- TICKER: pull_tracker_ticker.py OK — window 2026-10-28..2026-11-04,
+  SIGNED 805 -> 849 (+44, none lost), REPORTED 200 (119 rotated by
+  the newest-200 cap, by design), BUZZ 0, total 1005 -> 1049.
+  Jetstream handshake 403 fail-closed; Google News 200.
+- PLATFORM: ingest_platform.py 0 failures (Savant bands hold;
+  transactions raw 121,908 -> 122,135, raw-zone only); curate.py
+  20 tables, contracts pass; _build_report.json changed only in
+  fact_il_current / fact_il_events, so only those two parquets +
+  the report ship; ingest manifest appends restored, not shipped
+  (Cycle 80/81 practice — shipped manifest = main's 68 lines +
+  this run's 4 refresh entries). build_warehouse.py rebuilt;
+  query.py benchmark_parity r = 0.889, 201 matched — exact.
+- DASHBOARD: rebuilt with the lake present and
+  HARDBALL_OFFLINE_BUILD=1; 25 figures, 0 missing; stamp "Data as
+  of Nov 4, 2026 · tracker Nov 4 · injured list Nov 4 · evidence
+  Nov 2"; hardball_demo byte-identical copy.
+- GATE: 107 ALL PASS first run, spellcheck green — no gate fix needed.
+- BACKLOG ITEM (g) REFRESHED: HANDOFF.md gains a Cycle 82 December
+  readiness checklist refresh. Freeze tag still owed; v1.1.12 is the
+  current published release, not the freeze tag. Sportradar footer
+  line correction still rides with the freeze cut (trial declined
+  by the owner 2026-11-03).
+- NEXT: final frozen-main release cut before Dec 1. Open PRs left
+  untouched: #57 (Cycle 77 live refresh, predates the Cycle 78
+  restore and the current main) and #58 (parallel-lane ticker
+  trigger).
