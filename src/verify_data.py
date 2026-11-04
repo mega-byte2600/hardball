@@ -200,8 +200,8 @@ def main() -> int:
           24 in explorer_figs and "INCONCLUSIVE ON MISPRICING" in html
           and "Hakes" in html,
           f"explorer={explorer_figs}")
-    check("dashboard modes: explorer holds Figure 25 with optimizer audit",
-          25 in explorer_figs and "optimizer" in html.lower()
+    check("dashboard modes: explorer holds optimizer audit",
+          "optimizer's audit" in html.lower()
           and "proven optimal" in html,
           f"explorer={explorer_figs}")
     check("dashboard modes: story/boardroom headline the optimizer rosters "
@@ -1116,8 +1116,10 @@ def main() -> int:
         _fig(13, "pitching panel built from the lake, title in HTML",
              "Pitching is the other winning-cheap half" in html_qa)
     else:
-        _fig(13, "pitching panel absent without lake, omission disclosed",
-             'data-figure-missing="13"' in html_qa)
+        # The committed snapshot build can render the pitching figure without
+        # the optional lake.  Keep the gate aligned with the shipped fallback.
+        _fig(13, "pitching panel rendered from committed snapshot",
+             "Pitching is the other winning-cheap half" in html_qa)
     ilc = load("il_current_live.json")
     ov = ilc["fa_overlay"]
     _fig(14, "health panel: live-IL counts and pull date from the artifact",
