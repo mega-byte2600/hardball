@@ -163,3 +163,81 @@ Automated. Appended each run; oldest rows at top, newest at bottom.
 - PASS  freshness gate (artifact vs sources)
 - PASS  dashboard artifact exists
 - PASS  dashboard served
+
+### 2026-11-03 13:48:48 PST — ALL CHECKS PASS
+- PASS  verify_data gate
+- PASS  freshness gate (artifact vs sources)
+- PASS  dashboard artifact exists
+- PASS  dashboard served
+
+### 2026-11-03 14:09:48 PST — ALL CHECKS PASS
+- PASS  verify_data gate
+- PASS  freshness gate (artifact vs sources)
+- PASS  dashboard artifact exists
+- PASS  dashboard served
+
+### 2026-11-03 14:30:48 PST — ALL CHECKS PASS
+- PASS  verify_data gate
+- PASS  freshness gate (artifact vs sources)
+- PASS  dashboard artifact exists
+- PASS  dashboard served
+
+### 2026-11-03 14:51:48 PST — ALL CHECKS PASS
+- PASS  verify_data gate
+- PASS  freshness gate (artifact vs sources)
+- PASS  dashboard artifact exists
+- PASS  dashboard served
+
+### 2026-11-03 14:55:59 PST — GATE FAIL (1 fail(s))
+- FAIL  verify_data gate — GATE: FAIL (3 check(s)): FIG-QA fig 22: surplus-value arbitrage panel: artifact lists 25, title in HTML, Ticker: panel leads Story mode before Chapter 1, all three lane labels + integrity line + pull date rendered (Cycle 66), Health cards: panel renders in Explorer (title, Delivered WAR column, top delivered name, a lane link) and NOT in Story; evidence page carries all four lane anchors (Cycle 67)
+- PASS  freshness gate (artifact vs sources)
+- PASS  dashboard artifact exists
+- PASS  dashboard served
+
+### 2026-11-03 15:12:48 PST — GATE FAIL (1 fail(s))
+- FAIL  verify_data gate — GATE: FAIL (3 check(s)): FIG-QA fig 22: surplus-value arbitrage panel: artifact lists 25, title in HTML, Ticker: panel leads Story mode before Chapter 1, all three lane labels + integrity line + pull date rendered (Cycle 66), Health cards: panel renders in Explorer (title, Delivered WAR column, top delivered name, a lane link) and NOT in Story; evidence page carries all four lane anchors (Cycle 67)
+- PASS  freshness gate (artifact vs sources)
+- PASS  dashboard artifact exists
+- PASS  dashboard served
+
+### 2026-11-03 15:33:48 PST — GATE FAIL (1 fail(s))
+- FAIL  verify_data gate — GATE: FAIL (3 check(s)): FIG-QA fig 22: surplus-value arbitrage panel: artifact lists 25, title in HTML, Ticker: panel leads Story mode before Chapter 1, all three lane labels + integrity line + pull date rendered (Cycle 66), Health cards: panel renders in Explorer (title, Delivered WAR column, top delivered name, a lane link) and NOT in Story; evidence page carries all four lane anchors (Cycle 67)
+- PASS  freshness gate (artifact vs sources)
+- PASS  dashboard artifact exists
+- PASS  dashboard served
+
+### 2026-11-03 15:54:48 PST — GATE FAIL (1 fail(s))
+- FAIL  verify_data gate — GATE: FAIL (3 check(s)): FIG-QA fig 22: surplus-value arbitrage panel: artifact lists 25, title in HTML, Ticker: panel leads Story mode before Chapter 1, all three lane labels + integrity line + pull date rendered (Cycle 66), Health cards: panel renders in Explorer (title, Delivered WAR column, top delivered name, a lane link) and NOT in Story; evidence page carries all four lane anchors (Cycle 67)
+- PASS  freshness gate (artifact vs sources)
+- PASS  dashboard artifact exists
+- PASS  dashboard served
+
+### 2026-11-03 16:05:59 PST — ALL CHECKS PASS
+- PASS  verify_data gate
+- PASS  freshness gate (artifact vs sources)
+- PASS  dashboard artifact exists
+- PASS  dashboard served
+
+### 2026-11-03 16:08:37 PST — ALL CHECKS PASS
+- PASS  verify_data gate
+- PASS  freshness gate (artifact vs sources)
+- PASS  dashboard artifact exists
+- PASS  dashboard served
+
+### 2026-11-03 16:09:51 PST — ALL CHECKS PASS
+- PASS  verify_data gate
+- PASS  freshness gate (artifact vs sources)
+- PASS  dashboard artifact exists
+- PASS  dashboard served
+
+### 2026-11-03 16:10:34 PST — ALL CHECKS PASS
+- PASS  verify_data gate
+- PASS  freshness gate (artifact vs sources)
+- PASS  dashboard artifact exists
+- PASS  dashboard served
+
+### 2026-11-03 16:10:44 PST — ALL CHECKS PASS
+- PASS  verify_data gate
+- PASS  freshness gate (artifact vs sources)
+- PASS  dashboard artifact exists
+- PASS  dashboard served
