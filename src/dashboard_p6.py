@@ -3251,7 +3251,10 @@ nothing in the demo depends on it). Sportradar — trial deliberately starts
 mid-November so its 30-day window covers Dec 1.<br><br>
 <b>Project repo:</b> github.com/mega-byte2600/hardball · public source and audit trail
 <div class="about-contact">
-  <div><span class="about-kicker">About / Contact</span><h3>Evidence that moves the game forward.</h3><p>I help baseball organizations make player, performance, and health decisions through rigorous analysis of evidence that turns data into action.</p><a class="about-email" href="mailto:michael.bolton.ph@dartmouth.edu">michael.bolton.ph@dartmouth.edu</a></div>
+  <div style="display:flex;gap:14px;align-items:flex-start;min-width:0">
+  <img src="assets/michael-bolton-profile.webp" alt="Illustrated portrait of Michael Bolton" width="64" height="64" loading="lazy" decoding="async" style="width:clamp(44px,10vw,64px);height:auto;flex:none;background:var(--ink);border:1px solid var(--panel-line);border-radius:14px">
+  <div style="min-width:0;overflow-wrap:anywhere"><span class="about-kicker">About / Contact</span><h3>Evidence that moves the game forward.</h3><p>I help baseball organizations make player, performance, and health decisions through rigorous analysis of evidence that turns data into action.</p><a class="about-email" href="mailto:michael.bolton.ph@dartmouth.edu">michael.bolton.ph@dartmouth.edu</a></div>
+  </div>
   <div class="about-links" aria-label="Professional links">
     <a class="primary" href="https://www.linkedin.com/in/bolton-2600/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/mega-byte2600" target="_blank" rel="noopener">GitHub</a>
