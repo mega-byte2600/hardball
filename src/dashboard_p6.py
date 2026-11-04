@@ -243,30 +243,36 @@ def panel_pitching():
       "Pittsburgh Pirates":"PIT","Washington Nationals":"WSH","Oakland Athletics":"ATH"}
     lake = os.path.join(DATA, "mlb_lake.db")
     if not os.path.exists(lake):
-        return None  # lake is a local build artifact (gitignored); a clean
-        # clone omits this panel instead of crashing (audit G1 class)
-    con = sqlite3.connect(lake)
-    rows = []
-    for season, team, sjson in con.execute("SELECT season,team,stat_json FROM stat_lines WHERE group_name='pitching'"):
-        s = J.loads(sjson)
-        rows.append({"season": season, "code": TEAM.get(team, team), "IP": s.get("inningsPitched"),
-                     "ERA": s.get("era"), "WHIP": s.get("whip"),
-                     # MLB Stats API names pitcher walks `baseOnBalls`.
-                     # Keep the older `walks` fallback for committed snapshots.
-                     "BB": s.get("baseOnBalls", s.get("walks"))})
-    con.close()
-    d = pd.DataFrame(rows)
-    for c in ["IP", "ERA", "WHIP", "BB"]:
-        d[c] = pd.to_numeric(d[c], errors="coerce")
-    d = d.dropna(subset=["IP", "ERA"])[d["IP"] >= 30]
-    d["grp"] = "OTHER"
-    d.loc[d["code"].isin(WIN_CHEAP), "grp"] = "WIN_CHEAP"
-    d.loc[d["code"].isin(CHEAP_MEDIOCRE), "grp"] = "CHEAP_MEDIOCRE"
-    d = d[d["season"] == 2026]
-    g = d.groupby("grp").apply(lambda x: pd.Series({
-        "ERA": (x["ERA"]*x["IP"]).sum()/x["IP"].sum(),
-        "WHIP": (x["WHIP"]*x["IP"]).sum()/x["IP"].sum(),
-        "BB/9": (x["BB"]*9/x["IP"]).sum()/len(x)}), include_groups=False)
+        # Clean GitHub Pages builds do not carry the local SQLite lake. Use
+        # the committed, already-aggregated snapshot instead of silently
+        # dropping Figure 13 and shifting every later figure number.
+        snap = os.path.join(DATA, "team_pitching.json")
+        if not os.path.exists(snap):
+            return None
+        g = pd.DataFrame(json.load(open(snap))["groups"]).T
+    else:
+        con = sqlite3.connect(lake)
+        rows = []
+        for season, team, sjson in con.execute("SELECT season,team,stat_json FROM stat_lines WHERE group_name='pitching'"):
+            s = J.loads(sjson)
+            rows.append({"season": season, "code": TEAM.get(team, team), "IP": s.get("inningsPitched"),
+                         "ERA": s.get("era"), "WHIP": s.get("whip"),
+                         # MLB Stats API names pitcher walks `baseOnBalls`.
+                         # Keep the older `walks` fallback for committed snapshots.
+                         "BB": s.get("baseOnBalls", s.get("walks"))})
+        con.close()
+        d = pd.DataFrame(rows)
+        for c in ["IP", "ERA", "WHIP", "BB"]:
+            d[c] = pd.to_numeric(d[c], errors="coerce")
+        d = d.dropna(subset=["IP", "ERA"])[d["IP"] >= 30]
+        d["grp"] = "OTHER"
+        d.loc[d["code"].isin(WIN_CHEAP), "grp"] = "WIN_CHEAP"
+        d.loc[d["code"].isin(CHEAP_MEDIOCRE), "grp"] = "CHEAP_MEDIOCRE"
+        d = d[d["season"] == 2026]
+        g = d.groupby("grp").apply(lambda x: pd.Series({
+            "ERA": (x["ERA"]*x["IP"]).sum()/x["IP"].sum(),
+            "WHIP": (x["WHIP"]*x["IP"]).sum()/x["IP"].sum(),
+            "BB/9": (x["BB"]*9/x["IP"]).sum()/len(x)}), include_groups=False)
     metrics = ["ERA", "WHIP", "BB/9"]
     labels = {"ERA":"ERA","WHIP":"WHIP","BB/9":"BB per 9 IP"}
     fig = make_subplots(rows=1, cols=3, subplot_titles=[labels[m] for m in metrics])
