@@ -3068,6 +3068,7 @@ mid-November so its 30-day window covers Dec 1.<br><br>
     <a href="https://github.com/mega-byte2600" target="_blank" rel="noopener">GitHub</a>
     <a href="https://www.pfactoolkit.org/" target="_blank" rel="noopener">PFAC Toolkit</a>
     <a href="https://journeys.dartmouth.edu/michaelboltonmph/" target="_blank" rel="noopener">Dartmouth MPH</a>
+    <a href="mailto:michael.bolton.ph@dartmouth.edu">Email</a>
   </div>
 </div>
 </div>
