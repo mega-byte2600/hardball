@@ -2453,18 +2453,11 @@ def build():
         return out
 
     numbered_figs = _number(flat)
-    # Self-contained offline demo: inline plotly from the installed
-    # package if no cached bundle (never fetch at build time — G1).
-    bundle = os.path.join(REPO, "dashboard", "plotly.min.js")
-    if os.path.exists(bundle):
-        with open(bundle) as f:
-            plotly_js = f.read()
-    else:
-        from plotly.offline import get_plotlyjs
-        plotly_js = get_plotlyjs()
-        with open(bundle, "w") as f:
-            f.write(plotly_js)
-    js_include = f"<script>{plotly_js}</script>"
+    # Keep the published HTML below GitHub's practical contents-upload size
+    # while pinning the runtime exactly. The data and chart configuration
+    # remain embedded in the artifact; only Plotly's renderer is fetched at
+    # page load from the versioned public CDN.
+    js_include = '<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>'
 
     def _count(fname):
         p = os.path.join(DATA, fname)
