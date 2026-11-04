@@ -1553,3 +1553,23 @@ dashboard-footer Sportradar line edit rides along there); the
 owner's open PR #56 (badge removal) is his lane's, untouched.
 - Shipped as PR #57 (toby/cycle77-live-refresh), merged when gate +
   rebuild verified.
+
+## Cycle 78 — Figure 25 (optimizer audit) restored to Explorer (2026-11-03, owner-directed)
+
+Diagnosis: the panel was never removed from src/dashboard_p6.py.
+The committed dashboard had been built without data/mlb_lake.db,
+so the pitching panel returned None, dropped out of numbering,
+and Figures 14–25 each shifted down one in the artifact: the
+optimizer chart shipped as "Figure 24" in the wrong Explorer
+group while the Figure 25 slot showed the lake-fallback text.
+Fix: rebuilt dashboard/hardball_demo.html from current main
+source WITH the lake (KPI forced to committed snapshots); no
+source or data change. Verified by DOM/data checks (the
+verify_data.py gate crash against the new build is a separate
+pending alignment item): Explorer 24 → 25 unique panels,
+data-figure="25" restored with values recomputed from
+data/optimizer_comparison_2027.json (+6.9/+7.1/+2.5 WAR),
+Story/Boardroom memberships unchanged, stamp intact.
+Note for Codex / the dashboard lane is in the PR body and on
+PR #58: builds that get committed must run with the lake
+present — a lake-less build renumbers silently.

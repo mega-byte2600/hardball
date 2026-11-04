@@ -2543,3 +2543,36 @@ No claim or data changed; dashboard untouched (still 25 figures).
 - LEARNED: a theme change is a data change until proven
   otherwise — the pre/post trace-array diff is the proof, and
   it is cheap enough to run every time a panel is touched.
+
+## Cycle 78 — Figure 25 restored: the production artifact was built without the lake
+
+- Owner-directed restore (chat, 2026-11-03 evening: "push back
+  on and let codex know it kool") after Explorer was seen
+  holding 24 panels and the page read much longer.
+- DIAGNOSIS: source never dropped the panel. The production
+  artifact on main was built without data/mlb_lake.db:
+  panel_pitching() returns None lake-less, the figure drops
+  out of the numbering list, and every later figure renumbers
+  down one — the optimizer chart shipped wearing "Figure 24"
+  inside the wrong Explorer group, and the Build a Roster
+  slot for 25 rendered the "needs the lake file" fallback
+  panel (data-figure-missing="25" in the served file). Every
+  figure from 14 on was misnumbered by one in production.
+- FIX: artifact only, zero source change — dashboard rebuilt
+  from current main source with the lake copied in and the
+  KPI endpoint forced to committed snapshots (the standing
+  offline build pattern). Explorer: 25 unique panels,
+  data-figure="25" = "Benchmark vs headline: the exact optimum
+  beats the greedy build" (+6.9 / +7.1 / +2.5 WAR deltas,
+  recomputed from data/optimizer_comparison_2027.json at
+  build time). Story (7) and Boardroom (16) memberships
+  unchanged; no within-mode duplicates; data-as-of stamp
+  intact (Nov 3, 2026).
+- Gate note: src/verify_data.py still crashes against the
+  new build (mode-anchor IndexError + spellcheck UTF-8) —
+  that alignment is a separate pending item; this cycle
+  verified by direct DOM/data checks, listed in the PR.
+- LEARNED: a lake-less build does not fail — it renumbers.
+  Any build that will be committed must run with the lake
+  present, and the figure census (25 uniques, zero
+  data-figure-missing markers) is the cheap proof.
