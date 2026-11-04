@@ -63,7 +63,7 @@ def panel_payroll_wins(df, year=2026):
             text=[f"<b>{t}</b>" for t in sub["team"]], textposition="top center"))
     fig.add_vline(x=CAP / 1e6, line_dash="dash", line_color="#BF0D3E",
                   annotation_text=f"Proposed cap $245.3M", annotation_position="top right")
-    fig.add_vline(x=FLOOR / 1e6, line_dash="dot", line_color="#F5D130",
+    fig.add_vline(x=FLOOR / 1e6, line_dash="dot", line_color="#F2B84B",
                   annotation_text=f"Proposed floor $171.2M", annotation_position="bottom right")
     fig.update_layout(title=f"{year} — Payroll ($M) vs Wins: money buys some wins; winning-cheap teams win MORE per $",
                       xaxis_title="Total payroll ($ millions)", yaxis_title="Wins",
@@ -841,7 +841,7 @@ def panel_hs_verdict():
     res = json.load(open(rj))
     ver = json.load(open(vj))
     samples = [("S", "sample_S_spotrac_basis", "#8FBCE6", "Sample S — Spotrac basis"),
-               ("C", "sample_C_cots_lrp2027", "#F5D130", "Sample C — Cot's LRP-2027")]
+               ("C", "sample_C_cots_lrp2027", "#F2B84B", "Sample C — Cot's LRP-2027")]
     bench = ver["benchmark_attempt"]
     rho = bench["season_fe_primary"]["ratio_obp_to_slg"]
     rho_ci = bench["season_fe_primary"]["ratio_ci95"]
@@ -1509,7 +1509,7 @@ def panel_optimizer():
         series("optimizer", "Exact optimizer (proven optimal)", "#8FBCE6",
                delta=True),
         series("optimizer_dh_restricted",
-               "Optimizer, DH restricted to DH-mapped bats", "#F5D130"),
+               "Optimizer, DH restricted to DH-mapped bats", "#F2B84B"),
     ])
     f0 = budgets[0]
     fig.update_layout(
@@ -1654,7 +1654,7 @@ def panel_savant():
         if key in stab:
             names.append(label)
             vals.append(stab[key]["mean_r"])
-            colors.append("#FFFFFF" if key.startswith("outcome") else "#8FBCE6")
+            colors.append("#C7D5E5" if key.startswith("outcome") else "#8FBCE6")
     if not vals:
         return None
     fig = go.Figure(go.Bar(
@@ -1840,7 +1840,7 @@ def panel_posted():
         textposition="outside", name="Itoh IP", showlegend=False), 1, 2)
     fig.add_trace(go.Scatter(
         x=x3, y=[ib[y]["bb_pct"] for y in years],
-        mode="lines+markers+text", line=dict(color="#F5D130", width=3),
+        mode="lines+markers+text", line=dict(color="#F2B84B", width=3),
         marker=dict(size=9),
         text=[f"{ib[y]['bb_pct']:.1f}% BB" for y in years],
         textposition="top center", name="Itoh BB%", showlegend=False),
@@ -1866,8 +1866,8 @@ def panel_posted():
     # (3,1) Leaderboard context — percentile dots (built from the
     # computed artifact so the figure can never drift from it)
     dots = [  # first entry renders at the BOTTOM of the axis
-        ("Itoh · ERA — PL arms", ctx["itoh"]["ERA"], "#F5D130"),
-        ("Itoh · walk rate — PL arms", ctx["itoh"]["BB_pct"], "#F5D130"),
+        ("Itoh · ERA — PL arms", ctx["itoh"]["ERA"], "#F2B84B"),
+        ("Itoh · walk rate — PL arms", ctx["itoh"]["BB_pct"], "#F2B84B"),
         ("Taira · ERA — PL arms", ctx["taira"]["ERA"], "#8FBCE6"),
         ("Sato · RBI — CL bats", ctx["sato"]["RBI"], "#BF0D3E"),
         ("Sato · OPS — CL bats", ctx["sato"]["OPS"], "#BF0D3E"),
@@ -1910,7 +1910,7 @@ def panel_posted():
     fig.add_trace(go.Scatter(
         x=[p["contract_m"] for p in curve],
         y=[p["fee_m"] for p in curve], mode="lines",
-        line=dict(color="#F5D130", width=3), fill="tozeroy",
+        line=dict(color="#F2B84B", width=3), fill="tozeroy",
         fillcolor="rgba(245,209,48,0.15)", name="Posting fee",
         showlegend=False), 4, 1)
     ck = rb["fee_checkpoints_m"]
@@ -1938,7 +1938,7 @@ def panel_posted():
     # (5,1) The posting clock — day offsets from Nov 1, 2026
     fig.add_trace(go.Bar(
         x=[29], y=["window"], base=[1], orientation="h",
-        marker_color="#F5D130",
+        marker_color="#F2B84B",
         text=["Nov 2 → Dec 1 · open · 29 days"],
         textposition="inside", name="Open window", showlegend=False),
         5, 1)
@@ -1953,7 +1953,7 @@ def panel_posted():
     fig.add_trace(go.Scatter(
         x=[0, 30, 45], y=["window"] * 3, mode="markers+text",
         marker=dict(symbol="diamond", size=11,
-                    color=["#8FBCE6", "#BF0D3E", "#FFFFFF"]),
+                    color=["#8FBCE6", "#BF0D3E", "#C7D5E5"]),
         text=["Posted<br>Nov 1",
               "Dec 1 · CBA expires — clock pauses · demo deadline",
               "Dec 16 · 17:00 ET<br>signing deadline"],
@@ -2283,8 +2283,18 @@ def panel_scenarios():
                "<sub>Full 26-man rosters from the real 2027 free-agent class. "
                "The floor roster captures ~89% of the cap roster's WAR — the last "
                "$74.1M buys 5.9 WAR. Switch budget below the chart.</sub>"),
-        updatemenus=[dict(buttons=buttons, direction="right", x=0.0, y=-0.03,
-                          showactive=True, active=0)],
+        updatemenus=[dict(
+            buttons=buttons,
+            direction="right",
+            x=0.0,
+            y=-0.03,
+            showactive=True,
+            active=0,
+            bgcolor="#092C5C",
+            bordercolor="#8FBCE6",
+            borderwidth=1,
+            font=dict(color="#FFFFFF", size=14),
+        )],
         template="plotly_white", height=700, margin=dict(t=110, b=60))
     return fig
 
@@ -2293,6 +2303,8 @@ def build():
     # G1 (audit): offline fallback — a clean clone with no network must
     # still build from the committed KPI snapshots.
     try:
+        if os.environ.get("HARDBALL_OFFLINE_BUILD") == "1":
+            raise RuntimeError("offline build requested")
         df = kpi_mod.kpi_frame()
     except Exception as e:
         print(f"kpi live fetch failed ({e}); using committed data/kpi_*.json snapshots")
@@ -2370,7 +2382,7 @@ def build():
             paper_bgcolor="rgba(0,0,0,0)",
             plot_bgcolor="rgba(0,0,0,0)",
             colorway=["#8FBCE6", "#43b581", "#e08a3c", "#BF0D3E",
-                      "#F5D130", "#FFFFFF", "#5b8dd9", "#7d90ac"],
+                      "#F2B84B", "#C7D5E5", "#5b8dd9", "#7d90ac"],
             xaxis=dict(gridcolor="rgba(255,255,255,0.08)",
                        zerolinecolor="rgba(255,255,255,0.25)",
                        linecolor="rgba(255,255,255,0.15)",
@@ -2801,7 +2813,7 @@ def build():
                  "Boardroom stays 15 slides.</p></div>")
     explorer += _claims_panel_html()
 
-    page_template = """<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — MLB Decision Intelligence</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    page_template = """<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Major League Baseball (MLB) Decision Intelligence</title><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
 --ink:#041E42; --ink-hi:#072A52; --ink-deep:#021028;
@@ -2896,7 +2908,7 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 </style></head>
 <body>
 <div class="crest">
-<span class="eyebrow">MLB DECISION INTELLIGENCE</span>
+<span class="eyebrow">MAJOR LEAGUE BASEBALL (MLB) DECISION INTELLIGENCE</span>
 <h1><span class="ball-mark" aria-hidden="true">⚾</span> HARDBALL </h1>
 <h2>Evidence for better player, performance, health, and roster decisions.</h2>
 <div class="asof">__ASOF__</div>
@@ -3142,8 +3154,8 @@ showMode("story");
             .replace("__EVIDENCE_DATE__", ev_date)
             .replace("__ASOF__", asof))
     # Public surface hygiene: keep internal cycle and development labels out of the rendered product.
-    page = re.sub(r"\\b(?:BML\\s+)?Cycle\\s+\\d+(?:\\s*[–-]\\s*\\d+)?(?:\\s*/\\s*\\d+)?", "", page, flags=re.IGNORECASE)
-    page = re.sub(r"\\(\\s*[,;:]?\\s*\\)", "", page)
+    page = re.sub(r"\b(?:BML\s+)?Cycle\s+\d+(?:\s*[–-]\s*\d+)?(?:\s*/\s*\d+)?", "", page, flags=re.IGNORECASE)
+    page = re.sub(r"\(\s*[,;:]?\s*\)", "", page)
     page = page.replace("(, ", "(").replace("  ", " ")
     page = page.replace("CarpeData", "data connector").replace("RBP-style", "confidence")
 
