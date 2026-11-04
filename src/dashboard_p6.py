@@ -1366,7 +1366,21 @@ def _marquee_strip_html(md, items):
     source + date. Fail closed: no items -> returns a plain note.
     """
     import html as _html
-    signed = [i for i in items if i["lane"] == "SIGNED"][:30]
+    # A trade is emitted once per player side by the StatsAPI transaction
+    # feed.  Keep the feed's audit count unchanged, but show one human-facing
+    # wire item per transaction so a two-sided trade is not presented twice.
+    seen_signed = set()
+    signed = []
+    for item in items:
+        if item["lane"] != "SIGNED":
+            continue
+        key = item.get("statsapi_transaction_id") or (item.get("title"), item.get("source_pubdate"))
+        if key in seen_signed:
+            continue
+        seen_signed.add(key)
+        signed.append(item)
+        if len(signed) == 30:
+            break
     reported = [i for i in items if i["lane"] == "REPORTED"][:30]
 
     def _cell(it):
@@ -1449,7 +1463,21 @@ def _ticker_panel_html():
         pub = _html.escape(it["source_pubdate"][:10])
         return f"<li>{title}{move} <span class=\"srcline\">({src}, {pub})</span></li>"
 
-    signed = [i for i in items if i["lane"] == "SIGNED"][:12]
+    # StatsAPI records both sides of a trade with the same transaction ID.
+    # Preserve the raw count above for auditability, but render one row per
+    # transaction in the player-facing list.
+    seen_signed = set()
+    signed = []
+    for item in items:
+        if item["lane"] != "SIGNED":
+            continue
+        key = item.get("statsapi_transaction_id") or (item.get("title"), item.get("source_pubdate"))
+        if key in seen_signed:
+            continue
+        seen_signed.add(key)
+        signed.append(item)
+        if len(signed) == 12:
+            break
     reported = [i for i in items if i["lane"] == "REPORTED"][:20]
     buzz = [i for i in items if i["lane"] == "BUZZ"][:10]
     if md["jetstream"]["status"] == "stream_ok":
