@@ -2819,6 +2819,7 @@ def build():
   <p>Ten fewer errors were associated with about 0.9 more wins per 162 games after accounting for club, season, offense and pitching (approximate 95% confidence interval: 0.5 to 1.3 wins).</p>
   <label>View <select><option value="models">Model comparison</option><option value="points">Team seasons</option></select></label>
   <div class="errors-plot" aria-label="Team errors and wins chart"></div>
+  <p><a href="#player-errors" onclick="showMode('explorer');document.getElementById('player-errors').open=true">Compare individual fielders by position</a></p>
   <p class="srcline">450 Major League Baseball club seasons, 2011–2025. Errors and wins are scaled to 162 games. Model intervals account for clustering by club and season. The association is historical. Source: <a href="https://statsapi.mlb.com/api/v1/teams/stats?stats=season&amp;group=fielding&amp;sportIds=1&amp;season=2025&amp;gameType=R">MLB Stats API</a>.</p>
 </details><script src="assets/team-errors.js" defer></script>"""
     story += ('<details class="appendix"><summary>Appendix: method and honesty box</summary>'
@@ -2940,6 +2941,19 @@ def build():
             explorer += _benchmark_panel_html()
         if n == 19:
             explorer += _bat_speed_exhibit_html()
+        if n == 20:
+            explorer += """<details class="panel" id="player-errors">
+  <summary><strong>Individual fielding errors by position</strong></summary>
+  <p>2026 regular season. Compare recorded errors among players at the same position. The chart shows up to 12 players with the lowest estimated error rates among those with at least 50 chances. The table includes all players with a recorded chance.</p>
+  <label>Position <select><option value="SS">Shortstop</option><option value="1B">First base</option><option value="2B">Second base</option><option value="3B">Third base</option><option value="C">Catcher</option><option value="LF">Left field</option><option value="CF">Center field</option><option value="RF">Right field</option><option value="P">Pitcher</option></select></label>
+  <div class="errors-plot" aria-label="Estimated player fielding error rates"></div>
+  <label>Sort table <select><option value="3">Estimated error rate</option><option value="1">Fewest errors</option><option value="2">Most chances</option><option value="raw">Observed error rate</option></select></label>
+  <div style="max-height:26rem;overflow:auto" tabindex="0" aria-label="Player fielding errors table">
+    <table><thead><tr><th>Player</th><th>Errors</th><th>Chances</th><th>Observed per 100</th><th>Estimated per 100</th><th>95% interval</th></tr></thead><tbody></tbody></table>
+  </div>
+  <p class="srcline">Source: MLB Stats API. Recorded chances equal putouts plus assists plus errors. Estimates use a beta-binomial model fitted separately by position. Intervals are conditional on the fitted position parameters.</p>
+  <details><summary>How this relates to the Gold Glove</summary><p>Recorded errors measure one part of defense. Gold Glove selection also reflects range and other defensive skills, with manager and coach votes and the SABR Defensive Index for regular position awards. <a href="https://www.rawlings.com/gold-glove-criteria.html">Rawlings award criteria</a></p></details>
+</details><script src="assets/player-errors.js" defer></script>"""
         if n == 25:
             explorer += ('<div class="task"><h3>Benchmark vs headline: the optimizer\'s audit</h3>'
                          "<p>Figure 25 re-solves Figure 16's exact problem with a "
