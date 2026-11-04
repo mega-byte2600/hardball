@@ -1,0 +1,77 @@
+name: Build, test, and publish Hardball
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    env:
+      HARDBALL_OFFLINE_BUILD: "1"
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Build reproducible read model
+        run: python src/build_lake_from_curated.py
+
+      - name: Build dashboard from committed data
+        run: python src/dashboard_p6.py
+
+      - name: Run data and figure gate
+        run: python src/verify_data.py
+
+      - name: Run public copy gate
+        run: python src/spellcheck_gate.py
+
+      - name: Check public surface
+        run: |
+          ! grep -Eiq 'P7|Cap-Era Moneyball Demo|CarpeData|RBP-style|Build-Measure-Learn' dashboard/hardball_demo.html
+          grep -q 'Major League Baseball (MLB) Decision Intelligence' dashboard/hardball_demo.html
+          grep -q 'michael.bolton.ph@dartmouth.edu' dashboard/hardball_demo.html
+
+      - name: Prepare Pages artifact
+        run: |
+          mkdir -p _site/dashboard
+          cp index.html _site/index.html
+          cp dashboard/hardball_demo.html _site/dashboard/hardball_demo.html
+          cp .nojekyll _site/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: quality
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
