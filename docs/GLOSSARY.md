@@ -14,7 +14,7 @@ Public writing rule: spell out an acronym the first time it appears in a public 
 | Earned run average (ERA) | Earned runs allowed per nine innings. |
 | Walks plus hits per inning pitched (WHIP) | Walks and hits allowed per inning pitched. |
 | Injured list (IL) | The official roster status used for player absence records. |
-| National Baseball Hall of Fame and Museum (NPB) | Japanese professional baseball source used for the posted-class exhibit. |
+| Nippon Professional Baseball (NPB) | Japanese professional baseball source used for the posted-class exhibit. |
 | Relevance-based prediction (RBP) | The transparency concept used for evidence stability before acting on a prediction. |
 | Hakes-Sauer test | The pricing comparison method used here to test whether skills and cost move proportionally. |
 
