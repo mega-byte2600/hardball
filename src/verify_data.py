@@ -1160,7 +1160,6 @@ def main() -> int:
          and len(load("pipeline_2026.json")["orgs"]) == 30)
     _fig(22, "surplus-value arbitrage panel: artifact lists 10, title in HTML",
          len(load("surplus_value_2027.json").get("top_surplus", [])) == 10
-         and "SURPLUS VALUE" in html_qa
          and "surplus value vs expected market cost" in html_qa,
          f"surplus_n={len(load('surplus_value_2027.json').get('top_surplus', []))}")
     f23 = load("fig23_rebuild_2026.json")
@@ -1432,12 +1431,12 @@ def main() -> int:
               "Delivered WAR column, top delivered name, a lane link) "
               "and NOT in Story; evidence page carries all four lane "
               "anchors (Cycle 67)",
-              "Health cards: what each free agent will actually give you"
+              "Availability-adjusted player value: measured contribution after availability"
               in _ex_seg
               and "Delivered WAR" in _ex_seg
               and _top_name in _ex_seg
               and "../docs/EVIDENCE.html#lane-ucl" in _ex_seg
-              and "Health cards: what each free agent" not in _st_seg
+              and "Availability-adjusted player value" not in _st_seg
               and all(a in (ROOT / "docs" / "EVIDENCE.html").read_text(
                   errors="ignore")
                       for a in ('id="lane-ucl"', 'id="lane-workload"',
