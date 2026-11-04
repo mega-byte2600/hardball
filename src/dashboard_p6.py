@@ -1742,7 +1742,7 @@ def panel_shopping():
                    f"for the bottom quartile ({100*sk['top_to_bottom_ratio']:.0f}% "
                    f"of the cost).")
     fig.update_layout(
-        title=("Free-agent decision lens: projected contribution versus market cost — "
+        title=("SURPLUS VALUE — free-agent decision lens: projected contribution versus market cost — "
                f"priced at (Cycle 71)<br><sub>{arb_txt} "
                f"Surplus = projected wins in dollars at the market rate (WAR "
                f"x ${d['market_usd_per_war']/1e6:.2f}M) "
@@ -2632,10 +2632,11 @@ def build():
               "build the roster around OBP/contact + control pitchers, not the big power salary. "
               "<span class=\"why\">Why trust it:</span> real 2025-2026 data (MLB API + Spotrac), model "
               "cross-validated. Not a guarantee — shown honestly below.</div>")
-    story += cards
-    # Cycle 66: the tracker ticker leads Story mode (default view) —
-    # a wire panel in front of the chapters, not a chapter itself.
+    # The market wire is the first operational panel after the verdict,
+    # before player cards and Chapter 1, so a new reader sees what changed
+    # before being asked to interpret the longer story.
     story += _ticker_panel_html()
+    story += cards
     story += ('<div class="hero-team"><h3>Pick your team first</h3>'
               "<p>Find your club before the story: its 2026 signature against the winning-cheap "
               "profile, its cap headroom, its farm pipeline, and its top prospect.</p></div>")
@@ -2782,8 +2783,7 @@ def build():
             explorer += _player_cards()
             # Cycle 67: health cards — the same class, ranked by
             # delivered WAR instead of headline WAR. Explorer only.
-            explorer += ('<div class="task"><h3>Health cards: the whole class, '
-                         "ranked by what each player will actually give you</h3>"
+            explorer += ('<div class="task"><h3>Health cards: what each free agent will actually give you</h3>'
                          "<p>Delivered WAR replaces headline WAR as the sort: "
                          "measured availability first, price second. "
                          "Explorer only. Story stays 6 chapters and Boardroom "
