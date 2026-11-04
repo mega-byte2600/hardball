@@ -28,6 +28,11 @@ WHITELIST = {
     "mil", "milwaukee", "brewers", "tb", "tampa", "bay", "rays", "cle",
     "cleveland", "guardians", "mia", "miami", "marlins", "chw", "white", "sox",
     "stl", "st", "louis", "cardinals", "lad", "los", "angeles", "dodgers",
+    # proper nouns in the About/contact prose (brands, pronoun contraction)
+    "linkedin", "pfac", "dartmouth", "mph", "i’m", "i'm", "github",
+    # tech / repo vocabulary introduced by the README review
+    "auditable", "hashtag", "http", "qa", "txt", "venv", "workflow",
+    "bluesky", "jetstream",
     "nym", "mets", "nyy", "yankees", "phi", "phillies", "atl", "braves",
     "bal", "orioles", "bos", "red", "chc", "cubs", "cincinnati", "reds",
     "colorado", "rockies", "detroit", "tigers", "houston", "astros",
@@ -132,8 +137,11 @@ def visible_words_from_html(html_path: str):
     # (outlet copy, player names) — it is verified by source, not by
     # spelling, so it is excluded exactly like the plotly JSON blobs.
     # The gate still checks every word of our own prose elsewhere.
-    html = re.sub(r'<div class="ticker">.*?</div>\s*(?=<div|</div>)', " ",
-                  html, flags=re.S)
+    # The panel (h3 + Cycle 74 marquee + lane lists + srcline) is one
+    # contiguous block ending in "</p></div>", so strip it as a whole;
+    # a shorter ".*?</div>" would stop at the first tick-item cell and
+    # leak the wire cells into the dictionary scan.
+    html = re.sub(r'<div class="ticker">.*?</p></div>', " ", html, flags=re.S)
     # drop <script>, <style>, and tag markup entirely
     html = re.sub(r"<script.*?</script>", " ", html, flags=re.S | re.I)
     html = re.sub(r"<style.*?</style>", " ", html, flags=re.S | re.I)

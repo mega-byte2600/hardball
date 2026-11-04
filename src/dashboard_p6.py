@@ -1340,6 +1340,58 @@ def _health_cards_panel_html():
             "Evidence: docs/EVIDENCE.html (Cycle 57).</p></div>")
 
 
+def _marquee_strip_html(md, items):
+    """Cycle 74: a scrolling wire ticker strip for the FA panel.
+
+    Pure CSS animation (no JS) so it runs on the static GitHub Pages
+    build. Feeds ONLY from the committed tracker artifact: the newest
+    SIGNED moves first (they are confirmed by the MLB StatsAPI feed),
+    then the newest REPORTED bulletins. Separation is honest — SIGNED
+    entries are prefixed with their move; REPORTED are prefixed 'RPTS'.
+    Long titles are truncated with a mid-dot; each entry carries its
+    source + date. Fail closed: no items -> returns a plain note.
+    """
+    import html as _html
+    signed = [i for i in items if i["lane"] == "SIGNED"][:30]
+    reported = [i for i in items if i["lane"] == "REPORTED"][:30]
+
+    def _cell(it):
+        title = it["title"]
+        if len(title) > 90:
+            title = title[:89].rstrip() + "…"
+        label = _html.escape(title)
+        src = _html.escape(str(it.get("source") or ""))
+        pub = _html.escape(str(it.get("source_pubdate") or "")[:10])
+        if it["lane"] == "SIGNED" and it.get("move_type"):
+            tag = "SIGNED · " + _html.escape(str(it["move_type"]))
+            cls = "tag-signed"
+        elif it["lane"] == "SIGNED":
+            tag = "SIGNED"
+            cls = "tag-signed"
+        else:
+            tag = "RPTS"
+            cls = "tag-rpts"
+        link = it.get("link")
+        if link:
+            label = ('<a href="' + _html.escape(link, quote=True) + '">' + label + "</a>")
+        return (f'<div class="tick-item"><span class="tick-tag {cls}">{tag}</span> '
+                f'{label} <span class="tick-src">({src}, {pub})</span></div>')
+
+    cells = []
+    for i in range(max(len(signed), len(reported))):
+        if i < len(signed):
+            cells.append(_cell(signed[i]))
+        if i < len(reported):
+            cells.append(_cell(reported[i]))
+    cells = cells[:60]
+    if not cells:
+        return '<p class="srcline">Wire ticker idle — no committed items.</p>'
+    inner = "".join(cells)
+    return ('<div class="ticker-strip" role="marquee" aria-label="Free-agent '
+            'wire ticker" aria-live="off"><div class="ticker-track">'
+            + inner + inner + "</div></div>")
+
+
 def _ticker_panel_html():
     """Cycle 66: the free-agency tracker ticker — front of Story mode.
 
@@ -1398,6 +1450,7 @@ def _ticker_panel_html():
     buzz_html = ("<ul>" + "".join(_li(i) for i in buzz) + "</ul>"
                  if buzz else f"<p>{buzz_note}</p>")
     return ('<div class="ticker"><h3>Free-agent market activity</h3>'
+            + _marquee_strip_html(md, items) +
             f"<p><b>SIGNED {counts['signed']} · REPORTED {counts['reported']} "
             f"· BUZZ {counts['buzz']}</b> — pulled {pulled}.</p>"
             "<p>An item becomes SIGNED only when the MLB StatsAPI "
@@ -2861,6 +2914,17 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 .chapnum{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:600;color:var(--gold);letter-spacing:.5px}
 .sowhat{background:var(--panel);border-left:5px solid var(--win);border-radius:6px;padding:12px 16px}
 .srcline{font-size:12.5px;color:var(--paper-dim)}
+.ticker-strip{overflow:hidden;background:var(--ink-deep);border:1px solid var(--panel-line);border-left:4px solid var(--gold);border-radius:8px;margin:10px 0 14px;white-space:nowrap}
+.ticker-track{display:inline-block;white-space:nowrap;animation:ticker-scroll 90s linear infinite;padding:8px 0}
+.ticker-track:hover{animation-play-state:paused}
+.tick-item{display:inline-block;margin:0 22px 0 0;font-size:13px;color:var(--paper);vertical-align:middle}
+.tick-item a{color:var(--paper);text-decoration:none}
+.tick-item a:hover{text-decoration:underline;color:var(--gold)}
+.tick-tag{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;font-weight:700;letter-spacing:.4px;border-radius:3px;padding:1px 5px;margin-right:6px}
+.tag-signed{background:var(--win);color:#03140e}
+.tag-rpts{background:var(--trap);color:#1c0e02}
+.tick-src{color:var(--paper-dim);font-size:11.5px}
+@keyframes ticker-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .appendix{margin:30px 0;border:1px solid var(--panel-line);border-radius:8px;padding:12px 16px;background:var(--panel)}
 .appendix summary{font-family:Fraunces,Georgia,serif;font-weight:800;cursor:pointer}
 .slide{border:1px solid var(--panel-line);border-radius:10px;padding:16px 20px;margin:18px 0;background:var(--panel);page-break-after:always}
