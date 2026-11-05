@@ -1307,3 +1307,21 @@ CHC cross-validation now real on both Cot's bases (LRP agrees 6/7, AAV
 supported / 6 not supported. The FA class regenerated with the MLB
 original-team layer now joined (172/251 rows; the Oct-31 file carried
 none — a carpe return-type bug in the script, fixed in-tree).
+
+## Cycle 86 — live refresh + pitcher-backtest drift check (2026-11-05)
+
+Spotrac blocked again on the single probe (403); salaries already stand
+at 30/30 from Cycle 85, so nothing re-pulled. The live census ran past
+its 20h watermark: 4 FastballAPI credits (24 MTD in November), union
+164 injured players, standings agreeing 30/30, FA overlay 9/251 with
+the same single static-file difference (Whitlock). The only row-level
+change in the census is Mitch Spence's return date moving one day
+(2026-11-03 -> 2026-11-04); FA-pool movement since Nov 2 is unchanged
+(0 new IL, 4 returned, 3 status changes). The tracker is unchanged in
+content (SIGNED 857, REPORTED 200, BUZZ 0, total 1,057).
+
+Drift check (backlog item h): `src/bml_cycle24.py` re-run against the
+current lake reproduces the committed pitcher Marcel backtest
+byte-for-byte — pooled ERA MAE 0.744 (A) / 0.715 (B) / 0.711 (C),
+WHIP MAE 0.122 / 0.120 / 0.120. No drift. Platform parity holds at
+r = 0.889, 201 matched; gate 107 ALL PASS.

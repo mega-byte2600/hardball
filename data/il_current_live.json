@@ -1,15 +1,15 @@
 {
  "metadata": {
   "cycle": 51,
-  "pulled_at": "2026-11-04T22:17:29+00:00",
-  "pulled_date": "2026-11-04",
+  "pulled_at": "2026-11-05T22:22:05+00:00",
+  "pulled_date": "2026-11-05",
   "sources": {
    "fastballapi": {
     "injuries_records": 145,
     "standings_teams": 30,
     "credits_spent_this_cycle": 4,
     "snapshot_files": [
-     "data/raw/fastballapi/injuries_2026-11-04.json",
+     "data/raw/fastballapi/injuries_2026-11-05.json",
      "data/raw/fastballapi/standings_2026-11-02.json"
     ]
    },
@@ -40,7 +40,7 @@
    "return_date": "2027-05-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Addison Barger",
@@ -54,7 +54,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Adolis Garcia",
@@ -68,7 +68,7 @@
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Andrew Nardi",
@@ -82,7 +82,7 @@
    "return_date": "2028-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Andrew Saalfrank",
@@ -96,7 +96,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Andrew Walters",
@@ -110,7 +110,7 @@
    "return_date": "2028-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Angel Zerpa",
@@ -124,7 +124,7 @@
    "return_date": "2027-07-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Anthony Banda",
@@ -138,7 +138,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Anthony Bender",
@@ -152,7 +152,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Anthony Santander",
@@ -166,7 +166,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Ben Brown",
@@ -180,7 +180,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Ben Casparius",
@@ -194,7 +194,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Blade Tidwell",
@@ -208,7 +208,7 @@
    "return_date": "2028-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Blake Dunn",
@@ -222,7 +222,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Bowden Francis",
@@ -236,7 +236,7 @@
    "return_date": "2027-04-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Brad Keller",
@@ -250,7 +250,7 @@
    "return_date": "2027-09-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Brandon Walter",
@@ -264,7 +264,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Brent Rooker",
@@ -278,7 +278,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Brian Fitzpatrick",
@@ -292,7 +292,7 @@
    "return_date": "2027-08-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Brooks Baldwin",
@@ -306,7 +306,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Bryan Hoeing",
@@ -320,7 +320,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Byron Buxton",
@@ -334,7 +334,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Cade Horton",
@@ -348,7 +348,7 @@
    "return_date": "2027-08-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Cade Povich",
@@ -362,7 +362,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Cal Quantrill",
@@ -376,7 +376,7 @@
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Cal Raleigh",
@@ -390,7 +390,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Caleb Durbin",
@@ -404,7 +404,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Caleb Kilian",
@@ -418,7 +418,7 @@
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Cameron Foster",
@@ -432,7 +432,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Carlos Correa",
@@ -446,7 +446,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Carson Whisenhunt",
@@ -460,7 +460,7 @@
    "return_date": "2028-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Casey Schmitt",
@@ -474,7 +474,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Chase Dollander",
@@ -488,7 +488,7 @@
    "return_date": "2027-04-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Clarke Schmidt",
@@ -502,7 +502,7 @@
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Cody Ponce",
@@ -516,7 +516,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Cole Ragans",
@@ -530,7 +530,7 @@
    "return_date": "2027-08-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Cole Sands",
@@ -544,7 +544,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Cole Winn",
@@ -558,7 +558,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Colin Holderman",
@@ -572,7 +572,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Colt Emerson",
@@ -586,7 +586,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Corey Seager",
@@ -600,7 +600,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Cristian Mena",
@@ -614,7 +614,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Dalton Rushing",
@@ -628,7 +628,7 @@
    "return_date": "2027-04-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Dane Myers",
@@ -642,7 +642,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Daniel Susac",
@@ -656,7 +656,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "David Festa",
@@ -670,7 +670,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Drew Millas",
@@ -684,7 +684,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Edwin Uceta",
@@ -698,7 +698,7 @@
    "return_date": "2027-06-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Eli White",
@@ -712,7 +712,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Endy Rodriguez",
@@ -726,7 +726,7 @@
    "return_date": "2027-05-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Enyel De Los Santos",
@@ -740,7 +740,7 @@
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Evan Carter",
@@ -754,7 +754,7 @@
    "return_date": "2027-05-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Felix Reyes",
@@ -768,7 +768,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Fernando Cruz",
@@ -782,7 +782,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Garrett Whitlock",
@@ -796,7 +796,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Gavin Lux",
@@ -810,7 +810,7 @@
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Gavin Stone",
@@ -824,7 +824,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Gunnar Hoglund",
@@ -838,7 +838,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Harrison Bader",
@@ -852,7 +852,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Hayden Birdsong",
@@ -866,7 +866,7 @@
    "return_date": "2027-06-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Hunter Dobbins",
@@ -880,7 +880,7 @@
    "return_date": "2027-09-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Hunter Greene",
@@ -894,7 +894,7 @@
    "return_date": "2028-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Hurston Waldrep",
@@ -908,7 +908,7 @@
    "return_date": "2028-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "J.T. Ginn",
@@ -922,7 +922,7 @@
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Jack Kochanowicz",
@@ -936,7 +936,7 @@
    "return_date": "2027-09-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Jackson Holliday",
@@ -950,7 +950,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Jacob Wilson",
@@ -964,7 +964,7 @@
    "return_date": "2027-03-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Jake Meyers",
@@ -978,7 +978,7 @@
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Jake Miller",
@@ -992,7 +992,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Jakob Marsee",
@@ -1006,7 +1006,7 @@
    "return_date": "2027-04-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Jared Young",
@@ -1020,7 +1020,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Jeff Hoffman",
@@ -1034,7 +1034,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Joey Bart",
@@ -1048,7 +1048,7 @@
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Joey Loperfido",
@@ -1062,7 +1062,7 @@
    "return_date": "2027-03-25",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Joey Wentz",
@@ -1076,7 +1076,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Johan Rojas",
@@ -1090,7 +1090,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Jonatan Clase",
@@ -1104,7 +1104,7 @@
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Jordan Leasure",
@@ -1118,7 +1118,7 @@
    "return_date": "2028-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Jordan Westburg",
@@ -1132,7 +1132,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Jorge Polanco",
@@ -1146,7 +1146,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Jose Berrios",
@@ -1160,7 +1160,7 @@
    "return_date": "2027-08-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Jose Butto",
@@ -1174,7 +1174,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Jose Corniell",
@@ -1188,7 +1188,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Josh Naylor",
@@ -1202,7 +1202,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Julian Garcia",
@@ -1216,7 +1216,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Jurickson Profar",
@@ -1230,7 +1230,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Justin Slaten",
@@ -1244,7 +1244,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Justin Steele",
@@ -1258,7 +1258,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Justin Sterner",
@@ -1272,7 +1272,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Kahlil Watson",
@@ -1286,7 +1286,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Ken Waldichuk",
@@ -1300,7 +1300,7 @@
    "return_date": "2027-06-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Kerry Carpenter",
@@ -1314,7 +1314,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Kervin Castro",
@@ -1328,7 +1328,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Kris Bryant",
@@ -1342,7 +1342,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Kutter Crawford",
@@ -1356,7 +1356,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Kyle Bradish",
@@ -1370,7 +1370,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Logan Evans",
@@ -1384,7 +1384,7 @@
    "return_date": "2027-04-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Luinder Avila",
@@ -1398,7 +1398,7 @@
    "return_date": "2028-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Luis Gutierrez",
@@ -1412,7 +1412,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Matt Brash",
@@ -1426,7 +1426,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Matt Chapman",
@@ -1440,7 +1440,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Matt Vierling",
@@ -1454,7 +1454,7 @@
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Matt Waldron",
@@ -1468,7 +1468,7 @@
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Max Muncy",
@@ -1482,7 +1482,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Max Rajcic",
@@ -1496,7 +1496,7 @@
    "return_date": "2027-09-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "McCade Brown",
@@ -1510,7 +1510,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Michael Arroyo",
@@ -1524,7 +1524,7 @@
    "return_date": "2027-04-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Michael Toglia",
@@ -1538,7 +1538,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Mick Abel",
@@ -1552,7 +1552,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Mickey Gasper",
@@ -1566,7 +1566,7 @@
    "return_date": "2027-03-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Mike Vasil",
@@ -1580,7 +1580,7 @@
    "return_date": "2027-07-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Mitch Spence",
@@ -1591,10 +1591,10 @@
    "type": "Undisclosed",
    "detail": "Not Specified",
    "side": "Not Specified",
-   "return_date": "2026-11-03",
+   "return_date": "2026-11-04",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Mitchell Parker",
@@ -1608,7 +1608,7 @@
    "return_date": "2027-09-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Nick Davila",
@@ -1622,7 +1622,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Nick Mears",
@@ -1636,7 +1636,7 @@
    "return_date": "2027-04-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Pablo Lopez",
@@ -1650,7 +1650,7 @@
    "return_date": "2027-03-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Parker Meadows",
@@ -1664,7 +1664,7 @@
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Phil Maton",
@@ -1678,7 +1678,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Pierson Ohl",
@@ -1692,7 +1692,7 @@
    "return_date": "2027-04-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Porter Hodge",
@@ -1706,7 +1706,7 @@
    "return_date": "2027-05-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Prelander Berroa",
@@ -1720,7 +1720,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Quinn Priester",
@@ -1734,7 +1734,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Rafael Devers",
@@ -1748,7 +1748,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Ramon Laureano",
@@ -1762,7 +1762,7 @@
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Randy Rodriguez",
@@ -1776,7 +1776,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Reed Garrett",
@@ -1790,7 +1790,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Reed Trimble",
@@ -1804,7 +1804,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Reese Olson",
@@ -1818,7 +1818,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Richard Fitts",
@@ -1832,7 +1832,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Riley Martin",
@@ -1846,7 +1846,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Robby Snelling",
@@ -1860,7 +1860,7 @@
    "return_date": "2027-06-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Roman Anthony",
@@ -1874,7 +1874,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Romy Gonzalez",
@@ -1888,7 +1888,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Ronny Henriquez",
@@ -1902,7 +1902,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Rowan Wick",
@@ -1916,7 +1916,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Ryan Bergert",
@@ -1930,7 +1930,7 @@
    "return_date": "2027-05-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Ryan Helsley",
@@ -1944,7 +1944,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Ryan Pepiot",
@@ -1958,7 +1958,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Ryan Thompson",
@@ -1972,7 +1972,7 @@
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Seth Johnson",
@@ -1986,7 +1986,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Shane McClanahan",
@@ -2000,7 +2000,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Shelby Miller",
@@ -2014,7 +2014,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Spencer Schwellenbach",
@@ -2028,7 +2028,7 @@
    "return_date": "2027-04-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Spencer Steer",
@@ -2042,7 +2042,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Spencer Strider",
@@ -2056,7 +2056,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Stephen Kolek",
@@ -2070,7 +2070,7 @@
    "return_date": "2028-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Steven Cruz",
@@ -2084,7 +2084,7 @@
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Tanner Murray",
@@ -2098,7 +2098,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Tony Santillan",
@@ -2112,7 +2112,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Trevor McDonald",
@@ -2126,7 +2126,7 @@
    "return_date": "2027-09-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Trey Sweeney",
@@ -2140,7 +2140,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Triston Casas",
@@ -2154,7 +2154,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Tyler Austin",
@@ -2168,7 +2168,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Tyler Locklear",
@@ -2182,7 +2182,7 @@
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Tyler Soderstrom",
@@ -2196,7 +2196,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Tyler Zuber",
@@ -2210,7 +2210,7 @@
    "return_date": "2028-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Tylor Megill",
@@ -2224,7 +2224,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Walker Jenkins",
@@ -2238,7 +2238,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Welinton Herrera",
@@ -2252,7 +2252,7 @@
    "return_date": "2027-07-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Wenceel Perez",
@@ -2266,7 +2266,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Will Klein",
@@ -2280,7 +2280,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Will Vest",
@@ -2294,7 +2294,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "William Kempner",
@@ -2308,7 +2308,7 @@
    "return_date": "2027-09-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   },
   {
    "player_name": "Zack Kelly",
@@ -2322,7 +2322,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-04"
+   "pulled_at": "2026-11-05"
   }
  ],
  "fa_overlay": {
