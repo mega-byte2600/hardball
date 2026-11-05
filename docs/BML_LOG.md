@@ -2809,3 +2809,16 @@ No claim or data changed; dashboard untouched (still 25 figures).
   in-panel) — correct term, added to the spellcheck whitelist
   with a Cycle 82 comment per the script's own rule; no panel
   wording changed. Spellcheck green after; gate 107 ALL PASS.
+
+## Cycle 83 — tracker refresh (Nov 4) + December checklist refresh (24/7 job, 2026-11-04 ~20:13 PT)
+- DEADLINE GUARD: 2026-11-04, inside the build window (closes Dec 1).
+- BASE: main e1801d20 (Cycle 82 merge + parallel-lane PR #93-#99). Tarball 404 on codeload redirect again; base verified blob-by-blob (git blob hashes) via the API recursive tree after syncing dashboard_p6.py + both built HTMLs — zero diffs.
+- Spotrac probe: single GET Rays 2026 payroll -> 403. Salaries 24/30 + Cot's 7/7. FanGraphs not re-probed (item c failed-closed).
+- Feeds SKIP: live feeds 5.9h < 20h watermark; evidence 2d < 6d guard. EVIDENCE.html untouched. No FastballAPI credits spent.
+- Ticker: window 2026-10-29..2026-11-05; SIGNED 849 -> 846 (4 Oct-28 items aged out of the window, 1 Nov-4 item in — Zak Kent released by Washington; nothing else lost), REPORTED 200 (80 rotated by newest-200 cap, by design), BUZZ 0, total 1049 -> 1046. Jetstream handshake 403 fail-closed; Google News 200.
+- Platform: ingest 0 failures (Savant bands hold; transactions raw 122,135 -> 122,163 raw-zone only); curate 20 tables, contracts pass; _build_report.json identical to main's — no curated change shipped; warehouse rebuilt; parity r = 0.889, 201 matched — exact. Routine ingest manifest appends restored, not shipped (Cycle 80-82 practice).
+- Dashboard: rebuilt lake-present + HARDBALL_OFFLINE_BUILD=1 from synced parallel-lane code (#93-#99); 25 figures, 0 missing; stamp "Data as of Nov 5, 2026 · tracker Nov 5 · injured list Nov 4 · evidence Nov 2"; hardball_demo byte-identical copy.
+- Gate: 107 ALL PASS first run, spellcheck green — no gate fix needed.
+- Backlog item (g) refreshed: HANDOFF.md Cycle 83 section + BML_LOG.md Cycle 83 entry. Freeze tag still owed; v1.1.12 current release; Sportradar footer correction rides with freeze cut.
+- Open PRs untouched: #57, #58. Next: final frozen-main release cut before Dec 1.
+- Work tree: ~/workspace/hardball/work83 (verified main e1801d20 + lake copy; gitignored outputs excluded from PR).
