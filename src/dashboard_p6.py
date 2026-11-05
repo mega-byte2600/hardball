@@ -1517,10 +1517,7 @@ def _ticker_panel_html():
                      "no matching posts in the read window."
                      if not buzz else "")
     else:
-        buzz_note = ("BUZZ awaits stream verification: the Bluesky "
-                     "Jetstream read did not complete in this build, "
-                     "so this lane ships empty rather than filled "
-                     "with substitutes.")
+        buzz_note = "Social updates are temporarily unavailable."
     buzz_html = ("<ul>" + "".join(_li(i) for i in buzz) + "</ul>"
                  if buzz else f"<p>{buzz_note}</p>")
     return ('<div class="ticker"><h3>Free-agent market activity</h3>'
