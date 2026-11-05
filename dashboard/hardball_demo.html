@@ -48,6 +48,14 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 .panel table{border-collapse:collapse}
 .panel th{color:var(--paper-dim);border-bottom:2px solid var(--panel-line);padding:3px 8px;text-align:left}
 .panel td{border-bottom:1px solid var(--panel-line);padding:3px 8px}
+.fielding-nav{margin:14px 0;padding:14px;background:var(--panel);border:1px solid var(--panel-line);border-radius:8px}
+.fielding-nav h2{margin:0 0 4px;font-size:19px;color:var(--paper)}
+.fielding-nav p{margin:0 0 10px;color:var(--paper-dim);font-size:14px;line-height:1.5}
+.fielding-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.fielding-links a{display:flex;align-items:center;min-height:44px;box-sizing:border-box;padding:8px 12px;border:1px solid var(--paper-dim);border-radius:6px;background:var(--ink);color:var(--paper);font-size:14px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.fielding-links a:hover{background:var(--ink-hi)}
+.fielding-links a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+@media(max-width:560px){.fielding-links{grid-template-columns:1fr}}
 .modenav{display:flex;gap:10px;margin:18px 0}
 .modenav button{flex:1;padding:12px;border:2px solid var(--panel-line);border-radius:8px;background:transparent;color:var(--paper-dim);font-size:15px;font-weight:700;cursor:pointer;font-family:Inter,system-ui,sans-serif}
 .modenav button.active{background:var(--paper-dim);color:var(--ink);border-color:var(--paper-dim)}
@@ -160,9 +168,13 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 <span>23</span> The Posted Class: Japan's window &nbsp;·&nbsp;
 <span>24</span> The pricing test: our own Hakes–Sauer verdict &nbsp;·&nbsp;
 <span>25</span> Benchmark vs headline: exact math vs the greedy roster build</div>
-<nav aria-label="Fielding analysis" style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0">
-<a href="#team-errors" onclick="showMode('story');document.getElementById('team-errors').open=true" style="padding:10px 14px;border:1px solid var(--paper-dim);border-radius:6px;color:var(--paper);background:var(--panel);font-weight:700">Team fielding errors and wins</a>
-<a href="#player-errors" onclick="showMode('explorer');document.getElementById('player-errors').open=true" style="padding:10px 14px;border:1px solid var(--paper-dim);border-radius:6px;color:var(--paper);background:var(--panel);font-weight:700">Individual fielding errors</a>
+<nav class="fielding-nav" aria-labelledby="fielding-nav-title">
+<h2 id="fielding-nav-title">Fielding analysis</h2>
+<p>See how errors relate to team wins, then compare players by position.</p>
+<div class="fielding-links">
+<a href="#team-errors" onclick="showMode('story');document.getElementById('team-errors').open=true">Team fielding errors and wins</a>
+<a href="#player-errors" onclick="showMode('explorer');document.getElementById('player-errors').open=true">Individual fielding errors</a>
+</div>
 </nav>
 <nav class="modenav">
 <button type="button" id="btn-story" class="active" onclick="showMode('story')">Story: the case in 6 chapters</button>
