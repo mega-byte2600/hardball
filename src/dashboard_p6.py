@@ -3143,6 +3143,7 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 <div class="asof">__ASOF__</div>
 </div>
 <div class="hd">
+<p style="margin:14px 0;color:var(--paper);font-size:16px;line-height:1.5">Hardball helps baseball analysts compare rosters across budgets and see how player availability changes their options.</p>
 <div class="keybox"><b>COLOR KEY (used on every chart below):</b>
 <span class="k"><span class="sw" style="background:#43b581"></span> green = <b>efficient case study</b> (MIL · TB · CLE — high wins at lower payroll)</span>
 <span class="k"><span class="sw" style="background:#e08a3c"></span> orange = <b>comparison case</b> (MIA · CHW · STL — lower payroll without the same results)</span>
