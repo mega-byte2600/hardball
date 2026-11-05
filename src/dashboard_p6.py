@@ -968,6 +968,35 @@ def _hs_verdict_html():
             "src/bml_cycle48.py, data/hakes_sauer_verdict.json.</p>")
 
 
+def _figure24_readable_layout(spec):
+    """Stack the pricing charts so each has space for its own labels."""
+    labels = ("Batting coefficients", "Pitching coefficients",
+              "Median cost per win by contact quartile")
+    tops = (1.0, 0.63, 0.26)
+    layout = {
+        "height": 870,
+        "margin": dict(l=90, r=22, t=122, b=85),
+        "title": dict(text="<b>Figure 24</b> · The pricing test<br>"
+                           "<sub>Every skill estimate's 95% interval crosses zero.</sub>"),
+        "annotations": [
+            dict(text=label, x=0, xanchor="left", xref="paper",
+                 y=top, yanchor="bottom", yref="paper", yshift=8,
+                 showarrow=False, font=dict(size=12, color="#FFFFFF"))
+            for label, top in zip(labels, tops)
+        ],
+    }
+    for index, (low, top) in enumerate(zip((0.78, 0.41, 0.0), tops)):
+        suffix = str(index + 1) if index else ""
+        layout["xaxis" + suffix] = dict(domain=[0, 1], automargin=True)
+        axis = dict(domain=[low, top], automargin=True)
+        if index < 2:
+            values = list(spec["data"][index]["y"])
+            axis.update(tickmode="array", tickvals=values,
+                        ticktext=[v.split(" — ")[0] for v in values])
+        layout["yaxis" + suffix] = axis
+    return layout
+
+
 def _evidence_note_html():
     """Cycle 57: one asterisked footnote line directly under the
     Figure 14 (health) panel in Explorer — Figure 14 is the anchor
@@ -2604,6 +2633,8 @@ def build():
                            zerolinecolor="rgba(255,255,255,0.25)"),
                 yaxis=dict(gridcolor="rgba(255,255,255,0.08)",
                            zerolinecolor="rgba(255,255,255,0.25)"))
+            if i == 24:
+                fig.update_layout(**_figure24_readable_layout(fig.to_plotly_json()))
             out.append(fig)
         return out
 
