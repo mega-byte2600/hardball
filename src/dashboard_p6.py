@@ -2843,7 +2843,7 @@ def build():
                   f'<p class="srcline">{src}</p></section>')
         if num == 4:
             story += """<details class="panel" id="team-errors">
-  <summary><strong>Do teams with fewer errors win more?</strong></summary>
+  <summary><strong>Team fielding errors and wins</strong></summary>
   <p>Ten fewer errors were associated with about 0.9 more wins per 162 games after accounting for club, season, offense and pitching (approximate 95% confidence interval: 0.5 to 1.3 wins).</p>
   <label>View <select><option value="models">Model comparison</option><option value="points">Team seasons</option></select></label>
   <div class="errors-plot" aria-label="Team errors and wins chart"></div>
@@ -3189,6 +3189,10 @@ __JS_INCLUDE__
 <span>23</span> The Posted Class: Japan's window &nbsp;·&nbsp;
 <span>24</span> The pricing test: our own Hakes–Sauer verdict &nbsp;·&nbsp;
 <span>25</span> Benchmark vs headline: exact math vs the greedy roster build</div>
+<nav aria-label="Fielding analysis" style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0">
+<a href="#team-errors" onclick="showMode('story');document.getElementById('team-errors').open=true" style="padding:10px 14px;border:1px solid var(--paper-dim);border-radius:6px;color:var(--paper);background:var(--panel);font-weight:700">Team fielding errors and wins</a>
+<a href="#player-errors" onclick="showMode('explorer');document.getElementById('player-errors').open=true" style="padding:10px 14px;border:1px solid var(--paper-dim);border-radius:6px;color:var(--paper);background:var(--panel);font-weight:700">Individual fielding errors</a>
+</nav>
 <nav class="modenav">
 <button type="button" id="btn-story" class="active" onclick="showMode('story')">Story: the case in 6 chapters</button>
 <button type="button" id="btn-boardroom" onclick="showMode('boardroom')">Boardroom: 15 slides</button>
