@@ -2858,3 +2858,16 @@ Validation: offline dashboard build passed; all 48 published chart initializatio
 - GATE: 107 ALL PASS (pins updated to the recomputed truth). Spellcheck green.
 - BACKLOG ITEM (g) REFRESHED: checklist §2 23 -> 25 figures; §4 salaries + forced-seller checked off; price-model item notes the Sportradar trial DECLINED. Freeze tag still owed; v1.1.12 current release.
 - NEXT: final frozen-main release cut before Dec 1. Open PRs left untouched: #57, #58.
+
+## Cycle 86 — live refresh (Nov 5) + pitcher-backtest drift check (24/7 job, 2026-11-05 ~14:13 PT)
+- DEADLINE GUARD: 2026-11-05, inside the build window (closes Dec 1).
+- BASE: main 84d1a93f (Cycle 85 merge, unmoved during the run). Base fetched blob-by-blob via the Git Data API; lake + raw zone copied from the Cycle 85 work tree.
+- SPOTRAC PROBE — 403 again this cycle. Logged, moved on. Salaries already 30/30 on main from Cycle 85; the committed file stands.
+- LIVE FEEDS: refresh_live_feeds.py RAN (last successful pull > 20h old): 4 FastballAPI credits (24 MTD in 2026-11); landed injuries_2026-11-05; union 164 (Fastball 145, Statyx 50, overlap 31); standings 30/30; FA overlay 9/251, 1 differs from static. FA-pool movement since 2026-11-02 unchanged: 0 new IL, 4 returned, 3 status changes. Only row-level change: Mitch Spence return_date 2026-11-03 -> 2026-11-04. Evidence SKIP (3d < 6d guard). EVIDENCE.html untouched.
+- TICKER: SIGNED 857, REPORTED 200, BUZZ 0, total 1057 — identical items to Cycle 85, only pulled_at stamps refreshed. Jetstream 403 fail-closed.
+- PLATFORM: ingest 25 datasets, 0 failures; curate 20 tables, contracts pass; _build_report.json unchanged; warehouse rebuilt; parity r = 0.889, 201 matched — exact.
+- DASHBOARD: rebuilt (HARDBALL_OFFLINE_BUILD=1); 25 figures; stamp "Data as of Nov 5, 2026 · tracker Nov 5 · injured list Nov 5 · evidence Nov 2".
+- GATE: 107 ALL PASS.
+- BACKLOG ITEM (h) — DRIFT CHECK: re-ran src/bml_cycle24.py (pitcher Marcel backtest). Output byte-identical to committed data/pitcher_backtest.json (pooled A 0.744/0.122, B 0.715/0.120, C 0.711/0.120). No drift.
+- TOOL FIX: installed gh_commit.py sys.path corrected (templates/skill/bin -> bin); Cycle 85's /tmp workaround no longer needed.
+- NEXT: final frozen-main release cut before Dec 1. Open PRs left untouched: #57, #58.

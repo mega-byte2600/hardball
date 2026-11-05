@@ -3,8 +3,8 @@
   "cycle": 55,
   "architecture": "FastballAPI = census (canonical IL snapshot); Statyx = event layer (recent moves); MLB Stats API = standings of record; FastballAPI standings = validator",
   "baseline_date": "2026-11-02",
-  "current_date": "2026-11-04",
-  "census_pulled_date": "2026-11-04",
+  "current_date": "2026-11-05",
+  "census_pulled_date": "2026-11-05",
   "moves_pulled_date": "2026-11-04",
   "baseline": {
    "statyx_injuries": {
@@ -25,9 +25,9 @@
     "payload_sha256": "a24bdbaf8625451dba7de9192a33f78915288911cede8e8c6ece6e190c3687e2"
    },
    "fastballapi_injuries": {
-    "file": "data/raw/fastballapi/injuries_2026-11-04.json",
-    "fetched_at": "2026-11-04T22:17:29+00:00",
-    "payload_sha256": "064473b62e53347618a6f94175c272991a3345e02e9fe5de9167437e54de2414"
+    "file": "data/raw/fastballapi/injuries_2026-11-05.json",
+    "fetched_at": "2026-11-05T22:22:05+00:00",
+    "payload_sha256": "846886737da06ec267479982d1ea1241318519df6065bab18ca3793f51dc4466"
    }
   },
   "published_view": "FA pool (251) + scenario-roster players; the full diff is stored in 'events'",
@@ -72,7 +72,7 @@
    },
    "disposition": "raw snapshot retained for provenance; standings of record remain MLB Stats API with FastballAPI as validator (Cycle 51)."
   },
-  "movement_line": "Movement since 2026-11-02: 0 new IL, 4 returned, 3 status changes (FA pool) \u2014 census (FastballAPI) pulled 2026-11-04, moves (Statyx) pulled 2026-11-04."
+  "movement_line": "Movement since 2026-11-02: 0 new IL, 4 returned, 3 status changes (FA pool) \u2014 census (FastballAPI) pulled 2026-11-05, moves (Statyx) pulled 2026-11-04."
  },
  "summary": {
   "events_total": 133,
@@ -88,7 +88,7 @@
  },
  "events": [
   {
-   "event_id": "2026-11-04:new_il:Evan Carter",
+   "event_id": "2026-11-05:new_il:Evan Carter",
    "player_name": "Evan Carter",
    "event_type": "new_il",
    "feeds": [
@@ -106,10 +106,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:new_il:Luis Gutierrez",
+   "event_id": "2026-11-05:new_il:Luis Gutierrez",
    "player_name": "Luis Gutierrez",
    "event_type": "new_il",
    "feeds": [
@@ -127,10 +127,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Adrian Houser",
+   "event_id": "2026-11-05:returned:Adrian Houser",
    "player_name": "Adrian Houser",
    "event_type": "returned",
    "feeds": [
@@ -148,10 +148,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Bailey Horn",
+   "event_id": "2026-11-05:returned:Bailey Horn",
    "player_name": "Bailey Horn",
    "event_type": "returned",
    "feeds": [
@@ -169,10 +169,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Brennen Davis",
+   "event_id": "2026-11-05:returned:Brennen Davis",
    "player_name": "Brennen Davis",
    "event_type": "returned",
    "feeds": [
@@ -190,10 +190,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Brice Matthews",
+   "event_id": "2026-11-05:returned:Brice Matthews",
    "player_name": "Brice Matthews",
    "event_type": "returned",
    "feeds": [
@@ -211,10 +211,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Carter Baumler",
+   "event_id": "2026-11-05:returned:Carter Baumler",
    "player_name": "Carter Baumler",
    "event_type": "returned",
    "feeds": [
@@ -232,10 +232,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Cristian Javier",
+   "event_id": "2026-11-05:returned:Cristian Javier",
    "player_name": "Cristian Javier",
    "event_type": "returned",
    "feeds": [
@@ -253,10 +253,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Eduardo Rivera",
+   "event_id": "2026-11-05:returned:Eduardo Rivera",
    "player_name": "Eduardo Rivera",
    "event_type": "returned",
    "feeds": [
@@ -274,10 +274,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Hunter Harvey",
+   "event_id": "2026-11-05:returned:Hunter Harvey",
    "player_name": "Hunter Harvey",
    "event_type": "returned",
    "feeds": [
@@ -295,10 +295,10 @@
    "fa_player_id": 640451,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Jack Leiter",
+   "event_id": "2026-11-05:returned:Jack Leiter",
    "player_name": "Jack Leiter",
    "event_type": "returned",
    "feeds": [
@@ -316,10 +316,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Jacob Melton",
+   "event_id": "2026-11-05:returned:Jacob Melton",
    "player_name": "Jacob Melton",
    "event_type": "returned",
    "feeds": [
@@ -337,10 +337,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Jacob Misiorowski",
+   "event_id": "2026-11-05:returned:Jacob Misiorowski",
    "player_name": "Jacob Misiorowski",
    "event_type": "returned",
    "feeds": [
@@ -358,10 +358,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Jake Bloss",
+   "event_id": "2026-11-05:returned:Jake Bloss",
    "player_name": "Jake Bloss",
    "event_type": "returned",
    "feeds": [
@@ -379,10 +379,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Jake Cousins",
+   "event_id": "2026-11-05:returned:Jake Cousins",
    "player_name": "Jake Cousins",
    "event_type": "returned",
    "feeds": [
@@ -400,10 +400,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Jesus Rodriguez",
+   "event_id": "2026-11-05:returned:Jesus Rodriguez",
    "player_name": "Jesus Rodriguez",
    "event_type": "returned",
    "feeds": [
@@ -421,10 +421,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Joel Peguero",
+   "event_id": "2026-11-05:returned:Joel Peguero",
    "player_name": "Joel Peguero",
    "event_type": "returned",
    "feeds": [
@@ -442,10 +442,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Johan Oviedo",
+   "event_id": "2026-11-05:returned:Johan Oviedo",
    "player_name": "Johan Oviedo",
    "event_type": "returned",
    "feeds": [
@@ -463,10 +463,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Jonathan Heasley",
+   "event_id": "2026-11-05:returned:Jonathan Heasley",
    "player_name": "Jonathan Heasley",
    "event_type": "returned",
    "feeds": [
@@ -484,10 +484,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Keaton Winn",
+   "event_id": "2026-11-05:returned:Keaton Winn",
    "player_name": "Keaton Winn",
    "event_type": "returned",
    "feeds": [
@@ -505,10 +505,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Ky Bush",
+   "event_id": "2026-11-05:returned:Ky Bush",
    "player_name": "Ky Bush",
    "event_type": "returned",
    "feeds": [
@@ -526,10 +526,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Lucas Giolito",
+   "event_id": "2026-11-05:returned:Lucas Giolito",
    "player_name": "Lucas Giolito",
    "event_type": "returned",
    "feeds": [
@@ -547,10 +547,10 @@
    "fa_player_id": 608337,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Luis Castillo",
+   "event_id": "2026-11-05:returned:Luis Castillo",
    "player_name": "Luis Castillo",
    "event_type": "returned",
    "feeds": [
@@ -568,10 +568,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Luis Severino",
+   "event_id": "2026-11-05:returned:Luis Severino",
    "player_name": "Luis Severino",
    "event_type": "returned",
    "feeds": [
@@ -589,10 +589,10 @@
    "fa_player_id": 622663,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Luke Raley",
+   "event_id": "2026-11-05:returned:Luke Raley",
    "player_name": "Luke Raley",
    "event_type": "returned",
    "feeds": [
@@ -610,10 +610,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Mike Burrows",
+   "event_id": "2026-11-05:returned:Mike Burrows",
    "player_name": "Mike Burrows",
    "event_type": "returned",
    "feeds": [
@@ -631,10 +631,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Mike Paredes",
+   "event_id": "2026-11-05:returned:Mike Paredes",
    "player_name": "Mike Paredes",
    "event_type": "returned",
    "feeds": [
@@ -652,10 +652,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Mitch Keller",
+   "event_id": "2026-11-05:returned:Mitch Keller",
    "player_name": "Mitch Keller",
    "event_type": "returned",
    "feeds": [
@@ -673,10 +673,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Nick Kurtz",
+   "event_id": "2026-11-05:returned:Nick Kurtz",
    "player_name": "Nick Kurtz",
    "event_type": "returned",
    "feeds": [
@@ -694,10 +694,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:PJ Poulin",
+   "event_id": "2026-11-05:returned:PJ Poulin",
    "player_name": "PJ Poulin",
    "event_type": "returned",
    "feeds": [
@@ -715,10 +715,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:RJ Petit",
+   "event_id": "2026-11-05:returned:RJ Petit",
    "player_name": "RJ Petit",
    "event_type": "returned",
    "feeds": [
@@ -736,10 +736,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Rodolfo Duran",
+   "event_id": "2026-11-05:returned:Rodolfo Duran",
    "player_name": "Rodolfo Duran",
    "event_type": "returned",
    "feeds": [
@@ -757,10 +757,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Ryan Mountcastle",
+   "event_id": "2026-11-05:returned:Ryan Mountcastle",
    "player_name": "Ryan Mountcastle",
    "event_type": "returned",
    "feeds": [
@@ -778,10 +778,10 @@
    "fa_player_id": 663624,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Tyler O'Neill",
+   "event_id": "2026-11-05:returned:Tyler O'Neill",
    "player_name": "Tyler O'Neill",
    "event_type": "returned",
    "feeds": [
@@ -799,10 +799,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Tyron Guerrero",
+   "event_id": "2026-11-05:returned:Tyron Guerrero",
    "player_name": "Tyron Guerrero",
    "event_type": "returned",
    "feeds": [
@@ -820,10 +820,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Will Wilson",
+   "event_id": "2026-11-05:returned:Will Wilson",
    "player_name": "Will Wilson",
    "event_type": "returned",
    "feeds": [
@@ -841,10 +841,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Adam Mazur",
+   "event_id": "2026-11-05:status_change:Adam Mazur",
    "player_name": "Adam Mazur",
    "event_type": "status_change",
    "feeds": [
@@ -863,10 +863,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Addison Barger",
+   "event_id": "2026-11-05:status_change:Addison Barger",
    "player_name": "Addison Barger",
    "event_type": "status_change",
    "feeds": [
@@ -884,10 +884,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Andrew Nardi",
+   "event_id": "2026-11-05:status_change:Andrew Nardi",
    "player_name": "Andrew Nardi",
    "event_type": "status_change",
    "feeds": [
@@ -905,10 +905,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Angel Zerpa",
+   "event_id": "2026-11-05:status_change:Angel Zerpa",
    "player_name": "Angel Zerpa",
    "event_type": "status_change",
    "feeds": [
@@ -926,10 +926,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Anthony Santander",
+   "event_id": "2026-11-05:status_change:Anthony Santander",
    "player_name": "Anthony Santander",
    "event_type": "status_change",
    "feeds": [
@@ -947,10 +947,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Ben Brown",
+   "event_id": "2026-11-05:status_change:Ben Brown",
    "player_name": "Ben Brown",
    "event_type": "status_change",
    "feeds": [
@@ -968,10 +968,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Ben Casparius",
+   "event_id": "2026-11-05:status_change:Ben Casparius",
    "player_name": "Ben Casparius",
    "event_type": "status_change",
    "feeds": [
@@ -989,10 +989,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Blade Tidwell",
+   "event_id": "2026-11-05:status_change:Blade Tidwell",
    "player_name": "Blade Tidwell",
    "event_type": "status_change",
    "feeds": [
@@ -1010,10 +1010,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Bowden Francis",
+   "event_id": "2026-11-05:status_change:Bowden Francis",
    "player_name": "Bowden Francis",
    "event_type": "status_change",
    "feeds": [
@@ -1031,10 +1031,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Brad Keller",
+   "event_id": "2026-11-05:status_change:Brad Keller",
    "player_name": "Brad Keller",
    "event_type": "status_change",
    "feeds": [
@@ -1052,10 +1052,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Brandon Walter",
+   "event_id": "2026-11-05:status_change:Brandon Walter",
    "player_name": "Brandon Walter",
    "event_type": "status_change",
    "feeds": [
@@ -1073,10 +1073,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Brent Rooker",
+   "event_id": "2026-11-05:status_change:Brent Rooker",
    "player_name": "Brent Rooker",
    "event_type": "status_change",
    "feeds": [
@@ -1094,10 +1094,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Brian Fitzpatrick",
+   "event_id": "2026-11-05:status_change:Brian Fitzpatrick",
    "player_name": "Brian Fitzpatrick",
    "event_type": "status_change",
    "feeds": [
@@ -1115,10 +1115,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Bryan Hoeing",
+   "event_id": "2026-11-05:status_change:Bryan Hoeing",
    "player_name": "Bryan Hoeing",
    "event_type": "status_change",
    "feeds": [
@@ -1136,10 +1136,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Cade Horton",
+   "event_id": "2026-11-05:status_change:Cade Horton",
    "player_name": "Cade Horton",
    "event_type": "status_change",
    "feeds": [
@@ -1157,10 +1157,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Carlos Correa",
+   "event_id": "2026-11-05:status_change:Carlos Correa",
    "player_name": "Carlos Correa",
    "event_type": "status_change",
    "feeds": [
@@ -1178,10 +1178,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Carson Whisenhunt",
+   "event_id": "2026-11-05:status_change:Carson Whisenhunt",
    "player_name": "Carson Whisenhunt",
    "event_type": "status_change",
    "feeds": [
@@ -1199,10 +1199,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Casey Schmitt",
+   "event_id": "2026-11-05:status_change:Casey Schmitt",
    "player_name": "Casey Schmitt",
    "event_type": "status_change",
    "feeds": [
@@ -1221,10 +1221,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Chase Dollander",
+   "event_id": "2026-11-05:status_change:Chase Dollander",
    "player_name": "Chase Dollander",
    "event_type": "status_change",
    "feeds": [
@@ -1242,10 +1242,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Cody Ponce",
+   "event_id": "2026-11-05:status_change:Cody Ponce",
    "player_name": "Cody Ponce",
    "event_type": "status_change",
    "feeds": [
@@ -1263,10 +1263,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Cole Ragans",
+   "event_id": "2026-11-05:status_change:Cole Ragans",
    "player_name": "Cole Ragans",
    "event_type": "status_change",
    "feeds": [
@@ -1285,10 +1285,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Cole Sands",
+   "event_id": "2026-11-05:status_change:Cole Sands",
    "player_name": "Cole Sands",
    "event_type": "status_change",
    "feeds": [
@@ -1306,10 +1306,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Cole Winn",
+   "event_id": "2026-11-05:status_change:Cole Winn",
    "player_name": "Cole Winn",
    "event_type": "status_change",
    "feeds": [
@@ -1327,10 +1327,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Colin Holderman",
+   "event_id": "2026-11-05:status_change:Colin Holderman",
    "player_name": "Colin Holderman",
    "event_type": "status_change",
    "feeds": [
@@ -1349,10 +1349,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Colt Emerson",
+   "event_id": "2026-11-05:status_change:Colt Emerson",
    "player_name": "Colt Emerson",
    "event_type": "status_change",
    "feeds": [
@@ -1370,10 +1370,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Cristian Mena",
+   "event_id": "2026-11-05:status_change:Cristian Mena",
    "player_name": "Cristian Mena",
    "event_type": "status_change",
    "feeds": [
@@ -1391,10 +1391,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Daniel Susac",
+   "event_id": "2026-11-05:status_change:Daniel Susac",
    "player_name": "Daniel Susac",
    "event_type": "status_change",
    "feeds": [
@@ -1412,10 +1412,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:David Festa",
+   "event_id": "2026-11-05:status_change:David Festa",
    "player_name": "David Festa",
    "event_type": "status_change",
    "feeds": [
@@ -1433,10 +1433,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Drew Millas",
+   "event_id": "2026-11-05:status_change:Drew Millas",
    "player_name": "Drew Millas",
    "event_type": "status_change",
    "feeds": [
@@ -1454,10 +1454,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Edwin Uceta",
+   "event_id": "2026-11-05:status_change:Edwin Uceta",
    "player_name": "Edwin Uceta",
    "event_type": "status_change",
    "feeds": [
@@ -1475,10 +1475,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Eli White",
+   "event_id": "2026-11-05:status_change:Eli White",
    "player_name": "Eli White",
    "event_type": "status_change",
    "feeds": [
@@ -1496,10 +1496,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Endy Rodriguez",
+   "event_id": "2026-11-05:status_change:Endy Rodriguez",
    "player_name": "Endy Rodriguez",
    "event_type": "status_change",
    "feeds": [
@@ -1517,10 +1517,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Felix Reyes",
+   "event_id": "2026-11-05:status_change:Felix Reyes",
    "player_name": "Felix Reyes",
    "event_type": "status_change",
    "feeds": [
@@ -1538,10 +1538,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Fernando Cruz",
+   "event_id": "2026-11-05:status_change:Fernando Cruz",
    "player_name": "Fernando Cruz",
    "event_type": "status_change",
    "feeds": [
@@ -1559,10 +1559,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Gavin Stone",
+   "event_id": "2026-11-05:status_change:Gavin Stone",
    "player_name": "Gavin Stone",
    "event_type": "status_change",
    "feeds": [
@@ -1580,10 +1580,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Gunnar Hoglund",
+   "event_id": "2026-11-05:status_change:Gunnar Hoglund",
    "player_name": "Gunnar Hoglund",
    "event_type": "status_change",
    "feeds": [
@@ -1601,10 +1601,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Harrison Bader",
+   "event_id": "2026-11-05:status_change:Harrison Bader",
    "player_name": "Harrison Bader",
    "event_type": "status_change",
    "feeds": [
@@ -1622,10 +1622,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Hayden Birdsong",
+   "event_id": "2026-11-05:status_change:Hayden Birdsong",
    "player_name": "Hayden Birdsong",
    "event_type": "status_change",
    "feeds": [
@@ -1644,10 +1644,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Jacob Wilson",
+   "event_id": "2026-11-05:status_change:Jacob Wilson",
    "player_name": "Jacob Wilson",
    "event_type": "status_change",
    "feeds": [
@@ -1666,10 +1666,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Jake Miller",
+   "event_id": "2026-11-05:status_change:Jake Miller",
    "player_name": "Jake Miller",
    "event_type": "status_change",
    "feeds": [
@@ -1687,10 +1687,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Johan Rojas",
+   "event_id": "2026-11-05:status_change:Johan Rojas",
    "player_name": "Johan Rojas",
    "event_type": "status_change",
    "feeds": [
@@ -1709,10 +1709,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Jordan Westburg",
+   "event_id": "2026-11-05:status_change:Jordan Westburg",
    "player_name": "Jordan Westburg",
    "event_type": "status_change",
    "feeds": [
@@ -1730,10 +1730,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Jorge Polanco",
+   "event_id": "2026-11-05:status_change:Jorge Polanco",
    "player_name": "Jorge Polanco",
    "event_type": "status_change",
    "feeds": [
@@ -1751,10 +1751,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Jose Berrios",
+   "event_id": "2026-11-05:status_change:Jose Berrios",
    "player_name": "Jose Berrios",
    "event_type": "status_change",
    "feeds": [
@@ -1773,10 +1773,10 @@
    "fa_player_id": 621244,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Jose Butto",
+   "event_id": "2026-11-05:status_change:Jose Butto",
    "player_name": "Jose Butto",
    "event_type": "status_change",
    "feeds": [
@@ -1795,10 +1795,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Jose Corniell",
+   "event_id": "2026-11-05:status_change:Jose Corniell",
    "player_name": "Jose Corniell",
    "event_type": "status_change",
    "feeds": [
@@ -1817,10 +1817,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Justin Slaten",
+   "event_id": "2026-11-05:status_change:Justin Slaten",
    "player_name": "Justin Slaten",
    "event_type": "status_change",
    "feeds": [
@@ -1838,10 +1838,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Justin Steele",
+   "event_id": "2026-11-05:status_change:Justin Steele",
    "player_name": "Justin Steele",
    "event_type": "status_change",
    "feeds": [
@@ -1859,10 +1859,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Justin Sterner",
+   "event_id": "2026-11-05:status_change:Justin Sterner",
    "player_name": "Justin Sterner",
    "event_type": "status_change",
    "feeds": [
@@ -1880,10 +1880,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Kerry Carpenter",
+   "event_id": "2026-11-05:status_change:Kerry Carpenter",
    "player_name": "Kerry Carpenter",
    "event_type": "status_change",
    "feeds": [
@@ -1901,10 +1901,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Kervin Castro",
+   "event_id": "2026-11-05:status_change:Kervin Castro",
    "player_name": "Kervin Castro",
    "event_type": "status_change",
    "feeds": [
@@ -1922,10 +1922,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Kris Bryant",
+   "event_id": "2026-11-05:status_change:Kris Bryant",
    "player_name": "Kris Bryant",
    "event_type": "status_change",
    "feeds": [
@@ -1943,10 +1943,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Kutter Crawford",
+   "event_id": "2026-11-05:status_change:Kutter Crawford",
    "player_name": "Kutter Crawford",
    "event_type": "status_change",
    "feeds": [
@@ -1964,10 +1964,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Kyle Bradish",
+   "event_id": "2026-11-05:status_change:Kyle Bradish",
    "player_name": "Kyle Bradish",
    "event_type": "status_change",
    "feeds": [
@@ -1985,10 +1985,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Logan Evans",
+   "event_id": "2026-11-05:status_change:Logan Evans",
    "player_name": "Logan Evans",
    "event_type": "status_change",
    "feeds": [
@@ -2006,10 +2006,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Luinder Avila",
+   "event_id": "2026-11-05:status_change:Luinder Avila",
    "player_name": "Luinder Avila",
    "event_type": "status_change",
    "feeds": [
@@ -2027,10 +2027,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Matt Brash",
+   "event_id": "2026-11-05:status_change:Matt Brash",
    "player_name": "Matt Brash",
    "event_type": "status_change",
    "feeds": [
@@ -2048,10 +2048,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Matt Chapman",
+   "event_id": "2026-11-05:status_change:Matt Chapman",
    "player_name": "Matt Chapman",
    "event_type": "status_change",
    "feeds": [
@@ -2069,10 +2069,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Max Rajcic",
+   "event_id": "2026-11-05:status_change:Max Rajcic",
    "player_name": "Max Rajcic",
    "event_type": "status_change",
    "feeds": [
@@ -2090,10 +2090,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:McCade Brown",
+   "event_id": "2026-11-05:status_change:McCade Brown",
    "player_name": "McCade Brown",
    "event_type": "status_change",
    "feeds": [
@@ -2111,10 +2111,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Mick Abel",
+   "event_id": "2026-11-05:status_change:Mick Abel",
    "player_name": "Mick Abel",
    "event_type": "status_change",
    "feeds": [
@@ -2132,10 +2132,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Mitch Spence",
+   "event_id": "2026-11-05:status_change:Mitch Spence",
    "player_name": "Mitch Spence",
    "event_type": "status_change",
    "feeds": [
@@ -2148,16 +2148,16 @@
    "type_to": "Undisclosed",
    "detail": "Not Specified",
    "il_date": "2026-08-07",
-   "return_date": "2026-11-03",
+   "return_date": "2026-11-04",
    "statyx_commentary": "Spence's move to the IL represents yet another hit to the Royals' starting pitching depth, as the organization has already lost Cole Ragans, Stephen Kolek, Luinder Avila, Ryan Bergert and Ben Kudrna to season-ending elbow surgeries. The 28-year-old righty has been part of the Royals' 40-man roster throughout the 2026 campaign, logging a 5.35 ERA and 1.41 WHIP over 16 starts with Omaha and yielding 22 earned runs in 9.1 innings over three appearances at the big-league level.",
    "in_fa_pool": false,
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Mitchell Parker",
+   "event_id": "2026-11-05:status_change:Mitchell Parker",
    "player_name": "Mitchell Parker",
    "event_type": "status_change",
    "feeds": [
@@ -2176,10 +2176,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Nick Davila",
+   "event_id": "2026-11-05:status_change:Nick Davila",
    "player_name": "Nick Davila",
    "event_type": "status_change",
    "feeds": [
@@ -2197,10 +2197,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Nick Mears",
+   "event_id": "2026-11-05:status_change:Nick Mears",
    "player_name": "Nick Mears",
    "event_type": "status_change",
    "feeds": [
@@ -2219,10 +2219,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Pablo Lopez",
+   "event_id": "2026-11-05:status_change:Pablo Lopez",
    "player_name": "Pablo Lopez",
    "event_type": "status_change",
    "feeds": [
@@ -2240,10 +2240,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Phil Maton",
+   "event_id": "2026-11-05:status_change:Phil Maton",
    "player_name": "Phil Maton",
    "event_type": "status_change",
    "feeds": [
@@ -2261,10 +2261,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Pierson Ohl",
+   "event_id": "2026-11-05:status_change:Pierson Ohl",
    "player_name": "Pierson Ohl",
    "event_type": "status_change",
    "feeds": [
@@ -2282,10 +2282,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Porter Hodge",
+   "event_id": "2026-11-05:status_change:Porter Hodge",
    "player_name": "Porter Hodge",
    "event_type": "status_change",
    "feeds": [
@@ -2303,10 +2303,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Quinn Priester",
+   "event_id": "2026-11-05:status_change:Quinn Priester",
    "player_name": "Quinn Priester",
    "event_type": "status_change",
    "feeds": [
@@ -2324,10 +2324,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Rafael Devers",
+   "event_id": "2026-11-05:status_change:Rafael Devers",
    "player_name": "Rafael Devers",
    "event_type": "status_change",
    "feeds": [
@@ -2346,10 +2346,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Randy Rodriguez",
+   "event_id": "2026-11-05:status_change:Randy Rodriguez",
    "player_name": "Randy Rodriguez",
    "event_type": "status_change",
    "feeds": [
@@ -2367,10 +2367,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Reed Garrett",
+   "event_id": "2026-11-05:status_change:Reed Garrett",
    "player_name": "Reed Garrett",
    "event_type": "status_change",
    "feeds": [
@@ -2388,10 +2388,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Reese Olson",
+   "event_id": "2026-11-05:status_change:Reese Olson",
    "player_name": "Reese Olson",
    "event_type": "status_change",
    "feeds": [
@@ -2409,10 +2409,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Richard Fitts",
+   "event_id": "2026-11-05:status_change:Richard Fitts",
    "player_name": "Richard Fitts",
    "event_type": "status_change",
    "feeds": [
@@ -2431,10 +2431,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Riley Martin",
+   "event_id": "2026-11-05:status_change:Riley Martin",
    "player_name": "Riley Martin",
    "event_type": "status_change",
    "feeds": [
@@ -2452,10 +2452,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Robby Snelling",
+   "event_id": "2026-11-05:status_change:Robby Snelling",
    "player_name": "Robby Snelling",
    "event_type": "status_change",
    "feeds": [
@@ -2473,10 +2473,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Romy Gonzalez",
+   "event_id": "2026-11-05:status_change:Romy Gonzalez",
    "player_name": "Romy Gonzalez",
    "event_type": "status_change",
    "feeds": [
@@ -2495,10 +2495,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Ronny Henriquez",
+   "event_id": "2026-11-05:status_change:Ronny Henriquez",
    "player_name": "Ronny Henriquez",
    "event_type": "status_change",
    "feeds": [
@@ -2516,10 +2516,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Rowan Wick",
+   "event_id": "2026-11-05:status_change:Rowan Wick",
    "player_name": "Rowan Wick",
    "event_type": "status_change",
    "feeds": [
@@ -2537,10 +2537,10 @@
    "fa_player_id": 592858,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Ryan Bergert",
+   "event_id": "2026-11-05:status_change:Ryan Bergert",
    "player_name": "Ryan Bergert",
    "event_type": "status_change",
    "feeds": [
@@ -2558,10 +2558,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Ryan Helsley",
+   "event_id": "2026-11-05:status_change:Ryan Helsley",
    "player_name": "Ryan Helsley",
    "event_type": "status_change",
    "feeds": [
@@ -2580,10 +2580,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Ryan Pepiot",
+   "event_id": "2026-11-05:status_change:Ryan Pepiot",
    "player_name": "Ryan Pepiot",
    "event_type": "status_change",
    "feeds": [
@@ -2601,10 +2601,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Shelby Miller",
+   "event_id": "2026-11-05:status_change:Shelby Miller",
    "player_name": "Shelby Miller",
    "event_type": "status_change",
    "feeds": [
@@ -2622,10 +2622,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Stephen Kolek",
+   "event_id": "2026-11-05:status_change:Stephen Kolek",
    "player_name": "Stephen Kolek",
    "event_type": "status_change",
    "feeds": [
@@ -2643,10 +2643,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Trevor McDonald",
+   "event_id": "2026-11-05:status_change:Trevor McDonald",
    "player_name": "Trevor McDonald",
    "event_type": "status_change",
    "feeds": [
@@ -2665,10 +2665,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Trey Sweeney",
+   "event_id": "2026-11-05:status_change:Trey Sweeney",
    "player_name": "Trey Sweeney",
    "event_type": "status_change",
    "feeds": [
@@ -2686,10 +2686,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Triston Casas",
+   "event_id": "2026-11-05:status_change:Triston Casas",
    "player_name": "Triston Casas",
    "event_type": "status_change",
    "feeds": [
@@ -2707,10 +2707,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Tyler Austin",
+   "event_id": "2026-11-05:status_change:Tyler Austin",
    "player_name": "Tyler Austin",
    "event_type": "status_change",
    "feeds": [
@@ -2728,10 +2728,10 @@
    "fa_player_id": 592122,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Tyler Soderstrom",
+   "event_id": "2026-11-05:status_change:Tyler Soderstrom",
    "player_name": "Tyler Soderstrom",
    "event_type": "status_change",
    "feeds": [
@@ -2749,10 +2749,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Tylor Megill",
+   "event_id": "2026-11-05:status_change:Tylor Megill",
    "player_name": "Tylor Megill",
    "event_type": "status_change",
    "feeds": [
@@ -2770,10 +2770,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Welinton Herrera",
+   "event_id": "2026-11-05:status_change:Welinton Herrera",
    "player_name": "Welinton Herrera",
    "event_type": "status_change",
    "feeds": [
@@ -2791,10 +2791,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Wenceel Perez",
+   "event_id": "2026-11-05:status_change:Wenceel Perez",
    "player_name": "Wenceel Perez",
    "event_type": "status_change",
    "feeds": [
@@ -2813,10 +2813,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Will Klein",
+   "event_id": "2026-11-05:status_change:Will Klein",
    "player_name": "Will Klein",
    "event_type": "status_change",
    "feeds": [
@@ -2835,10 +2835,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Will Vest",
+   "event_id": "2026-11-05:status_change:Will Vest",
    "player_name": "Will Vest",
    "event_type": "status_change",
    "feeds": [
@@ -2857,10 +2857,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:William Kempner",
+   "event_id": "2026-11-05:status_change:William Kempner",
    "player_name": "William Kempner",
    "event_type": "status_change",
    "feeds": [
@@ -2878,10 +2878,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Zack Kelly",
+   "event_id": "2026-11-05:status_change:Zack Kelly",
    "player_name": "Zack Kelly",
    "event_type": "status_change",
    "feeds": [
@@ -2900,12 +2900,12 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   }
  ],
  "fa_pool_events": [
   {
-   "event_id": "2026-11-04:returned:Hunter Harvey",
+   "event_id": "2026-11-05:returned:Hunter Harvey",
    "player_name": "Hunter Harvey",
    "event_type": "returned",
    "feeds": [
@@ -2923,10 +2923,10 @@
    "fa_player_id": 640451,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Lucas Giolito",
+   "event_id": "2026-11-05:returned:Lucas Giolito",
    "player_name": "Lucas Giolito",
    "event_type": "returned",
    "feeds": [
@@ -2944,10 +2944,10 @@
    "fa_player_id": 608337,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Luis Severino",
+   "event_id": "2026-11-05:returned:Luis Severino",
    "player_name": "Luis Severino",
    "event_type": "returned",
    "feeds": [
@@ -2965,10 +2965,10 @@
    "fa_player_id": 622663,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:returned:Ryan Mountcastle",
+   "event_id": "2026-11-05:returned:Ryan Mountcastle",
    "player_name": "Ryan Mountcastle",
    "event_type": "returned",
    "feeds": [
@@ -2986,10 +2986,10 @@
    "fa_player_id": 663624,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Jose Berrios",
+   "event_id": "2026-11-05:status_change:Jose Berrios",
    "player_name": "Jose Berrios",
    "event_type": "status_change",
    "feeds": [
@@ -3008,10 +3008,10 @@
    "fa_player_id": 621244,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Rowan Wick",
+   "event_id": "2026-11-05:status_change:Rowan Wick",
    "player_name": "Rowan Wick",
    "event_type": "status_change",
    "feeds": [
@@ -3029,10 +3029,10 @@
    "fa_player_id": 592858,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   },
   {
-   "event_id": "2026-11-04:status_change:Tyler Austin",
+   "event_id": "2026-11-05:status_change:Tyler Austin",
    "player_name": "Tyler Austin",
    "event_type": "status_change",
    "feeds": [
@@ -3050,7 +3050,7 @@
    "fa_player_id": 592122,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-04"
+   "current_date": "2026-11-05"
   }
  ]
 }
