@@ -62,6 +62,9 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 .ticker-strip{overflow:hidden;background:var(--ink-deep);border:1px solid var(--panel-line);border-left:4px solid var(--gold);border-radius:8px;margin:10px 0 14px;white-space:nowrap}
 .ticker-track{display:inline-block;white-space:nowrap;animation:ticker-scroll 210s linear infinite;padding:8px 0}
 .ticker-track:hover{animation-play-state:paused}
+/* Plotly 2.35.2 uses this light fill for active and hovered animation buttons. */
+[data-figure="1"] .updatemenu-item-rect[style*="rgb(244, 250, 255)"] ~ .updatemenu-item-text{fill:var(--ink)!important}
+[data-figure="1"] .updatemenu-button:has(.updatemenu-item-rect[style*="rgb(244, 250, 255)"]) .updatemenu-item-text{fill:var(--ink)!important}
 .tick-item{display:inline-block;margin:0 22px 0 0;font-size:13px;color:var(--paper);vertical-align:middle}
 .tick-item a{color:var(--paper);text-decoration:none}
 .tick-item a:hover{text-decoration:underline;color:var(--gold)}
