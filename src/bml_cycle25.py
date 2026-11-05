@@ -169,7 +169,9 @@ def load_salaries(reg):
 def load_fa_class(reg):
     # Spotrac remains the market and prior-AAV layer. MLB is the canonical
     # eligibility/status layer; keep both visible and join only by MLBAM id.
-    official = {r["player_id"]: r for r in mlb_free_agents(2026)}
+    # carpe.mlb_free_agents returns the saved JSON path, not the rows.
+    official = {r["player_id"]: r
+                for r in json.load(open(mlb_free_agents(2026)))}
     html = fetch("https://www.spotrac.com/mlb/free-agents/2027/", "fa2027.html")
     t = pd.read_html(io.StringIO(html))[0]
     pcol = [c for c in t.columns if "Player" in str(c)][0]
@@ -217,7 +219,7 @@ def main():
     reg = id_registry()
     players, failures = load_salaries(reg)
     matched = sum(1 for p in players if p["player_id"])
-    sal_out = {"metadata": {"source": "Spotrac team payroll pages (2026), pulled 2026-10-31",
+    sal_out = {"metadata": {"source": "Spotrac team payroll pages (2026), pulled 2026-10-31 (24 teams) + 2026-11-05 (ARI/BOS/CHC/MIL/TB/TEX)",
                             "field": "Payroll Salary column",
                             "rows": len(players), "id_matched": matched,
                             "team_failures": failures},

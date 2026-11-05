@@ -746,10 +746,11 @@ def main() -> int:
                               c.get("salary_cots_lrp_2027"))
                         for c in a["contracts"])
                 if r["team"] == "CHC":
-                    # Cycle 74: CHC's set is on the Cot's basis.
-                    ok64 = ok64 and "Cot's LRP 2027" in a["basis"] \
-                        and a["shed_total"] == 29527000 \
-                        and a["contracts"][0]["name"] == "Alex Bregman"
+                    # Cycle 85: CHC's set is on the Spotrac basis.
+                    ok64 = ok64 and "basis" not in a \
+                        and a["shed_total"] == 35000000 \
+                        and a["contracts"][0]["name"] == "Alex Bregman" \
+                        and a["contracts"][0]["salary_2026"] == 35000000
             if st == "OVER CAP" and not a["covered"]:
                 # Cycle 74: every over-cap team is covered now.
                 ok64 = False
@@ -762,7 +763,7 @@ def main() -> int:
                 == flags64.get(code, set())
         check("CAPLEDGER: status arithmetic recomputes from committed "
               "payrolls (shed sets cover their gaps, CHC covered on "
-              "Cot's LRP 2027, spend counts at the pool median, AAV "
+              "Spotrac, spend counts at the pool median, AAV "
               "flags recompute)",
               ok64)
         board64 = (html.split('id="mode-boardroom"', 1)[1]
@@ -774,8 +775,7 @@ def main() -> int:
               "strip, CHC Bregman line, disagreement count verbatim)",
               "2027 Cap Transition ledger" in board64
               and strip64 in board64
-              and "Alex Bregman ($29.5M" in board64
-              and "salary basis: Cot's LRP 2027" in board64
+              and "Alex Bregman ($35.0M" in board64
               and "shed set not covered" not in board64
               and "Status differs from the primary basis for 13 teams"
                   in board64
@@ -787,7 +787,7 @@ def main() -> int:
               "data/cap_transition_2027.json missing")
         check("CAPLEDGER: status arithmetic recomputes from committed "
               "payrolls (shed sets cover their gaps, CHC covered on "
-              "Cot's LRP 2027, spend counts at the pool median, AAV "
+              "Spotrac, spend counts at the pool median, AAV "
               "flags recompute)",
               False, "data/cap_transition_2027.json missing")
         check("CAPLEDGER: ledger panel leads Boardroom (title, summary "
@@ -803,7 +803,7 @@ def main() -> int:
         "26 of 30 within 2%, CHC gap $4,019,956 pinned)",
         "CYCLE74: three-basis shed sets recompute from the committed "
         "salary files and match the artifact; CHC set is Bregman "
-        "alone on the Cot's LRP basis",
+        "alone on the Spotrac basis (Cycle 85)",
         "CYCLE74: USA TODAY corroboration present as a different-basis "
         "snapshot (not a merge source) with the Guerrero Jr. player "
         "check exact",
@@ -908,10 +908,10 @@ def main() -> int:
                 ok74b = ok74b and sorted(
                     s["name"] for s in fs74[team]["shed"]) == spot
         ok74b = ok74b and fs74["CHC"]["covered"] \
-            and fs74["CHC"]["basis"] == "cots_lrp_2027" \
+            and "basis" not in fs74["CHC"] \
             and [s["name"] for s in fs74["CHC"]["shed"]] \
                 == ["Alex Bregman"] \
-            and fs74["CHC"]["shed_total"] == 29527000
+            and fs74["CHC"]["shed_total"] == 35000000
         check(_c74_names[2], ok74b)
         ut74 = recon74["usa_today_corroboration"]
         guer74 = next(r["salary_2026"] for r in sal74
@@ -937,7 +937,7 @@ def main() -> int:
               "7 of 7 over-cap teams" in html
               and "0.63% on average, worst 3.07%" in html
               and "Alex Bregman" in html
-              and "(Cot's LRP 2027)" in html)
+              and "all on the Spotrac per-player rows" in html)
     else:
         for _nm74 in _c74_names:
             check(_nm74, False, "Cycle 74 artifacts missing")
@@ -1100,9 +1100,9 @@ def main() -> int:
     uncovered = [t["team"] for t in fs if not t["covered"]]
     chc74 = next(t for t in fs if t["team"] == "CHC")
     _fig(11, "forced sellers: 7 covered, none uncovered (CHC on "
-             "Cot's LRP 2027, Cycle 74)",
+             "Spotrac, Cycle 85)",
          len(covered) == 7 and uncovered == []
-         and chc74.get("basis") == "cots_lrp_2027"
+         and "basis" not in chc74
          and "Forced sellers" in html_qa,
          f"covered={covered} uncovered={uncovered}")
     proj27 = load("projections_2027.json")

@@ -11,14 +11,14 @@
   },
   "inputs": [
    "data/cap_scenario_2027.json (Cycle 22 Spotrac payroll totals, all 30 teams)",
-   "data/forced_sellers_2027.json (Cycle 30 shed sets, 6 of 7 over-cap teams)",
-   "data/salaries_2026.json (Spotrac per-player rows, 927, 24 of 30 teams)",
+   "data/forced_sellers_2027.json (Cycle 30 shed sets, 7 of 7 over-cap teams)",
+   "data/salaries_2026.json (Spotrac per-player rows, 1,144, 30 of 30 teams)",
    "data/fg_steamer_2027_bat.json + data/fg_steamer_2027_pit.json (Steamer 2027 WAR)",
    "data/salaries_cots_2027.json (Cot's LRP-2027 rows, 237, 30 teams; CBT AAV field)",
    "data/fa_shopping_2027.json (optimizer pool, 199 players)",
    "data/optimizer_sensitivity_2027.json (Cycle 50 mixed floor frame)"
   ],
-  "primary_basis": "Payroll totals are the Spotrac totals in cap_scenario_2027.json (all 30 teams). Per-player Spotrac contract rows exist for 24 of 30 teams; the six without rows are ARI, BOS, CHC, MIL, TB, TEX (Spotrac page failures, logged in salaries_2026.json).",
+  "primary_basis": "Payroll totals are the Spotrac totals in cap_scenario_2027.json (all 30 teams). Per-player Spotrac contract rows exist for all 30 teams (1,144 rows; completed Cycle 85 when the six blocked pages unblocked).",
   "cots_sensitivity_basis": "Sum of the 237 rows for which Cot's publishes an LRP-2027 dollar figure \u2014 a committed-contract subtotal, not a complete team payroll. Rows for unsigned, arbitration and option players carry markers, not numbers, in Cot's. Statuses on this basis are arithmetic on the subtotal.",
   "shed_war_method": "Steamer 2027 WAR joined by MLBAM id from salaries_2026.json (player_xwalk.json for the one row with no id); batting + pitching WAR summed for the one two-way player (Ohtani).",
   "spend_shape_method": "Shortfall divided by the optimizer pool's prior-AAV price points (median and 75th percentile). Arithmetic only.",
@@ -497,24 +497,23 @@
    "status": "OVER CAP",
    "gap_to_cap": 4019956.0,
    "gap_to_floor": -78119956.0,
-   "spotrac_contract_rows": 0,
+   "spotrac_contract_rows": 35,
    "action": {
     "type": "shed",
     "covered": true,
-    "basis": "Cot's LRP 2027 (Cycle 74)",
     "contracts": [
      {
       "name": "Alex Bregman",
-      "pos": "3b",
-      "salary_cots_lrp_2027": 29527000,
+      "pos": "3B",
+      "salary_2026": 35000000,
       "steamer_war_2027": 3.26
      }
     ],
     "n_contracts": 1,
-    "shed_total": 29527000,
+    "shed_total": 35000000,
     "shed_war_total": 3.26,
-    "payroll_after_shed": 219792956,
-    "method": "minimal largest-first contract prefix covering the cap gap \u2014 computed on Cot's LRP 2027 (Cycle 74); Spotrac per-player rows for CHC do not exist"
+    "payroll_after_shed": 214319956,
+    "method": "minimal largest-first contract prefix covering the cap gap (Cycle 30)"
    },
    "per_player_max_check": {
     "basis": "Cot's CBT AAV (cb_2027_aav) \u2014 the committed AAV field",
@@ -607,7 +606,7 @@
    "status": "INSIDE THE BAND",
    "gap_to_cap": -37311984.0,
    "gap_to_floor": -36788016.0,
-   "spotrac_contract_rows": 0,
+   "spotrac_contract_rows": 40,
    "action": {
     "type": "none",
     "distance_to_cap": 37311984,
@@ -673,7 +672,7 @@
    "status": "INSIDE THE BAND",
    "gap_to_cap": -52629973.0,
    "gap_to_floor": -21470027.0,
-   "spotrac_contract_rows": 0,
+   "spotrac_contract_rows": 33,
    "action": {
     "type": "none",
     "distance_to_cap": 52629973,
@@ -706,7 +705,7 @@
    "status": "INSIDE THE BAND",
    "gap_to_cap": -54037202.0,
    "gap_to_floor": -20062798.0,
-   "spotrac_contract_rows": 0,
+   "spotrac_contract_rows": 37,
    "action": {
     "type": "none",
     "distance_to_cap": 54037202,
@@ -910,7 +909,7 @@
    "status": "UNDER FLOOR",
    "gap_to_cap": -98593680.0,
    "gap_to_floor": 24493680.0,
-   "spotrac_contract_rows": 0,
+   "spotrac_contract_rows": 33,
    "action": {
     "type": "spend",
     "shortfall": 24493680,
@@ -1207,7 +1206,7 @@
    "status": "UNDER FLOOR",
    "gap_to_cap": -149684531.0,
    "gap_to_floor": 75584531.0,
-   "spotrac_contract_rows": 0,
+   "spotrac_contract_rows": 39,
    "action": {
     "type": "spend",
     "shortfall": 75584531,

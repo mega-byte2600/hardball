@@ -161,9 +161,9 @@ Model + validation in `src/model_p6.py`; provenance in
 
 Known feed blockers (do NOT route around, log them): Spotrac single GET 403,
 FanGraphs RosterResource 403 (Cloudflare), GDELT 429, NewsAPI/GNews dev-only,
-X no free tier, Reddit 403, Bluesky AppView search 403. Salaries are 24/30
-team pages, forced-sellers 6/7, until the Sportradar trial (~mid-Nov, timed to
-cover the Dec 1 lockout).
+X no free tier, Reddit 403, Bluesky AppView search 403. Salaries are 30/30
+team pages, forced-sellers 7/7 (completed Cycle 85, 2026-11-05 — the six
+blocked pages unblocked; no trial needed for coverage).
 
 ## Gates & honesty
 

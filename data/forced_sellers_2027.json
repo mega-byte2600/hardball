@@ -5,19 +5,11 @@
   "floor_2027": 171200000,
   "sources": [
    "data/cap_scenario_2027.json (gaps)",
-   "data/salaries_2026.json (Spotrac 2026 Payroll Salary column, Cycle 25)",
-   "data/salaries_cots_2027.json (Cot's LRP 2027 published figures \u2014 CHC only, Cycle 74)"
+   "data/salaries_2026.json (Spotrac 2026 Payroll Salary column, Cycle 25)"
   ],
-  "coverage": "7 of 7 over-cap teams: six on Spotrac per-player rows; CHC on Cot's LRP 2027 (Cycle 74, cross-validated \u2014 see data/salary_reconciliation_2027.json)",
-  "salaries_rows": 927,
-  "salaries_team_failures": [
-   "ARI",
-   "BOS",
-   "CHC",
-   "MIL",
-   "TB",
-   "TEX"
-  ],
+  "coverage": "7 of 7 over-cap teams on Spotrac per-player rows (Cycle 25, completed to 30/30 in Cycle 85; CHC cross-validated on Cot's LRP 2027 \u2014 see data/salary_reconciliation_2027.json)",
+  "salaries_rows": 1144,
+  "salaries_team_failures": [],
   "caveats": [
    "Shedding is assumed to remove the full listed salary; real trades/releases rarely do that, so each shed count is an arithmetic lower bound, not a plan.",
    "A team's listed contracts need not sum to its cap-scenario payroll total (different payroll definitions / roster timing); the shed count uses individual contract values against the gap.",
@@ -157,21 +149,17 @@
    "payroll_M": 249.3,
    "gap_to_cap": 4019956.0,
    "covered": true,
-   "basis": "cots_lrp_2027",
-   "n_listed": 12,
-   "sum_listed": 117693000,
-   "listed_basis": "Cot's LRP 2027 published figure rows",
+   "n_listed": 35,
+   "sum_listed": 154888333,
    "n_shed": 1,
-   "shed_total": 29527000,
+   "shed_total": 35000000,
    "shed": [
     {
      "name": "Alex Bregman",
-     "pos": "3b",
-     "salary_cots_lrp_2027": 29527000,
-     "contract": "5 y/$175M (26-30)*"
+     "pos": "3B",
+     "salary_2026": 35000000
     }
-   ],
-   "note": "Spotrac per-player rows do not exist for CHC (its page failed in Cycle 25 and the site has blocked this environment since). This set is computed by the same minimal largest-first rule on Cot's LRP 2027 published figures (Cycle 74); cross-validation against the six Spotrac-basis sets is in data/salary_reconciliation_2027.json."
+   ]
   }
  ]
 }

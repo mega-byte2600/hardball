@@ -1278,3 +1278,32 @@ it does not publish.
 
 Repeat the check with `.venv/bin/python src/check_connectors.py` (add `--json` for machine-readable output).
 
+
+## Cycle 85 — Spotrac salaries complete 30/30 (2026-11-05)
+
+The six blocked team pages returned 200 on the single probe (Rays page
+302 to the canonical `/_/year/2026` URL, full 1.07 MB page), so
+`src/bml_cycle25.py` ran cache-aware and fetched only
+ARI/BOS/CHC/MIL/TB/TEX. `data/salaries_2026.json`: 927 -> **1,144 rows,
+1,071 ID-matched, 0 team failures**; the 24-team rows are byte-identical
+to the committed file. The gap closed on the primary source — no routing
+around the block, no second-source workaround.
+
+Corroboration: player-sum vs ledger payroll runs -45%..+42% across all
+30 teams (CHW -45%, CLE +42%); the six new teams sit inside the existing
+range, so the parse is consistent with the file's known property
+(different payroll definitions / roster timing — the demo never sums
+listed contracts against the ledger total). Top contracts sane on every
+new team (deGrom $37.0M, Bregman $35.0M, Burnes $35.0M, Crochet $28.8M,
+Yelich $26.0M, Rasmussen $20.0M).
+
+Downstream, all recomputed by the build scripts (no hand edits):
+forced sellers 7/7 on Spotrac (CHC: Bregman $29,527,000 Cot's LRP ->
+$35,000,000 Spotrac 2026 salary; shed set unchanged); reconciliation
+CHC cross-validation now real on both Cot's bases (LRP agrees 6/7, AAV
+7/7 — all three bases pick Bregman alone); ledger CHC action on Spotrac
+(payroll_after_shed $214,319,956); claims N06 NOT SUPPORTED -> SUPPORTED
+(the last honest residue), S09/S17 restated, register 17/7 -> 18
+supported / 6 not supported. The FA class regenerated with the MLB
+original-team layer now joined (172/251 rows; the Oct-31 file carried
+none — a carpe return-type bug in the script, fixed in-tree).

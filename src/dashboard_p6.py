@@ -604,11 +604,12 @@ def panel_forced_sellers():
     arithmetically close each over-cap team's gap. Bar = cumulative
     salary of the minimal largest-first shed set; diamond = the gap.
     Arithmetic only, NOT a trade prediction: shedding is assumed to
-    remove the full listed salary. Cycle 74: CHC is covered on
-    Cot's LRP 2027 (its Spotrac page failed in Cycle 25, so it has
-    no Spotrac contract rows) — the set's basis is labeled wherever
-    it renders, and the cross-validation is in
-    data/salary_reconciliation_2027.json."""
+    remove the full listed salary. Cycle 85: all 7 teams are covered
+    on Spotrac per-player rows (the six blocked pages unblocked
+    2026-11-05); the sets are cross-validated on Cot's LRP 2027 and
+    AAV in data/salary_reconciliation_2027.json — the same players
+    on all three bases for 6 of the 7 teams, LAD differing only on
+    Ohtani's deferred contract."""
     fj = os.path.join(DATA, "forced_sellers_2027.json")
     if not os.path.exists(fj):
         return None
@@ -647,11 +648,11 @@ def panel_forced_sellers():
                "over-cap gap<br><sub>Arithmetic only, not a trade "
                "prediction — shedding is assumed to remove the full "
                "listed salary, and real trades rarely do that · Coverage "
-               "7 of 7 over-cap teams — six on the Spotrac per-player "
-               "rows as committed, CHC on Cot's LRP 2027 (its Spotrac "
-               "page failed in Cycle 25), cross-validated where both "
-               "bases exist: the same shed-set players for 5 of the 6 "
-               "known teams, LAD differing only on Ohtani's deferred "
+               "7 of 7 over-cap teams — all on the Spotrac per-player "
+               "rows as committed (Cycle 25, completed to 30/30 in "
+               "Cycle 85), cross-validated on Cot's LRP 2027 and AAV: "
+               "the same shed-set players on all three bases for 6 of "
+               "the 7 teams, LAD differing only on Ohtani's deferred "
                "contract (present value vs nominal), with Cot's team "
                "totals matching Spotrac's within 0.63% on average, "
                "worst 3.07%; gaps are from the cap scenario file</sub>"),
@@ -2921,8 +2922,8 @@ def build():
               "is roughly 9-13 wins, and we present that number honestly.</div>"
               '<div class="note">Data: MLB Stats API + Spotrac, 2011-2026 (509 team-seasons). The 2027 cap '
               "($245.3M) and floor ($171.2M) are the owners' proposal; the CBA expires Dec 1, 2026 and the "
-              "figures are not yet law. No performance guarantee is implied. Salaries cover 24 of 30 teams: "
-              "Spotrac blocks 6 team pages, labeled wherever salaries appear.</div></details>")
+              "figures are not yet law. No performance guarantee is implied. Salaries cover all 30 teams: "
+              "Spotrac team payroll pages (2026), pulled 2026-10-31 (24 teams) + 2026-11-05 (the six blocked pages).</div></details>")
 
     # --- BOARDROOM mode: 15 slides in talk-track order ---
     slides = [
@@ -3285,9 +3286,9 @@ statsapi.mlb.com/api/v1</span> — official MLB feed, keyless; team hitting/pitc
 (runs scored / runs allowed). Validated against <span class="src">ESPN
 site.web.api.espn.com</span> (2025 validation set: 131 players cross-checked, HR counts match exactly).<br>
 <b>Payroll:</b> <span class="src">Spotrac</span> (via MIT-licensed jasonbhorne/mlb-payroll,
-721 team-seasons 2000-2024 + live 2026 opening-day figures; per-player 2026 salaries and the
-2027 free-agent class pulled directly from Spotrac team/FA pages — 24 of 30 team pages before
-a rate limit, logged in data/salaries_2026.json). <b>Injury/health:</b> MLB
+721 team-seasons 2000-2024 + live 2026 opening-day figures; per-player 2026 salaries for all
+30 teams and the 2027 free-agent class pulled directly from Spotrac team/FA pages, logged in
+data/salaries_2026.json). <b>Injury/health:</b> MLB
 transactions feed (35,000+ events 2025-2026, IL days per player). <b>MLB color/look:</b> league
 branding only, for presentation.<br>
 <b>NPB posted class (Cycle 34, keyless):</b> <span class="src">NPB official BIS
@@ -3329,9 +3330,9 @@ panel and the FA-class WAR column; the original player-ID crosswalk.
 <b>Committed snapshot</b> (the site currently refuses automated pulls, 403 —
 stopped, not routed around).<br>
 <span class="src">Spotrac</span> — per-player salaries (2027 payroll basis)
-and the 2027 free-agent class (251 players). <b>Committed snapshot — 24 of 30
-teams</b> (the pull was rate-limited; the 6 missing teams are named in the
-data metadata, not papered over).<br>
+and the 2027 free-agent class (251 players). <b>Committed snapshot — all 30
+teams</b> (completed 2026-11-05 when the six blocked pages unblocked; the
+pull history is in the data metadata).<br>
 <span class="src">Cot's Baseball Contracts</span> (Baseball Prospectus) — the
 second salary dataset, on its own LRP-2027 basis (present-value deferrals,
 buyout option years): 237 players, all 30 teams. <b>Committed · labeled

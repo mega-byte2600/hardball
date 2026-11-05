@@ -533,46 +533,64 @@ def main():
     before = {t["team"]: json.dumps(t, sort_keys=True)
               for t in fs_doc["teams"]}
     chc_old = fs["CHC"]
-    chc_fig = [p for p in old if p["team"] == "CHC"]
-    breg = next(p for p in chc_fig if p["name"] == "Alex Bregman")
-    chc_new = {
-        "team": "CHC",
-        "payroll_M": chc_old["payroll_M"],
-        "gap_to_cap": chc_old["gap_to_cap"],
-        "covered": True,
-        "basis": "cots_lrp_2027",
-        "n_listed": len(chc_fig),
-        "sum_listed": sum(p["salary_lrp_2027"] for p in chc_fig),
-        "listed_basis": "Cot's LRP 2027 published figure rows",
-        "n_shed": 1,
-        "shed_total": breg["salary_lrp_2027"],
-        "shed": [{
-            "name": "Alex Bregman",
-            "pos": breg["pos"],
-            "salary_cots_lrp_2027": breg["salary_lrp_2027"],
-            "contract": breg["contract"],
-        }],
-        "note": "Spotrac per-player rows do not exist for CHC "
-                "(its page failed in Cycle 25 and the site has "
-                "blocked this environment since). This set is "
-                "computed by the same minimal largest-first rule "
-                "on Cot's LRP 2027 published figures (Cycle 74); "
-                "cross-validation against the six Spotrac-basis "
-                "sets is in data/salary_reconciliation_2027.json.",
-    }
-    fs_doc["teams"] = [chc_new if t["team"] == "CHC" else t
-                       for t in fs_doc["teams"]]
-    fs_doc["metadata"]["sources"] = [
-        "data/cap_scenario_2027.json (gaps)",
-        "data/salaries_2026.json (Spotrac 2026 Payroll Salary "
-        "column, Cycle 25)",
-        "data/salaries_cots_2027.json (Cot's LRP 2027 published "
-        "figures — CHC only, Cycle 74)",
-    ]
-    fs_doc["metadata"]["coverage"] = (
-        "7 of 7 over-cap teams: six on Spotrac per-player rows; "
-        "CHC on Cot's LRP 2027 (Cycle 74, cross-validated — see "
-        "data/salary_reconciliation_2027.json)")
+    chc_spotrac = bool(chc_old.get("covered")) and any(
+        "salary_2026" in s for s in chc_old.get("shed", []))
+    if chc_spotrac:
+        # Cycle 85: Spotrac completed to 30/30, so CHC's shed set is
+        # already on the Spotrac basis (src/bml_cycle30.py). Do not
+        # overwrite it with the Cot's fallback; the Cot's set stays
+        # visible only as a cross-check in the reconciliation file.
+        fs_doc["metadata"]["sources"] = [
+            "data/cap_scenario_2027.json (gaps)",
+            "data/salaries_2026.json (Spotrac 2026 Payroll Salary "
+            "column, Cycle 25)",
+        ]
+        fs_doc["metadata"]["coverage"] = (
+            "7 of 7 over-cap teams on Spotrac per-player rows "
+            "(Cycle 25, completed to 30/30 in Cycle 85; CHC "
+            "cross-validated on Cot's LRP 2027 — see "
+            "data/salary_reconciliation_2027.json)")
+    else:
+        chc_fig = [p for p in old if p["team"] == "CHC"]
+        breg = next(p for p in chc_fig if p["name"] == "Alex Bregman")
+        chc_new = {
+            "team": "CHC",
+            "payroll_M": chc_old["payroll_M"],
+            "gap_to_cap": chc_old["gap_to_cap"],
+            "covered": True,
+            "basis": "cots_lrp_2027",
+            "n_listed": len(chc_fig),
+            "sum_listed": sum(p["salary_lrp_2027"] for p in chc_fig),
+            "listed_basis": "Cot's LRP 2027 published figure rows",
+            "n_shed": 1,
+            "shed_total": breg["salary_lrp_2027"],
+            "shed": [{
+                "name": "Alex Bregman",
+                "pos": breg["pos"],
+                "salary_cots_lrp_2027": breg["salary_lrp_2027"],
+                "contract": breg["contract"],
+            }],
+            "note": "Spotrac per-player rows do not exist for CHC "
+                    "(its page failed in Cycle 25 and the site has "
+                    "blocked this environment since). This set is "
+                    "computed by the same minimal largest-first rule "
+                    "on Cot's LRP 2027 published figures (Cycle 74); "
+                    "cross-validation against the six Spotrac-basis "
+                    "sets is in data/salary_reconciliation_2027.json.",
+        }
+        fs_doc["teams"] = [chc_new if t["team"] == "CHC" else t
+                           for t in fs_doc["teams"]]
+        fs_doc["metadata"]["sources"] = [
+            "data/cap_scenario_2027.json (gaps)",
+            "data/salaries_2026.json (Spotrac 2026 Payroll Salary "
+            "column, Cycle 25)",
+            "data/salaries_cots_2027.json (Cot's LRP 2027 published "
+            "figures — CHC only, Cycle 74)",
+        ]
+        fs_doc["metadata"]["coverage"] = (
+            "7 of 7 over-cap teams: six on Spotrac per-player rows; "
+            "CHC on Cot's LRP 2027 (Cycle 74, cross-validated — see "
+            "data/salary_reconciliation_2027.json)")
     with open(os.path.join(DATA, "forced_sellers_2027.json"),
               "w") as fh:
         json.dump(fs_doc, fh, indent=1)
@@ -585,8 +603,13 @@ def main():
     if FAILURES:
         print(f"CYCLE 74: {len(FAILURES)} FLAG(S)")
         return 1
-    print("forced sellers: CHC filled (Bregman $29,527,000, "
-          "Cot's LRP 2027); other six entries unchanged")
+    if chc_spotrac:
+        print("forced sellers: CHC already Spotrac-covered "
+              "(Bregman $35,000,000); Cot's fill skipped, other six "
+              "entries unchanged")
+    else:
+        print("forced sellers: CHC filled (Bregman $29,527,000, "
+              "Cot's LRP 2027); other six entries unchanged")
 
     # ---- D. scorecard section ---------------------------------------
     sc_path = os.path.join(REPO, "docs", "CARPE_SCORECARD.md")
