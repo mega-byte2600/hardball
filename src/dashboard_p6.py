@@ -2662,6 +2662,57 @@ def build():
 
     by_num = {i + 1: f for i, f in enumerate(numbered_figs)}
 
+    figure_takeaways = {1: 'Follow payroll and wins across seasons. The highlighted clubs are case studies, not proof '
+        'that one spending strategy works everywhere.',
+     2: 'Compare one club with the same reference profile used for every team. A closer profile is '
+        'not a forecast of more wins.',
+     3: 'Contact rate is more persistent than on-base percentage in these player samples. '
+        'Persistence measures stability, not the price of a win.',
+     4: 'Teams with larger run margins tend to win more in the same season. This relationship does '
+        'not forecast the next season.',
+     5: 'Run differential separates 90-win clubs from other clubs in the observed seasons. '
+        'Classification accuracy is not future win accuracy.',
+     6: 'Compare payroll with wins to spot efficient seasons. Spending and results alone do not '
+        'explain why a club succeeded.',
+     7: 'The highlighted clubs differ in contact, on-base percentage and walks. These descriptive '
+        'differences are starting points for investigation.',
+     8: 'Compare efficiency across the historical sample. A durable club pattern does not establish '
+        'which roster decision caused it.',
+     9: 'These fitted wins describe the observed sample. Use the payroll scenarios for comparison, '
+        'not as a reliable next-season forecast.',
+     10: 'The proposed cap and floor create different payroll gaps for each club. These are '
+         'hypothetical rules, not an enacted spending requirement.',
+     11: 'A few large contracts can close the modeled payroll gap. The exercise does not predict '
+         'trades or account for every transaction constraint.',
+     12: 'Compare projected hitting performance before considering price. A projection is an '
+         'estimate, and playing time changes the contribution delivered.',
+     13: 'Compare walks, baserunners and runs allowed together. These pitching measures describe '
+         'different parts of performance.',
+     14: 'Recorded injured-list history reduces modeled playing time. It is an availability input, '
+         'not a clinical diagnosis or an individual injury prediction.',
+     15: 'Read the roster alongside its budget, position constraints and player projections. Its '
+         'result depends on those assumptions.',
+     16: 'Compare the additional projected contribution bought at each budget. Prior-contract price '
+         'anchors are not offers or predicted signing prices.',
+     17: 'Compare how much the fitted model moves when each input changes. These sensitivities are '
+         'model responses, not causal effects.',
+     18: 'Agreement with Steamer checks consistency between projections. It does not establish '
+         'accuracy against future player performance.',
+     19: 'Compare year-to-year stability of measured traits and outcomes. A stable trait is not '
+         'automatically a better acquisition at any price.',
+     20: 'Read hitting and pitching metrics within their roles. The fielding companion below adds '
+         'recorded errors and chances by position.',
+     21: 'Compare organizational upper-minors depth with the league reference. This index is not a '
+         'guarantee of future major-league production.',
+     22: 'Compare projected contribution with the stated cost basis. Check availability and contract '
+         'context before treating a player as a bargain.',
+     23: 'Compare the posted players within their Japanese league context. These figures do not '
+         'translate their performance into a major-league forecast.',
+     24: 'The salary tests do not establish the proposed pricing advantage. Intervals crossing zero '
+         'leave the direction of the skill effects uncertain.',
+     25: 'The optimizer finds the best roster within the supplied pool, prices and constraints. '
+         'Mathematical optimality does not guarantee real-world feasibility.'}
+
     def _panel(num, mode):
         if num not in by_num or by_num[num] is None:
             # Lake-less builds omit the pitching panel gracefully (G1);
@@ -2698,6 +2749,8 @@ def build():
         return ('<div class="panel" data-mode="' + mode +
                 '" data-figure="' + str(num) + '">' +
                 fig.to_html(full_html=False, include_plotlyjs=False) +
+                ('<p class="figure-takeaway"><strong>Takeaway:</strong> ' +
+                 figure_takeaways[num] + "</p>" if mode == "explorer" else "") +
                 "</div>")
 
     def _player_cards():
@@ -2783,7 +2836,7 @@ def build():
 
     # --- STORY mode: verdict first, then 6 chapters, one figure each ---
     chapters = [
-        (3, "Skills persist. Luck does not.",
+        (3, "Contact rate is more persistent than on-base percentage.",
          "Across four real season pairs, contact rate persists at r of about 0.8 to 0.9, "
          "while on-base percentage persists more weakly: r of about 0.55 to 0.59 in the first "
          "three pairs and 0.30 in the latest pair (2025 to 2026), pooled r of about 0.53.",
@@ -2797,12 +2850,12 @@ def build():
         (6, "Money buys some wins. It does not buy the most wins per dollar.",
          "The winning-cheap teams, Milwaukee, Tampa, and Cleveland, win about 95 games at a third "
          "to a quarter of big-market payroll.",
-         "A mid-tier payroll is enough when it buys contact and control.",
+         "Use efficient clubs as case studies, then test the fit for your own roster.",
          "Source: MLB Stats API plus Spotrac payroll."),
-        (10, "The cap forces the market. Seven teams must cut, fifteen must add.",
+        (10, "The proposed cap changes the payroll gaps.",
          "Seven teams are over the proposed cap and must cut, the Mets by $101.4M, while fifteen, "
          "including Cleveland at $96.7M to add, sit under the floor and are forced to spend.",
-         "The cap punishes the biggest payrolls and pays the disciplined teams to add.",
+         "Compare each payroll gap under the proposed rules before considering transactions.",
          "Source: Spotrac payroll against the owners' proposed 2027 cap and floor."),
         (16, "The floor roster captures most of the cap roster's talent.",
          "Built entirely from the real 2027 free-agent class, the floor roster buys 48.9 WAR for "
@@ -2812,14 +2865,14 @@ def build():
          "wider: the Monte Carlo over measured projection error and player availability "
          "puts the floor's median at 39.8 WAR (10th to 90th: 33.0 to 46.9) and the cap's "
          "at 44.9 (37.6 to 52.4).",
-         "Spend to the floor first. The last dollars buy the least talent.",
+         "Compare the marginal projected contribution with its additional cost and uncertainty.",
          "Source: Spotrac free-agent class plus FanGraphs Steamer WAR, prior-contract price anchors; "
          "exact optimization, Cycle 49 (Figure 25); delivered-WAR ranges, Cycle 56 "
          "(data/uncertainty_scenarios_2027.json)."),
         (18, "Checked in public against the best benchmark we could get.",
          "Our Marcel hitter projections match FanGraphs Steamer at OBP r of 0.889, with 201 hitters "
          "matched by player ID. The pitcher bias found in that check is disclosed on the panel.",
-         "Trust the player projections because they were checked in the open, limits included.",
+         "Check both benchmark agreement and held-out error before relying on a projection.",
          "Source: FanGraphs Steamer 2027 projections, ID-matched."),
     ]
     story = ('<div class="verdict"><h2>Where did lower-payroll winners find value?</h2>'
@@ -2839,7 +2892,7 @@ def build():
     for i, (num, head, note, sowhat, src) in enumerate(chapters, 1):
         story += (f'<section class="chapter" data-chapter="{i}"><span class="chapnum">Chapter {i}</span>'
                   f"<h3>{head}</h3><p>{note}</p>" + _panel(num, "story") +
-                  f'<p class="sowhat"><b>So what for the owner:</b> {sowhat}</p>'
+                  f'<p class="sowhat"><b>Decision lens:</b> {sowhat}</p>'
                   f'<p class="srcline">{src}</p></section>')
         if num == 4:
             story += """<details class="panel" id="team-errors">
@@ -2873,16 +2926,16 @@ def build():
 
     # --- BOARDROOM mode: 15 slides in talk-track order ---
     slides = [
-        ([1], "Press play: sixteen seasons prove the cheap winners stay gold",
-         "Sixteen seasons of payroll vs wins animate; the cheap winners stay gold the whole time."),
-        ([3], "Pay for skill, not output: contact persists, on-base percentage does not",
-         "What a player does that is a skill carries. The output owners are tempted to buy does not."),
+        ([1], "Follow payroll and wins across sixteen seasons",
+         "Press play to follow each club. The same highlighted case studies remain visible across seasons."),
+        ([3], "Contact rate is more persistent than on-base percentage",
+         "Compare the strength of year-to-year correlations. Neither metric is perfectly stable."),
         ([4, 5], "Run differential describes a season and flags a winner. It does not forecast one",
          "Better teams score more than they allow, and run differential alone flags a 90+ win club "
          "with AUC of about 0.95. That is separation, not a forecast."),
         ([6], "Money buys some wins, but the cheap winners win about 95 at a fraction of the payroll",
          "Milwaukee, Tampa, and Cleveland win about 95 at a third to a quarter of big-market payroll."),
-        ([7], "Winning-cheap teams dominate contact, on-base percentage, and walks",
+        ([7], "Compare contact, on-base percentage and walks",
          "The 2026 signature: contact, on-base percentage, and walks lead, with fewer strikeouts."),
         ([13], "Pitching is the other winning-cheap half: low walks, low WHIP, elite ERA",
          "The winners field control arms, not just contact bats."),
@@ -2890,14 +2943,14 @@ def build():
          "Injury risk caps playing time in the projections instead of being wished away."),
         ([15], "The 2027 roster is built from real projections on exactly those inputs",
          "Contact and walk skills plus control arms plus health caps, in one 26-man roster."),
-        ([10], "Seven teams must cut. Fifteen must add. The cap is the opportunity",
+        ([10], "Compare the proposed cap and floor gaps by club",
          "The Mets are $101.4M over and the Dodgers $94.0M over; Cleveland has $96.7M to add and "
-         "Tampa $75.6M. The system now rewards the teams that waste the least."),
+         "Tampa $75.6M. These payroll gaps depend on the proposed rules."),
         ([11], "Every over-cap team closes its gap by shedding at most three contracts",
          "Toronto and Atlanta need just one. The cap binds through a handful of deals, not a rebuild. "
          "That is arithmetic, not a prediction that anyone trades those players."),
-        ([20], "Instead of a made-up WAR, we show the real inputs: wOBA, wRC+, FIP",
-         "WAR formulas disagree and no MLB feed returns it, so the panel shows the reproducible inputs."),
+        ([20], "Compare the hitting and pitching inputs",
+         "Use the glossary to interpret the hitting and pitching measures. Compare players within their roles."),
         ([16], "The floor roster buys 48.9 WAR. The cap roster buys 54.8",
          "A disciplined floor team captures about 89 percent of the cap team's talent for about "
          "70 percent of the money. Proven-optimal builds; across ±20% price error the floor "
@@ -2910,9 +2963,9 @@ def build():
          "Name your club: its signature, its cap headroom, its farm pipeline, its top prospect."),
         ([18], "Checked in public, limits disclosed: Marcel vs Steamer, r = 0.889",
          "We do not claim team-wins forecasts. Forecasting is genuinely weak, about 9 to 13 wins off, "
-         "and saying otherwise would not survive a skeptical room."),
+         "so benchmark agreement should be read alongside forecast error."),
     ]
-    boardroom = ('<p>15 slides, in talk-track order. Print this section for the room: '
+    boardroom = ('<p>Follow the evidence from team context to player availability and budget choices. '
                  '<button type="button" onclick="printBoardroom()">Print boardroom</button></p>')
     # Cycle 64: the Cap Transition ledger leads the Boardroom view —
     # a panel in front of the slides, not a slide and not a figure.
@@ -2925,28 +2978,43 @@ def build():
                       "the foot of this page.</p></section>")
 
     # --- EXPLORER mode: all 25 figures, grouped by task ---
-    groups = [
-        ("Cap Reality", "What the cap and floor do to every payroll, and what must be shed.",
-         [1, 6, 9, 10, 11],
-         "Source: MLB Stats API team data and Spotrac payroll, plus the proposed 2027 cap."),
-        ("Pick Your Team", "Every club gets the same signature, cap, pipeline, and prospect view.",
-         [2], "Source: MLB Stats API team data and the committed winning-cheap profile."),
-        ("Build a Roster", "Signatures, durability, projections, health, the roster, and what moves wins — the roster itself is the exact optimizer's proven optimum.",
-         [7, 8, 12, 13, 14, 15, 16, 17, 25],
-         "Source: Marcel projections, health caps, and the 2027 roster build from committed files; headline rosters: data/wow_scenarios.json (Cycle 49 exact MILP optimum, promoted Cycle 52; greedy build preserved in the same file as the benchmark); optimizer comparison: data/optimizer_comparison_2027.json (Cycle 49, scipy/HiGHS MILP on the identical pool, prices and quotas); delivered-WAR ranges: data/uncertainty_scenarios_2027.json (Cycle 56)."),
-        ("Shop the FA Class", "The farm pipeline behind the cheap winners, the shopping list, and the best values.",
-         [21, 22],
-         "Source: Spotrac free-agent class and FanGraphs Steamer WAR; prices are prior-contract averages."),
-        ("The Posted Class", "Japan's window, resolving during the demo: three NPB stars posted Nov 1, 2026 — three different bets: the test, the fit, the gamble.",
-         [23],
-         "Source: NPB official Baseball Information System (BIS) — data/posted_class_2026.json; leaderboard context computed by src/bml_cycle47.py into data/fig23_rebuild_2026.json; posting facts: AP / MLB Trade Rumors / Sportsnet, 2026-11-01."),
-        ("Check the Model", "Persistence, run differential, the title-bar test, the benchmark, the trait check — and our own pricing test, verdict included.",
-         [3, 4, 5, 18, 19, 20, 24],
-         "Source: FanGraphs Steamer benchmark, Baseball Savant leaderboards, MLB panel data, and the Cycle 46/48 Hakes–Sauer workpaper (committed salary samples + team-season panel)."),
-    ]
-    explorer = ('<div class="hero-team"><h3>Pick your team first</h3>'
-                "<p>Use the dropdown: every club's 2026 signature against the winning-cheap profile, "
-                "with cap headroom, pipeline rank, and top prospect.</p></div>")
+    groups = [('Start with your club',
+      'Compare the league over time, then inspect your team.',
+      [1, 2],
+      'Sources: MLB Stats API and payroll snapshots.'),
+     ('Read the evidence',
+      'Separate persistent player skills from same-season team relationships.',
+      [3, 4, 5],
+      'Source: MLB Stats API player and team records.'),
+     ('Compare team profiles',
+      'Examine payroll efficiency and the highlighted clubs over time.',
+      [6, 7, 8],
+      'Sources: MLB Stats API and Spotrac payroll snapshots.'),
+     ('Test a payroll scenario',
+      'Inspect proposed cap and floor gaps before considering roster moves.',
+      [9, 10, 11],
+      'Sources: payroll snapshots and the stated cap and floor assumptions.'),
+     ('Build a roster',
+      'Move from player projections and availability to budget comparisons and sensitivity.',
+      [12, 13, 14, 15, 16, 17],
+      'Sources: player projections, injured-list records and committed roster scenarios.'),
+     ('Check player value',
+      'Compare projections with benchmarks, then examine performance and fielding.',
+      [18, 19, 20],
+      'Sources: FanGraphs Steamer, Baseball Savant and MLB Stats API.'),
+     ('Explore the player market',
+      'Consider farm depth, free agents and posted players in their source context.',
+      [21, 22, 23],
+      'Sources: MLB minor-league records, the free-agent snapshot, FanGraphs and official Japanese '
+      'league records.'),
+     ('Audit the decision',
+      'Inspect the pricing claim and the limits of the roster optimization.',
+      [24, 25],
+      'Sources: the Hakes–Sauer workpaper and committed optimizer outputs.')]
+    explorer = ('<nav class="explorer-topics" aria-label="Explorer topics">'
+                '<strong>Explore the evidence</strong><p>All 25 figures stay in numerical order. Choose a topic to jump to its first figure.</p>' +
+                ''.join(f'<a href="#explorer-topic-{nums[0]}">{name}</a>'
+                        for name, _, nums, _ in groups) + '</nav>')
     # The Explorer is a reading surface, not a task board: keep every figure
     # in numerical order so the Figure Index, captions, and conversation all
     # point to the same place. The task label remains as a light section
@@ -2959,7 +3027,7 @@ def build():
     for n in sorted(by_figure):
         name, desc, src = by_figure[n]
         if name != last_group:
-            explorer += (f'<div class="task"><h3>{name}</h3><p>{desc}</p>'
+            explorer += (f'<div class="task" id="explorer-topic-{n}"><h3>{name}</h3><p>{desc}</p>'
                          f'<p class="srcline">{src}</p></div>')
             last_group = name
         explorer += _panel(n, "explorer")
@@ -2984,11 +3052,8 @@ def build():
 </details><script src="assets/player-errors.js" defer></script>"""
         if n == 25:
             explorer += ('<div class="task"><h3>Benchmark vs headline: the optimizer\'s audit</h3>'
-                         "<p>Figure 25 re-solves Figure 16's exact problem with a "
-                         "mixed-integer optimizer and proves the optima. Since Cycle 52 "
-                         "those optima are Figure 16's headline rosters; the greedy "
-                         "build remains as the benchmark. Explorer only. "
-                         "Story stays 6 chapters and Boardroom stays 15 slides.</p></div>")
+                         "<p>Figure 25 compares the exact optimizer behind Figure 16 with a greedy "
+                         "benchmark using the same player pool, prices and roster constraints.</p></div>")
             explorer += _optimizer_html()
             explorer += _optimizer_sensitivity_html()
         if n == 22:
@@ -2998,34 +3063,26 @@ def build():
             explorer += _player_cards()
             # Cycle 67: health cards — the same class, ranked by
             # delivered WAR instead of headline WAR. Explorer only.
-            explorer += ('<div class="task"><h3>Health cards: what each free agent will actually give you</h3>'
-                         "<p>Delivered WAR replaces headline WAR as the sort: "
-                         "measured availability first, price second. "
-                         "Explorer only. Story stays 6 chapters and Boardroom "
-                         "stays 15 slides: this is a buying tool, not a new "
-                         "figure.</p></div>")
+            explorer += ('<div class="task"><h3>Availability-adjusted player comparisons</h3>'
+                         "<p>Compare projected wins above replacement (WAR) after adjusting for "
+                         "measured availability, then inspect the prior-contract cost anchor.</p></div>")
             explorer += _health_cards_panel_html()
         if n == 24:
             explorer += ('<div class="task"><h3>The verdict on our own pricing claim</h3>'
-                         "<p>Figure 24 runs the Hakes–Sauer test on this demo's own thesis — "
-                         "and the verdict box below it states exactly what the data supports. "
-                         "Explorer only. Story stays 6 chapters and Boardroom stays 15 slides: "
-                         "this is a claim check, not a new claim.</p></div>")
+                         "<p>The Hakes–Sauer salary tests examine whether the proposed skills are "
+                         "underpriced. The evidence below distinguishes supported findings from unresolved claims.</p></div>")
             explorer += _hs_verdict_html()
         if n == 23:
             explorer += ('<div class="task"><h3>The trio, the clock, and the honesty box</h3>'
-                         "<p>Cards, the posting-clock facts, the Imai expectation-vs-reality strip, "
-                         "and the honesty box below Figure 23 — Explorer only. "
-                         "Story stays 6 chapters and Boardroom stays 15 slides: this is a live-market "
-                         "exhibit, not a new thesis claim.</p></div>")
+                         "<p>Review player profiles, posting dates and the limits of comparing "
+                         "Japanese and major-league performance.</p></div>")
             explorer += _posted_html()
 
     # Cycle 68: the claims & reproducibility panel closes Explorer —
     # the appendix, not a figure, chapter, or slide.
     explorer += ('<div class="task"><h3>Claims &amp; reproducibility — the audit trail</h3>'
-                 "<p>What this demo asserts, what it does not support, and what it withdrew — "
-                 "with the artifact behind each one. Explorer only. Story stays 6 chapters and "
-                 "Boardroom stays 15 slides.</p></div>")
+                 "<p>Check each claim against its supporting artifact, including "
+                 "limitations and withdrawn findings.</p></div>")
     explorer += _claims_panel_html()
 
     page_template = """<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Major League Baseball (MLB) Decision Intelligence</title><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -3115,6 +3172,13 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 .appendix summary{font-family:Fraunces,Georgia,serif;font-weight:800;cursor:pointer}
 .slide{border:1px solid var(--panel-line);border-radius:10px;padding:16px 20px;margin:18px 0;background:var(--panel);page-break-after:always}
 .slidenum{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:600;color:var(--gold)}
+.figure-takeaway{margin:12px 0 0;padding:12px 0 0;border-top:1px solid var(--panel-line);font-size:14px;line-height:1.6;color:var(--paper)}
+.figure-takeaway strong{color:var(--paper-dim)}
+.explorer-topics{margin:18px 0;padding:16px;border:1px solid var(--panel-line);border-radius:10px;background:var(--panel);line-height:1.6}
+.explorer-topics p{margin:4px 0 10px;color:var(--paper-dim);font-size:14px}
+.explorer-topics a{display:inline-flex;align-items:center;min-height:44px;margin:2px 14px 2px 0;text-underline-offset:3px}
+.explorer-topics a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+[id^="explorer-topic-"]{scroll-margin-top:20px}
 .task{background:linear-gradient(90deg,var(--panel),var(--ink-hi));border:1px solid var(--panel-line);color:var(--paper);border-radius:10px;padding:13px 20px;margin:30px 0 4px}
 .task h3{margin:0}
 .task p{margin:2px 0 0;color:var(--paper-dim);font-size:13.5px}
@@ -3209,7 +3273,7 @@ __JS_INCLUDE__
 <nav class="modenav">
 <button type="button" id="btn-story" class="active" onclick="showMode('story')">Story: the case in 6 chapters</button>
 <button type="button" id="btn-boardroom" onclick="showMode('boardroom')">Boardroom: 15 slides</button>
-<button type="button" id="btn-explorer" onclick="showMode('explorer')">Explorer: all 25 figures by task</button>
+<button type="button" id="btn-explorer" onclick="showMode('explorer')">Explorer: all 25 figures</button>
 </nav>
 <div id="mode-story">__STORY__</div>
 <div id="mode-boardroom">__BOARDROOM__</div>

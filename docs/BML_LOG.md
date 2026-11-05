@@ -2822,3 +2822,9 @@ No claim or data changed; dashboard untouched (still 25 figures).
 - Backlog item (g) refreshed: HANDOFF.md Cycle 83 section + BML_LOG.md Cycle 83 entry. Freeze tag still owed; v1.1.12 current release; Sportradar footer correction rides with freeze cut.
 - Open PRs untouched: #57, #58. Next: final frozen-main release cut before Dec 1.
 - Work tree: ~/workspace/hardball/work83 (verified main e1801d20 + lake copy; gitignored outputs excluded from PR).
+
+## 2026-11-05 · Storytelling presentation cleanup
+
+Added a concise reading takeaway beneath each of Explorer's 25 figures. Eight contiguous topic ranges keep figures in numerical order and provide in-page jump links. Removed repeated task introductions and companion build-history copy. Tightened Story decision cues and Boardroom language to distinguish historical relationships, proposed payroll rules, projection agreement and forecast accuracy.
+
+Validation: offline dashboard build passed; all 48 published chart initialization scripts, including animation frames and controls, preserved byte for byte. Every standalone analytical function is unchanged. All inline JavaScript passes Node syntax checks. Both dashboard URLs contain identical HTML, with 25 ordered Explorer figures, 6 Story chapters, 15 Boardroom slides, fielding companions and contact links retained. New topic links use 44px minimum height, underlines and visible keyboard focus. Browser-based phone and tablet layout verification remains pending.
