@@ -225,4 +225,4 @@ AP / MLB Trade Rumors / Sportsnet.
 - Honest limit: cross-year team-wins forecasting MAE ≈ 10.2 grouped CV
   (2020 fold excluded — it predicts the 60-game season; stated on page).
 - Data QC: every source re-verified 2026-10-31 (see CARPE_SCORECARD);
-  salaries 24/30 teams (Spotrac blocks 6 pages — labeled on the dashboard).
+  salaries 30/30 teams (completed 2026-11-05 — Spotrac's six blocked pages unblocked).

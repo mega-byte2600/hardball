@@ -66,8 +66,8 @@ def main():
     biggest_over = max(over, key=lambda t: t["gap_to_cap"])
     biggest_under = max(under, key=lambda t: t["gap_to_floor"])
     failures = [f["team"] for f in sal["metadata"]["team_failures"]]
-    assert sal["metadata"]["rows"] == 927, "salaries row count moved"
-    assert len(failures) == 6, f"salaries failures moved: {failures}"
+    assert sal["metadata"]["rows"] == 1144, "salaries row count moved"
+    assert len(failures) == 0, f"salaries failures moved: {failures}"
     r = bench["hitters"]["obp"]["pearson_r"]
     n = bench["hitters"]["matched_n"]
     assert n == 201 and 0.80 <= r <= 0.95, f"benchmark moved: n={n} r={r}"
@@ -191,8 +191,10 @@ budget loses ~4&ndash;5 WAR; the floor/cap ratio is unchanged. Per-player
 factors cover only {subset['rostered_players_with_measured_avail']} of
 {subset['n_unique_rostered_players']} rostered players, so they are not applied
 selectively (that would penalize the best-measured players).</li>
-<li><b>Salaries cover 24 of 30 teams.</b> Spotrac blocked ARI, BOS, CHC, MIL, TB,
-TEX (927 rows, 864 ID-matched). The gap is labeled in the data, not filled.</li>
+<li><b>Salaries cover all 30 teams.</b> Spotrac team payroll pages (2026):
+1,144 rows, 1,071 ID-matched &mdash; pulled 2026-10-31 (24 teams) +
+2026-11-05 (ARI, BOS, CHC, MIL, TB, TEX, after the blocked pages
+unblocked).</li>
 <li><b>WAR</b> is a public stat (FanGraphs fWAR / Baseball-Reference bWAR, free) but the two formulas disagree and the MLB API does not return it; we surface its reproducible inputs (wOBA, wRC+, FIP, K-BB%) rather than inventing a single WAR.</li>
 </ul></div>
 
@@ -207,7 +209,7 @@ Baseball Savant, FanGraphs Steamer, Spotrac, ESPN cross-check. Full audit trail:
     OUT.write_text(doc)
     print(f"ONEPAGER: {OUT} ({len(doc)} bytes)")
     print(f"  scenarios: {[(s['label'], s['total_war']) for s in scenarios]}")
-    print(f"  over-cap: {len(over)}, under-floor: {len(under)}, salaries: 24/30")
+    print(f"  over-cap: {len(over)}, under-floor: {len(under)}, salaries: 30/30")
     print(f"  benchmark: r={r:.3f} n={n}, curated tables: {n_tables}, failures: []")
     return 0
 

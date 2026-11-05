@@ -12,8 +12,9 @@ Method (arithmetic only, no trade prediction):
     largest-first and take the minimal prefix whose cumulative salary
     covers the cap gap. That prefix is the "shed set".
   * teams absent from the salaries file are reported uncovered, never
-    as zero — CHC is over cap by $4.0M but its Spotrac page failed in
-    Cycle 25, so no shed set exists for it.
+    as zero — CHC was over cap by $4.0M but its Spotrac page failed in
+    Cycle 25, so no shed set existed for it until the page unblocked
+    in Cycle 85 (2026-11-05) and the file completed to 30/30.
 
 Honesty caveats (carried into the JSON metadata and the panel):
   * shedding a contract is assumed to remove its full listed salary.
@@ -91,7 +92,7 @@ def main() -> int:
     uncovered = [t["team"] for t in teams if not t["covered"]]
     assert len(teams) == cap["n_over_cap"] == 7, \
         f"over-cap teams: {len(teams)} (file says {cap['n_over_cap']})"
-    assert len(covered) == 6 and uncovered == ["CHC"], \
+    assert len(covered) == 7 and uncovered == [], \
         f"coverage changed: covered={len(covered)} uncovered={uncovered}"
 
     out = {
@@ -102,9 +103,9 @@ def main() -> int:
             "sources": ["data/cap_scenario_2027.json (gaps)",
                         "data/salaries_2026.json (Spotrac 2026 Payroll "
                         "Salary column, Cycle 25)"],
-            "coverage": "6 of 7 over-cap teams; CHC ($4.0M over) has no "
-                        "contract rows — its Spotrac page failed in "
-                        "Cycle 25 and is logged in salaries metadata",
+            "coverage": "7 of 7 over-cap teams on Spotrac per-player "
+                        "rows (Cycle 25, completed to 30/30 in Cycle 85 "
+                        "when the six blocked pages unblocked)",
             "salaries_rows": meta["rows"],
             "salaries_team_failures": sorted(failures),
             "caveats": [

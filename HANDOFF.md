@@ -123,7 +123,7 @@ claims, no new thesis.
       freeze tag; the frozen-main tag above is still owed.
 
 ### 2. Demo package (verify from the frozen main, DOM/data checks only)
-- [ ] Dashboard rebuilds offline with the lake: 23 figures, no
+- [ ] Dashboard rebuilds offline with the lake: 25 figures, no
       duplicates, no missing figure; Story is the default landing;
       Boardroom prints at <=15 slides; Explorer holds every figure.
 - [ ] Figure 23 re-verified against data/posted_class_2026.json (BIS
@@ -131,7 +131,7 @@ claims, no new thesis.
       none hand-typed.
 - [ ] One-pager regenerates clean: `python3 src/make_onepager.py`
       produces docs/ONEPAGER.html from committed artifacts only.
-- [ ] Talk-track figure references all <= 23 (gate checks this);
+- [ ] Talk-track figure references all <= 25 (gate checks this);
       docs/TALKTRACK.md "What about Japan?" Q&A still matches Fig. 23.
 
 ### 3. Print pack (print from the frozen main, day-before)
@@ -142,23 +142,23 @@ claims, no new thesis.
       as the live-market closer).
 
 ### 4. Known gaps — carry honestly, do not hide or fix by invention
-- [ ] Salaries 24/30: Spotrac still 403 (this run, single probe). Retry
-      the probe each cycle; on a 200 only, rerun src/bml_cycle25.py
-      (cache-aware: fetches only ARI/BOS/CHC/MIL/TB/TEX) and PR the
-      completion. FanGraphs lane retries ONLY if a single probe returns
-      200, and only under the Cycle 32 reconcile-first guard (24 known
-      teams first; ship for the 6 only if it lines up, with
-      source=fangraphs_rosterresource per row).
-- [ ] Forced-seller panel stays labeled 6/7 until salaries complete;
-      CHC uncovered is stated on the panel, not smoothed over.
+- [x] Salaries 30/30: COMPLETED Cycle 85 (2026-11-05) — Spotrac's six
+      blocked pages returned 200 on the single probe; src/bml_cycle25.py
+      fetched only ARI/BOS/CHC/MIL/TB/TEX (1,144 rows, 1,071 ID-matched,
+      0 failures; the 24-team rows are byte-identical to the committed
+      file). No FanGraphs lane needed — the gap closed on the primary
+      source, not a workaround.
+- [x] Forced-seller panel 7/7 on the Spotrac basis (Cycle 85): CHC's
+      shed set is Bregman alone at his $35.0M Spotrac 2026 salary
+      (replacing the $29.5M Cot's LRP figure); all three bases now
+      agree on CHC. Cot's stays a labeled cross-check, never merged.
 - [ ] Price model (Cycle 61 workpaper): optimizer prices stay on
       prior-AAV anchors until a complete per-class record of FA
       signing terms lands (expired short deals included — the
       Cot's/Spotrac 2027 snapshots hold survivors only: class
-      2022 keeps 24 deals, all >= 3 years). When the Sportradar
-      trial opens (~Nov 15), verify its contracts coverage
-      against the workpaper's readiness criteria before counting
-      it as the source that unblocks PRICE-1.
+      2022 keeps 24 deals, all >= 3 years). The Sportradar trial
+      was DECLINED by the owner 2026-11-03 — it is not the source
+      that unblocks PRICE-1; do not raise it again.
 - [ ] Persistence figures re-verified before Dec 1: EXEC_SUMMARY quotes
       contact r = 0.84 and OBP r = 0.30 — recompute both from HARDBALL's
       own player-year-over-year computation and confirm r vs R^2
@@ -2046,3 +2046,21 @@ relabeled; release v1.1.12 current, Cycle 78's restore).
 - Final frozen-main release cut before Dec 1 (with the Sportradar
   footer-line correction riding along). After Dec 1 the deadline
   guard fires and this job goes silent.
+
+## Cycle 85 — salaries complete 30/30 (Nov 5) + December checklist refresh (24/7 job, 2026-11-05 ~08:13 PT)
+- DEADLINE GUARD: 2026-11-05, inside the build window (closes Dec 1).
+- BASE: main 9b83b56f (Cycle 84 merge + parallel-lane PR #101 storytelling cleanup). Tarball 404 on the codeload redirect again; base fetched blob-by-blob via the Git Data API (243 blobs, verified by git blob hash — zero diffs); lake copied from the local mirror.
+- SPOTRAC PROBE — 200 (first unblock since the Oct 31 pull): single GET of the Rays 2026 payroll page 302'd to the canonical /payroll/_/year/2026 URL and returned a full 1.07 MB page. The last data gap closes on the primary source — no routing around the block, no second-source workaround.
+- SALARIES (src/bml_cycle25.py, cache-aware): 927 -> 1,144 rows, 1,071 ID-matched, 0 team failures. The 24-team rows are byte-identical to the committed file; 217 new rows (ARI 33, BOS 40, CHC 35, MIL 33, TB 39, TEX 37). Top contracts sane on every new team (deGrom $37.0M, Bregman $35.0M, Burnes $35.0M, Crochet $28.8M, Yelich $26.0M, Rasmussen $20.0M). Player-sum vs ledger payroll runs -45%..+42% across ALL 30 teams (CHW -45%, CLE +42%) — the six new teams sit inside the existing range, so the parse is consistent with the file's known property (different payroll definitions / roster timing, disclosed in the forced-seller caveats); the demo never sums listed contracts against the ledger total. FA class regenerated: 251 players, 231 with Steamer WAR, class/top-25/top-15 identical except the MLB original-team layer now joins (172/251 rows; the Oct-31 file carried none — carpe.mlb_free_agents returns the saved path, fixed the call to load it).
+- FORCED SELLERS (src/bml_cycle30.py, assertion 6/7 -> 7/7): 7/7, all on Spotrac. Only CHC changed: shed [Alex Bregman], total $29,527,000 (Cot's LRP 2027) -> $35,000,000 (Spotrac 2026 salary). The shed SET is unchanged — the story is the same, only the dollar figure and basis moved to the demo's own basis.
+- RECON (src/bml_cycle74.py re-run; §C guarded so it no longer overwrites a Spotrac-covered CHC with the Cot's fill): only the CHC cross-validation block changed — Spotrac prefix [Bregman $35.0M], lrp_matches_spotrac false -> true, aav_matches_spotrac false -> true. All three bases now pick Bregman alone for CHC. Team totals / summary (mean 0.63%, worst SD 3.07%, 26 within 2%) / CHC block / USA TODAY block identical; Cot's full parse byte-identical (2,240 rows).
+- LEDGER (src/bml_cycle64.py re-run; docstring + metadata strings updated 24/30 -> 30/30): only CHC's action changed (Spotrac basis, Bregman $35.0M, payroll_after_shed $214,319,956) plus spotrac_contract_rows 0 -> 35/40/33/37/33/39 on the six teams. Summaries unchanged (over 7 / under 15 / in band 8; status changes 13; flags 8).
+- CLAIMS (new src/bml_cycle85.py, Cycle 69 pattern): N06 NOT SUPPORTED -> SUPPORTED — the last honest residue closes. S09 restated (30/30, 1,144 rows); S17 restated (all 7 sets on Spotrac, LRP agrees 6/7, AAV 7/7). Register 17/7 -> 18 supported / 6 not supported; corrections log +1. docs/REPRODUCIBILITY.html regenerated from the register. docs/ONEPAGER.html regenerated (salaries 30/30; data QC 19 -> 20 curated tables — the committed one-pager was stale against the committed build report).
+- LIVE FEEDS: refresh_live_feeds.py SKIP (last pull 18.1h old, < 20h watermark) — normal, no FastballAPI credits spent. Evidence SKIP (artifact Nov 2, 3d old, < 6d guard) — normal. EVIDENCE.html untouched.
+- TICKER: window 2026-10-29..2026-11-05; SIGNED 846 -> 857 (+11 DSL releases, Nov 5; 0 lost), REPORTED 200 (capped, rotated), BUZZ 0, total 1046 -> 1057. Jetstream handshake 403 fail-closed; Google News 200.
+- PLATFORM: ingest 0 failures (Savant bands hold; transactions raw 122,163 -> 122,267 raw-zone only); curate 20 tables, contracts pass; _build_report.json changed ONLY in fact_salaries rows (927 -> 1,144) — fact_salaries.parquet + report ship. Warehouse rebuilt; parity r = 0.889, 201 matched — exact. Ingest manifest appends restored, not shipped (Cycle 80-84 practice).
+- DASHBOARD: rebuilt lake-present + HARDBALL_OFFLINE_BUILD=1; 25 figures, 0 missing; stamp "Data as of Nov 5, 2026 · tracker Nov 5 · injured list Nov 4 · evidence Nov 2"; hardball_demo byte-identical copy. Copy updated: forced-seller subtitle (all-Spotrac, 6/7 LRP + 7/7 AAV), Story honesty note (30/30), Explorer source box (both Spotrac lines). One intentional leftover: the Figure 24 HS-2 verdict box still says "Spotrac basis n = 60 (24 of 30 teams...)" — that is the Cycle 48 sample's provenance as drawn; re-sampling on the complete file is a re-analysis, not a copy fix (owner call if wanted).
+- GATE: src/verify_data.py 107 ALL PASS (pins updated to the recomputed truth: ledger CHC $35.0M Spotrac, Boardroom Bregman ($35.0M, forced-seller CHC Spotrac, dashboard 7-of-7 copy). Spellcheck green.
+- BACKLOG ITEM (g) REFRESHED: checklist §2 figure counts 23 -> 25; §4 salaries + forced-seller items checked off as completed Cycle 85; price-model item notes the Sportradar trial was DECLINED (not the PRICE-1 unblock). Freeze tag still owed; v1.1.12 current release; Sportradar footer correction rides with freeze cut.
+- NEXT: final frozen-main release cut before Dec 1. Open PRs left untouched: #57, #58.
+- Work tree: ~/workspace/hardball/work85/tree (verified main 9b83b56f + lake copy; gitignored outputs excluded from PR).

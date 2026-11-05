@@ -578,8 +578,13 @@
    "team": "CHC",
    "gap_to_cap": 4019956.0,
    "spotrac": {
-    "players": [],
-    "total": 0
+    "players": [
+     {
+      "name": "Alex Bregman",
+      "amount": 35000000
+     }
+    ],
+    "total": 35000000
    },
    "cots_lrp_2027": {
     "players": [
@@ -599,8 +604,8 @@
     ],
     "total": 30894000
    },
-   "lrp_matches_spotrac": false,
-   "aav_matches_spotrac": false
+   "lrp_matches_spotrac": true,
+   "aav_matches_spotrac": true
   }
  ],
  "chc": {

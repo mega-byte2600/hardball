@@ -11,9 +11,10 @@ resolved.
 Inputs (committed data only):
   data/cap_scenario_2027.json   Cycle 22 payroll totals (Spotrac) for
                                 all 30 teams + gaps to cap/floor.
-  data/forced_sellers_2027.json Cycle 30 shed sets (6 of 7 over-cap
-                                teams; CHC uncovered, stated plainly).
-  data/salaries_2026.json       Spotrac per-player rows (927, 24 of 30
+  data/forced_sellers_2027.json Cycle 30 shed sets (7 of 7 over-cap
+                                teams; all on Spotrac per-player rows
+                                since Cycle 85 completed salaries).
+  data/salaries_2026.json       Spotrac per-player rows (1,144, 30 of 30
                                 teams) — MLBAM ids for the shed WAR
                                 join, and the coverage record.
   data/fg_steamer_2027_{bat,pit}.json
@@ -140,10 +141,12 @@ def main():
         if status == "OVER CAP":
             fs = forced[team]
             if fs.get("basis") == "cots_lrp_2027":
-                # Cycle 74: CHC's set is computed on Cot's LRP 2027
-                # (no Spotrac per-player rows exist for CHC). WAR
-                # joins by name through the crosswalk instead of
-                # the (team, salary) Spotrac join.
+                # Fallback (Cycle 74): CHC's set computed on Cot's LRP
+                # 2027 when no Spotrac per-player rows existed for CHC.
+                # Since Cycle 85 Spotrac covers all 30 teams, this branch
+                # is not taken; it stays for a world where Spotrac
+                # re-blocks. WAR joins by name through the crosswalk
+                # instead of the (team, salary) Spotrac join.
                 contracts = []
                 war_total = 0.0
                 for s in fs["shed"]:
@@ -274,10 +277,10 @@ def main():
             "inputs": [
                 "data/cap_scenario_2027.json (Cycle 22 Spotrac payroll "
                 "totals, all 30 teams)",
-                "data/forced_sellers_2027.json (Cycle 30 shed sets, 6 of "
+                "data/forced_sellers_2027.json (Cycle 30 shed sets, 7 of "
                 "7 over-cap teams)",
-                "data/salaries_2026.json (Spotrac per-player rows, 927, "
-                "24 of 30 teams)",
+                "data/salaries_2026.json (Spotrac per-player rows, 1,144, "
+                "30 of 30 teams)",
                 "data/fg_steamer_2027_bat.json + "
                 "data/fg_steamer_2027_pit.json (Steamer 2027 WAR)",
                 "data/salaries_cots_2027.json (Cot's LRP-2027 rows, 237, "
@@ -288,9 +291,8 @@ def main():
             "primary_basis": "Payroll totals are the Spotrac totals in "
                              "cap_scenario_2027.json (all 30 teams). "
                              "Per-player Spotrac contract rows exist for "
-                             "24 of 30 teams; the six without rows are "
-                             "ARI, BOS, CHC, MIL, TB, TEX (Spotrac page "
-                             "failures, logged in salaries_2026.json).",
+                             "all 30 teams (1,144 rows; completed Cycle "
+                             "85 when the six blocked pages unblocked).",
             "cots_sensitivity_basis": "Sum of the 237 rows for which "
                                       "Cot's publishes an LRP-2027 dollar "
                                       "figure — a committed-contract "
