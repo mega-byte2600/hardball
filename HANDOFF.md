@@ -2079,3 +2079,16 @@ relabeled; release v1.1.12 current, Cycle 78's restore).
 - CHECKLIST: no state change this cycle (§2 25 figures, §4 salaries + forced-seller already checked off Cycle 85). Freeze tag still owed; v1.1.12 current release; Sportradar footer correction rides with freeze cut.
 - NEXT: final frozen-main release cut before Dec 1. Open PRs left untouched: #57, #58.
 - Work tree: ~/workspace/hardball/work86/tree (verified main 84d1a93f + lake copy; gitignored outputs excluded from PR).
+
+## Cycle 87 — tracker refresh (Nov 6) + hitter-backtest drift check (24/7 job, 2026-11-05 ~20:13 PT)
+- BASE: main 6953ce8f (Cycle 86 merge, unmoved during the run). Base fetched blob-by-blob via the Git Data API (tarball 404 on the codeload redirect, as in Cycles 85-86; 244 blobs, verified by git blob hash — zero diffs); lake + raw zone copied from the Cycle 86 work tree. Fetch hit one transient RemoteDisconnected mid-way; resumed with retry logic added to the fetch script.
+- SPOTRAC PROBE — 403 again this cycle: single GET of the Rays 2026 payroll page blocked. Logged, moved on. No re-pull needed — salaries are already 30/30 on main from Cycle 85 (1,144 rows, 0 failures); the committed file stands.
+- LIVE FEEDS: SKIP (last successful pull 6.0h < 20h watermark); evidence SKIP (3d < 6d guard). No FastballAPI credits spent. EVIDENCE.html untouched.
+- TICKER: window 2026-10-30..2026-11-06; SIGNED 676 (was 857 — the rolling window dropped Oct 29's bulk transactions; raw transactions table grew monotonically 122,268 -> 122,302, so nothing was lost upstream), REPORTED 200, BUZZ 0, total 876. Jetstream handshake 403 fail-closed; Google News 200. Class register 246.
+- PLATFORM: ingest 23 datasets landed, 24 entries, 2 failures (bref war pitch + bat HTTP 503 — fail-closed, committed data untouched). Savant bands hold: expected 651–673, bat-tracking 595–619, sprint 489–506; curate 20 tables, contracts pass; _build_report.json unchanged; warehouse rebuilt; parity r = 0.889, 201 matched — exact.
+- DASHBOARD: rebuilt (HARDBALL_OFFLINE_BUILD=1); 25 figures, 0 missing; stamp "Data as of Nov 6, 2026 · tracker Nov 6 · injured list Nov 5 · evidence Nov 2". Diff vs the Cycle 86 build is the stamp plus regenerated Plotly div IDs only. hardball_demo byte-identical copy.
+- GATE: 107 ALL PASS (re-run to count). Spellcheck green.
+- BACKLOG ITEM (h) — DRIFT CHECK: re-ran src/bml_cycle21.py (hitter Marcel backtest) against the current lake. Output byte-identical to committed data/marcel_backtest.json — pooled A OBP MAE 0.0227 / SLG 0.0468, B 0.0226 / 0.0468, C 0.0220 / 0.0453. No drift; nothing ships from it. Backlog items (a)–(g) all done; (h) is the standing fallback until the freeze cut.
+- CHECKLIST: no state change this cycle (§2 25 figures, §4 salaries + forced-seller already checked off Cycle 85). Freeze tag still owed; v1.1.12 current release; Sportradar footer correction rides with freeze cut.
+- NEXT: final frozen-main release cut before Dec 1. Open PRs left untouched: #57, #58.
+- Work tree: ~/workspace/hardball/work87/tree (verified main 6953ce8f + lake copy; gitignored outputs excluded from PR).

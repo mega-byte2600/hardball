@@ -1325,3 +1325,21 @@ current lake reproduces the committed pitcher Marcel backtest
 byte-for-byte — pooled ERA MAE 0.744 (A) / 0.715 (B) / 0.711 (C),
 WHIP MAE 0.122 / 0.120 / 0.120. No drift. Platform parity holds at
 r = 0.889, 201 matched; gate 107 ALL PASS.
+
+## Cycle 87 — tracker refresh + hitter-backtest drift check (2026-11-05)
+
+Spotrac blocked again on the single probe (403); salaries already stand
+at 30/30 from Cycle 85, so nothing re-pulled. Both live pulls were
+inside their guards (census 6.0h < 20h watermark, evidence 3d < 6d), so
+no FastballAPI credits were spent and the evidence page is untouched.
+The tracker window rolled one day (2026-10-30..2026-11-06): SIGNED 676
+(was 857 — Oct 29's bulk transactions fell out of the rolling window;
+the raw transactions table grew monotonically, 122,268 -> 122,302, so
+nothing was lost upstream), REPORTED 200, BUZZ 0, total 876.
+
+Drift check (backlog item h): `src/bml_cycle21.py` re-run against the
+current lake reproduces the committed hitter Marcel backtest
+byte-for-byte — pooled OBP MAE 0.0227 (A) / 0.0226 (B) / 0.0220 (C),
+SLG MAE 0.0468 / 0.0468 / 0.0453. No drift. Platform parity holds at
+r = 0.889, 201 matched; gate 107 ALL PASS. Ingest lost only the two
+Baseball-Reference WAR pulls (HTTP 503, fail-closed).
