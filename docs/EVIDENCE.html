@@ -6,13 +6,28 @@
   * { box-sizing: border-box; }
   body { font-family: Georgia, 'Times New Roman', serif; color: #141414;
          margin: 0.6in auto; max-width: 7.3in; font-size: 12pt; line-height: 1.45; }
-  h1 { font-size: 22pt; margin: 0 0 4pt; }
-  h2 { font-size: 15pt; margin: 26pt 0 2pt; border-bottom: 2px solid #8a6d1f;
-        padding-bottom: 3pt; }
+  h1 { font-size: 22pt; margin: 0 0 4pt; color: #041E42; }
+  h2 { font-size: 15pt; margin: 26pt 0 2pt; border-bottom: 2px solid #041E42;
+        padding-bottom: 3pt; color: #041E42; }
   h3 { font-size: 12.5pt; margin: 0 0 3pt; }
   .sub { font-size: 10.5pt; color: #444; margin: 0 0 10pt; }
-  .label { background: #f7f3e8; border-left: 4px solid #8a6d1f;
+  .label { background: #eef2f7; border-left: 4px solid #041E42;
             padding: 8pt 12pt; font-size: 11pt; margin: 12pt 0 4pt; }
+  .backlink { font-size: 10pt; margin: 0 0 8pt; }
+  .backlink a { color: #041E42; text-decoration: none; }
+  .backlink a:hover { text-decoration: underline; }
+  .bback { margin: 10pt 0 0; }
+  .toc { position: sticky; top: 0; background: #fff; z-index: 10;
+          border-bottom: 2px solid #041E42; padding: 7pt 2pt 5pt;
+          margin: 10pt 0 2pt; font-size: 10pt; line-height: 1.7;
+          display: flex; flex-wrap: wrap; align-items: baseline;
+          column-gap: 10pt; row-gap: 1pt; }
+  .toc .tlab { font-weight: bold; color: #041E42; }
+  .toc a { color: #041E42; text-decoration: none;
+            white-space: nowrap; }
+  .toc a:hover { text-decoration: underline; }
+  .toc .tsep { color: #666; }
+  section[id], h3.group[id] { scroll-margin-top: 78pt; }
   .meta { font-size: 9pt; letter-spacing: 0.06em; color: #666;
            text-transform: uppercase; margin: 0 0 6pt; }
   .intro { margin: 0 0 4pt; }
@@ -23,19 +38,38 @@
   .finding { margin: 0 0 5pt; }
   .flab { font-weight: bold; }
   .cite { font-size: 9.5pt; color: #555; margin: 0; line-height: 1.4; }
-  .cite a { color: #1d3557; }
-  .spotlight h3.group { font-size: 13pt; margin: 16pt 0 0; }
-  .journal { font-weight: bold; font-size: 11.5pt; margin: 12pt 0 2pt; }
-  .journal a { color: #1d3557; text-decoration: none; }
-  .spot { font-size: 10.5pt; margin: 0 0 4pt 12pt; line-height: 1.4; }
-  .spot a { color: #1d3557; }
-  .spot .sdate { color: #666; }
+  .cite a { color: #041E42; }
+  .laneptr { font-size: 10pt; margin: 10pt 0 0; }
+  .laneptr a { color: #041E42; }
+  .totop { font-size: 9.5pt; margin: 6pt 0 0; text-align: right; }
+  .totop a { color: #041E42; text-decoration: none; }
+  .totop a:hover { text-decoration: underline; }
+  .spotlight { border-top: 3px solid #BF0D3E; margin-top: 30pt;
+                padding-top: 2pt; }
+  .spotlight h2 { margin-top: 10pt; }
+  .spotlight h3.group { background: #092C5C; color: #fff;
+        border-left: 5px solid #BF0D3E; font-size: 12.5pt;
+        margin: 18pt 0 4pt; padding: 5pt 9pt; }
+  .jblock { page-break-inside: avoid; }
+  .journal { font-weight: bold; font-size: 12pt; margin: 13pt 0 2pt;
+              color: #092C5C; }
+  .journal a { color: #092C5C; text-decoration: none; }
+  .journal a:hover { text-decoration: underline; }
+  .spot { font-size: 10.5pt; margin: 0 0 6pt 12pt; line-height: 1.4; }
+  .spot a { color: #041E42; }
+  .spot .smeta { display: block; color: #666; font-size: 9pt;
+                  letter-spacing: 0.04em; margin-top: 1pt; }
   .foot { border-top: 1.5px solid #111; margin-top: 26pt; padding-top: 6pt;
            font-size: 9.5pt; color: #444; }
-  @media print { body { margin: 0 auto; } a { color: #141414; text-decoration: none; } }
+  @media (max-width: 640px) { body { margin: 18pt 14pt; max-width: none; }
+        .toc { column-gap: 8pt; }
+        section[id], h3.group[id] { scroll-margin-top: 132pt; } }
+  @media print { body { margin: 0 auto; } a { color: #141414; text-decoration: none; }
+        .navonly { display: none; } }
 </style></head>
 <body>
-<h1>What the Evidence Says Now</h1>
+<p class="backlink navonly"><a href="../dashboard/hardball_demo.html">&larr; Back to the dashboard</a></p>
+<h1 id="top">What the Evidence Says Now</h1>
 <p class="sub">Figure 14 of the HARDBALL dashboard measures the playtime
 injuries take away — the projected playing time a club should not count
 on, built from real 2025–26 injured-list data. This page is the other
@@ -49,6 +83,7 @@ Nothing on this page feeds any figure, projection, or roster in the demo.
 Each Finding restates only what the paper's own abstract reports or
 concludes; the full abstract is stored with the citation in the project
 data file.</div>
+<nav class="toc navonly"><span class="tlab">On this page:</span><a href="#lane-ucl">Return to Play After UCL Reconstruction</a><a href="#lane-workload">Injury Prevention and Workload</a><a href="#lane-muscle">Muscle Regeneration and Cellular Recovery</a><a href="#lane-tendon">Tendon Healing and Biologics</a><span class="tsep">&middot;</span><a href="#go-deeper">Go deeper: the journals</a><a href="#journals-velocity">Throwing velocity &amp; biomechanics</a><a href="#journals-workload">Arm wear, use &amp; workload</a><a href="#journals-recovery">Recovery</a></nav>
 
   <section class="lane" id="lane-ucl">
     <h2>Return to Play After UCL Reconstruction</h2>
@@ -70,6 +105,8 @@ data file.</div>
       <p class="finding"><span class="flab">Finding.</span> Across 105 articles, rehab protocols varied widely. After reconstruction, patients who reached the early milestones sooner — motion, strengthening, throwing — returned to play earlier, with no negative effect on outcome scores.</p>
       <p class="cite">Buchanan TR, Hones KM, Hao KA, et al. Rehabilitation Protocols in Elbow Medial Ulnar Collateral Ligament Injuries: A Systematic Review of Articles Published in the Last 20 Years. Sports Health. 2025;17(3):460-469. doi:10.1177/19417381241249125 <a href="https://pubmed.ncbi.nlm.nih.gov/38702939/">PubMed</a></p>
     </article>
+    <p class="laneptr"><a href="#go-deeper">The journals behind this lane &rarr;</a></p>
+    <p class="totop navonly"><a href="#top">Back to top &uarr;</a></p>
   </section>
   <section class="lane" id="lane-workload">
     <h2>Injury Prevention and Workload</h2>
@@ -91,6 +128,8 @@ data file.</div>
       <p class="finding"><span class="flab">Finding.</span> In 187 collegiate pitchers followed for one summer, arm injury risk rose when a pitcher&#x27;s pitch counts climbed above his own usual workload. Injuries were also linked to drops in fastball velocity.</p>
       <p class="cite">Salamh P, Plisky P, Beiting J, et al. Association of Changes in Game Pitch Count, Pitching Velocity, and Arm Injuries in Collegiate Pitchers. Am J Sports Med. 2026:3635465261489882. doi:10.1177/03635465261489882 <a href="https://pubmed.ncbi.nlm.nih.gov/42925023/">PubMed</a></p>
     </article>
+    <p class="laneptr"><a href="#go-deeper">The journals behind this lane &rarr;</a></p>
+    <p class="totop navonly"><a href="#top">Back to top &uarr;</a></p>
   </section>
   <section class="lane" id="lane-muscle">
     <h2>Muscle Regeneration and Cellular Recovery</h2>
@@ -112,6 +151,8 @@ data file.</div>
       <p class="finding"><span class="flab">Finding.</span> Across aging and several chronic diseases, the review found the same barriers to muscle repair: long-running inflammation, metabolic problems, and scar-like tissue buildup. The authors noted that treatments aimed at several barriers at once looked promising in early studies, but clinical evidence is still limited.</p>
       <p class="cite">Li X, Zhao Z, Yang J, et al. Mechanisms of Impaired Skeletal Muscle Regeneration and Therapeutic Approaches in Aging and Chronic Disease. Pharmaceuticals (Basel). 2026;19(7). doi:10.3390/ph19071091 <a href="https://pubmed.ncbi.nlm.nih.gov/42515772/">PubMed</a></p>
     </article>
+    <p class="laneptr"><a href="#go-deeper">The journals behind this lane &rarr;</a></p>
+    <p class="totop navonly"><a href="#top">Back to top &uarr;</a></p>
   </section>
   <section class="lane" id="lane-tendon">
     <h2>Tendon Healing and Biologics</h2>
@@ -133,59 +174,93 @@ data file.</div>
       <p class="finding"><span class="flab">Finding.</span> Across 18 randomized trials (1,082 patients), platelet-rich plasma improved measured knee stability but did not significantly improve pain or function scores. The authors called for more high-quality trials.</p>
       <p class="cite">Serag I, Abouzid M, Hikal H, et al. Platelet-rich plasma in anterior cruciate ligament reconstruction: An updated systematic review and quantitative meta-analysis of randomized controlled trials. Chin J Traumatol. 2026;29(5):358-367. doi:10.1016/j.cjtee.2025.02.008 <a href="https://pubmed.ncbi.nlm.nih.gov/40744844/">PubMed</a></p>
     </article>
+    <p class="laneptr"><a href="#go-deeper">The journals behind this lane &rarr;</a></p>
+    <p class="totop navonly"><a href="#top">Back to top &uarr;</a></p>
   </section>
-  <section class="spotlight">
+  <section class="spotlight" id="go-deeper">
     <h2>Go deeper — the journals behind this page</h2>
+    <p class="meta">14 journals &middot; 27 papers &middot; updated Nov 2026</p>
+    <p class="intro">Every lane above draws on the journals below.
+    Their most recent pitching papers, newest first.</p>
     <p class="intro">A reading resource, not an evidence claim. Under
     each journal: its two most recent PubMed matches for pitching or
     baseball, titles as published, pulled 2026-11-07.
     Journal names link to the journal's own site where it answered
     during the build, otherwise to that journal's listing on
     PubMed.</p>
-    <h3 class="group">Throwing velocity &amp; biomechanics</h3>
-    <p class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22American%20Journal%20of%20Sports%20Medicine%22%5Bjour%5D">American Journal of Sports Medicine</a></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42852663/">Association Between Early Postoperative Limb Symmetry Index Scores and 2-Year Patient-Reported Outcomes After Quadriceps Tendon Autograft ACL Reconstruction.</a> <span class="sdate">&middot; 2026 Nov</span></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42802907/">Forearm Flexor Strain and Subsequent Ulnar Collateral Ligament Surgery Risk in Major League Baseball Pitchers: A Covariate-Matched Survival Analysis.</a> <span class="sdate">&middot; 2026 Nov</span></p>
-    <p class="journal"><a href="https://journals.humankinetics.com/view/journals/jab/jab-overview.xml">Journal of Applied Biomechanics</a></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42906891/">The Coefficient of Propulsion: A Composite Measure of Trail Leg Force Production During Baseball Pitching.</a> <span class="sdate">&middot; 2026 Oct 21</span></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42562365/">Comparison of Biomechanical Variables and Pitching Timing in Professional Baseball Pitchers According to Ball Velocity.</a> <span class="sdate">&middot; 2026 Aug 5</span></p>
-    <p class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Sports%20Biomechanics%22%5Bjour%5D">Sports Biomechanics</a></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42950079/">Accuracy and precision of kinematic methods for determining ball release in baseball pitching.</a> <span class="sdate">&middot; 2026 Oct 28</span></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42733252/">Release mechanics underlying pitch location and extreme control failures in major league baseball.</a> <span class="sdate">&middot; 2026 Sep 13</span></p>
-    <p class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Strength%20and%20Conditioning%20Research%22%5Bjour%5D">Journal of Strength and Conditioning Research</a></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42868034/">Assessment of Countermovement Jump Performance in Collegiate Baseball Athletes: A Longitudinal Multilevel Modeling Approach.</a> <span class="sdate">&middot; 2026 Oct 13</span></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42172289/">Acute and Delayed Recovery Effects of Percussive and Ice Therapies on Shoulder Strength and Sensorimotor Function After Baseball Pitching.</a> <span class="sdate">&middot; 2026 Oct 1</span></p>
-    <h3 class="group">Arm wear, use &amp; workload</h3>
-    <p class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Shoulder%20and%20Elbow%20Surgery%22%5Bjour%5D">Journal of Shoulder and Elbow Surgery</a></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42297181/">Thirty-six months of experience and 30° of hip internal rotation as critical thresholds for capitellar osteochondritis dissecans in youth baseball players.</a> <span class="sdate">&middot; 2026 Dec</span></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42276517/">Propensity matched professional baseball pitchers with early trunk rotation demonstrate increased shoulder and elbow distractive forces with equivalent ball velocity.</a> <span class="sdate">&middot; 2026 Dec</span></p>
-    <p class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22British%20Journal%20of%20Sports%20Medicine%22%5Bjour%5D">British Journal of Sports Medicine</a></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42869624/">Rethinking &#x27;science-based&#x27; policy in sport: complexity, evidence and the limits of reductionism.</a> <span class="sdate">&middot; 2026 Nov 6</span></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42754374/">The iron triangle of elite sport: acknowledging the trade-offs between health, performance and availability.</a> <span class="sdate">&middot; 2026 Sep 17</span></p>
-    <p class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Orthopaedic%20Journal%20of%20Sports%20Medicine%22%5Bjour%5D">Orthopaedic Journal of Sports Medicine</a></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42973969/">Game-Level Temporal Patterns Identify Optimal Preinjury Windows for Shoulder and Elbow Injuries in Major League Baseball Pitchers.</a> <span class="sdate">&middot; 2026 Sep</span></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42724368/">The Effect of Activating the Scapular Muscles During Warm-up on Shoulder Function and Baseball Pitching Performance in Male Adult Baseball Players: An Approach Using Electric Muscle Stimulation.</a> <span class="sdate">&middot; 2026 Sep</span></p>
-    <p class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Athletic%20Training%22%5Bjour%5D">Journal of Athletic Training</a></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42852458/">Preseason Neck Mobility and Risk of Shoulder and Elbow Injury in College Baseball Pitchers.</a> <span class="sdate">&middot; 2026 Oct</span></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42564996/">Effect of Hip Range of Motion Restrictions on Injury in Baseball Players: A Systematic Review.</a> <span class="sdate">&middot; 2026 Aug</span></p>
-    <h3 class="group">Recovery</h3>
-    <p class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Medicine%20and%20Science%20in%20Sports%20and%20Exercise%22%5Bjour%5D">Medicine and Science in Sports and Exercise</a></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42841528/">Motor Imagery of Yips-Affected Pitching Enhances Corticospinal Excitability in Baseball Players with Yips.</a> <span class="sdate">&middot; 2026 Oct 7</span></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/39957054/">Incidence of Sports Injuries across Menstrual Phases in Eumenorrheic and Abnormal Cycles in Japanese Female Athletes: A Prospective Cohort Study.</a> <span class="sdate">&middot; 2025 Jul 1</span></p>
-    <p class="journal"><a href="https://journals.humankinetics.com/view/journals/ijspp/ijspp-overview.xml">International Journal of Sports Physiology and Performance</a></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42086213/">Chronic Effects of Sprint Training With and Without Weighted Vests on Linear and Change of Direction Sprint Performance in Youth Baseball Players.</a> <span class="sdate">&middot; 2026 Aug 1</span></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/41911924/">Age-Group Differences in Ball Velocity and Spin Rate Among Youth Baseball Players: A Cross-Sectional Study Using a Portable Tracking Device.</a> <span class="sdate">&middot; 2026 Jul 1</span></p>
-    <p class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Orthopaedic%20%26%20Sports%20Physical%20Therapy%22%5Bjour%5D">Journal of Orthopaedic &amp; Sports Physical Therapy</a></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/39479865/">Concussion Incidence by Type of Sport: Differences by Sex, Age Groups, Type of Session, and Level of Play An Overview of Systematic Reviews With Meta-analysis.</a> <span class="sdate">&middot; 2024 Nov</span></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/35802817/">Including Modifiable and Nonmodifiable Factors Improves Injury Risk Assessment in Professional Baseball Pitchers.</a> <span class="sdate">&middot; 2022 Sep</span></p>
-    <p class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Sports%20Health%22%5Bjour%5D">Sports Health</a></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42986986/">Medical Imaging for Load Monitoring: A Perspective on Imaging&#x27;s Value for Reducing the Frequency and Severity of Ulnar Collateral Ligament Injuries in Baseball Pitchers.</a> <span class="sdate">&middot; 2026 Nov 5</span></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42949008/">Enhancing Sleep in NCAA Division I Athletes: A Study of Sleep Extension Feasibility.</a> <span class="sdate">&middot; 2026 Oct 28</span></p>
-    <p class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Applied%20Physiology%22%5Bjour%5D">Journal of Applied Physiology</a></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/32853115/">Understanding cognitive performance during exercise in Reserve Officers&#x27; Training Corps: establishing the executive function-exercise intensity relationship.</a> <span class="sdate">&middot; 2020 Oct 1</span></p>
-    <p class="journal"><a href="https://www.frontiersin.org/journals/physiology">Frontiers in Physiology</a></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42266236/">Correlation between sports visual ability and catching performance in elite collegiate baseball infielders: a position-specific analysis.</a> <span class="sdate">&middot; 2026</span></p>
-      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/41983007/">Exploring the association between visual skills and sport-specific performance in team athletes: a systematic review and meta-analysis.</a> <span class="sdate">&middot; 2026</span></p>
+    <h3 class="group" id="journals-velocity">Throwing velocity &amp; biomechanics</h3>
+    <div class="jblock">
+      <h4 class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22American%20Journal%20of%20Sports%20Medicine%22%5Bjour%5D">American Journal of Sports Medicine</a></h4>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42852663/">Association Between Early Postoperative Limb Symmetry Index Scores and 2-Year Patient-Reported Outcomes After Quadriceps Tendon Autograft ACL Reconstruction.</a><span class="smeta">&middot; 2026 Nov</span></p>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42802907/">Forearm Flexor Strain and Subsequent Ulnar Collateral Ligament Surgery Risk in Major League Baseball Pitchers: A Covariate-Matched Survival Analysis.</a><span class="smeta">&middot; 2026 Nov</span></p>
+    </div>
+    <div class="jblock">
+      <h4 class="journal"><a href="https://journals.humankinetics.com/view/journals/jab/jab-overview.xml">Journal of Applied Biomechanics</a></h4>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42906891/">The Coefficient of Propulsion: A Composite Measure of Trail Leg Force Production During Baseball Pitching.</a><span class="smeta">&middot; 2026 Oct 21</span></p>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42562365/">Comparison of Biomechanical Variables and Pitching Timing in Professional Baseball Pitchers According to Ball Velocity.</a><span class="smeta">&middot; 2026 Aug 5</span></p>
+    </div>
+    <div class="jblock">
+      <h4 class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Sports%20Biomechanics%22%5Bjour%5D">Sports Biomechanics</a></h4>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42950079/">Accuracy and precision of kinematic methods for determining ball release in baseball pitching.</a><span class="smeta">&middot; 2026 Oct 28</span></p>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42733252/">Release mechanics underlying pitch location and extreme control failures in major league baseball.</a><span class="smeta">&middot; 2026 Sep 13</span></p>
+    </div>
+    <div class="jblock">
+      <h4 class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Strength%20and%20Conditioning%20Research%22%5Bjour%5D">Journal of Strength and Conditioning Research</a></h4>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42868034/">Assessment of Countermovement Jump Performance in Collegiate Baseball Athletes: A Longitudinal Multilevel Modeling Approach.</a><span class="smeta">&middot; 2026 Oct 13</span></p>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42172289/">Acute and Delayed Recovery Effects of Percussive and Ice Therapies on Shoulder Strength and Sensorimotor Function After Baseball Pitching.</a><span class="smeta">&middot; 2026 Oct 1</span></p>
+    </div>
+    <h3 class="group" id="journals-workload">Arm wear, use &amp; workload</h3>
+    <div class="jblock">
+      <h4 class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Shoulder%20and%20Elbow%20Surgery%22%5Bjour%5D">Journal of Shoulder and Elbow Surgery</a></h4>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42297181/">Thirty-six months of experience and 30° of hip internal rotation as critical thresholds for capitellar osteochondritis dissecans in youth baseball players.</a><span class="smeta">&middot; 2026 Dec</span></p>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42276517/">Propensity matched professional baseball pitchers with early trunk rotation demonstrate increased shoulder and elbow distractive forces with equivalent ball velocity.</a><span class="smeta">&middot; 2026 Dec</span></p>
+    </div>
+    <div class="jblock">
+      <h4 class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22British%20Journal%20of%20Sports%20Medicine%22%5Bjour%5D">British Journal of Sports Medicine</a></h4>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42869624/">Rethinking &#x27;science-based&#x27; policy in sport: complexity, evidence and the limits of reductionism.</a><span class="smeta">&middot; 2026 Nov 6</span></p>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42754374/">The iron triangle of elite sport: acknowledging the trade-offs between health, performance and availability.</a><span class="smeta">&middot; 2026 Sep 17</span></p>
+    </div>
+    <div class="jblock">
+      <h4 class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Orthopaedic%20Journal%20of%20Sports%20Medicine%22%5Bjour%5D">Orthopaedic Journal of Sports Medicine</a></h4>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42973969/">Game-Level Temporal Patterns Identify Optimal Preinjury Windows for Shoulder and Elbow Injuries in Major League Baseball Pitchers.</a><span class="smeta">&middot; 2026 Sep</span></p>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42724368/">The Effect of Activating the Scapular Muscles During Warm-up on Shoulder Function and Baseball Pitching Performance in Male Adult Baseball Players: An Approach Using Electric Muscle Stimulation.</a><span class="smeta">&middot; 2026 Sep</span></p>
+    </div>
+    <div class="jblock">
+      <h4 class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Athletic%20Training%22%5Bjour%5D">Journal of Athletic Training</a></h4>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42852458/">Preseason Neck Mobility and Risk of Shoulder and Elbow Injury in College Baseball Pitchers.</a><span class="smeta">&middot; 2026 Oct</span></p>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42564996/">Effect of Hip Range of Motion Restrictions on Injury in Baseball Players: A Systematic Review.</a><span class="smeta">&middot; 2026 Aug</span></p>
+    </div>
+    <h3 class="group" id="journals-recovery">Recovery</h3>
+    <div class="jblock">
+      <h4 class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Medicine%20and%20Science%20in%20Sports%20and%20Exercise%22%5Bjour%5D">Medicine and Science in Sports and Exercise</a></h4>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42841528/">Motor Imagery of Yips-Affected Pitching Enhances Corticospinal Excitability in Baseball Players with Yips.</a><span class="smeta">&middot; 2026 Oct 7</span></p>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/39957054/">Incidence of Sports Injuries across Menstrual Phases in Eumenorrheic and Abnormal Cycles in Japanese Female Athletes: A Prospective Cohort Study.</a><span class="smeta">&middot; 2025 Jul 1</span></p>
+    </div>
+    <div class="jblock">
+      <h4 class="journal"><a href="https://journals.humankinetics.com/view/journals/ijspp/ijspp-overview.xml">International Journal of Sports Physiology and Performance</a></h4>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42086213/">Chronic Effects of Sprint Training With and Without Weighted Vests on Linear and Change of Direction Sprint Performance in Youth Baseball Players.</a><span class="smeta">&middot; 2026 Aug 1</span></p>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/41911924/">Age-Group Differences in Ball Velocity and Spin Rate Among Youth Baseball Players: A Cross-Sectional Study Using a Portable Tracking Device.</a><span class="smeta">&middot; 2026 Jul 1</span></p>
+    </div>
+    <div class="jblock">
+      <h4 class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Orthopaedic%20%26%20Sports%20Physical%20Therapy%22%5Bjour%5D">Journal of Orthopaedic &amp; Sports Physical Therapy</a></h4>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/39479865/">Concussion Incidence by Type of Sport: Differences by Sex, Age Groups, Type of Session, and Level of Play An Overview of Systematic Reviews With Meta-analysis.</a><span class="smeta">&middot; 2024 Nov</span></p>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/35802817/">Including Modifiable and Nonmodifiable Factors Improves Injury Risk Assessment in Professional Baseball Pitchers.</a><span class="smeta">&middot; 2022 Sep</span></p>
+    </div>
+    <div class="jblock">
+      <h4 class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Sports%20Health%22%5Bjour%5D">Sports Health</a></h4>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42986986/">Medical Imaging for Load Monitoring: A Perspective on Imaging&#x27;s Value for Reducing the Frequency and Severity of Ulnar Collateral Ligament Injuries in Baseball Pitchers.</a><span class="smeta">&middot; 2026 Nov 5</span></p>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42949008/">Enhancing Sleep in NCAA Division I Athletes: A Study of Sleep Extension Feasibility.</a><span class="smeta">&middot; 2026 Oct 28</span></p>
+    </div>
+    <div class="jblock">
+      <h4 class="journal"><a href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Applied%20Physiology%22%5Bjour%5D">Journal of Applied Physiology</a></h4>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/32853115/">Understanding cognitive performance during exercise in Reserve Officers&#x27; Training Corps: establishing the executive function-exercise intensity relationship.</a><span class="smeta">&middot; 2020 Oct 1</span></p>
+    </div>
+    <div class="jblock">
+      <h4 class="journal"><a href="https://www.frontiersin.org/journals/physiology">Frontiers in Physiology</a></h4>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/42266236/">Correlation between sports visual ability and catching performance in elite collegiate baseball infielders: a position-specific analysis.</a><span class="smeta">&middot; 2026</span></p>
+      <p class="spot"><a href="https://pubmed.ncbi.nlm.nih.gov/41983007/">Exploring the association between visual skills and sport-specific performance in team athletes: a systematic review and meta-analysis.</a><span class="smeta">&middot; 2026</span></p>
+    </div>
+    <p class="totop navonly"><a href="#top">Back to top &uarr;</a></p>
   </section>
 <div class="foot">Source: PubMed / NCBI E-utilities (esearch + efetch),
 data/evidence_surveillance.json, pulled 2026-11-02 by
@@ -193,4 +268,5 @@ src/pull_evidence_surveillance.py (Cycle 57). Selection rule:
 Per lane: systematic reviews / meta-analyses first (cellular-recovery lane also prefers other reviews), then most recent by publication date; 3 cards per lane. Citations in AMA style as returned by
 PubMed. Journal spotlight: data/journal_spotlight.json, pulled 2026-11-07 by src/pull_journal_spotlight.py (Cycle 90); paper titles verbatim from PubMed. Page generated by src/make_evidence_page.py — no external assets,
 print-clean.</div>
+<p class="backlink bback navonly"><a href="../dashboard/hardball_demo.html">&larr; Back to the dashboard</a></p>
 </body></html>
