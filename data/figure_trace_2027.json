@@ -10,7 +10,8 @@
   "gate": "python3 src/verify_data.py",
   "spellcheck": "python3 src/spellcheck_gate.py",
   "this_pack": "python3 src/bml_cycle68.py",
-  "pack_update": "python3 src/bml_cycle69.py"
+  "pack_update": "python3 src/bml_cycle69.py",
+  "pack_update_cycle89": "python3 src/bml_cycle89.py"
  },
  "figures": [
   {
@@ -518,8 +519,8 @@
   }
  ],
  "counts": {
-  "supported": 17,
-  "not_supported": 7,
+  "supported": 18,
+  "not_supported": 6,
   "retracted": 3,
   "open_items": 0,
   "figures_traced": 25,

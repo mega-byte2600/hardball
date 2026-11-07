@@ -1343,3 +1343,31 @@ byte-for-byte — pooled OBP MAE 0.0227 (A) / 0.0226 (B) / 0.0220 (C),
 SLG MAE 0.0468 / 0.0468 / 0.0453. No drift. Platform parity holds at
 r = 0.889, 201 matched; gate 107 ALL PASS. Ingest lost only the two
 Baseball-Reference WAR pulls (HTTP 503, fail-closed).
+
+## Cycle 89 — live refresh + FA joins 181/251 + trace-counts fix (2026-11-07)
+
+Spotrac unblocked again on the single probe (200, 1.07 MB Rays page via
+the canonical URL — second unblock since the Oct 31 pull). Re-running
+src/bml_cycle25.py from cache reproduces salaries byte-for-byte
+(1,144 rows, 0 team failures), so salaries stand confirmed 30/30 with
+no re-pull needed. The FA class regenerated against a fresh live MLB
+freeAgents list (356 rows, now saved as data/mlb_free_agents_2026.json):
+still 251 players with identical WAR/AAV, but the MLB original-team
+layer now joins 181/251 (was 172/251) — nine more players, only those
+two fields changed. The live census ran past its 20h watermark (4
+FastballAPI credits, 28 MTD in November): union 155 players, standings
+30/30; note Statyx's recent-moves first page returned 16 records this
+run vs 50 before — a source-side change, union 164 -> 155 on it.
+Tracker window rolled to 2026-10-31..2026-11-07: SIGNED 658, REPORTED
+200, BUZZ 0, total 858; Jetstream timed out (fail-closed).
+
+Faculty audit note closed: data/figure_trace_2027.json carried a stale
+Cycle 68 counts block (17/7) against the register's 18/6. New
+src/bml_cycle89.py (Cycle 69 pattern) syncs the block from the
+register after asserting the register reconciles by direct count; the
+dashboard already printed the register's numbers, so nothing rendered
+changes. Drift check (backlog item h): `src/bml_cycle21.py` re-run
+reproduces the committed hitter Marcel backtest byte-for-byte — pooled
+OBP MAE 0.0227 (A) / 0.0226 (B) / 0.0220 (C), SLG MAE 0.0468 / 0.0468 /
+0.0453. No drift. Platform parity holds at r = 0.889, 201 matched;
+gate ALL PASS (108 checks). Ingest 0 failures; Savant bands hold.

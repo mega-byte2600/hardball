@@ -1,25 +1,25 @@
 {
  "metadata": {
   "cycle": 51,
-  "pulled_at": "2026-11-05T22:22:05+00:00",
-  "pulled_date": "2026-11-05",
+  "pulled_at": "2026-11-07T16:17:24+00:00",
+  "pulled_date": "2026-11-07",
   "sources": {
    "fastballapi": {
-    "injuries_records": 145,
+    "injuries_records": 146,
     "standings_teams": 30,
     "credits_spent_this_cycle": 4,
     "snapshot_files": [
-     "data/raw/fastballapi/injuries_2026-11-05.json",
+     "data/raw/fastballapi/injuries_2026-11-07.json",
      "data/raw/fastballapi/standings_2026-11-02.json"
     ]
    },
    "statyx": {
-    "injuries_records": 50,
+    "injuries_records": 16,
     "standings_rows": 50,
     "note": "injuries = first page (limit 50) of the recent-moves feed; standings rows carry no team names, snapshot kept raw only",
     "credits_spent_this_cycle": 0,
     "snapshot_files": [
-     "data/raw/statyx/injuries_2026-11-04.json",
+     "data/raw/statyx/injuries_2026-11-07_r2.json",
      "data/raw/statyx/standings_2026-11-02.json"
     ]
    }
@@ -33,14 +33,14 @@
    "team": "MIA",
    "position": "SP",
    "status": "Out",
-   "statyx_status": "60-Day-IL",
+   "statyx_status": null,
    "type": "Elbow",
    "detail": "Surgery",
-   "side": "Right",
+   "side": null,
    "return_date": "2027-05-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Addison Barger",
@@ -54,21 +54,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
-  },
-  {
-   "player_name": "Adolis Garcia",
-   "team": null,
-   "position": null,
-   "status": "60-Day-IL",
-   "statyx_status": null,
-   "type": "Lat",
-   "detail": "Surgery",
-   "side": "Right",
-   "return_date": "2027-02-01",
-   "in_fastball": false,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Andrew Nardi",
@@ -82,7 +68,7 @@
    "return_date": "2028-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Andrew Saalfrank",
@@ -96,7 +82,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Andrew Walters",
@@ -110,7 +96,7 @@
    "return_date": "2028-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Angel Zerpa",
@@ -124,7 +110,7 @@
    "return_date": "2027-07-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Anthony Banda",
@@ -138,7 +124,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Anthony Bender",
@@ -152,7 +138,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Anthony Santander",
@@ -166,7 +152,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Ben Brown",
@@ -180,7 +166,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Ben Casparius",
@@ -194,7 +180,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Blade Tidwell",
@@ -208,7 +194,7 @@
    "return_date": "2028-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Blake Dunn",
@@ -218,11 +204,11 @@
    "statyx_status": null,
    "type": "Elbow",
    "detail": "Surgery",
-   "side": "Right",
+   "side": null,
    "return_date": "2027-02-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Bowden Francis",
@@ -236,7 +222,7 @@
    "return_date": "2027-04-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Brad Keller",
@@ -250,7 +236,7 @@
    "return_date": "2027-09-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Brandon Walter",
@@ -264,7 +250,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Brent Rooker",
@@ -278,7 +264,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Brian Fitzpatrick",
@@ -292,7 +278,7 @@
    "return_date": "2027-08-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Brooks Baldwin",
@@ -302,11 +288,25 @@
    "statyx_status": null,
    "type": "Elbow",
    "detail": "Surgery",
-   "side": "Right",
+   "side": null,
    "return_date": "2027-02-01",
    "in_fastball": true,
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
+  },
+  {
+   "player_name": "Brooks Kriske",
+   "team": null,
+   "position": null,
+   "status": "60-Day-IL",
+   "statyx_status": null,
+   "type": "Shoulder",
+   "detail": "Surgery",
+   "side": "Right",
+   "return_date": "2027-03-01",
+   "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Bryan Hoeing",
@@ -320,7 +320,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Byron Buxton",
@@ -334,7 +334,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Cade Horton",
@@ -348,7 +348,7 @@
    "return_date": "2027-08-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Cade Povich",
@@ -362,21 +362,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
-  },
-  {
-   "player_name": "Cal Quantrill",
-   "team": null,
-   "position": null,
-   "status": "60-Day-IL",
-   "statyx_status": null,
-   "type": "Lat",
-   "detail": "Strain",
-   "side": "Right",
-   "return_date": "2027-02-01",
-   "in_fastball": false,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Cal Raleigh",
@@ -386,11 +372,11 @@
    "statyx_status": null,
    "type": "Shoulder",
    "detail": "Surgery",
-   "side": null,
+   "side": "Left",
    "return_date": "2027-02-01",
    "in_fastball": true,
-   "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "in_statyx": true,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Caleb Durbin",
@@ -404,7 +390,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Caleb Kilian",
@@ -418,7 +404,7 @@
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Cameron Foster",
@@ -432,7 +418,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Carlos Correa",
@@ -446,7 +432,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Carson Whisenhunt",
@@ -460,7 +446,7 @@
    "return_date": "2028-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Casey Schmitt",
@@ -474,7 +460,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Chase Dollander",
@@ -488,21 +474,7 @@
    "return_date": "2027-04-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
-  },
-  {
-   "player_name": "Clarke Schmidt",
-   "team": null,
-   "position": null,
-   "status": "15-Day-IL",
-   "statyx_status": null,
-   "type": "Biceps",
-   "detail": "Pinched Nerve",
-   "side": "Right",
-   "return_date": "2027-02-01",
-   "in_fastball": false,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Cody Ponce",
@@ -516,21 +488,21 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Cole Ragans",
    "team": "KC",
    "position": "SP",
    "status": "Out",
-   "statyx_status": "60-Day-IL",
+   "statyx_status": null,
    "type": "Elbow",
    "detail": "Surgery",
-   "side": "Left",
+   "side": null,
    "return_date": "2027-08-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Cole Sands",
@@ -544,7 +516,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Cole Winn",
@@ -558,7 +530,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Colin Holderman",
@@ -572,7 +544,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Colt Emerson",
@@ -586,7 +558,21 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
+  },
+  {
+   "player_name": "Corbin Carroll",
+   "team": "ARI",
+   "position": "RF",
+   "status": "Out",
+   "statyx_status": null,
+   "type": "Elbow",
+   "detail": "Surgery",
+   "side": null,
+   "return_date": "2027-03-01",
+   "in_fastball": true,
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Corey Seager",
@@ -600,7 +586,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Cristian Mena",
@@ -614,7 +600,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Dalton Rushing",
@@ -628,7 +614,7 @@
    "return_date": "2027-04-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Dane Myers",
@@ -638,11 +624,11 @@
    "statyx_status": null,
    "type": "Shoulder",
    "detail": "Surgery",
-   "side": "Left",
+   "side": null,
    "return_date": "2027-02-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Daniel Susac",
@@ -656,7 +642,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "David Festa",
@@ -670,7 +656,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Drew Millas",
@@ -684,7 +670,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Edwin Uceta",
@@ -698,21 +684,21 @@
    "return_date": "2027-06-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Eli White",
    "team": "BOS",
    "position": "CF",
    "status": "Out",
-   "statyx_status": null,
+   "statyx_status": "60-Day-IL",
    "type": "Foot",
    "detail": "Surgery",
-   "side": null,
+   "side": "Right",
    "return_date": "2027-02-01",
    "in_fastball": true,
-   "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "in_statyx": true,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Endy Rodriguez",
@@ -726,21 +712,7 @@
    "return_date": "2027-05-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
-  },
-  {
-   "player_name": "Enyel De Los Santos",
-   "team": null,
-   "position": null,
-   "status": "Out",
-   "statyx_status": null,
-   "type": "Knee",
-   "detail": "Tendinitis",
-   "side": "Right",
-   "return_date": "2027-02-01",
-   "in_fastball": false,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Evan Carter",
@@ -754,7 +726,7 @@
    "return_date": "2027-05-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Felix Reyes",
@@ -768,7 +740,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Fernando Cruz",
@@ -782,7 +754,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Garrett Whitlock",
@@ -796,21 +768,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
-  },
-  {
-   "player_name": "Gavin Lux",
-   "team": null,
-   "position": null,
-   "status": "60-Day-IL",
-   "statyx_status": null,
-   "type": "Shoulder",
-   "detail": "Inflammation",
-   "side": "Left",
-   "return_date": "2027-02-01",
-   "in_fastball": false,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Gavin Stone",
@@ -824,7 +782,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Gunnar Hoglund",
@@ -838,7 +796,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Harrison Bader",
@@ -852,21 +810,21 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Hayden Birdsong",
    "team": "SF",
    "position": "RP",
    "status": "Out",
-   "statyx_status": "60-Day-IL",
+   "statyx_status": null,
    "type": "Elbow",
    "detail": "Surgery",
-   "side": "Right",
+   "side": null,
    "return_date": "2027-06-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Hunter Dobbins",
@@ -880,7 +838,7 @@
    "return_date": "2027-09-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Hunter Greene",
@@ -890,11 +848,11 @@
    "statyx_status": null,
    "type": "Elbow",
    "detail": "Surgery",
-   "side": "Right",
+   "side": null,
    "return_date": "2028-02-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Hurston Waldrep",
@@ -904,39 +862,25 @@
    "statyx_status": null,
    "type": "Elbow",
    "detail": "Surgery",
-   "side": "Right",
+   "side": null,
    "return_date": "2028-02-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
-  },
-  {
-   "player_name": "J.T. Ginn",
-   "team": null,
-   "position": null,
-   "status": "60-Day-IL",
-   "statyx_status": null,
-   "type": "Elbow",
-   "detail": "Soreness",
-   "side": "Right",
-   "return_date": "2027-02-01",
-   "in_fastball": false,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Jack Kochanowicz",
    "team": "LAA",
    "position": "SP",
    "status": "Out",
-   "statyx_status": "60-Day-IL",
+   "statyx_status": null,
    "type": "Elbow",
    "detail": "Surgery",
-   "side": "Right",
+   "side": null,
    "return_date": "2027-09-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Jackson Holliday",
@@ -950,35 +894,21 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Jacob Wilson",
    "team": "ATH",
    "position": "SS",
    "status": "Out",
-   "statyx_status": "60-Day-IL",
+   "statyx_status": null,
    "type": "Shoulder",
    "detail": "Surgery",
-   "side": "Left",
+   "side": null,
    "return_date": "2027-03-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
-  },
-  {
-   "player_name": "Jake Meyers",
-   "team": null,
-   "position": null,
-   "status": "60-Day-IL",
-   "statyx_status": null,
-   "type": "Kneecap",
-   "detail": null,
-   "side": "Left",
-   "return_date": "2027-02-01",
-   "in_fastball": false,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Jake Miller",
@@ -992,7 +922,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Jakob Marsee",
@@ -1006,7 +936,21 @@
    "return_date": "2027-04-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
+  },
+  {
+   "player_name": "Jalen Beeks",
+   "team": null,
+   "position": null,
+   "status": "60-Day-IL",
+   "statyx_status": null,
+   "type": "Forearm",
+   "detail": "Surgery",
+   "side": "Left",
+   "return_date": "2027-02-01",
+   "in_fastball": false,
+   "in_statyx": true,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Jared Young",
@@ -1020,7 +964,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Jeff Hoffman",
@@ -1034,21 +978,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
-  },
-  {
-   "player_name": "Joey Bart",
-   "team": null,
-   "position": null,
-   "status": "10-Day-IL",
-   "statyx_status": null,
-   "type": "Hand",
-   "detail": "Fracture",
-   "side": "Left",
-   "return_date": "2027-02-01",
-   "in_fastball": false,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Joey Loperfido",
@@ -1062,7 +992,7 @@
    "return_date": "2027-03-25",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Joey Wentz",
@@ -1072,39 +1002,39 @@
    "statyx_status": null,
    "type": "Knee",
    "detail": "Surgery",
-   "side": "Right",
+   "side": null,
    "return_date": "2027-02-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Johan Rojas",
    "team": "PHI",
    "position": "CF",
    "status": "Out",
-   "statyx_status": "60-Day-IL",
+   "statyx_status": null,
    "type": "Elbow",
    "detail": "Surgery",
-   "side": "Right",
+   "side": null,
    "return_date": "2027-02-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
-   "player_name": "Jonatan Clase",
+   "player_name": "Jonathan Heasley",
    "team": null,
    "position": null,
    "status": "60-Day-IL",
    "statyx_status": null,
-   "type": "Foot",
-   "detail": "Plantar Fasciitis",
-   "side": "Left",
+   "type": "Elbow",
+   "detail": "Fracture",
+   "side": "Right",
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Jordan Leasure",
@@ -1118,7 +1048,7 @@
    "return_date": "2028-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Jordan Westburg",
@@ -1132,7 +1062,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Jorge Polanco",
@@ -1146,49 +1076,49 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Jose Berrios",
    "team": "TOR",
    "position": "SP",
    "status": "Out",
-   "statyx_status": "60-Day-IL",
+   "statyx_status": null,
    "type": "Elbow",
    "detail": "Surgery",
-   "side": "Right",
+   "side": null,
    "return_date": "2027-08-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Jose Butto",
    "team": "TEX",
    "position": "RP",
    "status": "Out",
-   "statyx_status": "60-Day-IL",
+   "statyx_status": null,
    "type": "Arm",
    "detail": "Surgery",
-   "side": "Right",
+   "side": null,
    "return_date": "2027-02-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Jose Corniell",
    "team": "TEX",
    "position": "RP",
    "status": "Out",
-   "statyx_status": "60-Day-IL",
+   "statyx_status": null,
    "type": "Elbow",
    "detail": "Strain",
-   "side": "Right",
+   "side": null,
    "return_date": "2027-02-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Josh Naylor",
@@ -1202,7 +1132,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Julian Garcia",
@@ -1216,7 +1146,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Jurickson Profar",
@@ -1230,7 +1160,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Justin Slaten",
@@ -1244,7 +1174,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Justin Steele",
@@ -1258,7 +1188,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Justin Sterner",
@@ -1272,7 +1202,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Kahlil Watson",
@@ -1286,7 +1216,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Ken Waldichuk",
@@ -1300,7 +1230,7 @@
    "return_date": "2027-06-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Kerry Carpenter",
@@ -1314,7 +1244,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Kervin Castro",
@@ -1328,7 +1258,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Kris Bryant",
@@ -1342,7 +1272,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Kutter Crawford",
@@ -1356,7 +1286,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Kyle Bradish",
@@ -1370,7 +1300,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Logan Evans",
@@ -1384,7 +1314,21 @@
    "return_date": "2027-04-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
+  },
+  {
+   "player_name": "Lucas Giolito",
+   "team": null,
+   "position": null,
+   "status": "60-Day-IL",
+   "statyx_status": null,
+   "type": "Elbow",
+   "detail": "Inflammation",
+   "side": "Right",
+   "return_date": "2027-02-01",
+   "in_fastball": false,
+   "in_statyx": true,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Luinder Avila",
@@ -1398,7 +1342,7 @@
    "return_date": "2028-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Luis Gutierrez",
@@ -1412,7 +1356,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Matt Brash",
@@ -1426,7 +1370,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Matt Chapman",
@@ -1440,21 +1384,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
-  },
-  {
-   "player_name": "Matt Vierling",
-   "team": null,
-   "position": null,
-   "status": "60-Day-IL",
-   "statyx_status": null,
-   "type": "Thigh",
-   "detail": "Strain",
-   "side": "Left",
-   "return_date": "2027-02-01",
-   "in_fastball": false,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Matt Waldron",
@@ -1468,7 +1398,7 @@
    "return_date": "2027-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Max Muncy",
@@ -1482,7 +1412,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Max Rajcic",
@@ -1496,7 +1426,7 @@
    "return_date": "2027-09-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "McCade Brown",
@@ -1510,7 +1440,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Michael Arroyo",
@@ -1524,7 +1454,7 @@
    "return_date": "2027-04-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Michael Toglia",
@@ -1534,11 +1464,11 @@
    "statyx_status": null,
    "type": "Shoulder",
    "detail": "Surgery",
-   "side": "Right",
+   "side": null,
    "return_date": "2027-02-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Mick Abel",
@@ -1552,7 +1482,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Mickey Gasper",
@@ -1566,7 +1496,7 @@
    "return_date": "2027-03-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Mike Vasil",
@@ -1576,39 +1506,39 @@
    "statyx_status": null,
    "type": "Elbow",
    "detail": "Surgery",
-   "side": null,
+   "side": "Right",
    "return_date": "2027-07-01",
    "in_fastball": true,
-   "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "in_statyx": true,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Mitch Spence",
    "team": "KC",
    "position": "RP",
    "status": "Out",
-   "statyx_status": "Day-To-Day",
+   "statyx_status": null,
    "type": "Undisclosed",
    "detail": "Not Specified",
-   "side": "Not Specified",
+   "side": null,
    "return_date": "2026-11-04",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Mitchell Parker",
    "team": "ATL",
    "position": "RP",
    "status": "Out",
-   "statyx_status": "60-Day-IL",
+   "statyx_status": null,
    "type": "Elbow",
    "detail": "Surgery",
-   "side": "Left",
+   "side": null,
    "return_date": "2027-09-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Nick Davila",
@@ -1622,21 +1552,21 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Nick Mears",
    "team": "KC",
    "position": "RP",
    "status": "Out",
-   "statyx_status": "60-Day-IL",
+   "statyx_status": null,
    "type": "Shoulder",
    "detail": "Surgery",
-   "side": "Right",
+   "side": null,
    "return_date": "2027-04-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Pablo Lopez",
@@ -1650,21 +1580,7 @@
    "return_date": "2027-03-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
-  },
-  {
-   "player_name": "Parker Meadows",
-   "team": null,
-   "position": null,
-   "status": "60-Day-IL",
-   "statyx_status": null,
-   "type": "Arm",
-   "detail": "Surgery",
-   "side": "Left",
-   "return_date": "2027-02-01",
-   "in_fastball": false,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Phil Maton",
@@ -1678,7 +1594,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Pierson Ohl",
@@ -1692,7 +1608,7 @@
    "return_date": "2027-04-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Porter Hodge",
@@ -1706,7 +1622,7 @@
    "return_date": "2027-05-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Prelander Berroa",
@@ -1720,7 +1636,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Quinn Priester",
@@ -1734,35 +1650,21 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Rafael Devers",
    "team": "SF",
    "position": "1B",
    "status": "Out",
-   "statyx_status": "60-Day-IL",
+   "statyx_status": null,
    "type": "Abdomen",
    "detail": "Surgery",
-   "side": "Not Specified",
+   "side": null,
    "return_date": "2027-02-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
-  },
-  {
-   "player_name": "Ramon Laureano",
-   "team": null,
-   "position": null,
-   "status": "60-Day-IL",
-   "statyx_status": null,
-   "type": "Hip",
-   "detail": "Surgery",
-   "side": "Right",
-   "return_date": "2027-02-01",
-   "in_fastball": false,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Randy Rodriguez",
@@ -1776,7 +1678,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Reed Garrett",
@@ -1790,7 +1692,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Reed Trimble",
@@ -1804,7 +1706,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Reese Olson",
@@ -1818,21 +1720,21 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Richard Fitts",
    "team": "STL",
    "position": "SP",
    "status": "Out",
-   "statyx_status": "Day-To-Day",
+   "statyx_status": null,
    "type": "Lat",
    "detail": "Surgery",
-   "side": "Right",
+   "side": null,
    "return_date": "2027-02-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Riley Martin",
@@ -1846,7 +1748,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Robby Snelling",
@@ -1860,7 +1762,7 @@
    "return_date": "2027-06-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Roman Anthony",
@@ -1874,21 +1776,21 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Romy Gonzalez",
    "team": "BOS",
    "position": "DH",
    "status": "Out",
-   "statyx_status": "Day-To-Day",
+   "statyx_status": null,
    "type": "Elbow",
    "detail": null,
    "side": null,
    "return_date": "2027-02-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Ronny Henriquez",
@@ -1902,7 +1804,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Rowan Wick",
@@ -1916,7 +1818,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Ryan Bergert",
@@ -1930,21 +1832,21 @@
    "return_date": "2027-05-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Ryan Helsley",
    "team": "BAL",
    "position": "RP",
    "status": "Out",
-   "statyx_status": "60-Day-IL",
+   "statyx_status": null,
    "type": "Elbow",
    "detail": "Inflammation",
-   "side": "Right",
+   "side": null,
    "return_date": "2027-02-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Ryan Pepiot",
@@ -1958,21 +1860,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
-  },
-  {
-   "player_name": "Ryan Thompson",
-   "team": null,
-   "position": null,
-   "status": "60-Day-IL",
-   "statyx_status": null,
-   "type": "Back",
-   "detail": "Strain",
-   "side": "Not Specified",
-   "return_date": "2027-02-01",
-   "in_fastball": false,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Seth Johnson",
@@ -1982,11 +1870,11 @@
    "statyx_status": null,
    "type": "Knee",
    "detail": "Surgery",
-   "side": "Left",
+   "side": null,
    "return_date": "2027-02-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Shane McClanahan",
@@ -2000,7 +1888,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Shelby Miller",
@@ -2014,7 +1902,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Spencer Schwellenbach",
@@ -2028,7 +1916,7 @@
    "return_date": "2027-04-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Spencer Steer",
@@ -2042,7 +1930,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Spencer Strider",
@@ -2056,7 +1944,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Stephen Kolek",
@@ -2070,21 +1958,7 @@
    "return_date": "2028-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
-  },
-  {
-   "player_name": "Steven Cruz",
-   "team": null,
-   "position": null,
-   "status": "Out",
-   "statyx_status": null,
-   "type": "Personal",
-   "detail": "Not Specified",
-   "side": "Not Specified",
-   "return_date": "2027-02-01",
-   "in_fastball": false,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Tanner Murray",
@@ -2098,7 +1972,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Tony Santillan",
@@ -2112,21 +1986,21 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Trevor McDonald",
    "team": "SF",
    "position": "SP",
    "status": "Out",
-   "statyx_status": "60-Day-IL",
+   "statyx_status": null,
    "type": "Elbow",
    "detail": "Surgery",
-   "side": "Right",
+   "side": null,
    "return_date": "2027-09-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Trey Sweeney",
@@ -2140,7 +2014,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Triston Casas",
@@ -2154,7 +2028,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Tyler Austin",
@@ -2168,21 +2042,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
-  },
-  {
-   "player_name": "Tyler Locklear",
-   "team": null,
-   "position": null,
-   "status": "60-Day-IL",
-   "statyx_status": null,
-   "type": "Thumb",
-   "detail": "Fracture",
-   "side": "Right",
-   "return_date": "2027-02-01",
-   "in_fastball": false,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Tyler Soderstrom",
@@ -2196,7 +2056,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Tyler Zuber",
@@ -2210,7 +2070,7 @@
    "return_date": "2028-02-01",
    "in_fastball": false,
    "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Tylor Megill",
@@ -2224,7 +2084,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Walker Jenkins",
@@ -2238,7 +2098,7 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Welinton Herrera",
@@ -2252,35 +2112,35 @@
    "return_date": "2027-07-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Wenceel Perez",
    "team": "DET",
    "position": "RF",
    "status": "Out",
-   "statyx_status": "60-Day-IL",
+   "statyx_status": null,
    "type": "Orbital",
    "detail": "Fracture",
-   "side": "Left",
+   "side": null,
    "return_date": "2027-02-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Will Klein",
    "team": "LAD",
    "position": "RP",
    "status": "Out",
-   "statyx_status": "60-Day-IL",
+   "statyx_status": null,
    "type": "Elbow",
    "detail": "Soreness",
-   "side": "Right",
+   "side": null,
    "return_date": "2027-02-01",
    "in_fastball": true,
-   "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "in_statyx": false,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Will Vest",
@@ -2294,7 +2154,21 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
+  },
+  {
+   "player_name": "Will Wilson",
+   "team": null,
+   "position": null,
+   "status": "60-Day-IL",
+   "statyx_status": null,
+   "type": "Thumb",
+   "detail": "Fracture",
+   "side": "Left",
+   "return_date": "2027-02-01",
+   "in_fastball": false,
+   "in_statyx": true,
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "William Kempner",
@@ -2308,7 +2182,7 @@
    "return_date": "2027-09-01",
    "in_fastball": true,
    "in_statyx": false,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   },
   {
    "player_name": "Zack Kelly",
@@ -2322,48 +2196,14 @@
    "return_date": "2027-02-01",
    "in_fastball": true,
    "in_statyx": true,
-   "pulled_at": "2026-11-05"
+   "pulled_at": "2026-11-07"
   }
  ],
  "fa_overlay": {
   "fa_pool_size": 251,
-  "n_matched": 9,
+  "n_matched": 6,
   "n_differs_from_static": 1,
   "players": [
-   {
-    "name": "Adolis Garc\u00eda",
-    "player_id": 666969,
-    "pos": "RF",
-    "prev_team": "PHI",
-    "team": null,
-    "status": "60-Day-IL",
-    "statyx_status": null,
-    "type": "Lat",
-    "detail": "Surgery",
-    "return_date": "2027-02-01",
-    "feeds": [
-     "statyx"
-    ],
-    "static_picture": "on IL at 2026 season end (static file agrees)",
-    "differs_from_static": false
-   },
-   {
-    "name": "Cal Quantrill",
-    "player_id": 615698,
-    "pos": "SP",
-    "prev_team": "TEX",
-    "team": null,
-    "status": "60-Day-IL",
-    "statyx_status": null,
-    "type": "Lat",
-    "detail": "Strain",
-    "return_date": "2027-02-01",
-    "feeds": [
-     "statyx"
-    ],
-    "static_picture": "on IL at 2026 season end (static file agrees)",
-    "differs_from_static": false
-   },
    {
     "name": "Garrett Whitlock",
     "player_id": 676477,
@@ -2382,15 +2222,15 @@
     "differs_from_static": true
    },
    {
-    "name": "Gavin Lux",
-    "player_id": 666158,
-    "pos": "2B",
-    "prev_team": "TB",
+    "name": "Jalen Beeks",
+    "player_id": 656222,
+    "pos": "RP",
+    "prev_team": "TEX",
     "team": null,
     "status": "60-Day-IL",
     "statyx_status": null,
-    "type": "Shoulder",
-    "detail": "Inflammation",
+    "type": "Forearm",
+    "detail": "Surgery",
     "return_date": "2027-02-01",
     "feeds": [
      "statyx"
@@ -2405,27 +2245,26 @@
     "prev_team": "TOR",
     "team": "TOR",
     "status": "Out",
-    "statyx_status": "60-Day-IL",
+    "statyx_status": null,
     "type": "Elbow",
     "detail": "Surgery",
     "return_date": "2027-08-01",
     "feeds": [
-     "fastballapi",
-     "statyx"
+     "fastballapi"
     ],
     "static_picture": "on IL at 2026 season end (static file agrees)",
     "differs_from_static": false
    },
    {
-    "name": "Ramon Laureano",
-    "player_id": 657656,
-    "pos": "LF",
+    "name": "Lucas Giolito",
+    "player_id": 608337,
+    "pos": "SP",
     "prev_team": "SD",
     "team": null,
     "status": "60-Day-IL",
     "statyx_status": null,
-    "type": "Hip",
-    "detail": "Surgery",
+    "type": "Elbow",
+    "detail": "Inflammation",
     "return_date": "2027-02-01",
     "feeds": [
      "statyx"
@@ -2451,23 +2290,6 @@
     "differs_from_static": false
    },
    {
-    "name": "Ryan Thompson",
-    "player_id": 657044,
-    "pos": "RP",
-    "prev_team": "ARI",
-    "team": null,
-    "status": "60-Day-IL",
-    "statyx_status": null,
-    "type": "Back",
-    "detail": "Strain",
-    "return_date": "2027-02-01",
-    "feeds": [
-     "statyx"
-    ],
-    "static_picture": "on IL at 2026 season end (static file agrees)",
-    "differs_from_static": false
-   },
-   {
     "name": "Tyler Austin",
     "player_id": 592122,
     "pos": "1B",
@@ -2487,10 +2309,10 @@
   ]
  },
  "reconciliation": {
-  "fastball_injuries": 145,
-  "statyx_injuries_page": 50,
-  "overlap_both_feeds": 31,
-  "union_players": 164,
+  "fastball_injuries": 146,
+  "statyx_injuries_page": 16,
+  "overlap_both_feeds": 7,
+  "union_players": 155,
   "standings_check_fastball_vs_kpi_2026": {
    "teams_compared": 30,
    "wins_and_runs_agree": 30,
