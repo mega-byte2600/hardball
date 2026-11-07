@@ -1,0 +1,1476 @@
+{
+ "source": "fastballapi",
+ "dataset": "injuries_2026-11-07",
+ "endpoint": "POST /v1/get_injuries",
+ "fetched_at": "2026-11-07T16:17:24+00:00",
+ "rows": 146,
+ "sha256": "e23c2dfca934360e27a7c8c2d8dd55a9ed73973a6b7e92d07a9504225bbf1127",
+ "payload": {
+  "data": {
+   "date": "2026-11-07",
+   "injuries": [
+    {
+     "player_id": "5001155",
+     "name": "Andrew Saalfrank",
+     "position": "RP",
+     "team": "ARI",
+     "status": "Out",
+     "type": "Shoulder",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "42404",
+     "name": "Corbin Carroll",
+     "position": "RF",
+     "team": "ARI",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-03-01"
+    },
+    {
+     "player_id": "4917796",
+     "name": "Cristian Mena",
+     "position": "RP",
+     "team": "ARI",
+     "status": "Out",
+     "type": "Shoulder",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "40926",
+     "name": "Brent Rooker",
+     "position": "DH",
+     "team": "ATH",
+     "status": "Out",
+     "type": "Knee",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4414154",
+     "name": "Gunnar Hoglund",
+     "position": "SP",
+     "team": "ATH",
+     "status": "Out",
+     "type": "Hip",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4719300",
+     "name": "Jacob Wilson",
+     "position": "SS",
+     "team": "ATH",
+     "status": "Out",
+     "type": "Shoulder",
+     "detail": "Surgery",
+     "return_date": "2027-03-01"
+    },
+    {
+     "player_id": "4307467",
+     "name": "Justin Sterner",
+     "position": "RP",
+     "team": "ATH",
+     "status": "Out",
+     "type": "Knee",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4872686",
+     "name": "Max Muncy",
+     "position": "3B",
+     "team": "ATH",
+     "status": "Out",
+     "type": "Knee",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "42542",
+     "name": "Seth Johnson",
+     "position": "RP",
+     "team": "ATH",
+     "status": "Out",
+     "type": "Knee",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4686066",
+     "name": "Tyler Soderstrom",
+     "position": "LF",
+     "team": "ATH",
+     "status": "Out",
+     "type": "Hip",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4740117",
+     "name": "Hurston Waldrep",
+     "position": "SP",
+     "team": "ATL",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2028-02-01"
+    },
+    {
+     "player_id": "40927",
+     "name": "Joey Wentz",
+     "position": "RP",
+     "team": "ATL",
+     "status": "Out",
+     "type": "Knee",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4683356",
+     "name": "Mitchell Parker",
+     "position": "RP",
+     "team": "ATL",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-09-01"
+    },
+    {
+     "player_id": "4424862",
+     "name": "Spencer Schwellenbach",
+     "position": "SP",
+     "team": "ATL",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-04-01"
+    },
+    {
+     "player_id": "4307825",
+     "name": "Spencer Strider",
+     "position": "SP",
+     "team": "ATL",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Inflammation",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "31117",
+     "name": "Jurickson Profar",
+     "position": "LF",
+     "team": "ATL",
+     "status": "suspension",
+     "type": "Suspension",
+     "detail": "Not Specified",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "5270117",
+     "name": "Cameron Foster",
+     "position": "RP",
+     "team": "BAL",
+     "status": "Day-To-Day",
+     "type": "Shoulder",
+     "detail": "Inflammation",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4644739",
+     "name": "Reed Trimble",
+     "position": "LF",
+     "team": "BAL",
+     "status": "Day-To-Day",
+     "type": "Hamstring",
+     "detail": "Soreness",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "5085743",
+     "name": "Cade Povich",
+     "position": "SP",
+     "team": "BAL",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "5080633",
+     "name": "Jackson Holliday",
+     "position": "2B",
+     "team": "BAL",
+     "status": "Out",
+     "type": "Wrist",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4298641",
+     "name": "Jordan Westburg",
+     "position": "3B",
+     "team": "BAL",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4311625",
+     "name": "Kyle Bradish",
+     "position": "SP",
+     "team": "BAL",
+     "status": "Out",
+     "type": "Abdomen",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "39909",
+     "name": "Ryan Helsley",
+     "position": "RP",
+     "team": "BAL",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Inflammation",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "5007615",
+     "name": "Caleb Durbin",
+     "position": "3B",
+     "team": "BOS",
+     "status": "Out",
+     "type": "Finger",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "39963",
+     "name": "Eli White",
+     "position": "CF",
+     "team": "BOS",
+     "status": "Out",
+     "type": "Foot",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "39674",
+     "name": "Garrett Whitlock",
+     "position": "RP",
+     "team": "BOS",
+     "status": "Out",
+     "type": "Leg",
+     "detail": "Fracture",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4917925",
+     "name": "Justin Slaten",
+     "position": "RP",
+     "team": "BOS",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Inflammation",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "41277",
+     "name": "Kutter Crawford",
+     "position": "SP",
+     "team": "BOS",
+     "status": "Out",
+     "type": "Forearm",
+     "detail": "Soreness",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "5132012",
+     "name": "Mickey Gasper",
+     "position": "DH",
+     "team": "BOS",
+     "status": "Out",
+     "type": "Biceps",
+     "detail": "Surgery",
+     "return_date": "2027-03-01"
+    },
+    {
+     "player_id": "5080767",
+     "name": "Roman Anthony",
+     "position": "LF",
+     "team": "BOS",
+     "status": "Out",
+     "type": "Hand",
+     "detail": "Strain",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "42826",
+     "name": "Romy Gonzalez",
+     "position": "DH",
+     "team": "BOS",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": null,
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "41180",
+     "name": "Triston Casas",
+     "position": "1B",
+     "team": "BOS",
+     "status": "Out",
+     "type": "Wrist",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "41569",
+     "name": "Zack Kelly",
+     "position": "RP",
+     "team": "BOS",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Inflammation",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "41516",
+     "name": "Ben Brown",
+     "position": "RP",
+     "team": "CHC",
+     "status": "Out",
+     "type": "Neck",
+     "detail": "Fracture",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4692526",
+     "name": "Cade Horton",
+     "position": "SP",
+     "team": "CHC",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-08-01"
+    },
+    {
+     "player_id": "41022",
+     "name": "Justin Steele",
+     "position": "SP",
+     "team": "CHC",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "36161",
+     "name": "Phil Maton",
+     "position": "RP",
+     "team": "CHC",
+     "status": "Out",
+     "type": "Knee",
+     "detail": "Sprain",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "5185133",
+     "name": "Porter Hodge",
+     "position": "RP",
+     "team": "CHC",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-05-01"
+    },
+    {
+     "player_id": "5138178",
+     "name": "Riley Martin",
+     "position": "RP",
+     "team": "CHC",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Strain",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "30738",
+     "name": "Shelby Miller",
+     "position": "RP",
+     "team": "CHC",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "32161",
+     "name": "Tyler Austin",
+     "position": "1B",
+     "team": "CHC",
+     "status": "Out",
+     "type": "Knee",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4424742",
+     "name": "Brooks Baldwin",
+     "position": "LF",
+     "team": "CHW",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "5132121",
+     "name": "Jordan Leasure",
+     "position": "RP",
+     "team": "CHW",
+     "status": "Out",
+     "type": "Forearm",
+     "detail": "Surgery",
+     "return_date": "2028-02-01"
+    },
+    {
+     "player_id": "4414551",
+     "name": "Mike Vasil",
+     "position": "RP",
+     "team": "CHW",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-07-01"
+    },
+    {
+     "player_id": "42241",
+     "name": "Prelander Berroa",
+     "position": "RP",
+     "team": "CHW",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "5012115",
+     "name": "Tanner Murray",
+     "position": "LF",
+     "team": "CHW",
+     "status": "Out",
+     "type": "Shoulder",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4650237",
+     "name": "Blake Dunn",
+     "position": "CF",
+     "team": "CIN",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "40048",
+     "name": "Dane Myers",
+     "position": "CF",
+     "team": "CIN",
+     "status": "Out",
+     "type": "Shoulder",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "39635",
+     "name": "Hunter Greene",
+     "position": "SP",
+     "team": "CIN",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2028-02-01"
+    },
+    {
+     "player_id": "42806",
+     "name": "Julian Garcia",
+     "position": "RP",
+     "team": "CIN",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4722857",
+     "name": "Spencer Steer",
+     "position": "1B",
+     "team": "CIN",
+     "status": "Out",
+     "type": "Wrist",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "40950",
+     "name": "Tony Santillan",
+     "position": "RP",
+     "team": "CIN",
+     "status": "Out",
+     "type": "Hip",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "5236382",
+     "name": "Andrew Walters",
+     "position": "RP",
+     "team": "CLE",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2028-02-01"
+    },
+    {
+     "player_id": "4917897",
+     "name": "Colin Holderman",
+     "position": "RP",
+     "team": "CLE",
+     "status": "Out",
+     "type": "Wrist",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4872684",
+     "name": "Kahlil Watson",
+     "position": "RF",
+     "team": "CLE",
+     "status": "Out",
+     "type": "Abdomen",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4719068",
+     "name": "Chase Dollander",
+     "position": "SP",
+     "team": "COL",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-04-01"
+    },
+    {
+     "player_id": "33172",
+     "name": "Kris Bryant",
+     "position": "DH",
+     "team": "COL",
+     "status": "Out",
+     "type": "Back",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4415654",
+     "name": "McCade Brown",
+     "position": "SP",
+     "team": "COL",
+     "status": "Out",
+     "type": "Shoulder",
+     "detail": "Inflammation",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "5274126",
+     "name": "Welinton Herrera",
+     "position": "RP",
+     "team": "COL",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-07-01"
+    },
+    {
+     "player_id": "4635316",
+     "name": "Jake Miller",
+     "position": "SP",
+     "team": "DET",
+     "status": "Out",
+     "type": "Undisclosed",
+     "detail": "Not Specified",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "42714",
+     "name": "Kerry Carpenter",
+     "position": "RF",
+     "team": "DET",
+     "status": "Out",
+     "type": "Foot",
+     "detail": "Plantar Fasciitis",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4734319",
+     "name": "Reese Olson",
+     "position": "SP",
+     "team": "DET",
+     "status": "Out",
+     "type": "Shoulder",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4414687",
+     "name": "Trey Sweeney",
+     "position": "SS",
+     "team": "DET",
+     "status": "Out",
+     "type": "Shoulder",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "41586",
+     "name": "Wenceel Perez",
+     "position": "RF",
+     "team": "DET",
+     "status": "Out",
+     "type": "Orbital",
+     "detail": "Fracture",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "41606",
+     "name": "Will Vest",
+     "position": "RP",
+     "team": "DET",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4228724",
+     "name": "Brandon Walter",
+     "position": "SP",
+     "team": "HOU",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "32653",
+     "name": "Carlos Correa",
+     "position": "SS",
+     "team": "HOU",
+     "status": "Out",
+     "type": "Ankle",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4297976",
+     "name": "Joey Loperfido",
+     "position": "LF",
+     "team": "HOU",
+     "status": "Out",
+     "type": "Hip",
+     "detail": "Surgery",
+     "return_date": "2027-03-25"
+    },
+    {
+     "player_id": "41054",
+     "name": "Cole Ragans",
+     "position": "SP",
+     "team": "KC",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-08-01"
+    },
+    {
+     "player_id": "5201985",
+     "name": "Luinder Avila",
+     "position": "SP",
+     "team": "KC",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2028-02-01"
+    },
+    {
+     "player_id": "4987645",
+     "name": "Mitch Spence",
+     "position": "RP",
+     "team": "KC",
+     "status": "Out",
+     "type": "Undisclosed",
+     "detail": "Not Specified",
+     "return_date": "2026-11-04"
+    },
+    {
+     "player_id": "42620",
+     "name": "Nick Mears",
+     "position": "RP",
+     "team": "KC",
+     "status": "Out",
+     "type": "Shoulder",
+     "detail": "Surgery",
+     "return_date": "2027-04-01"
+    },
+    {
+     "player_id": "5196249",
+     "name": "Ryan Bergert",
+     "position": "SP",
+     "team": "KC",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-05-01"
+    },
+    {
+     "player_id": "5190073",
+     "name": "Stephen Kolek",
+     "position": "SP",
+     "team": "KC",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2028-02-01"
+    },
+    {
+     "player_id": "4917819",
+     "name": "Jack Kochanowicz",
+     "position": "SP",
+     "team": "LAA",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-09-01"
+    },
+    {
+     "player_id": "4326800",
+     "name": "Ben Casparius",
+     "position": "RP",
+     "team": "LAD",
+     "status": "Out",
+     "type": "Shoulder",
+     "detail": "Inflammation",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4619839",
+     "name": "Dalton Rushing",
+     "position": "C",
+     "team": "LAD",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-04-01"
+    },
+    {
+     "player_id": "4417230",
+     "name": "Gavin Stone",
+     "position": "SP",
+     "team": "LAD",
+     "status": "Out",
+     "type": "Shoulder",
+     "detail": "Inflammation",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4313163",
+     "name": "Will Klein",
+     "position": "RP",
+     "team": "LAD",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Soreness",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "5061202",
+     "name": "Adam Mazur",
+     "position": "SP",
+     "team": "MIA",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-05-01"
+    },
+    {
+     "player_id": "3975840",
+     "name": "Andrew Nardi",
+     "position": "RP",
+     "team": "MIA",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2028-02-01"
+    },
+    {
+     "player_id": "42171",
+     "name": "Anthony Bender",
+     "position": "RP",
+     "team": "MIA",
+     "status": "Out",
+     "type": "Lower Leg",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4866735",
+     "name": "Jakob Marsee",
+     "position": "CF",
+     "team": "MIA",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-04-01"
+    },
+    {
+     "player_id": "5080753",
+     "name": "Robby Snelling",
+     "position": "SP",
+     "team": "MIA",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-06-01"
+    },
+    {
+     "player_id": "4905923",
+     "name": "Ronny Henriquez",
+     "position": "RP",
+     "team": "MIA",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4634932",
+     "name": "William Kempner",
+     "position": "RP",
+     "team": "MIA",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-09-01"
+    },
+    {
+     "player_id": "4705673",
+     "name": "Angel Zerpa",
+     "position": "RP",
+     "team": "MIL",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-07-01"
+    },
+    {
+     "player_id": "4621433",
+     "name": "Brian Fitzpatrick",
+     "position": "RP",
+     "team": "MIL",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-08-01"
+    },
+    {
+     "player_id": "42449",
+     "name": "Quinn Priester",
+     "position": "SP",
+     "team": "MIL",
+     "status": "Out",
+     "type": "Shoulder",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "34542",
+     "name": "Anthony Banda",
+     "position": "RP",
+     "team": "MIN",
+     "status": "Out",
+     "type": "Lat",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "32655",
+     "name": "Byron Buxton",
+     "position": "CF",
+     "team": "MIN",
+     "status": "Out",
+     "type": "Hip",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "3983841",
+     "name": "Cole Sands",
+     "position": "RP",
+     "team": "MIN",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "5124114",
+     "name": "David Festa",
+     "position": "SP",
+     "team": "MIN",
+     "status": "Out",
+     "type": "Shoulder",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "33841",
+     "name": "Jeff Hoffman",
+     "position": "RP",
+     "team": "MIN",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4718970",
+     "name": "Mick Abel",
+     "position": "SP",
+     "team": "MIN",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "39671",
+     "name": "Pablo Lopez",
+     "position": "SP",
+     "team": "MIN",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-03-01"
+    },
+    {
+     "player_id": "5148963",
+     "name": "Walker Jenkins",
+     "position": "CF",
+     "team": "MIN",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "41575",
+     "name": "Jared Young",
+     "position": "1B",
+     "team": "NYM",
+     "status": "Out",
+     "type": "Concussion",
+     "detail": "Concussion",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "32525",
+     "name": "Jorge Polanco",
+     "position": "DH",
+     "team": "NYM",
+     "status": "Out",
+     "type": "Ankle",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4678659",
+     "name": "Pierson Ohl",
+     "position": "RP",
+     "team": "NYM",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-04-01"
+    },
+    {
+     "player_id": "36526",
+     "name": "Reed Garrett",
+     "position": "RP",
+     "team": "NYM",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "3332018",
+     "name": "Tylor Megill",
+     "position": "SP",
+     "team": "NYM",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "34068",
+     "name": "Fernando Cruz",
+     "position": "RP",
+     "team": "NYY",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Sprain",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4717832",
+     "name": "Kervin Castro",
+     "position": "RP",
+     "team": "NYY",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Inflammation",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "35292",
+     "name": "Brad Keller",
+     "position": "RP",
+     "team": "PHI",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-09-01"
+    },
+    {
+     "player_id": "5015567",
+     "name": "Felix Reyes",
+     "position": "LF",
+     "team": "PHI",
+     "status": "Out",
+     "type": "Wrist",
+     "detail": "Fracture",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "42829",
+     "name": "Johan Rojas",
+     "position": "CF",
+     "team": "PHI",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4712767",
+     "name": "Endy Rodriguez",
+     "position": "C",
+     "team": "PIT",
+     "status": "Out",
+     "type": "Hip",
+     "detail": "Surgery",
+     "return_date": "2027-05-01"
+    },
+    {
+     "player_id": "42200",
+     "name": "Bryan Hoeing",
+     "position": "RP",
+     "team": "SD",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "5273850",
+     "name": "Luis Gutierrez",
+     "position": "SP",
+     "team": "SD",
+     "status": "Out",
+     "type": "Undisclosed",
+     "detail": null,
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "41292",
+     "name": "Cal Raleigh",
+     "position": "C",
+     "team": "SEA",
+     "status": "Out",
+     "type": "Shoulder",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "5149068",
+     "name": "Colt Emerson",
+     "position": "SS",
+     "team": "SEA",
+     "status": "Out",
+     "type": "Wrist",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "35066",
+     "name": "Josh Naylor",
+     "position": "1B",
+     "team": "SEA",
+     "status": "Out",
+     "type": "Wrist",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "5202474",
+     "name": "Logan Evans",
+     "position": "SP",
+     "team": "SEA",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-04-01"
+    },
+    {
+     "player_id": "4894467",
+     "name": "Matt Brash",
+     "position": "RP",
+     "team": "SEA",
+     "status": "Out",
+     "type": "Lat",
+     "detail": "Strain",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "5124097",
+     "name": "Michael Arroyo",
+     "position": "SS",
+     "team": "SEA",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-04-01"
+    },
+    {
+     "player_id": "42412",
+     "name": "Michael Toglia",
+     "position": "1B",
+     "team": "SEA",
+     "status": "Out",
+     "type": "Shoulder",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4630786",
+     "name": "Nick Davila",
+     "position": "RP",
+     "team": "SEA",
+     "status": "Out",
+     "type": "Shoulder",
+     "detail": "Sprain",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4719088",
+     "name": "Blade Tidwell",
+     "position": "SP",
+     "team": "SF",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Sprain",
+     "return_date": "2028-02-01"
+    },
+    {
+     "player_id": "4626232",
+     "name": "Carson Whisenhunt",
+     "position": "SP",
+     "team": "SF",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2028-02-01"
+    },
+    {
+     "player_id": "4301949",
+     "name": "Casey Schmitt",
+     "position": "LF",
+     "team": "SF",
+     "status": "Out",
+     "type": "Knee",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4751554",
+     "name": "Daniel Susac",
+     "position": "C",
+     "team": "SF",
+     "status": "Out",
+     "type": "Knee",
+     "detail": "Fracture",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "35062",
+     "name": "Harrison Bader",
+     "position": "CF",
+     "team": "SF",
+     "status": "Out",
+     "type": "Foot",
+     "detail": "Plantar Fasciitis",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "5197166",
+     "name": "Hayden Birdsong",
+     "position": "RP",
+     "team": "SF",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-06-01"
+    },
+    {
+     "player_id": "33857",
+     "name": "Matt Chapman",
+     "position": "3B",
+     "team": "SF",
+     "status": "Out",
+     "type": "Abdomen",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "33859",
+     "name": "Rafael Devers",
+     "position": "1B",
+     "team": "SF",
+     "status": "Out",
+     "type": "Abdomen",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4919929",
+     "name": "Randy Rodriguez",
+     "position": "RP",
+     "team": "SF",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "34190",
+     "name": "Rowan Wick",
+     "position": "RP",
+     "team": "SF",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "5185136",
+     "name": "Trevor McDonald",
+     "position": "SP",
+     "team": "SF",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-09-01"
+    },
+    {
+     "player_id": "4415836",
+     "name": "Hunter Dobbins",
+     "position": "SP",
+     "team": "STL",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-09-01"
+    },
+    {
+     "player_id": "5200812",
+     "name": "Max Rajcic",
+     "position": "RP",
+     "team": "STL",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-09-01"
+    },
+    {
+     "player_id": "4414243",
+     "name": "Richard Fitts",
+     "position": "SP",
+     "team": "STL",
+     "status": "Out",
+     "type": "Lat",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "41308",
+     "name": "Edwin Uceta",
+     "position": "RP",
+     "team": "TB",
+     "status": "Out",
+     "type": "Shoulder",
+     "detail": "Surgery",
+     "return_date": "2027-06-01"
+    },
+    {
+     "player_id": "4208281",
+     "name": "Ryan Pepiot",
+     "position": "SP",
+     "team": "TB",
+     "status": "Out",
+     "type": "Hip",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "41199",
+     "name": "Shane McClanahan",
+     "position": "SP",
+     "team": "TB",
+     "status": "Out",
+     "type": "Forearm",
+     "detail": "Soreness",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "41177",
+     "name": "Cole Winn",
+     "position": "RP",
+     "team": "TEX",
+     "status": "Out",
+     "type": "Shoulder",
+     "detail": "Strain",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "32691",
+     "name": "Corey Seager",
+     "position": "SS",
+     "team": "TEX",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4917921",
+     "name": "Evan Carter",
+     "position": "CF",
+     "team": "TEX",
+     "status": "Out",
+     "type": "Hip",
+     "detail": "Surgery",
+     "return_date": "2027-05-01"
+    },
+    {
+     "player_id": "4905900",
+     "name": "Jose Butto",
+     "position": "RP",
+     "team": "TEX",
+     "status": "Out",
+     "type": "Arm",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4710478",
+     "name": "Jose Corniell",
+     "position": "RP",
+     "team": "TEX",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Strain",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4997589",
+     "name": "Addison Barger",
+     "position": "RF",
+     "team": "TOR",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "36084",
+     "name": "Anthony Santander",
+     "position": "RF",
+     "team": "TOR",
+     "status": "Out",
+     "type": "Shoulder",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "4734325",
+     "name": "Bowden Francis",
+     "position": "SP",
+     "team": "TOR",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-04-01"
+    },
+    {
+     "player_id": "34999",
+     "name": "Cody Ponce",
+     "position": "SP",
+     "team": "TOR",
+     "status": "Out",
+     "type": "Knee",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    },
+    {
+     "player_id": "32811",
+     "name": "Jose Berrios",
+     "position": "SP",
+     "team": "TOR",
+     "status": "Out",
+     "type": "Elbow",
+     "detail": "Surgery",
+     "return_date": "2027-08-01"
+    },
+    {
+     "player_id": "4228448",
+     "name": "Drew Millas",
+     "position": "C",
+     "team": "WSH",
+     "status": "Out",
+     "type": "Finger",
+     "detail": "Surgery",
+     "return_date": "2027-02-01"
+    }
+   ],
+   "count": 146
+  }
+ }
+}
