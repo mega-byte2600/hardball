@@ -2136,3 +2136,17 @@ relabeled; release v1.1.12 current, Cycle 78's restore).
 - CHECKLIST: no state change this cycle (§2 25 figures, §4 salaries + forced-seller already checked off Cycle 85). Freeze tag still owed; v1.1.12 current release.
 - NEXT: final frozen-main release cut before Dec 1. Open PRs left untouched: #57, #58.
 - Work tree: ~/workspace/hardball/work92/tree (verified main 6d5e0713 + lake copy; gitignored outputs excluded from PR).
+
+## Cycle 93 — tracker refresh (Nov 7) + hitter-backtest drift check (24/7 job, 2026-11-07 ~20:13 PT)
+- DEADLINE GUARD: 2026-11-07, inside the build window (closes Dec 1).
+- BASE: main 417f8830 (Cycle 92 merge, unmoved during the run).
+- SPOTRAC PROBE — 403: single GET of the Rays 2026 payroll page returned 403 (3,591 B). Logged quietly, moved on per the runbook — no re-pull attempted, no routing around the block. Salaries stay on the committed 1,144-row Nov 5 snapshot, 30/30.
+- LIVE FEEDS: refresh_live_feeds.py SKIP (last pull 12.0h old < 20h watermark) — normal. Evidence surveillance SKIP (artifact Nov 2, 5d < 6d guard) — normal. Journal spotlight re-pulled OK (27 papers) and CONTENT-IDENTICAL to committed excluding pulled_at, so the committed artifact is kept and docs/EVIDENCE.html is untouched.
+- TICKER: window 2026-11-01..2026-11-08 (rolled one day); SIGNED 648 (was 658 — Oct 31 fell out of the 8-day window), REPORTED 200 (capped, rotating), BUZZ 0, total 848. Items 39 in / 44 out vs Cycle 92. StatsAPI transactions fetched 2054, kept 648. Jetstream stream_failed (handshake HTTP 403) fail-closed, by design. The 1 FA-code row with no description and no player name recurs — same as Cycle 92.
+- PLATFORM: ingest 26 entries, 0 failures (Savant bands hold: expected 651–673, bat-tracking 595–619, sprint 489–506; standings ok). Curate 20 tables, contracts pass (fact_salaries 1144, fact_salaries_cots_full 2240). Warehouse rebuilt; parity r = 0.889, 201 matched — exact. Note: ingest was run twice in this cycle (second run was a re-check for failures); the manifest keeps only the first run's 26 entries — the duplicate block was removed before shipping.
+- DASHBOARD: rebuilt lake-present + HARDBALL_OFFLINE_BUILD=1; 25 figures, 0 missing; stamp moved to "Data as of Nov 8, 2026 · tracker Nov 8 · injured list Nov 7 · evidence Nov 2". Only content change vs main is the ticker rotation (plus Plotly UUID churn); hardball_demo byte-identical copy.
+- GATE: src/verify_data.py ALL PASS (re-run after the rebuild; the pre-rebuild run failed only on the 2 stamp/ticker-date checks, as expected). Spellcheck green.
+- BACKLOG ITEM (h) — DRIFT CHECK: re-ran src/bml_cycle21.py (hitter Marcel backtest) against the current lake. Output byte-identical to committed data/marcel_backtest.json — pooled A OBP MAE 0.0227 / SLG 0.0468, B 0.0226 / 0.0468, C 0.0220 / 0.0453. No drift; nothing ships from it. Backlog items (a)–(g) all done; (h) is the standing fallback until the freeze cut.
+- CHECKLIST: no state change this cycle (§2 25 figures, §4 salaries + forced-seller already checked off Cycle 85). Freeze tag still owed; v1.1.12 current release.
+- NEXT: final frozen-main release cut before Dec 1. Open PRs left untouched: #57, #58.
+- Work tree: ~/workspace/hardball/work93/tree (verified main 417f8830 + lake copy; gitignored outputs excluded from PR).
