@@ -478,3 +478,29 @@
 {"source": "chadwick", "dataset": "people", "fetched_at": "2026-11-10T16:23:06+00:00", "sha256": "8927e22b683cbfd8", "bytes": 72328087, "rows": 527990, "status": "ok"}
 {"source": "transactions", "dataset": "transactions", "fetched_at": "2026-11-10T16:23:06+00:00", "sha256": "93edbfa98e1f074d", "bytes": 54095331, "rows": 122589, "status": "ok", "watermark_advanced_to": "2026-11-10", "new_events": 2123}
 {"source": "spotrac", "dataset": "_cache_index", "fetched_at": "2026-11-10T16:23:06+00:00", "sha256": "67a80240c2cd20cc", "bytes": 636, "rows": 26, "status": "cache_present", "note": "HTML blobs live in the local mirror cache; parsed by bml_cycle25.py"}
+{"source": "mlb_api", "dataset": "standings_2026", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "5e75f1bff9f2b2da", "bytes": 80986, "rows": 30, "status": "ok"}
+{"source": "mlb_api", "dataset": "teams", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "bb09edbe7653b808", "bytes": 23219, "rows": 30, "status": "ok"}
+{"source": "savant", "dataset": "expected_2024", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "06b5e794cd91fd1b", "bytes": 89512, "rows": 651, "status": "ok"}
+{"source": "savant", "dataset": "expected_2026", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "f7dcde039f8222ff", "bytes": 90574, "rows": 662, "status": "ok"}
+{"source": "savant", "dataset": "expected_2023", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "c6081a1d20bbbec0", "bytes": 89935, "rows": 656, "status": "ok"}
+{"source": "savant", "dataset": "expected_2025", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "9bad2c33c11954ac", "bytes": 91858, "rows": 673, "status": "ok"}
+{"source": "savant", "dataset": "batted_ball_2024", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "12b31020137107ed", "bytes": 30585, "rows": 252, "status": "ok"}
+{"source": "savant", "dataset": "batted_ball_2023", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "4f906af80752ef1f", "bytes": 31297, "rows": 258, "status": "ok"}
+{"source": "savant", "dataset": "batted_ball_2025", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "01efa6de4d2cd824", "bytes": 30486, "rows": 251, "status": "ok"}
+{"source": "savant", "dataset": "sprint_2023", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "7baa8ca93645c900", "bytes": 31953, "rows": 506, "status": "ok"}
+{"source": "savant", "dataset": "batted_ball_2026", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "4830106f93dd070b", "bytes": 29886, "rows": 246, "status": "ok"}
+{"source": "savant", "dataset": "sprint_2024", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "ac7bfeea8523dc8b", "bytes": 30940, "rows": 489, "status": "ok"}
+{"source": "savant", "dataset": "sprint_2026", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "53982ad5da3f8681", "bytes": 31837, "rows": 503, "status": "ok"}
+{"source": "savant", "dataset": "sprint_2025", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "390ca2db334188d5", "bytes": 31478, "rows": 496, "status": "ok"}
+{"source": "fangraphs", "dataset": "steamer_2027_bat", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "799e88ca33e74d16", "bytes": 5235728, "rows": 4165, "status": "ok"}
+{"source": "savant", "dataset": "bat_tracking_2025", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "0e1a18b477ad59a7", "bytes": 148405, "rows": 619, "status": "ok"}
+{"source": "fangraphs", "dataset": "steamer_2027_pit", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "a652681d88c70d0d", "bytes": 5600077, "rows": 5170, "status": "ok"}
+{"source": "savant", "dataset": "bat_tracking_2024", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "d401605b135c47a7", "bytes": 143092, "rows": 595, "status": "ok"}
+{"source": "savant", "dataset": "bat_tracking_2026", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "aaa52b5b4c524137", "bytes": 149037, "rows": 619, "status": "ok"}
+{"source": "injury_report", "dataset": "il_stints_2019_2026", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "9ff9bf75879007e8", "bytes": 1887035, "rows": 6632, "status": "ok"}
+{"source": "bref_war", "dataset": "war_daily_pitch", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "e2b265575be20473", "bytes": 15363613, "rows": 57884, "status": "ok"}
+{"source": "bref_war", "dataset": "war_daily_bat", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "a23b301c21d7eb6c", "bytes": 35593989, "rows": 126547, "status": "ok"}
+{"source": "npb_bis", "dataset": "leaderboards_2024_2026", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "a2c67c9df6039436", "bytes": 79016, "rows": 340, "status": "ok"}
+{"source": "chadwick", "dataset": "people", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "8927e22b683cbfd8", "bytes": 72328087, "rows": 527990, "status": "ok"}
+{"source": "transactions", "dataset": "transactions", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "a16325fb6390f050", "bytes": 54115281, "rows": 122635, "status": "ok", "watermark_advanced_to": "2026-11-10", "new_events": 2169}
+{"source": "spotrac", "dataset": "_cache_index", "fetched_at": "2026-11-11T04:48:47+00:00", "sha256": "67a80240c2cd20cc", "bytes": 636, "rows": 26, "status": "cache_present", "note": "HTML blobs live in the local mirror cache; parsed by bml_cycle25.py"}
