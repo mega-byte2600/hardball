@@ -668,3 +668,31 @@
 {"source": "chadwick", "dataset": "people", "fetched_at": "2026-11-12T16:27:56+00:00", "sha256": "8927e22b683cbfd8", "bytes": 72328087, "rows": 527990, "status": "ok"}
 {"source": "transactions", "dataset": "transactions", "fetched_at": "2026-11-12T16:27:56+00:00", "sha256": "68cd10f67bc3459b", "bytes": 54137481, "rows": 122690, "status": "ok", "watermark_advanced_to": "2026-11-12", "new_events": 2222}
 {"source": "spotrac", "dataset": "_cache_index", "fetched_at": "2026-11-12T16:27:56+00:00", "sha256": "67a80240c2cd20cc", "bytes": 636, "rows": 26, "status": "cache_present", "note": "HTML blobs live in the local mirror cache; parsed by bml_cycle25.py"}
+{"source": "savant", "dataset": "oaa_2024", "fetched_at": "2026-11-12T18:43:35.675096+00:00", "sha256": "f7645f90d2809d63", "bytes": 47869, "rows": 552, "status": "ok"}
+{"source": "savant", "dataset": "oaa_2025", "fetched_at": "2026-11-12T18:43:38.660015+00:00", "sha256": "656d8a66f3cbdef3", "bytes": 49204, "rows": 568, "status": "ok"}
+{"source": "savant", "dataset": "oaa_2026", "fetched_at": "2026-11-12T18:43:41.866167+00:00", "sha256": "291c6d9749b3b49f", "bytes": 48815, "rows": 563, "status": "ok"}
+{"source": "savant", "dataset": "arsenal_2024", "fetched_at": "2026-11-12T18:43:44.863364+00:00", "sha256": "9e5f697b0cbab37a", "bytes": 79278, "rows": 577, "status": "ok"}
+{"source": "savant", "dataset": "arsenal_2025", "fetched_at": "2026-11-12T18:43:48.062396+00:00", "sha256": "b4ae67592833cabf", "bytes": 77063, "rows": 559, "status": "ok"}
+{"source": "savant", "dataset": "arsenal_2026", "fetched_at": "2026-11-12T18:43:51.172013+00:00", "sha256": "39592ab4e839e2cf", "bytes": 77854, "rows": 566, "status": "ok"}
+{"source": "savant", "dataset": "sprint_2024", "fetched_at": "2026-11-12T18:43:54.684183+00:00", "sha256": "5f39f94fef900a96", "bytes": 30940, "rows": 489, "status": "ok"}
+{"source": "savant", "dataset": "sprint_2025", "fetched_at": "2026-11-12T18:43:57.868990+00:00", "sha256": "b1a224b74775e6a7", "bytes": 31478, "rows": 496, "status": "ok"}
+{"source": "savant", "dataset": "sprint_2026", "fetched_at": "2026-11-12T18:44:00.754309+00:00", "sha256": "9f6f9988bfe01ec1", "bytes": 31837, "rows": 503, "status": "ok"}
+{"source": "savant", "dataset": "framing_2026", "fetched_at": "2026-11-12T18:44:03.498253+00:00", "sha256": "1c20155b86fe9c26", "bytes": 13257, "rows": 56, "status": "ok", "note": "year selection ignored by endpoint; 2026 board"}
+{"source": "savant", "dataset": "blocking_2026", "fetched_at": "2026-11-12T18:44:07.563131+00:00", "sha256": "bc62071c7ac4549f", "bytes": 15437, "rows": 74, "status": "ok", "note": "year selection ignored by endpoint; 2026 board"}
+{"source": "mlb_api", "dataset": "pitching_stats_2024", "fetched_at": "2026-11-12T18:44:37.486166+00:00", "sha256": "38b173d345733a0b", "bytes": 81904, "rows": 571, "status": "ok", "note": "StatsAPI hydrate season pitching; FIP constant 3.10"}
+{"source": "mlb_api", "dataset": "pitching_stats_2025", "fetched_at": "2026-11-12T18:45:00.296944+00:00", "sha256": "d32218b9f8a5a1fb", "bytes": 92499, "rows": 645, "status": "ok", "note": "StatsAPI hydrate season pitching; FIP constant 3.10"}
+{"source": "mlb_api", "dataset": "pitching_stats_2026", "fetched_at": "2026-11-12T18:45:25.456411+00:00", "sha256": "ef29be40ba283494", "bytes": 86207, "rows": 602, "status": "ok", "note": "StatsAPI hydrate season pitching; FIP constant 3.10"}
+{"source": "savant", "dataset": "oaa_2024", "fetched_at": "2026-11-12T18:53:58.957735+00:00", "sha256": "f7645f90d2809d63", "bytes": 47869, "rows": 552, "status": "ok"}
+{"source": "savant", "dataset": "oaa_2025", "fetched_at": "2026-11-12T18:54:01.640368+00:00", "sha256": "656d8a66f3cbdef3", "bytes": 49204, "rows": 568, "status": "ok"}
+{"source": "savant", "dataset": "oaa_2026", "fetched_at": "2026-11-12T18:54:04.029422+00:00", "sha256": "291c6d9749b3b49f", "bytes": 48815, "rows": 563, "status": "ok"}
+{"source": "savant", "dataset": "arsenal_2024", "fetched_at": "2026-11-12T18:54:06.805071+00:00", "sha256": "9e5f697b0cbab37a", "bytes": 79278, "rows": 577, "status": "ok"}
+{"source": "savant", "dataset": "arsenal_2025", "fetched_at": "2026-11-12T18:54:09.416684+00:00", "sha256": "b4ae67592833cabf", "bytes": 77063, "rows": 559, "status": "ok"}
+{"source": "savant", "dataset": "arsenal_2026", "fetched_at": "2026-11-12T18:54:11.929017+00:00", "sha256": "39592ab4e839e2cf", "bytes": 77854, "rows": 566, "status": "ok"}
+{"source": "savant", "dataset": "sprint_2024", "fetched_at": "2026-11-12T18:54:14.794487+00:00", "sha256": "3f725f5daae50523", "bytes": 30940, "rows": 489, "status": "ok"}
+{"source": "savant", "dataset": "sprint_2025", "fetched_at": "2026-11-12T18:54:17.775108+00:00", "sha256": "d0ac589c3103179e", "bytes": 31478, "rows": 496, "status": "ok"}
+{"source": "savant", "dataset": "sprint_2026", "fetched_at": "2026-11-12T18:54:20.492944+00:00", "sha256": "f50c8a2ff44bc84f", "bytes": 31837, "rows": 503, "status": "ok"}
+{"source": "savant", "dataset": "framing_2026", "fetched_at": "2026-11-12T18:54:23.166104+00:00", "sha256": "1c20155b86fe9c26", "bytes": 13257, "rows": 56, "status": "ok", "note": "year selection ignored by endpoint; 2026 board"}
+{"source": "savant", "dataset": "blocking_2026", "fetched_at": "2026-11-12T18:54:25.552935+00:00", "sha256": "bc62071c7ac4549f", "bytes": 15437, "rows": 74, "status": "ok", "note": "year selection ignored by endpoint; 2026 board"}
+{"source": "mlb_api", "dataset": "pitching_stats_2024", "fetched_at": "2026-11-12T18:54:47.781513+00:00", "sha256": "38b173d345733a0b", "bytes": 81904, "rows": 571, "status": "ok", "note": "StatsAPI hydrate season pitching; FIP constant 3.10"}
+{"source": "mlb_api", "dataset": "pitching_stats_2025", "fetched_at": "2026-11-12T18:55:08.164387+00:00", "sha256": "d32218b9f8a5a1fb", "bytes": 92499, "rows": 645, "status": "ok", "note": "StatsAPI hydrate season pitching; FIP constant 3.10"}
+{"source": "mlb_api", "dataset": "pitching_stats_2026", "fetched_at": "2026-11-12T18:55:25.661255+00:00", "sha256": "ef29be40ba283494", "bytes": 86207, "rows": 602, "status": "ok", "note": "StatsAPI hydrate season pitching; FIP constant 3.10"}

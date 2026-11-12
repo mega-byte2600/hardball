@@ -1,0 +1,427 @@
+{
+ "provenance": {
+  "pulled_at_utc": "2026-11-12T18:53:58.168753+00:00",
+  "boards": {
+   "oaa_2024": {
+    "url": "https://baseballsavant.mlb.com/leaderboard/outs_above_average?year=2024&position=&team=&min=1&csv=true",
+    "rows": 552
+   },
+   "oaa_2025": {
+    "url": "https://baseballsavant.mlb.com/leaderboard/outs_above_average?year=2025&position=&team=&min=1&csv=true",
+    "rows": 568
+   },
+   "oaa_2026": {
+    "url": "https://baseballsavant.mlb.com/leaderboard/outs_above_average?year=2026&position=&team=&min=1&csv=true",
+    "rows": 563
+   },
+   "arsenal_2024": {
+    "url": "https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?year=2024&position=&team=&min=100&csv=true",
+    "rows": 577
+   },
+   "arsenal_2025": {
+    "url": "https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?year=2025&position=&team=&min=100&csv=true",
+    "rows": 559
+   },
+   "arsenal_2026": {
+    "url": "https://baseballsavant.mlb.com/leaderboard/pitch-arsenal-stats?year=2026&position=&team=&min=100&csv=true",
+    "rows": 566
+   },
+   "sprint_2024": {
+    "url": "https://baseballsavant.mlb.com/leaderboard/sprint_speed?year=2024&position=&team=&min=25&csv=true",
+    "rows": 489
+   },
+   "sprint_2025": {
+    "url": "https://baseballsavant.mlb.com/leaderboard/sprint_speed?year=2025&position=&team=&min=25&csv=true",
+    "rows": 496
+   },
+   "sprint_2026": {
+    "url": "https://baseballsavant.mlb.com/leaderboard/sprint_speed?year=2026&position=&team=&min=25&csv=true",
+    "rows": 503
+   },
+   "framing_2026": {
+    "url": "https://baseballsavant.mlb.com/leaderboard/catcher-framing?year=2026&team=&min=100&csv=true",
+    "rows": 56
+   },
+   "blocking_2026": {
+    "url": "https://baseballsavant.mlb.com/leaderboard/catcher-blocking?year=2026&team=&min=1&csv=true",
+    "rows": 74
+   }
+  }
+ },
+ "fa_pool": {
+  "class_n": 251,
+  "with_id": 231
+ },
+ "n04": {
+  "claim": "Savant trait adjustments improve Marcel projections.",
+  "status": "NOT SUPPORTED"
+ },
+ "failures": {},
+ "arms": {
+  "status": "ok",
+  "board_rows": {
+   "2024": 577,
+   "2025": 559,
+   "2026": 566
+  },
+  "pitchers_2026": 300,
+  "min_total_pitches": 300,
+  "stability_rv100": {
+   "pairs": {
+    "2024_2025": {
+     "r": 0.21206323928575185,
+     "n": 186
+    },
+    "2025_2026": {
+     "r": 0.16115269244181912,
+     "n": 187
+    }
+   },
+   "pooled": {
+    "r": 0.1891636612120234,
+    "n_pairs": 373
+   }
+  },
+  "pitch_types_2026": [
+   {
+    "pitch_type": "SV",
+    "pitch_name": "Slurve",
+    "n_pitchers": 2,
+    "pitches": 1273,
+    "run_value": 14.0,
+    "rv100": 1.1
+   },
+   {
+    "pitch_type": "FC",
+    "pitch_name": "Cutter",
+    "n_pitchers": 36,
+    "pitches": 19169,
+    "run_value": 137.0,
+    "rv100": 0.715
+   },
+   {
+    "pitch_type": "FS",
+    "pitch_name": "Split-Finger",
+    "n_pitchers": 23,
+    "pitches": 13069,
+    "run_value": 88.0,
+    "rv100": 0.673
+   },
+   {
+    "pitch_type": "SI",
+    "pitch_name": "Sinker",
+    "n_pitchers": 120,
+    "pitches": 67272,
+    "run_value": 382.0,
+    "rv100": 0.568
+   },
+   {
+    "pitch_type": "SL",
+    "pitch_name": "Slider",
+    "n_pitchers": 61,
+    "pitches": 35123,
+    "run_value": 192.0,
+    "rv100": 0.547
+   },
+   {
+    "pitch_type": "CH",
+    "pitch_name": "Changeup",
+    "n_pitchers": 60,
+    "pitches": 31900,
+    "run_value": 165.0,
+    "rv100": 0.517
+   },
+   {
+    "pitch_type": "ST",
+    "pitch_name": "Sweeper",
+    "n_pitchers": 32,
+    "pitches": 17468,
+    "run_value": 76.0,
+    "rv100": 0.435
+   },
+   {
+    "pitch_type": "CU",
+    "pitch_name": "Curveball",
+    "n_pitchers": 27,
+    "pitches": 15863,
+    "run_value": 49.0,
+    "rv100": 0.309
+   },
+   {
+    "pitch_type": "FF",
+    "pitch_name": "4-Seam Fastball",
+    "n_pitchers": 205,
+    "pitches": 143274,
+    "run_value": 301.0,
+    "rv100": 0.21
+   }
+  ],
+  "fa_pool_n": 70,
+  "fa_top_rv100_2026": [
+   {
+    "name": "David Bednar",
+    "pos": "RP",
+    "pitches": 476,
+    "rv100": 2.941
+   },
+   {
+    "name": "Adrian Morejon",
+    "pos": "RP",
+    "pitches": 626,
+    "rv100": 1.757
+   },
+   {
+    "name": "Steven Okert",
+    "pos": "RP",
+    "pitches": 702,
+    "rv100": 1.567
+   },
+   {
+    "name": "Drew Rasmussen",
+    "pos": "SP",
+    "pitches": 2146,
+    "rv100": 1.538
+   },
+   {
+    "name": "JoJo Romero",
+    "pos": "RP",
+    "pitches": 418,
+    "rv100": 1.435
+   }
+  ],
+  "trait_model_oos": {
+   "status": "ok",
+   "features": [
+    "usage-weighted whiff%",
+    "usage-weighted K%",
+    "usage-weighted hard-hit%",
+    "usage-weighted expected wOBA"
+   ],
+   "train": "2024 traits -> 2025 ERA",
+   "test": "2025 traits -> 2026 ERA",
+   "n_train": 281,
+   "n_test": 289,
+   "mae_trait_model": 2.4025,
+   "mae_prior_era": 2.6446,
+   "mae_prior_fip": 2.3421,
+   "fip_constant": 3.1,
+   "beats_baselines": false
+  }
+ },
+ "gloves": {
+  "status": "ok",
+  "board_rows": {
+   "2024": 552,
+   "2025": 568,
+   "2026": 563
+  },
+  "stability_oaa": {
+   "pairs": {
+    "2024_2025": {
+     "r": 0.42053571000060425,
+     "n": 445
+    },
+    "2025_2026": {
+     "r": 0.44449629927692325,
+     "n": 443
+    }
+   },
+   "pooled": {
+    "r": 0.4328762473907203,
+    "n_pairs": 888
+   }
+  },
+  "distribution_2026": {
+   "n": 563,
+   "median": 0.0,
+   "p25": -2.0,
+   "p75": 1.0,
+   "min": -17.0,
+   "max": 26.0
+  },
+  "fa_pool_n": 71,
+  "fa_top_oaa_2026": [
+   {
+    "name": "Brandon Lowe",
+    "pos": "2B",
+    "outs_above_average": 15.0,
+    "fielding_runs_prevented": 11.0
+   },
+   {
+    "name": "Luis Arraez",
+    "pos": "2B",
+    "outs_above_average": 12.0,
+    "fielding_runs_prevented": 9.0
+   },
+   {
+    "name": "Cedric Mullins",
+    "pos": "CF",
+    "outs_above_average": 11.0,
+    "fielding_runs_prevented": 10.0
+   },
+   {
+    "name": "Ty France",
+    "pos": "1B",
+    "outs_above_average": 8.0,
+    "fielding_runs_prevented": 6.0
+   },
+   {
+    "name": "Isiah Kiner-Falefa",
+    "pos": "SS",
+    "outs_above_average": 8.0,
+    "fielding_runs_prevented": 6.0
+   }
+  ],
+  "catchers_2026": {
+   "status": "ok",
+   "note": "2026 only: both Savant catcher endpoints ignore year selection (verified byte-identical pulls for 2024/2025/2026), so no persistence is computed.",
+   "abs_caveat": "Contested: framing value may compress as automated ball-strike challenges expand \u2014 treat 2026 framing runs as an upper bound, not a forward price.",
+   "fa_catchers_n": 13,
+   "rows": [
+    {
+     "name": "Christian Vazquez",
+     "framing_runs": 5.938034550495877,
+     "blocks_above_average": -6.0,
+     "catcher_blocking_runs": -1.0
+    },
+    {
+     "name": "Austin Hedges",
+     "framing_runs": 2.0317269937005586,
+     "blocks_above_average": -3.0,
+     "catcher_blocking_runs": -1.0
+    },
+    {
+     "name": "Carson Kelly",
+     "framing_runs": 1.0128874633515212,
+     "blocks_above_average": 6.0,
+     "catcher_blocking_runs": 2.0
+    },
+    {
+     "name": "Elias Diaz",
+     "framing_runs": 0.3986566647574681,
+     "blocks_above_average": 2.0,
+     "catcher_blocking_runs": 0.0
+    },
+    {
+     "name": "Jake Rogers",
+     "framing_runs": -0.19239520549123568,
+     "blocks_above_average": -5.0,
+     "catcher_blocking_runs": -1.0
+    },
+    {
+     "name": "Ryan Jeffers",
+     "framing_runs": -1.310511782406532,
+     "blocks_above_average": 0.0,
+     "catcher_blocking_runs": 0.0
+    },
+    {
+     "name": "Jonah Heim",
+     "framing_runs": -1.632351187831074,
+     "blocks_above_average": -9.0,
+     "catcher_blocking_runs": -2.0
+    },
+    {
+     "name": "Gary S\u00e1nchez",
+     "framing_runs": -1.6936382819952271,
+     "blocks_above_average": -6.0,
+     "catcher_blocking_runs": -2.0
+    },
+    {
+     "name": "Kyle Higashioka",
+     "framing_runs": -1.7012696120598816,
+     "blocks_above_average": 0.0,
+     "catcher_blocking_runs": 0.0
+    },
+    {
+     "name": "James McCann",
+     "framing_runs": -5.364253314434067,
+     "blocks_above_average": 1.0,
+     "catcher_blocking_runs": 0.0
+    },
+    {
+     "name": "William Contreras",
+     "framing_runs": -6.465832819653327,
+     "blocks_above_average": -7.0,
+     "catcher_blocking_runs": -2.0
+    },
+    {
+     "name": "Tyler Stephenson",
+     "framing_runs": -9.66304783071897,
+     "blocks_above_average": 12.0,
+     "catcher_blocking_runs": 3.0
+    },
+    {
+     "name": "Travis d'Arnaud",
+     "framing_runs": null,
+     "blocks_above_average": -1.0,
+     "catcher_blocking_runs": 0.0
+    }
+   ]
+  }
+ },
+ "legs": {
+  "status": "ok",
+  "board_rows": {
+   "2024": 489,
+   "2025": 496,
+   "2026": 503
+  },
+  "stability_sprint": {
+   "pairs": {
+    "2024_2025": {
+     "r": 0.9329680383898455,
+     "n": 384
+    },
+    "2025_2026": {
+     "r": 0.9420945870238752,
+     "n": 386
+    }
+   },
+   "pooled": {
+    "r": 0.9370527297457089,
+    "n_pairs": 770
+   }
+  },
+  "distribution_2026": {
+   "n": 503,
+   "median": 27.5,
+   "p25": 26.45,
+   "p75": 28.3,
+   "min": 23.4,
+   "max": 30.5
+  },
+  "fa_pool_n": 72,
+  "fa_fastest_2026": [
+   {
+    "name": "Jorge Mateo",
+    "pos": "SS",
+    "sprint_speed": 30.2,
+    "competitive_runs": 75.0
+   },
+   {
+    "name": "Myles Straw",
+    "pos": "CF",
+    "sprint_speed": 29.7,
+    "competitive_runs": 122.0
+   },
+   {
+    "name": "Tyrone Taylor",
+    "pos": "RF",
+    "sprint_speed": 29.2,
+    "competitive_runs": 97.0
+   },
+   {
+    "name": "Lane Thomas",
+    "pos": "CF",
+    "sprint_speed": 29.1,
+    "competitive_runs": 128.0
+   },
+   {
+    "name": "Edmundo Sosa",
+    "pos": "3B",
+    "sprint_speed": 28.7,
+    "competitive_runs": 94.0
+   }
+  ]
+ }
+}

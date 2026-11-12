@@ -1,0 +1,594 @@
+[
+ {
+  "player_id": 672386,
+  "name": "Kirk, Alejandro",
+  "team": "TOR",
+  "pitches": 2770,
+  "blocks_above_average": 15.0,
+  "catcher_blocking_runs": 4.0
+ },
+ {
+  "player_id": 665966,
+  "name": "Narv\u00e1ez, Carlos",
+  "team": "BAL",
+  "pitches": 3448,
+  "blocks_above_average": 13.0,
+  "catcher_blocking_runs": 3.0
+ },
+ {
+  "player_id": 663886,
+  "name": "Stephenson, Tyler",
+  "team": "CIN",
+  "pitches": 4812,
+  "blocks_above_average": 12.0,
+  "catcher_blocking_runs": 3.0
+ },
+ {
+  "player_id": 663728,
+  "name": "Raleigh, Cal",
+  "team": "SEA",
+  "pitches": 3687,
+  "blocks_above_average": 11.0,
+  "catcher_blocking_runs": 3.0
+ },
+ {
+  "player_id": 693307,
+  "name": "Dingler, Dillon",
+  "team": "DET",
+  "pitches": 4280,
+  "blocks_above_average": 11.0,
+  "catcher_blocking_runs": 3.0
+ },
+ {
+  "player_id": 666023,
+  "name": "Fermin, Freddy",
+  "team": "SD",
+  "pitches": 2888,
+  "blocks_above_average": 10.0,
+  "catcher_blocking_runs": 2.0
+ },
+ {
+  "player_id": 669224,
+  "name": "Wells, Austin",
+  "team": "NYY",
+  "pitches": 4031,
+  "blocks_above_average": 9.0,
+  "catcher_blocking_runs": 2.0
+ },
+ {
+  "player_id": 643376,
+  "name": "Jansen, Danny",
+  "team": "TEX",
+  "pitches": 2334,
+  "blocks_above_average": 8.0,
+  "catcher_blocking_runs": 2.0
+ },
+ {
+  "player_id": 608348,
+  "name": "Kelly, Carson",
+  "team": "CHC",
+  "pitches": 3403,
+  "blocks_above_average": 6.0,
+  "catcher_blocking_runs": 2.0
+ },
+ {
+  "player_id": 668939,
+  "name": "Rutschman, Adley",
+  "team": "BOS",
+  "pitches": 3113,
+  "blocks_above_average": 5.0,
+  "catcher_blocking_runs": 1.0
+ },
+ {
+  "player_id": 620443,
+  "name": "Torrens, Luis",
+  "team": "NYM",
+  "pitches": 3028,
+  "blocks_above_average": 5.0,
+  "catcher_blocking_runs": 1.0
+ },
+ {
+  "player_id": 672515,
+  "name": "Moreno, Gabriel",
+  "team": "AZ",
+  "pitches": 3485,
+  "blocks_above_average": 5.0,
+  "catcher_blocking_runs": 1.0
+ },
+ {
+  "player_id": 642851,
+  "name": "Wynns, Austin",
+  "team": "TEX",
+  "pitches": 987,
+  "blocks_above_average": 4.0,
+  "catcher_blocking_runs": 1.0
+ },
+ {
+  "player_id": 669221,
+  "name": "Murphy, Sean",
+  "team": "ATL",
+  "pitches": 1046,
+  "blocks_above_average": 4.0,
+  "catcher_blocking_runs": 1.0
+ },
+ {
+  "player_id": 641555,
+  "name": "Escarra, J.C.",
+  "team": "NYY",
+  "pitches": 1004,
+  "blocks_above_average": 4.0,
+  "catcher_blocking_runs": 1.0
+ },
+ {
+  "player_id": 665561,
+  "name": "March\u00e1n, Rafael",
+  "team": "PHI",
+  "pitches": 1250,
+  "blocks_above_average": 4.0,
+  "catcher_blocking_runs": 1.0
+ },
+ {
+  "player_id": 624431,
+  "name": "Trevino, Jose",
+  "team": "CIN",
+  "pitches": 1816,
+  "blocks_above_average": 4.0,
+  "catcher_blocking_runs": 1.0
+ },
+ {
+  "player_id": 701852,
+  "name": "Cavanaugh, Drew",
+  "team": "SF",
+  "pitches": 1775,
+  "blocks_above_average": 4.0,
+  "catcher_blocking_runs": 1.0
+ },
+ {
+  "player_id": 694212,
+  "name": "Basallo, Samuel",
+  "team": "BAL",
+  "pitches": 2221,
+  "blocks_above_average": 4.0,
+  "catcher_blocking_runs": 1.0
+ },
+ {
+  "player_id": 605170,
+  "name": "Caratini, Victor",
+  "team": "MIN",
+  "pitches": 2995,
+  "blocks_above_average": 4.0,
+  "catcher_blocking_runs": 1.0
+ },
+ {
+  "player_id": 680779,
+  "name": "Davis, Henry",
+  "team": "PIT",
+  "pitches": 3388,
+  "blocks_above_average": 4.0,
+  "catcher_blocking_runs": 1.0
+ },
+ {
+  "player_id": 669257,
+  "name": "Smith, Will",
+  "team": "LAD",
+  "pitches": 1988,
+  "blocks_above_average": 3.0,
+  "catcher_blocking_runs": 1.0
+ },
+ {
+  "player_id": 553869,
+  "name": "D\u00edaz, Elias",
+  "team": "TEX",
+  "pitches": 2522,
+  "blocks_above_average": 2.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 686948,
+  "name": "Baldwin, Drake",
+  "team": "ATL",
+  "pitches": 2803,
+  "blocks_above_average": 2.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 640902,
+  "name": "Pereda, Jhonny",
+  "team": "SEA",
+  "pitches": 1079,
+  "blocks_above_average": 1.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 543510,
+  "name": "McCann, James",
+  "team": "AZ",
+  "pitches": 1684,
+  "blocks_above_average": 1.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 663698,
+  "name": "Bart, Joey",
+  "team": "CWS",
+  "pitches": 1471,
+  "blocks_above_average": 1.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 671056,
+  "name": "Herrera, Iv\u00e1n",
+  "team": "STL",
+  "pitches": 2094,
+  "blocks_above_average": 1.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 663743,
+  "name": "Fortes, Nick",
+  "team": "TB",
+  "pitches": 2933,
+  "blocks_above_average": 1.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 691788,
+  "name": "Mack, Joe",
+  "team": "MIA",
+  "pitches": 3390,
+  "blocks_above_average": 1.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 543309,
+  "name": "Higashioka, Kyle",
+  "team": "TEX",
+  "pitches": 1645,
+  "blocks_above_average": 0.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 666310,
+  "name": "Naylor, Bo",
+  "team": "MIL",
+  "pitches": 1088,
+  "blocks_above_average": 0.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 664954,
+  "name": "Sullivan, Brett",
+  "team": "COL",
+  "pitches": 2525,
+  "blocks_above_average": 0.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 657136,
+  "name": "Wong, Connor",
+  "team": "BOS",
+  "pitches": 2371,
+  "blocks_above_average": 0.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 680777,
+  "name": "Jeffers, Ryan",
+  "team": "MIN",
+  "pitches": 3116,
+  "blocks_above_average": 0.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 686780,
+  "name": "Pag\u00e9s, Pedro",
+  "team": "STL",
+  "pitches": 2672,
+  "blocks_above_average": 0.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 660688,
+  "name": "Ruiz, Keibert",
+  "team": "WSH",
+  "pitches": 3805,
+  "blocks_above_average": 0.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 623168,
+  "name": "Heineman, Tyler",
+  "team": "LAA",
+  "pitches": 2427,
+  "blocks_above_average": -1.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 669134,
+  "name": "Campusano, Luis",
+  "team": "SD",
+  "pitches": 2114,
+  "blocks_above_average": -1.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 645305,
+  "name": "S\u00e1nchez, Ali",
+  "team": "NYY",
+  "pitches": 1206,
+  "blocks_above_average": -1.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 518595,
+  "name": "d'Arnaud, Travis",
+  "team": "LAA",
+  "pitches": 998,
+  "blocks_above_average": -1.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 673237,
+  "name": "Diaz, Yainer",
+  "team": "HOU",
+  "pitches": 3221,
+  "blocks_above_average": -2.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 665804,
+  "name": "Amaya, Miguel",
+  "team": "CHC",
+  "pitches": 2309,
+  "blocks_above_average": -2.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 641598,
+  "name": "Garver, Mitch",
+  "team": "SEA",
+  "pitches": 1167,
+  "blocks_above_average": -2.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 660710,
+  "name": "Dur\u00e1n, Rodolfo",
+  "team": "SD",
+  "pitches": 1027,
+  "blocks_above_average": -2.0,
+  "catcher_blocking_runs": 0.0
+ },
+ {
+  "player_id": 696100,
+  "name": "Goodman, Hunter",
+  "team": "COL",
+  "pitches": 3866,
+  "blocks_above_average": -3.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 669127,
+  "name": "Langeliers, Shea",
+  "team": "ATH",
+  "pitches": 3231,
+  "blocks_above_average": -3.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 678218,
+  "name": "Valenzuela, Brandon",
+  "team": "TOR",
+  "pitches": 2820,
+  "blocks_above_average": -3.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 595978,
+  "name": "Hedges, Austin",
+  "team": "CLE",
+  "pitches": 2769,
+  "blocks_above_average": -3.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 691740,
+  "name": "Susac, Daniel",
+  "team": "SF",
+  "pitches": 1665,
+  "blocks_above_average": -3.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 687221,
+  "name": "Rushing, Dalton",
+  "team": "LAD",
+  "pitches": 1873,
+  "blocks_above_average": -3.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 682848,
+  "name": "Rodr\u00edguez, Endy",
+  "team": "PIT",
+  "pitches": 1525,
+  "blocks_above_average": -3.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 606992,
+  "name": "Haase, Eric",
+  "team": "SF",
+  "pitches": 1000,
+  "blocks_above_average": -3.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 592663,
+  "name": "Realmuto, J.T.",
+  "team": "PHI",
+  "pitches": 4621,
+  "blocks_above_average": -4.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 691011,
+  "name": "Romo, Drew",
+  "team": "CWS",
+  "pitches": 2361,
+  "blocks_above_average": -4.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 686452,
+  "name": "Millas, Drew",
+  "team": "WSH",
+  "pitches": 1732,
+  "blocks_above_average": -4.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 521692,
+  "name": "Perez, Salvador",
+  "team": "KC",
+  "pitches": 1775,
+  "blocks_above_average": -4.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 694208,
+  "name": "Ballesteros, Mois\u00e9s",
+  "team": "LAA",
+  "pitches": 999,
+  "blocks_above_average": -4.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 668670,
+  "name": "Rogers, Jake",
+  "team": "CWS",
+  "pitches": 1908,
+  "blocks_above_average": -5.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 804668,
+  "name": "Flores Jr., Rafael",
+  "team": "PIT",
+  "pitches": 1265,
+  "blocks_above_average": -5.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 543877,
+  "name": "V\u00e1zquez, Christian",
+  "team": "HOU",
+  "pitches": 3178,
+  "blocks_above_average": -6.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 676439,
+  "name": "Feduccia, Hunter",
+  "team": "LAD",
+  "pitches": 2480,
+  "blocks_above_average": -6.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 689414,
+  "name": "Hicks, Liam",
+  "team": "TB",
+  "pitches": 2130,
+  "blocks_above_average": -6.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 699625,
+  "name": "Crooks, Jimmy",
+  "team": "STL",
+  "pitches": 1463,
+  "blocks_above_average": -6.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 596142,
+  "name": "S\u00e1nchez, Gary",
+  "team": "MIL",
+  "pitches": 1480,
+  "blocks_above_average": -6.0,
+  "catcher_blocking_runs": -2.0
+ },
+ {
+  "player_id": 695670,
+  "name": "Ford, Harry",
+  "team": "WSH",
+  "pitches": 1296,
+  "blocks_above_average": -6.0,
+  "catcher_blocking_runs": -1.0
+ },
+ {
+  "player_id": 661388,
+  "name": "Contreras, William",
+  "team": "MIL",
+  "pitches": 4361,
+  "blocks_above_average": -7.0,
+  "catcher_blocking_runs": -2.0
+ },
+ {
+  "player_id": 691019,
+  "name": "Teel, Kyle",
+  "team": "CWS",
+  "pitches": 1411,
+  "blocks_above_average": -7.0,
+  "catcher_blocking_runs": -2.0
+ },
+ {
+  "player_id": 672275,
+  "name": "Bailey, Patrick",
+  "team": "CLE",
+  "pitches": 3727,
+  "blocks_above_average": -8.0,
+  "catcher_blocking_runs": -2.0
+ },
+ {
+  "player_id": 700337,
+  "name": "Quero, Edgar",
+  "team": "CWS",
+  "pitches": 2105,
+  "blocks_above_average": -8.0,
+  "catcher_blocking_runs": -2.0
+ },
+ {
+  "player_id": 695600,
+  "name": "Jensen, Carter",
+  "team": "KC",
+  "pitches": 3833,
+  "blocks_above_average": -9.0,
+  "catcher_blocking_runs": -2.0
+ },
+ {
+  "player_id": 641680,
+  "name": "Heim, Jonah",
+  "team": "ATH",
+  "pitches": 3130,
+  "blocks_above_average": -9.0,
+  "catcher_blocking_runs": -2.0
+ },
+ {
+  "player_id": 681351,
+  "name": "O'Hoppe, Logan",
+  "team": "TEX",
+  "pitches": 2962,
+  "blocks_above_average": -10.0,
+  "catcher_blocking_runs": -2.0
+ },
+ {
+  "player_id": 682626,
+  "name": "Alvarez, Francisco",
+  "team": "NYM",
+  "pitches": 3319,
+  "blocks_above_average": -13.0,
+  "catcher_blocking_runs": -3.0
+ }
+]

@@ -359,6 +359,436 @@ def main() -> int:
               "wording for bat speed", False,
               "bat_speed_exhibit_2027.json missing")
 
+    # --- Moneyball 2.0: "Beyond the bat" exhibit (diagnostic) ------
+    _bt_path = DATA / "beyond_the_bat_2027.json"
+    if _bt_path.exists():
+        import math as _math_bt
+
+        def _pearson_bt(xs, ys):
+            _n = len(xs)
+            _mx = _math_bt.fsum(xs) / _n
+            _my = _math_bt.fsum(ys) / _n
+            _sxy = _math_bt.fsum((x - _mx) * (y - _my)
+                                 for x, y in zip(xs, ys))
+            _sxx = _math_bt.fsum((x - _mx) ** 2 for x in xs)
+            _syy = _math_bt.fsum((y - _my) ** 2 for y in ys)
+            return _sxy / _math_bt.sqrt(_sxx * _syy)
+
+        def _quant_bt(vals, q):
+            _sv = sorted(vals)
+            _pos = q * (len(_sv) - 1)
+            _lo = int(_math_bt.floor(_pos))
+            _hi = min(_lo + 1, len(_sv) - 1)
+            return _sv[_lo] * (1 - (_pos - _lo)) + _sv[_hi] * (_pos - _lo)
+
+        _bt = json.loads(_bt_path.read_text())
+        _fa_bt = {r["player_id"]: r
+                  for r in load("fa_shopping_2027.json")["class"]
+                  if r.get("player_id")}
+        _ex_bt = html.split('id="mode-explorer"', 1)[1]
+        _ex_bt = re.split(r'id="mode-|<div class="srcbox"', _ex_bt)[0]
+        _st_bt = html.split('id="mode-story"', 1)[1].split(
+            'id="mode-boardroom"', 1)[0]
+        _mi_bt = _ex_bt.find("Beyond the bat")
+        _seg_bt = ""
+        if _mi_bt >= 0:
+            _rest_bt = _ex_bt[_mi_bt:]
+            _cut_bt = _rest_bt.find('class="panel"')
+            _seg_bt = (_rest_bt[:_cut_bt] if _cut_bt > 0
+                       else _rest_bt[:12000])
+
+        # --- Arms: rv100 stability, pitch-type table, FA top, OOS test
+        _arms_bt = _bt["arms"]
+        if _arms_bt.get("status") == "ok":
+            _ars_bt = {y: json.loads(
+                (DATA / f"savant_arsenal_{y}.json").read_text())
+                for y in (2024, 2025, 2026)}
+            _agg_bt = {}
+            for _y in (2024, 2025, 2026):
+                _d = {}
+                for _r in _ars_bt[_y]:
+                    _a = _d.setdefault(_r["player_id"], {
+                        "pitches": 0, "rv": 0.0, "whiff": 0.0,
+                        "k": 0.0, "hh": 0.0, "xwoba": 0.0})
+                    _p = _r["pitches"]
+                    _a["pitches"] += _p
+                    _a["rv"] += _r["run_value"] or 0.0
+                    for _src, _dst in (("whiff_percent", "whiff"),
+                                       ("k_percent", "k"),
+                                       ("hard_hit_percent", "hh"),
+                                       ("est_woba", "xwoba")):
+                        if _r[_src] is not None:
+                            _a[_dst] += _r[_src] * _p
+                for _a in _d.values():
+                    _a["rv100"] = 100.0 * _a["rv"] / _a["pitches"]
+                    for _dst in ("whiff", "k", "hh", "xwoba"):
+                        _a[_dst] /= _a["pitches"]
+                _agg_bt[_y] = _d
+            _minp_bt = _arms_bt["min_total_pitches"]
+            _px, _py, _pr, _pn = [], [], {}, {}
+            for _a, _b in ((2024, 2025), (2025, 2026)):
+                _ids = [p for p in _agg_bt[_a] if p in _agg_bt[_b]
+                        and _agg_bt[_a][p]["pitches"] >= _minp_bt
+                        and _agg_bt[_b][p]["pitches"] >= _minp_bt]
+                _xs = [_agg_bt[_a][p]["rv100"] for p in _ids]
+                _ys = [_agg_bt[_b][p]["rv100"] for p in _ids]
+                _pr[f"{_a}_{_b}"] = _pearson_bt(_xs, _ys)
+                _pn[f"{_a}_{_b}"] = len(_ids)
+                _px += _xs
+                _py += _ys
+            _pool_bt = _pearson_bt(_px, _py)
+            _stab_bt = _arms_bt["stability_rv100"]
+            _ok_stab_bt = (
+                abs(_pr["2024_2025"]
+                    - _stab_bt["pairs"]["2024_2025"]["r"]) < 1e-4
+                and abs(_pr["2025_2026"]
+                        - _stab_bt["pairs"]["2025_2026"]["r"]) < 1e-4
+                and abs(_pool_bt - _stab_bt["pooled"]["r"]) < 1e-4
+                and _pn["2024_2025"] == _stab_bt["pairs"]["2024_2025"]["n"]
+                and _pn["2025_2026"] == _stab_bt["pairs"]["2025_2026"]["n"]
+                and len(_px) == _stab_bt["pooled"]["n_pairs"])
+            _pt_bt = {}
+            for _r in _ars_bt[2026]:
+                _t = _pt_bt.setdefault(_r["pitch_type"], {
+                    "pitchers": set(), "pitches": 0, "rv": 0.0})
+                _t["pitchers"].add(_r["player_id"])
+                _t["pitches"] += _r["pitches"]
+                _t["rv"] += _r["run_value"] or 0.0
+            _ok_pt_bt = all(
+                abs(100.0 * _pt_bt[t["pitch_type"]]["rv"]
+                    / _pt_bt[t["pitch_type"]]["pitches"]
+                    - t["rv100"]) < 5e-4
+                and len(_pt_bt[t["pitch_type"]]["pitchers"])
+                == t["n_pitchers"]
+                and _pt_bt[t["pitch_type"]]["pitches"] == t["pitches"]
+                for t in _arms_bt["pitch_types_2026"])
+            _fa26_bt = [(pid, _a) for pid, _a in _agg_bt[2026].items()
+                        if pid in _fa_bt
+                        and _a["pitches"] >= _minp_bt]
+            _fa_top_bt = sorted(_fa26_bt,
+                                key=lambda kv: -kv[1]["rv100"])[:5]
+            _ok_fa_bt = (
+                [_fa_bt[pid]["name"] for pid, _ in _fa_top_bt]
+                == [r["name"] for r in _arms_bt["fa_top_rv100_2026"]]
+                and len(_fa26_bt) == _arms_bt["fa_pool_n"])
+            _tm_bt = _arms_bt.get("trait_model_oos", {})
+            if _tm_bt.get("status") == "ok":
+                _act_bt = {}
+                for _r in load("pitching_actuals_2024_2026.json"):
+                    _act_bt[(_r["season"], _r["player_id"])] = _r
+
+                def _design_bt(_t):
+                    _X, _yv, _eb, _fb = [], [], [], []
+                    for _pid, _a in _agg_bt[_t].items():
+                        if _a["pitches"] < _minp_bt:
+                            continue
+                        _cur = _act_bt.get((_t, _pid))
+                        _nxt = _act_bt.get((_t + 1, _pid))
+                        if not _cur or not _nxt:
+                            continue
+                        if _cur["era"] is None or _nxt["era"] is None:
+                            continue
+                        _X.append([_a["whiff"], _a["k"], _a["hh"],
+                                   _a["xwoba"]])
+                        _yv.append(_nxt["era"])
+                        _eb.append(_cur["era"])
+                        _fb.append(_cur["fip"])
+                    return _X, _yv, _eb, _fb
+
+                def _ols_bt(_X, _yv):
+                    _n, _p = len(_X), len(_X[0])
+                    _XtX = [[sum(_X[k][i] * _X[k][j]
+                                 for k in range(_n))
+                             for j in range(_p)] for i in range(_p)]
+                    _XtY = [sum(_X[k][i] * _yv[k] for k in range(_n))
+                            for i in range(_p)]
+                    _A = [row[:] + [_XtY[i]]
+                          for i, row in enumerate(_XtX)]
+                    for _col in range(_p):
+                        _piv = max(range(_col, _p),
+                                   key=lambda r: abs(_A[r][_col]))
+                        _A[_col], _A[_piv] = _A[_piv], _A[_col]
+                        for _r in range(_col + 1, _p):
+                            _f = _A[_r][_col] / _A[_col][_col]
+                            for _c in range(_col, _p + 1):
+                                _A[_r][_c] -= _f * _A[_col][_c]
+                    _beta = [0.0] * _p
+                    for _i in range(_p - 1, -1, -1):
+                        _beta[_i] = (_A[_i][_p] - sum(
+                            _A[_i][_j] * _beta[_j]
+                            for _j in range(_i + 1, _p))) / _A[_i][_i]
+                    return _beta
+
+                _Xtr, _ytr, _, _ = _design_bt(2024)
+                _Xte, _yte, _era_te, _fip_te = _design_bt(2025)
+                _mu_bt = [_math_bt.fsum(c) / len(_Xtr)
+                          for c in zip(*_Xtr)]
+                _sd_bt = []
+                for _j in range(4):
+                    _v = _math_bt.fsum((row[_j] - _mu_bt[_j]) ** 2
+                                       for row in _Xtr) / len(_Xtr)
+                    _sd_bt.append(_math_bt.sqrt(_v) or 1.0)
+                _Xtr_s = [[1.0] + [(v - _mu_bt[_j]) / _sd_bt[_j]
+                                   for _j, v in enumerate(row)]
+                          for row in _Xtr]
+                _Xte_s = [[1.0] + [(v - _mu_bt[_j]) / _sd_bt[_j]
+                                   for _j, v in enumerate(row)]
+                          for row in _Xte]
+                _beta_bt = _ols_bt(_Xtr_s, _ytr)
+                _pred_bt = [sum(b * x for b, x in zip(_beta_bt, row))
+                            for row in _Xte_s]
+
+                def _mae_bt(a, b):
+                    return (_math_bt.fsum(abs(x - y)
+                                         for x, y in zip(a, b))
+                            / len(a))
+
+                _ok_tm_bt = (
+                    len(_Xtr) == _tm_bt["n_train"]
+                    and len(_Xte) == _tm_bt["n_test"]
+                    and abs(_mae_bt(_pred_bt, _yte)
+                            - _tm_bt["mae_trait_model"]) < 1e-3
+                    and abs(_mae_bt(_era_te, _yte)
+                            - _tm_bt["mae_prior_era"]) < 1e-3
+                    and abs(_mae_bt(_fip_te, _yte)
+                            - _tm_bt["mae_prior_fip"]) < 1e-3
+                    and _tm_bt["beats_baselines"] == (
+                        _tm_bt["mae_trait_model"] < _tm_bt["mae_prior_era"]
+                        and _tm_bt["mae_trait_model"]
+                        < _tm_bt["mae_prior_fip"]))
+            else:
+                _ok_tm_bt = True
+            check("Beyond the bat — Arms: rv100 stability, pitch-type "
+                  "table, FA top, and OOS trait test recompute from "
+                  "the committed boards",
+                  _ok_stab_bt and _ok_pt_bt and _ok_fa_bt and _ok_tm_bt,
+                  f"stab={_ok_stab_bt} types={_ok_pt_bt} "
+                  f"fa={_ok_fa_bt} model={_ok_tm_bt}")
+        else:
+            check("Beyond the bat — Arms: rv100 stability, pitch-type "
+                  "table, FA top, and OOS trait test recompute from "
+                  "the committed boards",
+                  "Data unavailable" in _seg_bt
+                  and "Arms" in _seg_bt,
+                  "arms block unavailable but not rendered as such")
+
+        # --- Gloves: OAA stability, distribution, FA top, catchers
+        _gl_bt = _bt["gloves"]
+        if _gl_bt.get("status") == "ok":
+            _oaa_bt = {y: {r["player_id"]: r for r in json.loads(
+                (DATA / f"savant_oaa_{y}.json").read_text())}
+                for y in (2024, 2025, 2026)}
+            _gx, _gy, _gr, _gn = [], [], {}, {}
+            for _a, _b in ((2024, 2025), (2025, 2026)):
+                _ids = [p for p in _oaa_bt[_a] if p in _oaa_bt[_b]]
+                _xs = [_oaa_bt[_a][p]["outs_above_average"] for p in _ids]
+                _ys = [_oaa_bt[_b][p]["outs_above_average"] for p in _ids]
+                _gr[f"{_a}_{_b}"] = _pearson_bt(_xs, _ys)
+                _gn[f"{_a}_{_b}"] = len(_ids)
+                _gx += _xs
+                _gy += _ys
+            _gpool_bt = _pearson_bt(_gx, _gy)
+            _gstab_bt = _gl_bt["stability_oaa"]
+            _ok_gstab_bt = (
+                abs(_gr["2024_2025"]
+                    - _gstab_bt["pairs"]["2024_2025"]["r"]) < 1e-4
+                and abs(_gr["2025_2026"]
+                        - _gstab_bt["pairs"]["2025_2026"]["r"]) < 1e-4
+                and abs(_gpool_bt - _gstab_bt["pooled"]["r"]) < 1e-4
+                and _gn["2024_2025"] == _gstab_bt["pairs"]["2024_2025"]["n"]
+                and _gn["2025_2026"] == _gstab_bt["pairs"]["2025_2026"]["n"]
+                and len(_gx) == _gstab_bt["pooled"]["n_pairs"])
+            _oaa26_bt = [_oaa_bt[2026][p]["outs_above_average"]
+                         for p in _oaa_bt[2026]]
+            _gdist_bt = _gl_bt["distribution_2026"]
+            _ok_gdist_bt = (
+                len(_oaa26_bt) == _gdist_bt["n"]
+                and abs(_quant_bt(_oaa26_bt, 0.5)
+                        - _gdist_bt["median"]) < 1e-9
+                and abs(_quant_bt(_oaa26_bt, 0.25)
+                        - _gdist_bt["p25"]) < 1e-9
+                and abs(_quant_bt(_oaa26_bt, 0.75)
+                        - _gdist_bt["p75"]) < 1e-9
+                and min(_oaa26_bt) == _gdist_bt["min"]
+                and max(_oaa26_bt) == _gdist_bt["max"])
+            _gfa_bt = sorted(
+                ((pid, _r) for pid, _r in _oaa_bt[2026].items()
+                 if pid in _fa_bt),
+                key=lambda kv: -kv[1]["outs_above_average"])[:5]
+            _ok_gfa_bt = (
+                [_fa_bt[pid]["name"] for pid, _ in _gfa_bt]
+                == [r["name"] for r in _gl_bt["fa_top_oaa_2026"]]
+                and sum(1 for pid in _oaa_bt[2026] if pid in _fa_bt)
+                == _gl_bt["fa_pool_n"])
+            _cat_bt = _gl_bt.get("catchers_2026", {})
+            if _cat_bt.get("status") == "ok":
+                _fr_bt = {r["player_id"]: r for r in json.loads(
+                    (DATA / "savant_framing_2026.json").read_text())}
+                _bl_bt = {r["player_id"]: r for r in json.loads(
+                    (DATA / "savant_blocking_2026.json").read_text())}
+                _cids = sorted({p for p in _fr_bt if p in _fa_bt} | {
+                    p for p in _bl_bt if p in _fa_bt})
+                _crow_bt = []
+                for _pid in _cids:
+                    _fr = (_fr_bt.get(_pid) or {}).get("framing_runs")
+                    _bl = (_bl_bt.get(_pid) or {}).get(
+                        "blocks_above_average")
+                    _crow_bt.append((_fa_bt[_pid]["name"], _fr, _bl))
+                _crow_bt.sort(key=lambda t: -(t[1] if t[1] is not None
+                                              else -99.0))
+
+                def _fr_eq_bt(a, b):
+                    if a is None or b is None:
+                        return a is None and b is None
+                    return abs(a - b) < 1e-6
+
+                _ok_cat_bt = (
+                    len(_cids) == _cat_bt["fa_catchers_n"]
+                    and len(_crow_bt) == len(_cat_bt["rows"])
+                    and all(
+                        _crow_bt[i][0] == _cat_bt["rows"][i]["name"]
+                        and _fr_eq_bt(
+                            _crow_bt[i][1],
+                            _cat_bt["rows"][i]["framing_runs"])
+                        and _crow_bt[i][2]
+                        == _cat_bt["rows"][i]["blocks_above_average"]
+                        for i in range(len(_crow_bt))))
+            else:
+                _ok_cat_bt = True
+            check("Beyond the bat — Gloves: OAA stability, "
+                  "distribution, FA top, and catcher rows recompute "
+                  "from the committed boards",
+                  _ok_gstab_bt and _ok_gdist_bt and _ok_gfa_bt
+                  and _ok_cat_bt,
+                  f"stab={_ok_gstab_bt} dist={_ok_gdist_bt} "
+                  f"fa={_ok_gfa_bt} catchers={_ok_cat_bt}")
+        else:
+            check("Beyond the bat — Gloves: OAA stability, "
+                  "distribution, FA top, and catcher rows recompute "
+                  "from the committed boards",
+                  "Data unavailable" in _seg_bt
+                  and "Gloves" in _seg_bt,
+                  "gloves block unavailable but not rendered as such")
+
+        # --- Legs: sprint stability, distribution, FA fastest
+        _lg_bt = _bt["legs"]
+        if _lg_bt.get("status") == "ok":
+            _sp_bt = {y: {r["player_id"]: r for r in json.loads(
+                (DATA / f"savant_sprint_{y}.json").read_text())}
+                for y in (2024, 2025, 2026)}
+            _lx, _ly, _lr, _ln = [], [], {}, {}
+            for _a, _b in ((2024, 2025), (2025, 2026)):
+                _ids = [p for p in _sp_bt[_a] if p in _sp_bt[_b]]
+                _xs = [_sp_bt[_a][p]["sprint_speed"] for p in _ids]
+                _ys = [_sp_bt[_b][p]["sprint_speed"] for p in _ids]
+                _lr[f"{_a}_{_b}"] = _pearson_bt(_xs, _ys)
+                _ln[f"{_a}_{_b}"] = len(_ids)
+                _lx += _xs
+                _ly += _ys
+            _lpool_bt = _pearson_bt(_lx, _ly)
+            _lstab_bt = _lg_bt["stability_sprint"]
+            _ok_lstab_bt = (
+                abs(_lr["2024_2025"]
+                    - _lstab_bt["pairs"]["2024_2025"]["r"]) < 1e-4
+                and abs(_lr["2025_2026"]
+                        - _lstab_bt["pairs"]["2025_2026"]["r"]) < 1e-4
+                and abs(_lpool_bt - _lstab_bt["pooled"]["r"]) < 1e-4
+                and _ln["2024_2025"] == _lstab_bt["pairs"]["2024_2025"]["n"]
+                and _ln["2025_2026"] == _lstab_bt["pairs"]["2025_2026"]["n"]
+                and len(_lx) == _lstab_bt["pooled"]["n_pairs"])
+            _sp26_bt = [_sp_bt[2026][p]["sprint_speed"]
+                        for p in _sp_bt[2026]]
+            _ldist_bt = _lg_bt["distribution_2026"]
+            _ok_ldist_bt = (
+                len(_sp26_bt) == _ldist_bt["n"]
+                and abs(_quant_bt(_sp26_bt, 0.5)
+                        - _ldist_bt["median"]) < 1e-9
+                and abs(_quant_bt(_sp26_bt, 0.25)
+                        - _ldist_bt["p25"]) < 1e-9
+                and abs(_quant_bt(_sp26_bt, 0.75)
+                        - _ldist_bt["p75"]) < 1e-9
+                and min(_sp26_bt) == _ldist_bt["min"]
+                and max(_sp26_bt) == _ldist_bt["max"])
+            _lfa_bt = sorted(
+                ((pid, _r) for pid, _r in _sp_bt[2026].items()
+                 if pid in _fa_bt),
+                key=lambda kv: -kv[1]["sprint_speed"])[:5]
+            _ok_lfa_bt = (
+                [_fa_bt[pid]["name"] for pid, _ in _lfa_bt]
+                == [r["name"] for r in _lg_bt["fa_fastest_2026"]]
+                and sum(1 for pid in _sp_bt[2026] if pid in _fa_bt)
+                == _lg_bt["fa_pool_n"])
+            check("Beyond the bat — Legs: sprint stability, "
+                  "distribution, and FA fastest recompute from the "
+                  "committed boards",
+                  _ok_lstab_bt and _ok_ldist_bt and _ok_lfa_bt,
+                  f"stab={_ok_lstab_bt} dist={_ok_ldist_bt} "
+                  f"fa={_ok_lfa_bt}")
+        else:
+            check("Beyond the bat — Legs: sprint stability, "
+                  "distribution, and FA fastest recompute from the "
+                  "committed boards",
+                  "Data unavailable" in _seg_bt
+                  and "Legs" in _seg_bt,
+                  "legs block unavailable but not rendered as such")
+
+        # --- Render / placement / wording
+        _reg_bt = json.loads((DATA / "claims_register.json").read_text())
+        _n04_bt = next(c for c in _reg_bt["claims"] if c["id"] == "N04")
+        _want_bt = []
+        if _arms_bt.get("status") == "ok":
+            _want_bt.append(
+                f"{_arms_bt['stability_rv100']['pooled']['r']:.3f}")
+            _want_bt.append(_arms_bt["fa_top_rv100_2026"][0]["name"])
+        if _gl_bt.get("status") == "ok":
+            _want_bt.append(
+                f"{_gl_bt['stability_oaa']['pooled']['r']:.3f}")
+            _want_bt.append(_gl_bt["fa_top_oaa_2026"][0]["name"])
+        if _lg_bt.get("status") == "ok":
+            _want_bt.append(
+                f"{_lg_bt['stability_sprint']['pooled']['r']:.3f}")
+            _want_bt.append(_lg_bt["fa_fastest_2026"][0]["name"])
+        check("Beyond the bat: renders under Figure 19 in Explorer "
+              "only, after the bat-speed exhibit, N04 quoted "
+              "verbatim, rendered stats match the artifact, three "
+              "red markers, no brass",
+              _mi_bt >= 0
+              and _ex_bt.find("Bat speed, up close") < _mi_bt
+              and "Beyond the bat" not in _st_bt
+              and _n04_bt["claim"] in _seg_bt
+              and "NOT SUPPORTED" in _seg_bt
+              and all(w in _seg_bt for w in _want_bt)
+              and _seg_bt.count("#BF0D3E") >= 3
+              and "#c9a227" not in _seg_bt.lower(),
+              f"mi={_mi_bt} seg_len={len(_seg_bt)}")
+        check("Beyond the bat: carries no projection-claim wording",
+              _mi_bt >= 0
+              and "improves projection" not in _seg_bt.lower()
+              and "improve projections" not in _seg_bt.lower()
+              and "better projection" not in _seg_bt.lower()
+              and "boosts projection" not in _seg_bt.lower(),
+              "banned wording found in the exhibit segment")
+    else:
+        check("Beyond the bat — Arms: rv100 stability, pitch-type "
+              "table, FA top, and OOS trait test recompute from "
+              "the committed boards", False,
+              "beyond_the_bat_2027.json missing")
+        check("Beyond the bat — Gloves: OAA stability, "
+              "distribution, FA top, and catcher rows recompute "
+              "from the committed boards", False,
+              "beyond_the_bat_2027.json missing")
+        check("Beyond the bat — Legs: sprint stability, "
+              "distribution, and FA fastest recompute from the "
+              "committed boards", False,
+              "beyond_the_bat_2027.json missing")
+        check("Beyond the bat: renders under Figure 19 in Explorer "
+              "only, after the bat-speed exhibit, N04 quoted "
+              "verbatim, rendered stats match the artifact, three "
+              "red markers, no brass", False,
+              "beyond_the_bat_2027.json missing")
+        check("Beyond the bat: carries no projection-claim wording",
+              False, "beyond_the_bat_2027.json missing")
+
     # --- Cycle 76: noir record-book theme (presentation only) -------
     _root76 = dict(re.findall(r"--(ink|panel|paper|paper-dim|accent|gold)"
                               r":\s*(#[0-9A-Fa-f]{6})", html))

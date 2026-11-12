@@ -24,6 +24,8 @@ WHITELIST = {
     "backtest", "programme", "unc", "actuals", "rmse",
     "winningcheap", "cheapmediocre", "rundiff", "runscored", "runsallowed",
     "constraint", "offensive", "onbase", "walkrate", "hr", "pa", "m",
+    # Moneyball 2.0 "Beyond the bat" exhibit: pitch types + OAA
+    "changeup", "curveball", "oaa", "seamer", "slurve",
     # team names / cities / proper nouns
     "mil", "milwaukee", "brewers", "tb", "tampa", "bay", "rays", "cle",
     "cleveland", "guardians", "mia", "miami", "marlins", "chw", "white", "sox",
