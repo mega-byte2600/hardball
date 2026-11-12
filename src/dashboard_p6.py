@@ -1177,6 +1177,225 @@ def _bat_speed_exhibit_html():
         "_2025, _2026); verdicts in data/savant_test.json.</p></div>")
 
 
+def _beyond_the_bat_html():
+    """Moneyball 2.0 exhibit: "Beyond the bat" directly under Figure 19
+    in Explorer, alongside the Cycle 75 bat-speed exhibit — three
+    quiet blocks (arms, gloves, legs) from the Baseball Savant
+    leaderboards, joined to the 2027 free-agent pool. DIAGNOSTIC ONLY:
+    per claim N04 (NOT SUPPORTED), Savant traits do not adjust
+    projections; nothing here feeds a projection, and the out-of-sample
+    pitch-trait test inside the Arms block is reported honestly
+    whether it wins or loses. Renders ONLY from the committed artifact
+    data/beyond_the_bat_2027.json; absent the artifact the panel is
+    omitted entirely, and any block whose status is not "ok" renders
+    "data unavailable" (fail closed). Not a figure: the count stays 25.
+    """
+    import html as _html
+    path = os.path.join(DATA, "beyond_the_bat_2027.json")
+    if not os.path.exists(path):
+        return ""
+    art = json.load(open(path))
+    gold = "#F5D130"
+    red = "#BF0D3E"
+
+    def _marker():
+        return (f'<div style="width:24px;height:3px;background:{red};'
+                'margin:0 0 6px"></div>')
+
+    def _unavailable(title, reason):
+        return (_marker() + f"<b>{title}</b>"
+                f"<p>Data unavailable: {_html.escape(str(reason))}</p>")
+
+    blocks = []
+    arms = art.get("arms", {})
+    if arms.get("status") != "ok":
+        blocks.append(_unavailable(
+            "Arms — what a pitch is worth, and whether it lasts.",
+            arms.get("reason", "arsenal boards unavailable")))
+    else:
+        stab = arms["stability_rv100"]
+        p1, p2 = stab["pairs"]["2024_2025"], stab["pairs"]["2025_2026"]
+        trs = ("<tr><th style=\"text-align:left;padding:2px 10px 2px 0\">"
+               "Pitch</th><th style=\"padding:2px 8px\">Pitchers</th>"
+               "<th style=\"padding:2px 8px\">Pitches</th>"
+               "<th style=\"padding:2px 8px\">Run value / 100</th></tr>")
+        for t in arms["pitch_types_2026"]:
+            trs += (f"<tr><td>{_html.escape(t['pitch_name'])}</td>"
+                    f"<td>{t['n_pitchers']}</td>"
+                    f"<td>{t['pitches']:,}</td>"
+                    f"<td>{t['rv100']:.3f}</td></tr>")
+        fa_names = ", ".join(
+            f"{_html.escape(r['name'])} {r['rv100']:.3f}"
+            for r in arms["fa_top_rv100_2026"][:3])
+        tm = arms.get("trait_model_oos", {})
+        if tm.get("status") == "ok":
+            if tm["beats_baselines"]:
+                verdict = ("beat both baselines out of sample and is "
+                           "recorded as a finding, not adopted: one "
+                           "transition is not a track record.")
+            else:
+                verdict = ("did not beat the FIP baseline out of "
+                           "sample, so it stays diagnostic — the same "
+                           "verdict shape as claim N04.")
+            model_line = (
+                f"<p>Out-of-sample test: a four-trait model "
+                f"(whiff, strikeout, hard-hit, expected wOBA) trained "
+                f"on 2024&rarr;2025 and tested on 2025&rarr;2026 "
+                f"(n = {tm['n_test']}) predicted 2026 ERA with MAE "
+                f"{tm['mae_trait_model']:.2f} — against "
+                f"{tm['mae_prior_era']:.2f} for repeating last "
+                f"year's ERA and {tm['mae_prior_fip']:.2f} for last "
+                f"year's FIP. It {verdict}</p>")
+        else:
+            model_line = ("<p>Out-of-sample trait test unavailable: "
+                          f"{_html.escape(str(tm.get('reason', '')))}"
+                          "</p>")
+        blocks.append(
+            _marker()
+            + "<b>Arms — the most-thrown pitch is the least valuable "
+            "per pitch.</b>"
+            "<p>Run value per 100 pitches by pitch type, 2026 "
+            "(min=100 board). The 4-seamer carries the league's volume "
+            "and the lowest rate; the cutter, splitter, and sinker "
+            "carry the highest rates among widely thrown pitches. "
+            "Slurve tops the table on 2 pitchers — read the pitcher "
+            "column before the rate.</p>"
+            "<table style=\"border-collapse:collapse;font-size:13px;"
+            "margin:8px 0\">" + trs + "</table>"
+            f"<p>A pitcher's run value per 100 pitches barely "
+            f"persists: matched pitchers correlate "
+            f"<span style=\"color:{gold}\">r = "
+            f"{stab['pooled']['r']:.3f}</span> pooled across both "
+            f"transitions ({p1['r']:.3f} for 2024&rarr;2025, "
+            f"n = {p1['n']}; {p2['r']:.3f} for 2025&rarr;2026, "
+            f"n = {p2['n']}; {arms['min_total_pitches']}+ pitches in "
+            f"both years). Arsenal run value describes last season; "
+            f"it is not a trait. {arms['fa_pool_n']} free agents on "
+            f"the 2026 board; highest run value per 100: "
+            f"{fa_names}.</p>"
+            + model_line
+            + "<p class=\"srcline\">Source: Baseball Savant "
+            "pitch-arsenal leaderboard, 2024–2026; ERA/FIP from the "
+            "MLB Stats API. Artifact: "
+            "data/beyond_the_bat_2027.json.</p>")
+
+    gloves = art.get("gloves", {})
+    if gloves.get("status") != "ok":
+        blocks.append(_unavailable(
+            "Gloves — range persists; errors are only half the story.",
+            gloves.get("reason", "OAA boards unavailable")))
+    else:
+        stab = gloves["stability_oaa"]
+        p1, p2 = stab["pairs"]["2024_2025"], stab["pairs"]["2025_2026"]
+        dist = gloves["distribution_2026"]
+        fa_names = ", ".join(
+            f"{_html.escape(r['name'])} +{r['outs_above_average']:.0f}"
+            for r in gloves["fa_top_oaa_2026"][:3])
+        cat = gloves.get("catchers_2026", {})
+        if cat.get("status") == "ok":
+            ctrs = ("<tr><th style=\"text-align:left;padding:2px 10px "
+                    "2px 0\">Catcher</th>"
+                    "<th style=\"padding:2px 8px\">Framing runs</th>"
+                    "<th style=\"padding:2px 8px\">Blocks above "
+                    "avg</th></tr>")
+            for r in cat["rows"][:5]:
+                fr = ("—" if r["framing_runs"] is None
+                      else f"{r['framing_runs']:+.1f}")
+                bl = ("—" if r["blocks_above_average"] is None
+                      else f"{r['blocks_above_average']:+.0f}")
+                ctrs += (f"<tr><td>{_html.escape(r['name'])}</td>"
+                         f"<td>{fr}</td><td>{bl}</td></tr>")
+            cat_line = (
+                "<p>Free-agent catchers, 2026 (framing runs and "
+                "blocks above average; "
+                f"{cat['fa_catchers_n']} free-agent catchers on the "
+                "boards):</p>"
+                "<table style=\"border-collapse:collapse;font-size:13px;"
+                "margin:8px 0\">" + ctrs + "</table>"
+                f"<p>{_html.escape(cat['abs_caveat'])} "
+                "Catcher boards are 2026 only: the Savant endpoints "
+                "ignore year selection, so no persistence is "
+                "computed.</p>")
+        else:
+            cat_line = ("<p>Catcher framing/blocking unavailable: "
+                        f"{_html.escape(str(cat.get('reason', '')))}"
+                        "</p>")
+        blocks.append(
+            _marker()
+            + "<b>Gloves — range persists; errors are only half the "
+            "story.</b>"
+            f"<p>Outs Above Average persists moderately: matched "
+            f"fielders correlate "
+            f"<span style=\"color:{gold}\">r = "
+            f"{stab['pooled']['r']:.3f}</span> pooled "
+            f"({p1['r']:.3f} for 2024&rarr;2025, n = {p1['n']}; "
+            f"{p2['r']:.3f} for 2025&rarr;2026, n = {p2['n']}). The "
+            "fielding analysis above counts errors; OAA counts range "
+            "— outs made above an average fielder on the same balls "
+            "in play. A glove that prevents runs without recording "
+            "an error is invisible to the error column. The 2026 "
+            f"board holds {dist['n']} fielders, median "
+            f"{dist['median']:.0f}, range {dist['min']:.0f} to "
+            f"+{dist['max']:.0f}. {gloves['fa_pool_n']} free agents "
+            f"on the board; best range: {fa_names}.</p>"
+            + cat_line
+            + "<p class=\"srcline\">Source: Baseball Savant Outs Above "
+            "Average leaderboard, 2024–2026; catcher framing/blocking "
+            "leaderboards, 2026. Artifact: "
+            "data/beyond_the_bat_2027.json.</p>")
+
+    legs = art.get("legs", {})
+    if legs.get("status") != "ok":
+        blocks.append(_unavailable(
+            "Legs — the most stable trait on the page.",
+            legs.get("reason", "sprint boards unavailable")))
+    else:
+        stab = legs["stability_sprint"]
+        p1, p2 = stab["pairs"]["2024_2025"], stab["pairs"]["2025_2026"]
+        dist = legs["distribution_2026"]
+        fa_names = ", ".join(
+            f"{_html.escape(r['name'])} {r['sprint_speed']:.1f}"
+            for r in legs["fa_fastest_2026"][:3])
+        blocks.append(
+            _marker()
+            + "<b>Legs — the most stable trait on the page.</b>"
+            f"<p>Sprint speed barely moves: matched runners correlate "
+            f"<span style=\"color:{gold}\">r = "
+            f"{stab['pooled']['r']:.3f}</span> pooled "
+            f"({p1['r']:.3f} for 2024&rarr;2025, n = {p1['n']}; "
+            f"{p2['r']:.3f} for 2025&rarr;2026, n = {p2['n']}) — more "
+            "stable than bat speed (0.907). The 2026 board holds "
+            f"{dist['n']} runners; median {dist['median']:.1f} "
+            f"ft/sec, middle half {dist['p25']:.1f}–{dist['p75']:.1f}, "
+            f"range {dist['min']:.1f}–{dist['max']:.1f}. "
+            f"{legs['fa_pool_n']} free agents on the board; fastest: "
+            f"{fa_names} ft/sec. Speed persists. Whether it is "
+            "priced right is a separate question this panel does not "
+            "answer.</p>"
+            "<p class=\"srcline\">Source: Baseball Savant sprint "
+            "speed leaderboard, 2024–2026. Artifact: "
+            "data/beyond_the_bat_2027.json.</p>")
+
+    return (
+        '<div class="quant"><b>Beyond the bat — arms, gloves, '
+        "legs.</b>"
+        "<p>Diagnostic only — these traits were tested as projection "
+        "adjustments and none was adopted: adding Savant traits to "
+        "Marcel made projections worse out of sample (claim N04, NOT "
+        "SUPPORTED). Nothing here feeds a projection. What the blocks "
+        "show is where value hides beyond the bat — and how much of "
+        "it lasts from one year to the next.</p>"
+        + "".join(blocks) +
+        f"<p class=\"srcline\">Register claim N04: &ldquo;"
+        f"{_html.escape(art['n04']['claim'])}&rdquo; — "
+        f"{_html.escape(art['n04']['status'])} (Cycle 20). Computed by "
+        "src/pull_beyond_the_bat.py from the committed Baseball "
+        "Savant boards (data/savant_oaa_*, savant_arsenal_*, "
+        "savant_sprint_*, savant_framing_2026, savant_blocking_2026) "
+        "joined to the 2027 free-agent pool "
+        "(data/fa_shopping_2027.json).</p></div>")
+
+
 def _cap_transition_panel_html():
     """Cycle 64: the 2027 Cap Transition ledger — the lead decision
     panel at the front of Boardroom. One row per team: payroll on its
@@ -3038,6 +3257,7 @@ def build():
             explorer += _benchmark_panel_html()
         if n == 19:
             explorer += _bat_speed_exhibit_html()
+            explorer += _beyond_the_bat_html()
         if n == 20:
             explorer += """<details class="panel" id="player-errors">
   <summary><strong>Individual fielding errors by position</strong></summary>
