@@ -4,8 +4,8 @@
   "source_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
   "keyless": true,
   "tool_param": "hardball",
-  "pulled_at": "2026-11-07 20:05 UTC",
-  "pulled_date_pt": "2026-11-07",
+  "pulled_at": "2026-11-13 10:19 UTC",
+  "pulled_date_pt": "2026-11-13",
   "selection_rule": "Per journal: 2 most recent PubMed records matching (baseball OR pitching OR pitchers) in that journal, sorted by publication date. Titles and dates verbatim from PubMed; no summaries.",
   "papers_per_journal": 2,
   "link_rule": "Journal heading links its official homepage only when it answered HTTP 200 during this build; otherwise the PubMed journal-filtered search.",
@@ -88,23 +88,23 @@
     {
      "name": "Journal of Strength and Conditioning Research",
      "query": "(\"baseball\" OR \"pitching\" OR \"pitchers\") AND \"Journal of Strength and Conditioning Research\"[jour]",
-     "found": 186,
+     "found": 187,
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Strength%20and%20Conditioning%20Research%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://journals.lww.com/nsca-jscr",
      "homepage_status": 403,
      "papers": [
       {
+       "title": "Should They Start or Not? A Comparative Analysis of Starter and Nonstarter Preseason Fitness Characteristics in NCAA Division III Baseball.",
+       "date": "2026 Nov 12",
+       "pmid": "43019554",
+       "url": "https://pubmed.ncbi.nlm.nih.gov/43019554/"
+      },
+      {
        "title": "Assessment of Countermovement Jump Performance in Collegiate Baseball Athletes: A Longitudinal Multilevel Modeling Approach.",
        "date": "2026 Oct 13",
        "pmid": "42868034",
        "url": "https://pubmed.ncbi.nlm.nih.gov/42868034/"
-      },
-      {
-       "title": "Acute and Delayed Recovery Effects of Percussive and Ice Therapies on Shoulder Strength and Sensorimotor Function After Baseball Pitching.",
-       "date": "2026 Oct 1",
-       "pmid": "42172289",
-       "url": "https://pubmed.ncbi.nlm.nih.gov/42172289/"
       }
      ]
     }
