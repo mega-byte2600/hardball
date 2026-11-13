@@ -4,14 +4,17 @@
   "source_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
   "keyless": true,
   "tool_param": "hardball",
-  "run_date": "2026-11-02",
-  "generated_at_utc": "2026-11-03 00:26 UTC",
+  "run_date": "2026-11-12",
+  "generated_at_utc": "2026-11-13 04:29 UTC",
   "selection_rule": "Per lane: systematic reviews / meta-analyses first (cellular-recovery lane also prefers other reviews), then most recent by publication date; 3 cards per lane.",
   "cards_per_lane": 3,
   "context_label": "Literature surveillance \u2014 context, not a model input.",
   "refresh_guard_days": 6,
   "pull_script": "src/pull_evidence_surveillance.py",
-  "plain_lines_merged": 12
+  "plain_lines_merged": 12,
+  "held_pending_owner_approval": {
+   "43008361": "Selected #2 in prevention_workload by the deterministic rule on the 2026-11-12 pull; held from publication pending owner approval of a Finding line. Next-ranked card 42925023 (#4) shown instead; its Finding line was already committed on main."
+  }
  },
  "lanes": [
   {
@@ -19,7 +22,7 @@
    "label": "RETURN TO PLAY \u00b7 UCL & THE ELBOW",
    "heading": "Return to Play After UCL Reconstruction",
    "query": "\"ulnar collateral ligament\" AND reconstruction AND \"return to play\"",
-   "found": 157,
+   "found": 160,
    "cards": [
     {
      "pmid": "38599535",
@@ -127,7 +130,7 @@
    "label": "INJURY PREVENTION & WORKLOAD \u00b7 BASEBALL",
    "heading": "Injury Prevention and Workload",
    "query": "baseball AND (\"injury prevention\" OR workload)",
-   "found": 426,
+   "found": 429,
    "cards": [
     {
      "pmid": "42564996",
@@ -162,36 +165,38 @@
      "finding": "Healthy youth and high school players had slightly more hip rotation than injured players. The authors concluded the differences were small and the studies mixed, so no strong recommendation can be made yet."
     },
     {
-     "pmid": "40029165",
+     "pmid": "42802907",
      "authors": [
-      "Paul RW",
-      "Sirch FR",
-      "Vata A",
-      "Zhu E",
-      "Alberta FG",
-      "Erickson BJ",
-      "Thomas SJ"
+      "Dillon MR",
+      "Mastroianni MA",
+      "Frappa N",
+      "Manzi J",
+      "Fuller SI",
+      "Luzzi AJ",
+      "Alexander FJ",
+      "Ablove R",
+      "Chalmers PN",
+      "Ahmad CS"
      ],
-     "authors_display": "Paul RW, Sirch FR, Vata A, et al.",
-     "title": "Chronic Adaptations of the Shoulder in Baseball Pitchers: A Systematic Review.",
+     "authors_display": "Dillon MR, Mastroianni MA, Frappa N, et al.",
+     "title": "Forearm Flexor Strain and Subsequent Ulnar Collateral Ligament Surgery Risk in Major League Baseball Pitchers: A Covariate-Matched Survival Analysis.",
      "journal": "The American journal of sports medicine",
      "journal_abbr": "Am J Sports Med",
-     "year": 2025,
-     "volume": "53",
-     "issue": "12",
-     "pages": "2984-2994",
-     "doi": "10.1177/03635465251317202",
-     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40029165/",
+     "year": 2026,
+     "volume": "54",
+     "issue": "13",
+     "pages": "3271-3279",
+     "doi": "10.1177/03635465261486103",
+     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42802907/",
      "pub_types": [
-      "Journal Article",
-      "Systematic Review"
+      "Journal Article"
      ],
-     "pub_date": "2025-10-01",
-     "abstract": "BACKGROUND: Understanding clinical and tissue adaptations to the throwing shoulder is important for optimizing injury prevention and rehabilitation programs in baseball players. PURPOSE/HYPOTHESIS: The purpose of this study was to determine the chronic clinical (range of motion [ROM] and strength) and tissue adaptations of the throwing shoulder in baseball pitchers. It was hypothesized that the throwing shoulder would have increased external rotation (ER) ROM and decreased internal rotation (IR) ROM compared with the nonthrowing shoulder, but that calculations of soft tissue glenohumeral IR deficit (GIRD) and soft tissue ER gain (ERG) would show that the true soft tissue restrictions were instead in the direction of ER ROM. STUDY DESIGN: Systematic review; Level of evidence, 4. METHODS: This systematic review was performed according to PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) guidelines using various keywords related to the shoulder and baseball. Studies were included if chronic adaptations of the shoulder were evaluated bilaterally in nonrecreational baseball pitchers. Outcomes of interest collected include IR and ER ROM measured in 90\u00b0 of shoulder abduction, humeral retroversion (HR), GIRD, ERG, and various structural adaptations. All other chronic adaptations were compiled and reported qualitatively because of the heterogeneity of variables assessed. RESULTS: Overall, 1273 studies were screened and 36 met final inclusion criteria, with 24 studies (67%) evaluating professional pitchers. Across 13 studies and 1101 professional pitchers, the mean clinical GIRD was 10.0\u00b0 and the mean clinical ERG was 6.5\u00b0, leading to a total arc of ROM deficit of 3.5\u00b0 in the throwing shoulder. Across 498 included pitchers with HR measures, the mean bilateral difference in HR was 15.4\u00b0. After calculating soft tissue GIRD, 3 of 4 studies found that pitchers do not have any soft tissue restrictions in IR ROM. In contrast, after calculating soft tissue ERG, all 4 studies found pitchers to have soft tissue restrictions in ER ROM with a mean of 8\u00b0 to 13\u00b0. CONCLUSION: When isolating for soft tissue restrictions through calculation of soft tissue GIRD and ERG, previously reported IR ROM deficits are currently not as prevalent, and soft tissue restrictions in ER ROM are now being observed. Clinicians should focus on better isolating soft tissue restrictions to evaluate whether an athlete has deficits in IR or ER ROM.",
+     "pub_date": "2026-11-01",
+     "abstract": "BACKGROUND: Ulnar collateral ligament (UCL) injury remains a significant source of time loss for baseball pitchers despite work identifying biomechanical, workload, and velocity risk factors. Because medial elbow stability also depends on the contribution of the forearm flexor-pronator complex, forearm flexor strains may be a marker of downstream UCL risk. PURPOSE: To quantify subsequent UCL surgery risk among Major League Baseball (MLB) pitchers with a nonoperatively managed forearm flexor strain who returned to play, and to evaluate whether return timing and pitching characteristics predicted post-return UCL surgery. STUDY DESIGN: Cohort study; Level of evidence, 3. METHODS: A retrospective cohort study (2015-2024) identified nonoperative forearm flexor strains using publicly available MLB Injury List (IL) data corroborated by official/team sources. Pitchers were included if they returned to MLB within 1 year and were excluded if they had any history of UCL surgery before the index flexor strain. Each case was matched 1 to 2 to controls without a recorded forearm flexor strain who were active at the time of the case's return, using a multivariable distance algorithm across age, body mass index, MLB experience, preindex workload (pitches/game; total pitches), fastball velocity, and prior season elbow/forearm IL days as a marker of baseline elbow/forearm morbidity. Time-to-event analyses were anchored at return-to-play (RTP) using stratified Cox models and Kaplan-Meier estimation. Among cases, univariate Cox models were used to assess prespecified predictors of UCL surgery within 1 year. RESULTS: The cohort included 123 cases and 246 matched controls, with strong covariate balance (all standardized mean differences <0.10). The mean time to RTP after flexor strain was 96.2 \u00b1 89.2 days. At 1 year after RTP, 9.8% of cases underwent UCL surgery versus 4.1% of controls; at 2 years, 13.0% of cases versus 7.7% of controls underwent UCL surgery. Cases had a higher 1-year UCL surgery hazard (hazard ratio [HR], 3 [95% CI, 1.17-7.68]; P = .022); no statistically significant difference in hazard was found at 2 years (HR, 1.86 [95% CI, 0.89-3.89]; P = .097). Within cases, longer RTP time was inversely associated with 1-year UCL surgery risk (HR, 0.98/day [95% CI, 0.96-1]; P = .040); rates decreased across RTP quartiles from 18.8% (8-26 days) to 0% (171-347 days). Fastball velocity, workload, and demographic characteristics were not statistically significant predictors (all P > .13). CONCLUSION: MLB pitchers returning after a nonoperative forearm flexor strain have elevated short-term risk of subsequent UCL surgery versus matched controls within the first year. Return timing was the primary measurable predictor, with longer recovery associated with progressively lower UCL surgery rates. However, because strain grade, UCL integrity, and associated medial elbow pathology were unavailable, RTP timing should be interpreted as a risk marker rather than evidence that delayed return is independently protective.",
      "abstract_present": true,
-     "citation": "Paul RW, Sirch FR, Vata A, et al. Chronic Adaptations of the Shoulder in Baseball Pitchers: A Systematic Review. Am J Sports Med. 2025;53(12):2984-2994. doi:10.1177/03635465251317202",
-     "headline": "How a pitcher's throwing shoulder changes over time",
-     "finding": "Measured in a way that isolates soft tissue, the throwing shoulder's limits showed up in outward rotation rather than inward. The authors concluded that reported inward-rotation losses are not as common as once thought."
+     "citation": "Dillon MR, Mastroianni MA, Frappa N, et al. Forearm Flexor Strain and Subsequent Ulnar Collateral Ligament Surgery Risk in Major League Baseball Pitchers: A Covariate-Matched Survival Analysis. Am J Sports Med. 2026;54(13):3271-3279. doi:10.1177/03635465261486103",
+     "headline": "Forearm flexor strain and later UCL surgery in MLB pitchers",
+     "finding": "Among 123 MLB pitchers who returned after a forearm flexor strain, 9.8% needed UCL surgery within a year, versus 4.1% of 246 matched controls; at two years the figures were 13.0% versus 7.7%. The authors found the one-year risk was about three times higher, and that pitchers who took longer to return had lower one-year surgery rates \u2014 18.8% for the quickest returns, 0% for the slowest \u2014 but they cautioned that return timing is a risk marker, not proof that waiting longer protects the elbow."
     },
     {
      "pmid": "42925023",
@@ -239,7 +244,7 @@
    "label": "CELLULAR RECOVERY \u00b7 MUSCLE REGENERATION",
    "heading": "Muscle Regeneration and Cellular Recovery",
    "query": "(\"skeletal muscle regeneration\" OR \"satellite cells\") AND (injury OR exercise) AND recovery",
-   "found": 404,
+   "found": 406,
    "cards": [
     {
      "pmid": "42335646",
@@ -337,44 +342,8 @@
    "label": "TENDON HEALING & BIOLOGICS",
    "heading": "Tendon Healing and Biologics",
    "query": "(tendon OR ligament) AND (healing OR regeneration) AND (\"platelet-rich plasma\" OR \"growth factors\" OR \"stem cells\") AND (systematic review[pt] OR meta-analysis[pt])",
-   "found": 119,
+   "found": 118,
    "cards": [
-    {
-     "pmid": "42963566",
-     "authors": [
-      "Sabry AO",
-      "Elmenawi KA",
-      "Ibrahim S",
-      "Johnson C",
-      "Abdelgawad AHK",
-      "Hussein A",
-      "Hamam NG",
-      "Latif R",
-      "Arid M",
-      "Elsafoury Y"
-     ],
-     "authors_display": "Sabry AO, Elmenawi KA, Ibrahim S, et al.",
-     "title": "Recent concepts in biological augmentation for rotator cuff tears: a scoping review.",
-     "journal": "BMC musculoskeletal disorders",
-     "journal_abbr": "BMC Musculoskelet Disord",
-     "year": 2026,
-     "volume": "27",
-     "issue": "1",
-     "pages": null,
-     "doi": "10.1186/s12891-026-10436-5",
-     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42963566/",
-     "pub_types": [
-      "Journal Article",
-      "Scoping Review",
-      "Systematic Review"
-     ],
-     "pub_date": "2026-10-17",
-     "abstract": "BACKGROUND: Surgical repair of rotator cuff tears is common, but failure rates remain a significant clinical challenge, particularly in large or degenerative tears. Augmentation strategies have been developed to enhance the biological and mechanical environment of the repair, aiming to improve healing and reduce retear rates. AIM: To provide a comprehensive scoping review of current biological augmentation strategies for rotator cuff repair, summarizing the underlying rationale, available materials, and recent clinical evidence to guide surgical decision-making. METHODS: A systematic literature search was conducted and keywords related to rotator cuff repair and augmentation were used. Included studies investigated biological or combined biological and synthetic augmentation in human or animal subjects. RESULTS: The search yielded 419 studies for qualitative synthesis. Augmentation techniques were categorized into allografts, xenografts, autografts, platelet-rich plasma (PRP), stem cells, non-tissue grafts, and other biological adjuncts. Human dermal allografts were the most frequently studied augmentation strategy and were associated with favorable healing and clinical outcomes in several studies. Autografts, such as fascia lata and the long head of the biceps tendon, have emerged as promising alternatives with favorable biocompatibility. Evidence for PRP and stem cells remains inconsistent, with no universal consensus on preparation and application techniques. Non-tissue synthetic grafts offer mechanical support but lack long-term data. CONCLUSION: Augmentation provides a valuable tool for improving healing in high-risk rotator cuff repairs. Human dermal allografts and autografts are supported by the strongest and largest amount of current evidence. However, no single strategy is universally superior. Future research should focus on large-scale, standardized comparative trials and combinatory approaches that merge structural support with targeted biologic enhancement.",
-     "abstract_present": true,
-     "citation": "Sabry AO, Elmenawi KA, Ibrahim S, et al. Recent concepts in biological augmentation for rotator cuff tears: a scoping review. BMC Musculoskelet Disord. 2026;27(1). doi:10.1186/s12891-026-10436-5",
-     "headline": "Added tissue and biologics for rotator cuff repair: what the evidence supports",
-     "finding": "Reviewing 419 studies, the authors found the strongest support for human donor grafts and a patient's own tissue in high-risk rotator cuff repairs. Evidence for platelet-rich plasma and stem cells was inconsistent, and no single approach was best for every repair."
-    },
     {
      "pmid": "41313368",
      "authors": [
@@ -440,6 +409,40 @@
      "citation": "Serag I, Abouzid M, Hikal H, et al. Platelet-rich plasma in anterior cruciate ligament reconstruction: An updated systematic review and quantitative meta-analysis of randomized controlled trials. Chin J Traumatol. 2026;29(5):358-367. doi:10.1016/j.cjtee.2025.02.008",
      "headline": "Platelet-rich plasma in ACL reconstruction: a small stability gain, mixed results",
      "finding": "Across 18 randomized trials (1,082 patients), platelet-rich plasma improved measured knee stability but did not significantly improve pain or function scores. The authors called for more high-quality trials."
+    },
+    {
+     "pmid": "42445748",
+     "authors": [
+      "Abumadian AW",
+      "Binibrahim MI",
+      "Sultan AH",
+      "Addas MA",
+      "Bamagaus HY",
+      "Alhaddad SK",
+      "Bamabad MO",
+      "Ghalimah BA"
+     ],
+     "authors_display": "Abumadian AW, Binibrahim MI, Sultan AH, et al.",
+     "title": "The Use of Platelet-Rich Plasma for De Quervain's Tenosynovitis: A Systematic Review With Limited Meta-Analysis.",
+     "journal": "Saudi medical journal",
+     "journal_abbr": "Saudi Med J",
+     "year": 2026,
+     "volume": "47",
+     "issue": "8",
+     "pages": "1265-1276",
+     "doi": "10.15537/1658-3175.8818",
+     "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42445748/",
+     "pub_types": [
+      "Journal Article",
+      "Systematic Review",
+      "Meta-Analysis"
+     ],
+     "pub_date": "2026-08-01",
+     "abstract": "INTRODUCTION: De Quervain's tenosynovitis (DQT) is a painful wrist condition that impairs daily activities. Corticosteroid (CS) injections are commonly used for symptom relief, but their effects may diminish over time. Platelet-rich plasma (PRP) has emerged as a regenerative alternative that promotes tissue healing rather than merely suppressing inflammation. This systematic review and limited meta-analysis compare the efficacy and safety of PRP versus CS injections in DQT. A limited meta-analysis was chosen due to the high heterogeneity between studies (I2 = 98.7%). METHODOLOGY: A comprehensive literature search identified six studies comparing PRP and CS injections. Pain and functional outcomes were assessed using the Visual Analog Scale (VAS), Disabilities of the Arm, Shoulder, and Hand (DASH) score, and Mayo Wrist Score (MWS). Statistical significance was analyzed, with follow-up durations ranging from 2 weeks to one year. The risk of bias was evaluated using Cochrane and ROBINS-I tools. RESULTS: Both PRP and CS significantly reduced pain; however, PRP provided superior long-term relief. The VAS scores improved in all studies, with PRP showing significantly greater reduction at 6 months (p < 0.001). A study also found better QuickDASH-9 scores in PRP-treated patients (p < 0.01). The PRP had fewer complications than CS p=0.026, reinforcing its safety advantage. CONCLUSION: The PRP and CS effectively reduce pain, but preliminary evidence suggests PRP may offer longer-lasting symptom relief than corticosteroids; however, findings are limited by small sample sizes, study heterogeneity, and low certainty of evidence. Further high-quality trials with standardized PRP protocols are warranted.",
+     "abstract_present": true,
+     "citation": "Abumadian AW, Binibrahim MI, Sultan AH, et al. The Use of Platelet-Rich Plasma for De Quervain's Tenosynovitis: A Systematic Review With Limited Meta-Analysis. Saudi Med J. 2026;47(8):1265-1276. doi:10.15537/1658-3175.8818",
+     "headline": "Platelet-rich plasma vs corticosteroid for De Quervain's tenosynovitis",
+     "finding": "Across six studies comparing platelet-rich plasma with corticosteroid injections for De Quervain's tenosynovitis, both reduced pain, but the authors found platelet-rich plasma gave greater pain reduction at six months and fewer complications. They called the evidence preliminary, limited by small samples, high heterogeneity between studies, and low certainty, and said better trials are still needed."
     }
    ]
   }
