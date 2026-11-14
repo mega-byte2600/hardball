@@ -33,6 +33,11 @@ Lanes (the integrity rule is structural):
              lane ships EMPTY with the reason on record. Never fake
              buzz items; never substitute AppView search (403),
              Reddit (403), or Mastodon (0 signal) — all dropped.
+             Keyword and player-name matches are whole-word
+             (word-boundary): Cycle 118 caught a substring false
+             positive — "king" firing on "thinking", "trade" on
+             "trades" — that admitted an explicit non-baseball post
+             as BUZZ. The lane must never carry off-topic posts.
 
 Caps (recorded in the artifact, so a build stays cheap):
   Google News per-player queries: top 12 by Steamer WAR.
@@ -307,7 +312,9 @@ def jetstream_read(window_s=20, max_events=300):
             commit = ev.get("commit", {}) if isinstance(ev, dict) else {}
             rec = commit.get("record", {}) if isinstance(commit, dict) else {}
             text = rec.get("text", "") if isinstance(rec, dict) else ""
-            if not text or not any(k in text.lower() for k in keywords):
+            if not text or not any(
+                    re.search(r"\b" + re.escape(k) + r"\b", text.lower())
+                    for k in keywords):
                 continue
             uri = commit.get("uri", "") if isinstance(commit, dict) else ""
             link = ""
@@ -548,7 +555,7 @@ def main():
             text = m["title"]
             low = text.lower()
             named = [full for last, full in last_names.items()
-                     if last in low]
+                     if re.search(r"\b" + re.escape(last) + r"\b", low)]
             if "free agent" not in low and "free-agent" not in low and not named:
                 continue
             buzz.append({
