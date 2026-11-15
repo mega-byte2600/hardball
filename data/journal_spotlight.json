@@ -4,8 +4,8 @@
   "source_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
   "keyless": true,
   "tool_param": "hardball",
-  "pulled_at": "2026-11-13 10:19 UTC",
-  "pulled_date_pt": "2026-11-13",
+  "pulled_at": "2026-11-15 10:18 UTC",
+  "pulled_date_pt": "2026-11-15",
   "selection_rule": "Per journal: 2 most recent PubMed records matching (baseball OR pitching OR pitchers) in that journal, sorted by publication date. Titles and dates verbatim from PubMed; no summaries.",
   "papers_per_journal": 2,
   "link_rule": "Journal heading links its official homepage only when it answered HTTP 200 during this build; otherwise the PubMed journal-filtered search.",
@@ -42,23 +42,23 @@
     {
      "name": "Journal of Applied Biomechanics",
      "query": "(\"baseball\" OR \"pitching\" OR \"pitchers\") AND \"Journal of Applied Biomechanics\"[jour]",
-     "found": 38,
+     "found": 39,
      "link": "https://journals.humankinetics.com/view/journals/jab/jab-overview.xml",
      "link_kind": "official",
      "homepage": "https://journals.humankinetics.com/view/journals/jab/jab-overview.xml",
      "homepage_status": 200,
      "papers": [
       {
+       "title": "No Group Differences in Shoulder Joint Position Sense Between Male Baseball and Female Softball Athletes and Controls in Virtual Reality.",
+       "date": "2026 Nov 13",
+       "pmid": "43033812",
+       "url": "https://pubmed.ncbi.nlm.nih.gov/43033812/"
+      },
+      {
        "title": "The Coefficient of Propulsion: A Composite Measure of Trail Leg Force Production During Baseball Pitching.",
        "date": "2026 Oct 21",
        "pmid": "42906891",
        "url": "https://pubmed.ncbi.nlm.nih.gov/42906891/"
-      },
-      {
-       "title": "Comparison of Biomechanical Variables and Pitching Timing in Professional Baseball Pitchers According to Ball Velocity.",
-       "date": "2026 Aug 5",
-       "pmid": "42562365",
-       "url": "https://pubmed.ncbi.nlm.nih.gov/42562365/"
       }
      ]
     },
