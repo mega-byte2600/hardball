@@ -4,8 +4,8 @@
   "source_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
   "keyless": true,
   "tool_param": "hardball",
-  "pulled_at": "2026-11-15 10:18 UTC",
-  "pulled_date_pt": "2026-11-15",
+  "pulled_at": "2026-11-16 16:22 UTC",
+  "pulled_date_pt": "2026-11-16",
   "selection_rule": "Per journal: 2 most recent PubMed records matching (baseball OR pitching OR pitchers) in that journal, sorted by publication date. Titles and dates verbatim from PubMed; no summaries.",
   "papers_per_journal": 2,
   "link_rule": "Journal heading links its official homepage only when it answered HTTP 200 during this build; otherwise the PubMed journal-filtered search.",
@@ -163,23 +163,23 @@
     {
      "name": "Orthopaedic Journal of Sports Medicine",
      "query": "(\"baseball\" OR \"pitching\" OR \"pitchers\") AND \"Orthopaedic Journal of Sports Medicine\"[jour]",
-     "found": 366,
+     "found": 369,
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Orthopaedic%20Journal%20of%20Sports%20Medicine%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://journals.sagepub.com/home/ojs",
      "homepage_status": 403,
      "papers": [
       {
-       "title": "Game-Level Temporal Patterns Identify Optimal Preinjury Windows for Shoulder and Elbow Injuries in Major League Baseball Pitchers.",
-       "date": "2026 Sep",
-       "pmid": "42973969",
-       "url": "https://pubmed.ncbi.nlm.nih.gov/42973969/"
+       "title": "A Biomechanical Analysis and Comparison of Prior Injury History in Professional Baseball Pitchers on the Basis of Stride Length.",
+       "date": "2026 Oct",
+       "pmid": "43036626",
+       "url": "https://pubmed.ncbi.nlm.nih.gov/43036626/"
       },
       {
-       "title": "The Effect of Activating the Scapular Muscles During Warm-up on Shoulder Function and Baseball Pitching Performance in Male Adult Baseball Players: An Approach Using Electric Muscle Stimulation.",
-       "date": "2026 Sep",
-       "pmid": "42724368",
-       "url": "https://pubmed.ncbi.nlm.nih.gov/42724368/"
+       "title": "Impact of the COVID-19 Pandemic on Prevalence of Capitellar Osteochondritis Dissecans in Preadolescent Baseball Players in Japan.",
+       "date": "2026 Oct",
+       "pmid": "43036504",
+       "url": "https://pubmed.ncbi.nlm.nih.gov/43036504/"
       }
      ]
     },
@@ -288,7 +288,7 @@
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Sports%20Health%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://journals.sagepub.com/home/sph",
-     "homepage_status": 403,
+     "homepage_status": null,
      "papers": [
       {
        "title": "Medical Imaging for Load Monitoring: A Perspective on Imaging's Value for Reducing the Frequency and Severity of Ulnar Collateral Ligament Injuries in Baseball Pitchers.",
