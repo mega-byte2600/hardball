@@ -1,6 +1,6 @@
 {
  "metadata": {
-  "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+  "pulled_at": "2026-11-18T16:23:45.920844+00:00",
   "window": {
    "transactions_start": "2026-11-11",
    "transactions_end": "2026-11-18"
@@ -48,8 +48,8 @@
    {
     "source": "MLB StatsAPI transactions",
     "status": "ok",
-    "fetched": 494,
-    "kept": 98,
+    "fetched": 540,
+    "kept": 128,
     "note": "window 2026-11-11..2026-11-18, FA codes SFA,DFA,TR,REL,CLW,OUT,DES; 1 FA-code row(s) skipped with no description and no player name"
    },
    {
@@ -63,7 +63,7 @@
     "source": "ESPN news",
     "status": "ok",
     "fetched": 6,
-    "kept": 4,
+    "kept": 5,
     "note": "unofficial public endpoint; FA-keyword filtered"
    },
    {
@@ -252,49 +252,49 @@
     "source": "RotoWire",
     "status": "ok",
     "fetched": 5,
-    "kept": 0,
+    "kept": 1,
     "note": ""
    },
    {
     "source": "Google News (MLB free agency)",
     "status": "ok",
-    "fetched": 100,
-    "kept": 100,
+    "fetched": 93,
+    "kept": 93,
     "note": "links are Google redirects; deduped on title+source"
    },
    {
     "source": "Google News (Tarik Skubal)",
     "status": "ok",
-    "fetched": 87,
-    "kept": 87,
+    "fetched": 96,
+    "kept": 96,
     "note": "links are Google redirects; deduped on title+source"
    },
    {
     "source": "Google News (William Contreras)",
     "status": "ok",
-    "fetched": 11,
-    "kept": 11,
+    "fetched": 9,
+    "kept": 9,
     "note": "links are Google redirects; deduped on title+source"
    },
    {
     "source": "Google News (Drew Rasmussen)",
     "status": "ok",
-    "fetched": 7,
-    "kept": 7,
+    "fetched": 0,
+    "kept": 0,
     "note": "links are Google redirects; deduped on title+source"
    },
    {
     "source": "Google News (Trevor Rogers)",
     "status": "ok",
-    "fetched": 21,
-    "kept": 21,
+    "fetched": 23,
+    "kept": 23,
     "note": "links are Google redirects; deduped on title+source"
    },
    {
     "source": "Google News (Sonny Gray)",
     "status": "ok",
-    "fetched": 8,
-    "kept": 8,
+    "fetched": 12,
+    "kept": 12,
     "note": "links are Google redirects; deduped on title+source"
    },
    {
@@ -307,8 +307,8 @@
    {
     "source": "Google News (Isaac Paredes)",
     "status": "ok",
-    "fetched": 7,
-    "kept": 7,
+    "fetched": 9,
+    "kept": 9,
     "note": "links are Google redirects; deduped on title+source"
    },
    {
@@ -321,22 +321,22 @@
    {
     "source": "Google News (Foster Griffin)",
     "status": "ok",
-    "fetched": 7,
-    "kept": 7,
+    "fetched": 8,
+    "kept": 8,
     "note": "links are Google redirects; deduped on title+source"
    },
    {
     "source": "Google News (Michael King)",
     "status": "ok",
-    "fetched": 15,
-    "kept": 15,
+    "fetched": 16,
+    "kept": 16,
     "note": "links are Google redirects; deduped on title+source"
    },
    {
     "source": "Google News (Seiya Suzuki)",
     "status": "ok",
-    "fetched": 30,
-    "kept": 30,
+    "fetched": 33,
+    "kept": 33,
     "note": "links are Google redirects; deduped on title+source"
    },
    {
@@ -355,16 +355,28 @@
    }
   ],
   "counts": {
-   "signed": 98,
+   "signed": 128,
    "reported": 200,
    "buzz": 0,
-   "total": 298
+   "total": 328
   },
   "integrity": "Items promote to SIGNED only when the MLB StatsAPI transactions feed carries them. REPORTED and BUZZ items are never labeled signings."
  },
  "items": [
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Seattle Mariners signed free agent RHP Bryce Conley to a minor league contract.",
+   "link": "",
+   "player": "Bryce Conley",
+   "team": "Seattle Mariners",
+   "statsapi_transaction_id": 950598,
+   "source_pubdate": "2026-11-17",
+   "move_type": "SFA \u2014 Signed free agent"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Washington Nationals designated RHP Josiah Gray for assignment.",
@@ -376,43 +388,163 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
-   "title": "San Francisco Giants designated SS Christian Koss for assignment.",
+   "title": "Athletics signed free agent RHP Wilkin Ramos to a minor league contract.",
    "link": "",
-   "player": "Christian Koss",
-   "team": "San Francisco Giants",
-   "statsapi_transaction_id": 950509,
+   "player": "Wilkin Ramos",
+   "team": "Athletics",
+   "statsapi_transaction_id": 950560,
    "source_pubdate": "2026-11-17",
-   "move_type": "DES \u2014 Designated for assignment"
+   "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
-   "title": "St. Louis Cardinals designated RHP Max Rajcic for assignment.",
+   "title": "DSL Cubs Red released LHP Sebastian Lopez.",
    "link": "",
-   "player": "Max Rajcic",
-   "team": "St. Louis Cardinals",
-   "statsapi_transaction_id": 950510,
-   "source_pubdate": "2026-11-17",
-   "move_type": "DES \u2014 Designated for assignment"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "SIGNED",
-   "source": "MLB StatsAPI transactions",
-   "title": "Baltimore Orioles released RF Rece Hinds.",
-   "link": "",
-   "player": "Rece Hinds",
-   "team": "Baltimore Orioles",
-   "statsapi_transaction_id": 950321,
+   "player": "Sebastian Lopez",
+   "team": "DSL Cubs Red",
+   "statsapi_transaction_id": 950570,
    "source_pubdate": "2026-11-17",
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Kansas City Royals signed free agent RHP Vince Velasquez to a minor league contract.",
+   "link": "",
+   "player": "Vince Velasquez",
+   "team": "Kansas City Royals",
+   "statsapi_transaction_id": 950579,
+   "source_pubdate": "2026-11-17",
+   "move_type": "SFA \u2014 Signed free agent"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Milwaukee Brewers signed free agent 3B Jheremy Vargas to a minor league contract.",
+   "link": "",
+   "player": "Jheremy Vargas",
+   "team": "Milwaukee Brewers",
+   "statsapi_transaction_id": 950586,
+   "source_pubdate": "2026-11-17",
+   "move_type": "SFA \u2014 Signed free agent"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Athletics signed free agent RHP Ryan Murphy to a minor league contract.",
+   "link": "",
+   "player": "Ryan Murphy",
+   "team": "Athletics",
+   "statsapi_transaction_id": 950557,
+   "source_pubdate": "2026-11-17",
+   "move_type": "SFA \u2014 Signed free agent"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Iowa Cubs released RHP Tyler Santana.",
+   "link": "",
+   "player": "Tyler Santana",
+   "team": "Iowa Cubs",
+   "statsapi_transaction_id": 950573,
+   "source_pubdate": "2026-11-17",
+   "move_type": "REL \u2014 Released"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Frederick Keys released RHP Grabiel Salazar.",
+   "link": "",
+   "player": "Grabiel Salazar",
+   "team": "Frederick Keys",
+   "statsapi_transaction_id": 950564,
+   "source_pubdate": "2026-11-17",
+   "move_type": "REL \u2014 Released"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Oklahoma City Comets released 2B Austin Gauthier.",
+   "link": "",
+   "player": "Austin Gauthier",
+   "team": "Oklahoma City Comets",
+   "statsapi_transaction_id": 950582,
+   "source_pubdate": "2026-11-17",
+   "move_type": "REL \u2014 Released"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "South Bend Cubs released LHP Evan Aschenbeck.",
+   "link": "",
+   "player": "Evan Aschenbeck",
+   "team": "South Bend Cubs",
+   "statsapi_transaction_id": 950566,
+   "source_pubdate": "2026-11-17",
+   "move_type": "REL \u2014 Released"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Myrtle Beach Pelicans released LHP Hayden Frank.",
+   "link": "",
+   "player": "Hayden Frank",
+   "team": "Myrtle Beach Pelicans",
+   "statsapi_transaction_id": 950567,
+   "source_pubdate": "2026-11-17",
+   "move_type": "REL \u2014 Released"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Minnesota Twins signed free agent RHP Jose Espada to a minor league contract.",
+   "link": "",
+   "player": "Jose Espada",
+   "team": "Minnesota Twins",
+   "statsapi_transaction_id": 950589,
+   "source_pubdate": "2026-11-17",
+   "move_type": "SFA \u2014 Signed free agent"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Philadelphia Phillies signed free agent C Brian Navarreto to a minor league contract.",
+   "link": "",
+   "player": "Brian Navarreto",
+   "team": "Philadelphia Phillies",
+   "statsapi_transaction_id": 950592,
+   "source_pubdate": "2026-11-17",
+   "move_type": "SFA \u2014 Signed free agent"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Tampa Bay Rays signed free agent RHP Levi Stoudt to a minor league contract.",
+   "link": "",
+   "player": "Levi Stoudt",
+   "team": "Tampa Bay Rays",
+   "statsapi_transaction_id": 950604,
+   "source_pubdate": "2026-11-17",
+   "move_type": "SFA \u2014 Signed free agent"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Washington Nationals designated RHP Gus Varland for assignment.",
@@ -424,7 +556,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Washington Nationals designated LHP Carson Palmquist for assignment.",
@@ -436,7 +568,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Kansas City Royals designated RHP Nick Mears for assignment.",
@@ -448,7 +580,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Minnesota Twins signed free agent C Ryan Jeffers.",
@@ -460,7 +592,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "New York Mets designated RHP Dylan Ross for assignment.",
@@ -472,7 +604,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "New York Yankees signed free agent RHP David Bednar.",
@@ -484,7 +616,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Detroit Tigers designated 3B Jace Jung for assignment.",
@@ -496,7 +628,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Detroit Tigers designated LHP Jake Miller for assignment.",
@@ -508,7 +640,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Detroit Tigers designated SS Trey Sweeney for assignment.",
@@ -520,7 +652,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Detroit Tigers designated CF Matt Vierling for assignment.",
@@ -532,7 +664,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Athletics designated RHP Hayden Juenger for assignment.",
@@ -544,7 +676,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Athletics designated RHP Yunior Tur for assignment.",
@@ -556,7 +688,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Los Angeles Dodgers designated SS Christian Cairo for assignment.",
@@ -568,7 +700,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Los Angeles Dodgers designated RHP Jake Cousins for assignment.",
@@ -580,55 +712,67 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
-   "title": "Chicago White Sox designated C Joey Bart for assignment.",
+   "title": "San Diego Padres signed free agent OF Cal Stevenson to a minor league contract.",
    "link": "",
-   "player": "Joey Bart",
-   "team": "Chicago White Sox",
-   "statsapi_transaction_id": 950370,
-   "source_pubdate": "2026-11-17",
-   "move_type": "DES \u2014 Designated for assignment"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "SIGNED",
-   "source": "MLB StatsAPI transactions",
-   "title": "Athletics designated RHP Braden Nett for assignment.",
-   "link": "",
-   "player": "Braden Nett",
-   "team": "Athletics",
-   "statsapi_transaction_id": 950347,
-   "source_pubdate": "2026-11-17",
-   "move_type": "DES \u2014 Designated for assignment"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "SIGNED",
-   "source": "MLB StatsAPI transactions",
-   "title": "Detroit Tigers signed free agent RHP Emilio Pag\u00e1n.",
-   "link": "",
-   "player": "Emilio Pag\u00e1n",
-   "team": "Detroit Tigers",
-   "statsapi_transaction_id": 950369,
+   "player": "Cal Stevenson",
+   "team": "San Diego Padres",
+   "statsapi_transaction_id": 950596,
    "source_pubdate": "2026-11-17",
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
-   "title": "San Francisco Giants designated RHP Rowan Wick for assignment.",
+   "title": "DSL Cubs Blue released SS Samir Guerrero.",
    "link": "",
-   "player": "Rowan Wick",
-   "team": "San Francisco Giants",
-   "statsapi_transaction_id": 950508,
+   "player": "Samir Guerrero",
+   "team": "DSL Cubs Blue",
+   "statsapi_transaction_id": 950569,
    "source_pubdate": "2026-11-17",
-   "move_type": "DES \u2014 Designated for assignment"
+   "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "South Bend Cubs released RHP Alfredo Romero.",
+   "link": "",
+   "player": "Alfredo Romero",
+   "team": "South Bend Cubs",
+   "statsapi_transaction_id": 950572,
+   "source_pubdate": "2026-11-17",
+   "move_type": "REL \u2014 Released"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Knoxville Smokies released RHP Frankie Scalzo Jr..",
+   "link": "",
+   "player": "Frankie Scalzo Jr.",
+   "team": "Knoxville Smokies",
+   "statsapi_transaction_id": 950574,
+   "source_pubdate": "2026-11-17",
+   "move_type": "REL \u2014 Released"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "South Bend Cubs released RHP Adam Stone.",
+   "link": "",
+   "player": "Adam Stone",
+   "team": "South Bend Cubs",
+   "statsapi_transaction_id": 950575,
+   "source_pubdate": "2026-11-17",
+   "move_type": "REL \u2014 Released"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Washington Nationals designated RHP Braxton Roxby for assignment.",
@@ -640,7 +784,91 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Chicago White Sox designated C Joey Bart for assignment.",
+   "link": "",
+   "player": "Joey Bart",
+   "team": "Chicago White Sox",
+   "statsapi_transaction_id": 950370,
+   "source_pubdate": "2026-11-17",
+   "move_type": "DES \u2014 Designated for assignment"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Athletics designated RHP Braden Nett for assignment.",
+   "link": "",
+   "player": "Braden Nett",
+   "team": "Athletics",
+   "statsapi_transaction_id": 950347,
+   "source_pubdate": "2026-11-17",
+   "move_type": "DES \u2014 Designated for assignment"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "San Francisco Giants designated RHP Rowan Wick for assignment.",
+   "link": "",
+   "player": "Rowan Wick",
+   "team": "San Francisco Giants",
+   "statsapi_transaction_id": 950508,
+   "source_pubdate": "2026-11-17",
+   "move_type": "DES \u2014 Designated for assignment"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Chesapeake Baysox released RHP Carlos Tavera.",
+   "link": "",
+   "player": "Carlos Tavera",
+   "team": "Chesapeake Baysox",
+   "statsapi_transaction_id": 950565,
+   "source_pubdate": "2026-11-17",
+   "move_type": "REL \u2014 Released"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Delmarva Shorebirds released RHP Trey Nordmann.",
+   "link": "",
+   "player": "Trey Nordmann",
+   "team": "Delmarva Shorebirds",
+   "statsapi_transaction_id": 950563,
+   "source_pubdate": "2026-11-17",
+   "move_type": "REL \u2014 Released"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Tulsa Drillers released C Griffin Lockwood-Powell.",
+   "link": "",
+   "player": "Griffin Lockwood-Powell",
+   "team": "Tulsa Drillers",
+   "statsapi_transaction_id": 950583,
+   "source_pubdate": "2026-11-17",
+   "move_type": "REL \u2014 Released"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Baltimore Orioles released RF Rece Hinds.",
+   "link": "",
+   "player": "Rece Hinds",
+   "team": "Baltimore Orioles",
+   "statsapi_transaction_id": 950321,
+   "source_pubdate": "2026-11-17",
+   "move_type": "REL \u2014 Released"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Boston Red Sox signed free agent 1B Jake Bauers.",
@@ -652,7 +880,139 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Detroit Tigers signed free agent RHP Emilio Pag\u00e1n.",
+   "link": "",
+   "player": "Emilio Pag\u00e1n",
+   "team": "Detroit Tigers",
+   "statsapi_transaction_id": 950369,
+   "source_pubdate": "2026-11-17",
+   "move_type": "SFA \u2014 Signed free agent"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Philadelphia Phillies signed free agent RHP Max Kranick to a minor league contract.",
+   "link": "",
+   "player": "Max Kranick",
+   "team": "Philadelphia Phillies",
+   "statsapi_transaction_id": 950594,
+   "source_pubdate": "2026-11-17",
+   "move_type": "SFA \u2014 Signed free agent"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Seattle Mariners signed free agent RHP Johnathan Lavallee to a minor league contract.",
+   "link": "",
+   "player": "Johnathan Lavallee",
+   "team": "Seattle Mariners",
+   "statsapi_transaction_id": 950602,
+   "source_pubdate": "2026-11-17",
+   "move_type": "SFA \u2014 Signed free agent"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Seattle Mariners signed free agent RHP Bryce Conley to a minor league contract.",
+   "link": "",
+   "player": "Bryce Conley",
+   "team": "Seattle Mariners",
+   "statsapi_transaction_id": 950599,
+   "source_pubdate": "2026-11-17",
+   "move_type": "SFA \u2014 Signed free agent"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Frederick Keys released RHP Hayden Nierman.",
+   "link": "",
+   "player": "Hayden Nierman",
+   "team": "Frederick Keys",
+   "statsapi_transaction_id": 950562,
+   "source_pubdate": "2026-11-17",
+   "move_type": "REL \u2014 Released"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "San Francisco Giants designated SS Christian Koss for assignment.",
+   "link": "",
+   "player": "Christian Koss",
+   "team": "San Francisco Giants",
+   "statsapi_transaction_id": 950509,
+   "source_pubdate": "2026-11-17",
+   "move_type": "DES \u2014 Designated for assignment"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Myrtle Beach Pelicans released RHP Luis A. Reyes.",
+   "link": "",
+   "player": "Luis A. Reyes",
+   "team": "Myrtle Beach Pelicans",
+   "statsapi_transaction_id": 950571,
+   "source_pubdate": "2026-11-17",
+   "move_type": "REL \u2014 Released"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "St. Louis Cardinals designated RHP Max Rajcic for assignment.",
+   "link": "",
+   "player": "Max Rajcic",
+   "team": "St. Louis Cardinals",
+   "statsapi_transaction_id": 950510,
+   "source_pubdate": "2026-11-17",
+   "move_type": "DES \u2014 Designated for assignment"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Athletics signed free agent LHP Luke Little to a minor league contract.",
+   "link": "",
+   "player": "Luke Little",
+   "team": "Athletics",
+   "statsapi_transaction_id": 950554,
+   "source_pubdate": "2026-11-17",
+   "move_type": "SFA \u2014 Signed free agent"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Myrtle Beach Pelicans released LHP Christian Gordon.",
+   "link": "",
+   "player": "Christian Gordon",
+   "team": "Myrtle Beach Pelicans",
+   "statsapi_transaction_id": 950568,
+   "source_pubdate": "2026-11-17",
+   "move_type": "REL \u2014 Released"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Tulsa Drillers released 2B Taylor Young.",
+   "link": "",
+   "player": "Taylor Young",
+   "team": "Tulsa Drillers",
+   "statsapi_transaction_id": 950584,
+   "source_pubdate": "2026-11-17",
+   "move_type": "REL \u2014 Released"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Boston Red Sox traded RHP Angel Bastardo to Kansas City Royals for SS Jack Pineda.",
@@ -664,7 +1024,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Boston Red Sox traded RHP Angel Bastardo to Kansas City Royals for SS Jack Pineda.",
@@ -676,43 +1036,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "SIGNED",
-   "source": "MLB StatsAPI transactions",
-   "title": "Texas Rangers claimed RHP Josh White off waivers from Baltimore Orioles.",
-   "link": "",
-   "player": "Josh White",
-   "team": "Texas Rangers",
-   "statsapi_transaction_id": 950367,
-   "source_pubdate": "2026-11-17",
-   "move_type": "CLW \u2014 Cleared waivers"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "SIGNED",
-   "source": "MLB StatsAPI transactions",
-   "title": "Atlanta Braves claimed RHP Cameron Foster off waivers from Baltimore Orioles.",
-   "link": "",
-   "player": "Cameron Foster",
-   "team": "Atlanta Braves",
-   "statsapi_transaction_id": 950365,
-   "source_pubdate": "2026-11-17",
-   "move_type": "CLW \u2014 Cleared waivers"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "SIGNED",
-   "source": "MLB StatsAPI transactions",
-   "title": "New York Yankees claimed RHP Chase Hampton off waivers from Baltimore Orioles.",
-   "link": "",
-   "player": "Chase Hampton",
-   "team": "New York Yankees",
-   "statsapi_transaction_id": 950366,
-   "source_pubdate": "2026-11-17",
-   "move_type": "CLW \u2014 Cleared waivers"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Washington Nationals claimed LHP Philip Abner off waivers from Baltimore Orioles.",
@@ -724,7 +1048,7 @@
    "move_type": "CLW \u2014 Cleared waivers"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Boston Red Sox traded LHP Raymond Burgos to Athletics for RHP Kenya Huggins.",
@@ -736,7 +1060,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Boston Red Sox traded LHP Raymond Burgos to Athletics for RHP Kenya Huggins.",
@@ -748,19 +1072,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "SIGNED",
-   "source": "MLB StatsAPI transactions",
-   "title": "Baltimore Orioles sent C Zach Morgan outright to Norfolk Tides.",
-   "link": "",
-   "player": "Zach Morgan",
-   "team": "Norfolk Tides",
-   "statsapi_transaction_id": 950368,
-   "source_pubdate": "2026-11-17",
-   "move_type": "OUT \u2014 Outrighted"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Baltimore Orioles traded RHP Yaqui Rivera to Athletics for RHP Josiah Romeo.",
@@ -772,7 +1084,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Baltimore Orioles traded RHP Yaqui Rivera to Athletics for RHP Josiah Romeo.",
@@ -784,19 +1096,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "SIGNED",
-   "source": "MLB StatsAPI transactions",
-   "title": "Houston Astros sent LF Joey Loperfido outright to Sugar Land Space Cowboys.",
-   "link": "",
-   "player": "Joey Loperfido",
-   "team": "Sugar Land Space Cowboys",
-   "statsapi_transaction_id": 950402,
-   "source_pubdate": "2026-11-17",
-   "move_type": "OUT \u2014 Outrighted"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Tigres del Licey traded RHP Cam Robinson and RHP Misael Tamarez to Toros del Este.",
@@ -808,7 +1108,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Tigres del Licey traded RHP Cam Robinson and RHP Misael Tamarez to Toros del Este.",
@@ -820,7 +1120,67 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Houston Astros sent LF Joey Loperfido outright to Sugar Land Space Cowboys.",
+   "link": "",
+   "player": "Joey Loperfido",
+   "team": "Sugar Land Space Cowboys",
+   "statsapi_transaction_id": 950402,
+   "source_pubdate": "2026-11-17",
+   "move_type": "OUT \u2014 Outrighted"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Atlanta Braves claimed RHP Cameron Foster off waivers from Baltimore Orioles.",
+   "link": "",
+   "player": "Cameron Foster",
+   "team": "Atlanta Braves",
+   "statsapi_transaction_id": 950365,
+   "source_pubdate": "2026-11-17",
+   "move_type": "CLW \u2014 Cleared waivers"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "New York Yankees claimed RHP Chase Hampton off waivers from Baltimore Orioles.",
+   "link": "",
+   "player": "Chase Hampton",
+   "team": "New York Yankees",
+   "statsapi_transaction_id": 950366,
+   "source_pubdate": "2026-11-17",
+   "move_type": "CLW \u2014 Cleared waivers"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Baltimore Orioles sent C Zach Morgan outright to Norfolk Tides.",
+   "link": "",
+   "player": "Zach Morgan",
+   "team": "Norfolk Tides",
+   "statsapi_transaction_id": 950368,
+   "source_pubdate": "2026-11-17",
+   "move_type": "OUT \u2014 Outrighted"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "SIGNED",
+   "source": "MLB StatsAPI transactions",
+   "title": "Texas Rangers claimed RHP Josh White off waivers from Baltimore Orioles.",
+   "link": "",
+   "player": "Josh White",
+   "team": "Texas Rangers",
+   "statsapi_transaction_id": 950367,
+   "source_pubdate": "2026-11-17",
+   "move_type": "CLW \u2014 Cleared waivers"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "South Bend Cubs released OF Geuri Lubo.",
@@ -832,7 +1192,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Detroit Tigers signed free agent RHP Sawyer Gipson-Long to a minor league contract.",
@@ -844,7 +1204,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "DSL Cubs Blue released SS Stharling De Los Santos.",
@@ -856,7 +1216,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Baltimore Orioles signed free agent SS Jos\u00e9 Barrero to a minor league contract.",
@@ -868,7 +1228,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Houston Astros signed free agent RHP Jose Gonzalez to a minor league contract.",
@@ -880,7 +1240,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Arizona Diamondbacks signed free agent OF Ismael Munguia to a minor league contract.",
@@ -892,7 +1252,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Detroit Tigers signed free agent LHP Bailey Horn to a minor league contract.",
@@ -904,7 +1264,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Philadelphia Phillies signed free agent C Blake Hunt to a minor league contract.",
@@ -916,7 +1276,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Bravos de Margarita released RHP Carlos Suniaga.",
@@ -928,7 +1288,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Aguilas Cibaenas traded RHP Roddery Mu\u00f1oz to Leones del Escogido.",
@@ -940,7 +1300,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "San Francisco Giants traded RHP Ryan Walker to Milwaukee Brewers for RHP Blake Holub and RHP Gavin Perry.",
@@ -952,7 +1312,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "San Francisco Giants traded RHP Ryan Walker to Milwaukee Brewers for RHP Blake Holub and RHP Gavin Perry.",
@@ -964,7 +1324,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "San Francisco Giants traded RHP Ryan Walker to Milwaukee Brewers for RHP Blake Holub and RHP Gavin Perry.",
@@ -976,7 +1336,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Aguilas del Zulia released RHP Bryce Bonnin.",
@@ -988,7 +1348,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Milwaukee Brewers signed free agent RHP Stiven Cruz to a minor league contract and invited him to spring training.",
@@ -1000,7 +1360,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "New York Mets traded RHP Juan Arnaud to Texas Rangers.",
@@ -1012,7 +1372,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Los Angeles Angels signed free agent LHP Sammy Peralta to a minor league contract and invited him to spring training.",
@@ -1024,7 +1384,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Wilmington Blue Rocks released RHP Euri Montero.",
@@ -1036,7 +1396,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Dunedin Blue Jays released RHP Victor Espiritu.",
@@ -1048,7 +1408,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Dunedin Blue Jays released OF Yorman Licourt.",
@@ -1060,7 +1420,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Texas Rangers signed free agent RHP John Armstrong to a minor league contract.",
@@ -1072,7 +1432,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Cardenales de Lara released OF Spencer Packard.",
@@ -1084,7 +1444,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Philadelphia Phillies signed free agent RHP Geoff Hartlieb to a minor league contract.",
@@ -1096,7 +1456,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Philadelphia Phillies signed free agent 3B Bryan Ramos to a minor league contract.",
@@ -1108,7 +1468,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Vancouver Canadians released SS Max Viera.",
@@ -1120,7 +1480,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Buffalo Bisons released 1B Peyton Williams.",
@@ -1132,7 +1492,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Atlanta Braves signed free agent RF Tyler Freeman to a minor league contract.",
@@ -1144,7 +1504,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "San Francisco Giants signed free agent LHP Esmerlin Vinicio to a minor league contract.",
@@ -1156,7 +1516,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "FCL Blue Jays released RHP Freigher Barco.",
@@ -1168,7 +1528,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "San Diego Padres signed free agent RHP Angel Hernandez to a minor league contract.",
@@ -1180,7 +1540,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "FCL Blue Jays released LHP Ramon Suarez.",
@@ -1192,7 +1552,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Dunedin Blue Jays released RHP Sann Omosako.",
@@ -1204,7 +1564,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Athletics signed free agent LHP Ben Bowden to a minor league contract.",
@@ -1216,7 +1576,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Miami Marlins signed free agent LHP Luis Palacios to a minor league contract.",
@@ -1228,7 +1588,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "DSL Padres Brown released RHP Yohn Melendez.",
@@ -1240,7 +1600,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "San Diego Padres signed free agent SS Raimundo De Los Santos to a minor league contract.",
@@ -1252,7 +1612,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Indios de Mayaguez traded RF Danny Ortiz to Criollos de Caguas for SS Edison Mora.",
@@ -1264,7 +1624,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Indios de Mayaguez traded RF Danny Ortiz to Criollos de Caguas for SS Edison Mora.",
@@ -1276,7 +1636,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Indios de Mayaguez traded RF Danny Ortiz to Criollos de Caguas for SS Edison Mora.",
@@ -1288,7 +1648,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP Angel Hernandez elected free agency.",
@@ -1300,7 +1660,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Washington Nationals released RHP Kyle Nicolas.",
@@ -1312,7 +1672,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Atlanta Braves signed free agent RHP Evan Phillips.",
@@ -1324,7 +1684,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "FCL Blue Jays released RHP Michael De La Cruz.",
@@ -1336,7 +1696,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Vancouver Canadians released RHP Eminen Flores.",
@@ -1348,7 +1708,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Buffalo Bisons released LHP Trenton Wallace.",
@@ -1360,7 +1720,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "FCL Blue Jays released LHP Luis Torres.",
@@ -1372,7 +1732,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Bravos de Margarita released OF Tomo Otosaka.",
@@ -1384,7 +1744,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Kannapolis Cannon Ballers released RHP Anthony Patterson III.",
@@ -1396,7 +1756,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Charros de Jalisco released RHP Alberto Leyva.",
@@ -1408,7 +1768,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Arizona Diamondbacks signed free agent RHP Kohl Franklin to a minor league contract.",
@@ -1420,7 +1780,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Cincinnati Reds signed free agent RHP Trevor Kuncl to a minor league contract.",
@@ -1432,7 +1792,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Cincinnati Reds signed free agent CF Shane Sasaki to a minor league contract.",
@@ -1444,7 +1804,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Cincinnati Reds signed free agent LHP Ben Wereski to a minor league contract.",
@@ -1456,7 +1816,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Chicago White Sox signed free agent RHP Alec Marsh to a minor league contract and invited him to spring training.",
@@ -1468,7 +1828,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "DSL Rockies released RHP Francisco Perez.",
@@ -1480,7 +1840,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "DSL Colorado released RHP Brian Tiburcio.",
@@ -1492,7 +1852,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "DSL Rockies released RHP Antony Ventura.",
@@ -1504,7 +1864,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Milwaukee Brewers signed free agent LHP Ben Moore to a minor league contract.",
@@ -1516,7 +1876,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Texas Rangers signed free agent 2B Max Wagner to a minor league contract.",
@@ -1528,7 +1888,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "FCL Nationals released RHP Clarence Martina.",
@@ -1540,73 +1900,645 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "ESPN news",
+   "title": "Sources: Royals trade Maikel Garcia to Mariners for Bryce Miller",
+   "link": "https://www.espn.com/mlb/story/_/id/50521866/sources-royals-trade-maikel-garcia-mariners-miller",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T16:22:31Z"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Philadelphia Phillies Predicted To Sign Coveted 3-Time All-Star Outfielder in Free Agency - Heavy.com",
+   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPdTUzM01ibFFXRGhDLWZ5Y2pnRElHeTdiR0dtdUVzNWRkVUpZV2xKb2dPRTROcV9oZlhiREI4bGQ3dXY5bUJiLXB2NUJISXotUDcwZGVDd3RCTlo3UWI4YjhEZHR1Z1BxNUpkNEk1NFJBajgzMDhFVFA3eG9NOXRncHRxU3pucEpqMmY1eQ?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T16:10:45+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "ESPN news",
+   "title": "Passan: 2026-27 MLB offseason preview, free agent updates",
+   "link": "https://www.espn.com/mlb/story/_/id/50512111/passan-offseason-preview-2026-27-free-agent-updates",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T16:08:48Z"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Cubs predicted to make $104 million free agency decision that's a 'dream come true' - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPUEFtLU5TWkh5Nm9JdjdJUDVrSkdtdFlPeUZPY0hxaDVncGxJQ1NjNFFFd01QX000R0xiNVc1alR0REFGQUV4NkJjVnNvd3FNTnlxeGljNXA5bW9mZTRGaFcwYUlxNTM0Q1hjSFozZ2pHb0hqaXJUdzF0aVhiZFRabDBsQzdpV3c?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T16:00:04+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Trevor Rogers)",
+   "title": "Cubs predicted to make $104 million free agency decision that's a 'dream come true' - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPUEFtLU5TWkh5Nm9JdjdJUDVrSkdtdFlPeUZPY0hxaDVncGxJQ1NjNFFFd01QX000R0xiNVc1alR0REFGQUV4NkJjVnNvd3FNTnlxeGljNXA5bW9mZTRGaFcwYUlxNTM0Q1hjSFozZ2pHb0hqaXJUdzF0aVhiZFRabDBsQzdpV3c?oc=5",
+   "player": "Trevor Rogers",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T16:00:04+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Kevin Gausman)",
-   "title": "All of the 2026-2027 free agents, position by position - MLB.com",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1tRkZieFlQWGEyWlg3MFB2eWxqM0V5OGNtcHBTNFd2WG5nYlJfMXZyTVlIV29KSm1PZ0wxZnJYcEFOSHo1cElNWTFKMWJpNnhweEYyNVhYVFhpN1p5OHBN0gFrQVVfeXFMT0ZyOWstWEdYNEhoZUlWUlNuTDQyUHg3czNNSWFWZzNuTEdzdlQxV1pNb21qM3lyOUFHX1ZPamZ2c2E2NU94R0tVVURub04xOHpwcGpHOVQtV2gtSlc2SjRWbXpLNUdzaW5GNTg?oc=5",
+   "title": "Cubs predicted to make $104 million free agency decision that's a 'dream come true' - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPUEFtLU5TWkh5Nm9JdjdJUDVrSkdtdFlPeUZPY0hxaDVncGxJQ1NjNFFFd01QX000R0xiNVc1alR0REFGQUV4NkJjVnNvd3FNTnlxeGljNXA5bW9mZTRGaFcwYUlxNTM0Q1hjSFozZ2pHb0hqaXJUdzF0aVhiZFRabDBsQzdpV3c?oc=5",
    "player": "Kevin Gausman",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-18T09:53:06+00:00"
+   "source_pubdate": "2026-11-18T16:00:04+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Tarik Skubal\u2019s bidding war reportedly down to 2 teams - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQaXJ4Sk5tNlFEMWgzZXVFUVZ5bWltUFQzeUNFdEVWWkdrTmNaVnROdHhGV0FBYmFucno5RlpiQkpnTkJId3JhMGd5eFN6RHVraEZ2aWREZWI5T0JiczM1Uy1aMXNXbTlmalBYZEhqekVRb1otYk9BX3ZQSElmanpEd2lkNnpUdnIxVVhfUg?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T15:56:15+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Tarik Skubal\u2019s bidding war reportedly down to 2 teams - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQaXJ4Sk5tNlFEMWgzZXVFUVZ5bWltUFQzeUNFdEVWWkdrTmNaVnROdHhGV0FBYmFucno5RlpiQkpnTkJId3JhMGd5eFN6RHVraEZ2aWREZWI5T0JiczM1Uy1aMXNXbTlmalBYZEhqekVRb1otYk9BX3ZQSElmanpEd2lkNnpUdnIxVVhfUg?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T15:56:15+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Will the price tags on the early free-agent signings scare the Cleveland Guardians off? - WKYC",
+   "link": "https://news.google.com/rss/articles/CBMiugJBVV95cUxPWUNYVHF5cWtLQ3pzREdBREdGaWVvLTZOV2FBM3dCTzRqZVdZRktWMzVEaExSemx0MkZodkxKNUtoOHV5ckpLOHJvcE9JaWM0alpzMldMUzJ1TW9heXpQNm9rX1JoYXN2anhmMmxBT3ozYWJ4aG9PQlpUWFBkTGZoM1lnZ0dFMzdzWHAzcHR6VjBhOWFmc1hobzNDUjY0NjFMSlpjQUo0ZGJGcmZaNW1KT0RubjZ6QjFOT1B2Um54NGR3UEVXdE9ZTlJVTlhTT0ZLSncteEFWdEwxOHVDaUp6NGRjRmNxWUtGVkJYX21jcGwtTmd6c1BvNHFLOTBsc3B4Vkh4cF9hcUdPYUxkRkhnQWx6MHR2eTRQZ3JMX1dnRVBwaUdCZHVaRTZCaHZ6R1c3ZmZIR0hoQzN2QQ?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T15:54:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "\u2018They should do that\u2019: Former MLB player on potential big free agency splash for Yankees - NJ.com",
+   "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPdE9rYUpsXzF4WDdQR3prRGd3TFZpcUVMMzN6YzY5ZGxJdkxJRTRERzlycHMyX3pod3c3TF9VaXJJUGlvOWhfU0Y5Q3lTYnVlVjBnNC1hSnlKdHRBQTBCb0hydVR1UUdLZ25qN0sxWk12cVRFMENsRzNPallocmJQQ3ljVkM0ZzQ0N094em9XZnpuWklKUEtVeVN0NXFDMUZlR2I2bWZQZjdLQTl3OUtJWDBEZk52aC1hLU5MUng0Q2c3NTjSAdcBQVVfeXFMUHh2Z2dRazdkamRBYTh3LUxRcno4NHpiRkJwUG9FeFRLM3pRRjZKYlRhYlFuR1pvUmw5emFVZTFMMDRCemZxVHRzdXVRUEhfNE5vZU5XOS1GMW1taWJ3Z3lPcldRaVlrWUJyUlNXS2tTMU5MN0R2M3ZVRXpUZEZWWTh4dUVudEdSbGtVcnhvd25hdU5iWnlscUpKbE9oV1pocHBpeElxUDhZUjk2dmZwVWJTRGNIaHNoUmJxNnJ2R1k4ODJkelpqOHdQT255bHNMZlpNQ3Y3WWM?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T15:41:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "ESPN news",
+   "title": "Sources: Mets favorite to sign Tarik Skubal as teams ramp up pursuit of FA ace",
+   "link": "https://www.espn.com/mlb/story/_/id/50521652/sources-mets-final-teams-bidding-tarik-skubal",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T15:40:15Z"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "MLB Trade Rumors (main)",
+   "title": "Nationals To Sign Hagen Danner To Minor League Deal",
+   "link": "https://www.mlbtraderumors.com/2026/11/nationals-to-sign-hagen-danner-to-minor-league-deal.html",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T15:32:43+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "MLB lockout countdown: Where owners and players stand as CBA nears expiration - Lee News Central",
+   "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxOZXVibGJfclZjRXZLOWRZTlMwVG5lVlV0WS1ONGl6STJQb0hrOWdmbkd6SGNMUHlLT012aEVCZEdkb2FhdmV3blZxMVpSRFpUM3FEVUxaaExUVjk4S0Utekt6dkJNNC14bVcxZktSZVl0RTZ0a28zUEd0MHFTQ0xtTDVXWjBPejk0RXNFc3RiYkNEZExhM0ZxTC00dUQxVENwT2RPa1pwMEpRVDNzb2NHaFNnLVlyeGFZeFdkcG9jN1JrbkIzR0V4MS01ZU9hbklQWTNycGt0WEZxZUVhbmxMUkFBNXEzQ0lJSmJ6M3hfY25wXzlwOU5VVWtweHV5cW1O?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T15:30:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Sources: Mets favorite to sign Tarik Skubal as teams ramp up pursuit of FA ace - ESPN",
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQLXBBQ3hjRmo1UUdNeWdySWNUZU9MdjRUcE02dFhCQWozQ3B5MVE0cGFSQmxKSHZMaU1zRElISUcyV25hQWltWUl0QXRnbDdQREdzSkNBTWsxV0Jod2FVX3NhNmVjT0FhRnJzaWRUMVJQcG8yZ0t5cW12cVpYUlZaOXoyS3U5aHVpbHJxUmJmTFV1YnMx?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T15:27:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "New Rumors Reveal NY Mets BIGGEST Rival For Tarik Skubal, Possible Secret Contender - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNRmJFek5zYXU1T3VVTTdZbDA0bDUtcklBOU9tWHRmdDgzMGVDZGExakVPcmQwY1pyTHJXSmZrUVMwRHA4WEJOVGlyZUFGbEZhSDZjaUlyVU1OTHYwOVBjV1BCVkVqNG5ETFk2MXFYam5EZ3M3dnpWSjdXNnUzeF92c1RUUXA?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T15:12:31+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Where will Tarik Skubal land this offseason? - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBXNzdnSkt5b0ZTOXpSZkZmM1JoM3NmN3BUZGVZM2RuVng3Z1pfVHpIMEtxcFZKcGhKYllCSGlnYmRnc1lKWlc2QWkyRENXSjZrWGltV2pDMmFzT21Xd0ExZGZaMlM2VW9EZFJONlR5UXNxb2xwWXV2YQ?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T15:11:37+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Dodgers, Blue Jays meet with Tarik Skubal as sweepstakes heat up for MLB\u2019s top free agent - New York Post",
+   "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPNWRmZlBwMXZpZFI1NTF3aEVwb2JCR293TndmU3BGOExwdnRuVzRVUVp3dDllSmhtWU94aGlhUVpyTUdYenZHRjhiUUdtc3hGdVBZdVgtWkxpa25PZ0pxNDA1NVBsQUxlS1JRcTVWWTVFVFo4NjdCN2JsdlNkVERENVRfbEJudmEtdkNwamNpWEhSYUhnQjBERXNQVl9BYm5TZFFtNDZVSzNHYVZRMkd0bnJNaDFsU2dhZGFSZDR0azBWN2M?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T15:10:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Dodgers, Blue Jays meet with Tarik Skubal as sweepstakes heat up for MLB\u2019s top free agent - New York Post",
+   "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPNWRmZlBwMXZpZFI1NTF3aEVwb2JCR293TndmU3BGOExwdnRuVzRVUVp3dDllSmhtWU94aGlhUVpyTUdYenZHRjhiUUdtc3hGdVBZdVgtWkxpa25PZ0pxNDA1NVBsQUxlS1JRcTVWWTVFVFo4NjdCN2JsdlNkVERENVRfbEJudmEtdkNwamNpWEhSYUhnQjBERXNQVl9BYm5TZFFtNDZVSzNHYVZRMkd0bnJNaDFsU2dhZGFSZDR0azBWN2M?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T15:10:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Top 2026 MLB Free Agents Available and Latest Rumors, Predictions - Bleacher Report",
+   "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQSFplSFIwNW1fbnV1R1BVYW9ydF9oU3VNdFhTQVpDUk9SenRNM3BGaUdsMEVnQVJjY1FyTHlOQVpYSVZXVE05bm12RGlnbHVpcWlvRDZ5WGprUHVDRHNhQy1seUROeUhjSVBQNVZFVVRrMWpQaHVpdHVGUl9wRG1ET3d0MVFkOWhsNEpiUGlFNE1ONWtPX1ZlVGxLdUpqMnpUQkdua0ppcjNWdm5pYXc?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T15:04:03+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Top 2026 MLB Free Agents Available and Latest Rumors, Predictions - Bleacher Report",
+   "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQSFplSFIwNW1fbnV1R1BVYW9ydF9oU3VNdFhTQVpDUk9SenRNM3BGaUdsMEVnQVJjY1FyTHlOQVpYSVZXVE05bm12RGlnbHVpcWlvRDZ5WGprUHVDRHNhQy1seUROeUhjSVBQNVZFVVRrMWpQaHVpdHVGUl9wRG1ET3d0MVFkOWhsNEpiUGlFNE1ONWtPX1ZlVGxLdUpqMnpUQkdua0ppcjNWdm5pYXc?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T15:04:03+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Olney: Skubal bidding could come down to TOR/NYM - NBC Sports",
+   "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPdVVxbzB6ZnpqWjE3RkZjZzRQbDNwMDB6Y0s2OUJZcFBmcEwtZlBLb3VzSEtpbUNtbHFiOHpHQ01qYWYyaXItZl9Pb0E4SzZtamtTSnZiWmJjVlhSQTBLTlQzRUxPb2hZQ3BQMTBiZWl0TjVvT1J1RUxYOWlXWmVSNFYzeXRRRnFxdGxIb19QZUZLSko3Q0Z0WWhHdzVRUHI1dWZNajlSQVotbUxWREVmYXZBQQ?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T15:02:10+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Insider Shuts Down Pirates Pursuit of Top Free Agent Relief Pitcher - Sports Illustrated",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQOUhlSjR4ZU5rODY2UzhVSVc0YlpzLWJYcllRaU12RjVzMlh5MVloQ05qbmxhMDFjc0NMbExHWFRLd0w4NmU1UHF1UWFnMmR3REdWck9YT3M5SVRma0xuX3FqZzRqTnczV0FXUWlXNjhfMlZ5dUFGMGozaEg4R2I4bHlYQ3l0ZlE1MlFXUGdPZllvLVlXaHJSbGY1SmF0N3hlbXhHOGhISlRaVFlwNWhXRA?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T15:00:03+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "MLB Teams 'Balking at' Randy Arozarena's $100M+ Contract Ask, New Free-Agency Rumors Reveal - Bleacher Report",
+   "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNemc1b29QT203c09rbTJ5cmVhV2UwV2xHeG1DeHNmVzFNeWVXNHh5YThRRmFWZ3AtXzN2TEItUTMyanB3eHUtWkYwX21kRmdfYk95RjEzY29MY1AzR1EtRTFNRmJEbGwzVTE5OVNrbDl2XzBMMkp6YXJEc0U4SzZGSFN0dE80OFJFSGZjeDY0Mzl1UUV3TDhnSUtLNVJDWWxxdnpVTW5xVE9NNUEtcmsxcFdOZGkyTlRtUUJHQ3ptX211ZUlxOUE?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T14:59:29+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Isaac Paredes)",
+   "title": "Fantasy Baseball: First mock draft for 2027 underscores the lack of consensus in Round 1 - CBS Sports",
+   "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOc2FkOTNpalcza2tGcjVCMlZaTjZlQzltajMzcTB0b3dycEdlRWZiTFE4UU84M1lDSmdxOEtxVkJBMm1lZDhPdDFqc1BwX0V6eFdRbUMzbk9wZDZxNVFsUndSUXhuNVBTQVA3OXZ3MnF5Q2lkSFNBTGZVcFNhUlR4QjNxV2dfVXc3bHVsb2xoOFJDNE9BLVo2Q0t0c3VVR25pOGtvNXREcHhwTDhRXzNfdzRLeF8xcU5BNlRYdzB2Vk1YRy1lVFpiZ3RtVFp6amdUemc?oc=5",
+   "player": "Isaac Paredes",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T14:48:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "2 more clubs follow Mets with Skubal meetings, but is there a clear favorite? (reports) - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5LOWduQnJwYnJzYWo0dW1sM2Vwd3piRVU0TEsxMHd6Rld0VVNhYWZXanpjb2pFaGxjR2p4a3dybnZZOW5CZS1VbVdTVWdVaHFmU013eVA5UdIBY0FVX3lxTE9iel8tUHFwZ0VEUENUVlRldGVDNm1IRi1YU1JJMU1lNXl6YnJwOGd4SGFUQzlidS1xbGptMDlHUWlwUldqSzN6M3pQM2ZSVHNpcHhIaHpSY3oxN1c0R1REQkxJRQ?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T14:40:03+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Mets, Blue Jays Reportedly Emerging As Top Bidders For Tarik Skubal - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPLVc3X0pQbUtaUTQ3T1g1X0hiLWNGTzFQYnc0N2pCOGlfbkVTa2tDZnRRbjlrNW5IWEZzamRYRnN1R3ExX0VjVlhYdHBaQXIyWllWUjBqNEdKUXEyM3l5d1FwQnZDWXpmTHNNTlJmUnZHOG0wT3dsZ1FRMXFVdG5vWHY2SFkwTU9sRktz?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T14:35:51+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Tarik Skubal\u2019s bidding war reportedly comes down to two teams - The Big Lead",
+   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQZmJtREoxVXZUXzY0UDJkTDNyX1l2ekpvRk9Fd1pCSHFBT29ZR1FpTFdxUy1jZjNldUF2cGZ6WVQ1eXpTVFZrdUhibGY3R0EwbElzZnJhNTlmSWtSaUVlUExKS1hPSG1Ja296TFNvVm5fNDVvcEJETXZSQlF6Y0RmNkQ5VFdlOGRvSFYxaVJ3?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T14:30:20+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Tarik Skubal\u2019s bidding war reportedly comes down to two teams - The Big Lead",
+   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQZmJtREoxVXZUXzY0UDJkTDNyX1l2ekpvRk9Fd1pCSHFBT29ZR1FpTFdxUy1jZjNldUF2cGZ6WVQ1eXpTVFZrdUhibGY3R0EwbElzZnJhNTlmSWtSaUVlUExKS1hPSG1Ja296TFNvVm5fNDVvcEJETXZSQlF6Y0RmNkQ5VFdlOGRvSFYxaVJ3?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T14:30:20+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "ESPN news",
+   "title": "Tarik Skubal free agency tracker: Latest on top MLB free agent",
+   "link": "https://www.espn.com/mlb/story/_/id/50453514/tarik-skubal-free-agency-updates",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T14:22:24Z"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "6 MLB players reject qualifying offers, become free agents - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQMTYwdWhqN2pmSngxV25iQWt6QkpNNXZSMV9hYk5tdkdaZExaVmtoS0RWQUpreTVaR2FOM1hoSkVqempUd2JLeDh2R1I3WmdGbzF4ZWJYMmVjZUo3eVRmN3laemRnMGZKd1IzUVdvSkFlTTJHMUVGQmt6RnFaLWdfc0gwc1praEE?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T14:13:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Seiya Suzuki)",
+   "title": "6 MLB players reject qualifying offers, become free agents - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQMTYwdWhqN2pmSngxV25iQWt6QkpNNXZSMV9hYk5tdkdaZExaVmtoS0RWQUpreTVaR2FOM1hoSkVqempUd2JLeDh2R1I3WmdGbzF4ZWJYMmVjZUo3eVRmN3laemRnMGZKd1IzUVdvSkFlTTJHMUVGQmt6RnFaLWdfc0gwc1praEE?oc=5",
+   "player": "Seiya Suzuki",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T14:13:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Japanese slugger Teruaki Sato, Phillies' 'object of serious affection' could sign before Thanksgiving - PhillyVoice",
+   "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNM1N0RmphT21TUFgzWV8yazQ0SzBDVXRSRFpKR3NoRUc4N3ZzWHVLcHhHMzY4RnVqOE1nUnZLMGh3aXJmMW1yZzFGNk5hU3JNaWRCa2U4cDhNVGVocTRHYU9iMmpCMURKcV9fTmpXNURDZU5yRkVnNDZQemFESUlqUThtOFlqdkJna2dqTDdRLTBFWmpkX3o0WHJFbk9Zb2k4RmdJQ2tuckVLRHY0UHNOMlhLUTFmRDlaNWdYZXZjZWZWUm1mcHUzZUYtQS0tYXc?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T14:12:07+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Cubs \u2018Unlikely\u2019 To Be Part Of Tarik Skubal Bidding War - DodgerBlue.com",
+   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOaUF1WDY0V1dfX1QyaFhRZHZwV0pRcHFYLThKT3JKODBsMXktX3h3eERURjlsLU1iZkhyclYwRUt6OWVmZXUtQzZVZnNrNzBSU29iRlBqX3VlcDJhVW9LZWZsT0YzVXpjT0JSaTNvM1NwV1BHUUxhOVAzZkFONnBlNWZ1QXJzMlhNbUFNWWlYX2HSAZYBQVVfeXFMT2NEWm1yNTFiX3dyZzZGdlNtR0FFUWt1YnFPVEIzVUc2eTVIcnd1aVVLMm5wcVptOGhSbkphd001Tnh4SFBlN2pwYjRERUR0MHBseVZkdVljVmpPbXBHV1VQSFpzU2hWMEcwdVplaERVTGxjU2djQmpwWEJOcE82SHM2WmdxWjcxc3FZVkJ6ZjktSHRobXRB?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T14:00:55+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Detroit Tigers News: Silver Slugger, Tarik Skubal, Dustin May, Hall of Fame, MLB hot stove - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPTGUwMzRhZW51SFVhMTZtZ0lxRlRsWHFWcEZsV3hCaHlFeGJpWkdmQzZNSVZPOWtfUkg2MEcybXl3RDlkNzhYQUt3TXVoYVpDNE0tYk5BcTFVd25uTEkwMVlIdFczNUZGTVJjZmY4NDNFTTBHNXVtTEpkNkNpQ2RpUk1nUm1KR0VoYlk0?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T14:00:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Report: Blue Jays meet with Skubal as decision looms - CityNews Toronto",
+   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQTVE2V2FGTnVEQzh0RHNpMDVBRTZrc2NJSDR2M1ZnRzdmSlFyT3ViZ1RhSmJpaU1hRE9LRnBhcFh3SnJnZC1XOW5zVkNvTGYzSV9JWHEtNTB1TU9IY0JPNnRkWlo1dkZwN3VkdnlEWVZ5WE1vUmJCYmxWWF9mNzRpdkZjTmd3Uk5KRGFldFd6TQ?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T13:56:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Report: Blue Jays meet with Skubal as decision looms - CityNews Toronto",
+   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQTVE2V2FGTnVEQzh0RHNpMDVBRTZrc2NJSDR2M1ZnRzdmSlFyT3ViZ1RhSmJpaU1hRE9LRnBhcFh3SnJnZC1XOW5zVkNvTGYzSV9JWHEtNTB1TU9IY0JPNnRkWlo1dkZwN3VkdnlEWVZ5WE1vUmJCYmxWWF9mNzRpdkZjTmd3Uk5KRGFldFd6TQ?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T13:56:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Phillies\u2019 Chances of Landing Top Free Agent Get Major Update - Yardbarker",
+   "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQM2FndXlHTW14WlE0SW8yMUdkampvNEd5R0RUOVo3dnhDQmIwUllwc3RZQ28wZlh0VUk4UGdBZHlLV1lFN25LempKa2dlRjNpT0k3dXZJVDc3SUtQWVFIZXhrZFVHVDdDeE5JREE4OXhST1Zib2pQSE42V3FqSHU1bkpiZkNTZXhhbUVSUzFuVGhoaGFsSUliU1hMcTlyaXVkeE9OTFk5YThYbXZGTTBhQk1SMkl0RVMz?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T13:55:46+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Tarik Skubal Free Agency Saga Has Two Expected Finalists - Sports Illustrated",
+   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOQU96Q3loaWJPM1loT0dZaHJOcU9HejVKM0MtdDc2TTFQMHViSGs3Y2x4QVJTTW55LXBCOHFrRl9NU2lqN0tzZHlrV0tDZk9FUnc3Rm8yY0tyMDdhRXlFQWhWZE8tUnB6bnNTMU4zVmpWVWxyVFo2RUN6RTh1aUtwWEhLQ2Y3WDM3XzliTlJnM01ybEFQZzViZ3cwdmVzTFJzVGlQVkdZWWJZWXoy?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T13:50:17+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Tarik Skubal Free Agency Saga Has Two Expected Finalists - Sports Illustrated",
+   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOQU96Q3loaWJPM1loT0dZaHJOcU9HejVKM0MtdDc2TTFQMHViSGs3Y2x4QVJTTW55LXBCOHFrRl9NU2lqN0tzZHlrV0tDZk9FUnc3Rm8yY0tyMDdhRXlFQWhWZE8tUnB6bnNTMU4zVmpWVWxyVFo2RUN6RTh1aUtwWEhLQ2Y3WDM3XzliTlJnM01ybEFQZzViZ3cwdmVzTFJzVGlQVkdZWWJZWXoy?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T13:50:17+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "\u2018Expectation\u2019 of Tarik Skubal sweepstakes will be 2 teams not named Dodgers - USA Today",
+   "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxObVpIUG84OWNKOVJyTzJsYjVUSTR2dFZSZk1QbjhtNXpnbEMxcVJ4ZXZFZElLOW1PZm5yQ2hNQVZ6dTBlSDFYOWlBR3hNSGdWeHd1Wm9sdWlWUkJ3MW5qRWlxMVdHS25faG5pbWlnSDh4WGlYUERtYVlOY29WeFpnUVNuZnIzYWZfZUlZUnZ4MTgwMDZfaE1tNWRPWnFrcy14Nmc?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T13:42:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "MLB free agent rankings: Top 106 players as Skubal signing, lockout get closer - \u0634\u0628\u0643\u0629 \u062a\u0648\u0627\u0635\u0644 \u0627\u0644\u0625\u062e\u0628\u0627\u0631\u064a\u0629",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9ncHBVbDlfdUMzUGZuTHg0QjdHWG5JZlg3UG1MU1ctNnBvenc5YWptWGpSN0R0d1NWcnA5TE9EbkhjaktOaHVPa2JsMU5lZ0t5ZkNR?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T13:16:05+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Dodgers notes: Edgardo Henriquez, Tarik Skubal, Alex Vesia - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQZEJWMF90ZWxMdFFXdzM0Q2tFS2l0MUxnQ0lrU0h2bl8yalB1TDdPZm9hcXotZWVQem92clZFRW0wOTF0YjU1U0hRbUJNcEQ2Sk52MERvOVY3SzBaNEN2ZWx0TjZ4ZDFsS3IzbjRXbG9oNk96enN1RzJHaVhtZUFtbVpjaXREckFPNmotTUxZRQ?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T13:03:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "MLB News: Silver Slugger, Hall of Fame ballot, Tarik Skubal, Shohei Ohtani, Dustin May, hot stove, free agency - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxObk5nTW5laWtKREU1eGo5VHljWTJhcXh6Y05lZ2N3NmhyZG9PVG5weWkzZ1cyNi1tbENuRGFQbE1BcUozRmhYV1B4elNxRUhvT1NSa1dlX3FHWmdZRklfVXMwRnNJcnM4OGFaQzhuZDdfMDBjWGx0dlI3S0IzdGR2V2lfWQ?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T13:00:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "MLB News: Silver Slugger, Hall of Fame ballot, Tarik Skubal, Shohei Ohtani, Dustin May, hot stove, free agency - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxObk5nTW5laWtKREU1eGo5VHljWTJhcXh6Y05lZ2N3NmhyZG9PVG5weWkzZ1cyNi1tbENuRGFQbE1BcUozRmhYV1B4elNxRUhvT1NSa1dlX3FHWmdZRklfVXMwRnNJcnM4OGFaQzhuZDdfMDBjWGx0dlI3S0IzdGR2V2lfWQ?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T13:00:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Phillies Get Major Update on Teruaki Sato\u2019s Free Agency - Heavy.com",
+   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVDVGRGlBOXZZOWdnN2U0WmZKcGVhOFpqLW9wdEdxZUtwSHNHVFFMUUNHMmowQ2FiSHpOM21LeXZqb0Rwd2dRMWtmVUNZNVZ1dkFWYU9JRmI0S1VpUHVGY3Z0X0JsU1J1QkpXNGhfeU9nODh1UW04RS1hakctUE9CRlc4YVFiaUItbWE4d0h2eHU1aW1XZFV2a2ktOWFXNGJhZ3gwRA?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T12:29:41+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "What Mets' Backup Plan Looks Like If They Miss Out On Skubal - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOSkw1QnZ2UmR4d2JzTlFyT2d0aVBzZE5oOGhWZ2NiVERSRFVRc3JXdDhKUzJyVkNrNmFXdzl3bU51amk2cTkybk9BQlFwQ2JYdlE3SnlUSURCcGxRMUlEeFVxRG50M3d1M2xqNTRyMTRJWXB6bm1fdERMWmliMl9xVG5R?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T12:22:11+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Predicting where each player who turned down their qualifying offer will end up and why - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNMWROeEh0ckVyS2tyV1UweEl6RkpJcmQwTXNxOFRyZWxpYWtVR2FsNHBLRmFyamRuMzlOUjE5MGczYXlwYXB0bUdzVzhlNXNubTY0Q0Fka0FGRTNlTGxqUWI2cHlna2Z0aEtyRFZ5VGJ2b0xtQ0VBQk9ncVFEd3N3SjVPdTRhM0RjWTdmUw?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T12:00:11+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "3 Free Agents Mets Could Sign If They Add Tarik Skubal - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFAwOWJOdERDRVNEY1JTRlhCaWlDM2E2OFY5R2k0REdnSDN5UzJ5UkZSNzA2RzRNMUhCYk9fNFZQd1UxNXBsTGU1MWtUMXVyaEd6MUstcFVVRkdlVHNKd1N3LWlGYmpHelhBa2ZEam4weUtuNWxva3V1bk02OHNwdw?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T12:00:09+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Passan: 2026-27 MLB offseason preview, free agent updates - ESPN",
+   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOem1SdnpiMnJRZ0hOYkZZQVZYbUxkNTFoNUVRQWpsbVNJUEVmMkdzd2JSd0hvbnpBRVBkbEF5cXM1QmlvSURZTV9tMXB1V2FJamtCdk9MTFNXaGF4TW85MmhtQTRPbmR5b254UWMtdGdEOTNHOEtvbmlrZ3h3dUZyR1R3cVpHRGs5NHJwSTBBTGpDWDhKelJfbzU3N1A?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T12:00:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Passan: 2026-27 MLB offseason preview, free agent updates - ESPN",
+   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOem1SdnpiMnJRZ0hOYkZZQVZYbUxkNTFoNUVRQWpsbVNJUEVmMkdzd2JSd0hvbnpBRVBkbEF5cXM1QmlvSURZTV9tMXB1V2FJamtCdk9MTFNXaGF4TW85MmhtQTRPbmR5b254UWMtdGdEOTNHOEtvbmlrZ3h3dUZyR1R3cVpHRGs5NHJwSTBBTGpDWDhKelJfbzU3N1A?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T12:00:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Kevin Gausman)",
+   "title": "Passan: 2026-27 MLB offseason preview, free agent updates - ESPN",
+   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOem1SdnpiMnJRZ0hOYkZZQVZYbUxkNTFoNUVRQWpsbVNJUEVmMkdzd2JSd0hvbnpBRVBkbEF5cXM1QmlvSURZTV9tMXB1V2FJamtCdk9MTFNXaGF4TW85MmhtQTRPbmR5b254UWMtdGdEOTNHOEtvbmlrZ3h3dUZyR1R3cVpHRGs5NHJwSTBBTGpDWDhKelJfbzU3N1A?oc=5",
+   "player": "Kevin Gausman",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T12:00:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Luis Arraez)",
-   "title": "All of the 2026-2027 free agents, position by position - MLB.com",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1tRkZieFlQWGEyWlg3MFB2eWxqM0V5OGNtcHBTNFd2WG5nYlJfMXZyTVlIV29KSm1PZ0wxZnJYcEFOSHo1cElNWTFKMWJpNnhweEYyNVhYVFhpN1p5OHBN0gFrQVVfeXFMT0ZyOWstWEdYNEhoZUlWUlNuTDQyUHg3czNNSWFWZzNuTEdzdlQxV1pNb21qM3lyOUFHX1ZPamZ2c2E2NU94R0tVVURub04xOHpwcGpHOVQtV2gtSlc2SjRWbXpLNUdzaW5GNTg?oc=5",
+   "title": "Passan: 2026-27 MLB offseason preview, free agent updates - ESPN",
+   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOem1SdnpiMnJRZ0hOYkZZQVZYbUxkNTFoNUVRQWpsbVNJUEVmMkdzd2JSd0hvbnpBRVBkbEF5cXM1QmlvSURZTV9tMXB1V2FJamtCdk9MTFNXaGF4TW85MmhtQTRPbmR5b254UWMtdGdEOTNHOEtvbmlrZ3h3dUZyR1R3cVpHRGs5NHJwSTBBTGpDWDhKelJfbzU3N1A?oc=5",
    "player": "Luis Arraez",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-18T09:53:06+00:00"
+   "source_pubdate": "2026-11-18T12:00:00+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Foster Griffin)",
-   "title": "All of the 2026-2027 free agents, position by position - MLB.com",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1tRkZieFlQWGEyWlg3MFB2eWxqM0V5OGNtcHBTNFd2WG5nYlJfMXZyTVlIV29KSm1PZ0wxZnJYcEFOSHo1cElNWTFKMWJpNnhweEYyNVhYVFhpN1p5OHBN0gFrQVVfeXFMT0ZyOWstWEdYNEhoZUlWUlNuTDQyUHg3czNNSWFWZzNuTEdzdlQxV1pNb21qM3lyOUFHX1ZPamZ2c2E2NU94R0tVVURub04xOHpwcGpHOVQtV2gtSlc2SjRWbXpLNUdzaW5GNTg?oc=5",
-   "player": "Foster Griffin",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-18T09:53:06+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
-   "title": "Lowe declines Pirates' qualifying offer - MLB.com",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5FMmtDTUdhVlNhalJaLWs4TndCUUZvMkg3dHhzZ3o0RUFFeHBkbXc0WHZKT1NEZ1U4WXpzNVJtMXhsbzkwM3RQcWhBLU9RNHN6b3V1cEx0YkQ3VzdkblRsdE5ldEZ4ZGlsektwbmZmWUo?oc=5",
+   "title": "Yankees Aren't Stopping At David Bednar As Adrian Morejon Race Tilts Toward The Bronx - Pinstripes Nation",
+   "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPRDg2X2lwQ2lDZWRQUElMcVZ5YTZEbS00VURIRXQ4czBRQkZFeTJOTE5mQlJLZnkwLXhPOFJfRjlRcW83RmFJTEZJa2JFV0FQTjROakszQVFDMFM1MVZpbnNBajVEcy1uZmg4ckM5TDV1SWR5OGNRNkZLbjE2S2ZHag?oc=5",
    "player": "",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-18T08:49:26+00:00"
+   "source_pubdate": "2026-11-18T11:24:34+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Brandon Lowe)",
-   "title": "Lowe declines Pirates' qualifying offer - MLB.com",
-   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5FMmtDTUdhVlNhalJaLWs4TndCUUZvMkg3dHhzZ3o0RUFFeHBkbXc0WHZKT1NEZ1U4WXpzNVJtMXhsbzkwM3RQcWhBLU9RNHN6b3V1cEx0YkQ3VzdkblRsdE5ldEZ4ZGlsektwbmZmWUo?oc=5",
-   "player": "Brandon Lowe",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-18T08:49:26+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
-   "title": "Mets meet with Tarik Skubal, MLB\u2019s top free agent - The Guam Daily Post",
-   "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxORTM1Q3lrbXAyd19KQ21DSWRUUS14amNHVkVha2lXeTJfU3VTOW1yMEpQZS0tMlBJbWtaZm1rWnZzdzdvMk5QRE9KVnRHUUJUcTN3WTdGZDdqMHJmV09jSE1hNEhRTm16OTFMSXFscm0xdmpmc3k4QlRmdXJEUURYaXhCOUpZR2tadmhaVWl3blZjcUhBUzZoM3FvRXN0VmpXRGxTaFZjUklsT2pvLVdLeWVaMGdGWnVwSVMydFczZXZ3ekF1cExTbE9NdE5EZGlYaElF?oc=5",
+   "title": "MLB free agent rankings: Top 106 players as Skubal signing, lockout get closer - USA Today",
+   "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPb29lWDhlTVZRSGZuX1IwR3FKSkZINFo0a1ZLbFlfeWo1SUNsdzQ2aTgtQzZuaG12MkR6VWZpd09Rd1ppcU43ZEJXRmQyMDJyQkFlVVBJZDFjT2RGLXlNcTRCeTBTWnVweVA4V0o0MkhzTnNTalJLOG5rNzVka3NpckxwNDljNGN5azd3b0RaTWZkS29SdGRXZzZ5YWZTVElWN0w1MzNaRk9qbUtOY0tsVDBUbFlycWhx?oc=5",
    "player": "",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-18T06:57:09+00:00"
+   "source_pubdate": "2026-11-18T11:06:00+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "MLB free agent rankings: Top 106 players as Skubal signing, lockout get closer - USA Today",
+   "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPb29lWDhlTVZRSGZuX1IwR3FKSkZINFo0a1ZLbFlfeWo1SUNsdzQ2aTgtQzZuaG12MkR6VWZpd09Rd1ppcU43ZEJXRmQyMDJyQkFlVVBJZDFjT2RGLXlNcTRCeTBTWnVweVA4V0o0MkhzTnNTalJLOG5rNzVka3NpckxwNDljNGN5azd3b0RaTWZkS29SdGRXZzZ5YWZTVElWN0w1MzNaRk9qbUtOY0tsVDBUbFlycWhx?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T11:06:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Michael King)",
+   "title": "MLB free agent rankings: Top 106 players as Skubal signing, lockout get closer - USA Today",
+   "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPb29lWDhlTVZRSGZuX1IwR3FKSkZINFo0a1ZLbFlfeWo1SUNsdzQ2aTgtQzZuaG12MkR6VWZpd09Rd1ppcU43ZEJXRmQyMDJyQkFlVVBJZDFjT2RGLXlNcTRCeTBTWnVweVA4V0o0MkhzTnNTalJLOG5rNzVka3NpckxwNDljNGN5azd3b0RaTWZkS29SdGRXZzZ5YWZTVElWN0w1MzNaRk9qbUtOY0tsVDBUbFlycWhx?oc=5",
+   "player": "Michael King",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T11:06:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "How Tarik Skubal would fit his top four suitors, from the Mets to the Dodgers - The Athletic - The New York Times",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNd09TYW13a2M2Sy1uQXZ0MndLNzFXb1A4X2stNjdIa3h2Q3RHcnZkV3NkMFdrb1ZKTjZ4YUdHZ0d5TFUtSE5tOTBmcHJBLVlZQnpTY2ZORXFHbl9qNDdDN0hQSmZrbkh0VWZyZ3NJNUc3TU9rcC1KRmxVS2h4S0ZJeXV2V3o1VENza1VDRVFqV0FGalBacXFOanlKWmgxYlpJVTk1bkRoNU9KRkktYkluRw?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T10:30:10+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "RotoWire",
+   "title": "Maikel Garcia: Traded to Seattle in six-player deal",
+   "link": "https://www.rotowire.com//baseball/player/maikel-garcia-17707",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T08:17:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Mets meet with Tarik Skubal, MLB\u2019s top free agent - The Guam Daily Post",
@@ -1617,7 +2549,7 @@
    "source_pubdate": "2026-11-18T06:57:09+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "MLB Trade Rumors (main)",
    "title": "White Sox To Sign Dustin May",
@@ -1628,40 +2560,7 @@
    "source_pubdate": "2026-11-18T05:57:48+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Top free-agent catcher accepts qualifying offer to remain with Twins - MLB.com",
-   "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9xbkEtYTZaeEN6THE4Y1JEamVmSmd3NkRmU1FUbGxZUjY4NlNhWjdiYjhxTlVsSVp2TzZJVmxvUnd4ZVVtU0dDVWFTSk9sWmhFeHlRNDVLRzlvQVZHTjI5Nzg5bUVIdmhCMHk4UkppeVh4NzhMTzdB?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-18T05:14:22+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "MLB free agency tracker: 2026-27 offseason trades, moves - ABC7 Bay Area",
-   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPcHBNd0VOTFJyekxCUUtybTMyXzJwc1J4b3VZN1lsMzMwcloxbTdZYW5iV0pSN0gwNEdCV2w3dTBWVkZBdGRuNDdJdk1LcmxxdVh5S3NLTHdDOUQxMmcxOS1OcmdVR1NaNzBRYm51eExUeEhuMzNwc0dFYXVXaGpGN0I4MzFOX0ZZSmVfTklROVU4VkV1?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-18T04:55:32+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Drew Rasmussen)",
-   "title": "MLB free agency tracker: 2026-27 offseason trades, moves - ABC7 Bay Area",
-   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPcHBNd0VOTFJyekxCUUtybTMyXzJwc1J4b3VZN1lsMzMwcloxbTdZYW5iV0pSN0gwNEdCV2w3dTBWVkZBdGRuNDdJdk1LcmxxdVh5S3NLTHdDOUQxMmcxOS1OcmdVR1NaNzBRYm51eExUeEhuMzNwc0dFYXVXaGpGN0I4MzFOX0ZZSmVfTklROVU4VkV1?oc=5",
-   "player": "Drew Rasmussen",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-18T04:55:32+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Michael King)",
    "title": "MLB free agency tracker: 2026-27 offseason trades, moves - ABC7 Bay Area",
@@ -1672,29 +2571,18 @@
    "source_pubdate": "2026-11-18T04:55:32+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "MLB rumors: Insider ties Randy Arozarena to 4 teams including Yankees, Phillies - ClutchPoints",
-   "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOdjEzUmU5cXNSb0ZjaVdJdFhGdi1oSEZEaWJQWmtkNjJRZDc0NGxNb2ZXZmhwa01mMzhGRGU5YS1Na2VObGd2T2lIVjN3QnlLU1NWX3RsWGxTb2RfSVVWRFRDSXlfd285Y2JuVjhoczRTZUROTkpTY2ljSl9FWl9iUWFLLTZpd3d2dGhac1FQZzYtZkZCOUJ1Nk1nZ284U0ZXaGJwRjZET1Z0dw?oc=5",
-   "player": "",
+   "source": "Google News (Seiya Suzuki)",
+   "title": "MLB free agency tracker: 2026-27 offseason trades, moves - ABC7 Bay Area",
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPcHBNd0VOTFJyekxCUUtybTMyXzJwc1J4b3VZN1lsMzMwcloxbTdZYW5iV0pSN0gwNEdCV2w3dTBWVkZBdGRuNDdJdk1LcmxxdVh5S3NLTHdDOUQxMmcxOS1OcmdVR1NaNzBRYm51eExUeEhuMzNwc0dFYXVXaGpGN0I4MzFOX0ZZSmVfTklROVU4VkV1?oc=5",
+   "player": "Seiya Suzuki",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-18T04:35:49+00:00"
+   "source_pubdate": "2026-11-18T04:55:32+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Pirates\u2019 Brandon Lowe Wins Award as Free Agency Picks Up - roundtable.io",
-   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOa1RKMU9ENzNiVktWcjBRaGJwY2RLQ2VMWm5LVVVaUDY4ZGx4MkE5ZUdBZlBUSVVvOVpKYXUyeGNYMW1GNE1JT3p3RXZScWtIU2pGUy1PQVlsWFM3Y0Ffamh0cHQ2RzA5Yk52cF9MRklnTW5vdW9pNFYxMF9leXk0Mk9YQzF1bXZKUVliOTZQenpuc1M4c2hJM2RQaHJxWENlLTFr?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-18T04:26:49+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Brandon Lowe)",
    "title": "Pirates\u2019 Brandon Lowe Wins Award as Free Agency Picks Up - roundtable.io",
@@ -1705,7 +2593,7 @@
    "source_pubdate": "2026-11-18T04:26:49+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Seattle Mariners Sign Veteran Pitcher in MLB Free Agency - Yardbarker",
@@ -1716,7 +2604,7 @@
    "source_pubdate": "2026-11-18T04:06:12+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "MLB Trade Rumors (main)",
    "title": "Mariners, Bryce Conley Agree To Minor League Deal",
@@ -1727,7 +2615,7 @@
    "source_pubdate": "2026-11-18T03:48:13+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Rockies most unlikely team to sign Tarik Skubal, ESPN says \u2013 Denver Sports - Denver Sports 104.3 The Fan",
@@ -1738,7 +2626,7 @@
    "source_pubdate": "2026-11-18T03:45:42+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Seiya Suzuki)",
    "title": "Seiya Suzuki makes expected Cubs\u2019 contract decision in MLB free agency - ClutchPoints",
@@ -1749,7 +2637,7 @@
    "source_pubdate": "2026-11-18T03:21:50+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "ESPN news",
    "title": "Jake Bauers says city of Boston figured into decision to sign with Red Sox",
@@ -1760,7 +2648,7 @@
    "source_pubdate": "2026-11-18T03:12:46Z"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Jake Bauers says city of Boston figured into decision to sign with Red Sox - ESPN",
@@ -1771,7 +2659,7 @@
    "source_pubdate": "2026-11-18T03:12:00+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "MLB.com (TEX)",
    "title": "Rangers add pitcher Josh White off waivers before Rule 5 deadline",
@@ -1782,7 +2670,7 @@
    "source_pubdate": "2026-11-18T03:05:43+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "MLB.com (TOR)",
    "title": "Vladdy gets traded -- in  Dominican Winter League",
@@ -1793,18 +2681,7 @@
    "source_pubdate": "2026-11-18T02:52:08+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Frankie Montas Throws Showcase After Missed 2026 Season - MLB Trade Rumors",
-   "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPOEpIY1h4NFAwamFCdjdjQzFwdTZnOUJ4Q2M0Vi1pUnJoc2lqS3FTOGpCb3p6N2pCSlBIdlZpRGxlQjFmOGp4TERJdTFHTVUxZVBvZ1IyaGNnRkJaSmxJNUk2WlpCeC1nOGc1d1VUY2d6V1d1NDFOYWxzMGVDSVFVeVFXNjV0WFJaWEVpTzBPYVh6a1YwcDNuNmZYaFJXWjFm?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-18T02:30:41+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "\"Holy overpay\" - Fans react as Dustin May signs $52.5M free agent deal with Chicago White Sox - Sportskeeda",
@@ -1815,7 +2692,18 @@
    "source_pubdate": "2026-11-18T02:26:00+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Seiya Suzuki)",
+   "title": "Seiya Suzuki declines qualifying offer from Cubs - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBJR1g4MS1OLWt0bVF2d0ZFZnFJbEZmYnlpNVprZmhqbVF0aVB0NjB1dnNTR0V4bllSbzFhLTRQNzRtUDFiSFBXejJJOS1HazRuTldmang3eVItc0pkYk9SSmZTSzRURjJSZmhSQldvRnVjTFlYSHY0eFpqNGZLZw?oc=5",
+   "player": "Seiya Suzuki",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-18T02:14:10+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Sonny Gray)",
    "title": "3 Players Red Sox Should Target to Bolster Starting Rotation - Yahoo Sports",
@@ -1826,7 +2714,7 @@
    "source_pubdate": "2026-11-18T01:50:00+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "MLB qualifying offers: Who took the $23 million and which players are now free agents? - USA Today",
@@ -1837,7 +2725,7 @@
    "source_pubdate": "2026-11-18T01:33:00+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Seiya Suzuki)",
    "title": "MLB qualifying offers: Who took the $23 million and which players are now free agents? - USA Today",
@@ -1848,7 +2736,7 @@
    "source_pubdate": "2026-11-18T01:33:00+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "MLB Free Agent Tracker 2026-27: Top players available, latest signings, and contract information - NBC Sports",
@@ -1859,7 +2747,7 @@
    "source_pubdate": "2026-11-18T01:14:14+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "MLB Trade Rumors (main)",
    "title": "Giants Designate Christian Koss, Rowan Wick For Assignment",
@@ -1870,18 +2758,18 @@
    "source_pubdate": "2026-11-18T01:06:08+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
-   "source": "Google News (Seiya Suzuki)",
+   "source": "Google News (MLB free agency)",
    "title": "MLB free agency tracker: 2026-27 offseason trades, moves - ABC7 Chicago",
    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOb0xxVW5NaU4yVGlhYXFzUjdJYzNKNzdIOG1YaEtjNGx6MkYzVVBUNUFmdUFmS1AyUUUzSjVmZktxeTM2eWZqZUQ1Wk9VRUhTcDdWOGk0QXo5YTNzWlk5Y1NnZlhMRkVrOFdUUFREWW96NTdNNjZ2WkluVl9fMWFFd1JRazNRWHo5QUJLcGFyWTFlOHN2OFJnbQ?oc=5",
-   "player": "Seiya Suzuki",
+   "player": "",
    "team": "",
    "statsapi_transaction_id": null,
    "source_pubdate": "2026-11-18T00:55:55+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "MLB off-season transaction tracker: The top free-agent signings and trades - Sportsnet.ca",
@@ -1892,7 +2780,7 @@
    "source_pubdate": "2026-11-18T00:05:00+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "MLB Trade Rumors (main)",
    "title": "Tigers Designate Four Players For Assignment",
@@ -1903,7 +2791,7 @@
    "source_pubdate": "2026-11-18T00:04:09+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "2026-27 MLB Free Agency: Grading the Biggest Offseason Moves - BVM Sports",
@@ -1914,7 +2802,7 @@
    "source_pubdate": "2026-11-17T23:45:10+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Ryan Jeffers accepts $23.15 million qualifying offer, will return to Twins in 2027 - Star Tribune",
@@ -1925,7 +2813,7 @@
    "source_pubdate": "2026-11-17T23:44:42+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Chicago Cubs Quickly Sign 6-Year MLB Player in MLB Free Agency - Yahoo Sports",
@@ -1936,7 +2824,29 @@
    "source_pubdate": "2026-11-17T23:42:17+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Lowe declines Pirates' qualifying offer - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5FMmtDTUdhVlNhalJaLWs4TndCUUZvMkg3dHhzZ3o0RUFFeHBkbXc0WHZKT1NEZ1U4WXpzNVJtMXhsbzkwM3RQcWhBLU9RNHN6b3V1cEx0YkQ3VzdkblRsdE5ldEZ4ZGlsektwbmZmWUo?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-17T23:37:53+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Brandon Lowe)",
+   "title": "Lowe declines Pirates' qualifying offer - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5FMmtDTUdhVlNhalJaLWs4TndCUUZvMkg3dHhzZ3o0RUFFeHBkbXc0WHZKT1NEZ1U4WXpzNVJtMXhsbzkwM3RQcWhBLU9RNHN6b3V1cEx0YkQ3VzdkblRsdE5ldEZ4ZGlsektwbmZmWUo?oc=5",
+   "player": "Brandon Lowe",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-17T23:37:53+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "MLB Trade Rumors (main)",
    "title": "Dodgers Designate Jake Cousins, Christian Cairo For Assignment",
@@ -1947,7 +2857,7 @@
    "source_pubdate": "2026-11-17T23:34:45+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Seiya Suzuki)",
    "title": "Three Team Most Likely To Sign Cubs Free Agent Seiya Suzuki - Sports Mockery",
@@ -1958,18 +2868,18 @@
    "source_pubdate": "2026-11-17T23:34:19+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
-   "source": "MLB Trade Rumors (main)",
-   "title": "Cardinals Designate Max Rajcic For Assignment",
-   "link": "https://www.mlbtraderumors.com/2026/11/cardinals-designate-max-rajcic-for-assignment.html",
-   "player": "",
+   "source": "Google News (Trevor Rogers)",
+   "title": "Trevor Rogers declines O's qualifying offer for 2027 - WBFF",
+   "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNQmY0VGJGUEF0NWtwWXpoakJZUEx2amVOSVJsbmVxb2pJeGxlRThEb3diY3pJNDEyaHVlTlNraG9YU2poLWZGRXVkaEZlSlktMl8xbXNBWVBPRElBQmpoR3g4UXdPRnJmSTZZeDUtclFrSk5GYUhaWFMyWC1KRlFFLURBanpCS2F1R2JMWGRnZWFYVko5NEhSTUJ4akZXdVNXTXc?oc=5",
+   "player": "Trevor Rogers",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T23:29:14+00:00"
+   "source_pubdate": "2026-11-17T23:27:27+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Brandon Lowe to test free-agency, denies Pirates\u2019 qualifying offer - Yahoo Sports",
@@ -1980,7 +2890,7 @@
    "source_pubdate": "2026-11-17T23:27:16+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Brandon Lowe)",
    "title": "Brandon Lowe to test free-agency, denies Pirates\u2019 qualifying offer - Yahoo Sports",
@@ -1991,7 +2901,7 @@
    "source_pubdate": "2026-11-17T23:27:16+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "David Bednar, Ryan Jeffers Take Qualifying Offers; Six Other Free Agents Decline - FOX Sports",
@@ -2002,7 +2912,7 @@
    "source_pubdate": "2026-11-17T23:20:00+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "David Bednar, Ryan Jeffers Take Qualifying Offers; Six Other Free Agents Decline - FOX Sports",
@@ -2013,7 +2923,18 @@
    "source_pubdate": "2026-11-17T23:20:00+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Chicago Cubs Suddenly Release 2 Players from Organization - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOSmhYOUFxVWVGaEtvT2RpSVJFTm1UejlrcWh5akdDN2d6LXRJVlZRSHd1OTVBWmZfSVZNVFJqVlpqZWtYY2VzY25HR3REUzA4bEJ4UTg0ZnFXRGNxUWF2NXdUN1J6M21rSFJaX2NadTdveVZXUks3MHR3VE9oblZ2UG1JYXhsTGs?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-17T23:03:37+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Red Sox introduce long-coveted free-agent prize Bauers - MLB.com",
@@ -2024,18 +2945,18 @@
    "source_pubdate": "2026-11-17T23:02:38+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (William Contreras)",
-   "title": "Brewers Rivals Eyeing William Contreras, All-Star Hurler in Trade Market - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNMUlzWE1WZUFHZ0ZWTXBIT2pqSXRGWHh5NXdjcXNjNjJHN1BMa0kzdm1xN05nNno2MGNtbU1naXdrUEJVSnVwVVh4WnNPZk9wOHNKd2NtUy10aXB3S2twWXVxWGxRRXhtQjllOXhmMDhlTmlnN2RtOUsyN2VJMnhIamt6VXFpb290bGlqaDJONl9Xdw?oc=5",
+   "title": "Brewers Rivals Eyeing William Contreras, All-Star Hurler in Trade Market - Sports Illustrated",
+   "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOODVER1FkVVJtWFEwQzZfZXBnczFuTFluNHVsY1Z5eFJwUjk1TzJ0c3pFbWZyVjkzZzZ2aGo2LU13bThqYVdWMHpNZUhWSGpScVNENUMzR2pTNEE4ZkhWSlBmSlFiNnZJSWkybW9oTnJSRkdWX0lJOUlfVGJUcC1PZ3lGVDE1eWNTSGVfbEdNX2VNSExYVF9xRnVUc3FpSDRhb1ZuWENDaFJGSFFoZm04VXVB?oc=5",
    "player": "William Contreras",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T23:00:03+00:00"
+   "source_pubdate": "2026-11-17T23:00:00+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "David Bednar, Yankees Agree to New Contract, Star Closer Avoids 2026 MLB Free Agency - Bleacher Report",
@@ -2046,7 +2967,7 @@
    "source_pubdate": "2026-11-17T22:54:47+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Eight Key Free Agents Make Qualifying Offer Decisions - Yahoo Sports",
@@ -2057,18 +2978,18 @@
    "source_pubdate": "2026-11-17T22:51:44+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Trevor Rogers)",
-   "title": "Eight Key Free Agents Make Qualifying Offer Decisions - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQRlhLMTcxSmo3ck1qN3FpM2hUM0EyWnF3UE9pRmxlTXpYcVM0ZGNuWklGTmZCR1hLVm5BbXR3TVBsajdkME5jYUJid29KcDlGSFBMMEVNdU43MklIWkZRVThOOUhBc0FaWDNmdEVhdU1ub2JIWEtBa2diUWFFbmxQMFVwVWN4QTRQ?oc=5",
+   "title": "Qualifying Offer Decisions Reached By 8 Would-Be Free Agents - Last Word On Sports",
+   "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE10UDVvTkRUcHZzSkZiQ1VkLTlNMEEtb0l6M1p0b3FSWWswN1ZVMlZiX29GVmNfdEh6eEx5S0djaUVTRFRFOUF0clpBTjJPRjNLOVVabWhVejAwSEhjd2JsZHhybXpVMWxESDFvbDRLeExrTmZTa1NlcFhBbjkwQQ?oc=5",
    "player": "Trevor Rogers",
    "team": "",
    "statsapi_transaction_id": null,
    "source_pubdate": "2026-11-17T22:51:44+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Seiya Suzuki)",
    "title": "Qualifying Offer Decisions Reached By 8 Would-Be Free Agents - Last Word On Sports",
@@ -2079,7 +3000,18 @@
    "source_pubdate": "2026-11-17T22:51:44+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Brandon Lowe)",
+   "title": "Qualifying Offer Decisions Reached By 8 Would-Be Free Agents - Last Word On Sports",
+   "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE10UDVvTkRUcHZzSkZiQ1VkLTlNMEEtb0l6M1p0b3FSWWswN1ZVMlZiX29GVmNfdEh6eEx5S0djaUVTRFRFOUF0clpBTjJPRjNLOVVabWhVejAwSEhjd2JsZHhybXpVMWxESDFvbDRLeExrTmZTa1NlcFhBbjkwQQ?oc=5",
+   "player": "Brandon Lowe",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-17T22:51:44+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Trevor Rogers)",
    "title": "Braves And Mets Chase Lefty All-Star Trevor Rogers For Rotation - Yahoo Sports",
@@ -2090,7 +3022,7 @@
    "source_pubdate": "2026-11-17T22:51:19+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Ken Rosenthal\u2019s message on the White Sox-Dustin May $52.5 million free agency deal - Yahoo Sports",
@@ -2101,29 +3033,7 @@
    "source_pubdate": "2026-11-17T22:47:59+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Seiya Suzuki)",
-   "title": "New Rumor Links Cubs To Japanese Slugger - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPWXJzLWsydnU3b2ZRNGxGb3BtdFRvTUxsZTA2aDYyOG1EaDRfd1pZbzMzd1o3MDdWbWJScDY5cDlUajBWbE5wbFEybGlhT0g0VnBmMWgwNFVYSmtSbVhHcjkzNU9mWGxSM1k1VnZDekxKTGlUR3pGSlk1ak1yQ1hDMmNGOUplb29DZ2c?oc=5",
-   "player": "Seiya Suzuki",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T22:45:20+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "ESPN news",
-   "title": "Yankees' Bednar, Twins' Jeffers accept $23.15M qualifying offer",
-   "link": "https://www.espn.com/mlb/story/_/id/50513467/sources-yankees-bednar-twins-jeffers-accept-2315m-offer",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T22:44:27Z"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Mets Pitch To Tarik Skubal As Clock Ticks Toward Lockout - Yahoo Sports",
@@ -2134,7 +3044,7 @@
    "source_pubdate": "2026-11-17T22:42:09+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Seiya Suzuki)",
    "title": "Cubs\u2019 Seiya Suzuki Makes $23.15 Million Contract Decision - Yahoo Sports",
@@ -2145,7 +3055,7 @@
    "source_pubdate": "2026-11-17T22:34:36+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Brandon Lowe)",
    "title": "Brandon Lowe Makes Pirates Qualifying Offer Decision - Yahoo Sports",
@@ -2156,7 +3066,7 @@
    "source_pubdate": "2026-11-17T22:32:12+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Brandon Lowe)",
    "title": "New York Yankees Dealt Good News on Top Free Agent Target - Yahoo Sports",
@@ -2167,7 +3077,7 @@
    "source_pubdate": "2026-11-17T22:31:54+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "MLB.com (ATL)",
    "title": "RHPs Polo, De Grandpre added to 40-man roster; RHP Foster claimed",
@@ -2178,18 +3088,18 @@
    "source_pubdate": "2026-11-17T22:23:59+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Brandon Lowe)",
-   "title": "Former MLB All-Star Urges Pirates to Give Brandon Lowe $75M - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPSDBUanJ0VlVZYjBpMllvTVViTVFxU05nSGtRNlMxc1Ayb0NFNVRoQ29nZDRXQ3dTRFItckJkZGZqQjA1OGRXME54VXBBcGN0VGF4TTVnSDNDOURCUTNKRkJmZFBBaS1ZVmVSUEw5U2ZmWG5iejAtUXFHV0J0b01ETVhlSDU?oc=5",
+   "title": "Former MLB All-Star Urges Pirates to Give Brandon Lowe $75M - roundtable.io",
+   "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQRkhtUnVSVFVSQlB0N1dpbEhEb053VGplTWtvOGU4bHg5Q0loZldCdGltSHBTMnVWU1oxRy02TlVEX1JSMUFkVmFBYmJWY2RXZ0NJTFZXU0pudnd5QVJZWUUyZWx3WUUyYzE3VlpYX0R3ckVobGE4TFpNMDdHWG94b3hKNmJoM2Y0Rk1BR3lEMWVzb29Ya3RFZEZfZXRwdGxSNURQV09Hbw?oc=5",
    "player": "Brandon Lowe",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T22:22:37+00:00"
+   "source_pubdate": "2026-11-17T22:23:36+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Brandon Lowe)",
    "title": "Pirates Get Terrible News on Brandon Lowe Decision - Heavy.com",
@@ -2200,7 +3110,7 @@
    "source_pubdate": "2026-11-17T22:14:42+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Seiya Suzuki)",
    "title": "Cubs\u2019 Seiya Suzuki Makes $23.15 Million Contract Decision - Heavy.com",
@@ -2211,18 +3121,7 @@
    "source_pubdate": "2026-11-17T22:11:52+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Drew Rasmussen)",
-   "title": "MacKenzie Gore Among Pitchers Drawing Trade Interest as Offseason Heats Up - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQTmhMQkJSQTlhV1JldjFvbDhSQ0hsVGtXeWUzQzlBZzc4TTRYRHNDc3hLOWR5ZTZlZzdyUVRVTnRPV2M2MXJyb3FVSmFDLU5leXZzVVE3aXk3bnM1c0hjTUg5VWRsSkJXZ3pyei0wT1c1Uk1zckpndFF0M2Nmd1hPQ2NaLXdMZ25FaHFDN1llUQ?oc=5",
-   "player": "Drew Rasmussen",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T22:06:01+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "2026-27 MLB Free Agency: Grading The Offseason\u2019s Biggest Moves - FOX Sports",
@@ -2233,7 +3132,7 @@
    "source_pubdate": "2026-11-17T22:05:55+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "2026-27 MLB Free Agency: Grading The Offseason\u2019s Biggest Moves - FOX Sports",
@@ -2244,7 +3143,7 @@
    "source_pubdate": "2026-11-17T22:05:55+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Why Astros' Bryan Abreu might be a fantastic sleeper free agent target - Yahoo Sports",
@@ -2255,7 +3154,7 @@
    "source_pubdate": "2026-11-17T22:02:48+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "8 MLB free agents were extended a qualifying offer. Here's who accepted it - NBC Sports Boston",
@@ -2266,18 +3165,7 @@
    "source_pubdate": "2026-11-17T21:58:45+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Top free-agent catcher accepts qualifying offer to remain with Twins - NewsBreak: Local News & Alerts",
-   "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZjVOZnl1OFMwWWRIdUNsbEFYa1VfSVNaVVg3THVYa0xpeXAxb2hiVTJGU2VzTlBKNExQOGx4RzRvbEdMbWFkTVY2TVYxWGM5MVRYQks0cUk1bjlUSWRkRlVYLWdZNEktamNuSU1DMXNuTHNsYXZmNjhKcE5HMEVXN2VJUWRvMVNmU0lMNHl1UC00dHFoQTRVOHE4V2VCa01TOFVITGNxQzIydzdEMW1vb21TWQ?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T21:56:24+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "MLB.com (CHC)",
    "title": "Seiya Suzuki declines qualifying offer from Cubs",
@@ -2288,7 +3176,7 @@
    "source_pubdate": "2026-11-17T21:54:00+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Jeffers, Bednar accept QO, per reports - Yahoo Sports",
@@ -2299,7 +3187,7 @@
    "source_pubdate": "2026-11-17T21:49:59+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Ken Rosenthal on MLB\u2019s Surprising Free Agent Deals and Growing Trade Buzz - BVM Sports",
@@ -2310,18 +3198,7 @@
    "source_pubdate": "2026-11-17T21:42:15+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "ESPN news",
-   "title": "Fantasy baseball reactions to MLB offseason trades, signings",
-   "link": "https://www.espn.com/fantasy/baseball/story/_/id/50318517/fantasy-baseball-hot-stove-trades-free-agent-signings-2027",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T21:40:59Z"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Phillies\u2019 free agent Jose Alvarado gets big offseason update despite two problems - Yahoo Sports",
@@ -2332,7 +3209,51 @@
    "source_pubdate": "2026-11-17T21:40:36+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Luis Arraez)",
+   "title": "Phillies\u2019 free agent Jose Alvarado gets big offseason update despite two problems - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNNGo5Zk80RHgwN1JicDFHUC00Ykd2Um5WZ3U5SGVJeVlib1FaUldqajBXNjhEWTh0YkRVN2pjLUkxaWtkODA3TnBkdnpwd0gxajM2elBaMkdoZ0lHc3RjcjAtdUZzVGdCT3oxYzdBT2kzRDVjc1FyWGRzT0wydEh5M0lDY05aN29OUEE?oc=5",
+   "player": "Luis Arraez",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-17T21:40:36+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Arozarena turns down Mariners' qualifying offer, will test free agency - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1GcEFId2ZlT2N6RVBzS0RZYnlsUWNndEFUbUNqZUM3bDFBY1hVZ1JMeTN5em1VX0RacUV2NDZIdEdjMmZiSDVXaTJiOHZGbFlsWG9qMnZFbFd3bnVod1h1ZmRoLXY0ZlNmOHM5T0dLM1FWNXNNTTc3Z1RPMmpraEE?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-17T21:37:47+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "MLB free agency Top 50: Ranking the best players available this winter, starting with Tarik Skubal and Freddy Peralta - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNZlNTZlV0V3pXYjNuM1QyeGFnOTA1YXRIdXBxdDdKLW5PeE1nUHdyaUxaN0NDb3NXc1FWTGFjM2xjaGdvYmNBMWlZdHdCRUczSGo1Q2N2NHdHaEdSMk8wd3QxdjctVG81WjA5Q3pQbGZqaTE4d0I4ZWpiNkhwYldzVGwxbHRxeUQ5RV93b3BYZ213MGFVejRyY1c1d2Npa2dIS3IycW9pWFFHUlp6c2ZwOUhEbm04VHE0UHRnYzI0UWl1eVpIVjBJRlBZbXRfQXFSUk5lU3NEcTBRVGZoVGVzaVZhWEtKZk5RbzhUeUQ5X1JfVFRtZ2VRUU80bw?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-17T21:36:52+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Trevor Rogers)",
+   "title": "MLB free agency Top 50: Ranking the best players available this winter, starting with Tarik Skubal and Freddy Peralta - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNZlNTZlV0V3pXYjNuM1QyeGFnOTA1YXRIdXBxdDdKLW5PeE1nUHdyaUxaN0NDb3NXc1FWTGFjM2xjaGdvYmNBMWlZdHdCRUczSGo1Q2N2NHdHaEdSMk8wd3QxdjctVG81WjA5Q3pQbGZqaTE4d0I4ZWpiNkhwYldzVGwxbHRxeUQ5RV93b3BYZ213MGFVejRyY1c1d2Npa2dIS3IycW9pWFFHUlp6c2ZwOUhEbm04VHE0UHRnYzI0UWl1eVpIVjBJRlBZbXRfQXFSUk5lU3NEcTBRVGZoVGVzaVZhWEtKZk5RbzhUeUQ5X1JfVFRtZ2VRUU80bw?oc=5",
+   "player": "Trevor Rogers",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-17T21:36:52+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "New York Yankees Dealt Bad News on Top Catcher Target During MLB Free Agency - Heavy.com",
@@ -2343,7 +3264,18 @@
    "source_pubdate": "2026-11-17T21:36:37+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Mets meet with Tarik Skubal, MLB\u2019s top free agent: report - New York Daily News",
+   "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOQ1A3ZmViVVpTSnJwY04telgwMFFYT0NZWHJDTGNLVzN4RG92QnllZTVCcjI0bFotLTdTd29WYThPc2VFNGFFM0VtZ0h4dXhHNVpqVGliZDUzQ2JwZU1PTEhmUFpIcHR2SkpqaldLMHRYNGtyT2RUWkc0aW14NHRHYjg2Mi0?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-17T21:35:53+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Michael King)",
    "title": "Mets meet with Tarik Skubal, MLB\u2019s top free agent: report - New York Daily News",
@@ -2354,7 +3286,7 @@
    "source_pubdate": "2026-11-17T21:35:53+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "MLB Trade Rumors (CHC)",
    "title": "Five Players Reject Qualifying Offer",
@@ -2365,7 +3297,18 @@
    "source_pubdate": "2026-11-17T21:35:09+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "MLB Trade Rumors (Trevor Rogers)",
+   "title": "Five Players Reject Qualifying Offer",
+   "link": "https://www.mlbtraderumors.com/2026/11/five-players-reject-qualifying-offer.html",
+   "player": "Trevor Rogers",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-17T21:35:09+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "MLB Free Agency Buzz: Yankees Pitcher, Twins Star Accept Qualifying Offer - FOX Sports",
@@ -2376,7 +3319,7 @@
    "source_pubdate": "2026-11-17T21:35:00+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "MLB Free Agency Buzz: Yankees Pitcher, Twins Star Accept Qualifying Offer - FOX Sports",
@@ -2387,7 +3330,7 @@
    "source_pubdate": "2026-11-17T21:35:00+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (William Contreras)",
    "title": "MLB Free Agency Buzz: Yankees Pitcher, Twins Star Accept Qualifying Offer - FOX Sports",
@@ -2398,18 +3341,7 @@
    "source_pubdate": "2026-11-17T21:35:00+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Drew Rasmussen)",
-   "title": "MLB Free Agency Buzz: Yankees Pitcher, Twins Star Accept Qualifying Offer - FOX Sports",
-   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQY1ZpYlJ6OGlUb2Qtb1Zza3Zja21aWjNiQlQ0S0Z2V2duTFFpVmdFS0RHSlFoUVNHTnJQYlRoOXFhQUxyTXdkZ1ZPcUFBaTloRVFzOHZqeC00NHI1M0V1ZENCQUtwUlczMm9FLWF0aVc1anREa1FWVFFvZ2NvdGhuVlNCbDZJUdIBhgFBVV95cUxPbUxzRXpnSjdoNERnbnFhMGREMkdjWWp3Z3lpRW5yQ2ptOXJHbFdacnNtU1BQOUk5ZjdtbmpLSURPWm0tcGlZN0t0ZDZRY1M4Z0x0c1FFWENPRzlQVHlGT3JYd2FXOTlTN2FVT2ljMVo1WGZuZklicTZtNV9EZVlqWS10MHJKdw?oc=5",
-   "player": "Drew Rasmussen",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T21:35:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Sonny Gray)",
    "title": "MLB Free Agency Buzz: Yankees Pitcher, Twins Star Accept Qualifying Offer - FOX Sports",
@@ -2420,7 +3352,7 @@
    "source_pubdate": "2026-11-17T21:35:00+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Michael King)",
    "title": "MLB Free Agency Buzz: Yankees Pitcher, Twins Star Accept Qualifying Offer - FOX Sports",
@@ -2431,7 +3363,7 @@
    "source_pubdate": "2026-11-17T21:35:00+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Seiya Suzuki)",
    "title": "MLB Free Agency Buzz: Yankees Pitcher, Twins Star Accept Qualifying Offer - FOX Sports",
@@ -2442,29 +3374,18 @@
    "source_pubdate": "2026-11-17T21:35:00+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Arozarena turns down Mariners' qualifying offer, will test free agency - MLB.com",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1GcEFId2ZlT2N6RVBzS0RZYnlsUWNndEFUbUNqZUM3bDFBY1hVZ1JMeTN5em1VX0RacUV2NDZIdEdjMmZiSDVXaTJiOHZGbFlsWG9qMnZFbFd3bnVod1h1ZmRoLXY0ZlNmOHM5T0dLM1FWNXNNTTc3Z1RPMmpraEE?oc=5",
-   "player": "",
+   "source": "Google News (Trevor Rogers)",
+   "title": "Rogers rejects O's qualifying offer, remains free agent - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNQWV2ZnduV3B1bnBRVWV6Zkc4NFJjRHlaUjVjb1ZkSVdiNzlESXNGUjZ1ajV6M2ozTnlueE9LcHB1X2lDX1VoTS1HM1QtTXp4UTJoczY2YUwtSmQ0QnNuS0lGb1dyXy1uNlVQSy1PNGRtV042RXRQR1NtM21LdGg4ZDdXU0VxNWlFdnY3eTROS3lkdE02?oc=5",
+   "player": "Trevor Rogers",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T21:34:15+00:00"
+   "source_pubdate": "2026-11-17T21:32:38+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Padres lose All-Star pitcher to MLB free agency - \u0634\u0628\u0643\u0629 \u062a\u0648\u0627\u0635\u0644 \u0627\u0644\u0625\u062e\u0628\u0627\u0631\u064a\u0629",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5mRWVhQzgzYVdaVmNWa1NWbWhyRFljRmxVSm9GZWt1SnMxVDFUc2h3TFVjNG1FcXltclBQb0pZYTd2empsSDExVzdKUkx5M3Z6aEs0?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T21:33:48+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Seiya Suzuki, a key cog in Cubs\u2019 lineup, declines Chicago\u2019s qualifying offer - The New York Times",
@@ -2475,7 +3396,7 @@
    "source_pubdate": "2026-11-17T21:32:09+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Seiya Suzuki, a key cog in Cubs\u2019 lineup, declines Chicago\u2019s qualifying offer - The New York Times",
@@ -2486,7 +3407,7 @@
    "source_pubdate": "2026-11-17T21:32:09+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Trevor Rogers)",
    "title": "Seiya Suzuki, a key cog in Cubs\u2019 lineup, declines Chicago\u2019s qualifying offer - The New York Times",
@@ -2497,7 +3418,7 @@
    "source_pubdate": "2026-11-17T21:32:09+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Seiya Suzuki)",
    "title": "Seiya Suzuki, a key cog in Cubs\u2019 lineup, declines Chicago\u2019s qualifying offer - The New York Times",
@@ -2508,7 +3429,7 @@
    "source_pubdate": "2026-11-17T21:32:09+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (William Contreras)",
    "title": "Why Putting Off Contreras\u2019 Extension Could Cost Brewers Long Term - Yahoo Sports",
@@ -2519,7 +3440,7 @@
    "source_pubdate": "2026-11-17T21:30:04+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Guardians Again Linked to All-Star Pitcher in Free Agency - Yahoo Sports",
@@ -2530,7 +3451,7 @@
    "source_pubdate": "2026-11-17T21:23:06+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Foster Griffin)",
    "title": "Guardians Again Linked to All-Star Pitcher in Free Agency - Yahoo Sports",
@@ -2541,7 +3462,7 @@
    "source_pubdate": "2026-11-17T21:23:06+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Trevor Rogers)",
    "title": "Three Best Options For Orioles After Trevor Rogers Rejected Their Qualifying Offer - Yahoo Sports",
@@ -2552,29 +3473,7 @@
    "source_pubdate": "2026-11-17T21:21:11+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Trevor Rogers)",
-   "title": "Trevor Rogers rejects Orioles' qualifying offer, remains free agent - MLB.com",
-   "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNNFVoUTdwWUMwdnF1ZmF5MzNPRXowRjZYWFJ5dVpGUlhpb2tHa2dsWFNDenNNUFR2U0tndG9JNGpJYTNlOWc3Mm5qVU4yZlBwUkVsYkRON005YXJuejBYTFFTYndJZWVMWTJ6SDZNallfSWVreGJzdjI1V3lTU0FSVnVvYWVIR0Y5cW9OdUNBaFVUZE5BT0NSWmdILWFwYmZy?oc=5",
-   "player": "Trevor Rogers",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T21:16:46+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Seiya Suzuki Declines Cubs\u2019 $23.15M Qualifying Offer, Tests Free Agency - BVM Sports",
-   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQUm4xbnRRUi1LcTM2d3QxaHk3R2I1aWd2Tm9FYVBsS09tOHJPRUpaZUd6S1VWYjZnOFIwcFVoQUNaTXJ4Q3ZRcl91dFhjSVlueGhpU21kU29UN2Z5LXZOQ1JoM1M3c2JQdzVwUVN5VWpjYlF5SS1TdzVIMW1DVmdXUjU3d0cxSzh6bXZDd2otU2xJcEQtTlFsUldMQXY1aWtOUHNWbw?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T21:10:39+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Seiya Suzuki)",
    "title": "Seiya Suzuki Declines Cubs\u2019 $23.15M Qualifying Offer, Tests Free Agency - BVM Sports",
@@ -2585,7 +3484,7 @@
    "source_pubdate": "2026-11-17T21:10:39+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Seiya Suzuki Reportedly Declines Cubs Qualifying Offer amid MLB Free Agency Rumors - Bleacher Report",
@@ -2596,7 +3495,7 @@
    "source_pubdate": "2026-11-17T21:09:42+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Seiya Suzuki)",
    "title": "Seiya Suzuki Reportedly Declines Cubs Qualifying Offer amid MLB Free Agency Rumors - Bleacher Report",
@@ -2607,18 +3506,7 @@
    "source_pubdate": "2026-11-17T21:09:42+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "MLB qualifying offers: Randy Arozarena rejects offer, David Bednar stays with Yankees - Yahoo",
-   "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNVXBwUURKaVVXLXN0QjBjbndUSW9BbDJjYjBZMUp6MFIyUWI2b1kyOTVDTDl5ajJ0MVBlenhyOFZBUnU4alY2dFZzRWlqSkdJN3JYS3NONXNJUHVYS2dwclY3MnRFNzQ3bTBHQ1ppbEpDUE50R2NPY2JfZVhvVVBDMlNZSzNUSFhzSDFxVEFuX0JsbVh4XzdrWVV3Y3p3RVJYOU05bkExNXg3S1YwY3VvUTlZLWU5a01mazJXbzBmNGlOXzk2b2VOZTQxOA?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T21:08:51+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Closer David Bednar accepts record-setting qualifying offer from Yankees: sources - New York Daily News",
@@ -2629,18 +3517,7 @@
    "source_pubdate": "2026-11-17T21:07:34+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Trevor Rogers declines Orioles\u2019 qualifying offer to test free agency - Baltimore Sun",
-   "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNT295Q051dVY2V1dZS0QzMWdRc0FVRVVNOGtYS19mMHA4V1ZZMmlzdndnaUZKQmxFTGJodE85UmJQbTNlajBibXlaSU51NWRFMXlnRzNzb3J5VlpUSE5IbEt6NnZnSWEtcG51UVpNRXFwcDNDU1QzbHRybi1sczlHel9nT3cxTU9CNUtPaUJkZE9iQQ?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T21:07:14+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Trevor Rogers)",
    "title": "Trevor Rogers declines Orioles\u2019 qualifying offer to test free agency - Baltimore Sun",
@@ -2651,7 +3528,7 @@
    "source_pubdate": "2026-11-17T21:07:14+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Is Dodgers\u2019 pursuit of Tarik Skubal being affected by Mark Walter\u2019s troubles? - AOL.com",
@@ -2662,18 +3539,7 @@
    "source_pubdate": "2026-11-17T21:07:09+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Trevor Rogers)",
-   "title": "MLB Notebook: David Bednar, Ryan Jeffers accept qualifying offer while 5 others decline becoming free agents - Blue Jays Nation",
-   "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNNEVNbWM1YkZyaFp0M2NkbFoxNXNGeVJULXN2ejVHVXJXWDJhVjdKMU1hTURXV29LNjRMZVhVcEt5RVJTeHFBZFduZEFuaUNHWVpmNExka2Fzamh1YzZaZ0lhdWc1QkdxNE1mREJoVnNaUjdnSFRkVWk5YkQzbG92QmsyMF9YZFpPeFMxdTczME9xOHNFUjR1NWNlbnRvOVhIZkozcnRWNXVUMThTY19MMDF3cHlmdWpJWGVKck44MTdIanhxRHB1UEY4SnltbkN2X25adA?oc=5",
-   "player": "Trevor Rogers",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T21:03:28+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Seiya Suzuki makes expected Cubs\u2019 contract decision in MLB free agency - Yahoo Sports",
@@ -2684,7 +3550,7 @@
    "source_pubdate": "2026-11-17T21:02:46+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Seiya Suzuki)",
    "title": "3 Free Agents Rejected Qualifying Offer Today That Blue Jays Should Pursue - Yahoo Sports",
@@ -2695,7 +3561,7 @@
    "source_pubdate": "2026-11-17T21:00:03+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "3 Free Agents Rejected Qualifying Offer Today That Blue Jays Should Pursue - Sports Illustrated",
@@ -2706,7 +3572,7 @@
    "source_pubdate": "2026-11-17T21:00:01+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Free Agent Prediction Contest Leaderboard Now Available - MLB Trade Rumors",
@@ -2717,7 +3583,18 @@
    "source_pubdate": "2026-11-17T20:58:39+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Seiya Suzuki Is One Step Closer To Leaving Cubs - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNemprZDY5eElYcGxRdVJFVXRESnBUYk95RGVpbGxpRmNVOFZYcUVLVHM0S291Z2RmbUtqVkJadVdEQjIwaWl1NkozYVd6X2NqWmpCSFQwd3pmQmYyb214djRPZDZoRVZ5VGczNlpNUmdxWjZDRWtjRVlVTzVFWDVZbUdESQ?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-17T20:58:24+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Seiya Suzuki)",
    "title": "Seiya Suzuki Is One Step Closer To Leaving Cubs - Yahoo Sports",
@@ -2728,7 +3605,7 @@
    "source_pubdate": "2026-11-17T20:58:24+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Chicago Cubs Quickly Sign 6-Year MLB Player in MLB Free Agency - Heavy.com",
@@ -2739,7 +3616,7 @@
    "source_pubdate": "2026-11-17T20:57:58+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "MLB Insider Named Yankees Best Fit For All-Star Free Agent - Yahoo Sports",
@@ -2750,7 +3627,7 @@
    "source_pubdate": "2026-11-17T20:48:15+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Brandon Lowe)",
    "title": "Pirates\u2019 Brandon Lowe makes expected qualifying offer decision official - Yahoo Sports",
@@ -2761,7 +3638,7 @@
    "source_pubdate": "2026-11-17T20:47:13+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Seiya Suzuki)",
    "title": "It\u2019s official: Seiya Suzuki declines the qualifying offer - Yahoo Sports",
@@ -2772,7 +3649,7 @@
    "source_pubdate": "2026-11-17T20:45:35+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Isaac Paredes)",
    "title": "Phillies Offseason Trade Fits Who Could Make The Team Better For 2027 - Last Word On Sports",
@@ -2783,7 +3660,7 @@
    "source_pubdate": "2026-11-17T20:42:52+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "MLB Trade Rumors (ATL)",
    "title": "Braves Claim Cameron Foster",
@@ -2794,40 +3671,18 @@
    "source_pubdate": "2026-11-17T20:40:37+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Why Mets look like the frontrunner to land Tarik Skubal, and what other teams are in the mix? - \u0634\u0628\u0643\u0629 \u062a\u0648\u0627\u0635\u0644 \u0627\u0644\u0625\u062e\u0628\u0627\u0631\u064a\u0629",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBrcF8yWGE4MXFXTWQ2RlVZaDNuc0d0aFhiQmFIMmJiclVSOUdsMnpiUjhCOFhtbVJaNUE0blFkaUtlU1pWMGlkQ0liNnVHdGhibVBj?oc=5",
-   "player": "Tarik Skubal",
+   "source": "Google News (Seiya Suzuki)",
+   "title": "MLB Analyst Identifies Top Free Agents to Target and Avoid - SuaraGarut.ID",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE12M0EyVWNfTWlrWW9NYXpHN0IySWc4WTA0bnhIMF80TTNmenc0R0M5LVNNaFJFb1o2TVZIaU5HakpvWVhPdzRVa2kxcUhPN040VWxJUDJhTUVCSFNSOWhWTjVhUUlDQ2M?oc=5",
+   "player": "Seiya Suzuki",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T20:35:53+00:00"
+   "source_pubdate": "2026-11-17T20:26:00+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Pag\u00e1n finalizes 1-year, $11.5 million contract with the Tigers after spurning the Reds - FOX Sports",
-   "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNWTRFektUYkRfSlpfSTV4OFAyRjNxYmEzNjVPX2g2cUZGSzF5OXdqMF9mdmd6UFdlUmhybjBLTFlFb19nLTZEd0FwVTFrWkJOVmtBZGkyWmR3bS1PWS13TUNrcDhtOXUxWEJFWnU4eE5qMWJ4QUlFbmRpckRkNllkM1k5bHFaTW5Ub2lqRXRsalBNSl9yVjFfd3dOU3Jya2xSclhZQmxuRm9RWEVtQ042RE1FQmltSmM0Z05Vd3h3?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T20:25:29+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Pag\u00e1n finalizes 1-year, $11.5 million contract with the Tigers after spurning the Reds - FOX Sports",
-   "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNWTRFektUYkRfSlpfSTV4OFAyRjNxYmEzNjVPX2g2cUZGSzF5OXdqMF9mdmd6UFdlUmhybjBLTFlFb19nLTZEd0FwVTFrWkJOVmtBZGkyWmR3bS1PWS13TUNrcDhtOXUxWEJFWnU4eE5qMWJ4QUlFbmRpckRkNllkM1k5bHFaTW5Ub2lqRXRsalBNSl9yVjFfd3dOU3Jya2xSclhZQmxuRm9RWEVtQ042RE1FQmltSmM0Z05Vd3h3?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T20:25:29+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Seiya Suzuki)",
    "title": "Seiya Suzuki Declines Cubs' Qualifying Offer - North Side Baseball",
@@ -2838,7 +3693,7 @@
    "source_pubdate": "2026-11-17T20:25:23+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Hot Stove rumors: Gore, Yankees, Arozarena, Duran, Skubal - MLB.com",
@@ -2849,7 +3704,7 @@
    "source_pubdate": "2026-11-17T20:22:38+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Hot Stove rumors: Gore, Yankees, Arozarena, Duran, Skubal - MLB.com",
@@ -2860,18 +3715,7 @@
    "source_pubdate": "2026-11-17T20:22:38+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Drew Rasmussen)",
-   "title": "Hot Stove rumors: Gore, Yankees, Arozarena, Duran, Skubal - MLB.com",
-   "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPSHZvOW5faHljMDliNzlSX3RBTXdocjNQR0dxOUVBVjJPUTRGRmFSRy0tY3NXTVBmNVZsTnpxZDFrem5kME9FMFZUZFdyTG0wSjFMQnMxTXktX3JGaHE2a1BaU21rODg2VmlreHVrQ01kLVZFb3Z5dzRwQVV1U0NDd9IBjAFBVV95cUxNZ0Z3RkJUcVJVYVk4S091RjBPMEhOaTZMUHBmdFB0RWdHOGZWR3FDOEc2b2p1NndIc2NnbG1nRUpicjBMOUI0LWV1aVItQU9MUGpmVVRQSEJ4MnR1VER4R1FkOWpCWFUtdENDZlBvMzlGUzV6MzJJNnJNOV9TVzRhN3VSaFVXelBrSUlPTw?oc=5",
-   "player": "Drew Rasmussen",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T20:22:38+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Trevor Rogers)",
    "title": "Free Agent Profile: Trevor Rogers, SP - Metsmerized",
@@ -2882,7 +3726,7 @@
    "source_pubdate": "2026-11-17T20:16:19+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Randy Arozarena MLB Free Agency Rumors: Yankees, Orioles, Phillies in the Mix? - Complex",
@@ -2893,7 +3737,7 @@
    "source_pubdate": "2026-11-17T20:14:26+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Cubs Move One More Sad Step Closer to Officially Losing Seiya Suzuki - Yahoo Sports",
@@ -2904,7 +3748,7 @@
    "source_pubdate": "2026-11-17T20:12:59+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Seiya Suzuki)",
    "title": "Cubs Move One More Sad Step Closer to Officially Losing Seiya Suzuki - Yahoo Sports",
@@ -2915,7 +3759,7 @@
    "source_pubdate": "2026-11-17T20:12:59+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "MLB Trade Rumors (TEX)",
    "title": "Rangers Claim Josh White",
@@ -2926,7 +3770,7 @@
    "source_pubdate": "2026-11-17T20:05:10+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Los Angeles Dodgers Quietly Sign Intriguing 23-Year-Old Player in Free Agency - Heavy.com",
@@ -2937,18 +3781,7 @@
    "source_pubdate": "2026-11-17T20:03:42+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Chicago Cubs Suddenly Release 2 Players from Organization - Heavy.com",
-   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNOGdrOEdjN1NQYVdWTFVwLTVCWTRkeUdDSmNMQVFVbElqZUFiaXY1U1Q2aUZNbjdUR3lnWEJ1NUpUNGo3NDczZ1RxYy1KSk1YSXJCdlVXTjFPMjFxY1RaaWhUNVlMaEk5RnlKbE1oRnlwLURwLTRrckVzNlFFekUyT2d2LWNIT1l1dEFxR0VZclJOZUllcnc?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T20:03:37+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Seiya Suzuki)",
    "title": "Chicago Cubs Suddenly Release 2 Players from Organization - Heavy.com",
@@ -2959,7 +3792,7 @@
    "source_pubdate": "2026-11-17T20:03:37+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Padres Named Best Fit for Veteran All-Star Pitching in Free Agency - Yahoo Sports",
@@ -2970,18 +3803,7 @@
    "source_pubdate": "2026-11-17T20:03:29+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Padres Named Best Fit for Veteran All-Star Pitching in Free Agency - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNa0g5dDM5bWJaRWpsalpaN0lrUWltTkoxVGxLWlFreHBWZk5LeTgzV0kzeVJQazlMX3JFS091bVpJVVl0bDlLN01DN051T0FvX0xpcHZCS1dSaVFCXy1zQ21BWVN6Nk42NURpWWpzajE4czFGZGdyNHMwZGdsa0t5bFFWWU4?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T20:03:29+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "The Mets look like the frontrunner to land Tarik Skubal. What other teams are in the mix? - Yahoo Sports",
@@ -2992,7 +3814,7 @@
    "source_pubdate": "2026-11-17T19:55:25+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "The Mets look like the frontrunner to land Tarik Skubal. What other teams are in the mix? - Yahoo Sports",
@@ -3003,7 +3825,7 @@
    "source_pubdate": "2026-11-17T19:55:25+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Dodgers\u2019 Tarik Skubal Plan B Could Be Star Free Agent Reliever - Yahoo Sports",
@@ -3014,7 +3836,7 @@
    "source_pubdate": "2026-11-17T19:51:01+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "MLB rumors: Why Orioles-Diamondbacks Ketel Marte trade may be difficult to get done - Yahoo Sports",
@@ -3025,7 +3847,7 @@
    "source_pubdate": "2026-11-17T19:50:44+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Trevor Rogers)",
    "title": "MLB insiders reveal two positions Orioles want to add during MLB offseason - Yahoo Sports",
@@ -3036,7 +3858,7 @@
    "source_pubdate": "2026-11-17T19:50:43+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Mets complete in-person meeting with Tarik Skubal - NBC Sports",
@@ -3047,7 +3869,7 @@
    "source_pubdate": "2026-11-17T19:49:40+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Brandon Lowe)",
    "title": "Brandon Lowe declining Pirates\u2019 qualifying offer, will remain free agent - Yahoo Sports",
@@ -3058,7 +3880,7 @@
    "source_pubdate": "2026-11-17T19:49:11+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Tarik Skubal Meets With Mets in Free Agency - RG.org",
@@ -3069,7 +3891,7 @@
    "source_pubdate": "2026-11-17T19:45:51+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Seiya Suzuki)",
    "title": "Seiya Suzuki declines qualifying offer from Cubs (source) - MLB.com",
@@ -3080,7 +3902,7 @@
    "source_pubdate": "2026-11-17T19:43:58+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Pirates Get Big Update on Key Free Agent Target - Yahoo Sports",
@@ -3091,7 +3913,7 @@
    "source_pubdate": "2026-11-17T19:42:29+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Seiya Suzuki)",
    "title": "Pirates Get Big Update on Key Free Agent Target - Yahoo Sports",
@@ -3102,7 +3924,7 @@
    "source_pubdate": "2026-11-17T19:42:29+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "New York Yankees Dealt Good News on Top Free Agent Target - Heavy.com",
@@ -3113,7 +3935,7 @@
    "source_pubdate": "2026-11-17T19:35:22+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Kevin Gausman)",
    "title": "Former Blue Jays ace Kevin Gausman finds buyer for $6.9-million Toronto mansion - Toronto Sun",
@@ -3124,7 +3946,7 @@
    "source_pubdate": "2026-11-17T19:32:21+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "A\u2019s Designate Braden Nett For Assignment - MLB Trade Rumors",
@@ -3135,7 +3957,7 @@
    "source_pubdate": "2026-11-17T19:23:57+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "MLB rumors: MacKenzie Gore, Logan Gilbert among pitchers to emerge as trade candidates - Yahoo Sports",
@@ -3146,7 +3968,7 @@
    "source_pubdate": "2026-11-17T19:20:28+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "MLB Trade Rumors (TEX)",
    "title": "Rangers Receiving Trade Interest In MacKenzie Gore",
@@ -3157,7 +3979,7 @@
    "source_pubdate": "2026-11-17T19:10:18+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Red Sox Reportedly Make Trade to Clear Roster Spot for Jake Bauers Contract in MLB Free Agency - Bleacher Report",
@@ -3168,7 +3990,29 @@
    "source_pubdate": "2026-11-17T19:00:48+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Where the Skubal chase stands as in-person meetings begin - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE53dGFSWDRHdHdfMWU5U0p2MkpEVTUxMVVxVml5TmNfZ1pVZzN2dnlJZ2dCMUZ0cFhuN2NVVi1yR0FTcTYtUXAwQmRxYUZwTGdOalg4VDllZmJudnV0al9HWURXNWhRZzV0Ql83VGQySFJPS0trcFRvYW1uSE1jRVU?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-17T18:57:38+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Where the Skubal chase stands as in-person meetings begin - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE53dGFSWDRHdHdfMWU5U0p2MkpEVTUxMVVxVml5TmNfZ1pVZzN2dnlJZ2dCMUZ0cFhuN2NVVi1yR0FTcTYtUXAwQmRxYUZwTGdOalg4VDllZmJudnV0al9HWURXNWhRZzV0Ql83VGQySFJPS0trcFRvYW1uSE1jRVU?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-17T18:57:38+00:00"
+  },
+  {
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Brandon Lowe)",
    "title": "Brandon Lowe Declining Pirates\u2019 Qualifying Offer, Will Remain Free Agent - Pittsburgh Baseball Now",
@@ -3179,7 +4023,7 @@
    "source_pubdate": "2026-11-17T18:57:01+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "4 free agents who could help the Astros address their biggest needs - Yahoo Sports",
@@ -3190,7 +4034,7 @@
    "source_pubdate": "2026-11-17T18:55:29+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Michael King)",
    "title": "4 free agents who could help the Astros address their biggest needs - Yahoo Sports",
@@ -3201,18 +4045,7 @@
    "source_pubdate": "2026-11-17T18:55:29+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "ESPN news",
-   "title": "2026-27 MLB free agency, trade grades: Offseason analysis",
-   "link": "https://www.espn.com/mlb/story/_/id/50473334/2026-27-offseason-free-agency-trade-grades",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T18:53:50Z"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Tarik Skubal had meeting with Mets as his free agency heats up: Sources - The New York Times",
@@ -3223,7 +4056,7 @@
    "source_pubdate": "2026-11-17T18:52:30+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Tarik Skubal had meeting with Mets as his free agency heats up: Sources - The New York Times",
@@ -3234,7 +4067,7 @@
    "source_pubdate": "2026-11-17T18:52:30+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Brandon Lowe)",
    "title": "Pirates' Brandon Lowe Makes Qualifying Offer Decision - Sports Illustrated",
@@ -3245,18 +4078,18 @@
    "source_pubdate": "2026-11-17T18:44:12+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
-   "title": "Padres lose All-Star pitcher to MLB free agency - The Big Lead",
-   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNejFpNlYxaDVzTGRrS3BDTU1ET3hLbzZTNm1qMmpHUkF1bTh2cTBZakV2V01JODNJLWJKZVctck83R1hFcmtyeVp2MUNsSGdoT25FMkp6MmVxWTEtT2QxUUlONExpcnRzRkZnOHBRYk9kSFJqbTZLVm1TSC1kR29tX1J6NDN0UG5hODhkeVRtSG0?oc=5",
+   "title": "Padres lose All-Star pitcher to MLB free agency - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxONWNEdW9kTl9qREt3Z0lUZURIWmVBQnd6VllINU1VbDA5eUVqNGV3UGhsYlJyMENtbXFkV2ZYdDNiZHRZTmNVelJLcmlKUUs5bHRsLW54WldoWmFxeHhyOUhsTWVKUi1aaGl3VmdDSlZ0SjFydUI4Yk9tOTRBWHV4YVJzaw?oc=5",
    "player": "",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T18:43:00+00:00"
+   "source_pubdate": "2026-11-17T18:41:59+00:00"
   },
   {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
+   "pulled_at": "2026-11-18T16:23:45.920844+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Mets' Starting Rotation Plans Slowly Taking Shape After Tarik Skubal Update - Sports Illustrated",
@@ -3265,479 +4098,6 @@
    "team": "",
    "statsapi_transaction_id": null,
    "source_pubdate": "2026-11-17T18:34:46+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "MLB rumors: Mets meet with Tarik Skubal, Red Sox getting calls for multiple players, plus Cubs, Red Sox, more - CBS Sports",
-   "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNT3p5YmsxcExsck5hbWVwQU0tQVJLTm9sa1NvaWI5UTJUSUNtX2g5Q2hvNjA0VktiRU1EdGJIejQwWnJvOGdlcktfNVBNMGYxM2FhaUx2MWlZejE0N011MS12eXFzZUhQVGhYMTV4cmN6cXpRWDhpSXozSjV5bkViR1liTHhrdFQ0dzR5SHhtX0RUUWlOTWJTVVRsVVBmR2N1U3NVcW02UllqZjRnMmc?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T18:27:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "MLB rumors: Mets meet with Tarik Skubal, Red Sox getting calls for multiple players, plus Cubs, Red Sox, more - CBS Sports",
-   "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNT3p5YmsxcExsck5hbWVwQU0tQVJLTm9sa1NvaWI5UTJUSUNtX2g5Q2hvNjA0VktiRU1EdGJIejQwWnJvOGdlcktfNVBNMGYxM2FhaUx2MWlZejE0N011MS12eXFzZUhQVGhYMTV4cmN6cXpRWDhpSXozSjV5bkViR1liTHhrdFQ0dzR5SHhtX0RUUWlOTWJTVVRsVVBmR2N1U3NVcW02UllqZjRnMmc?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T18:27:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Trevor Rogers)",
-   "title": "Cubs Pitching Rumors: Losing Out on Dustin May, Is Trevor Rogers a Top Target? More - Sports Illustrated",
-   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNYzVNSjU5TDdZWWxmQnFlZDRnd25WdXcyN0xmUGJmajY3T2lRLUFEZ28zMUFWbXVWSWI4RnpOaS1uaXRDOURZQkVUa29tLUloY1hsemxKMXNvWWhTeHVMdHlsbEhsWG9DZnVpNTJ2dEt0MzFoV2JCa3FlREg5dmJKZExRRXBrTjV3YXg4MDdJeDlaTVZ4SDl1amxvQ0VwYnZvMUtreHhpLU5VZXM4VVhCTw?oc=5",
-   "player": "Trevor Rogers",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T18:21:38+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Adrian Morejon makes unsurprising Padres decision in MLB free agency - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPcWplejJMQXNyQlJ3VnYtV1dUUnpobWlxQUdKWHhka2kwamZ0aFZsU1B3a01qWXdEWDRhdUFMT1ZaZ2dHNmlJNWlKMFNocHVwZUtrbmpDNDlZMGNsWGd6TmdjYVc2N01TQmlYcDlycXczSDc3bmVVR0cyWEZzSldweUJzLXc0OHJPQmI0b1p3cUZsb3M?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T18:20:03+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Tarik Skubal Next Team Odds: What Prediction Markets Say About MLB's Top Free Agent - Deadspin",
-   "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNOE5KY0Zqc1l6YVgxT3k2R1BxekxCbHlia2tqV3Y5OVFPLVJLWGJuS1N4bks5b1o5UmZhaThhaE1lblpsTXBOZEE5cVJOeS1JbzNCZzQ1NDJRc3RleW4wOEdfQXdWY2xFZzh0NUJpdUlTT1FUNzg2dXh4WkNibXRHV01kZS00cXJPektfTU9hZ2JsUHc0bkN0YTk2azlnOGtiMzMtU0xR?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T18:19:19+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Tarik Skubal Next Team Odds: What Prediction Markets Say About MLB's Top Free Agent - Deadspin",
-   "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNOE5KY0Zqc1l6YVgxT3k2R1BxekxCbHlia2tqV3Y5OVFPLVJLWGJuS1N4bks5b1o5UmZhaThhaE1lblpsTXBOZEE5cVJOeS1JbzNCZzQ1NDJRc3RleW4wOEdfQXdWY2xFZzh0NUJpdUlTT1FUNzg2dXh4WkNibXRHV01kZS00cXJPektfTU9hZ2JsUHc0bkN0YTk2azlnOGtiMzMtU0xR?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T18:19:19+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "MLB.com (SD)",
-   "title": "Morejon will test market after declining qualifying offer from Padres",
-   "link": "https://www.mlb.com/padres/news/adrian-morejon-declines-qualifying-offer",
-   "player": "",
-   "team": "Padres",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T18:11:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "2026-27 MLB free agency, trade grades: Offseason analysis - ESPN",
-   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOdHhuVzd3cG5xdEF6VFktWVduRnlwNG1BV0VtLUVfOEdNcUVsQlpKMnRocHlqcGhkZVljWGlrcG1PSWZzZkI2TmRhNVFWcVdyUlRXUGdSUnFSNm5HR05UaXVya1MwTnp3dDRnUzJxT1dtNUZ6MmpJZTc4VG5IXzQ2MUMwRExuVndna1JuUWEtYWg?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T18:00:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "2026-27 MLB free agency, trade grades: Offseason analysis - ESPN",
-   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOdHhuVzd3cG5xdEF6VFktWVduRnlwNG1BV0VtLUVfOEdNcUVsQlpKMnRocHlqcGhkZVljWGlrcG1PSWZzZkI2TmRhNVFWcVdyUlRXUGdSUnFSNm5HR05UaXVya1MwTnp3dDRnUzJxT1dtNUZ6MmpJZTc4VG5IXzQ2MUMwRExuVndna1JuUWEtYWg?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T18:00:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (William Contreras)",
-   "title": "2026-27 MLB free agency, trade grades: Offseason analysis - ESPN",
-   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOdHhuVzd3cG5xdEF6VFktWVduRnlwNG1BV0VtLUVfOEdNcUVsQlpKMnRocHlqcGhkZVljWGlrcG1PSWZzZkI2TmRhNVFWcVdyUlRXUGdSUnFSNm5HR05UaXVya1MwTnp3dDRnUzJxT1dtNUZ6MmpJZTc4VG5IXzQ2MUMwRExuVndna1JuUWEtYWg?oc=5",
-   "player": "William Contreras",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T18:00:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Tarik Skubal has in-person meeting with Mets amid high-profile free agency - ClutchPoints",
-   "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQjVxWUlGTTdsSDNqSVZXd3hRWlpKNmNoS1dCLUxoNXpWRFZaY0NoVnlRRGZxV2VnZkdjUzlyVnl4LWtqUFI0SEhXRkl3TFJTX00xWFZDclNIWUtDcTdwNWFXWHdIcjcySllHOUh4bFc1UnpuN25IcGlsR3hBRGNfVmticW1rbks4di1hbmhuUlFaNllVMWZxbWZOdjdOalBPVWdVNXo2WWdvdTU0UUxxbXBZdi1rcmt4SnVWYnFmUkVOOVU?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:49:12+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Tarik Skubal has in-person meeting with Mets amid high-profile free agency - ClutchPoints",
-   "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQQjVxWUlGTTdsSDNqSVZXd3hRWlpKNmNoS1dCLUxoNXpWRFZaY0NoVnlRRGZxV2VnZkdjUzlyVnl4LWtqUFI0SEhXRkl3TFJTX00xWFZDclNIWUtDcTdwNWFXWHdIcjcySllHOUh4bFc1UnpuN25IcGlsR3hBRGNfVmticW1rbks4di1hbmhuUlFaNllVMWZxbWZOdjdOalBPVWdVNXo2WWdvdTU0UUxxbXBZdi1rcmt4SnVWYnFmUkVOOVU?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:49:12+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "White Sox to sign Dustin May to 3-year-deal, boosting their rotation: Sources - The Athletic - The New York Times",
-   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOOHBFbTg3YUhTRXNfYS01dUR1Z3NhaGd4Y1Y4XzRLajBuV0NrLWluZTFidXg3dENqaFZKVWptM1k1enJxTE9YWjVDVk94ck5fMzZ2bTdoSDVJVElIWXFaMEJUS0I4S0M5MkRXbHdnQm1zQklRMjFKeUVNZW5RY0VPakkzNWpZcjQ1MWFKNWJQckpqaDZHMGpoc2RoOERKbVU?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:47:21+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Toronto Blue Jays Predicted to Acquire 6-Foot-7 Pitcher for Ernie Clement - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPc1d6YmVIekF0YmJPTWNkaklyWkZfRTRoTVVYUEJiSGhjbS00d2dKV2lsalgwZC1Ya1FVY0J3OXBMa2tRVTZxN2YyQW9lWmNMX0JibFZTNkRCcE5LY0VnRUZZQmx4S2dURFpVVnZMUkFXcUU0elJLRlFPV0I0ZEhYN05uemItWm5QTzJRNA?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:36:33+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Mets Take Important Step Toward Signing Tarik Skubal - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOY2xlUi13bjFvWkRHZndRYkhXUFhubW5Od2hGOF8tQUR5WVJjNDM2ZmZ3Y0h6Y3NjY2I2UDdMLXRSSmpaS21heDR1a2JyX0xuSVJwT0tidm5YWnNpSkh1QTJQZ2ZMRDZ2MWRNd1ZtZnVEODlMWHBUbkVVU05lc3JhMEhudkpQZmVhS2dn?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:30:44+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "May leaves Brewers for free-agent deal with White Sox (source) - MLB.com",
-   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1JUnhRMUNCajk3cXl1dDBTSlpPX1BCcUE1VU9uSVNkdDVGMVVfN0pWZDdiSW5fcWhlZ010QWZRbHpucnVfb242bm5DTHFvTlJHdDg0NXpFWDU5cnEzS0h2T09NcU1QX1pxbFhIU2g3ZG1xUQ?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:24:34+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Braves, Mets, Padres, Cubs reportedly interested in $6.2M ex-Orioles highly sought after All-Star - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPZlZHekE1Y1BqMkdNNEdQVngwblF2LU5ZUFg5aVVLRk82ZlVJa1oxWVhwR2JES21yNVdSZnhSVEpOTHdhLVlka19fa1dOZXI2TnVETWh0bERsS2ktb2x0dnctcDlZVFdzeFk1OE9aLUZaQ0NWYzlBWnA2allXRnkxMmtKMHBNcUpzTmc4?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:21:25+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Trevor Rogers)",
-   "title": "Braves, Mets, Padres, Cubs reportedly interested in $6.2M ex-Orioles highly sought after All-Star - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPZlZHekE1Y1BqMkdNNEdQVngwblF2LU5ZUFg5aVVLRk82ZlVJa1oxWVhwR2JES21yNVdSZnhSVEpOTHdhLVlka19fa1dOZXI2TnVETWh0bERsS2ktb2x0dnctcDlZVFdzeFk1OE9aLUZaQ0NWYzlBWnA2allXRnkxMmtKMHBNcUpzTmc4?oc=5",
-   "player": "Trevor Rogers",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:21:25+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Updated MLB Free Agents 2026 Rumors and Predictions amid Awards Season - Bleacher Report",
-   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPX3Z4QjlYd3JHTWxzWXZENm9ETlFldWZodWJPYVlQU3NlUkdEajBEcXIwN00xckI4Vy03TUlsWEROYlhaVUFnbmZZaDZNMHhqXzJPbEpOTUFyMjFrZ0VxWTRYUk1tY0FUcldQQkpqV0dFeXFaZkQxbXhXWjI5VkhvVWJWWi01SFEzcklBUlBTWW90M19MZGhMdGtISGpyX2I0eTc0LTY3bHBSWVhEWHV3dHZoaE5JQQ?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:10:38+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Updated MLB Free Agents 2026 Rumors and Predictions amid Awards Season - Bleacher Report",
-   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPX3Z4QjlYd3JHTWxzWXZENm9ETlFldWZodWJPYVlQU3NlUkdEajBEcXIwN00xckI4Vy03TUlsWEROYlhaVUFnbmZZaDZNMHhqXzJPbEpOTUFyMjFrZ0VxWTRYUk1tY0FUcldQQkpqV0dFeXFaZkQxbXhXWjI5VkhvVWJWWi01SFEzcklBUlBTWW90M19MZGhMdGtISGpyX2I0eTc0LTY3bHBSWVhEWHV3dHZoaE5JQQ?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:10:38+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "White Sox Reportedly Sign Former Brewers Pitcher To $50 Million Deal - FOX Sports",
-   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQWFFQQnZrbUNXTGx0dnF3b19SbFAtVTNuRnBKb0hJVWdnRUNqTEhOMG4xazJzMGJIQ3BseVctNUcwQWdXRzNDWHlCQ3JIdEVQc0dnTFFQLTVSd19aVEJ6NlUwOUkzRFBDVXdfbERsbjJTeE1EQjJxbDlhak5oOThzem1pYjBsWktnNlYwM29seHFrQVh0MnI4Q0VrUUIyZ9IBngFBVV95cUxPaGhabVF3NkFWZUtZTVJFSmVBb1pUYW8tUFR1NzgtWFI3Y0JuQllBTVpGVjJlbHhYUUlkLTNpQ2RrSVAxbXhhdUhTSXhlTUFhMUdhZnkwRmhWbkduRlVNQ3JVaHJvYTBJeEZ1aU5XbDFqWXVVbUNaNXJvQ0t5RTBxTllUYW9TeWJWQzl3bVBFRFN1YjlYU2ZxeklwOVVTZw?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:08:29+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "White Sox Reportedly Sign Former Brewers Pitcher To $50 Million Deal - FOX Sports",
-   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQWFFQQnZrbUNXTGx0dnF3b19SbFAtVTNuRnBKb0hJVWdnRUNqTEhOMG4xazJzMGJIQ3BseVctNUcwQWdXRzNDWHlCQ3JIdEVQc0dnTFFQLTVSd19aVEJ6NlUwOUkzRFBDVXdfbERsbjJTeE1EQjJxbDlhak5oOThzem1pYjBsWktnNlYwM29seHFrQVh0MnI4Q0VrUUIyZ9IBngFBVV95cUxPaGhabVF3NkFWZUtZTVJFSmVBb1pUYW8tUFR1NzgtWFI3Y0JuQllBTVpGVjJlbHhYUUlkLTNpQ2RrSVAxbXhhdUhTSXhlTUFhMUdhZnkwRmhWbkduRlVNQ3JVaHJvYTBJeEZ1aU5XbDFqWXVVbUNaNXJvQ0t5RTBxTllUYW9TeWJWQzl3bVBFRFN1YjlYU2ZxeklwOVVTZw?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:08:29+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Fantasy baseball reactions to MLB offseason trades, signings - ESPN",
-   "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPZnhwakJOYndtQmNyc2dxaHc2ZHNIZFNUVHFDa1hxdEJYbUZ6WlpLQTlEWV9oRFltQXgzUHF6UXYycnFvak5pSGhZY0JKcjV2V29lLWRrUTRURDNaSjI4Uy1IRFNpRXJqa1BiRkFmYThjenJzcHM0Z3pxQ25oZWRIOXVlVHBqQ283MUd0MDIwQXRrX1VZeVdmbDRUYkZuRkRVYUN4RkRCeFJpbzhfd2pEeG9RdXIxcms?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:07:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Sonny Gray)",
-   "title": "Fantasy baseball reactions to MLB offseason trades, signings - ESPN",
-   "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPZnhwakJOYndtQmNyc2dxaHc2ZHNIZFNUVHFDa1hxdEJYbUZ6WlpLQTlEWV9oRFltQXgzUHF6UXYycnFvak5pSGhZY0JKcjV2V29lLWRrUTRURDNaSjI4Uy1IRFNpRXJqa1BiRkFmYThjenJzcHM0Z3pxQ25oZWRIOXVlVHBqQ283MUd0MDIwQXRrX1VZeVdmbDRUYkZuRkRVYUN4RkRCeFJpbzhfd2pEeG9RdXIxcms?oc=5",
-   "player": "Sonny Gray",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:07:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Kevin Gausman)",
-   "title": "Fantasy baseball reactions to MLB offseason trades, signings - ESPN",
-   "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPZnhwakJOYndtQmNyc2dxaHc2ZHNIZFNUVHFDa1hxdEJYbUZ6WlpLQTlEWV9oRFltQXgzUHF6UXYycnFvak5pSGhZY0JKcjV2V29lLWRrUTRURDNaSjI4Uy1IRFNpRXJqa1BiRkFmYThjenJzcHM0Z3pxQ25oZWRIOXVlVHBqQ283MUd0MDIwQXRrX1VZeVdmbDRUYkZuRkRVYUN4RkRCeFJpbzhfd2pEeG9RdXIxcms?oc=5",
-   "player": "Kevin Gausman",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:07:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Luis Arraez)",
-   "title": "Fantasy baseball reactions to MLB offseason trades, signings - ESPN",
-   "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPZnhwakJOYndtQmNyc2dxaHc2ZHNIZFNUVHFDa1hxdEJYbUZ6WlpLQTlEWV9oRFltQXgzUHF6UXYycnFvak5pSGhZY0JKcjV2V29lLWRrUTRURDNaSjI4Uy1IRFNpRXJqa1BiRkFmYThjenJzcHM0Z3pxQ25oZWRIOXVlVHBqQ283MUd0MDIwQXRrX1VZeVdmbDRUYkZuRkRVYUN4RkRCeFJpbzhfd2pEeG9RdXIxcms?oc=5",
-   "player": "Luis Arraez",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:07:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Foster Griffin)",
-   "title": "Fantasy baseball reactions to MLB offseason trades, signings - ESPN",
-   "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPZnhwakJOYndtQmNyc2dxaHc2ZHNIZFNUVHFDa1hxdEJYbUZ6WlpLQTlEWV9oRFltQXgzUHF6UXYycnFvak5pSGhZY0JKcjV2V29lLWRrUTRURDNaSjI4Uy1IRFNpRXJqa1BiRkFmYThjenJzcHM0Z3pxQ25oZWRIOXVlVHBqQ283MUd0MDIwQXRrX1VZeVdmbDRUYkZuRkRVYUN4RkRCeFJpbzhfd2pEeG9RdXIxcms?oc=5",
-   "player": "Foster Griffin",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:07:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Michael King)",
-   "title": "Fantasy baseball reactions to MLB offseason trades, signings - ESPN",
-   "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPZnhwakJOYndtQmNyc2dxaHc2ZHNIZFNUVHFDa1hxdEJYbUZ6WlpLQTlEWV9oRFltQXgzUHF6UXYycnFvak5pSGhZY0JKcjV2V29lLWRrUTRURDNaSjI4Uy1IRFNpRXJqa1BiRkFmYThjenJzcHM0Z3pxQ25oZWRIOXVlVHBqQ283MUd0MDIwQXRrX1VZeVdmbDRUYkZuRkRVYUN4RkRCeFJpbzhfd2pEeG9RdXIxcms?oc=5",
-   "player": "Michael King",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:07:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Right-hander Dustin May agrees to a $52.5 million, 3-year contract with the White Sox - FOX Sports",
-   "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOeDhrU2tjbGRiVmZoMm5MSF82U0FLZUZySEJYNHM5MFJvWlpySTBxVmN2eVF2d1pFdXI1aUtyU3VxOFZ0dmlJVkxYekRGMTBXeVNwMEViWlAtVURfUUNXNzc5Rm56TVVmUmI1anpaa2Nublh5N1JNaEVmWFE4WGl3dk00Y3c0UVozdGZsNEplWWVUbGJiMDByNTEwSWNwVUV0M2syWC1WM00zemF6bnBrRDJFMXFOeExNYWhz?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:05:39+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Dustin May signs $52.5 million deal with White Sox in early free-agency splash - New York Post",
-   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNWEhQb0huRXRiMnMyZVBjOTBIQVNEREdCS2kySGZ2OUdjclkwdzhObGlobG0wWEJKYmRBU25sWWJwNFAtdDBGSlZXZHhyY3ItMmd1bk52YXA5Wl9yRm1aQ1FST1dnOHNEam5DREVVOC1lUE0xTG9YQkNISWRJOVlVSWpMQng2Q1ppTWtNQTA5N0JDbV9jeDBLcThtZUNKODRZUi1ESkdnSHdQekR4QTNrLVBRWjdOdw?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:02:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Dustin May signs $52.5 million deal with White Sox in early free-agency splash - New York Post",
-   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNWEhQb0huRXRiMnMyZVBjOTBIQVNEREdCS2kySGZ2OUdjclkwdzhObGlobG0wWEJKYmRBU25sWWJwNFAtdDBGSlZXZHhyY3ItMmd1bk52YXA5Wl9yRm1aQ1FST1dnOHNEam5DREVVOC1lUE0xTG9YQkNISWRJOVlVSWpMQng2Q1ppTWtNQTA5N0JDbV9jeDBLcThtZUNKODRZUi1ESkdnSHdQekR4QTNrLVBRWjdOdw?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:02:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Predicting Landing Spots for 5 Most Critical Padres Free Agents - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNOUIybG9veXlLT3Y5N0pJalFlRVhlaTBvZ2NCSGpycjVtRXg0WmVHUDdTZS10TXVWbTE2MGFIZkljSm5xNHY2bkFsampFVWQxMjJwTTBYQkV5ZW51dmZHTkFvMTB6RDdCSlpFeEl2dVhEaFZxdnNOOXlVUE4xODIxZEZQbTZUSkE?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T17:00:04+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Tarik Skubal rumors suggest two mystery suitors: Ranking the 5 most likely teams involved - FanSided",
-   "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOWXhueHBVeUZHSm1aSnZuT0xTeVhlZGlNeW91RFAwc2hUejN3d0NRcy1aZ3llc3dJakhJME01UllhQ3lBbkN5V3pmS1FFSjhSMG9UMHEyWmI1MXFDZUVlSGhpYjN1WktMajBkelY0S0czZ3B2SmtFLTdQaWhjNXM5eVBsTC1pbzJyMy0xRXBjTFlkR3BURmRhc0pVRkdkZHp4TTFxOVZ5UmNfbTdfMmtVXzBESQ?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T16:57:07+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Tarik Skubal rumors suggest two mystery suitors: Ranking the 5 most likely teams involved - FanSided",
-   "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOWXhueHBVeUZHSm1aSnZuT0xTeVhlZGlNeW91RFAwc2hUejN3d0NRcy1aZ3llc3dJakhJME01UllhQ3lBbkN5V3pmS1FFSjhSMG9UMHEyWmI1MXFDZUVlSGhpYjN1WktMajBkelY0S0czZ3B2SmtFLTdQaWhjNXM5eVBsTC1pbzJyMy0xRXBjTFlkR3BURmRhc0pVRkdkZHp4TTFxOVZ5UmNfbTdfMmtVXzBESQ?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T16:57:07+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Where the Skubal chase stands as in-person meetings begin - MLB.com",
-   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNUjVNa1dNMjlpcks0WjJsYkZZeXctVE9YUjdzNjBWRGkwYV9HaXgtb2VuMEVLY0MtcWMyNGJ2VkRqdi1OVzBaX2dHQlhjemE1c09WVjNvdFJPSmt4QllsVU5OTUlmR19UWDVRa0xya08zN0wxM2IzTFhaQWZPRWZoazdGVnUyZUJUbFFB?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T16:56:25+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Where the Skubal chase stands as in-person meetings begin - MLB.com",
-   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNUjVNa1dNMjlpcks0WjJsYkZZeXctVE9YUjdzNjBWRGkwYV9HaXgtb2VuMEVLY0MtcWMyNGJ2VkRqdi1OVzBaX2dHQlhjemE1c09WVjNvdFJPSmt4QllsVU5OTUlmR19UWDVRa0xya08zN0wxM2IzTFhaQWZPRWZoazdGVnUyZUJUbFFB?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T16:56:25+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "MLB Trade Rumors (SD)",
-   "title": "Adri\u00e1n Morej\u00f3n Declines Qualifying Offer From Padres",
-   "link": "https://www.mlbtraderumors.com/2026/11/adrian-morejon-declines-qualifying-offer-from-padres.html",
-   "player": "",
-   "team": "Padres",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T16:49:15+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Adri\u00e1n Morej\u00f3n Declines Qualifying Offer From Padres - MLB Trade Rumors",
-   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNNTVLYWprMzl1SlZZZkZCOTNCMDliaU1fbUJDVlduZXJWMVJ6SHRtRllEbGV6UXh5blk4X2EwQ2FhUkRBSlF3MktmaGRJMVIxOWhlQVd6T0R6Y1RPWDFqUXYzZGg0V3hMSE14Nnl5d0gxNThIYWxoMUNNcThudGRucEJ4UDVneUVCa2ljMTBJXzM2SklSVkhRa0g2RzE?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T16:49:15+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Michael King)",
-   "title": "Adri\u00e1n Morej\u00f3n Declines Qualifying Offer From Padres - MLB Trade Rumors",
-   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNNTVLYWprMzl1SlZZZkZCOTNCMDliaU1fbUJDVlduZXJWMVJ6SHRtRllEbGV6UXh5blk4X2EwQ2FhUkRBSlF3MktmaGRJMVIxOWhlQVd6T0R6Y1RPWDFqUXYzZGg0V3hMSE14Nnl5d0gxNThIYWxoMUNNcThudGRucEJ4UDVneUVCa2ljMTBJXzM2SklSVkhRa0g2RzE?oc=5",
-   "player": "Michael King",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T16:49:15+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Free agent poll: Luis Robert, Jr. - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNbDVHc2dDQWVyVWRZaEdVdjZaQzdweUZqX0xZTG12LTZnWkxfMjVsSGpGQ25nZHlvcVJTelI0b2p5b0pLZ1oxYTNWS0dRZFk3U3l0ZVZ6Tl9GTXRlUlQyLXFnU1pxVGV2ZFh1MmkxcDZMX3AzMUI0aHdUZGkzSlplYlJ3?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T16:44:16+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Brewers lose World Series champion pitcher to White Sox in free agency - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNZjd1LWUyb2dKMHVwMEVUTENLUXd0Zk5HU1VFaDh0S01zWms1T2RKNmJRdTRHRVlYYUlHMzdHMjAwWXZaQ1JDTkZFVVRKaUYwM0NFMXVnWmtNZWVsUWtRZmpxTUJrRjRpcTFZYjM3R1p3UDUyY0JUMkJuMk5PTTREeGw2aVpMNVJ0Q3RN?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T16:36:41+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Why Cubs' OF Seiya Suzuki might be one of safest bets in MLB free agency - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNajJNSklMcXZ2OFoxMU1UMWp1UWdkbG5pWVdXRnlqM3hYck9BU2NHdUlUR1V0ZkFPWWFCX3lHbjFyRlU2THhDSGlCUUh4d282enktSUJnMlpxWnppMS1nMWdmSGEtcmdfMzNtaXlTcnJtcER3cE9GTWczcDNUalJRRlRn?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T16:32:31+00:00"
-  },
-  {
-   "pulled_at": "2026-11-18T10:23:40.168316+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Seiya Suzuki)",
-   "title": "Why Cubs' OF Seiya Suzuki might be one of safest bets in MLB free agency - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNajJNSklMcXZ2OFoxMU1UMWp1UWdkbG5pWVdXRnlqM3hYck9BU2NHdUlUR1V0ZkFPWWFCX3lHbjFyRlU2THhDSGlCUUh4d282enktSUJnMlpxWnppMS1nMWdmSGEtcmdfMzNtaXlTcnJtcER3cE9GTWczcDNUalJRRlRn?oc=5",
-   "player": "Seiya Suzuki",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-17T16:32:31+00:00"
   }
  ]
 }
