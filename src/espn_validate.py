@@ -15,7 +15,7 @@ import sqlite3
 
 import requests
 from numpy import corrcoef
-from pandas import DataFrame, isna
+from pandas import isna
 
 UA = {"User-Agent": "Mozilla/5.0 (HARDBALL)"}
 ESPN = "https://site.web.api.espn.com/apis/common/v3/sports/baseball/mlb/statistics/byathlete"

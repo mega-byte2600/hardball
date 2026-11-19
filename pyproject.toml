@@ -1,0 +1,22 @@
+[project]
+name = "hardball"
+version = "1.0.0"
+description = "Public research dashboard for MLB roster decisions"
+requires-python = ">=3.11"
+readme = "README.md"
+
+[tool.ruff]
+line-length = 100
+src = ["src"]
+extend-exclude = ["data", "dashboard"]
+
+[tool.ruff.lint]
+# Pyflakes + syntax errors are gating; style rules are advisory for the
+# legacy cycle scripts and enforced on new modules via per-file config.
+select = ["E9", "F", "B", "I"]
+ignore = ["B007", "B904", "B905", "B006", "B008", "B023", "B028", "B018", "B033", "I001"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"

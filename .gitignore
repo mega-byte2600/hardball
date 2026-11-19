@@ -4,17 +4,21 @@ __pycache__/
 .venv/
 
 # Data — raw pulls and the lake DB are local artifacts, not source
-data/raw/
+data/raw/*
+# Keyed-feed snapshots cited by committed artifacts must be committed so the
+# recorded sha256 can be re-verified (check_freshness.py enforces this).
+!data/raw/statyx/
+!data/raw/fastballapi/
+!data/raw/manifest.jsonl
 data/mlb_lake.db
 
 # OS
 .DS_Store
 
-# Generated dashboard artifacts — built from src/dashboard_p6.py.
-# plotly.min.js is vendored chart JS and hardball_demo.html embeds it;
-# neither is source. Regenerate: python src/dashboard_p6.py
+# Generated dashboard artifacts (dashboard/index.html, hardball_demo.html)
+# ARE committed: GitHub Pages serves them. Plotly is vendored, pinned, in
+# dashboard/vendor/. Regenerate: python src/dashboard_p6.py
 dashboard/plotly.min.js
-dashboard/hardball_demo.html
 
 
 # Analytical warehouse — built from data/curated by src/build_warehouse.py

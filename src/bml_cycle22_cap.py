@@ -18,7 +18,7 @@ import sys
 import pandas as pd
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from payroll import PAYROLL_2026, load_payroll_frame
+from payroll import PAYROLL_2026
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(REPO, "data")

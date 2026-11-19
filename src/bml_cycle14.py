@@ -51,7 +51,7 @@ def run_differential_frame():
                 if not code:
                     continue
                 RS = tr.get("runsScored"); RA = tr.get("runsAllowed")
-                wins = tr.get("wins"); losses = tr.get("losses")
+                wins = tr.get("wins"); tr.get("losses")
                 pyth = (RS ** E / (RS ** E + RA ** E)) if (RS and RA) else 0.5
                 rows.append({"season": season, "team": code, "RS": RS, "RA": RA,
                              "RD": RS - RA, "PythE": round(pyth * 162, 2), "wins": wins})

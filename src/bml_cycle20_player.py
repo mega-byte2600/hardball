@@ -113,7 +113,7 @@ def main():
     mcc = LinearRegression().fit(xc.reshape(-1, 1), yc)
     mae_c = mean_absolute_error(yc, mcc.predict(xc.reshape(-1, 1)))
     r2_c = r2_score(yc, mcc.predict(xc.reshape(-1, 1)))
-    print(f"\n[C2] predicting 2026 CONTACT% (the acquisitionable skill):")
+    print("\n[C2] predicting 2026 CONTACT% (the acquisitionable skill):")
     print(f"    naive (league mean):  MAE {naive_c:.2f} pts")
     print(f"    2025 contact% -> 2026: MAE {mae_c:.2f} pts  R2 {r2_c:.3f}")
     print(f"    => contact model beats naive by {naive_c - mae_c:.2f} contact pts "

@@ -112,7 +112,7 @@ def main():
     print("FULL FORMULA:", formula)
 
     # Project all 2026 teams + estimate wins vs payroll/cap
-    cols = FEATURES + ["wins", "team", "payroll"]
+    FEATURES + ["wins", "team", "payroll"]
     proj = d26[["team"] + FEATURES].copy()
     proj["proj_wins"] = m_full.predict(proj[FEATURES].values).round(1)
     proj["actual_wins"] = d26["wins"].values

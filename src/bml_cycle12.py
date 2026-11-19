@@ -90,9 +90,9 @@ def main():
     print(f"\n=== CAP CONSTRAINT ({n_h} H / {n_p} P = {n_h+n_p} players) ===")
     print(f"  Proposed 2027 cap:      ${CAP/1e6:,.1f}M")
     print(f"  15% individual max:     ${INDIV_MAX/1e6:,.1f}M per player")
-    print(f"  NOTE (honest): lake has no per-player SALARIES. This is the talent "
-          f"selection under the cap; actual build prices real contracts against "
-          f"the same constraint. Not a dollar-figure answer — a construction framework.")
+    print("  NOTE (honest): lake has no per-player SALARIES. This is the talent "
+          "selection under the cap; actual build prices real contracts against "
+          "the same constraint. Not a dollar-figure answer — a construction framework.")
 
     out = os.path.join(DATA, "roster_2027.json")
     # carry the MLB player_id so roster rows are LINKED to projections,

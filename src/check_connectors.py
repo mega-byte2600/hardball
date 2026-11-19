@@ -12,18 +12,26 @@ from __future__ import annotations
 
 import argparse
 import json
-import sys
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 
 import requests
 
-UA = {"User-Agent": "HARDBALL/1.0 connector-health"}
-TIMEOUT = 30
+from http_client import get
+
+TRANSACTION_WINDOW_DAYS = 7
+
+
+def transaction_window(today: date | None = None) -> dict[str, str]:
+    """Rolling window ending today so the check always probes current data."""
+    end = today or datetime.now(timezone.utc).date()
+    start = end - timedelta(days=TRANSACTION_WINDOW_DAYS)
+    return {"startDate": start.isoformat(), "endDate": end.isoformat(),
+            "sportId": "1"}
 
 
 def check(name, url, params=None, validator=None):
     try:
-        response = requests.get(url, params=params, headers=UA, timeout=TIMEOUT)
+        response = get(url, params=params)
         result = {
             "name": name,
             "url": response.url,
@@ -74,7 +82,7 @@ def main():
         check(
             "MLB transactions",
             "https://statsapi.mlb.com/api/v1/transactions",
-            {"startDate": "2026-11-01", "endDate": "2026-11-03", "sportId": "1"},
+            transaction_window(),
             _json_nonempty,
         ),
         check(
@@ -105,8 +113,12 @@ def main():
     else:
         for item in checks:
             state = "PASS" if item["ok"] and item.get("validated", True) else "FAIL"
-            print(f"{state:4} {item['name']}: HTTP {item['http_status']} "
-                  f"({item.get('records', item.get('bytes', 'n/a'))})")
+            if item.get("error"):
+                detail = f"ERROR {item['error'][:160]}"
+            else:
+                detail = (f"HTTP {item['http_status']} "
+                          f"({item.get('records', item.get('bytes', 'n/a'))})")
+            print(f"{state:4} {item['name']}: {detail}")
         print("Spotrac: CACHED HTML ONLY (not a public API)")
     raise SystemExit(0 if all(x["ok"] and x.get("validated", True) for x in checks) else 1)
 

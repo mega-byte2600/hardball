@@ -70,7 +70,7 @@ def run_frame():
                 if not code:
                     continue
                 RS = tr.get("runsScored"); RA = tr.get("runsAllowed")
-                wins = tr.get("wins"); losses = tr.get("losses")
+                wins = tr.get("wins"); tr.get("losses")
                 pyth = (RS ** E / (RS ** E + RA ** E)) if (RS and RA) else 0.5
                 rows.append({"season": season, "team": code, "RS": RS, "RA": RA,
                              "RD": RS - RA, "PythE": round(pyth * 162, 2),
@@ -129,7 +129,7 @@ def sensitivity(linear_res, feats, base_profile):
         if f not in base_profile:
             print("   SKIPPING", f, "(not in base profile)")
             continue
-        base_wins = coef[f] * base_profile[f]  # partial contribution (crude, independent approx)
+        coef[f] * base_profile[f]  # partial contribution (crude, independent approx)
         delta = coef[f] * shocks.get(f, 1.0)
         out[f] = {"coef": round(coef[f], 4),
                   "shock_unit": shocks.get(f, 1.0),

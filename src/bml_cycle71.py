@@ -31,7 +31,6 @@ Exit 1 + FLAG if any free agent in the contracted rate set is missing
 surplus computation (fail-closed): never ship a partial arbitrage list.
 """
 import json
-import math
 import os
 import statistics
 

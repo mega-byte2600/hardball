@@ -12,3 +12,5 @@ requests==2.34.2
 # and verified in the build environment 2026-10-31
 duckdb==2.0.0
 pyarrow==26.0.0
+# quality gates (spellcheck_gate.py imports `spellchecker`)
+pyspellchecker==0.9.1

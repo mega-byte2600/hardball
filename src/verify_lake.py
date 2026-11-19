@@ -5,8 +5,18 @@ import sqlite3
 
 from ingest import DB_PATH, RAW_DIR
 
+import sys
+
+if not os.path.exists(DB_PATH):
+    sys.exit(f"lake missing: {DB_PATH} — build it with "
+             "`python src/build_lake_from_curated.py` (or src/ingest.py online)")
 c = sqlite3.connect(DB_PATH)
 c.row_factory = sqlite3.Row
+if not c.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND "
+                 "name='stat_lines'").fetchone():
+    sys.exit("lake has no stat_lines table — rebuild with "
+             "`python src/build_lake_from_curated.py`")
+os.makedirs(RAW_DIR, exist_ok=True)
 
 n = c.execute("SELECT COUNT(*) FROM stat_lines").fetchone()[0]
 print(f"total stat_lines: {n}")
