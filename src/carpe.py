@@ -25,7 +25,7 @@ import io
 import json
 import os
 
-import requests
+from http_client import get as http_get  # shared retry/backoff session
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(REPO, "data")
@@ -45,7 +45,7 @@ def mlb_free_agents(season):
     original club, and status; Spotrac supplies prior AAV and market value.
     The join key is MLBAM player_id, never a name string.
     """
-    r = requests.get(
+    r = http_get(
         f"{MLB}/people/freeAgents",
         params={"season": str(season)},
         headers=UA,
@@ -85,7 +85,7 @@ def _save_json(name, obj):
 
 
 def _savant_csv(url, raw_name):
-    r = requests.get(url, headers=UA, timeout=60)
+    r = http_get(url, headers=UA, timeout=60)
     r.raise_for_status()
     _save_raw(raw_name, r.text)
     rows = list(csv.DictReader(io.StringIO(r.text.lstrip("\ufeff"))))
@@ -176,7 +176,7 @@ def savant_arm(season):
 
 
 def fg_steamer(stats="bat"):
-    r = requests.get(f"{FG}/projections",
+    r = http_get(f"{FG}/projections",
                      params={"type": "steamer", "stats": stats, "pos": "all",
                              "team": 0, "players": 0, "lg": "all"},
                      headers=UA, timeout=90)
@@ -210,7 +210,7 @@ def player_xwalk_and_ages(lake_ids):
     ids = sorted(lake_ids)
     for i in range(0, len(ids), 50):
         chunk = ids[i:i + 50]
-        r = requests.get(f"{MLB}/people",
+        r = http_get(f"{MLB}/people",
                          params={"personIds": ",".join(str(x) for x in chunk)},
                          headers=UA, timeout=60)
         r.raise_for_status()

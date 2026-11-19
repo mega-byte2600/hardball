@@ -26,3 +26,21 @@ def test_identical_forecasts_are_not_different():
     e = np.array([0.1, -0.2, 0.3, 0.05])
     assert fe.diebold_mariano(e, e).p_value == 1.0
     assert fe.paired_bootstrap_diff(e, e) == (0.0, 0.0, 0.0)
+
+
+def test_dm_rejects_tiny_samples_and_detects_no_difference():
+    import pytest
+    with pytest.raises(ValueError):
+        fe.diebold_mariano(np.array([1.0, 2.0]), np.array([1.0, 2.0]))
+    rng = np.random.default_rng(7)
+    a = rng.normal(0, 1, 400)
+    b = a + rng.normal(0, 1e-3, 400)
+    assert fe.diebold_mariano(a, b).p_value > 0.05
+
+
+def test_paired_bootstrap_ci_contains_true_difference():
+    rng = np.random.default_rng(11)
+    base = rng.normal(0, 1, 500)
+    model = base * 0.8  # model errors 20% smaller in absolute terms
+    d, lo, hi = fe.paired_bootstrap_diff(model, base)
+    assert lo < d < hi < 0

@@ -30,9 +30,9 @@ import re
 import sqlite3
 
 import pandas as pd
-import requests
 
 from carpe import mlb_free_agents
+from http_client import get as http_get  # shared retry/backoff session
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(REPO, "data")
@@ -100,7 +100,7 @@ def fetch(url, fname):
         if wait:
             time.sleep(wait)
         try:
-            r = requests.get(url, headers=UA, timeout=60)
+            r = http_get(url, headers=UA, timeout=60)
             r.raise_for_status()
             with open(path, "w") as f:
                 f.write(r.text)

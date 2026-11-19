@@ -31,11 +31,11 @@ import sys
 
 import numpy as np
 import pandas as pd
-import requests
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import kpi  # noqa
 import model_p6  # noqa
+from http_client import get as http_get  # shared retry/backoff session
 
 BASE = "https://statsapi.mlb.com/api/v1"
 UA = {"User-Agent": "HARDBALL/1.0"}
@@ -47,7 +47,7 @@ WIN_THRESHOLD = 90  # playoff/title-caliber bar
 
 
 def team_code_map(season=2026):
-    r = requests.get(f"{BASE}/teams", params={"sportId": 1, "season": season}, headers=UA, timeout=60)
+    r = http_get(f"{BASE}/teams", params={"sportId": 1, "season": season}, headers=UA, timeout=60)
     m = {}
     for t in r.json().get("teams", []):
         m[t["id"]] = t.get("abbreviation")
@@ -59,7 +59,7 @@ def run_frame():
     idm = team_code_map(2026)
     rows = []
     for season in (2025, 2026):
-        r = requests.get(f"{BASE}/standings", params={
+        r = http_get(f"{BASE}/standings", params={
             "season": season, "standingsTypes": "regularSeason",
             "leagueId": "103,104"}, headers=UA, timeout=60)
         data = r.json()

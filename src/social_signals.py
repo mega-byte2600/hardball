@@ -13,7 +13,7 @@ import argparse
 import json
 from datetime import datetime, timezone
 
-import requests
+from http_client import get as http_get  # shared retry/backoff session
 
 ENDPOINT = "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts"
 UA = {"User-Agent": "HARDBALL/1.0 social-signals"}
@@ -26,7 +26,7 @@ def search_bluesky(query, limit=25, since=None, until=None):
         params["since"] = since
     if until:
         params["until"] = until
-    response = requests.get(ENDPOINT, params=params, headers=UA, timeout=TIMEOUT)
+    response = http_get(ENDPOINT, params=params, headers=UA, timeout=TIMEOUT)
     response.raise_for_status()
     payload = response.json()
     signals = []

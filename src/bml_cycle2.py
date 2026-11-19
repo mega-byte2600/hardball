@@ -11,10 +11,10 @@ import sys
 from collections import defaultdict
 
 import pandas as pd
-import requests
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import model_p6  # noqa
+from http_client import get as http_get  # shared retry/backoff session
 
 BASE = "https://statsapi.mlb.com/api/v1"
 UA = {"User-Agent": "HARDBALL/1.0"}
@@ -63,7 +63,7 @@ def pull_transactions(season):
         endy, endm = (season, endmonth) if endmonth <= 12 else (season + 1, 1)
         end = f"{endy}-{endm:02d}-01"
         try:
-            r = requests.get(f"{BASE}/transactions",
+            r = http_get(f"{BASE}/transactions",
                              params={"sportId": 1, "startDate": start, "endDate": end},
                              headers=UA, timeout=90)
             r.raise_for_status()

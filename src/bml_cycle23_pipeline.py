@@ -41,7 +41,7 @@ import os
 import time
 from datetime import date
 
-import requests
+from http_client import get as http_get  # shared retry/backoff session
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(REPO, "data")
@@ -61,7 +61,7 @@ def _get(path, params, tries=3):
     last = None
     for i in range(tries):
         try:
-            r = requests.get(f"{BASE}{path}", params=params, headers=UA, timeout=60)
+            r = http_get(f"{BASE}{path}", params=params, headers=UA, timeout=60)
             r.raise_for_status()
             return r.json()
         except Exception as e:  # retry transient API failures, then fail loud

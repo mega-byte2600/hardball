@@ -13,9 +13,9 @@ import json
 import os
 import sqlite3
 
-import requests
 from numpy import corrcoef
 from pandas import isna
+from http_client import get as http_get  # shared retry/backoff session
 
 UA = {"User-Agent": "Mozilla/5.0 (HARDBALL)"}
 ESPN = "https://site.web.api.espn.com/apis/common/v3/sports/baseball/mlb/statistics/byathlete"
@@ -33,7 +33,7 @@ def fetch_espn_batting(season: int, pages: int = 3):
             "category": "batting", "season": season, "seasontype": 2,
             "sort": "batting.homeRuns:desc", "limit": 50, "page": page,
         }
-        r = requests.get(ESPN, params=params, headers=UA, timeout=60)
+        r = http_get(ESPN, params=params, headers=UA, timeout=60)
         r.raise_for_status()
         data = r.json()
         for a in data.get("athletes", []):

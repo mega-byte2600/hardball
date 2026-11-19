@@ -11,7 +11,7 @@ import os
 import sqlite3
 import time
 
-import requests
+from http_client import get as http_get  # shared retry/backoff session
 
 BASE = "https://statsapi.mlb.com/api/v1"
 UA = {"User-Agent": "HARDBALL/1.0"}
@@ -28,7 +28,7 @@ TEAM = {"NYY", "HOU", "NYM", "MIL", "TB", "AZ", "DET", "LAD", "CLE", "MIA",
 
 
 def team_code_map(season):
-    r = requests.get(f"{BASE}/teams", params={"sportId": 1, "season": season},
+    r = http_get(f"{BASE}/teams", params={"sportId": 1, "season": season},
                      headers=UA, timeout=60)
     m = {}
     for t in r.json().get("teams", []):
@@ -48,7 +48,7 @@ def fetch_qualified_hitters(season):
             return json.load(f)
     # MLB API league leaders endpoint — pulls every regular with a season line
     rows = []
-    resp = requests.get(f"{BASE}/stats/leaders",
+    resp = http_get(f"{BASE}/stats/leaders",
                         params={"leaderCategories": "homeRuns,baseOnBalls,strikeOuts",
                                 "season": season, "sportId": 1, "limit": 1000,
                                 "stats": "season"}, headers=UA, timeout=90)
@@ -75,7 +75,7 @@ def fetch_player_season(pid, season):
     if os.path.exists(path):
         with open(path) as f:
             return json.load(f)
-    r = requests.get(f"{BASE}/people/{pid}/stats",
+    r = http_get(f"{BASE}/people/{pid}/stats",
                      params={"stats": "season", "group": "hitting",
                              "season": season, "sportId": 1}, headers=UA, timeout=60)
     try:

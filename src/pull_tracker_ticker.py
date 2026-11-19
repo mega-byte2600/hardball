@@ -58,13 +58,12 @@ import ssl
 import struct
 import sys
 import time
-import urllib.error
-import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from urllib.parse import urlparse
+from http_client import get as shared_get  # shared timeout/retry session
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -144,12 +143,9 @@ CAP_BUZZ_STORED = 10
 
 def fetch(url):
     """Returns (status, bytes) — 403/429 are data, not exceptions."""
-    req = urllib.request.Request(url, headers=UA)
     try:
-        with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
-            return r.status, r.read()
-    except urllib.error.HTTPError as e:
-        return e.code, b""
+        r = shared_get(url, headers=UA, timeout=TIMEOUT)
+        return r.status_code, (r.content if r.status_code < 400 else b"")
     except Exception as e:  # timeout, DNS, reset: source skipped
         return 0, str(e).encode()
 
