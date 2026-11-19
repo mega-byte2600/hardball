@@ -6,8 +6,8 @@ retry-with-exponential-backoff-and-jitter guidance in Google's SRE book
 `urllib3.util.Retry` contract:
 
 * retries only idempotent verbs (GET/HEAD) on connect/read errors and on
-  429/500/502/503/504;
-* honours ``Retry-After`` on 429/503;
+  500/502/503/504 (never 403/429: those stop and are reported);
+* honours ``Retry-After`` on 503;
 * bounded: ``total`` attempts, capped backoff, always a timeout.
 
 Usage::
@@ -25,7 +25,10 @@ from urllib3.util.retry import Retry
 
 USER_AGENT = "HARDBALL/1.0 (+https://github.com/mega-byte2600/hardball)"
 DEFAULT_TIMEOUT = (10, 30)  # (connect, read) seconds
-RETRY_STATUSES = (429, 500, 502, 503, 504)
+# 429/403 are NOT retried: project rule (CLAUDE.md) — a rate limit or refusal
+# stops the call and is reported, never routed around. Only transient 5xx
+# and connection/read errors are retried.
+RETRY_STATUSES = (500, 502, 503, 504)
 
 _SESSION: requests.Session | None = None
 

@@ -47,6 +47,7 @@ import xml.etree.ElementTree as ET
 from datetime import date, datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
+from http_client import get as shared_get  # shared timeout/retry session
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "evidence_surveillance.json"
@@ -103,11 +104,10 @@ MONTHS = {m: i + 1 for i, m in enumerate(
 
 
 def http_get(url):
-    req = urllib.request.Request(url, headers=UA)
-    with urllib.request.urlopen(req, timeout=45) as resp:
-        if resp.status != 200:
-            raise RuntimeError(f"HTTP {resp.status} for {url[:90]}")
-        return resp.read()
+    resp = shared_get(url, headers=UA, timeout=45)
+    if resp.status_code != 200:
+        raise RuntimeError(f"HTTP {resp.status_code} for {url[:90]}")
+    return resp.content
 
 
 def esearch(query):

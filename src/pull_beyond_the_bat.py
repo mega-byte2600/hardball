@@ -41,7 +41,7 @@ import os
 import time
 from datetime import datetime, timezone
 
-import requests
+from http_client import get as http_get  # shared retry/backoff session
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(REPO, "data")
@@ -118,7 +118,7 @@ def _persistence(boards, key, qualifier=None):
 
 
 def _fetch_csv(url, raw_path):
-    r = requests.get(url, headers=UA, timeout=60)
+    r = http_get(url, headers=UA, timeout=60)
     r.raise_for_status()
     with open(raw_path, "w") as f:
         f.write(r.text)
@@ -163,7 +163,7 @@ def fetch_pitching_actuals(pitcher_ids):
         rows = []
         for i in range(0, len(ids), 50):
             chunk = ids[i:i + 50]
-            r = requests.get(
+            r = http_get(
                 f"{MLB}/people",
                 params={"personIds": ",".join(str(x) for x in chunk),
                         "hydrate": ("stats(group=[pitching],"

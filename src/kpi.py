@@ -11,9 +11,9 @@ to Spotrac payroll (src/payroll.py).
 import os
 
 import pandas as pd
-import requests
 
 from payroll import load_payroll_frame
+from http_client import get as http_get  # shared retry/backoff session
 
 BASE = "https://statsapi.mlb.com/api/v1"
 UA = {"User-Agent": "HARDBALL/1.0"}
@@ -28,7 +28,7 @@ WIN_CHEAP = {"MIL", "TB", "CLE"}
 def team_code_map(season=2026) -> dict:
     """team_id -> 3-letter abbreviation from /teams, with fixes for API quirks.
     MLB uses both MIA/Marlins and ATH/Athetics; map to Spotrac codes."""
-    resp = requests.get(f"{BASE}/teams", params={"sportId": 1, "season": season}, headers=UA, timeout=60)
+    resp = http_get(f"{BASE}/teams", params={"sportId": 1, "season": season}, headers=UA, timeout=60)
     resp.raise_for_status()
     m = {}
     for t in resp.json().get("teams", []):
@@ -52,7 +52,7 @@ def fetch_team_hitting(season: int) -> pd.DataFrame:
     for tid, code in idmap.items():
         params = {"stats": "season", "group": "hitting", "season": season, "sportId": 1}
         try:
-            resp = requests.get(f"{BASE}/teams/{tid}/stats", params=params, headers=UA, timeout=60)
+            resp = http_get(f"{BASE}/teams/{tid}/stats", params=params, headers=UA, timeout=60)
             resp.raise_for_status()
         except Exception as e:
             print(f"  fail team {tid} {code}: {e}")
@@ -79,7 +79,7 @@ def _f(v):
 
 def fetch_standings(season: int) -> dict:
     """TeamCode -> wins from standings."""
-    resp = requests.get(f"{BASE}/standings", params={"season": season, "standingsTypes": "regularSeason", "leagueId": "103,104"}, headers=UA, timeout=60)
+    resp = http_get(f"{BASE}/standings", params={"season": season, "standingsTypes": "regularSeason", "leagueId": "103,104"}, headers=UA, timeout=60)
     resp.raise_for_status()
     data = resp.json()
     out = {}

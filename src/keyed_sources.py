@@ -61,6 +61,8 @@ Sources:
 import os
 
 import requests
+from http_client import get as http_get  # shared retry/backoff session
+from http_client import session as http_session
 
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"}
 
@@ -118,8 +120,10 @@ def fetch(source, path, params=None):
         if source == "fastballapi":
             headers["x-api-key"] = key
             headers["Content-Type"] = "application/json"
-            r = requests.post(cfg["base"] + "/" + path.lstrip("/"),
-                              headers=headers, json=params or {}, timeout=45)
+            # Shared session: POST is never retried (credits are budgeted),
+            # but it gets the common pooling and identification.
+            r = http_session().post(cfg["base"] + "/" + path.lstrip("/"),
+                                    headers=headers, json=params or {}, timeout=45)
             return _finish(source, r)
         if source == "tank01":
             headers["X-RapidAPI-Key"] = key
@@ -128,7 +132,7 @@ def fetch(source, path, params=None):
             params = {**(params or {}), "api_key": key}
         else:  # statyx — Bearer, verified live 2026-11-02
             headers["Authorization"] = f"Bearer {key}"
-        r = requests.get(cfg["base"] + path, headers=headers,
+        r = http_get(cfg["base"] + path, headers=headers,
                          params=params, timeout=45)
     except requests.RequestException as e:
         return _unavailable(source, f"request failed: {str(e)[:100]}")

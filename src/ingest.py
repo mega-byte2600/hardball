@@ -14,7 +14,7 @@ import sqlite3
 from datetime import date
 
 import pandas as pd
-import requests
+from http_client import get as http_get  # shared retry/backoff session
 
 BASE = "https://statsapi.mlb.com/api/v1"
 ESPN_BASE = "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb"
@@ -103,7 +103,7 @@ def load_qualified(season: int, group: str, sort_stat: str, order: str = "desc",
         "sportId": 1, "playerPool": "qualified",
         "sortStat": sort_stat, "order": order, "limit": 300,
     }
-    resp = requests.get(f"{BASE}/stats", params=params, headers=UA, timeout=60)
+    resp = http_get(f"{BASE}/stats", params=params, headers=UA, timeout=60)
     resp.raise_for_status()
     data = resp.json()
     _archive(source, f"{season}_{group}_{sort_stat}", data)

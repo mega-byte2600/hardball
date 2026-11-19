@@ -48,6 +48,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
+from http_client import get as shared_get  # shared timeout/retry session
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "journal_spotlight.json"
@@ -123,11 +124,10 @@ MONTH_NUM = {m.lower(): i for i, m in MONTH_ABBR.items()}
 
 
 def http_get(url, headers=UA, timeout=45):
-    req = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        if resp.status != 200:
-            raise RuntimeError(f"HTTP {resp.status} for {url[:90]}")
-        return resp.status, resp.read()
+    resp = shared_get(url, headers=headers, timeout=timeout)
+    if resp.status_code != 200:
+        raise RuntimeError(f"HTTP {resp.status_code} for {url[:90]}")
+    return resp.status_code, resp.content
 
 
 def homepage_status(url):

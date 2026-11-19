@@ -24,6 +24,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from http_client import get as http_get  # shared retry/backoff session
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -1984,8 +1985,7 @@ def main() -> int:
 
     # --- optional live check ---------------------------------------
     if live:
-        import requests
-        r = requests.get("https://statsapi.mlb.com/api/v1/standings",
+        r = http_get("https://statsapi.mlb.com/api/v1/standings",
                          params={"leagueId": "103,104", "season": 2026,
                                  "standingsTypes": "regularSeason"},
                          headers={"User-Agent": "Mozilla/5.0"}, timeout=30)

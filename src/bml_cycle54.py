@@ -57,7 +57,7 @@ import sqlite3
 import time
 from pathlib import Path
 
-import requests
+from http_client import get as http_get  # shared retry/backoff session
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -84,7 +84,7 @@ def fetch_fa_class(t):
     out = {}
     for y, m in months_for_class(t):
         a, b = month_bounds(y, m)
-        r = requests.get(f"{BASE}/transactions",
+        r = http_get(f"{BASE}/transactions",
                          params={"startDate": a, "endDate": b},
                          headers=UA_TXN, timeout=60)
         if r.status_code != 200:
@@ -105,7 +105,7 @@ def fetch_fa_class(t):
 
 def fetch_qualified_hitting(season):
     """Fresh qualified hitting pull, identical params to src/ingest.py."""
-    r = requests.get(f"{BASE}/stats",
+    r = http_get(f"{BASE}/stats",
                      params={"stats": "season", "group": "hitting",
                              "season": season, "sportId": 1,
                              "playerPool": "qualified", "sortStat": "homeRuns",

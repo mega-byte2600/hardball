@@ -26,7 +26,7 @@ import unicodedata
 from pathlib import Path
 
 import pandas as pd
-import requests
+from http_client import get as http_get  # shared retry/backoff session
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "raw" / "npb_bis"
@@ -44,7 +44,7 @@ def main():
     for year in (2024, 2025, 2026):
         for kind in ("bat_c", "bat_p", "pit_c", "pit_p"):
             url = f"https://npb.jp/bis/{year}/stats/{kind}.html"
-            r = requests.get(url, headers=H, timeout=25)
+            r = http_get(url, headers=H, timeout=25)
             r.encoding = "utf-8"
             if r.status_code in (403, 429):
                 print(f"BLOCKED {url} -> {r.status_code}; stopping, prior state kept")

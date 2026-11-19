@@ -1,11 +1,11 @@
 import json
 import sys
 from pathlib import Path
-from urllib.request import urlopen
 
 import numpy as np
 import pandas as pd
 from scipy import stats
+from http_client import get as shared_get  # shared timeout/retry session
 
 
 def load(prefix, season):
@@ -18,8 +18,9 @@ def load(prefix, season):
     else:
         group = {"f": "fielding", "p": "pitching"}[prefix]
         endpoint = f"teams/stats?stats=season&group={group}&sportIds=1&season={season}&gameType=R&limit=100"
-    with urlopen(base + endpoint, timeout=30) as response:
-        return json.load(response)
+    response = shared_get(base + endpoint, timeout=30)
+    response.raise_for_status()
+    return response.json()
 
 
 records = []

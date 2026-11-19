@@ -15,13 +15,13 @@ import sys
 
 import numpy as np
 import pandas as pd
-import requests
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, r2_score
 from sklearn.model_selection import RepeatedKFold
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import model_p6  # noqa
+from http_client import get as http_get  # shared retry/backoff session
 
 BASE = "https://statsapi.mlb.com/api/v1"
 UA = {"User-Agent": "HARDBALL/1.0"}
@@ -31,7 +31,7 @@ E = float(np.e)
 
 
 def team_code_map(season=2026):
-    r = requests.get(f"{BASE}/teams", params={"sportId": 1, "season": season}, headers=UA, timeout=60)
+    r = http_get(f"{BASE}/teams", params={"sportId": 1, "season": season}, headers=UA, timeout=60)
     m = {}
     for t in r.json().get("teams", []):
         m[t["id"]] = t.get("abbreviation")
@@ -43,7 +43,7 @@ def run_frame():
     idm = team_code_map(2026)
     rows = []
     for season in (2025, 2026):
-        r = requests.get(f"{BASE}/standings", params={"season": season,
+        r = http_get(f"{BASE}/standings", params={"season": season,
             "standingsTypes": "regularSeason", "leagueId": "103,104"}, headers=UA, timeout=60)
         for rec in r.json().get("records", []):
             for tr in rec.get("teamRecords", []):

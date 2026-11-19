@@ -48,6 +48,7 @@ from pathlib import Path
 
 import pandas as pd
 import requests
+from http_client import get as http_get  # shared retry/backoff session
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "data" / "raw"
@@ -63,7 +64,7 @@ def get(url, tries=3):
     last = None
     for a in range(tries):
         try:
-            r = requests.get(url, headers=UA, timeout=45)
+            r = http_get(url, headers=UA, timeout=45)
             if r.status_code == 200:
                 return r
             last = f"HTTP {r.status_code}"

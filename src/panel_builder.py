@@ -16,11 +16,11 @@ import sys
 import time
 
 import pandas as pd
-import requests
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from kpi import _f, team_code_map
 from payroll import PAYROLL_2026, load_payroll_frame
+from http_client import get as http_get  # shared retry/backoff session
 
 BASE = "https://statsapi.mlb.com/api/v1"
 UA = {"User-Agent": "HARDBALL/1.0"}
@@ -52,7 +52,7 @@ def hitting_season(season):
         rows = []
         for tid, code in idmap.items():
             try:
-                r = requests.get(f"{BASE}/teams/{tid}/stats",
+                r = http_get(f"{BASE}/teams/{tid}/stats",
                                  params={"stats": "season", "group": "hitting",
                                          "season": season, "sportId": 1},
                                  headers=UA, timeout=60)
@@ -79,7 +79,7 @@ def standings_season(season):
     def _fetch():
         idmap = team_code_map(season)
         rows = []
-        r = requests.get(f"{BASE}/standings",
+        r = http_get(f"{BASE}/standings",
                          params={"season": season, "standingsTypes": "regularSeason",
                                  "leagueId": "103,104"}, headers=UA, timeout=60)
         for rec in r.json().get("records", []):
