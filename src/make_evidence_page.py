@@ -42,6 +42,7 @@ external assets)
 import html
 import json
 import sys
+import urllib.parse
 from datetime import datetime
 from pathlib import Path
 
@@ -82,6 +83,31 @@ LANE_INTROS = {
         "speed that healing; this topic keeps score of what the "
         "trials actually show."),
 }
+
+
+
+TOPIC_SEARCHES = [
+    ("Injury prevention and workload",
+     '("injury prevention" OR "injury risk" OR workload OR "pitch count") AND (baseball OR pitcher OR pitching OR throwing)'),
+    ("Muscle regeneration",
+     '("skeletal muscle regeneration" OR "muscle repair" OR "satellite cells") AND (exercise OR injury OR rehabilitation OR recovery)'),
+    ("Tendon healing",
+     '(tendon OR tendinopathy OR ligament) AND (healing OR regeneration OR rehabilitation) AND (treatment OR exercise OR biologic OR "platelet-rich plasma")'),
+]
+
+
+def topic_search_html():
+    items = []
+    for label, term in TOPIC_SEARCHES:
+        url = "https://pubmed.ncbi.nlm.nih.gov/?term=" + urllib.parse.quote(term)
+        items.append(f'<li><a href="{html.escape(url)}">{html.escape(label)}</a></li>')
+    return ('<section class="topicsearch" id="topic-surveillance">'
+            '<h2>Explore the latest research by topic</h2>'
+            '<p>Live PubMed searches across three health and performance topics. '
+            'These links are reading and discovery tools, not reviewed findings '
+            'or inputs to HARDBALL projections.</p><ul>' + ''.join(items) + '</ul>'
+            '<p>Curated findings and citations appear in the reviewed evidence lanes above.</p>'
+            '</section>')
 
 
 def load(name):
@@ -222,6 +248,7 @@ def main():
     toc_lanes = "".join(
         f'<a href="#{LANE_ANCHORS[l["id"]]}">'
         f'{html.escape(l["heading"])}</a>' for l in lanes)
+    toc_spot += '<a href="#topic-surveillance">Latest topic research</a>'
     toc_html = (f'<nav class="toc navonly"><span class="tlab">'
                 f'On this page:</span>{toc_lanes}{toc_spot}</nav>')
 
@@ -311,7 +338,7 @@ Each Finding restates only what the paper's own abstract reports or
 concludes; the full abstract is stored with the citation in the project
 data file.</div>
 {toc_html}
-{lanes_html}{spotlight_html}
+{lanes_html}{spotlight_html}{topic_search_html()}
 <div class="foot">Source: PubMed / NCBI E-utilities (esearch + efetch),
 data/evidence_surveillance.json, pulled {html.escape(md['run_date'])} by
 src/pull_evidence_surveillance.py (Cycle 57). Selection rule:
