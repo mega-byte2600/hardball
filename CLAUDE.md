@@ -42,6 +42,7 @@ A change is not done until the gates relevant to it pass. Show their output.
 ## Workflow playbook — use these automatically when the situation fits
 | Situation | Use |
 |---|---|
+| **Anything touching an API, key, feed, snapshot, manifest or data gate** | **`/carpedata` first** (`check` / `guard` / `onboard` / `incident`). Do-no-harm: established connections are frozen unless the owner approves the exact change |
 | New feature, figure, data source, or multi-file change | `/kickoff` → `/build` |
 | Any code touching an API/feed client or `keyed_sources.py` | `/harden-datalink <source>` standards |
 | Questions about data health, outages, API reliability | `/datalink-audit` |
@@ -51,6 +52,7 @@ A change is not done until the gates relevant to it pass. Show their output.
 | Ongoing monitoring in a session | `/loop 15m /datalink-watch`, `/loop 30m` (maintenance) |
 
 ## Workflow overrides for this repo
+- **CarpeDATA governs every data link.** `/harden-datalink`, `/datalink-audit`, `/datalink-watch`, `/build` and `/ship` run inside its invariants: no change to an established connection without the owner's yes, keyed sources are single-attempt (`http_client.single_attempt_session`) and never health-polled, 403/429 are never retried, and gates are never weakened to go green.
 - "Unit tests" = the gates above (`verify_data.py`, `verify_lake.py`, `check_freshness.py`, `spellcheck_gate.py`). Add checks to `verify_data.py` for new data claims.
 - `/datalink-watch`: use `check_connectors.py --json` for public sources. For FastballAPI/Statyx, **do not** spend API credits on health polling — check the latest manifest entry age in `data/raw/<source>/manifest.jsonl` instead.
 - `/web-perf`: the dashboard is static Plotly HTML; focus on payload size, figure count/lazy rendering, and load time — not framework tuning.

@@ -32,3 +32,13 @@ def test_every_external_fetch_uses_the_shared_client():
         if re.search(r"requests\.(get|post|request)\(|urlopen\(", src):
             offenders.append(p.name)
     assert offenders == [], f"use http_client.get: {offenders}"
+
+
+def test_keyed_sources_are_single_attempt_never_retried():
+    """CarpeDATA invariant: credit-budgeted keyed sources spend each call once."""
+    from pathlib import Path
+    from http_client import single_attempt_session
+    s = single_attempt_session()
+    assert s.get_adapter("https://api.statyx.io").max_retries.total == 0
+    src = (Path(__file__).resolve().parent.parent / "src" / "keyed_sources.py").read_text()
+    assert "single_attempt_session" in src and "http_get(" not in src

@@ -68,3 +68,21 @@ def get(url: str, params: Mapping[str, Any] | None = None,
         **kwargs: Any) -> requests.Response:
     """GET with the shared retry policy and a mandatory timeout."""
     return session().get(url, params=params, timeout=timeout, **kwargs)
+
+
+_SINGLE: requests.Session | None = None
+
+
+def single_attempt_session() -> requests.Session:
+    """Session with NO retries, for key-gated, credit-budgeted sources
+    (Statyx, FastballAPI, Tank01, Sportradar). Every call is spent exactly
+    once — the established keyed-source contract (CLAUDE.md, CarpeDATA)."""
+    global _SINGLE
+    if _SINGLE is None:
+        s = requests.Session()
+        adapter = HTTPAdapter(max_retries=0, pool_maxsize=4)
+        s.mount("https://", adapter)
+        s.mount("http://", adapter)
+        s.headers.update({"User-Agent": USER_AGENT})
+        _SINGLE = s
+    return _SINGLE
