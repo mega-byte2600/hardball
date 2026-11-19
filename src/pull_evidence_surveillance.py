@@ -105,6 +105,9 @@ MONTHS = {m: i + 1 for i, m in enumerate(
 
 def http_get(url):
     resp = shared_get(url, headers=UA, timeout=45)
+    if resp.status_code >= 400:
+        # Preserve urlopen's established error contract (HTTPError with .code).
+        raise urllib.error.HTTPError(url, resp.status_code, resp.reason or "", resp.headers, None)
     if resp.status_code != 200:
         raise RuntimeError(f"HTTP {resp.status_code} for {url[:90]}")
     return resp.content

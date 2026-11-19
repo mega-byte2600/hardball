@@ -42,3 +42,24 @@ def test_keyed_sources_are_single_attempt_never_retried():
     assert s.get_adapter("https://api.statyx.io").max_retries.total == 0
     src = (Path(__file__).resolve().parent.parent / "src" / "keyed_sources.py").read_text()
     assert "single_attempt_session" in src and "http_get(" not in src
+
+
+def test_converted_helpers_keep_urlopen_error_contract(monkeypatch):
+    """CarpeDATA guard: callers classify links by HTTPError.code; the shared
+    client must raise the same exception type urlopen did."""
+    import urllib.error
+
+    import pytest
+
+    import pull_evidence_surveillance as pes
+    import pull_journal_spotlight as pjs
+
+    class R:
+        status_code, reason, headers, content = 404, "Not Found", {}, b""
+
+    for mod in (pes, pjs):
+        monkeypatch.setattr(mod, "shared_get", lambda *a, **k: R())
+        with pytest.raises(urllib.error.HTTPError) as e:
+            mod.http_get("https://example.invalid")
+        assert e.value.code == 404
+    assert pjs.homepage_status("https://example.invalid") == 404

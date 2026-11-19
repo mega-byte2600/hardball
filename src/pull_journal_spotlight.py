@@ -125,6 +125,10 @@ MONTH_NUM = {m.lower(): i for i, m in MONTH_ABBR.items()}
 
 def http_get(url, headers=UA, timeout=45):
     resp = shared_get(url, headers=headers, timeout=timeout)
+    if resp.status_code >= 400:
+        # Same exception type urlopen raised (carries .code), so callers such
+        # as homepage_status keep classifying links exactly as before.
+        raise urllib.error.HTTPError(url, resp.status_code, resp.reason or "", resp.headers, None)
     if resp.status_code != 200:
         raise RuntimeError(f"HTTP {resp.status_code} for {url[:90]}")
     return resp.status_code, resp.content
