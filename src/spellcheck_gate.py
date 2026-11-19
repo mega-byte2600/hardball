@@ -105,6 +105,9 @@ WHITELIST = {
     # English); both correctly spelled, flagged only because the
     # dictionary does not know them. No panel wording changed.
     "baserunners", "underpriced",
+    # Cycle 136 team-explorer selections: checked against the committed
+    # upper-minors pipeline artifact; "callouts" is standard English.
+    "callouts", "bratt", "waldschmidt",
     # Cycle 57 evidence-surveillance names/terms — verified against the
     # provider (PubMed / NCBI NLM E-utilities) and the lane vocabulary
     "pubmed", "ncbi", "nlm", "nih", "eutils", "ucl", "biologics",

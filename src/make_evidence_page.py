@@ -240,6 +240,9 @@ def main():
   .sub {{ font-size: 10.5pt; color: #444; margin: 0 0 10pt; }}
   .label {{ background: #eef2f7; border-left: 4px solid #041E42;
             padding: 8pt 12pt; font-size: 11pt; margin: 12pt 0 4pt; }}
+  .related {{ border-left: 3px solid #BF0D3E; padding: 5pt 10pt;
+              margin: 8pt 0 12pt; font-size: 10.5pt; }}
+  .related a {{ color: #041E42; }}
   .backlink {{ font-size: 10pt; margin: 0 0 8pt; }}
   .backlink a {{ color: #041E42; text-decoration: none; }}
   .backlink a:hover {{ text-decoration: underline; }}
@@ -310,6 +313,10 @@ Nothing on this page feeds any figure, projection, or roster in the demo.
 Each Finding restates only what the paper's own abstract reports or
 concludes; the full abstract is stored with the citation in the project
 data file.</div>
+<p class="related">Related baseball decision research: <a href="STATISTICS_GAP_ANALYSIS.md">Statistics methods and evidence gap analysis</a>.
+This separate review covers player and team evaluation methods; it is not part
+of the medical-literature surveillance above and does not validate HARDBALL
+projections or recommendations.</p>
 {toc_html}
 {lanes_html}{spotlight_html}
 <div class="foot">Source: PubMed / NCBI E-utilities (esearch + efetch),

@@ -1488,9 +1488,56 @@ def main() -> int:
          and "16 seasons of payroll vs wins" in html_qa,
          f"seasons={panel_seasons}")
     te = load("team_explorer.json")
-    _fig(2, "team explorer: 30 teams in artifact and panel",
-         len(te["teams"]) == 30 and "pick your team" in html_qa,
-         f"teams={len(te['teams'])}")
+    team_explorer = {row["team"]: row for row in te["teams"]}
+    pipeline_abbr_to_kpi = {"AZ": "ARI", "CWS": "CHW"}
+    pipeline_by_team = {
+        pipeline_abbr_to_kpi.get(row["org_abbr"], row["org_abbr"]): row
+        for row in load("pipeline_2026.json")["orgs"]}
+    tb = team_explorer.get("TB", {})
+    tb_pipe = pipeline_by_team.get("TB", {})
+    team_contract_ok = (
+        len(te["teams"]) == 30
+        and len(team_explorer) == 30
+        and "Lower HR/PA" in te["metadata"]["axes"]
+        and "Less power-chasing" not in te["metadata"]["axes"]
+        and all("proposed_cap_headroom_m" in row
+                and "pipeline_index_rank" in row
+                and "top_qualified_upper_minors_hitter" in row
+                and "top_qualified_upper_minors_pitcher" in row
+                and "top_prospect" not in row for row in te["teams"])
+        and all(team_explorer.get(org, {}).get("pipeline_index_rank") == item.get("rank")
+                for org, item in pipeline_by_team.items())
+        and tb.get("wins") == 98
+        and tb.get("payroll") == 95615469.0
+        and tb.get("proposed_cap_headroom_m") == 149.7
+        and tb.get("pipeline_index_rank") == 7
+        and tb.get("top_qualified_upper_minors_hitter") == "Austin Overn"
+        and tb.get("top_qualified_upper_minors_hitter")
+            == (tb_pipe.get("top_hitter") or {}).get("name")
+        and tb.get("top_qualified_upper_minors_pitcher")
+            == (tb_pipe.get("top_pitcher") or {}).get("name"))
+    _fig(2, "team explorer data contract: 30 teams, precise labels, TB source values",
+         team_contract_ok, f"teams={len(te['teams'])}; TB={tb}")
+    _fig(2, "team explorer controls: source context and selector in each mode",
+         html_qa.count('class="team-explorer-select"') == 3
+         and html_qa.count('class="team-profile-facts"') == 3
+         and 'HARDBALL AA/AAA index rank' in html_qa
+         and 'Room vs proposed cap' in html_qa
+         and 'Upper-minors OPS leader (qualified)' in html_qa
+         and 'Upper-minors ERA leader (qualified)' in html_qa
+         and 'Choose an MLB club to compare' in html_qa,
+         f"selectors={html_qa.count('class=\"team-explorer-select\"')}")
+    _fig(2, "responsive chart foundations: viewport meta and Plotly resize",
+         'name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"' in html
+         and 'responsive": true' in html_qa,
+         "viewport + Plotly responsive config")
+    _fig(2, "team explorer copy: no false prospect claim or long Plotly title",
+         "top prospect:" not in html_qa.lower()
+         and "not a scouting or farm-system ranking" in html_qa.lower()
+         and "not an mlb salary cap" in html_qa.lower()
+         and "directionally reversed" in html_qa.lower()
+         and "does not score distance" in html_qa.lower(),
+         "team facts are separate from the chart title")
     pci = load("persistence_ci.json")["pooled_contact"]
     _fig(3, "persistence caption carries pooled contact r + pair count",
          f"pooled r={pci['r']:.2f}" in html_qa
