@@ -1615,12 +1615,14 @@ def main() -> int:
         by_type = lambda lst, t: sum(1 for e in lst
                                      if e["event_type"] == t)
         snaps_ok = True
+        missing_snaps = []
         for side in ("baseline", "current"):
             for key in ("fastballapi_injuries", "statyx_injuries"):
                 ref = md[side][key]
                 p = ROOT / ref["file"]
                 if not p.exists():
                     snaps_ok = False
+                    missing_snaps.append(ref["file"])
                     break
                 env = json.loads(p.read_text())
                 digest = hashlib.sha256(json.dumps(
@@ -1643,7 +1645,10 @@ def main() -> int:
                   ("dropped", "curated")
               and snaps_ok,
               f"events={len(ev)} fa_events={len(ile['fa_pool_events'])} "
-              f"verdict={md['statyx_standings_test']['verdict']}")
+              f"verdict={md['statyx_standings_test']['verdict']}"
+              + (f" — snapshot pulled but NOT committed: {', '.join(missing_snaps)}; "
+                 "on the machine that ran the refresh: git add -f <file> && commit"
+                 if missing_snaps else ""))
         if fap["events_total"] == 0:
             frag = "no movement in the FA pool since the baseline pull"
         else:

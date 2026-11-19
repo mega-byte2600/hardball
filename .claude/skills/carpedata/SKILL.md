@@ -41,6 +41,12 @@ data links. Their steps run only *inside* the CarpeDATA guardrails below.
    tests, with a rollback line in the PR. No mass codemods over working
    clients without an approved plan.
 
+8. **A refresh is not done until its snapshots are committed.** Every
+   `data/raw/<source>/…` file a refreshed artifact cites by sha256 is staged
+   in the same commit, so `check_freshness.py` and `verify_data.py` pass in
+   that cycle. (Lesson: from Nov 8 to Nov 18, 2026, cited snapshots were never
+   committed because `data/raw/` was git-ignored. Fixed in #155.)
+
 ## Modes
 
 ### `check`: prove health (read-only, zero credits)
