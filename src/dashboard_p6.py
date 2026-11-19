@@ -3503,6 +3503,17 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 .about-contact{background:linear-gradient(135deg,var(--panel),var(--ink-hi));border:1px solid var(--panel-line);border-top:3px solid var(--gold);border-radius:10px;padding:22px 24px;margin:24px 0 8px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:center}.about-kicker{display:block;margin-bottom:7px;color:var(--gold);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}.about-contact h3{margin:0 0 7px;font-size:22px;letter-spacing:.1px}.about-contact p{margin:0;color:var(--paper-dim);font-size:14px;line-height:1.55;max-width:720px}.about-email{display:inline-block;margin-top:14px;color:var(--paper);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13px;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:3px}.about-email:hover,.about-email:focus{color:var(--gold)}.about-links{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;max-width:360px}.about-links a{display:inline-block;border:1px solid var(--panel-line);border-radius:6px;padding:9px 11px;color:var(--paper);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap}.about-links a:hover,.about-links a:focus{border-color:var(--gold);color:var(--gold)}.about-links a.primary{background:var(--gold);border-color:var(--gold);color:var(--ink);}.about-links a.primary:hover,.about-links a.primary:focus{background:var(--paper);border-color:var(--paper);color:var(--ink)}@media(max-width:720px){.about-contact{grid-template-columns:1fr;padding:20px}.about-links{justify-content:flex-start;max-width:none}}
 @media(max-width:720px){body{font-size:15px;overflow-x:hidden}.crest{padding:24px 18px 20px}.crest h1{font-size:31px;letter-spacing:.5px}.crest h2{font-size:15px;line-height:1.45}.crest .asof{font-size:11px;line-height:1.45}.hd{padding:0 12px 28px}.keybox{padding:10px 11px;font-size:12px;line-height:1.65}.figidx{padding:10px 11px;font-size:11px;line-height:1.7}.figidx span{margin:2px 1px}.modenav{display:grid;grid-template-columns:1fr;gap:8px}.modenav button{min-height:48px;padding:12px 10px;font-size:14px}.slide{padding:14px 12px;overflow:visible}.about-contact{padding:20px}.about-links{justify-content:flex-start;max-width:none}.about-links a{min-height:44px;display:inline-flex;align-items:center}.srcbox{font-size:12px;line-height:1.55;overflow-wrap:anywhere}table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}}@media(min-width:721px) and (max-width:1024px){.crest{padding:28px 24px 22px}.hd{padding:0 16px 32px}.modenav button{min-height:48px}}@media print{body.print-boardroom #mode-story,body.print-boardroom #mode-explorer,body.print-boardroom .modenav,body.print-boardroom .crest,body.print-boardroom .keybox,body.print-boardroom .figidx,body.print-boardroom .srcbox{display:none}body.print-boardroom button{display:none}body{background:#fff}.slide{background:#fff!important;color:#000!important;border:1px solid #bbb!important}.slide svg text{fill:#000!important}.slide .modebar{display:none!important}}
 .dbrief{background:var(--panel);border:1px solid var(--panel-line);border-top:3px solid var(--gold);border-radius:10px;padding:16px 20px;margin:16px 0}.dbrief h3{margin:0 0 8px}.dbrief ul{margin:0 0 12px;padding-left:20px;line-height:1.55}.dbwrap{overflow-x:auto}.dbtable{border-collapse:collapse;width:100%;font-size:13px}.dbtable caption{text-align:left;color:var(--paper-dim);font-size:12px;padding-bottom:6px}.dbtable th,.dbtable td{padding:6px 8px;border-bottom:1px solid var(--panel-line);text-align:left;white-space:nowrap}.dbtable td.pos{color:#43b581;font-weight:700}.dbtable td.neg{color:var(--paper-dim)}.dbpos{color:var(--paper-dim);font-size:11px}.dbflag{color:#e08a3c;font-size:11px;border:1px solid #e08a3c;border-radius:4px;padding:0 4px}.dbfoot{font-size:12px;color:var(--paper-dim);margin:8px 0 0}.dbfoot a{color:var(--gold)}
+
+/* Primary research destination: visible before the decision brief and figures. */
+.research-entry{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin:18px 0 22px;padding:20px 22px;background:#0D2E59;border:1px solid #8FBCE6;border-left:5px solid #F2B84B;border-radius:10px}
+.research-entry h2{margin:0 0 6px;color:#fff;font:700 20px/1.35 Inter,system-ui,sans-serif}
+.research-entry p{margin:0;color:#B9D8F3;font-size:16px;line-height:1.6}
+.research-entry a,.modenav .research-tab{display:inline-flex;align-items:center;justify-content:center;min-height:48px;box-sizing:border-box;padding:12px 16px;background:#DDEEFF;color:#041E42;border:2px solid #8FBCE6;border-radius:7px;font:700 16px/1.4 Inter,system-ui,sans-serif;text-align:center;text-underline-offset:4px}
+.modenav .research-tab{flex:1}
+.research-entry a:hover,.modenav .research-tab:hover{background:#fff}
+.research-entry a:focus-visible,.modenav .research-tab:focus-visible{outline:3px solid #F2B84B;outline-offset:4px}
+@media(max-width:1024px){.modenav{flex-wrap:wrap}.modenav>*{flex-basis:calc(50% - 10px)}}
+@media(max-width:720px){.research-entry{padding:18px 16px;gap:14px}.research-entry a{width:100%}.modenav .research-tab{width:100%}}
 </style></head>
 <body>
 <div class="crest">
@@ -3512,6 +3523,10 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 <div class="asof">__ASOF__</div>
 </div>
 <div class="hd" role="main" id="main">
+<nav class="research-entry" aria-labelledby="research-entry-title">
+<div><h2 id="research-entry-title">Research and player health</h2><p>Injury prevention, workload, muscle recovery and tendon healing.</p></div>
+<a href="../docs/EVIDENCE.html">What the Evidence Says Now</a>
+</nav>
 <p style="margin:14px 0;color:var(--paper);font-size:16px;line-height:1.5">Hardball helps baseball analysts compare rosters across budgets and see how player availability changes their options.</p>
 __DECISION_BRIEF__
 <div class="keybox"><b>COLOR KEY (used on every chart below):</b>
@@ -3568,7 +3583,8 @@ __JS_INCLUDE__
 <a href="#player-errors" onclick="showMode('explorer');document.getElementById('player-errors').open=true">Individual fielding errors</a>
 </div>
 </nav>
-<nav class="modenav">
+<nav class="modenav" aria-label="Dashboard views and research">
+<a class="research-tab" href="../docs/EVIDENCE.html">What the Evidence Says Now</a>
 <button type="button" id="btn-story" class="active" onclick="showMode('story')">Story: the case in 6 chapters</button>
 <button type="button" id="btn-boardroom" onclick="showMode('boardroom')">Boardroom: 15 slides</button>
 <button type="button" id="btn-explorer" onclick="showMode('explorer')">Explorer: all 25 figures</button>
