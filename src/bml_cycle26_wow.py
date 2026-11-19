@@ -131,11 +131,17 @@ def main():
     cheap = d26[d26["team"].isin(["MIL", "TB", "CLE"])]
     cheap_idx = {c: round(100 * float(cheap[c].mean()) / league[c], 1)
                  for c in league}
-    # invert K% and HR/PA so higher = more winning-cheap-like everywhere
+    # Invert K% and HR/PA so the directional profile comparison reads in
+    # one direction. This is descriptive similarity, not a claim that a
+    # lower HR/PA is universally better or causes more wins.
     def idx(team_row, c):
         v = 100 * float(team_row[c]) / league[c]
         return round(200 - v, 1) if c in ("K%", "HR/PA_raw") else round(v, 1)
-    pipe = {o["org_abbr"]: o for o in
+    # StatsAPI/KPI abbreviations differ from the pipeline endpoint for
+    # Arizona (ARI/AZ) and the White Sox (CHW/CWS). Normalize before joining
+    # so real pipeline coverage is not rendered as missing.
+    pipeline_abbr_to_kpi = {"AZ": "ARI", "CWS": "CHW"}
+    pipe = {pipeline_abbr_to_kpi.get(o["org_abbr"], o["org_abbr"]): o for o in
             json.load(open(os.path.join(DATA, "pipeline_2026.json")))["orgs"]}
     teams = []
     for _, r in d26.sort_values("team").iterrows():
@@ -148,17 +154,24 @@ def main():
             "team": t, "wins": int(r["wins"]),
             "signature_idx": {c: idx(r, c) for c in league},
             "payroll": pay,
-            "cap_headroom_m": round((CAP - pay) / 1e6, 1) if pay else None,
-            "pipeline_rank": o.get("rank"),
+            "proposed_cap_headroom_m": round((CAP - pay) / 1e6, 1) if pay else None,
+            "pipeline_index_rank": o.get("rank"),
             "pipeline_index": o.get("index_avg100"),
-            "top_prospect": (o.get("top_hitter") or {}).get("name")})
+            "top_qualified_upper_minors_hitter": (o.get("top_hitter") or {}).get("name"),
+            "top_qualified_upper_minors_pitcher": (o.get("top_pitcher") or {}).get("name")})
     axes = ["OBP", "contact", "K%", "BB%", "HR/PA_raw"]
     labels = {"OBP": "OBP", "contact": "Contact", "K%": "Fewer K",
-              "BB%": "Walks", "HR/PA_raw": "Less power-chasing"}
+              "BB%": "Walks", "HR/PA_raw": "Lower HR/PA"}
     out2 = {"metadata": {
                 "basis": "2026 team KPIs indexed to league = 100; K% and "
-                         "HR/PA inverted so higher always means more "
-                         "winning-cheap-like",
+                         "HR/PA are directionally inverted so higher means "
+                         "higher OBP/contact/walk rates or lower K%/HR/PA, "
+                         "the directions observed in the MIL/TB/CLE mean; "
+                         "this is not profile distance, a universal quality "
+                         "score, or a causal claim",
+                "pipeline_scope": "HARDBALL AA/AAA upper-minors depth index rank among 30 organizations; not a scouting or farm-system ranking",
+                "pipeline_qualifiers": "2026 under-26 players; hitters >=150 PA and pitchers >=40.0 IP at AA/AAA",
+                "proposed_cap_basis": f"headroom = proposed {CAP / 1e6:.1f}M cap minus Spotrac payroll; scenario only, not an MLB salary cap",
                 "winning_cheap_idx": {labels[c]: (round(200 - cheap_idx[c], 1)
                                         if c in ("K%", "HR/PA_raw")
                                         else cheap_idx[c]) for c in axes},

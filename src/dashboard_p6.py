@@ -2625,7 +2625,7 @@ def panel_animation():
 
 def panel_team_explorer():
     """Cycle 26: pick your team — its 2026 signature vs the winning-cheap
-    profile, with payroll, cap headroom, and pipeline rank."""
+    profile, with team context shown in a separate, accessible control row."""
     fj = os.path.join(DATA, "team_explorer.json")
     if not os.path.exists(fj):
         return None
@@ -2642,7 +2642,8 @@ def panel_team_explorer():
             r=vals, theta=labels + [labels[0]], fill="toself",
             name=t["team"], visible=(i == 0),
             line=dict(color="#8FBCE6", width=2),
-            fillcolor="rgba(143,188,230,0.15)"))
+            fillcolor="rgba(143,188,230,0.15)",
+            hovertemplate="%{theta}: %{r:.1f}<extra>" + t["team"] + "</extra>"))
     cheap_vals = [cheap[l] for l in labels]
     cheap_vals.append(cheap_vals[0])
     traces.append(go.Scatterpolar(
@@ -2652,32 +2653,14 @@ def panel_team_explorer():
     traces.append(go.Scatterpolar(
         r=[100] * 6, theta=labels + [labels[0]], name="League = 100",
         line=dict(color="#9aa3b2", width=1, dash="dot")))
-    for i, t in enumerate(d["teams"]):
-        vis = [j == i for j in range(n)] + [True, True]
-        title = (f"{t['team']} — {t['wins']} wins · payroll ${t['payroll']/1e6:.0f}M · "
-                 f"cap headroom ${t['cap_headroom_m']:.0f}M · pipeline #{t['pipeline_rank']} "
-                 f"(top prospect: {t['top_prospect']})<br>"
-                 "<sub>Signature indexed to league = 100; higher = more winning-cheap-like on every axis "
-                 "(K% and HR rate inverted). Green = MIL/TB/CLE average profile. Sources: MLB Stats API 2026 KPIs, "
-                 "Spotrac payroll, Cycle 23 pipeline index. Pick your team:</sub>")
-        buttons.append(dict(label=t["team"], method="update",
-                            args=[{"visible": vis}, {"title": {"text": title}}]))
     t0 = d["teams"][0]
     fig = go.Figure(data=traces)
     fig.update_layout(
-        title=f"{t0['team']} — pick your team<br><sub>Use the dropdown: every club's 2026 signature vs the winning-cheap profile.</sub>",
+        title=f"{t0['team']} · 2026 team profile",
         polar=dict(radialaxis=dict(visible=True, range=[55, 135])),
-        updatemenus=[dict(type="dropdown", buttons=buttons, direction="down",
-                          x=1.08, xanchor="right", y=1.06, yanchor="top",
-                          pad=dict(r=8, t=6), showactive=True, active=0,
-                          # Plotly renders the active dropdown item on a
-                          # light surface. Use dark ink here so both the
-                          # closed control and the open selection remain
-                          # readable instead of white-on-white.
-                          font=dict(size=11, color="#041E42"), bgcolor="#DDE7F2",
-                          bordercolor="#8FBCE6", borderwidth=1)],
         template="plotly_white", height=560,
-        legend=dict(orientation="h", y=-0.08))
+        legend=dict(orientation="h", y=-0.08),
+        margin=dict(l=36, r=36, t=48, b=84))
     return fig
 
 def panel_scenarios():
@@ -3037,16 +3020,87 @@ def build():
                            zerolinecolor="rgba(255,255,255,0.25)"),
             )
             fig = compact
+        team_controls = _team_explorer_controls(mode) if num == 2 else ""
+        team_context = (
+            '<p class="figure-caption">Each axis is indexed to the 2026 league average (100). '
+            'K% and HR/PA are directionally reversed: higher values mean higher OBP/contact/walk '
+            'rates or lower K%/HR/PA, the directions observed in the MIL/TB/CLE mean. The chart '
+            'shows profiles; it does not score distance from the green line or establish a '
+            'universal quality measure or causal effect. Payroll is the Spotrac snapshot. Proposed-cap '
+            'headroom is a scenario against the proposed $245.3M 2027 cap, not an MLB salary cap. '
+            'The AA/AAA index rank measures HARDBALL upper-minors depth, not a scouting or '
+            'farm-system ranking. Sources: MLB Stats API team KPIs, Spotrac payroll, and the '
+            'HARDBALL AA/AAA pipeline index. Player callouts are qualified under-26 upper-minors '
+            'OPS/ERA leaders, not full-system prospect rankings.</p>' if num == 2 else "")
         _title = getattr(getattr(fig.layout, "title", None), "text", "") or ""
         _label = _html_mod.escape(re.sub(r"<[^>]+>", "", _title), quote=True)
-        return ('<div class="panel" role="figure" aria-label="' + _label +
+        return (team_controls + '<div class="panel" role="figure" aria-label="' + _label +
                 '" data-mode="' + mode +
                 '" data-figure="' + str(num) + '">' +
                 fig.to_html(full_html=False, include_plotlyjs=False,
-                            div_id=f"fig{num}-{mode}") +
+                            config={"responsive": True},
+                            div_id=f"fig{num}-{mode}") + team_context +
                 ('<p class="figure-takeaway"><strong>Takeaway:</strong> ' +
                  figure_takeaways[num] + "</p>" if mode == "explorer" else "") +
                 "</div>")
+
+    def _team_explorer_controls(mode):
+        """Keep the native selector and selected-team facts outside the SVG."""
+        import html as _html
+
+        team_data = json.load(open(os.path.join(DATA, "team_explorer.json")))
+        teams = team_data["teams"]
+
+        def _value(value):
+            return value if value not in (None, "") else "Not available"
+
+        def _facts(team):
+            rank = team.get("pipeline_index_rank")
+            return {
+                "wins": str(team["wins"]),
+                "payroll": (f"${team['payroll'] / 1e6:.1f}M"
+                            if team.get("payroll") is not None else "Not available"),
+                "headroom": (f"${team['proposed_cap_headroom_m']:.1f}M"
+                             if team.get("proposed_cap_headroom_m") is not None
+                             else "Not available"),
+                "pipeline": f"#{rank} of 30" if rank is not None else "Not ranked",
+                "hitter": _value(team.get("top_qualified_upper_minors_hitter")),
+                "pitcher": _value(team.get("top_qualified_upper_minors_pitcher")),
+                "team": team["team"],
+            }
+
+        options = []
+        for index, team in enumerate(teams):
+            facts_json = _html.escape(json.dumps(_facts(team), ensure_ascii=False), quote=True)
+            selected = " selected" if index == 0 else ""
+            options.append(
+                f'<option value="{index}" data-facts="{facts_json}"{selected}>'
+                f'{_html.escape(team["team"])} · {team["wins"]} wins</option>')
+
+        initial = _facts(teams[0])
+        fact_labels = {
+            "wins": "2026 wins",
+            "payroll": "Spotrac payroll",
+            "headroom": "Room vs proposed cap",
+            "pipeline": "HARDBALL AA/AAA index rank",
+            "hitter": "Upper-minors OPS leader (qualified)",
+            "pitcher": "Upper-minors ERA leader (qualified)",
+        }
+        facts_html = "".join(
+            '<div class="team-profile-fact"><strong>' + fact_labels[key] +
+            '</strong><span data-team-fact="' + key + '">' +
+            _html.escape(initial[key]) + '</span></div>'
+            for key in fact_labels)
+        return (
+            '<div class="team-explorer-controls">'
+            '<label class="team-explorer-label" for="team-selector-' + mode + '">'
+            'Choose a club</label>'
+            '<select class="team-explorer-select" id="team-selector-' + mode + '" '
+            'aria-label="Choose an MLB club to compare" data-team-count="' +
+            str(len(teams)) + '" onchange="selectTeamProfile(this)">' +
+            "".join(options) + '</select>'
+            '<div class="team-profile-facts" aria-live="polite" aria-atomic="true">' +
+            facts_html + '</div></div>')
 
     def _player_cards():
         import html as _html
@@ -3182,7 +3236,8 @@ def build():
     story += cards
     story += ('<div class="hero-team"><h3>Pick your team first</h3>'
               "<p>Find your club before the story: its 2026 signature against the winning-cheap "
-              "profile, its cap headroom, its farm pipeline, and its top prospect.</p></div>")
+              "reference profile, Spotrac payroll, room versus the proposed cap, and HARDBALL's "
+              "AA/AAA index context.</p></div>")
     story += _panel(2, "story")
     for i, (num, head, note, sowhat, src) in enumerate(chapters, 1):
         story += (f'<section class="chapter" data-chapter="{i}"><span class="chapnum">Chapter {i}</span>'
@@ -3255,7 +3310,7 @@ def build():
         ([22], "The shopping list ranks the whole free-agent class by projected value",
          "Every name priced off last year's real contract anchor, never a predicted price."),
         ([2], "Pick your team: every club gets the same treatment",
-         "Name your club: its signature, its cap headroom, its farm pipeline, its top prospect."),
+         "Compare its 2026 signature, Spotrac payroll, proposed-cap scenario, and HARDBALL AA/AAA depth index."),
         ([18], "Checked in public, limits disclosed: Marcel vs Steamer, r = 0.889",
          "We do not claim team-wins forecasts. Forecasting is genuinely weak, about 9 to 13 wins off, "
          "so benchmark agreement should be read alongside forecast error."),
@@ -3381,7 +3436,7 @@ def build():
                  "limitations and withdrawn findings.</p></div>")
     explorer += _claims_panel_html()
 
-    page_template = """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>HARDBALL — Major League Baseball (MLB) Decision Intelligence</title><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    page_template = """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>HARDBALL — Major League Baseball (MLB) Decision Intelligence</title><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
 --ink:#041E42; --ink-hi:#072A52; --ink-deep:#021028;
@@ -3428,6 +3483,16 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 .sec h3{margin:0;font-size:20px;letter-spacing:.4px}
 .sec p{margin:2px 0 0;font-size:13.5px;color:var(--paper-dim)}
 .panel{background:var(--panel);border:1px solid var(--panel-line);border-radius:12px;padding:16px 18px 8px;margin:14px 0;box-shadow:var(--shadow)}
+.team-explorer-controls{display:grid;grid-template-columns:minmax(150px,220px) minmax(0,1fr);gap:10px 14px;align-items:end;margin:0 4px 12px}
+.team-explorer-label{grid-column:1;font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--paper-dim)}
+.team-explorer-select{grid-column:1;grid-row:2;width:100%;min-height:48px;padding:8px 12px;border:1px solid var(--paper-dim);border-radius:6px;background:#DDE7F2;color:var(--ink);font:600 15px Inter,system-ui,sans-serif}
+.team-explorer-select:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.team-profile-facts{grid-column:2;grid-row:1 / span 2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.team-profile-fact{min-width:0;padding:8px 10px;border:1px solid var(--panel-line);border-radius:6px;background:rgba(4,30,66,.52);font-size:12px;line-height:1.35;overflow-wrap:anywhere}
+.team-profile-fact strong{display:block;margin-bottom:3px;color:var(--paper-dim);font-size:10px;line-height:1.25;text-transform:uppercase;letter-spacing:.04em}
+.figure-caption{margin:6px 4px 10px;color:var(--paper-dim);font-size:12px;line-height:1.55;overflow-wrap:anywhere}
+@media(max-width:720px){.team-explorer-controls{grid-template-columns:minmax(0,1fr);gap:7px}.team-explorer-label,.team-explorer-select,.team-profile-facts{grid-column:1;grid-row:auto}.team-profile-facts{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.team-profile-fact{padding:8px;font-size:12px}.team-profile-fact strong{font-size:9px}}
+@media(min-width:721px) and (max-width:1024px){.team-profile-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .panel table{border-collapse:collapse}
 .panel th{color:var(--paper-dim);border-bottom:2px solid var(--panel-line);padding:3px 8px;text-align:left}
 .panel td{border-bottom:1px solid var(--panel-line);padding:3px 8px}
@@ -3710,6 +3775,31 @@ function showMode(id) {
       }
     }, 60);
   }
+}
+function selectTeamProfile(select) {
+  var option = select.selectedOptions && select.selectedOptions[0];
+  if (!option) return;
+  var facts;
+  try { facts = JSON.parse(option.getAttribute('data-facts')); }
+  catch (e) { return; }
+  document.querySelectorAll('[data-figure="2"] .team-explorer-select').forEach(function (control) {
+    control.value = select.value;
+    var panel = control.closest('[data-figure="2"]');
+    panel.querySelectorAll('[data-team-fact]').forEach(function (node) {
+      var key = node.getAttribute('data-team-fact');
+      node.textContent = facts[key] || 'Not available';
+    });
+    var graph = panel.querySelector('.plotly-graph-div');
+    if (graph && window.Plotly && graph.data) {
+      var count = Number(control.dataset.teamCount || 0);
+      var selected = Number(select.value);
+      var visible = graph.data.map(function (_, index) {
+        return index === selected || index >= count;
+      });
+      window.Plotly.restyle(graph, 'visible', visible);
+      window.Plotly.relayout(graph, {'title.text': facts.team + ' · 2026 team profile'});
+    }
+  });
 }
 function printBoardroom() {
   showMode("boardroom");
