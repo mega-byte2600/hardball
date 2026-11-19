@@ -6,7 +6,7 @@
   "band": "P10-P90 of one-season delivered WAR, normal approximation to the measured Marcel error pools (correlation between OBP and SLG errors ignored; availability held at its measured value)",
   "excluded": "players SIGNED per the MLB StatsAPI transactions tracker; delivered WAR < 1.0; no price on record",
   "limits": "Price is an estimate, not a predicted 2027 contract; the Hakes-Sauer mispricing test is INCONCLUSIVE, so surplus ranks a shopping order, not a proven edge.",
-  "n_candidates": 34,
+  "n_candidates": 33,
   "inputs": [
    "data/fa_health_cards_2027.json",
    "data/uncertainty_scenarios_2027.json",
@@ -212,29 +212,29 @@
    "health_flag": false,
    "act_by": "2026-12-01",
    "rank": 9,
-   "fallback": "Dustin May"
+   "fallback": "Jack Flaherty"
   },
   {
-   "name": "Dustin May",
-   "player_id": 669160,
-   "pos": "SP",
-   "group": "pitcher",
-   "prev_team": "MIL",
-   "type": "UFA",
+   "name": "Carson Kelly",
+   "player_id": 608348,
+   "pos": "C",
+   "group": "hitter",
+   "prev_team": "CHC",
+   "type": "UFA / release",
    "qualifying_offer": false,
-   "delivered_war": 1.7,
-   "war_p10": 0.34,
-   "war_p90": 3.06,
-   "price_aav_usd": 15416676,
+   "delivered_war": 1.54,
+   "war_p10": 0.69,
+   "war_p90": 2.4,
+   "price_aav_usd": 15028426,
    "price_basis": "Spotrac market-value AAV",
-   "surplus_usd": -1536890,
-   "surplus_p10_usd": -12657725,
-   "usd_per_delivered_war": 9063302,
-   "availability": 0.9368,
+   "surplus_usd": -2437885,
+   "surplus_p10_usd": -9392768,
+   "usd_per_delivered_war": 9739745,
+   "availability": null,
    "health_flag": false,
    "act_by": "2026-12-01",
    "rank": 10,
-   "fallback": "Jack Flaherty"
+   "fallback": ""
   }
  ]
 }
