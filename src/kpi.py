@@ -8,14 +8,12 @@ Thesis test: does buying contact/OBP over homeruns produce wins per dollar?
 Real data only: team standings + team hitting from MLB Stats API, joined
 to Spotrac payroll (src/payroll.py).
 """
-import json
 import os
-import sqlite3
 
 import pandas as pd
 import requests
 
-from payroll import PAYROLL_2026, build_efficiency_table, load_payroll_frame
+from payroll import load_payroll_frame
 
 BASE = "https://statsapi.mlb.com/api/v1"
 UA = {"User-Agent": "HARDBALL/1.0"}
@@ -35,7 +33,7 @@ def team_code_map(season=2026) -> dict:
     m = {}
     for t in resp.json().get("teams", []):
         ab = t.get("abbreviation")
-        name = t.get("name", "")
+        t.get("name", "")
         m[t["id"]] = ab
     # Spotrac/payroll uses these 3-letter codes
     m[114] = "CLE"  # Guardians

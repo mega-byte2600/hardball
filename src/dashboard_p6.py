@@ -24,14 +24,12 @@ clean clone OFFLINE from committed snapshots (audit G1).
 import json
 import os
 import re
+import html as _html_mod
 
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 import kpi as kpi_mod
-from model_p6 import FEATURES
-import numpy as np
-from sklearn.linear_model import LinearRegression
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(REPO, "data")
@@ -62,9 +60,9 @@ def panel_payroll_wins(df, year=2026):
             name=name, marker=dict(color=color, size=12),
             text=[f"<b>{t}</b>" for t in sub["team"]], textposition="top center"))
     fig.add_vline(x=CAP / 1e6, line_dash="dash", line_color="#BF0D3E",
-                  annotation_text=f"Proposed cap $245.3M", annotation_position="top right")
+                  annotation_text="Proposed cap $245.3M", annotation_position="top right")
     fig.add_vline(x=FLOOR / 1e6, line_dash="dot", line_color="#F2B84B",
-                  annotation_text=f"Proposed floor $171.2M", annotation_position="bottom right")
+                  annotation_text="Proposed floor $171.2M", annotation_position="bottom right")
     fig.update_layout(title=f"{year} — Payroll ($M) vs Wins: money buys some wins; winning-cheap teams win MORE per $",
                       xaxis_title="Total payroll ($ millions)", yaxis_title="Wins",
                       template="plotly_white", height=520)
@@ -228,7 +226,7 @@ def panel_player_proj():
 
 def panel_pitching():
     """Winning-cheap pitching signature: IP-weighted ERA/WHIP/BBy per group (2026)."""
-    import subprocess, json as J
+    import json as J
     # table-level re-aggregation inline from lake (clean, no module import cycle)
     import sqlite3
     TEAM = {"New York Yankees":"NYY","Houston Astros":"HOU","New York Mets":"NYM",
@@ -576,7 +574,7 @@ def panel_cap_scenario():
     if not os.path.exists(f):
         return None
     d = pd.DataFrame(json.load(open(f))["teams"])
-    CAPV, FLOORV = 245.3, 171.2
+    _CAPV, FLOORV = 245.3, 171.2
     d["gap_M"] = (d["gap_to_cap"] / 1e6).round(1)  # + over cap; - under
     # focus on the most affected, label over/under
     d["label"] = d["team"]
@@ -766,6 +764,75 @@ def panel_skill_persistence():
                                font=dict(size=11, color="#8FBCE6"), xanchor="left")])
     return fig
 
+
+
+def _decision_brief_html():
+    """Above-the-fold decision block: what to do, by when, with ranges.
+
+    Built from data/decision_brief_2027.json (src/decision_brief.py) and the
+    Marcel uncertainty test (src/forecast_eval.py). Returns "" if missing.
+    """
+    path = os.path.join(DATA, "decision_brief_2027.json")
+    if not os.path.exists(path):
+        return ""
+    brief = json.load(open(path))
+    top = brief["top"]
+    esc = _html_mod.escape
+    rows = "".join(
+        "<tr><td>{rank}</td><td><b>{name}</b> <span class=\"dbpos\">{pos} · {team}</span>{flag}</td>"
+        "<td>{war:.1f}</td><td>{p10:.1f}–{p90:.1f}</td><td>${price:.1f}M</td>"
+        "<td class=\"{cls}\">{sur:+.1f}M</td><td>{actby}</td><td>{fb}</td></tr>".format(
+            rank=r["rank"], name=esc(r["name"]), pos=esc(r["pos"]), team=esc(r["prev_team"]),
+            flag=' <span class="dbflag" title="health risk flag">health flag</span>' if r["health_flag"] else "",
+            war=r["delivered_war"], p10=r["war_p10"], p90=r["war_p90"],
+            price=r["price_aav_usd"] / 1e6, sur=r["surplus_usd"] / 1e6,
+            cls="pos" if r["surplus_usd"] > 0 else "neg",
+            actby=esc(r["act_by"]), fb=esc(r["fallback"] or "—"))
+        for r in top)
+    n_pos = sum(1 for r in top if r["surplus_usd"] > 0)
+    n_big = sum(1 for r in top if r["surplus_usd"] > 5_000_000)
+    lead = top[0]
+    unc_note = ""
+    up = os.path.join(DATA, "marcel_backtest_uncertainty.json")
+    if os.path.exists(up):
+        u = json.load(open(up))["pooled"]
+        o = u["OBP"]["repeat_last_season"]
+        unc_note = (f"<li><b>Projection edge is modest.</b> Marcel beats "
+                    f"&ldquo;repeat last season&rdquo; by {abs(o['marcel_minus_baseline'])*1000:.1f} "
+                    f"points of OBP MAE (95% CI {o['diff_ci95'][0]*1000:.1f} to "
+                    f"{o['diff_ci95'][1]*1000:.1f}; Diebold–Mariano p = {o['p_value']:.2f}, "
+                    f"n = {u['n']}) — treat single-player projections as ranges, "
+                    f"not points.</li>")
+    return (
+        '<section class="dbrief" aria-labelledby="dbrief-h">'
+        '<h3 id="dbrief-h">Decision brief — 2027 free-agent moves</h3>'
+        "<ul>"
+        f"<li><b>Act first on {esc(lead['name'])}</b> ({esc(lead['pos'])}): "
+        f"{lead['delivered_war']:.1f} delivered WAR (P10–P90 {lead['war_p10']:.1f}–"
+        f"{lead['war_p90']:.1f}) for about ${lead['price_aav_usd']/1e6:.1f}M, "
+        f"{lead['surplus_usd']/1e6:+.1f}M surplus at market $/WAR"
+        f"{' — the only move clearing +$5M' if n_big == 1 else ''}.</li>"
+        f"<li><b>{n_pos} of the top 10 are priced below market value, "
+        f"{n_big} by more than $5M.</b> Beyond that, the market is close to fair: "
+        "pay for availability, not names.</li>"
+        f"{unc_note}"
+        f"<li><b>Deadline:</b> act before {esc(CBA_EXPIRY_LABEL)}, when the CBA expires and the "
+        "proposed cap regime would begin to govern.</li>"
+        "</ul>"
+        '<div class="dbwrap"><table class="dbtable"><caption>Top 10 available free agents by '
+        "surplus (delivered WAR × market $/WAR − price). SIGNED players excluded.</caption>"
+        "<thead><tr><th scope=\"col\">#</th><th scope=\"col\">Player</th>"
+        "<th scope=\"col\">WAR</th><th scope=\"col\">P10–P90</th><th scope=\"col\">Price</th>"
+        "<th scope=\"col\">Surplus</th><th scope=\"col\">Act by</th>"
+        "<th scope=\"col\">Fallback</th></tr></thead>"
+        f"<tbody>{rows}</tbody></table></div>"
+        '<p class="dbfoot"><a href="decision_brief_2027.csv" download>Download all '
+        f"{brief['metadata']['n_candidates']} candidates (CSV)</a> · Price basis per row in "
+        "the CSV · Surplus ranks a shopping order, not a proven mispricing.</p>"
+        "</section>")
+
+
+CBA_EXPIRY_LABEL = "December 1, 2026"
 
 def _panel_skill_multipair(multi_path, ci_path):
     """Multi-year version: each skill's r in EVERY season pair + pooled verdict."""
@@ -2859,11 +2926,15 @@ def build():
         return out
 
     numbered_figs = _number(flat)
-    # Keep the published HTML below GitHub's practical contents-upload size
-    # while pinning the runtime exactly. The data and chart configuration
-    # remain embedded in the artifact; only Plotly's renderer is fetched at
-    # page load from the versioned public CDN.
-    js_include = '<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>'
+    # Plotly's renderer is vendored next to the page (dashboard/vendor/,
+    # pinned 2.35.2, MIT) so the deck renders offline and in boardrooms that
+    # block third-party CDNs. The versioned CDN is only a fallback if the
+    # vendored file is missing; chart data stays embedded in the artifact.
+    js_include = (
+        '<script src="vendor/plotly-2.35.2.min.js"></script>'
+        '<script>window.Plotly||document.write('
+        '\'<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"><\\/script>\')'
+        '</script>')
 
     def _count(fname):
         p = os.path.join(DATA, fname)
@@ -2966,9 +3037,13 @@ def build():
                            zerolinecolor="rgba(255,255,255,0.25)"),
             )
             fig = compact
-        return ('<div class="panel" data-mode="' + mode +
+        _title = getattr(getattr(fig.layout, "title", None), "text", "") or ""
+        _label = _html_mod.escape(re.sub(r"<[^>]+>", "", _title), quote=True)
+        return ('<div class="panel" role="figure" aria-label="' + _label +
+                '" data-mode="' + mode +
                 '" data-figure="' + str(num) + '">' +
-                fig.to_html(full_html=False, include_plotlyjs=False) +
+                fig.to_html(full_html=False, include_plotlyjs=False,
+                            div_id=f"fig{num}-{mode}") +
                 ('<p class="figure-takeaway"><strong>Takeaway:</strong> ' +
                  figure_takeaways[num] + "</p>" if mode == "explorer" else "") +
                 "</div>")
@@ -3306,7 +3381,7 @@ def build():
                  "limitations and withdrawn findings.</p></div>")
     explorer += _claims_panel_html()
 
-    page_template = """<!DOCTYPE html><html><head><meta charset="utf-8"><title>HARDBALL — Major League Baseball (MLB) Decision Intelligence</title><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    page_template = """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>HARDBALL — Major League Baseball (MLB) Decision Intelligence</title><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
 --ink:#041E42; --ink-hi:#072A52; --ink-deep:#021028;
@@ -3427,6 +3502,7 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 .evfoot{margin:2px 0 12px}
 .about-contact{background:linear-gradient(135deg,var(--panel),var(--ink-hi));border:1px solid var(--panel-line);border-top:3px solid var(--gold);border-radius:10px;padding:22px 24px;margin:24px 0 8px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:center}.about-kicker{display:block;margin-bottom:7px;color:var(--gold);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}.about-contact h3{margin:0 0 7px;font-size:22px;letter-spacing:.1px}.about-contact p{margin:0;color:var(--paper-dim);font-size:14px;line-height:1.55;max-width:720px}.about-email{display:inline-block;margin-top:14px;color:var(--paper);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13px;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:3px}.about-email:hover,.about-email:focus{color:var(--gold)}.about-links{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;max-width:360px}.about-links a{display:inline-block;border:1px solid var(--panel-line);border-radius:6px;padding:9px 11px;color:var(--paper);text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap}.about-links a:hover,.about-links a:focus{border-color:var(--gold);color:var(--gold)}.about-links a.primary{background:var(--gold);border-color:var(--gold);color:var(--ink);}.about-links a.primary:hover,.about-links a.primary:focus{background:var(--paper);border-color:var(--paper);color:var(--ink)}@media(max-width:720px){.about-contact{grid-template-columns:1fr;padding:20px}.about-links{justify-content:flex-start;max-width:none}}
 @media(max-width:720px){body{font-size:15px;overflow-x:hidden}.crest{padding:24px 18px 20px}.crest h1{font-size:31px;letter-spacing:.5px}.crest h2{font-size:15px;line-height:1.45}.crest .asof{font-size:11px;line-height:1.45}.hd{padding:0 12px 28px}.keybox{padding:10px 11px;font-size:12px;line-height:1.65}.figidx{padding:10px 11px;font-size:11px;line-height:1.7}.figidx span{margin:2px 1px}.modenav{display:grid;grid-template-columns:1fr;gap:8px}.modenav button{min-height:48px;padding:12px 10px;font-size:14px}.slide{padding:14px 12px;overflow:visible}.about-contact{padding:20px}.about-links{justify-content:flex-start;max-width:none}.about-links a{min-height:44px;display:inline-flex;align-items:center}.srcbox{font-size:12px;line-height:1.55;overflow-wrap:anywhere}table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}}@media(min-width:721px) and (max-width:1024px){.crest{padding:28px 24px 22px}.hd{padding:0 16px 32px}.modenav button{min-height:48px}}@media print{body.print-boardroom #mode-story,body.print-boardroom #mode-explorer,body.print-boardroom .modenav,body.print-boardroom .crest,body.print-boardroom .keybox,body.print-boardroom .figidx,body.print-boardroom .srcbox{display:none}body.print-boardroom button{display:none}body{background:#fff}.slide{background:#fff!important;color:#000!important;border:1px solid #bbb!important}.slide svg text{fill:#000!important}.slide .modebar{display:none!important}}
+.dbrief{background:var(--panel);border:1px solid var(--panel-line);border-top:3px solid var(--gold);border-radius:10px;padding:16px 20px;margin:16px 0}.dbrief h3{margin:0 0 8px}.dbrief ul{margin:0 0 12px;padding-left:20px;line-height:1.55}.dbwrap{overflow-x:auto}.dbtable{border-collapse:collapse;width:100%;font-size:13px}.dbtable caption{text-align:left;color:var(--paper-dim);font-size:12px;padding-bottom:6px}.dbtable th,.dbtable td{padding:6px 8px;border-bottom:1px solid var(--panel-line);text-align:left;white-space:nowrap}.dbtable td.pos{color:#43b581;font-weight:700}.dbtable td.neg{color:var(--paper-dim)}.dbpos{color:var(--paper-dim);font-size:11px}.dbflag{color:#e08a3c;font-size:11px;border:1px solid #e08a3c;border-radius:4px;padding:0 4px}.dbfoot{font-size:12px;color:var(--paper-dim);margin:8px 0 0}.dbfoot a{color:var(--gold)}
 </style></head>
 <body>
 <div class="crest">
@@ -3435,14 +3511,15 @@ a{color:var(--paper-dim);text-underline-offset:2px}
 <h2>Evidence for better player, performance, health, and roster decisions.</h2>
 <div class="asof">__ASOF__</div>
 </div>
-<div class="hd">
+<div class="hd" role="main" id="main">
 <p style="margin:14px 0;color:var(--paper);font-size:16px;line-height:1.5">Hardball helps baseball analysts compare rosters across budgets and see how player availability changes their options.</p>
+__DECISION_BRIEF__
 <div class="keybox"><b>COLOR KEY (used on every chart below):</b>
 <span class="k"><span class="sw" style="background:#43b581"></span> green = <b>efficient case study</b> (MIL · TB · CLE — high wins at lower payroll)</span>
 <span class="k"><span class="sw" style="background:#e08a3c"></span> orange = <b>comparison case</b> (MIA · CHW · STL — lower payroll without the same results)</span>
 <span class="k"><span class="sw" style="background:#8FBCE6"></span> blue = <b>other</b> (all remaining teams)</span>
 <span class="k"><span class="sw" style="background:#BF0D3E"></span> red = cap line / negative signal</span>
-<span class="k"><span class="sw" style="background:#092C5C;border:1px solid #16406E"></span> navy = many-color charts (retention, sensitivity)</span></div>
+<span class="k"><span class="sw" style="background:#092C5C;border:1px solid #8FBCE6"></span> navy = many-color charts (retention, sensitivity)</span></div>
 <div class="keybox"><b>BASEBALL PLAIN-ENGLISH KEY — every stat on this page, in one glance:</b><br>
 <span class="k"><b>PA</b> = plate appearance — every time a batter steps to the plate (any outcome)</span>
 <span class="k"><b>OBP</b> = how often a batter reaches base (hits + walks)</span>
@@ -3693,7 +3770,8 @@ showMode("story");
             .replace("__BOARDROOM__", boardroom)
             .replace("__EXPLORER__", explorer)
             .replace("__EVIDENCE_DATE__", ev_date)
-            .replace("__ASOF__", asof))
+            .replace("__ASOF__", asof)
+            .replace("__DECISION_BRIEF__", _decision_brief_html()))
     # Public surface hygiene: keep internal cycle and development labels out of the rendered product.
     page = re.sub(r"\b(?:BML\s+)?Cycle\s+\d+(?:\s*[–-]\s*\d+)?(?:\s*/\s*\d+)?", "", page, flags=re.IGNORECASE)
     # Do not strip empty parentheses globally: the generated page contains
@@ -3708,6 +3786,10 @@ showMode("story");
     # https://mega-byte2600.github.io/hardball/dashboard/.
     out = os.path.join(REPO, "dashboard", "index.html")
     with open(out, "w") as f:
+        f.write(page)
+    # The root redirect (index.html) and older links point at the demo copy;
+    # keep it byte-identical so check_freshness.py can verify both.
+    with open(os.path.join(REPO, "dashboard", "hardball_demo.html"), "w") as f:
         f.write(page)
     print(f"dashboard written: {out} ({os.path.getsize(out)} bytes)")
 

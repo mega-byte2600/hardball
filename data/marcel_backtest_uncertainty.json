@@ -1,0 +1,237 @@
+{
+  "method": "Marcel variant B (weights 5/4/3, 300-PA regression) vs naive baselines; percentile bootstrap (B=5000, seed 20261119) and Diebold-Mariano with HLN correction, absolute-error loss.",
+  "sample_note": "Hitters with >=300 PA in the target season and >=2000 weighted PA of history; the committed lake holds qualified hitters only (>=502 PA), so results describe regulars, not part-timers.",
+  "targets": {
+    "2025": {
+      "n": 88,
+      "OBP": {
+        "marcel_mae": 0.0201,
+        "marcel_ci95": [
+          0.0168,
+          0.0237
+        ],
+        "repeat_last_season": {
+          "mae": 0.0214,
+          "ci95": [
+            0.0179,
+            0.0253
+          ],
+          "marcel_minus_baseline": -0.0013,
+          "diff_ci95": [
+            -0.0033,
+            0.0006
+          ],
+          "dm_hln_stat": -1.277,
+          "p_value": 0.2049,
+          "marcel_better_at_5pct": false
+        },
+        "league_mean": {
+          "mae": 0.0278,
+          "ci95": [
+            0.0235,
+            0.0326
+          ],
+          "marcel_minus_baseline": -0.0077,
+          "diff_ci95": [
+            -0.0132,
+            -0.0026
+          ],
+          "dm_hln_stat": -2.82,
+          "p_value": 0.0059,
+          "marcel_better_at_5pct": true
+        }
+      },
+      "SLG": {
+        "marcel_mae": 0.0405,
+        "marcel_ci95": [
+          0.0334,
+          0.0478
+        ],
+        "repeat_last_season": {
+          "mae": 0.0446,
+          "ci95": [
+            0.0374,
+            0.0523
+          ],
+          "marcel_minus_baseline": -0.0042,
+          "diff_ci95": [
+            -0.008,
+            -0.0005
+          ],
+          "dm_hln_stat": -2.173,
+          "p_value": 0.0325,
+          "marcel_better_at_5pct": true
+        },
+        "league_mean": {
+          "mae": 0.0564,
+          "ci95": [
+            0.0457,
+            0.068
+          ],
+          "marcel_minus_baseline": -0.0159,
+          "diff_ci95": [
+            -0.0285,
+            -0.0044
+          ],
+          "dm_hln_stat": -2.572,
+          "p_value": 0.0118,
+          "marcel_better_at_5pct": true
+        }
+      }
+    },
+    "2026": {
+      "n": 80,
+      "OBP": {
+        "marcel_mae": 0.0251,
+        "marcel_ci95": [
+          0.0218,
+          0.0286
+        ],
+        "repeat_last_season": {
+          "mae": 0.0265,
+          "ci95": [
+            0.0222,
+            0.0307
+          ],
+          "marcel_minus_baseline": -0.0014,
+          "diff_ci95": [
+            -0.0039,
+            0.0011
+          ],
+          "dm_hln_stat": -1.116,
+          "p_value": 0.2677,
+          "marcel_better_at_5pct": false
+        },
+        "league_mean": {
+          "mae": 0.0271,
+          "ci95": [
+            0.0226,
+            0.0314
+          ],
+          "marcel_minus_baseline": -0.002,
+          "diff_ci95": [
+            -0.0069,
+            0.0029
+          ],
+          "dm_hln_stat": -0.803,
+          "p_value": 0.4244,
+          "marcel_better_at_5pct": false
+        }
+      },
+      "SLG": {
+        "marcel_mae": 0.0501,
+        "marcel_ci95": [
+          0.042,
+          0.0582
+        ],
+        "repeat_last_season": {
+          "mae": 0.0518,
+          "ci95": [
+            0.0428,
+            0.0616
+          ],
+          "marcel_minus_baseline": -0.0017,
+          "diff_ci95": [
+            -0.0068,
+            0.0029
+          ],
+          "dm_hln_stat": -0.685,
+          "p_value": 0.4956,
+          "marcel_better_at_5pct": false
+        },
+        "league_mean": {
+          "mae": 0.051,
+          "ci95": [
+            0.0426,
+            0.06
+          ],
+          "marcel_minus_baseline": -0.001,
+          "diff_ci95": [
+            -0.0131,
+            0.0112
+          ],
+          "dm_hln_stat": -0.155,
+          "p_value": 0.8769,
+          "marcel_better_at_5pct": false
+        }
+      }
+    }
+  },
+  "pooled": {
+    "n": 168,
+    "OBP": {
+      "marcel_mae": 0.0225,
+      "marcel_ci95": [
+        0.0201,
+        0.0251
+      ],
+      "repeat_last_season": {
+        "mae": 0.0238,
+        "ci95": [
+          0.0211,
+          0.0268
+        ],
+        "marcel_minus_baseline": -0.0013,
+        "diff_ci95": [
+          -0.0029,
+          0.0002
+        ],
+        "dm_hln_stat": -1.688,
+        "p_value": 0.0933,
+        "marcel_better_at_5pct": false
+      },
+      "league_mean": {
+        "mae": 0.0274,
+        "ci95": [
+          0.0244,
+          0.0308
+        ],
+        "marcel_minus_baseline": -0.005,
+        "diff_ci95": [
+          -0.0086,
+          -0.0014
+        ],
+        "dm_hln_stat": -2.676,
+        "p_value": 0.0082,
+        "marcel_better_at_5pct": true
+      }
+    },
+    "SLG": {
+      "marcel_mae": 0.045,
+      "marcel_ci95": [
+        0.0398,
+        0.0507
+      ],
+      "repeat_last_season": {
+        "mae": 0.048,
+        "ci95": [
+          0.0424,
+          0.0541
+        ],
+        "marcel_minus_baseline": -0.003,
+        "diff_ci95": [
+          -0.006,
+          -0.0001
+        ],
+        "dm_hln_stat": -1.935,
+        "p_value": 0.0547,
+        "marcel_better_at_5pct": false
+      },
+      "league_mean": {
+        "mae": 0.0538,
+        "ci95": [
+          0.0468,
+          0.0612
+        ],
+        "marcel_minus_baseline": -0.0088,
+        "diff_ci95": [
+          -0.0175,
+          -0.0
+        ],
+        "dm_hln_stat": -1.994,
+        "p_value": 0.0478,
+        "marcel_better_at_5pct": true
+      }
+    }
+  }
+}

@@ -59,10 +59,10 @@ WHITELIST = {
     # the address itself is spelled correctly in src/dashboard_p6.py.
     "edu",
     # data/tools vocab
-    "api", "espn", "mlb", "statsapi", "spotrac", "github", "plotly",
+    "api", "espn", "mlb", "statsapi", "spotrac", "plotly",
     "sqlite", "csv", "kpi", "kpis", "keyless", "gitignored", "json", "html",
     "jasonbhorne", "cdn", "tooltip", "tooltips", "lineweaver", "wright",
-    "tufte", "few", "powerbi", "tableau", "tab", "bml", "uat", "poka",
+    "tufte", "few", "diebold", "mariano", "powerbi", "tableau", "tab", "bml", "uat", "poka",
     # common words / numbers the dict may miss
     "homers", "stead", "per", "vs", "proj", "r", "n", "f", "w", "q", "qo",
     # stat/metric abbreviations + domain terms surfaced as themselves
@@ -95,8 +95,7 @@ WHITELIST = {
     # acronym; QA is the quality-assurance abbreviation; http/txt/
     # venv are the protocol/extension/venv tokens in README command
     # lines; i'm is the About-block contraction.
-    "auditable", "workflow", "bluesky", "hashtag", "linkedin", "pfac",
-    "qa", "http", "txt", "venv", "i’m",
+    "i’m",
     # Cycle 82: SABR Defensive Index (Rawlings Gold Glove criteria,
     # cited in the Explorer fielding panel) — SABR is the Society for
     # American Baseball Research; the term is correct, not a typo.

@@ -11,7 +11,6 @@ realistic than naive 500-PA ones, and report the change.
 import json
 import os
 import re
-import sqlite3
 
 import pandas as pd
 

@@ -23,10 +23,8 @@ owner can see projected production vs the $245.3M cap / 15% individual max.
 
 This is the honest, literature-backed spine: NOT invented math.
 """
-import json
 import os
 import sqlite3
-import sys
 
 import pandas as pd
 

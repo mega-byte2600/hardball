@@ -38,8 +38,7 @@ def main():
               f"median wins/$100M {s['wins_per_100m'].median():.1f}")
 
     # cost per win: whole-era regression slope = $ per extra win
-    import numpy as np
-    by_year = df.groupby("yearID").agg(med_pay=("payroll", "median"),
+    df.groupby("yearID").agg(med_pay=("payroll", "median"),
                                         med_wins=("wins", "median"))
     # top-quartile payroll teams vs bottom-quartile: who wins more per $?
     df["qt"] = df.groupby("yearID")["payroll"].transform(

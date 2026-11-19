@@ -5,10 +5,7 @@ Loads 2011-2025 payroll (Spotrac CSV from jasonbhorne/mlb-payroll) plus
 efficiency score, and frames the small-market-vs-big-spender problem.
 Real data only. Payroll archives are gitignored (regenerable external data).
 """
-import json
 import os
-import re
-import sqlite3
 
 import pandas as pd
 
@@ -107,10 +104,10 @@ def main():
     df = load_payroll_frame()
     print(f"payroll rows loaded: {len(df)} (seasons {df['season'].min()}-{df['season'].max()})")
     t = build_efficiency_table(df, 2026)
-    print(f"\n=== 2026 efficiency (wins per $100M) top 10 ===")
+    print("\n=== 2026 efficiency (wins per $100M) top 10 ===")
     cols = ["team", "record", "payroll", "wins", "cost_per_win", "wins_per_100m"]
     print(t[cols].head(10).to_string(index=False))
-    print(f"\n=== bottom 5 (worst efficiency) ===")
+    print("\n=== bottom 5 (worst efficiency) ===")
     print(t[cols].tail(5).to_string(index=False))
 
     # Archive the 2026 efficiency table

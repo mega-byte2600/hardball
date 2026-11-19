@@ -7,7 +7,6 @@ plus per-player cached files and upserts them, so Cycle 21 can use 4 pairs.
 import json
 import os
 import sqlite3
-import sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW = os.path.join(REPO, "data", "raw")

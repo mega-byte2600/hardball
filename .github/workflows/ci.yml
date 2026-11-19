@@ -1,0 +1,38 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: pip install -r requirements.txt pytest ruff
+      - name: Lint (pyflakes + bugbear subset)
+        run: ruff check src tests
+      - name: Unit + contract tests
+        run: pytest
+      - name: Rebuild read model and dashboard offline
+        run: |
+          python src/build_lake_from_curated.py
+          python src/verify_lake.py
+          python src/dashboard_p6.py
+      - name: Built artifact matches committed artifact
+        run: git diff --exit-code -- dashboard/index.html dashboard/hardball_demo.html
+      - name: Content gate
+        run: python src/verify_data.py
+      - name: Freshness + provenance gate
+        run: python src/check_freshness.py
+      - name: Spellcheck user-visible text
+        run: python src/spellcheck_gate.py

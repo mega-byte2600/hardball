@@ -47,7 +47,6 @@ def main():
     # bottom-line, between cheap and cap):
     # elasticity already measured: +5 PythE -> +2.79 wins (robust_validation).
     # Translate: 1 marginal win roughly = moving PythE by 1.8 (2.79/5). 
-    wins_per_1M = 0.0  # honest: dollars alone buy ~0 wins (coefficient ~0)
     print("\nDollars don't buy wins directly (payroll coef ~0 after KPIs). "
           "The lever is HOW the $ is deployed (contact/OBP/arms) not $ amount.")
 
@@ -65,7 +64,7 @@ def main():
     }
     with open(os.path.join(DATA, "cap_allocation.json"), "w") as f:
         json.dump(out, f, indent=2)
-    print(f"\nwrote data/cap_allocation.json")
+    print("\nwrote data/cap_allocation.json")
 
 
 if __name__ == "__main__":

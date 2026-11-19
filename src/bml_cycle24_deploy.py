@@ -13,7 +13,6 @@ import json
 import os
 import sys
 
-import pandas as pd
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from value_metrics import hitting_value, pitching_value

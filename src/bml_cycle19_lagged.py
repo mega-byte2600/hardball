@@ -44,7 +44,7 @@ def load_lagged():
 
 def main():
     df = load_lagged()
-    n_rows, n_years = len(df), df["season"].nunique()
+    n_rows, _n_years = len(df), df["season"].nunique()
     X, y = df[FEATS].values, df["next_wins"].values
     print(f"LAGGED PANEL: {n_rows} team-yrs (predict next season), "
           f"seasons {df['season'].min()}-{df['season'].max()}")
@@ -66,7 +66,7 @@ def main():
     yp = m.predict(X[te])
     mae = mean_absolute_error(y[te], yp); r2 = r2_score(y[te], yp)
     naive = mean_absolute_error(y[te], np.full_like(y[te], y[te].mean()))
-    print(f"\n[OUT-OF-SAMPLE: train<=2019, test 2020-2025]")
+    print("\n[OUT-OF-SAMPLE: train<=2019, test 2020-2025]")
     print(f"    Ridge MAE {mae:.2f}  R2 {r2:.3f}  (n_test={int(te.sum())})")
     print(f"    naive (mean) MAE {naive:.2f}  -> we beat by {naive-mae:.2f}")
 

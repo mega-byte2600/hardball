@@ -60,7 +60,6 @@ artifact's metadata):
 Output: data/fa_health_cards_2027.json. No network.
 """
 import json
-import re
 import unicodedata
 from pathlib import Path
 

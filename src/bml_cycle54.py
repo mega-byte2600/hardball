@@ -54,7 +54,6 @@ read-only here; fresh seasons live only in this run's memory).
 """
 import json
 import sqlite3
-import sys
 import time
 from pathlib import Path
 

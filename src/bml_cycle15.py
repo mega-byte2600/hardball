@@ -18,7 +18,7 @@ import pandas as pd
 import requests
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, r2_score
-from sklearn.model_selection import KFold, RepeatedKFold
+from sklearn.model_selection import RepeatedKFold
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import model_p6  # noqa
@@ -112,7 +112,7 @@ def main():
            "elasticity": elas, "permutation_importance": perm}
     with open(os.path.join(DATA, "robust_validation.json"), "w") as f:
         json.dump(out, f, indent=2)
-    print(f"\nwrote data/robust_validation.json")
+    print("\nwrote data/robust_validation.json")
 
 
 if __name__ == "__main__":

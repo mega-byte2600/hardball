@@ -563,11 +563,11 @@ def trace_figures(html_text):
     unc = {s["label"]: s for s in load("uncertainty_scenarios_2027.json")["scenarios"]}
     sens = load("optimizer_sensitivity_2027.json")
     bench = load("fg_benchmark_2027.json")
-    blend = load("projection_blend_2027.json")
+    load("projection_blend_2027.json")
     hs = load("hakes_sauer_verdict.json")
     cap = load("cap_transition_2027.json")
     forced = load("forced_sellers_2027.json")
-    shop = load("fa_shopping_2027.json")["class"]
+    load("fa_shopping_2027.json")["class"]
     # Cycle 71: the shopping figure is now the SURPLUS-VALUE arbitrage panel.
     surplus_ar = load("surplus_value_2027.json")
     proj27 = load("projections_2027.json")
@@ -779,11 +779,11 @@ def trace_figures(html_text):
 def trace_panels(html_text):
     tk = load("tracker_ticker_2026.json")
     cap = load("cap_transition_2027.json")
-    blend = load("projection_blend_2027.json")
+    load("projection_blend_2027.json")
     hc = load("fa_health_cards_2027.json")
-    ev = load("evidence_surveillance.json")
-    opt = load("optimizer_comparison_2027.json")
-    hs = load("hakes_sauer_verdict.json")
+    load("evidence_surveillance.json")
+    load("optimizer_comparison_2027.json")
+    load("hakes_sauer_verdict.json")
     panels = [
         {"panel": "Tracker ticker (Story lead)",
          "artifacts": ["data/tracker_ticker_2026.json"],
