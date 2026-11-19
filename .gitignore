@@ -20,3 +20,10 @@ dashboard/hardball_demo.html
 # Analytical warehouse — built from data/curated by src/build_warehouse.py
 data/hardball.duckdb
 data/.change_watch_state.json
+
+# Claude Code local state (never commit)
+.claude/state/
+.claude/settings.local.json
+.env
+.env.*
+!.env.example
