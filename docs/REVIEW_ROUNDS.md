@@ -10,6 +10,7 @@ against primary sources and the fix is saved as a tagged version
 | Round | Version | Code quality | API & data health | UI/UX | Insight | Rigor | Actionability |
 |---|---|---|---|---|---|---|---|
 | 1 (baseline, pre-fix) | `review-r1` | 3 | 4 | 5 | 6 | 6 | 7 |
+| 2 (after r1 fixes) | `review-r2` | 5 | 4 | 6 | 7 | 7 | 7 |
 
 ## Round 1 — fixes shipped in `review-r1`
 
@@ -64,3 +65,7 @@ against primary sources and the fix is saved as a tagged version
   - SIGNED players are excluded, and the full list exports to CSV.
   - **Finding:** only one move (Contreras, +$16.6M) clears +$5M surplus at
     market $/WAR. This is logged as claim S25.
+
+## Round 2 — status
+
+Scored by a fresh reviewer after the round-1 fixes. The loop was **paused at the ~500K-token budget** before a round-2 fix pass; see the final session report for the open items and owner decisions.
