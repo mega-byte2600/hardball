@@ -25,3 +25,15 @@ def test_build_is_deterministic():
 
 def test_no_secrets_in_artifact():
     assert not re.search(r"(?i)(x-api-key|api_key)\s*[:=]\s*['\"][A-Za-z0-9]{16,}", HTML)
+
+
+def test_research_is_a_top_level_destination():
+    main = HTML.index('id="main"')
+    assert HTML.index('class="evidence-entry"', main) < HTML.index('class="keybox"', main)
+    assert 'class="evidence-tab" href="../docs/EVIDENCE.html"' in HTML
+    assert (ROOT / "docs" / "EVIDENCE.html").exists()
+
+
+def test_shared_chart_presentation_loads_before_figures():
+    assert HTML.index('assets/chart-readability.js') < HTML.index('Plotly.newPlot(')
+    assert (ROOT / "dashboard" / "hardball_demo.html").read_text() == HTML
