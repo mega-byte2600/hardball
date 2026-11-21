@@ -62,7 +62,8 @@ WHITELIST = {
     "api", "espn", "mlb", "statsapi", "spotrac", "plotly",
     "sqlite", "csv", "kpi", "kpis", "keyless", "gitignored", "json", "html",
     "jasonbhorne", "cdn", "tooltip", "tooltips", "lineweaver", "wright",
-    "tufte", "few", "diebold", "mariano", "powerbi", "tableau", "tab", "bml", "uat", "poka",
+    "tufte", "few", "pag",  # Pagán split at the accent (tokenizer artifact, see corrections log)
+     "diebold", "mariano", "powerbi", "tableau", "tab", "bml", "uat", "poka",
     # common words / numbers the dict may miss
     "homers", "stead", "per", "vs", "proj", "r", "n", "f", "w", "q", "qo",
     # stat/metric abbreviations + domain terms surfaced as themselves

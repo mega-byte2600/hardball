@@ -832,6 +832,43 @@ def _decision_brief_html():
         "</section>")
 
 
+def _signing_scoreboard_html():
+    """What Hardball said vs. who actually signed (src/signing_scoreboard.py)."""
+    path = os.path.join(DATA, "signing_scoreboard_2027.json")
+    if not os.path.exists(path):
+        return ""
+    sb = json.load(open(path))
+    esc = _html_mod.escape
+    rows = [r for r in sb["signings"] if r.get("hardball_rank")]
+    other = [r for r in sb["signings"] if not r.get("hardball_rank")]
+    trs = "".join(
+        "<tr><td>{d}</td><td><b>{p}</b> <span class=\"dbpos\">→ {t}</span></td><td>{rk}</td>"
+        "<td>{w:.1f} ({lo:.1f}–{hi:.1f})</td><td>${pr:.1f}M</td><td class=\"{cls}\">{su:+.1f}M</td>"
+        "<td>{fb}</td></tr>".format(
+            d=esc(r["date"] or ""), p=esc(r["player"]), t=esc(r["team"] or ""),
+            rk=("#%d%s" % (r["hardball_rank"], " · top 10" if r["in_top10"] else "")),
+            w=r["delivered_war"], lo=r["war_p10"], hi=r["war_p90"], pr=r["price_estimate_usd"] / 1e6,
+            su=r["surplus_usd"] / 1e6, cls="pos" if r["surplus_usd"] > 0 else "neg",
+            fb=esc(r["fallback_now"] or "—"))
+        for r in rows)
+    s = sb["summary"]
+    others = ", ".join(esc(r["player"]) for r in other)
+    return (
+        '<section class="dbrief" aria-labelledby="sb-h"><h3 id="sb-h">Signing scoreboard — '
+        "what Hardball said before they signed</h3>"
+        f"<p>{s['signings_in_fa_pool']} free agents from Hardball's pool have signed (MLB StatsAPI confirmed); "
+        f"<b>{s['of_which_hardball_top10']} were in Hardball's top 10</b> and "
+        f"{s['positive_surplus_signed']} had positive surplus at market $/WAR.</p>"
+        '<div class="dbwrap"><table class="dbtable"><caption>Ranked signings. Contract terms are not in the '
+        "feed and are not scraped, so price accuracy is not scored yet.</caption><thead><tr>"
+        "<th scope=\"col\">Signed</th><th scope=\"col\">Player</th><th scope=\"col\">Hardball rank</th>"
+        "<th scope=\"col\">WAR (P10–P90)</th><th scope=\"col\">Estimated price</th><th scope=\"col\">Surplus</th>"
+        "<th scope=\"col\">Fallback now</th></tr></thead>"
+        f"<tbody>{trs}</tbody></table></div>"
+        + (f'<p class="dbfoot">Also signed from the pool (below 1.0 delivered WAR or unpriced): {others}.</p>' if others else "")
+        + "</section>")
+
+
 CBA_EXPIRY_LABEL = "December 1, 2026"
 
 def _panel_skill_multipair(multi_path, ci_path):
@@ -3787,7 +3824,7 @@ showMode("story");
             .replace("__EXPLORER__", explorer)
             .replace("__EVIDENCE_DATE__", ev_date)
             .replace("__ASOF__", asof)
-            .replace("__DECISION_BRIEF__", _decision_brief_html()))
+            .replace("__DECISION_BRIEF__", _decision_brief_html() + _signing_scoreboard_html()))
     # Public surface hygiene: keep internal cycle and development labels out of the rendered product.
     page = re.sub(r"\b(?:BML\s+)?Cycle\s+\d+(?:\s*[–-]\s*\d+)?(?:\s*/\s*\d+)?", "", page, flags=re.IGNORECASE)
     # Do not strip empty parentheses globally: the generated page contains
