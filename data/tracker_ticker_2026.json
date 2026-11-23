@@ -1,6 +1,6 @@
 {
  "metadata": {
-  "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+  "pulled_at": "2026-11-23T10:16:28.744977+00:00",
   "window": {
    "transactions_start": "2026-11-16",
    "transactions_end": "2026-11-23"
@@ -279,36 +279,36 @@
    {
     "source": "Google News (Drew Rasmussen)",
     "status": "ok",
-    "fetched": 8,
-    "kept": 8,
+    "fetched": 9,
+    "kept": 9,
     "note": "links are Google redirects; deduped on title+source"
    },
    {
     "source": "Google News (Trevor Rogers)",
     "status": "ok",
-    "fetched": 14,
-    "kept": 14,
+    "fetched": 16,
+    "kept": 16,
     "note": "links are Google redirects; deduped on title+source"
    },
    {
     "source": "Google News (Sonny Gray)",
     "status": "ok",
-    "fetched": 22,
+    "fetched": 23,
     "kept": 22,
     "note": "links are Google redirects; deduped on title+source"
    },
    {
     "source": "Google News (Kevin Gausman)",
     "status": "ok",
-    "fetched": 12,
-    "kept": 12,
+    "fetched": 11,
+    "kept": 11,
     "note": "links are Google redirects; deduped on title+source"
    },
    {
     "source": "Google News (Isaac Paredes)",
     "status": "ok",
-    "fetched": 10,
-    "kept": 10,
+    "fetched": 9,
+    "kept": 9,
     "note": "links are Google redirects; deduped on title+source"
    },
    {
@@ -328,22 +328,22 @@
    {
     "source": "Google News (Michael King)",
     "status": "ok",
-    "fetched": 21,
-    "kept": 21,
+    "fetched": 27,
+    "kept": 27,
     "note": "links are Google redirects; deduped on title+source"
    },
    {
     "source": "Google News (Seiya Suzuki)",
     "status": "ok",
-    "fetched": 20,
-    "kept": 20,
+    "fetched": 21,
+    "kept": 21,
     "note": "links are Google redirects; deduped on title+source"
    },
    {
     "source": "Google News (Brandon Lowe)",
     "status": "ok",
-    "fetched": 15,
-    "kept": 15,
+    "fetched": 13,
+    "kept": 13,
     "note": "links are Google redirects; deduped on title+source"
    },
    {
@@ -364,7 +364,7 @@
  },
  "items": [
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Tigres de Aragua released 1B Mason Martin.",
@@ -376,7 +376,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Tigres de Aragua released RHP Tyler Jeans.",
@@ -388,7 +388,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Colorado Rockies designated RHP Jimmy Herget for assignment.",
@@ -400,7 +400,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP Rowan Wick elected free agency.",
@@ -412,7 +412,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "SS Trey Sweeney elected free agency.",
@@ -424,7 +424,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "CF Matt Vierling elected free agency.",
@@ -436,7 +436,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "SS Leo Balcazar elected free agency.",
@@ -448,7 +448,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "LHP Carson Palmquist elected free agency.",
@@ -460,7 +460,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "3B Gabriel Arias elected free agency.",
@@ -472,7 +472,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP Ethan Roberts elected free agency.",
@@ -484,7 +484,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP Bailey Ober elected free agency.",
@@ -496,7 +496,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "LHP JP Sears elected free agency.",
@@ -508,7 +508,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP Michael Grove elected free agency.",
@@ -520,7 +520,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP James Karinchak elected free agency.",
@@ -532,7 +532,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "LF Taylor Trammell elected free agency.",
@@ -544,7 +544,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "3B Nolan Gorman elected free agency.",
@@ -556,7 +556,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP Max Rajcic elected free agency.",
@@ -568,7 +568,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RF David Fry elected free agency.",
@@ -580,7 +580,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP Jos\u00e9 Butt\u00f3 elected free agency.",
@@ -592,7 +592,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "LF Davis Schneider elected free agency.",
@@ -604,7 +604,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP Fernando Cruz elected free agency.",
@@ -616,7 +616,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP Luis Gil elected free agency.",
@@ -628,7 +628,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "LF Trevor Larnach elected free agency.",
@@ -640,7 +640,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP Cole Sulser elected free agency.",
@@ -652,7 +652,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "3B Brett Harris elected free agency.",
@@ -664,7 +664,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "C Hayden Senger elected free agency.",
@@ -676,7 +676,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP Mois\u00e9s Chace elected free agency.",
@@ -688,7 +688,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP Jimmy Herget elected free agency.",
@@ -700,7 +700,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RF Luke Raley elected free agency.",
@@ -712,7 +712,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "LHP Andrew Saalfrank elected free agency.",
@@ -724,7 +724,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "LHP Blake Walston elected free agency.",
@@ -736,7 +736,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "LHP Anthony Gose elected free agency.",
@@ -748,7 +748,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "LHP Jake Miller elected free agency.",
@@ -760,7 +760,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP Garrett Hawkins elected free agency.",
@@ -772,7 +772,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "LHP Jared Simpson elected free agency.",
@@ -784,7 +784,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "C Connor Wong elected free agency.",
@@ -796,7 +796,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RF Matt Wallner elected free agency.",
@@ -808,7 +808,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP Jake Cousins elected free agency.",
@@ -820,7 +820,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP Josiah Gray elected free agency.",
@@ -832,7 +832,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP Nick Mears elected free agency.",
@@ -844,7 +844,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP Noah Murdock elected free agency.",
@@ -856,7 +856,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RF Bryan De La Cruz elected free agency.",
@@ -868,7 +868,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP Andrew Hoffmann elected free agency.",
@@ -880,7 +880,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "1B Christopher Morel elected free agency.",
@@ -892,7 +892,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "RHP Dylan Ross elected free agency.",
@@ -904,7 +904,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "CF Kyle Isbel elected free agency.",
@@ -916,7 +916,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "LF Victor Bericoto elected free agency.",
@@ -928,7 +928,7 @@
    "move_type": "DFA \u2014 Declared free agency"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Toronto Blue Jays traded RHP Chase Lee to Colorado Rockies for cash.",
@@ -940,7 +940,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Toronto Blue Jays traded RHP Chase Lee to Colorado Rockies for cash.",
@@ -952,7 +952,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "New York Mets claimed RHP Yunior Tur off waivers from Athletics.",
@@ -964,7 +964,7 @@
    "move_type": "CLW \u2014 Cleared waivers"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "New York Mets claimed RHP Gus Varland off waivers from Washington Nationals.",
@@ -976,7 +976,7 @@
    "move_type": "CLW \u2014 Cleared waivers"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Arizona Diamondbacks traded LHP Luke Dotson and Future Considerations to Boston Red Sox for RHP Johan Oviedo.",
@@ -988,7 +988,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Arizona Diamondbacks traded LHP Luke Dotson and Future Considerations to Boston Red Sox for RHP Johan Oviedo.",
@@ -1000,7 +1000,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Arizona Diamondbacks traded LHP Luke Dotson and Future Considerations to Boston Red Sox for RHP Johan Oviedo.",
@@ -1012,7 +1012,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Washington Nationals traded RHP Braxton Roxby to Chicago Cubs for cash.",
@@ -1024,7 +1024,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "San Francisco Giants traded SS Christian Koss to Tampa Bay Rays for RHP Cole Stokes.",
@@ -1036,7 +1036,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "San Francisco Giants traded SS Christian Koss to Tampa Bay Rays for RHP Cole Stokes.",
@@ -1048,7 +1048,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Chicago White Sox traded RHP Jordan Leasure to Philadelphia Phillies for RHP Christian Coppola.",
@@ -1060,7 +1060,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Chicago White Sox traded RHP Jordan Leasure to Philadelphia Phillies for RHP Christian Coppola.",
@@ -1072,7 +1072,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Minnesota Twins traded 1B Royce Lewis to Los Angeles Dodgers for RHP Bobby Miller and C Francisco Espinoza.",
@@ -1084,7 +1084,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Minnesota Twins traded 1B Royce Lewis to Los Angeles Dodgers for RHP Bobby Miller and C Francisco Espinoza.",
@@ -1096,7 +1096,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Minnesota Twins traded 1B Royce Lewis to Los Angeles Dodgers for RHP Bobby Miller and C Francisco Espinoza.",
@@ -1108,7 +1108,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Chicago Cubs claimed C Joey Bart off waivers from Chicago White Sox.",
@@ -1120,7 +1120,7 @@
    "move_type": "CLW \u2014 Cleared waivers"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Athletics sent RHP Hayden Juenger outright to Las Vegas Aviators.",
@@ -1132,7 +1132,7 @@
    "move_type": "OUT \u2014 Outrighted"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Washington Nationals traded RHP Braxton Roxby to Chicago Cubs for cash.",
@@ -1144,7 +1144,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Athletics signed free agent C Brian Serven to a minor league contract.",
@@ -1156,7 +1156,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Miami Marlins signed free agent LHP Dylan MacLean to a minor league contract.",
@@ -1168,7 +1168,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "San Diego Padres signed free agent 3B Luis Suisbel to a minor league contract.",
@@ -1180,7 +1180,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "St. Louis Cardinals signed free agent LHP Steven P\u00e9rez to a minor league contract.",
@@ -1192,7 +1192,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Tampa Bay Rays signed free agent RHP Adisyn Coffey to a minor league contract.",
@@ -1204,7 +1204,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Toronto Blue Jays designated RHP Chase Lee for assignment.",
@@ -1216,7 +1216,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Tampa Bay Rays released RHP Jesse Scholtens.",
@@ -1228,7 +1228,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Baltimore Orioles claimed RHP Braden Nett off waivers from Athletics.",
@@ -1240,7 +1240,7 @@
    "move_type": "CLW \u2014 Cleared waivers"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Chicago White Sox traded RHP Luis Castillo and RHP Davis Martin to Colorado Rockies for LHP Sean Sullivan and C Douglas Veliz.",
@@ -1252,7 +1252,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Toronto Blue Jays claimed SS Christian Cairo off waivers from Los Angeles Dodgers.",
@@ -1264,7 +1264,7 @@
    "move_type": "CLW \u2014 Cleared waivers"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Chicago White Sox traded RHP Luis Castillo and RHP Davis Martin to Colorado Rockies for LHP Sean Sullivan and C Douglas Veliz.",
@@ -1276,7 +1276,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Chicago Cubs claimed RHP Chayce McDermott off waivers from New York Mets.",
@@ -1288,7 +1288,7 @@
    "move_type": "CLW \u2014 Cleared waivers"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Chicago White Sox traded RHP Luis Castillo and RHP Davis Martin to Colorado Rockies for LHP Sean Sullivan and C Douglas Veliz.",
@@ -1300,7 +1300,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Chicago White Sox traded RHP Luis Castillo and RHP Davis Martin to Colorado Rockies for LHP Sean Sullivan and C Douglas Veliz.",
@@ -1312,7 +1312,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Boston Red Sox designated C Connor Wong for assignment.",
@@ -1324,7 +1324,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Baltimore Orioles signed free agent RHP Alex Carrillo to a minor league contract.",
@@ -1336,7 +1336,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Philadelphia Phillies signed free agent LHP Josh Simpson to a minor league contract.",
@@ -1348,7 +1348,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Kansas City Royals designated CF Kyle Isbel for assignment.",
@@ -1360,7 +1360,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Colorado Rockies signed free agent RHP TJ Shook to a minor league contract.",
@@ -1372,7 +1372,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Minnesota Twins signed free agent RHP Sonny Gray.",
@@ -1384,7 +1384,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Chicago White Sox signed free agent RHP Dustin May.",
@@ -1396,7 +1396,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Baltimore Orioles signed free agent OF Junior Perez to a minor league contract.",
@@ -1408,7 +1408,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Chicago White Sox designated RHP Jordan Leasure for assignment.",
@@ -1420,7 +1420,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Texas Rangers signed free agent C Cooper Johnson to a minor league contract.",
@@ -1432,7 +1432,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Texas Rangers signed free agent RHP Dylan File to a minor league contract.",
@@ -1444,7 +1444,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Tampa Bay Rays traded C Nick Fortes to Boston Red Sox for RHP Angel Roa.",
@@ -1456,7 +1456,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Tampa Bay Rays traded C Nick Fortes to Boston Red Sox for RHP Angel Roa.",
@@ -1468,7 +1468,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Seattle Mariners traded RHP Bryce Miller, RHP Logan Evans and LHP Jos\u00e9 A. Ferrer to Kansas City Royals for 3B Maikel Garcia, RHP L.P. Langevin and RHP James McArthur.",
@@ -1480,7 +1480,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Seattle Mariners traded RHP Bryce Miller, RHP Logan Evans and LHP Jos\u00e9 A. Ferrer to Kansas City Royals for 3B Maikel Garcia, RHP L.P. Langevin and RHP James McArthur.",
@@ -1492,7 +1492,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Seattle Mariners traded RHP Bryce Miller, RHP Logan Evans and LHP Jos\u00e9 A. Ferrer to Kansas City Royals for 3B Maikel Garcia, RHP L.P. Langevin and RHP James McArthur.",
@@ -1504,7 +1504,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Detroit Tigers traded 3B Jace Jung to Los Angeles Angels for cash.",
@@ -1516,7 +1516,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Detroit Tigers traded 3B Jace Jung to Los Angeles Angels for cash.",
@@ -1528,7 +1528,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Seattle Mariners traded RHP Bryce Miller, RHP Logan Evans and LHP Jos\u00e9 A. Ferrer to Kansas City Royals for 3B Maikel Garcia, RHP L.P. Langevin and RHP James McArthur.",
@@ -1540,7 +1540,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Seattle Mariners traded RHP Bryce Miller, RHP Logan Evans and LHP Jos\u00e9 A. Ferrer to Kansas City Royals for 3B Maikel Garcia, RHP L.P. Langevin and RHP James McArthur.",
@@ -1552,7 +1552,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Seattle Mariners traded RHP Bryce Miller, RHP Logan Evans and LHP Jos\u00e9 A. Ferrer to Kansas City Royals for 3B Maikel Garcia, RHP L.P. Langevin and RHP James McArthur.",
@@ -1564,7 +1564,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Athletics designated RHP Hayden Juenger for assignment.",
@@ -1576,7 +1576,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Athletics designated RHP Yunior Tur for assignment.",
@@ -1588,7 +1588,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Los Angeles Dodgers designated SS Christian Cairo for assignment.",
@@ -1600,7 +1600,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Los Angeles Dodgers designated RHP Jake Cousins for assignment.",
@@ -1612,7 +1612,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "San Diego Padres signed free agent OF Cal Stevenson to a minor league contract.",
@@ -1624,7 +1624,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "San Francisco Giants designated RHP Rowan Wick for assignment.",
@@ -1636,7 +1636,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Chesapeake Baysox released RHP Carlos Tavera.",
@@ -1648,7 +1648,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Philadelphia Phillies signed free agent RHP Max Kranick to a minor league contract.",
@@ -1660,7 +1660,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Seattle Mariners signed free agent RHP Johnathan Lavallee to a minor league contract.",
@@ -1672,7 +1672,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Seattle Mariners signed free agent RHP Bryce Conley to a minor league contract.",
@@ -1684,7 +1684,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Frederick Keys released RHP Hayden Nierman.",
@@ -1696,7 +1696,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Tampa Bay Rays signed free agent RHP Eric Vasquez to a minor league contract.",
@@ -1708,7 +1708,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "San Francisco Giants designated SS Christian Koss for assignment.",
@@ -1720,7 +1720,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Myrtle Beach Pelicans released RHP Luis A. Reyes.",
@@ -1732,7 +1732,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "St. Louis Cardinals designated RHP Max Rajcic for assignment.",
@@ -1744,7 +1744,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Athletics signed free agent LHP Luke Little to a minor league contract.",
@@ -1756,7 +1756,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Delmarva Shorebirds released RHP Trey Nordmann.",
@@ -1768,7 +1768,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Myrtle Beach Pelicans released LHP Christian Gordon.",
@@ -1780,7 +1780,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Tulsa Drillers released 2B Taylor Young.",
@@ -1792,7 +1792,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Athletics signed free agent RHP Wilkin Ramos to a minor league contract.",
@@ -1804,7 +1804,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "DSL Cubs Red released LHP Sebastian Lopez.",
@@ -1816,7 +1816,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Kansas City Royals signed free agent RHP Vince Velasquez to a minor league contract.",
@@ -1828,7 +1828,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Milwaukee Brewers signed free agent 3B Jheremy Vargas to a minor league contract.",
@@ -1840,7 +1840,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Tulsa Drillers released C Griffin Lockwood-Powell.",
@@ -1852,7 +1852,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Athletics signed free agent RHP Ryan Murphy to a minor league contract.",
@@ -1864,7 +1864,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Iowa Cubs released RHP Tyler Santana.",
@@ -1876,7 +1876,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Frederick Keys released RHP Grabiel Salazar.",
@@ -1888,7 +1888,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Oklahoma City Comets released 2B Austin Gauthier.",
@@ -1900,7 +1900,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "South Bend Cubs released LHP Evan Aschenbeck.",
@@ -1912,7 +1912,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Myrtle Beach Pelicans released LHP Hayden Frank.",
@@ -1924,7 +1924,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "DSL Cubs Blue released SS Samir Guerrero.",
@@ -1936,7 +1936,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "South Bend Cubs released RHP Alfredo Romero.",
@@ -1948,7 +1948,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Knoxville Smokies released RHP Frankie Scalzo Jr..",
@@ -1960,7 +1960,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "South Bend Cubs released RHP Adam Stone.",
@@ -1972,7 +1972,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Seattle Mariners signed free agent RHP Bryce Conley to a minor league contract.",
@@ -1984,7 +1984,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Minnesota Twins signed free agent RHP Jose Espada to a minor league contract.",
@@ -1996,7 +1996,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Philadelphia Phillies signed free agent C Brian Navarreto to a minor league contract.",
@@ -2008,7 +2008,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Tampa Bay Rays signed free agent RHP Levi Stoudt to a minor league contract.",
@@ -2020,7 +2020,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Detroit Tigers signed free agent RHP Anderson Pilar to a minor league contract.",
@@ -2032,7 +2032,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "New York Mets signed free agent LHP Justin King to a minor league contract.",
@@ -2044,7 +2044,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Philadelphia Phillies signed free agent RHP Jerming Rosario to a minor league contract.",
@@ -2056,7 +2056,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Tampa Bay Rays signed free agent LHP Julio Robaina to a minor league contract.",
@@ -2068,7 +2068,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Miami Marlins signed free agent RHP Adam Leverett to a minor league contract.",
@@ -2080,7 +2080,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "San Diego Padres signed free agent OF Kala'i Rosario to a minor league contract.",
@@ -2092,7 +2092,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Houston Astros signed free agent LHP Bryan Magdaleno to a minor league contract.",
@@ -2104,7 +2104,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Washington Nationals designated RHP Josiah Gray for assignment.",
@@ -2116,7 +2116,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Baltimore Orioles released RF Rece Hinds.",
@@ -2128,7 +2128,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Boston Red Sox signed free agent 1B Jake Bauers.",
@@ -2140,7 +2140,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Washington Nationals designated RHP Gus Varland for assignment.",
@@ -2152,7 +2152,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Chicago White Sox designated C Joey Bart for assignment.",
@@ -2164,7 +2164,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Athletics designated RHP Braden Nett for assignment.",
@@ -2176,7 +2176,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Washington Nationals designated LHP Carson Palmquist for assignment.",
@@ -2188,7 +2188,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Detroit Tigers signed free agent RHP Emilio Pag\u00e1n.",
@@ -2200,7 +2200,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Kansas City Royals designated RHP Nick Mears for assignment.",
@@ -2212,7 +2212,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Minnesota Twins signed free agent C Ryan Jeffers.",
@@ -2224,7 +2224,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Washington Nationals designated RHP Braxton Roxby for assignment.",
@@ -2236,7 +2236,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "New York Mets designated RHP Dylan Ross for assignment.",
@@ -2248,7 +2248,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "New York Yankees signed free agent RHP David Bednar.",
@@ -2260,7 +2260,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Detroit Tigers designated 3B Jace Jung for assignment.",
@@ -2272,7 +2272,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Detroit Tigers designated LHP Jake Miller for assignment.",
@@ -2284,7 +2284,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Detroit Tigers designated SS Trey Sweeney for assignment.",
@@ -2296,7 +2296,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Detroit Tigers designated CF Matt Vierling for assignment.",
@@ -2308,7 +2308,7 @@
    "move_type": "DES \u2014 Designated for assignment"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Atlanta Braves claimed RHP Cameron Foster off waivers from Baltimore Orioles.",
@@ -2320,7 +2320,7 @@
    "move_type": "CLW \u2014 Cleared waivers"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "New York Yankees claimed RHP Chase Hampton off waivers from Baltimore Orioles.",
@@ -2332,7 +2332,7 @@
    "move_type": "CLW \u2014 Cleared waivers"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Boston Red Sox traded RHP Angel Bastardo to Kansas City Royals for SS Jack Pineda.",
@@ -2344,7 +2344,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Boston Red Sox traded RHP Angel Bastardo to Kansas City Royals for SS Jack Pineda.",
@@ -2356,7 +2356,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Washington Nationals claimed LHP Philip Abner off waivers from Baltimore Orioles.",
@@ -2368,7 +2368,7 @@
    "move_type": "CLW \u2014 Cleared waivers"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Boston Red Sox traded LHP Raymond Burgos to Athletics for RHP Kenya Huggins.",
@@ -2380,7 +2380,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Boston Red Sox traded LHP Raymond Burgos to Athletics for RHP Kenya Huggins.",
@@ -2392,7 +2392,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Tigres del Licey traded RHP Cam Robinson and RHP Misael Tamarez to Toros del Este.",
@@ -2404,7 +2404,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Baltimore Orioles sent C Zach Morgan outright to Norfolk Tides.",
@@ -2416,7 +2416,7 @@
    "move_type": "OUT \u2014 Outrighted"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Texas Rangers claimed RHP Josh White off waivers from Baltimore Orioles.",
@@ -2428,7 +2428,7 @@
    "move_type": "CLW \u2014 Cleared waivers"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Tigres del Licey traded RHP Cam Robinson and RHP Misael Tamarez to Toros del Este.",
@@ -2440,7 +2440,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Baltimore Orioles traded RHP Yaqui Rivera to Athletics for RHP Josiah Romeo.",
@@ -2452,7 +2452,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Baltimore Orioles traded RHP Yaqui Rivera to Athletics for RHP Josiah Romeo.",
@@ -2464,7 +2464,7 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Houston Astros sent LF Joey Loperfido outright to Sugar Land Space Cowboys.",
@@ -2476,7 +2476,7 @@
    "move_type": "OUT \u2014 Outrighted"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Colorado Rockies signed free agent OF Enexis Antunez to a minor league contract.",
@@ -2488,7 +2488,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Detroit Tigers signed free agent RHP Sawyer Gipson-Long to a minor league contract.",
@@ -2500,7 +2500,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "DSL Cubs Blue released SS Stharling De Los Santos.",
@@ -2512,7 +2512,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Houston Astros signed free agent RHP Jose Gonzalez to a minor league contract.",
@@ -2524,7 +2524,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Arizona Diamondbacks signed free agent OF Ismael Munguia to a minor league contract.",
@@ -2536,7 +2536,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Atlanta Braves signed free agent RHP Darlin Pinales to a minor league contract.",
@@ -2548,7 +2548,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Atlanta Braves signed free agent SS Luke Williams to a minor league contract.",
@@ -2560,7 +2560,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Boston Red Sox signed free agent RHP Michael Arias to a minor league contract.",
@@ -2572,7 +2572,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "South Bend Cubs released OF Geuri Lubo.",
@@ -2584,7 +2584,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Chicago Cubs signed free agent RHP Anderson Castillo to a minor league contract.",
@@ -2596,7 +2596,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Washington Nationals signed free agent 2B Carlos Mendoza to a minor league contract.",
@@ -2608,7 +2608,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Bravos de Margarita released RHP Carlos Suniaga.",
@@ -2620,7 +2620,7 @@
    "move_type": "REL \u2014 Released"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Detroit Tigers signed free agent LHP Bailey Horn to a minor league contract.",
@@ -2632,7 +2632,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Philadelphia Phillies signed free agent C Blake Hunt to a minor league contract.",
@@ -2644,7 +2644,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Baltimore Orioles signed free agent SS Jos\u00e9 Barrero to a minor league contract.",
@@ -2656,7 +2656,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Washington Nationals signed free agent LHP Omar Cruz to a minor league contract.",
@@ -2668,7 +2668,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "New York Mets signed free agent RHP Joel Kuhnel to a minor league contract.",
@@ -2680,7 +2680,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "San Francisco Giants signed free agent RHP Erick Mejia to a minor league contract.",
@@ -2692,7 +2692,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Colorado Rockies signed free agent C Enmanuel Mendoza to a minor league contract.",
@@ -2704,7 +2704,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Chicago Cubs signed free agent RHP Celso Lopez to a minor league contract.",
@@ -2716,7 +2716,7 @@
    "move_type": "SFA \u2014 Signed free agent"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "SIGNED",
    "source": "MLB StatsAPI transactions",
    "title": "Aguilas Cibaenas traded RHP Roddery Mu\u00f1oz to Leones del Escogido.",
@@ -2728,18 +2728,315 @@
    "move_type": "TR \u2014 Traded"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
-   "title": "Seattle Mariners Free Agency: How Tarik Skubal Deal Impacts Mariners' Pursuit of Seiya Suzuki - roundtable.io",
-   "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNLVMxZk5ZNUtFR2hUbG9vcXkwWUtkXzVjRWtIcE9ocUlmWWRHSnJQRF9mZ29aZEQ4OGxZOFNFTktjZEZuTXRBOGlGOEM4YldGR0FUN0RDNWRkdFEtWmVHM2tvUTRFd1pCei1TWFFoMmhxOTlidzRtaG9Ic0g0cDR4X0l6bGpKTFBNcUdDZG42RnZ4Tng3VlBEREdWRVlJM1RONkpZRjVIVVVIUGdkeHpWb19KRGlTclphSXFpUFYwelpzNl8xeHhtM1A0MTkydVJUMGk2bjJGVVE?oc=5",
+   "title": "Guardians have a chance to reshape roster after David Fry's departure - Cleveland.com",
+   "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOUHlwWTAwa2Z0cEh6Y3VGV0liXzUteDBVa1VVWHZ2Zkdhc0F5WVEyc2w4MTBJX2Y1MFN6Z3g3T0ZWMTdyaF9JNndCaVdDZjFxdl82eEx5YTFIeTc3VXpTaGIxMGxhazk4STVDMGdXZFpfMHd0bmphWG1QUDRpeVhHS1MtSTlUQXVSdUVOWkpwZTV5MXpzcENObDRYcW9EZEItdUJQT0lPNzVCUjNWVGpBcEc2dW5nTU00M1ZFSG9lY2NuT0NvU1o5Tml6cjA0b3B6eHJ6ZTlQWDRnQ1U?oc=5",
    "player": "",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T05:30:06+00:00"
+   "source_pubdate": "2026-11-23T10:03:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Trevor Rogers)",
+   "title": "Tracking every team's offseason moves - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNcDlhU0kzU1BxMG0wQmRPYlpMbGw0U1R3MnVmbUUxWFl4U3M3X3UxWHpPcVZmaVk5a01DWGhHWERCMTlXUlpiU1M1RXdrRHJIellGWUFBdFAzaTlTZnZ3Qmlvak1CRnplYkZ3eUVjNkpQQ25ZUVV3aDlMdkpqT2ozNTZJQ01aOVJraF9QcTQ4RmrSAZwBQVVfeXFMT3gzTkQxaDlDeXRUbjVYT0QzRXhuN0RkVjZOU2RrWFU1S2NOem1SOWxBeHc1c1hMa0pXVHpRSm9vV1A0emRYNlBManlhUVVHaFk4UHBJN2VWTjlEWkd5cmRQWVJkOFRIcndEY18tRXdnNXAwaVAtQXRyT3J1ZUdfS0NoUVFUeDFrWjlFWmJMQjJRWGkwQkIyZXhZdFp6?oc=5",
+   "player": "Trevor Rogers",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T10:01:39+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Luis Arraez)",
+   "title": "Tracking every team's offseason moves - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNcDlhU0kzU1BxMG0wQmRPYlpMbGw0U1R3MnVmbUUxWFl4U3M3X3UxWHpPcVZmaVk5a01DWGhHWERCMTlXUlpiU1M1RXdrRHJIellGWUFBdFAzaTlTZnZ3Qmlvak1CRnplYkZ3eUVjNkpQQ25ZUVV3aDlMdkpqT2ozNTZJQ01aOVJraF9QcTQ4RmrSAZwBQVVfeXFMT3gzTkQxaDlDeXRUbjVYT0QzRXhuN0RkVjZOU2RrWFU1S2NOem1SOWxBeHc1c1hMa0pXVHpRSm9vV1A0emRYNlBManlhUVVHaFk4UHBJN2VWTjlEWkd5cmRQWVJkOFRIcndEY18tRXdnNXAwaVAtQXRyT3J1ZUdfS0NoUVFUeDFrWjlFWmJMQjJRWGkwQkIyZXhZdFp6?oc=5",
+   "player": "Luis Arraez",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T10:01:39+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Foster Griffin)",
+   "title": "Tracking every team's offseason moves - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNcDlhU0kzU1BxMG0wQmRPYlpMbGw0U1R3MnVmbUUxWFl4U3M3X3UxWHpPcVZmaVk5a01DWGhHWERCMTlXUlpiU1M1RXdrRHJIellGWUFBdFAzaTlTZnZ3Qmlvak1CRnplYkZ3eUVjNkpQQ25ZUVV3aDlMdkpqT2ozNTZJQ01aOVJraF9QcTQ4RmrSAZwBQVVfeXFMT3gzTkQxaDlDeXRUbjVYT0QzRXhuN0RkVjZOU2RrWFU1S2NOem1SOWxBeHc1c1hMa0pXVHpRSm9vV1A0emRYNlBManlhUVVHaFk4UHBJN2VWTjlEWkd5cmRQWVJkOFRIcndEY18tRXdnNXAwaVAtQXRyT3J1ZUdfS0NoUVFUeDFrWjlFWmJMQjJRWGkwQkIyZXhZdFp6?oc=5",
+   "player": "Foster Griffin",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T10:01:39+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Brandon Lowe)",
+   "title": "Tracking every team's offseason moves - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNcDlhU0kzU1BxMG0wQmRPYlpMbGw0U1R3MnVmbUUxWFl4U3M3X3UxWHpPcVZmaVk5a01DWGhHWERCMTlXUlpiU1M1RXdrRHJIellGWUFBdFAzaTlTZnZ3Qmlvak1CRnplYkZ3eUVjNkpQQ25ZUVV3aDlMdkpqT2ozNTZJQ01aOVJraF9QcTQ4RmrSAZwBQVVfeXFMT3gzTkQxaDlDeXRUbjVYT0QzRXhuN0RkVjZOU2RrWFU1S2NOem1SOWxBeHc1c1hMa0pXVHpRSm9vV1A0emRYNlBManlhUVVHaFk4UHBJN2VWTjlEWkd5cmRQWVJkOFRIcndEY18tRXdnNXAwaVAtQXRyT3J1ZUdfS0NoUVFUeDFrWjlFWmJMQjJRWGkwQkIyZXhZdFp6?oc=5",
+   "player": "Brandon Lowe",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T10:01:39+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Tarik Skubal\u2019s Mets megadeal is Exhibit A for both sides of MLB\u2019s brewing labor clash - The New York Times",
+   "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQY3pzTEl6N01pUVVzbzRoZDl1a2ZOSXo4UDFRTXNSMDVjQU9ZNkRJQ2Y4NlcwZnpCQkdVcVBSblBIQnlOSVZNYmtpQ1U5YU4xb2IyTWtpQllCcTV5QW9nZTJxQm1RTHdWTzR2TkhPa05jbjlkb2cxaS1KZUY2VWRVeFFCc2FOQVVzVEt4YTYxNGEtQkxMd1JIZUZXOUFUa2Z6OEdDWklmb0t2Zw?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T10:00:42+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Tarik Skubal\u2019s Mets megadeal is Exhibit A for both sides of MLB\u2019s brewing labor clash - The New York Times",
+   "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQY3pzTEl6N01pUVVzbzRoZDl1a2ZOSXo4UDFRTXNSMDVjQU9ZNkRJQ2Y4NlcwZnpCQkdVcVBSblBIQnlOSVZNYmtpQ1U5YU4xb2IyTWtpQllCcTV5QW9nZTJxQm1RTHdWTzR2TkhPa05jbjlkb2cxaS1KZUY2VWRVeFFCc2FOQVVzVEt4YTYxNGEtQkxMd1JIZUZXOUFUa2Z6OEdDWklmb0t2Zw?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T10:00:42+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Trevor Rogers)",
+   "title": "All of the 2026-2027 free agents, position by position - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1tRkZieFlQWGEyWlg3MFB2eWxqM0V5OGNtcHBTNFd2WG5nYlJfMXZyTVlIV29KSm1PZ0wxZnJYcEFOSHo1cElNWTFKMWJpNnhweEYyNVhYVFhpN1p5OHBN0gFrQVVfeXFMT0ZyOWstWEdYNEhoZUlWUlNuTDQyUHg3czNNSWFWZzNuTEdzdlQxV1pNb21qM3lyOUFHX1ZPamZ2c2E2NU94R0tVVURub04xOHpwcGpHOVQtV2gtSlc2SjRWbXpLNUdzaW5GNTg?oc=5",
+   "player": "Trevor Rogers",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T09:57:39+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Kevin Gausman)",
+   "title": "All of the 2026-2027 free agents, position by position - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1tRkZieFlQWGEyWlg3MFB2eWxqM0V5OGNtcHBTNFd2WG5nYlJfMXZyTVlIV29KSm1PZ0wxZnJYcEFOSHo1cElNWTFKMWJpNnhweEYyNVhYVFhpN1p5OHBN0gFrQVVfeXFMT0ZyOWstWEdYNEhoZUlWUlNuTDQyUHg3czNNSWFWZzNuTEdzdlQxV1pNb21qM3lyOUFHX1ZPamZ2c2E2NU94R0tVVURub04xOHpwcGpHOVQtV2gtSlc2SjRWbXpLNUdzaW5GNTg?oc=5",
+   "player": "Kevin Gausman",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T09:57:39+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Luis Arraez)",
+   "title": "All of the 2026-2027 free agents, position by position - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1tRkZieFlQWGEyWlg3MFB2eWxqM0V5OGNtcHBTNFd2WG5nYlJfMXZyTVlIV29KSm1PZ0wxZnJYcEFOSHo1cElNWTFKMWJpNnhweEYyNVhYVFhpN1p5OHBN0gFrQVVfeXFMT0ZyOWstWEdYNEhoZUlWUlNuTDQyUHg3czNNSWFWZzNuTEdzdlQxV1pNb21qM3lyOUFHX1ZPamZ2c2E2NU94R0tVVURub04xOHpwcGpHOVQtV2gtSlc2SjRWbXpLNUdzaW5GNTg?oc=5",
+   "player": "Luis Arraez",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T09:57:39+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Foster Griffin)",
+   "title": "All of the 2026-2027 free agents, position by position - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1tRkZieFlQWGEyWlg3MFB2eWxqM0V5OGNtcHBTNFd2WG5nYlJfMXZyTVlIV29KSm1PZ0wxZnJYcEFOSHo1cElNWTFKMWJpNnhweEYyNVhYVFhpN1p5OHBN0gFrQVVfeXFMT0ZyOWstWEdYNEhoZUlWUlNuTDQyUHg3czNNSWFWZzNuTEdzdlQxV1pNb21qM3lyOUFHX1ZPamZ2c2E2NU94R0tVVURub04xOHpwcGpHOVQtV2gtSlc2SjRWbXpLNUdzaW5GNTg?oc=5",
+   "player": "Foster Griffin",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T09:57:39+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Brandon Lowe)",
+   "title": "All of the 2026-2027 free agents, position by position - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1tRkZieFlQWGEyWlg3MFB2eWxqM0V5OGNtcHBTNFd2WG5nYlJfMXZyTVlIV29KSm1PZ0wxZnJYcEFOSHo1cElNWTFKMWJpNnhweEYyNVhYVFhpN1p5OHBN0gFrQVVfeXFMT0ZyOWstWEdYNEhoZUlWUlNuTDQyUHg3czNNSWFWZzNuTEdzdlQxV1pNb21qM3lyOUFHX1ZPamZ2c2E2NU94R0tVVURub04xOHpwcGpHOVQtV2gtSlc2SjRWbXpLNUdzaW5GNTg?oc=5",
+   "player": "Brandon Lowe",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T09:57:39+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Mets make the big splash, agree with Skubal for 9 years, $450M (sources) - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9TVFgzbG9pbXI2TFpEY0ZXMng3SExBOFlXX0Y0OExEZWp4dmNLMU84UzE0MjgtU20zLWZobm5ZZVVHTGhqN1VtRG52MUFCaU9QNGkzbWFxTUkybUtlX1AzVw?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T09:47:40+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Mets sign two-time Cy Young winner Tarik Skubal to nine-year, $450 million deal. See link below \u2b07\ufe0f \ud83d\udcf8 David Rodriguez-Munoz, Detroit Free Press - Facebook",
+   "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPTWlYWFI0V1hyNGtQMWpoNVZhNVVpVkgzdXlvdmVVaDNZeFNCcWpoMDJzUjZ2R01Dd3A1TDlrVGZvZHNXaEc3cGJLMmdZNzNwdG1XbzN4OUVVZWd3bGZnTE5rVEJRMHBvdlVpclNWODJ5WE83QTdwcVFBNDRJYlVrYjRLX09FTUdldHdibUdQcEV4djZHQ1VCdjRSSTlWMzdMaW1aVDZfdDZnbDZTTGtpNm5sTjFrR0FleGFRalBBdFNpcDJ0NzQ5MC0xa2JuLVF1bXdPZWxpd0JEOHVibnBv?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T08:56:58+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "MLB free agency Top 50: Ranking the best players available this winter, starting with Tarik Skubal and Freddy Peralta - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNZlNTZlV0V3pXYjNuM1QyeGFnOTA1YXRIdXBxdDdKLW5PeE1nUHdyaUxaN0NDb3NXc1FWTGFjM2xjaGdvYmNBMWlZdHdCRUczSGo1Q2N2NHdHaEdSMk8wd3QxdjctVG81WjA5Q3pQbGZqaTE4d0I4ZWpiNkhwYldzVGwxbHRxeUQ5RV93b3BYZ213MGFVejRyY1c1d2Npa2dIS3IycW9pWFFHUlp6c2ZwOUhEbm04VHE0UHRnYzI0UWl1eVpIVjBJRlBZbXRfQXFSUk5lU3NEcTBRVGZoVGVzaVZhWEtKZk5RbzhUeUQ5X1JfVFRtZ2VRUU80bw?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T08:12:19+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "MLB free agency Top 50: Ranking the best players available this winter, starting with Tarik Skubal and Freddy Peralta - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNZlNTZlV0V3pXYjNuM1QyeGFnOTA1YXRIdXBxdDdKLW5PeE1nUHdyaUxaN0NDb3NXc1FWTGFjM2xjaGdvYmNBMWlZdHdCRUczSGo1Q2N2NHdHaEdSMk8wd3QxdjctVG81WjA5Q3pQbGZqaTE4d0I4ZWpiNkhwYldzVGwxbHRxeUQ5RV93b3BYZ213MGFVejRyY1c1d2Npa2dIS3IycW9pWFFHUlp6c2ZwOUhEbm04VHE0UHRnYzI0UWl1eVpIVjBJRlBZbXRfQXFSUk5lU3NEcTBRVGZoVGVzaVZhWEtKZk5RbzhUeUQ5X1JfVFRtZ2VRUU80bw?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T08:12:19+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Trevor Rogers)",
+   "title": "MLB free agency Top 50: Ranking the best players available this winter, starting with Tarik Skubal and Freddy Peralta - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNZlNTZlV0V3pXYjNuM1QyeGFnOTA1YXRIdXBxdDdKLW5PeE1nUHdyaUxaN0NDb3NXc1FWTGFjM2xjaGdvYmNBMWlZdHdCRUczSGo1Q2N2NHdHaEdSMk8wd3QxdjctVG81WjA5Q3pQbGZqaTE4d0I4ZWpiNkhwYldzVGwxbHRxeUQ5RV93b3BYZ213MGFVejRyY1c1d2Npa2dIS3IycW9pWFFHUlp6c2ZwOUhEbm04VHE0UHRnYzI0UWl1eVpIVjBJRlBZbXRfQXFSUk5lU3NEcTBRVGZoVGVzaVZhWEtKZk5RbzhUeUQ5X1JfVFRtZ2VRUU80bw?oc=5",
+   "player": "Trevor Rogers",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T08:12:19+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Royals Could Seek Outfield Help From Longtime Cubs Veteran - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPaHlXbGdoaHU1ZUlLWHAzM2NyZ3RsWWNlcU1QNnRSWmY4VUo2R05Nd1NOVXFVMzBibGtRSEVMQnBzRzBYUUlkMXZaMWNSTzNNLVZidXNIck5RbVhzQy1PeHF4RE85cEpEcUFDUTdHdnJpaWl4RTBkZXMyaXFiV0dGbG5pem9zYTA?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T08:07:38+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Tampa Bay Rays Running Out of Time to Address Roster Needs Before Possible Lockout - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNdEpleEJMRmc5bVp4RHZ0bnNlVmVUaEd3M1o5SHl2UDRwaGhyRzBUQmF3Tkc0UV9TcURSdE1iYzN1akRBdk4zTjZHLVRuUDZWRGNnTjFMaGNrWEljZEZKOVFrSXcxeGFiZWtrVm5LT2Y1eGI0N0UxdHVxQlkwbzVlR3pB?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T07:39:18+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Drew Rasmussen)",
+   "title": "Tampa Bay Rays Running Out of Time to Address Roster Needs Before Possible Lockout - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNdEpleEJMRmc5bVp4RHZ0bnNlVmVUaEd3M1o5SHl2UDRwaGhyRzBUQmF3Tkc0UV9TcURSdE1iYzN1akRBdk4zTjZHLVRuUDZWRGNnTjFMaGNrWEljZEZKOVFrSXcxeGFiZWtrVm5LT2Y1eGI0N0UxdHVxQlkwbzVlR3pB?oc=5",
+   "player": "Drew Rasmussen",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T07:39:18+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "After losing out on Skubal, Padres still have paths to rebuild rotation - USA Today",
+   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNRnVlT3ZKX3NBZHdlamxkUjVHM1QweDFMVDVkVFppNEs0YmlFeFdSVm5kaS1mOWFtZzBqTTJLNjVMdWo2XzVQdnJfX0pjU2lNY1JRN1JLejQyb1dPN0pCdXlqYk5qZ0RCUlhtVHhNSWZoQVRHMnpSa1llSFAwMHBKSzBYM1VHVEFHQklwakEzTVpNN2NrZ1FCb3cwdERYc3p2ZTVaOHBiR3lUMkdUSXh3?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T06:58:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "After losing out on Skubal, Padres still have paths to rebuild rotation - USA Today",
+   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNRnVlT3ZKX3NBZHdlamxkUjVHM1QweDFMVDVkVFppNEs0YmlFeFdSVm5kaS1mOWFtZzBqTTJLNjVMdWo2XzVQdnJfX0pjU2lNY1JRN1JLejQyb1dPN0pCdXlqYk5qZ0RCUlhtVHhNSWZoQVRHMnpSa1llSFAwMHBKSzBYM1VHVEFHQklwakEzTVpNN2NrZ1FCb3cwdERYc3p2ZTVaOHBiR3lUMkdUSXh3?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T06:58:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Why the Tarik Skubal Signing May Impact the White Sox' Free Agency Plans - Sports Illustrated",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNOEIxSl9JdTRKN01UNXZQaU9neG4yMDVTb19yVjZ0dVFBYTlGNW8yeWhHUU92WUFuNGNUMkNuVzRIcTJ5d1FFT1VQVnpnZ0lnaWFWSUd6TnY5YTJfenZOa1ExZzJmVVZjRWIwdEQzRVVnU2dYQ0xma3FCbnR0STlIZ2tiT2NiV044QXBIRHpoSl9idWNtLUdVX0ZRUjdYMDNUSURwbmZqd3VKN25OYndDTQ?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T06:26:30+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Why the Tarik Skubal Signing May Impact the White Sox' Free Agency Plans - Sports Illustrated",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNOEIxSl9JdTRKN01UNXZQaU9neG4yMDVTb19yVjZ0dVFBYTlGNW8yeWhHUU92WUFuNGNUMkNuVzRIcTJ5d1FFT1VQVnpnZ0lnaWFWSUd6TnY5YTJfenZOa1ExZzJmVVZjRWIwdEQzRVVnU2dYQ0xma3FCbnR0STlIZ2tiT2NiV044QXBIRHpoSl9idWNtLUdVX0ZRUjdYMDNUSURwbmZqd3VKN25OYndDTQ?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T06:26:30+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Michael King)",
+   "title": "Why the Tarik Skubal Signing May Impact the White Sox' Free Agency Plans - Sports Illustrated",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNOEIxSl9JdTRKN01UNXZQaU9neG4yMDVTb19yVjZ0dVFBYTlGNW8yeWhHUU92WUFuNGNUMkNuVzRIcTJ5d1FFT1VQVnpnZ0lnaWFWSUd6TnY5YTJfenZOa1ExZzJmVVZjRWIwdEQzRVVnU2dYQ0xma3FCbnR0STlIZ2tiT2NiV044QXBIRHpoSl9idWNtLUdVX0ZRUjdYMDNUSURwbmZqd3VKN25OYndDTQ?oc=5",
+   "player": "Michael King",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T06:26:30+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "New York Mets sign ace Tarik Skubal to record nine-year, $450M deal - On New Jersey",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9CcWdZYWNHS01LMWZIaG8zUnhXeUQ1djhncklJdXE0QVRRMWdTYnRpdGdtcWk0My1tdGluaG95Y05HODJtOUZQMW13V2VtVVowN29iM094QWlJb3FyNEVXb3hGRjI1TkxQWENiTGpybFhwLUhmODd0d003R3FtQ0E?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T06:26:28+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Yankees Fans React To Rival Mets Signing Tarik Skubal - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPQ3JheWF0NHJwNUt5Q21XQ0VzVktldXEzdk9qWlo2cFppS0JXOW03YXV5aWphdXFLSUdlaVVNWnBUSW1TQjdfOEgwMGFRM0c1MFVNSWs3ZnJTUzYwTGdSZXBMZmlBR3JmRTNfdzZwTzdaVnJTS3JqRTRYMUozdUw3QXBXUjM?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T05:56:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Yankees Fans React To Rival Mets Signing Tarik Skubal - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPQ3JheWF0NHJwNUt5Q21XQ0VzVktldXEzdk9qWlo2cFppS0JXOW03YXV5aWphdXFLSUdlaVVNWnBUSW1TQjdfOEgwMGFRM0c1MFVNSWs3ZnJTUzYwTGdSZXBMZmlBR3JmRTNfdzZwTzdaVnJTS3JqRTRYMUozdUw3QXBXUjM?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T05:56:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Seiya Suzuki)",
    "title": "Seattle Mariners Free Agency: How Tarik Skubal Deal Impacts Mariners' Pursuit of Seiya Suzuki - roundtable.io",
@@ -2750,7 +3047,29 @@
    "source_pubdate": "2026-11-23T05:30:06+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Seattle Mariners Free Agency: How Tarik Skubal Deal Impacts Mariners' Pursuit of Seiya Suzuki - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNaHdTU1JZRmk5OEtGVndacENYcHU0bW9NYUdsRVp3Y2VuMFh6QkNTeEtJU3RmVFY2X09TV18xZEg4T2RISTgxZTJOUkhjczVjbVhzTW5UVDAxZ08yYzY0U2ZTQndfYzlRenpQa3lJelJsbXhxNG9WcW5KMHBpLU81U05jZDg4eXB1TDU0?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T05:28:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Seattle Mariners Free Agency: How Tarik Skubal Deal Impacts Mariners' Pursuit of Seiya Suzuki - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNaHdTU1JZRmk5OEtGVndacENYcHU0bW9NYUdsRVp3Y2VuMFh6QkNTeEtJU3RmVFY2X09TV18xZEg4T2RISTgxZTJOUkhjczVjbVhzTW5UVDAxZ08yYzY0U2ZTQndfYzlRenpQa3lJelJsbXhxNG9WcW5KMHBpLU81U05jZDg4eXB1TDU0?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T05:28:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Tarik Skubal Hyped by Mets' Steve Cohen After Historic $450M Contract in MLB Free Agency - Bleacher Report",
@@ -2761,7 +3080,7 @@
    "source_pubdate": "2026-11-23T05:25:06+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Tarik Skubal Hyped by Mets' Steve Cohen After Historic $450M Contract in MLB Free Agency - Bleacher Report",
@@ -2772,7 +3091,7 @@
    "source_pubdate": "2026-11-23T05:25:06+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "MLB Trade Rumors (main)",
    "title": "Mets To Sign Tarik Skubal",
@@ -2783,18 +3102,7 @@
    "source_pubdate": "2026-11-23T05:24:27+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Mets make the big splash, agree with Skubal for 9 years, $450M (sources) - MLB.com",
-   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9TVFgzbG9pbXI2TFpEY0ZXMng3SExBOFlXX0Y0OExEZWp4dmNLMU84UzE0MjgtU20zLWZobm5ZZVVHTGhqN1VtRG52MUFCaU9QNGkzbWFxTUkybUtlX1AzVw?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T05:08:21+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "MLB Trade Rumors (main)",
    "title": "Astros, Blue Jays, Padres Interested In Randy Arozarena",
@@ -2805,7 +3113,7 @@
    "source_pubdate": "2026-11-23T05:02:32+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "MLB Trade Rumors (SD)",
    "title": "Astros, Blue Jays, Padres Interested In Randy Arozarena",
@@ -2816,7 +3124,7 @@
    "source_pubdate": "2026-11-23T05:02:32+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "MLB Trade Rumors (TOR)",
    "title": "Astros, Blue Jays, Padres Interested In Randy Arozarena",
@@ -2827,7 +3135,7 @@
    "source_pubdate": "2026-11-23T05:02:32+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Astros, Blue Jays, Padres Interested In Randy Arozarena - MLB Trade Rumors",
@@ -2838,7 +3146,18 @@
    "source_pubdate": "2026-11-23T05:02:32+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (MLB free agency)",
+   "title": "Yankees news: Luis Gil signs with Detroit Tigers - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNYjk2bUlWLUdhc3dIS2tCajBIVWNUUk0tcl9kR3pYV0JlanpxdkF2dkx6RGJBcG9yUEMyamw5OC1raU9mMXJ2alMyamZJQ2JPd09QYXhLX0hVV0lja2p1SkN3cXZSdTl0YnR3NUZ6NVBZSUI4S2UyRTRfRjIyeWxvbkZn?oc=5",
+   "player": "",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T05:00:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Tarik Skubal Signing Has Market Thinking Mets Are Contenders - Yahoo Sports",
@@ -2849,62 +3168,29 @@
    "source_pubdate": "2026-11-23T04:59:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "After losing out on Skubal, Padres still have paths to rebuild rotation - USA Today",
-   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNRnVlT3ZKX3NBZHdlamxkUjVHM1QweDFMVDVkVFppNEs0YmlFeFdSVm5kaS1mOWFtZzBqTTJLNjVMdWo2XzVQdnJfX0pjU2lNY1JRN1JLejQyb1dPN0pCdXlqYk5qZ0RCUlhtVHhNSWZoQVRHMnpSa1llSFAwMHBKSzBYM1VHVEFHQklwakEzTVpNN2NrZ1FCb3cwdERYc3p2ZTVaOHBiR3lUMkdUSXh3?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T04:02:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
-   "title": "After losing out on Skubal, Padres still have paths to rebuild rotation - USA Today",
-   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNRnVlT3ZKX3NBZHdlamxkUjVHM1QweDFMVDVkVFppNEs0YmlFeFdSVm5kaS1mOWFtZzBqTTJLNjVMdWo2XzVQdnJfX0pjU2lNY1JRN1JLejQyb1dPN0pCdXlqYk5qZ0RCUlhtVHhNSWZoQVRHMnpSa1llSFAwMHBKSzBYM1VHVEFHQklwakEzTVpNN2NrZ1FCb3cwdERYc3p2ZTVaOHBiR3lUMkdUSXh3?oc=5",
+   "title": "Blue Jays Shift Focus to Two-Time All-Star After $50 Million Tarik Skubal Miss - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1OR3YtTC1YWHN6UTluRHBod1hCc3NKQVlncXdKZHJURWkwQWUyLWU5Y2taRzJfVFdiVDZ4NXEyck9ZdVljcHdpYXBaQVc5eG1qNTZkMnJpdWx4dmdrNEZCUnVIYnhpT0FzOENOYkFaQ2EzS1dfX0J1WEI4cFV0NE0?oc=5",
    "player": "Tarik Skubal",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T04:02:00+00:00"
+   "source_pubdate": "2026-11-23T04:41:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
-   "title": "MLB free agency Top 50: Ranking the best players available this winter, starting with Tarik Skubal and Freddy Peralta - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNZlNTZlV0V3pXYjNuM1QyeGFnOTA1YXRIdXBxdDdKLW5PeE1nUHdyaUxaN0NDb3NXc1FWTGFjM2xjaGdvYmNBMWlZdHdCRUczSGo1Q2N2NHdHaEdSMk8wd3QxdjctVG81WjA5Q3pQbGZqaTE4d0I4ZWpiNkhwYldzVGwxbHRxeUQ5RV93b3BYZ213MGFVejRyY1c1d2Npa2dIS3IycW9pWFFHUlp6c2ZwOUhEbm04VHE0UHRnYzI0UWl1eVpIVjBJRlBZbXRfQXFSUk5lU3NEcTBRVGZoVGVzaVZhWEtKZk5RbzhUeUQ5X1JfVFRtZ2VRUU80bw?oc=5",
+   "title": "MLB Free Agent Tracker 2026-27: Top players available, latest signings, and contract information - NBC Sports",
+   "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQNzdNTHQ0YVdKUW0wV0lINF9tUzRaNzY1aVUzN3I4c2lGc3E3RXVKaTZraDYtVWdEajVsMlBtTmNfSmN0SUFrdVppM1BELTExRUJKbkVVbEdqaHJiQ3pYbnBiWlh0cGhSQW53S0ZXaEk0TDhCb1ByU1psLW5SSVBtWDFZdFFLS0ZIS3BPWVNlSkhPQXBETkhqWTA5VFcxUUFmNDdqVUMteVJjU0JmRkxNZkZnNlg2N0ROUG1vaWZQY1VYa0dTU2FtZVoyN3ZMQ3l2LXlyeGNwOFc?oc=5",
    "player": "",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T03:42:18+00:00"
+   "source_pubdate": "2026-11-23T04:25:48+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "MLB free agency Top 50: Ranking the best players available this winter, starting with Tarik Skubal and Freddy Peralta - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNZlNTZlV0V3pXYjNuM1QyeGFnOTA1YXRIdXBxdDdKLW5PeE1nUHdyaUxaN0NDb3NXc1FWTGFjM2xjaGdvYmNBMWlZdHdCRUczSGo1Q2N2NHdHaEdSMk8wd3QxdjctVG81WjA5Q3pQbGZqaTE4d0I4ZWpiNkhwYldzVGwxbHRxeUQ5RV93b3BYZ213MGFVejRyY1c1d2Npa2dIS3IycW9pWFFHUlp6c2ZwOUhEbm04VHE0UHRnYzI0UWl1eVpIVjBJRlBZbXRfQXFSUk5lU3NEcTBRVGZoVGVzaVZhWEtKZk5RbzhUeUQ5X1JfVFRtZ2VRUU80bw?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T03:42:18+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Trevor Rogers)",
-   "title": "MLB free agency Top 50: Ranking the best players available this winter, starting with Tarik Skubal and Freddy Peralta - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNZlNTZlV0V3pXYjNuM1QyeGFnOTA1YXRIdXBxdDdKLW5PeE1nUHdyaUxaN0NDb3NXc1FWTGFjM2xjaGdvYmNBMWlZdHdCRUczSGo1Q2N2NHdHaEdSMk8wd3QxdjctVG81WjA5Q3pQbGZqaTE4d0I4ZWpiNkhwYldzVGwxbHRxeUQ5RV93b3BYZ213MGFVejRyY1c1d2Npa2dIS3IycW9pWFFHUlp6c2ZwOUhEbm04VHE0UHRnYzI0UWl1eVpIVjBJRlBZbXRfQXFSUk5lU3NEcTBRVGZoVGVzaVZhWEtKZk5RbzhUeUQ5X1JfVFRtZ2VRUU80bw?oc=5",
-   "player": "Trevor Rogers",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T03:42:18+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "What\u2019s next for the Mets after reportedly signing Tarik Skubal to record-setting contract? - NBC Sports",
@@ -2915,7 +3201,7 @@
    "source_pubdate": "2026-11-23T03:32:16+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Drew Rasmussen)",
    "title": "What\u2019s next for the Mets after reportedly signing Tarik Skubal to record-setting contract? - NBC Sports",
@@ -2926,7 +3212,7 @@
    "source_pubdate": "2026-11-23T03:32:16+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Cincinnati Reds Should Pursue Veteran Infielder in Free Agency - Yahoo Sports",
@@ -2937,7 +3223,7 @@
    "source_pubdate": "2026-11-23T03:30:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Boston Red Sox Offseason: How Tarik Skubal Signing Impacts Pursuit of Pitching Depth - Yahoo Sports",
@@ -2948,7 +3234,7 @@
    "source_pubdate": "2026-11-23T03:17:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Freddy Peralta Draws Interest From Six MLB Teams - cwibc.co.id",
@@ -2959,7 +3245,7 @@
    "source_pubdate": "2026-11-23T03:07:21+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Blue Jays Final Offer to Tarik Skubal Revealed - Yahoo Sports",
@@ -2970,29 +3256,29 @@
    "source_pubdate": "2026-11-23T03:06:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
-   "title": "Tarik Skubal reportedly joins Mets on record-breaking, 9-year, $450 million deal that topped Blue Jays' offer - Yahoo",
-   "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPYWhva3dqdENBX1ltMWpaM3lTRnd3QWF2R2VRbzBaR2JFMUFDWlpTQ2RuWGFkVnpwcTlMS0lmNDFHRG9RTVYxd3BwaHZiX0ZYZ3VvZGUyWkVrR3UxVGcwT1pBS3c5RnM1eGY1U2JXUlVzV2Z4MW9ZVEdGY0k0NjlVQVlQSUhONlFVd3hYQThBX1d1T093WHpON09ScEZiSXowTGxMeldfWWYwaWR6Sm9BaGhlaXh1N1YwcGNMTnhGWWNWU3h2bWdlTQ?oc=5",
+   "title": "Tarik Skubal reportedly joins Mets on record-breaking, 9-year, $450 million deal that topped Blue Jays' offer - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPMEpEaUhmUnZxTS1zTDY1dnAxVHBJOERIZnlGSmxxNHQyOHVxR0QwUlFDd0FlMGxxM1ZkN0ZzLURyX2RhMnMwT3gwZDVla19Gc3dKT3o3WFR6dHBCOHM0eHV1UnhXN01NSlgxNUtzNTlXOWdZcDBlRl9kUkx3V3E5bm83WThaRTM5c3BieDJXODdvbWVuaUFCbFpaTG5GMjY3TzJFVGZIXzlyOVAxcUdWNEx3b0o5WTdRdHZEWmNCTzNteVRhTlpQVS05T0VhTkdMS2pJN3Y0OUY4dVQ0WjNCNWwzZGZsbWttNGo2a3BpREhkVzdTM3diRU1OempYczhU?oc=5",
    "player": "",
    "team": "",
    "statsapi_transaction_id": null,
    "source_pubdate": "2026-11-23T03:05:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
-   "title": "Tarik Skubal reportedly joins Mets on record-breaking, 9-year, $450 million deal that topped Blue Jays' offer - Yahoo",
-   "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNb3ZWeldTSnYzdmc2VUR0dThYejVEYWdqbjkwbmgyVkIxLVB4TnFCVnpfYndJb0RtRHJvU21GS0UzMTZfNmZnQWJ0VUlrak44Wmk1b25BYlhYMXd6U2lJSmJ6V0JnWWJpenY0SGRmQU85TUp4cUVhdmlUQzZfR0pNbnVLS01nb29aYUpfUnN6VnRsbFZFOVF5LWxMZDdoRU1BazZ0WFM0STNNYVY4dzZ1QU9KejM0VG1wVm43MWQwNWc3cWVJVk9OeG5JOHJqTGNwV0xoTENwMUM?oc=5",
+   "title": "Tarik Skubal reportedly joins Mets on record-breaking, 9-year, $450 million deal that topped Blue Jays' offer - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPMEpEaUhmUnZxTS1zTDY1dnAxVHBJOERIZnlGSmxxNHQyOHVxR0QwUlFDd0FlMGxxM1ZkN0ZzLURyX2RhMnMwT3gwZDVla19Gc3dKT3o3WFR6dHBCOHM0eHV1UnhXN01NSlgxNUtzNTlXOWdZcDBlRl9kUkx3V3E5bm83WThaRTM5c3BieDJXODdvbWVuaUFCbFpaTG5GMjY3TzJFVGZIXzlyOVAxcUdWNEx3b0o5WTdRdHZEWmNCTzNteVRhTlpQVS05T0VhTkdMS2pJN3Y0OUY4dVQ0WjNCNWwzZGZsbWttNGo2a3BpREhkVzdTM3diRU1OempYczhU?oc=5",
    "player": "Tarik Skubal",
    "team": "",
    "statsapi_transaction_id": null,
    "source_pubdate": "2026-11-23T03:05:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "ESPN news",
    "title": "Sources: Mets, Skubal agree to record 9-year, $450M contract",
@@ -3003,40 +3289,29 @@
    "source_pubdate": "2026-11-23T03:01:02Z"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Mets sign two-time Cy Young winner Tarik Skubal to nine-year, $450 million deal. See link below \u2b07\ufe0f \ud83d\udcf8 David Rodriguez-Munoz, Detroit Free Press - Facebook",
-   "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPTWlYWFI0V1hyNGtQMWpoNVZhNVVpVkgzdXlvdmVVaDNZeFNCcWpoMDJzUjZ2R01Dd3A1TDlrVGZvZHNXaEc3cGJLMmdZNzNwdG1XbzN4OUVVZWd3bGZnTE5rVEJRMHBvdlVpclNWODJ5WE83QTdwcVFBNDRJYlVrYjRLX09FTUdldHdibUdQcEV4djZHQ1VCdjRSSTlWMzdMaW1aVDZfdDZnbDZTTGtpNm5sTjFrR0FleGFRalBBdFNpcDJ0NzQ5MC0xa2JuLVF1bXdPZWxpd0JEOHVibnBv?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T03:00:15+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "A deeper look at Tarik Skubal's record deal with Mets - Sportsnet.ca",
-   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQTXN6OW1QNWZYaTBnRzRRWVhaSl9FZTlONHpkOXllYW9mTnVxNzFPWVQzWFhBdGlfNk9UeWVjZVM2S3ptVTRmSFdXY01nbzVfZm5McFFDTTduN1FMZDBRUS11a3RiYW91ZHFUTGZGTDNTVFhiUlk0a0U1UUdUN1BGQnUyZFJWcmpuRGpZY2NYNnZsN1RZ?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T02:59:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
-   "title": "MLB Free Agent Tracker 2026-27: Top players available, latest signings, and contract information - NBC Sports",
-   "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQNzdNTHQ0YVdKUW0wV0lINF9tUzRaNzY1aVUzN3I4c2lGc3E3RXVKaTZraDYtVWdEajVsMlBtTmNfSmN0SUFrdVppM1BELTExRUJKbkVVbEdqaHJiQ3pYbnBiWlh0cGhSQW53S0ZXaEk0TDhCb1ByU1psLW5SSVBtWDFZdFFLS0ZIS3BPWVNlSkhPQXBETkhqWTA5VFcxUUFmNDdqVUMteVJjU0JmRkxNZkZnNlg2N0ROUG1vaWZQY1VYa0dTU2FtZVoyN3ZMQ3l2LXlyeGNwOFc?oc=5",
+   "title": "Mets To Sign Tarik Skubal - MLB Trade Rumors",
+   "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1DdEhsZFNPd3k1ZkgzOTFISDRuRFI5RXRSaEt6cENsMFp3cHB1Y2hhU0VGR1FoVzQxWlJHZGdtNjZlWWtJblJScnZ0ejQwX2ZfU2taV0FOd1B6VnhNcEcyMzVPYi1pamFUVjlHUUpJX2tIQTMtR0hWVA?oc=5",
    "player": "",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T02:42:19+00:00"
+   "source_pubdate": "2026-11-23T02:49:19+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Mets To Sign Tarik Skubal - MLB Trade Rumors",
+   "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1DdEhsZFNPd3k1ZkgzOTFISDRuRFI5RXRSaEt6cENsMFp3cHB1Y2hhU0VGR1FoVzQxWlJHZGdtNjZlWWtJblJScnZ0ejQwX2ZfU2taV0FOd1B6VnhNcEcyMzVPYi1pamFUVjlHUUpJX2tIQTMtR0hWVA?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T02:49:19+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "ESPN news",
    "title": "What Tarik Skubal's massive deal means for Mets, suitors, all of MLB",
@@ -3047,7 +3322,7 @@
    "source_pubdate": "2026-11-23T02:39:21Z"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "1 team at each position most in need of an upgrade for 2027 - MLB.com",
@@ -3058,7 +3333,7 @@
    "source_pubdate": "2026-11-23T02:33:26+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Tarik Skubal Signs With Mets: What's Next For Dodgers And Free-Agent Pitchers - FOX Sports",
@@ -3069,7 +3344,7 @@
    "source_pubdate": "2026-11-23T02:32:46+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Tarik Skubal Signs With Mets: What's Next For Dodgers And Free-Agent Pitchers - FOX Sports",
@@ -3080,7 +3355,7 @@
    "source_pubdate": "2026-11-23T02:32:46+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Michael King)",
    "title": "Tarik Skubal Signs With Mets: What's Next For Dodgers And Free-Agent Pitchers - FOX Sports",
@@ -3091,51 +3366,40 @@
    "source_pubdate": "2026-11-23T02:32:46+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
-   "title": "With Tarik Skubal off the market, here are the 5 best MLB starters available - The New York Times",
+   "title": "With Tarik Skubal off the market, here are the 5 best MLB starters available - The Athletic - The New York Times",
    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMUtaRmlMaUViekEySlBQaVg2S3ZSdzRDcTFiOTVKNHFZcHpnZ3ItYmFLRFBOMEgyZ1RfSHY3VGxBOWtNbENtRXJtVWEtN1RzVTRsaVpqS2tlUmRRYnVPaWFtalJ4NGU0RVFwQ1hYanBQclZfYkFYOXpBek1hYnMyWmJ2QkFWUEpZeEV6S3RlekJyeTg?oc=5",
    "player": "",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T02:29:47+00:00"
+   "source_pubdate": "2026-11-23T02:28:21+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
-   "title": "With Tarik Skubal off the market, here are the 5 best MLB starters available - The New York Times",
+   "title": "With Tarik Skubal off the market, here are the 5 best MLB starters available - The Athletic - The New York Times",
    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMUtaRmlMaUViekEySlBQaVg2S3ZSdzRDcTFiOTVKNHFZcHpnZ3ItYmFLRFBOMEgyZ1RfSHY3VGxBOWtNbENtRXJtVWEtN1RzVTRsaVpqS2tlUmRRYnVPaWFtalJ4NGU0RVFwQ1hYanBQclZfYkFYOXpBek1hYnMyWmJ2QkFWUEpZeEV6S3RlekJyeTg?oc=5",
    "player": "Tarik Skubal",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T02:29:47+00:00"
+   "source_pubdate": "2026-11-23T02:28:21+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Trevor Rogers)",
-   "title": "With Tarik Skubal off the market, here are the 5 best MLB starters available - The New York Times",
+   "title": "With Tarik Skubal off the market, here are the 5 best MLB starters available - The Athletic - The New York Times",
    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMUtaRmlMaUViekEySlBQaVg2S3ZSdzRDcTFiOTVKNHFZcHpnZ3ItYmFLRFBOMEgyZ1RfSHY3VGxBOWtNbENtRXJtVWEtN1RzVTRsaVpqS2tlUmRRYnVPaWFtalJ4NGU0RVFwQ1hYanBQclZfYkFYOXpBek1hYnMyWmJ2QkFWUEpZeEV6S3RlekJyeTg?oc=5",
    "player": "Trevor Rogers",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T02:29:47+00:00"
+   "source_pubdate": "2026-11-23T02:28:21+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Shohei Ohtani, Dave Roberts are all smiles in Las Vegas ahead of Tarik Skubal\u2019s Dodgers exit - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNZnJKM1FRaVVCb05tSkpWQ1ZfMmZUOVBPdjRxa0N0d3BBeTA0V1o2OFdBRkhEeUZVR2ZXQzdhZm8xYjBfTmZYMUVSaElTTWVTWldENjdxcGVIUkdDVW5idG0yekJ5U2xQS0NKSk1JSUY0ZDk4N0ZtYUNpOXYwNGMyeFktNUpjMUhHckE?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T02:27:09+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Mets make massive splash signing prized lefty Tarik Skubal to record deal - Beyond the Monster",
@@ -3146,7 +3410,7 @@
    "source_pubdate": "2026-11-23T02:26:59+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Trevor Rogers)",
    "title": "Mets make massive splash signing prized lefty Tarik Skubal to record deal - Beyond the Monster",
@@ -3157,7 +3421,7 @@
    "source_pubdate": "2026-11-23T02:26:59+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Kevin Gausman)",
    "title": "Mets make massive splash signing prized lefty Tarik Skubal to record deal - Beyond the Monster",
@@ -3168,7 +3432,18 @@
    "source_pubdate": "2026-11-23T02:26:59+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Michael King)",
+   "title": "Mets make massive splash signing prized lefty Tarik Skubal to record deal - Beyond the Monster",
+   "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFAya1NUWFdxcXpDdnRhMU9yZThvbkJ1MlM5YndvdUoxTHJEX3ZLS1p5QXJIV2NNbWdlRDZBN2ttakh2Y29EYXNwdmdLVlJBeV9uM3hVSl84dmRjM3V0YzIwRGFaUjVRekpVUmk4N0o5M1hqQ0pWbmVFY2NTZTE?oc=5",
+   "player": "Michael King",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T02:26:59+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Michael King)",
    "title": "Tarik Skubal Is Gone. Should the Dodgers Turn to Flaherty, King or Peralta? - DodgersBeat",
@@ -3176,21 +3451,21 @@
    "player": "Michael King",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T02:15:00+00:00"
+   "source_pubdate": "2026-11-23T02:20:32+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
-   "title": "Blue Jays fall short on Tarik Skubal. Where do they go now? - The Athletic - The New York Times",
-   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNQ2VBQ2RTSDJ4QjFsRXd6WFlaT3RjbUxMczZwLXFSSHRkb0EzX1FYR0pDZkJnNUctSmpZSmFIOFFnT3VlcS1pS040Z2dFMzF4cWF0TzRMNHpsc3FOZlhyaEdwOURqMjZIc25VNHo4VGdFTnBjdm5GUTkzYmt3Q1dqV2xEUi1UMkxjSzh5XzluNkU2Q3k0SHc?oc=5",
+   "title": "For the Mets, signing Tarik Skubal is a loud reminder of their financial might and an expensive step back toward contention - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxNanFWYWNUdWhpSHhsVFdDSUZwc0daVFBCb1VQVXhLQW4yMkJzY0puYjl0TE5UejNDMF9VMWVjRWdwLXI2X0VBV2FTVUNmRjBiZkxTTGNHb2ExSmRobEQ3NWZyazZDNWFUSDV0TURKc2JKQ3V0NzFmSi04TkZQYzlFVFpUSERINks4b19WemlsaExTaW5SRlhlMlpWcm5TRk9vMFh6TXBmcTY5TV8xWDlVYkZQVk9qM0RqZ0pzQ0I3SHBra2dkRjZBT0ZzMmY5OVRiSXZ3V2dxZm41TElkTDBTOUg0cllkZ0ltZXhnYmdSOUdaRUY3aEVQd0VBWndLRDg4Q3YwYg?oc=5",
    "player": "Tarik Skubal",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T02:03:18+00:00"
+   "source_pubdate": "2026-11-23T02:19:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Mets Have No Excuses Left After Landing Tarik Skubal - Sports Illustrated",
@@ -3201,18 +3476,18 @@
    "source_pubdate": "2026-11-23T02:00:14+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
-   "source": "Google News (Brandon Lowe)",
-   "title": "Pittsburgh Pirates Need a Brandon Lowe Backup Plan - roundtable.io",
-   "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOSFFIT2x3VmJOckZiLWRERUM3MFRua0phbWVHX2pvdUgxUnh4SjdUcmRUVE1YbmxpNXVXQURJbVl2RG1Ucl9MT0gxb3h6VHVwUDFYQU0yT2ttNjhnWFBMVi1aN2drSHpzc0dTZ0VnVUFMSkl6ZW4tZDdaMFY5dkFCUHlBMWNtdWxVN0pzTEx3dTYyRmpJM3ZveFp4VDZJUTdm?oc=5",
-   "player": "Brandon Lowe",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Shohei Ohtani, Dave Roberts are all smiles in Las Vegas ahead of Tarik Skubal\u2019s Dodgers exit - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNZnJKM1FRaVVCb05tSkpWQ1ZfMmZUOVBPdjRxa0N0d3BBeTA0V1o2OFdBRkhEeUZVR2ZXQzdhZm8xYjBfTmZYMUVSaElTTWVTWldENjdxcGVIUkdDVW5idG0yekJ5U2xQS0NKSk1JSUY0ZDk4N0ZtYUNpOXYwNGMyeFktNUpjMUhHckE?oc=5",
+   "player": "Tarik Skubal",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T01:57:27+00:00"
+   "source_pubdate": "2026-11-23T02:00:03+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Plaschke: Did Mark Walter's money troubles cause Dodgers to strike out on Tarik Skubal? - Yahoo Sports",
@@ -3223,7 +3498,7 @@
    "source_pubdate": "2026-11-23T01:57:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Tarik Skubal, New York Mets agree to record 9-year, $450 million deal: Sources - The Athletic - The New York Times",
@@ -3234,7 +3509,7 @@
    "source_pubdate": "2026-11-23T01:56:17+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Tarik Skubal, New York Mets agree to record 9-year, $450 million deal: Sources - The Athletic - The New York Times",
@@ -3245,7 +3520,18 @@
    "source_pubdate": "2026-11-23T01:56:17+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Brandon Lowe)",
+   "title": "Pittsburgh Pirates Need a Brandon Lowe Backup Plan - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOWWNzLWprRWZBMkh3Q3NiTG1xbl9hQmRXclpDNjBXYTVjRVZISWdrSXV1U3ZmZkxmYmh0cFhnUmh0YTRYcDBHdEtuS1pxSFE3RVMxVlJUcGdoZXNlbGNHMGVUb1BZWElvTmVlUGFLWF9LX3B2NjZWYkhhdmZFVHdSMmZCUXpqcmNVQkV1bFhUUEo?oc=5",
+   "player": "Brandon Lowe",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T01:55:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Reports: Pitcher Tarik Skubal agrees to 9-year, $450M deal with Mets - UPI.com",
@@ -3256,7 +3542,7 @@
    "source_pubdate": "2026-11-23T01:48:12+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Critical Tarik Skubal Contract Details Leak After Mets Deal - Yahoo Sports",
@@ -3267,7 +3553,7 @@
    "source_pubdate": "2026-11-23T01:42:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "What's Next For The Cubs After Missing Out On Tarik Skubal? - Yahoo Sports",
@@ -3278,18 +3564,7 @@
    "source_pubdate": "2026-11-23T01:41:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Dodgers\u2019 looming crunch explains why Tarik Skubal never got a formal offer - New York Post",
-   "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQaUJTbVZLbXR4cm5IeXB0OUhDQ3dOM3pLTTczWVNZRTVqZ2czY2ZnUUFBZUNaZXNPYVhlTDVLaDQwSi1lSUtNZ1pfTG8zQUt2US1uWTBsaDNaeHNHYm83TXlzRDBNdHBVQmQtRWNGY214eWt4SjE4RlhwZUFXdXBBRHVKTzMzVDl2TURHQkJhWHhwa1NsSG1VRUlIMG92aWpwazBZOVB6bnZhQQ?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T01:39:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Dodgers\u2019 looming crunch explains why Tarik Skubal never got a formal offer - New York Post",
@@ -3300,7 +3575,7 @@
    "source_pubdate": "2026-11-23T01:39:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Mets win free agency, sign LHP Tarik Skubal for 9 years - Elite Sports NY",
@@ -3311,7 +3586,7 @@
    "source_pubdate": "2026-11-23T01:35:11+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "ESPN news",
    "title": "Mets ink Skubal to record 9-year, $450M contract",
@@ -3322,7 +3597,7 @@
    "source_pubdate": "2026-11-23T01:24:41Z"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "What Tarik Skubal's massive deal means for Mets, suitors, all of MLB - ESPN",
@@ -3333,7 +3608,7 @@
    "source_pubdate": "2026-11-23T01:19:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "What Tarik Skubal's massive deal means for Mets, suitors, all of MLB - ESPN",
@@ -3344,7 +3619,7 @@
    "source_pubdate": "2026-11-23T01:19:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "MLB free agency tracker: 2026-27 offseason trades, moves - ABC13 Houston",
@@ -3355,7 +3630,40 @@
    "source_pubdate": "2026-11-23T01:18:28+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Sonny Gray)",
+   "title": "MLB free agency tracker: 2026-27 offseason trades, moves - ABC13 Houston",
+   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNU3FBUGtIWXg3Nm5yX0RYREVEa3k0V2NONURCa0tBRzc2UG9VMXlneFlYUUFlUHFQUGN3Q3RFMF9qbXBsU29JenJOeHF4VjY2eHdObzRfUm44ZUlnLTNiVDRtV1kxM1EyRzE2aDY0b2RSbnp2dS0zZ2s2elNQZEVzc3FWLWdFWFB5LUlCUEV1bEQ?oc=5",
+   "player": "Sonny Gray",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T01:18:28+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Michael King)",
+   "title": "MLB free agency tracker: 2026-27 offseason trades, moves - ABC13 Houston",
+   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNU3FBUGtIWXg3Nm5yX0RYREVEa3k0V2NONURCa0tBRzc2UG9VMXlneFlYUUFlUHFQUGN3Q3RFMF9qbXBsU29JenJOeHF4VjY2eHdObzRfUm44ZUlnLTNiVDRtV1kxM1EyRzE2aDY0b2RSbnp2dS0zZ2s2elNQZEVzc3FWLWdFWFB5LUlCUEV1bEQ?oc=5",
+   "player": "Michael King",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T01:18:28+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Seiya Suzuki)",
+   "title": "MLB free agency tracker: 2026-27 offseason trades, moves - ABC13 Houston",
+   "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNU3FBUGtIWXg3Nm5yX0RYREVEa3k0V2NONURCa0tBRzc2UG9VMXlneFlYUUFlUHFQUGN3Q3RFMF9qbXBsU29JenJOeHF4VjY2eHdObzRfUm44ZUlnLTNiVDRtV1kxM1EyRzE2aDY0b2RSbnp2dS0zZ2s2elNQZEVzc3FWLWdFWFB5LUlCUEV1bEQ?oc=5",
+   "player": "Seiya Suzuki",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T01:18:28+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Why Tarik Skubal Didn\u2019t Sign With Blue Jays - Yahoo Sports",
@@ -3366,7 +3674,7 @@
    "source_pubdate": "2026-11-23T01:03:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "MLB Trade Rumors (main)",
    "title": "Blue Jays Offered Tarik Skubal Nine-Year Deal In $400MM Range",
@@ -3377,7 +3685,7 @@
    "source_pubdate": "2026-11-23T01:00:40+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "MLB Trade Rumors (TOR)",
    "title": "Blue Jays Offered Tarik Skubal Nine-Year Deal In $400MM Range",
@@ -3388,7 +3696,7 @@
    "source_pubdate": "2026-11-23T01:00:40+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Blue Jays Offered Tarik Skubal Nine-Year Deal In $400MM Range - MLB Trade Rumors",
@@ -3399,29 +3707,7 @@
    "source_pubdate": "2026-11-23T01:00:40+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Does Tarik Skual's Mets Deal Loosen Free Agent or Trade Market for Rangers? - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQX1VuMG16Znp2Y0dwUkYtVzFrUHI0eVpYY2Z2eUpHWTVKVjJsV1p0Y19sWDJEU3Bqd3J6SWFfUkliWjdfcXRZWHVOLXdDUEVrcXl2dTNJXy1GdGNEdFdOWHNSbUdSQWwyWldQQXN1aVFKRWhKN1dmVkZ6dXR5TTUzZmdR?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T01:00:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Does Tarik Skual's Mets Deal Loosen Free Agent or Trade Market for Rangers? - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQX1VuMG16Znp2Y0dwUkYtVzFrUHI0eVpYY2Z2eUpHWTVKVjJsV1p0Y19sWDJEU3Bqd3J6SWFfUkliWjdfcXRZWHVOLXdDUEVrcXl2dTNJXy1GdGNEdFdOWHNSbUdSQWwyWldQQXN1aVFKRWhKN1dmVkZ6dXR5TTUzZmdR?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T01:00:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Red Sox interested in former foe Luis Gil - NBC Sports",
@@ -3432,7 +3718,7 @@
    "source_pubdate": "2026-11-23T00:57:10+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Reports: Mets sign Tarik Skubal for $450 million - NBC Sports",
@@ -3443,7 +3729,7 @@
    "source_pubdate": "2026-11-23T00:57:10+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Reports: Mets sign Tarik Skubal for $450 million - NBC Sports",
@@ -3454,18 +3740,29 @@
    "source_pubdate": "2026-11-23T00:57:10+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
+   "source": "Google News (Michael King)",
+   "title": "Reports: Mets sign Tarik Skubal for $450 million - NBC Sports",
+   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPb0t1WjBRTGdDRzRYazJnNC1EU013T0tsd1RDdVE1MndBMW1tRUJyNU9NclByUjJIWWRWQ2Jib3I3N19hbjVVZl9nMmZlVThKNTdvVk53bEVNMHhZSlFfa1R4cmVTVmVOVWQ3bzIySlRZWUlieXZ1bTdOZnVRRURSMlNxc2JQUmJNMnAtOTlsNGVhMXV6alY1N0p5WXRFNGs?oc=5",
+   "player": "Michael King",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T00:57:10+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Drew Rasmussen)",
    "title": "Why Tarik Skubal Signing With Mets Is Good News For Red Sox - Yahoo Sports",
    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNSHQzMjhtSUpQeFN4LXZtT1lXVUE3ck5LZGk1NnpXRktBcEQ5V3ZOSzFBclZhcU5yaGl2OTRQXzBrSWFIaUt5UXY3UWFqbWhQV1dzdmdDd3RLQk9ub1lOVGI5aW9VRjRQbm9jTlhsMF9LU1ZSS1dibEFPelRWcmNPR19LN0g?oc=5",
-   "player": "Tarik Skubal",
+   "player": "Drew Rasmussen",
    "team": "",
    "statsapi_transaction_id": null,
    "source_pubdate": "2026-11-23T00:53:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Mets land Tarik Skubal: How will Phillies, NL East counter historic deal? - NBC Sports Philadelphia",
@@ -3476,7 +3773,7 @@
    "source_pubdate": "2026-11-23T00:44:39+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "How Francisco Lindor, Mets teammates reacted to $450 million Tarik Skubal coup - Yahoo Sports",
@@ -3487,7 +3784,7 @@
    "source_pubdate": "2026-11-23T00:38:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Cubs And White Sox May Get Into Bidding War Over Japanese Ace - Heavy.com",
@@ -3498,7 +3795,7 @@
    "source_pubdate": "2026-11-23T00:38:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "How Francisco Lindor, Mets teammates reacted to $450 million Tarik Skubal coup - Yahoo Sports",
@@ -3509,7 +3806,7 @@
    "source_pubdate": "2026-11-23T00:38:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "New Tarik Skubal Rumors Reveal Dodgers' Concerns Before Star's Historic $450M Mets Contract - Bleacher Report",
@@ -3520,7 +3817,7 @@
    "source_pubdate": "2026-11-23T00:36:46+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "What's next for Dodgers? Top free agent targets after Tarik Skubal signs with Mets - USA Today",
@@ -3531,7 +3828,7 @@
    "source_pubdate": "2026-11-23T00:30:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "What's next for Dodgers? Top free agent targets after Tarik Skubal signs with Mets - USA Today",
@@ -3542,7 +3839,7 @@
    "source_pubdate": "2026-11-23T00:30:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "ESPN Insider Reveals Surprising Dodgers Stance Before Tarik Skubal Mets Deal - Yahoo Sports",
@@ -3553,7 +3850,7 @@
    "source_pubdate": "2026-11-23T00:30:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Tarik Skubal Signing With Mets Could Hurt White Sox - roundtable.io",
@@ -3564,7 +3861,7 @@
    "source_pubdate": "2026-11-23T00:26:59+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Mets, Skubal Reset Pitcher Pay Just As MLB Tries To Rein It In - Front Office Sports",
@@ -3575,7 +3872,7 @@
    "source_pubdate": "2026-11-23T00:26:42+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Tarik Skubal lands richest pitching contract in MLB history - MLive.com",
@@ -3586,7 +3883,7 @@
    "source_pubdate": "2026-11-23T00:24:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Trevor Rogers)",
    "title": "Top Starting Pitchers Remaining Following Tarik Skubal's Deal with Mets - Yahoo Sports",
@@ -3597,7 +3894,18 @@
    "source_pubdate": "2026-11-23T00:17:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Michael King)",
+   "title": "Top Starting Pitchers Remaining Following Tarik Skubal's Deal with Mets - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOS1A4S0Izcm42dGhQY1d3YjZ3LUExRlB6eURwazZmM18zTHRNempsbUdHS0M1dy1zUDlKR0w2bEFnay0xY1JicllQQVF4VnlsdHZ3NlVLNE9XRmZscjEySWRXQ1ZzVlE2VGtOMlAzeTNMc2hmNnpqX0VtMktqcFVVTUZRaE9CX3YwMmExMWFsSFpPZzNh?oc=5",
+   "player": "Michael King",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T00:17:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Mets' Updated Payroll, Starting Rotation After Tarik Skubal's Historic $450M Contract - Bleacher Report",
@@ -3608,18 +3916,7 @@
    "source_pubdate": "2026-11-23T00:13:48+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Tarik Skubal deal shows how team-friendly Jes\u00fas Luzardo/Cristopher S\u00e1nchez contracts are for Phillies - Central Bucks Now",
-   "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOTlJ1d2pQSUFCcnVyQnlKcTlVcjNWeHdBeU52LXlsazdRQVJmdG5DMlBKQUZsby1QY1piRU5CaW53eWlKOXFzQnJkUlBKa2E4a2J0cDdmLW1WV2lhV0NqQmM3eGpfaUUyNklCTUhNWEJqTnhRWDZ2NHgxYXMzUGE3T3hBbkFGX2JyVjB3M3dxRDdSQXhTMC1UMjB1WDZzSURCS2lqRHJYMlpYeFZydjR3RExfNVVSLXliYnRLdmhSOV9FcHdST0ZQYkN4d3g?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-23T00:11:56+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "ESPN news",
    "title": "Fantasy baseball: Breaking down Tarik Skubal's fantasy value on the Mets",
@@ -3630,7 +3927,7 @@
    "source_pubdate": "2026-11-23T00:11:24Z"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Mets got the biggest prize in Skubal ... but they may be just getting started - MLB.com",
@@ -3641,7 +3938,7 @@
    "source_pubdate": "2026-11-23T00:04:11+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Mets got the biggest prize in Skubal ... but they may be just getting started - MLB.com",
@@ -3652,7 +3949,18 @@
    "source_pubdate": "2026-11-23T00:04:11+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "No Surpise Dodgers Lose Skubal to Mets, So What's Next? - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNdnd6Z2c5S08yRm1aY09xU0ZXS1dlTHgtbGh2c3VvYjVvdW1MVkFGdWItVW1YLUduc0xhNWVTdEpfbHRUWXp1ME92QmFTSmRBRGZ2a0xRVE9kYlFyWnVESkt0SkFsUmNHNmxLYTRYN0ljY3JQaG85dWppc205aThMTEtldkI0QQ?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-23T00:02:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Under-the-Radar Free Agent Could Be the 3B Upgrade the Yankees Need - Sports Illustrated",
@@ -3663,7 +3971,7 @@
    "source_pubdate": "2026-11-23T00:00:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "2-time Cy Young winner Skubal agrees to record 9-year, $450M US deal with Mets: reports - CBC",
@@ -3674,7 +3982,18 @@
    "source_pubdate": "2026-11-22T23:59:20+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Drew Rasmussen)",
+   "title": "Mets got the biggest prize in Skubal ... but they may be just getting started - MLB.com",
+   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQLWsyUlQtWWJRTkh1N0RXQTlJb05ILU1sU24tOGUzcGRrNWh0dXZxa0JfMXUzOThicGJHNzloUUtncUtGLU01bVU1ZWpiQy01dWJ5TDhBaWFNeTZZMTdzZ1Y0U2o4SjZBSlR0Z3hyODFWX0VuTGxUNk1IVlh3My00YnI1QUZDeVVBN29TMdIBjAFBVV95cUxQLWsyUlQtWWJRTkh1N0RXQTlJb05ILU1sU24tOGUzcGRrNWh0dXZxa0JfMXUzOThicGJHNzloUUtncUtGLU01bVU1ZWpiQy01dWJ5TDhBaWFNeTZZMTdzZ1Y0U2o4SjZBSlR0Z3hyODFWX0VuTGxUNk1IVlh3My00YnI1QUZDeVVBN29TMQ?oc=5",
+   "player": "Drew Rasmussen",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-22T23:58:46+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Ranking The Top Five Landing Spots For Tarik Skubal - Yahoo Sports",
@@ -3685,7 +4004,7 @@
    "source_pubdate": "2026-11-22T23:52:29+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Ranking The Top Five Landing Spots For Tarik Skubal - Yahoo Sports",
@@ -3696,7 +4015,7 @@
    "source_pubdate": "2026-11-22T23:52:29+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "So you missed out on Tarik Skubal: The best starting pitchers still available through free agency, trade - CBS Sports",
@@ -3707,7 +4026,7 @@
    "source_pubdate": "2026-11-22T23:51:39+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "So you missed out on Tarik Skubal: The best starting pitchers still available through free agency, trade - CBS Sports",
@@ -3718,7 +4037,7 @@
    "source_pubdate": "2026-11-22T23:51:39+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Boston Red Sox Offseason: Craig Breslow Can Breathe Sigh of Relief as Tarik Skubal Heads to Mets - Yahoo Sports",
@@ -3729,29 +4048,18 @@
    "source_pubdate": "2026-11-22T23:41:21+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Tarik Skubal agrees to record $450 million contract with New York Mets - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQeE9HUzUzNGtkT1doaDN6Y1k3RVhJbmlpWFY4VFBtVEQ5bWh2Ym1XUXlYXzRTMjBBTHZIUUdJeXdTOGZCSkJ5MGx0VGdLRUdoX3E3ckdNM3J5S19mbmIxb3BkMmtuNmFVYlBSazBiMDJ1ZDE4OXFucGE2V01yakV0VkIxdHNSZw?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNOXlKaE5NR0c3QkVoOFpVcm5oaUhrQ2FiOUJKNzlOYUdJZ0ZKZXZFa21GUndQRGt3OFV3SjBNQ3NjejREd0dYblUzMUVHa014b0laYU5seTQ1R0ZZZWtlbV9WSnVoRjNpRi1iWG04VkVpMmFCWnpYdy1QemUyRzgxNzBxSHVZZw?oc=5",
    "player": "Tarik Skubal",
    "team": "",
    "statsapi_transaction_id": null,
    "source_pubdate": "2026-11-22T23:39:43+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "MLB off-season transaction tracker: The top free-agent signings and trades - Sportsnet.ca",
-   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOUVI3eDVGQm9FZGlBVWt1TFQ3dElXNnpjWTFoaXZyLVNjeThEaXg5WWpsTXdLNXBYaThTeXpYX2tQdGNtWVdGcU1JclFMdUo1UEkwa3E0RkxUdDNZVlFRWDhwTU5LM1BTYi1HeHFyUlotakRoTXZtblFmUTZxSzYtSldTNFJjRGZadnEzcGZaMDJvU2RSdmQ4VlBpVUpKeU9TRTNtUm1aMzhiZWhPcmlvdA?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T23:36:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Tarik Skubal's Mets Deal Should Spur the Mariners to Make Their Next Big Move - Yahoo Sports",
@@ -3762,7 +4070,7 @@
    "source_pubdate": "2026-11-22T23:31:15+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Mets grade for Tarik Skubal trade comes with a catch - Yahoo Sports",
@@ -3773,7 +4081,7 @@
    "source_pubdate": "2026-11-22T23:23:53+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "What does Skubal mean for lockout? Mets give MLB ammo for labor war - Yahoo Sports",
@@ -3784,7 +4092,7 @@
    "source_pubdate": "2026-11-22T23:13:09+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Tarik Skubal to sign with Mets, become highest paid free-agent pitcher in MLB history: Reports - Yahoo Sports",
@@ -3795,7 +4103,7 @@
    "source_pubdate": "2026-11-22T23:06:24+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Tarik Skubal to sign with Mets, become highest paid free-agent pitcher in MLB history: Reports - Yahoo Sports",
@@ -3806,7 +4114,7 @@
    "source_pubdate": "2026-11-22T23:06:24+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Dodgers' Top Free-Agent, Trade Targets After Tarik Skubal's $450M Mets Contract - Bleacher Report",
@@ -3817,7 +4125,7 @@
    "source_pubdate": "2026-11-22T23:04:43+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Dodgers' Top Free-Agent, Trade Targets After Tarik Skubal's $450M Mets Contract - Bleacher Report",
@@ -3828,7 +4136,18 @@
    "source_pubdate": "2026-11-22T23:04:43+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Trevor Rogers)",
+   "title": "Dodgers' Top Free-Agent, Trade Targets After Tarik Skubal's $450M Mets Contract - Bleacher Report",
+   "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPaG15NHlyZHkxY0ZPc0h2N2xPSXRpYzNfdlNhSWpBb1RzZ01kbjVBMzJNaXZXSVRTeWdnNHVNeWEyRjZmTnJqSG1YQzJDSWwxVjh6OFh3NlVrdFRybVR5UnJudUFJRGRObnpBZkVveGhzbEoxY0oxT0gzenZLb1luM3NQM3NCdnVlcnczY3FnMGZKMlJvVDlDQjZJWEhnb1Jrdlg3b3RCOFA5T1phaFp3MmEyRlNJLUZ6WGliUw?oc=5",
+   "player": "Trevor Rogers",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-22T23:04:43+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Winners and losers of the Tarik Skubal signing: Blue Jays, Dodgers strike out; David Stearns looks nervous - CBS Sports",
@@ -3839,7 +4158,7 @@
    "source_pubdate": "2026-11-22T23:04:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Winners and losers of the Tarik Skubal signing: Blue Jays, Dodgers strike out; David Stearns looks nervous - CBS Sports",
@@ -3850,7 +4169,18 @@
    "source_pubdate": "2026-11-22T23:04:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Michael King)",
+   "title": "Winners and losers of the Tarik Skubal signing: Blue Jays, Dodgers strike out; David Stearns looks nervous - CBS Sports",
+   "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPWlFMOVFrWTZYUGNxVnVvanAzRjV6OHluZDNMU3hZV0JpYkRncXJPbUxSU1VzbXlHU2cxSEc1eUNWQTB0eE55T0phT19JTjdwMHlIalpONGhmSFBBTUEtNnVMZHowSldKdnYtLVIwbmpROHBOZDVXUTAtYmRuUXUxUUp0OHdNbF80Qlh4WURRakpXQ3ZSNllhZFV4YmpXYk1FbU5VMWtPU2pwOUw0dmhtOXg2NjBSZjExZGFwaUYzdFNHdjNIbUZR?oc=5",
+   "player": "Michael King",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-22T23:04:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Mets reportedly sign Tarik Skubal for nine years, $450 million: Breaking down the record-setting deal - NBC Sports",
@@ -3861,7 +4191,7 @@
    "source_pubdate": "2026-11-22T22:59:45+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Four Takeaways From Dodgers Losing Tarik Skubal to Mets in $450 Million Deal - Yahoo Sports",
@@ -3872,7 +4202,7 @@
    "source_pubdate": "2026-11-22T22:59:41+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Tarik Skubal return to Detroit as a Met: When will it happen? - Yahoo Sports",
@@ -3883,7 +4213,7 @@
    "source_pubdate": "2026-11-22T22:58:51+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "The biggest domino in free agency falls with Tarik Skubal reportedly agreeing to a nine-year, $450 million contract with the Mets. It's the largest deal for a pitcher in baseball history. - DK Pittsburgh Sports",
@@ -3894,7 +4224,7 @@
    "source_pubdate": "2026-11-22T22:58:44+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "The biggest domino in free agency falls with Tarik Skubal reportedly agreeing to a nine-year, $450 million contract with the Mets. It's the largest deal for a pitcher in baseball history. - DK Pittsburgh Sports",
@@ -3905,7 +4235,7 @@
    "source_pubdate": "2026-11-22T22:58:44+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Mets reportedly sign Tarik Skubal for nine years, $450 million: Breaking down the record-setting deal - Yahoo Sports",
@@ -3916,7 +4246,7 @@
    "source_pubdate": "2026-11-22T22:58:06+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Tarik Skubal reportedly joins Mets on record-breaking, 9-year, $450 million contract - Yahoo Sports",
@@ -3927,7 +4257,7 @@
    "source_pubdate": "2026-11-22T22:55:21+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Tarik Skubal reportedly joins Mets on record-breaking, 9-year, $450 million contract - Yahoo Sports",
@@ -3938,7 +4268,7 @@
    "source_pubdate": "2026-11-22T22:55:21+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Tarik Skubal and richest pitching contracts in MLB history - Yahoo Sports",
@@ -3949,7 +4279,7 @@
    "source_pubdate": "2026-11-22T22:49:51+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "How Francisco Lindor reacted to Mets' shocking Tarik Skubal signing - Yahoo Sports",
@@ -3960,7 +4290,7 @@
    "source_pubdate": "2026-11-22T22:49:17+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Tarik Skubal Agreement With Mets Ends Hopes of Tigers Reunion with Ace - Yahoo Sports",
@@ -3971,29 +4301,7 @@
    "source_pubdate": "2026-11-22T22:48:12+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Foster Griffin)",
-   "title": "Giants Should Take Flyer on Former Cy Young Award Winner - roundtable.io",
-   "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNaThPSHZBdFI5S25LbGVBMHl5OEJsR01UM0xzWVN0T3pyUEFjeHNKVjMyUS1kY00xbVZfeENYcEoyY3dlWThiN2RsUzBCaW14ZDhpZ1JJQ2tDMHBtWkVaWWc1SFQ2WmN1MVdTN1pCYWRsMTZIQVBIMG5wOU85cHFyLVZuQTA5ZXFrT1RrWmFrTFBWVGlkcXRtdXp5MDlKVFBNTkQ4SW5iYw?oc=5",
-   "player": "Foster Griffin",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:45:03+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Phillies Path to Playoffs Complicated by Tarik Skubal Joining Mets - Sports Illustrated",
-   "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNbWJ3NS1sWWdGVkZmZTFlZFRlVmxGOUlJVjRaaC1YRGlEaTM2NE1ucjVPcHNnYkxuUGpEYVNZbGYyUFhjWkpMekpXVzJZb05KNkc4bVJOWG0xUDJyVTB0T1dDbFBsNEVYVHRMNXpKMV9zVVNKbnBaaUtkemJneVJ3WUdHc2hXR1FHMVpwN21GdmtWbEFSdHVKVFJVUmxZcmQ4Wmx2RWh3?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:45:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Tarik Skubal moves on from the Dodgers, agrees to record $450-million deal with Mets - Los Angeles Times",
@@ -4004,7 +4312,7 @@
    "source_pubdate": "2026-11-22T22:43:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Mets Land Tarik Skubal on Record $450 Million Deal - Yahoo Sports",
@@ -4015,7 +4323,7 @@
    "source_pubdate": "2026-11-22T22:43:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Instant Grade: Tarik Skubal Signing Gives Mets Their Much-Needed Ace - Yahoo Sports",
@@ -4026,7 +4334,7 @@
    "source_pubdate": "2026-11-22T22:42:17+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "5 reasons why Skubal is so dominant - MLB.com",
@@ -4037,7 +4345,7 @@
    "source_pubdate": "2026-11-22T22:41:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Blue Jays miss out on another premier free agent with Mets' Tarik Skubal news - Yahoo Sports",
@@ -4048,40 +4356,7 @@
    "source_pubdate": "2026-11-22T22:40:05+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Blue Jays miss out on another premier free agent with Mets' Tarik Skubal news - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNcXBkaG9FdzhQeFpRM0p1ZTlzV2ZJWEhkbmJ2Snd4RXRTVzZadks4RklFNVUxVWFHZzZRY0wxaHR2djVkNlBuQmMxa0laVWtxMWVqang3MXlEQVJJZTNSbjVYc3I3ZHFMXzJUU0wxZHBBak5DQnJNRGRSeTFQaEM3RjN5Y3U3UQ?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:40:05+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Top Free Agent Tarik Skubal Signs $450M Blockbuster Deal - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNV0pMd1FuTFlIWDVXU29lWVZBSUp0eFBCZG9FT0UwYzQ3MjhkWER4bjROalpaVEp4V3hSeUhGamZudTVsZlNWMndvd3UxZndXUlgzZjk4RHo4amFEZWlGSmtvQ1JTeDRYYmZjSGtqMU5Sbnh5QkZYcjZ4SndKQzZGQndR?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:38:20+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Top Free Agent Tarik Skubal Signs $450M Blockbuster Deal - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNV0pMd1FuTFlIWDVXU29lWVZBSUp0eFBCZG9FT0UwYzQ3MjhkWER4bjROalpaVEp4V3hSeUhGamZudTVsZlNWMndvd3UxZndXUlgzZjk4RHo4amFEZWlGSmtvQ1JTeDRYYmZjSGtqMU5Sbnh5QkZYcjZ4SndKQzZGQndR?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:38:20+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Mets Make MLB History After Tarik Skubal, Juan Soto's Record-Breaking Free-Agent Contracts - Bleacher Report",
@@ -4092,7 +4367,7 @@
    "source_pubdate": "2026-11-22T22:38:06+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Mets Make MLB History After Tarik Skubal, Juan Soto's Record-Breaking Free-Agent Contracts - Bleacher Report",
@@ -4103,7 +4378,18 @@
    "source_pubdate": "2026-11-22T22:38:06+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
+   "lane": "REPORTED",
+   "source": "Google News (Tarik Skubal)",
+   "title": "Blue Jays fall short on Tarik Skubal. Where do they go now? - The Athletic - The New York Times",
+   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNQ2VBQ2RTSDJ4QjFsRXd6WFlaT3RjbUxMczZwLXFSSHRkb0EzX1FYR0pDZkJnNUctSmpZSmFIOFFnT3VlcS1pS040Z2dFMzF4cWF0TzRMNHpsc3FOZlhyaEdwOURqMjZIc25VNHo4VGdFTnBjdm5GUTkzYmt3Q1dqV2xEUi1UMkxjSzh5XzluNkU2Q3k0SHc?oc=5",
+   "player": "Tarik Skubal",
+   "team": "",
+   "statsapi_transaction_id": null,
+   "source_pubdate": "2026-11-22T22:38:00+00:00"
+  },
+  {
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Tarik Skubal's Mets Contract Details Revealed - Yahoo Sports",
@@ -4114,7 +4400,7 @@
    "source_pubdate": "2026-11-22T22:34:54+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Tigers signing ex-Yankees Rookie of the Year winner who just got dumped - Yahoo Sports",
@@ -4125,18 +4411,7 @@
    "source_pubdate": "2026-11-22T22:34:11+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "What Tarik Skubal\u2019s Record Mets Deal Means for the Angels\u2019 Offseason Plans - Sports Illustrated",
-   "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZTA4SFRCOGpNX2tCemlLSjVHZ1FpNnpWNGJ3T2xWZXRTV2tHTGNnVl9CczR2UzFJUnBFVmFkakQtMFRTakdIWUJfNExlWkZENXkwbkNGdG94OXVJVFo5TDZtZHpJVlM3cExkSkFfZGoxUDhoZk1oVFpDc0V2dE9IMHRQU1FWUElpMFVkTGRqSzNJcVhscHg5OVlDWUZ5dWpGeUtGZHZaSXhYWktCck9mRDNFWlFuS3hqX1pNTkJR?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:31:46+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "What Tarik Skubal\u2019s Record Mets Deal Means for the Angels\u2019 Offseason Plans - Sports Illustrated",
@@ -4147,7 +4422,7 @@
    "source_pubdate": "2026-11-22T22:31:46+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "MLB Winners and Losers of Tarik Skubal, New York Mets Agreeing to $450M Contract - Bleacher Report",
@@ -4158,7 +4433,7 @@
    "source_pubdate": "2026-11-22T22:29:52+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "MLB Winners and Losers of Tarik Skubal, New York Mets Agreeing to $450M Contract - Bleacher Report",
@@ -4169,7 +4444,7 @@
    "source_pubdate": "2026-11-22T22:29:52+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Dodgers Lose Free Agent Skubal to Mets - Yahoo Sports",
@@ -4180,7 +4455,7 @@
    "source_pubdate": "2026-11-22T22:29:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Dodgers Lose Free Agent Skubal to Mets - Yahoo Sports",
@@ -4191,7 +4466,7 @@
    "source_pubdate": "2026-11-22T22:29:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "All the records broken by Tarik Skubal's nine-year, $450 million contract with the Mets - CBS Sports",
@@ -4202,7 +4477,7 @@
    "source_pubdate": "2026-11-22T22:28:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Red Sox Lose Former AL Rookie of the Year Free Agent Target to AL Rival - Heavy.com",
@@ -4213,7 +4488,7 @@
    "source_pubdate": "2026-11-22T22:27:22+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Sonny Gray)",
    "title": "Red Sox Lose Former AL Rookie of the Year Free Agent Target to AL Rival - Heavy.com",
@@ -4224,7 +4499,7 @@
    "source_pubdate": "2026-11-22T22:27:22+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Full contract details on Tarik Skubal\u2019s reported $450M deal with Mets - Yahoo Sports",
@@ -4235,7 +4510,7 @@
    "source_pubdate": "2026-11-22T22:24:50+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "After Tarik Skubal Signs With Mets, Padres' Free Agent Focus is Obvious - Yahoo Sports",
@@ -4246,7 +4521,7 @@
    "source_pubdate": "2026-11-22T22:24:35+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "After Tarik Skubal Signs With Mets, Padres' Free Agent Focus is Obvious - Yahoo Sports",
@@ -4257,7 +4532,7 @@
    "source_pubdate": "2026-11-22T22:24:35+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Tarik Skubal, Mets Agree to Historic $450M Contract After Dodgers Stint, MLB Rumors Reveal Details - Bleacher Report",
@@ -4268,7 +4543,7 @@
    "source_pubdate": "2026-11-22T22:19:44+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Tarik Skubal's $450M Mets Deal Is Unlike Anything MLB Has Seen - Sports Illustrated",
@@ -4279,7 +4554,7 @@
    "source_pubdate": "2026-11-22T22:19:29+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Toronto Blue Jays Offseason: Team Officially Misses Out on Tarik Skubal - Yahoo Sports",
@@ -4290,7 +4565,7 @@
    "source_pubdate": "2026-11-22T22:19:23+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Tarik Skubal moves on from the Dodgers, agrees to record $450-million deal with Mets - Yahoo Sports",
@@ -4301,18 +4576,7 @@
    "source_pubdate": "2026-11-22T22:18:26+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Mets Pitcher Sends \u2018Bulldog\u2019 Tarik Skubal Message Immediately After Record Contract Report - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNeVc0a1Q1VE1TWlBDY0p4akRCQXczdDFSMmxGZnVSUDdwb1FSMTVvbXQ3TWVoMzBmZG52cDhQVjVFRTktZl9haVRrM0xIalJOM2FBc1Y5eVUyOFNJbjZWOTJyNWNpRmNJTkRKM05UUGZnaERKTDBnLVdxZk9qd05mNEFmQWRlNnVH?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:17:54+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "ESPN news",
    "title": "Tarik Skubal to Mets: Grading record $450 million contract",
@@ -4323,7 +4587,7 @@
    "source_pubdate": "2026-11-22T22:17:27Z"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "2026-27 MLB free agent tracker: Mets land Tarik Skubal on nine-year, $450 million contract - CBS Sports",
@@ -4334,7 +4598,7 @@
    "source_pubdate": "2026-11-22T22:17:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Skubal Nears Free Agency Decision Before MLB Deadline - Demokratis.co.id",
@@ -4345,7 +4609,7 @@
    "source_pubdate": "2026-11-22T22:17:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "2026-27 MLB free agent tracker: Mets land Tarik Skubal on nine-year, $450 million contract - CBS Sports",
@@ -4356,7 +4620,7 @@
    "source_pubdate": "2026-11-22T22:17:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Trevor Rogers)",
    "title": "2026-27 MLB free agent tracker: Mets land Tarik Skubal on nine-year, $450 million contract - CBS Sports",
@@ -4367,7 +4631,7 @@
    "source_pubdate": "2026-11-22T22:17:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Kevin Gausman)",
    "title": "2026-27 MLB free agent tracker: Mets land Tarik Skubal on nine-year, $450 million contract - CBS Sports",
@@ -4378,18 +4642,7 @@
    "source_pubdate": "2026-11-22T22:17:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Luis Arraez)",
-   "title": "2026-27 MLB free agent tracker: Mets land Tarik Skubal on nine-year, $450 million contract - CBS Sports",
-   "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5ubTVwdGhuSEdnYzdiVHpIdjVpcGhhcTFmU2NTSmtrbXFEeWVwSTY1RXBKNUhRVU56TW1kVjRYNFpGSFkzdEp4LUNRWVFQQVltNmFfRWVOb0J0OXh6WFhMdk52VG1SdUZCelRuYkRGN3hfaXNI?oc=5",
-   "player": "Luis Arraez",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:17:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Foster Griffin)",
    "title": "2026-27 MLB free agent tracker: Mets land Tarik Skubal on nine-year, $450 million contract - CBS Sports",
@@ -4400,40 +4653,18 @@
    "source_pubdate": "2026-11-22T22:17:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Brandon Lowe)",
-   "title": "2026-27 MLB free agent tracker: Mets land Tarik Skubal on nine-year, $450 million contract - CBS Sports",
-   "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5ubTVwdGhuSEdnYzdiVHpIdjVpcGhhcTFmU2NTSmtrbXFEeWVwSTY1RXBKNUhRVU56TW1kVjRYNFpGSFkzdEp4LUNRWVFQQVltNmFfRWVOb0J0OXh6WFhMdk52VG1SdUZCelRuYkRGN3hfaXNI?oc=5",
-   "player": "Brandon Lowe",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:17:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Tarik Skubal agrees to record $450 million, 9-year contract with New York Mets, AP source says - FOX Sports",
-   "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxORUQ4WDZzY1ZMUHBuZm10WGc0bWZqTTA0Mk56YUQ1bWhCTXpDbW5wNjRGSVY4alp6QlhEcHhhb2xJVFNtcEVLRGotckhVNkp2T1RtLTNuZzFhN0V6aHhaSzJPZFhEM1RSMWQ5Mjd3VjhkMG80b0E2X0RqVnkwX2liVENybHJtYy0waFRCWjllb1lwMXJrWU1zMU9tRGQwY1BOTksxWEQ0UWM3NW1JaUY4Y3Y0dVplVDR5RWJzdlRWM0UxVm1HaU1HNw?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:16:57+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
-   "title": "Tarik Skubal agrees to record $450 million, 9-year contract with New York Mets, AP source says - FOX Sports",
-   "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxORUQ4WDZzY1ZMUHBuZm10WGc0bWZqTTA0Mk56YUQ1bWhCTXpDbW5wNjRGSVY4alp6QlhEcHhhb2xJVFNtcEVLRGotckhVNkp2T1RtLTNuZzFhN0V6aHhaSzJPZFhEM1RSMWQ5Mjd3VjhkMG80b0E2X0RqVnkwX2liVENybHJtYy0waFRCWjllb1lwMXJrWU1zMU9tRGQwY1BOTksxWEQ0UWM3NW1JaUY4Y3Y0dVplVDR5RWJzdlRWM0UxVm1HaU1HNw?oc=5",
+   "title": "Tarik Skubal agrees to record $450 million, 9-year contract with New York Mets, AP source says - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOOUFncXlWV1lXNEVpMjdUcEt0SjF6c21oQy12UTE2MFkzU0hQbXBtYmtSTFVGYWw2Skg4QjlMY3I3aVR0OWZCUWZoRVM1QUJzMXZJbFpyMmJJNGd2R2xKSFdBU0E0c2J2TXZPRU8yRTc3c3Y1YzAyQmdqaFFfemdKaG9aZXhTV1E?oc=5",
    "player": "Tarik Skubal",
    "team": "",
    "statsapi_transaction_id": null,
    "source_pubdate": "2026-11-22T22:16:57+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Skubal Nears Free Agency Decision Before December 1 Deadline - Limapagi",
@@ -4444,7 +4675,7 @@
    "source_pubdate": "2026-11-22T22:15:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Mets land Tarik Skubal on record $450 million contract - Yahoo Sports",
@@ -4455,7 +4686,7 @@
    "source_pubdate": "2026-11-22T22:14:55+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Report: Tarik Skubal Lands Record-Breaking Mets Deal, Ending Detroit Tigers Reunion Hopes - Yahoo Sports",
@@ -4466,18 +4697,7 @@
    "source_pubdate": "2026-11-22T22:14:42+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Mets, Tarik Skubal agree to nine-year, $450 million deal: source - New York Daily News",
-   "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOTmJYRkEyZlFnN21uR2s3cm9WOXI1Njd0Wk5wZ1RhQk5ydjJkSC0tdWd0Sk1GR0doRzRaWjY0eEV0eDVDS1ZjOE5DOHJkVVBxOHRGeV9qQmIyel9yY2hfQmZpX25iaDc0clJsa0ZrbXFMSFVkYUpyUFY0S0JHOHVIVGdrbGpoTnNTVkprT3E5NlJSMU9qWDZ0eVhuOHJrX2JyekE?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:13:50+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Tarik Skubal signing with Mets: Two-time Cy Young winner lands historic nine-year, $450 million contract - CBS Sports",
@@ -4488,7 +4708,7 @@
    "source_pubdate": "2026-11-22T22:13:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Tarik Skubal signing with Mets: Two-time Cy Young winner lands historic nine-year, $450 million contract - CBS Sports",
@@ -4499,7 +4719,7 @@
    "source_pubdate": "2026-11-22T22:13:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "New York Mets Sign Ace Tarik Skubal to Historic $450 Million Contract, Richest for a Pitcher in MLB History - Sports Talk Florida",
@@ -4510,7 +4730,7 @@
    "source_pubdate": "2026-11-22T22:12:28+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Sonny Gray)",
    "title": "MLB Notebook: Red Sox search for starting pitching depth after Sonny Gray, Johan Oviedo departures; Mets land Tarik Skubal for $450 million - Boston Sports Journal",
@@ -4521,7 +4741,7 @@
    "source_pubdate": "2026-11-22T22:12:06+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Mets sign 2-time Cy Young winner Tarik Skubal to 9-year, $450 million deal - NBC4 Washington",
@@ -4532,7 +4752,7 @@
    "source_pubdate": "2026-11-22T22:07:25+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Mets sign 2-time Cy Young winner Tarik Skubal to 9-year, $450 million deal - NBC New York",
@@ -4543,18 +4763,7 @@
    "source_pubdate": "2026-11-22T22:07:25+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Kevin Gausman)",
-   "title": "Mets sign 2-time Cy Young winner Tarik Skubal to 9-year, $450 million deal - NBC4 Washington",
-   "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOYUs4RjVmR0tJaF9JMDdGQlRxMi1qSzRzN2xWaXpZb0h5a1UtSzAxNGR3cFg0STJOZkFZTUVXZlhxc3FkU3ZaSEZ0OTVZTzlKNWNocmR4X196Vy1ZaGRJM29mVXM3a1kzTTczSVZNcDBkZ3FKRGUxZ01GQTNZRmVLODV3cEZzaXhic3piMjVjZ3UtQ1nSAZsBQVVfeXFMTi1SVV9ER3ZiNWVlUzBkYVZQTDhKM2hRWWxCNnhkOThYSVVQR1VHZnlISnlBTzI0OUw3Zk5XQnROUXl2Z29Ld0NJWDFOaUlITlRaY2RkLWxrbU9kM1lFdVZmVzNYa2FGVUEteU5qSGZzajdTbUxjamdPVHRHRjVkQURTblZfa1pzZEoyWHY1enNQRUx5LUppZU81cG8?oc=5",
-   "player": "Kevin Gausman",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:07:25+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Mets reportedly sign Tarik Skubal to record-breaking $450 million contract - Yahoo Sports",
@@ -4565,7 +4774,7 @@
    "source_pubdate": "2026-11-22T22:07:11+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "The Decision Is In: Tarik Skubal Reportedly Agrees To Nine-Year Deal With Mets - FOX Sports",
@@ -4576,7 +4785,7 @@
    "source_pubdate": "2026-11-22T22:06:13+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "The Decision Is In: Tarik Skubal Reportedly Agrees To Nine-Year Deal With Mets - FOX Sports",
@@ -4587,7 +4796,7 @@
    "source_pubdate": "2026-11-22T22:06:13+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Mets sign Tarik Skubal to nine-year, $450 million deal - Yahoo Sports",
@@ -4598,7 +4807,7 @@
    "source_pubdate": "2026-11-22T22:05:53+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Mets sign Tarik Skubal to nine-year, $450 million deal - Yahoo Sports",
@@ -4609,7 +4818,7 @@
    "source_pubdate": "2026-11-22T22:05:53+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Kevin Gausman)",
    "title": "Chicago Cubs Linked To All-Star Pitcher - Yahoo Sports",
@@ -4620,18 +4829,18 @@
    "source_pubdate": "2026-11-22T22:04:47+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
-   "title": "The Dodgers rarely lose a bidding war \u2013 but their humiliating $450M trade loss exposes a new reality - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPdFFJVDVqQk4ybnU4d05xcnVKZVI4M1BXWWQ3cVFsNW5YTmR3NmpzTWlWWVNtUFI2WVpvbkJoTDJiQVhuakd1clByZWJ5bmF3TWhORnRzbWstSVFGd3lTVk1saWxFaFowM2VjSnZfM1JTQ0RJeTRIY09aY241MHp1TGVfNGhnY0EyRldfS2JlTQ?oc=5",
+   "title": "The Dodgers rarely lose a bidding war \u2013 but their humiliating $450M trade loss exposes a new reality - New York Post",
+   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQdTRJZDRhU2NrNTY0ZG5YYWVULVRxZS1FOWNRM2o4cmNWMjFHTHhvTTVva25rRGhmbXhpUVVpaE0yUlFkY2xxOVJBbTdMRk5tQlh6MS11Ml9CRHF0M05rMU9uU1dxcDNmWUtMb0ZVZjVjSVBuRjNzaG9WR2l3RFNjWl9OWnhoUXdZWklKS2hnbk12OXg1VVh0QnJ2V0Etdw?oc=5",
    "player": "",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:04:34+00:00"
+   "source_pubdate": "2026-11-22T22:04:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "The Dodgers rarely lose a bidding war \u2013 but their humiliating $450M trade loss exposes a new reality - New York Post",
@@ -4642,7 +4851,7 @@
    "source_pubdate": "2026-11-22T22:04:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Skubal joining Mets for 9 years, $450M (source) - MLB.com",
@@ -4653,18 +4862,7 @@
    "source_pubdate": "2026-11-22T22:03:36+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Tarik Skubal reportedly joins Mets on record-breaking 9-year, $450 million free agency contract - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOWEYxeXhxbmtiNVpqOWM0N0dId2NWcE8zRnR0WFRZQzh2eF9ydWJLOEFmZF9rSWV2eFNBekZWV0JscWVXOFV0cjdlSm1hc1g1ekJIdnExbEJuYUQ4OHh4aG5kam5mZ29TbDkzYnBuWWEzRk9ZVEhhaHV0eVR2Zkx2OXUxY1V2a2ZIYkFyRjJ3ekdjdXA3aFdLRUpYc0pWM2o4bkZ3MHRValpTcm9vVWdJTmFvb1lNV0s4ejJTeVpHaVN1TlhBY0tMV2hSWWdMSExQYjRvTnJvTnV0NVlkc1h4czB4Qi1rSmN3U3phdk5YT0w?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:03:14+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Sources - Mets, Skubal agree to record 9-year, $450M contract - ESPN",
@@ -4675,7 +4873,7 @@
    "source_pubdate": "2026-11-22T22:03:00+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Dodgers, Blue Jays Get Tarik Skubal Update Amid Mets\u2019 First Offer - Yahoo Sports",
@@ -4686,7 +4884,7 @@
    "source_pubdate": "2026-11-22T22:02:57+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Dodgers, Blue Jays Get Tarik Skubal Update Amid Mets\u2019 First Offer - Yahoo Sports",
@@ -4697,7 +4895,7 @@
    "source_pubdate": "2026-11-22T22:02:57+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (MLB free agency)",
    "title": "Dodgers Lose Tarik Skubal Sweepstakes to Mets in $450 Million Blockbuster - Yahoo Sports",
@@ -4708,7 +4906,7 @@
    "source_pubdate": "2026-11-22T22:00:33+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
    "title": "Dodgers Lose Tarik Skubal Sweepstakes to Mets in $450 Million Blockbuster - Yahoo Sports",
@@ -4719,213 +4917,15 @@
    "source_pubdate": "2026-11-22T22:00:33+00:00"
   },
   {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Mets To Sign Tarik Skubal - MLB Trade Rumors",
-   "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1DdEhsZFNPd3k1ZkgzOTFISDRuRFI5RXRSaEt6cENsMFp3cHB1Y2hhU0VGR1FoVzQxWlJHZGdtNjZlWWtJblJScnZ0ejQwX2ZfU2taV0FOd1B6VnhNcEcyMzVPYi1pamFUVjlHUUpJX2tIQTMtR0hWVA?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:00:27+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
+   "pulled_at": "2026-11-23T10:16:28.744977+00:00",
    "lane": "REPORTED",
    "source": "Google News (Tarik Skubal)",
-   "title": "Mets To Sign Tarik Skubal - MLB Trade Rumors",
-   "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1DdEhsZFNPd3k1ZkgzOTFISDRuRFI5RXRSaEt6cENsMFp3cHB1Y2hhU0VGR1FoVzQxWlJHZGdtNjZlWWtJblJScnZ0ejQwX2ZfU2taV0FOd1B6VnhNcEcyMzVPYi1pamFUVjlHUUpJX2tIQTMtR0hWVA?oc=5",
+   "title": "Mets, Tarik Skubal agree to record-shattering $450 million contract: reports - Yahoo Sports",
+   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPaW5Db1BhbjNpMFdvSDJMWWZTcGUyVFFIUFoyMktjLXBQdENfNUlPTTJrSjNlOTBDMWZpeC1tZ2VMX0liS0dmbU1DSlRDSkZkUm5jQzIwYjh6Q21XZUF4XzlFcG9CMy0yai10YnpSa0tNSnVMdGlmbk9xNlpkX2JfQ2JWYWxxdw?oc=5",
    "player": "Tarik Skubal",
    "team": "",
    "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:00:27+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Tarik Skubal Signing With New York Mets - DodgerBlue.com",
-   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQajMta2xtR2FaQlVzOFpqQ1dyLWQ5UzE2Z0hnNFNlaVdIM3p6WkRkb1hKaS12RktUS1pfdGdSRW1nNmJZTDFJYjhjeEdMcmRsLV82X0NzMl9DdV9FRENsc1VDT1ZUT2NIWFZhekJDVmZtNkNsNG83RHgwV2ExbDV4NWw3X1dweE1iZlQ1WGNwbENKb2dyQkl4RjYxaE82Z9IBowFBVV95cUxNdTdqWmNEeWROa1FLV0hzaGZuRVhaaHVVUUNJWlZQMjN4MG5xbk5QZ2RweXNMNzVkeUJwX0d2QjZ4ZzVxcHNhbWNNTVBXWUp5d0Z5dXVBSWI2NGFBM3JGQW9pU2RBX0dXLWY5UmcwS1ByRTl6S1o5SXd1VFRDLXUwMnptcmdVNXlXRFFCUzdDWmJFeHVzWU82NzZVWGJJanpFQWpv?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:00:02+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Tarik Skubal to Mets: Grading record $450 million contract - ESPN",
-   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPX1VLQTJ5aTl5Zmh3NEpGdTNTaklvdWtEMzNZTlVVQkcySng5dVBMeElxNFRFSnhaT2dwWXZLZko5MzRzR1dJTWFEdEstRVVNZzRXUWNkOURpXzNHMFk5Q3hESHBDQ1p1S3ltWlNhRExGcU41cnFrWUlCSDVUN2FSRkJPZkJHdnhXODBTLXNJS3ljWmtYME9aVA?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:00:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Tarik Skubal signing with Mets in $450 million stunner as sweepstakes end with latest mega-deal - New York Post",
-   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQWDEybnRfZ0tUTllnQ0xrTVg5TmltX2hMSUNzcEpleGYtRy0yWW1qMWF6TjRCZHBsdlNQTERfcE9GNUxMc1lvQkkxTXJfbEdkZGdlZk5zaXZ5RW1ZUU5sUnpuYlB1SWVFZzF3UVllWFpSYUFJRWNHMUwxZTJVa1hKdWNremVtOVBrVFk5cldZWnE5NTRBRWc?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:00:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Tarik Skubal to Mets: Grading record $450 million contract - ESPN",
-   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPX1VLQTJ5aTl5Zmh3NEpGdTNTaklvdWtEMzNZTlVVQkcySng5dVBMeElxNFRFSnhaT2dwWXZLZko5MzRzR1dJTWFEdEstRVVNZzRXUWNkOURpXzNHMFk5Q3hESHBDQ1p1S3ltWlNhRExGcU41cnFrWUlCSDVUN2FSRkJPZkJHdnhXODBTLXNJS3ljWmtYME9aVA?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:00:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Tarik Skubal signing with Mets in $450 million stunner as sweepstakes end with latest mega-deal - New York Post",
-   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQWDEybnRfZ0tUTllnQ0xrTVg5TmltX2hMSUNzcEpleGYtRy0yWW1qMWF6TjRCZHBsdlNQTERfcE9GNUxMc1lvQkkxTXJfbEdkZGdlZk5zaXZ5RW1ZUU5sUnpuYlB1SWVFZzF3UVllWFpSYUFJRWNHMUwxZTJVa1hKdWNremVtOVBrVFk5cldZWnE5NTRBRWc?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T22:00:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Dodgers Could Revisit Former Draft Pick Bailey Ober After Surprise Twins Decision - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNblluMk5yLUpwaDJ0eXhxbXZ1SUxxWkw0cXE5elVpTjlSWnJIYnltTmVCR0xWd2pnclgydzJfVS1WZEk4bVg0aEdwVmRYRnFWREpycWsyX0V6SXRLLXdGMjFWSk9MZWdlX1p5M1NTUVQ4UmJWNnZDNU9nWVlETDdaSThUOU9vajhRajR3?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T21:54:41+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Sources: Luis Gil agrees to deal with Tigers after Yankees nontender - ESPN",
-   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPeWJDQkdRclpnX00wMEQtR3ZhUXZIZTRtZVJKcUg5MW55ay16SHI5VnFKVk9HZGxqcllqRS1BMWR3d0taTEo3YkhyNXctZTFYMTFvVEk0OU5sendRczJRWjRsU282RVNNSFpMMS1QYWlhc2NzalRBZlNWa3poTkozYkFxa1pFTUZxRFZKOWZEbThndW1xSEE?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T21:54:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "Dodgers make moves ahead of MLB Lockout, await Tarik Skubal's decision - The Sporting Tribune",
-   "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPdzJITmtCdHN6cFZZSnVrU0pXcEc1djAzR3FRMjQxUmdEZlRCREUyVmZ6Z2VtMkNRWnZyTDNORHdZWUw0cFVfaUJtcGlacnNFTEtHRHYtVjNnWWJaek5OYUhUamlkVFNZYmZjdHRLY1hLVEV5dkVDekMxVHQxbkdqNWY0dTlPQVhaWEYwYVJJdUJXSnkwUU9tYmRHQ1pZRkVDc0lwc3ZvdnB6UW45MWVNNkVRM0w?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T21:42:18+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Toronto Blue Jays Had Contract Offer Out to Free Agent Reliever Before He Chose Yankees - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNa01PUGd5Ry1WRDktMHRnbmZtOEUxcDBiWjZSZ1VQaFFFS0RUdkZVTHJkVmZyaGdvLTZfTnNtNGlwNEhBQXY1U0VObGZmdkxZWThLaHhHS1Jldk9pWjJ6ZWRHT1RNTGlET3NWaVptS3NoMDRJWXUwX0t2UW9jRGp5dVg1Y25kZw?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T21:30:23+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Non-Tendered Veteran Reliever Would be a Great Cardinals Addition - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOUm10MjViUFZkemhEcVNKempfRXFmLUQwNG9vcV9rWDZIV25pTXZEeTNzNHFRQWR2bnRsQ0ZKUWtaNjB1QmpFaUlWZzVtVEFKbjlNdnVhMUIySkZ5M0JhNTJITmxGQ25kdmpySUczcWdOUHF5YnZrVElvUmRBUG9uMEhsS1pnYmVLQzNfNw?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T21:23:17+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Five Underrated Free Agent Starting Pitchers - MLB - DiamondCentric - Brewer Fanatic",
-   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNdmVWYmdNU1l1dWhrYkMwMlhQSU54ODhrbWotWDltdV9weW5XWGdWY3NOSmNyS1YyTDZoWFpJa2lZVjJIS3I5RmViYjNndnNtUlU5MmlleS0wb0xRLURxT2lGTllDRTFpTTRRMW1RN3E1WG5nenhUb3BMZDM2OHh3TDFyRndoOHZlR1FQTzc4T1p5R3N6ZEhMci02NVI4eTJ0U3l3alhDQVpjQnVPNVJNa0g0bjczUQ?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T21:17:01+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Tigers pounce on Yankees castoff Luis Gil, agree to one-year deal: source - New York Daily News",
-   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQZEd5QW5KQU04elExbFVselYyZkJaVU9zcXpRcEFFcFU3OWdpWjZabmt4X05HRFhTWkFEN1NzLWFNa3d0YTNqRGtINm9RZWNwbUR1bV9BeGFyMW8xYUtxc0NEckhZMHEzLW9nZHdfZXZPeU00UkpzQmxNU3B4RDlhdkpDb2tnRjFMdEs4ZDFrTTdFZ3pta2l5NGU2Q21ocHNqUHpQNDdWOG5IYzdBd2E2aQ?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T21:11:51+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "MLB.com (ATL)",
-   "title": "Looking back at 7 big Braves contract extensions",
-   "link": "https://www.mlb.com/braves/news/notable-braves-contract-extensions",
-   "player": "",
-   "team": "Braves",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T21:07:59+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "Three Non-Tendered Pitchers the Pirates Should Sign - Yahoo Sports",
-   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQSmRnTlIxQlBUdWQwSERhOEpzaC1KNl9tVXVqNHI4Y3pkdkdLOEdIVEhkX0J1cURSc1FBcEhCdGhQOFUtSzJUZXJmUF9xZU1JQi1Pd1g1RElTQW9IR1VBVlVpOHRqM0NpdUYxOEdNaWd4YnRiWndhY05YWWNhUlNDUW9sdmlIdEJxUVFXMw?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T21:06:51+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "New Free Agents Who Could Fill the Tigers\u2019 Need at Relief Pitcher - Sports Illustrated",
-   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNMXd5S1p2SmExLXdUZmQxdGhmczdobUk3emFzWXNubHZuZER2M2MzNFUyRTZOVHBoZ2hfT3EzNU5tNUlPSkpDNFVkSEUyM0s0NDVFYWpxOXdDWnNzeXh0Wld4OVE2N21xQmwzNlNlS2YtbEV5Q1pYdmxfcjdNUnpmMm4xeFBFMXNEZ29PRVpqd2xpM2ZnMUw4?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T21:00:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (MLB free agency)",
-   "title": "MLB rumors: Scott Boras sets Tarik Skubal timeline, plus Tigers signing former Rookie of the Year - CBS Sports",
-   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOdnR1R1Y4XzVEMDdZY3RLU0RGMVk0LXlBZGNnYndpVWJ5cVhSS3MyOVdxWUdkZlo2TGZ3djJ4djNKUWRoQ291ckdjeEtzZ012Z054SG1MLTJQV1Z1cmpWcFQ0aDRzajZkYjhFdmQ4QWJGTjF0RndKLWxlRFFQYTNkZkNuaWpJNWR1b3dzSXBVWEJVckNKUE1pNVlpWUxxZw?oc=5",
-   "player": "",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T20:33:00+00:00"
-  },
-  {
-   "pulled_at": "2026-11-23T05:42:57.553935+00:00",
-   "lane": "REPORTED",
-   "source": "Google News (Tarik Skubal)",
-   "title": "MLB rumors: Scott Boras sets Tarik Skubal timeline, plus Tigers signing former Rookie of the Year - CBS Sports",
-   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOdnR1R1Y4XzVEMDdZY3RLU0RGMVk0LXlBZGNnYndpVWJ5cVhSS3MyOVdxWUdkZlo2TGZ3djJ4djNKUWRoQ291ckdjeEtzZ012Z054SG1MLTJQV1Z1cmpWcFQ0aDRzajZkYjhFdmQ4QWJGTjF0RndKLWxlRFFQYTNkZkNuaWpJNWR1b3dzSXBVWEJVckNKUE1pNVlpWUxxZw?oc=5",
-   "player": "Tarik Skubal",
-   "team": "",
-   "statsapi_transaction_id": null,
-   "source_pubdate": "2026-11-22T20:33:00+00:00"
+   "source_pubdate": "2026-11-22T22:00:16+00:00"
   }
  ]
 }
