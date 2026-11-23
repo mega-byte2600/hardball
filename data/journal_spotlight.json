@@ -4,8 +4,8 @@
   "source_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
   "keyless": true,
   "tool_param": "hardball",
-  "pulled_at": "2026-11-18 22:20 UTC",
-  "pulled_date_pt": "2026-11-18",
+  "pulled_at": "2026-11-23 05:19 UTC",
+  "pulled_date_pt": "2026-11-22",
   "selection_rule": "Per journal: 2 most recent PubMed records matching (baseball OR pitching OR pitchers) in that journal, sorted by publication date. Titles and dates verbatim from PubMed; no summaries.",
   "papers_per_journal": 2,
   "link_rule": "Journal heading links its official homepage only when it answered HTTP 200 during this build; otherwise the PubMed journal-filtered search.",
@@ -23,7 +23,7 @@
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22American%20Journal%20of%20Sports%20Medicine%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://journals.sagepub.com/home/ajs",
-     "homepage_status": 403,
+     "homepage_status": null,
      "papers": [
       {
        "title": "Association Between Early Postoperative Limb Symmetry Index Scores and 2-Year Patient-Reported Outcomes After Quadriceps Tendon Autograft ACL Reconstruction.",
@@ -42,69 +42,69 @@
     {
      "name": "Journal of Applied Biomechanics",
      "query": "(\"baseball\" OR \"pitching\" OR \"pitchers\") AND \"Journal of Applied Biomechanics\"[jour]",
-     "found": 39,
+     "found": 40,
      "link": "https://journals.humankinetics.com/view/journals/jab/jab-overview.xml",
      "link_kind": "official",
      "homepage": "https://journals.humankinetics.com/view/journals/jab/jab-overview.xml",
      "homepage_status": 200,
      "papers": [
       {
+       "title": "Dimensional Analysis and Performance Optimization in Countermovement Jumps.",
+       "date": "2026 Nov 19",
+       "pmid": "43057221",
+       "url": "https://pubmed.ncbi.nlm.nih.gov/43057221/"
+      },
+      {
        "title": "No Group Differences in Shoulder Joint Position Sense Between Male Baseball and Female Softball Athletes and Controls in Virtual Reality.",
        "date": "2026 Nov 13",
        "pmid": "43033812",
        "url": "https://pubmed.ncbi.nlm.nih.gov/43033812/"
-      },
-      {
-       "title": "The Coefficient of Propulsion: A Composite Measure of Trail Leg Force Production During Baseball Pitching.",
-       "date": "2026 Oct 21",
-       "pmid": "42906891",
-       "url": "https://pubmed.ncbi.nlm.nih.gov/42906891/"
       }
      ]
     },
     {
      "name": "Sports Biomechanics",
      "query": "(\"baseball\" OR \"pitching\" OR \"pitchers\") AND \"Sports Biomechanics\"[jour]",
-     "found": 106,
+     "found": 107,
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Sports%20Biomechanics%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://www.tandfonline.com/journals/rspb20",
      "homepage_status": 403,
      "papers": [
       {
+       "title": "Coach-observable lower extremity kinematic factors associated with pitch velocity in collegiate fastpitch softball.",
+       "date": "2026 Nov 20",
+       "pmid": "43061911",
+       "url": "https://pubmed.ncbi.nlm.nih.gov/43061911/"
+      },
+      {
        "title": "Accuracy and precision of kinematic methods for determining ball release in baseball pitching.",
        "date": "2026 Oct 28",
        "pmid": "42950079",
        "url": "https://pubmed.ncbi.nlm.nih.gov/42950079/"
-      },
-      {
-       "title": "Release mechanics underlying pitch location and extreme control failures in major league baseball.",
-       "date": "2026 Sep 13",
-       "pmid": "42733252",
-       "url": "https://pubmed.ncbi.nlm.nih.gov/42733252/"
       }
      ]
     },
     {
      "name": "Journal of Strength and Conditioning Research",
      "query": "(\"baseball\" OR \"pitching\" OR \"pitchers\") AND \"Journal of Strength and Conditioning Research\"[jour]",
-     "found": 187,
+     "found": 189,
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Strength%20and%20Conditioning%20Research%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://journals.lww.com/nsca-jscr",
-     "homepage_status": 403,
+     "homepage_status": null,
      "papers": [
       {
-       "title": "Should They Start or Not? A Comparative Analysis of Starter and Nonstarter Preseason Fitness Characteristics in NCAA Division III Baseball.",
-       "date": "2026 Nov 12",
-       "pmid": "43019554",
-       "url": "https://pubmed.ncbi.nlm.nih.gov/43019554/"
+       "title": "An Exploratory Investigation Into the Impact of Bilateral and Unilateral Jump Characteristics on Ground Reaction Force Applications in Baseball Pitching: Erratum.",
+       "date": "2026 Dec 1",
+       "pmid": "43063357",
+       "url": "https://pubmed.ncbi.nlm.nih.gov/43063357/"
       },
       {
-       "title": "Assessment of Countermovement Jump Performance in Collegiate Baseball Athletes: A Longitudinal Multilevel Modeling Approach.",
-       "date": "2026 Oct 13",
-       "pmid": "42868034",
-       "url": "https://pubmed.ncbi.nlm.nih.gov/42868034/"
+       "title": "The Relationship Between Muscle Cross-Sectional Area and Joint Torque of Trunk and Hip Generating Swing Rotation Around the Vertical Axis in Baseball Batting.",
+       "date": "2026 Nov 19",
+       "pmid": "43055379",
+       "url": "https://pubmed.ncbi.nlm.nih.gov/43055379/"
       }
      ]
     }
@@ -190,7 +190,7 @@
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Athletic%20Training%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://meridian.allenpress.com/jat",
-     "homepage_status": 403,
+     "homepage_status": null,
      "papers": [
       {
        "title": "Preseason Neck Mobility and Risk of Shoulder and Elbow Injury in College Baseball Pitchers.",
@@ -219,7 +219,7 @@
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Medicine%20and%20Science%20in%20Sports%20and%20Exercise%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://journals.lww.com/acsm-msse",
-     "homepage_status": 403,
+     "homepage_status": null,
      "papers": [
       {
        "title": "Motor Imagery of Yips-Affected Pitching Enhances Corticospinal Excitability in Baseball Players with Yips.",
@@ -238,23 +238,23 @@
     {
      "name": "International Journal of Sports Physiology and Performance",
      "query": "(\"baseball\" OR \"pitching\" OR \"pitchers\") AND \"International Journal of Sports Physiology and Performance\"[jour]",
-     "found": 10,
-     "link": "https://journals.humankinetics.com/view/journals/ijspp/ijspp-overview.xml",
-     "link_kind": "official",
+     "found": 11,
+     "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22International%20Journal%20of%20Sports%20Physiology%20and%20Performance%22%5Bjour%5D",
+     "link_kind": "pubmed_search",
      "homepage": "https://journals.humankinetics.com/view/journals/ijspp/ijspp-overview.xml",
-     "homepage_status": 200,
+     "homepage_status": null,
      "papers": [
+      {
+       "title": "Associations of Countermovement Jump Performance and Body Composition With Baseball-Specific Base-Running Outcomes in Semiprofessional Position Players.",
+       "date": "2026 Nov 19",
+       "pmid": "43067347",
+       "url": "https://pubmed.ncbi.nlm.nih.gov/43067347/"
+      },
       {
        "title": "Chronic Effects of Sprint Training With and Without Weighted Vests on Linear and Change of Direction Sprint Performance in Youth Baseball Players.",
        "date": "2026 Aug 1",
        "pmid": "42086213",
        "url": "https://pubmed.ncbi.nlm.nih.gov/42086213/"
-      },
-      {
-       "title": "Age-Group Differences in Ball Velocity and Spin Rate Among Youth Baseball Players: A Cross-Sectional Study Using a Portable Tracking Device.",
-       "date": "2026 Jul 1",
-       "pmid": "41911924",
-       "url": "https://pubmed.ncbi.nlm.nih.gov/41911924/"
       }
      ]
     },
@@ -265,7 +265,7 @@
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Orthopaedic%20%26%20Sports%20Physical%20Therapy%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://www.jospt.org/",
-     "homepage_status": 403,
+     "homepage_status": null,
      "papers": [
       {
        "title": "Concussion Incidence by Type of Sport: Differences by Sex, Age Groups, Type of Session, and Level of Play An Overview of Systematic Reviews With Meta-analysis.",
@@ -288,7 +288,7 @@
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Sports%20Health%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://journals.sagepub.com/home/sph",
-     "homepage_status": 403,
+     "homepage_status": null,
      "papers": [
       {
        "title": "Medical Imaging for Load Monitoring: A Perspective on Imaging's Value for Reducing the Frequency and Severity of Ulnar Collateral Ligament Injuries in Baseball Pitchers.",
