@@ -4,8 +4,8 @@
   "source_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
   "keyless": true,
   "tool_param": "hardball",
-  "pulled_at": "2026-11-23 05:19 UTC",
-  "pulled_date_pt": "2026-11-22",
+  "pulled_at": "2026-11-23 22:17 UTC",
+  "pulled_date_pt": "2026-11-23",
   "selection_rule": "Per journal: 2 most recent PubMed records matching (baseball OR pitching OR pitchers) in that journal, sorted by publication date. Titles and dates verbatim from PubMed; no summaries.",
   "papers_per_journal": 2,
   "link_rule": "Journal heading links its official homepage only when it answered HTTP 200 during this build; otherwise the PubMed journal-filtered search.",
@@ -23,7 +23,7 @@
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22American%20Journal%20of%20Sports%20Medicine%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://journals.sagepub.com/home/ajs",
-     "homepage_status": null,
+     "homepage_status": 403,
      "papers": [
       {
        "title": "Association Between Early Postoperative Limb Symmetry Index Scores and 2-Year Patient-Reported Outcomes After Quadriceps Tendon Autograft ACL Reconstruction.",
@@ -88,11 +88,11 @@
     {
      "name": "Journal of Strength and Conditioning Research",
      "query": "(\"baseball\" OR \"pitching\" OR \"pitchers\") AND \"Journal of Strength and Conditioning Research\"[jour]",
-     "found": 189,
+     "found": 190,
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Strength%20and%20Conditioning%20Research%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://journals.lww.com/nsca-jscr",
-     "homepage_status": null,
+     "homepage_status": 403,
      "papers": [
       {
        "title": "An Exploratory Investigation Into the Impact of Bilateral and Unilateral Jump Characteristics on Ground Reaction Force Applications in Baseball Pitching: Erratum.",
@@ -101,10 +101,10 @@
        "url": "https://pubmed.ncbi.nlm.nih.gov/43063357/"
       },
       {
-       "title": "The Relationship Between Muscle Cross-Sectional Area and Joint Torque of Trunk and Hip Generating Swing Rotation Around the Vertical Axis in Baseball Batting.",
-       "date": "2026 Nov 19",
-       "pmid": "43055379",
-       "url": "https://pubmed.ncbi.nlm.nih.gov/43055379/"
+       "title": "The Development of the Strength and Conditioning Coach Evaluation Tool.",
+       "date": "2026 Nov 23",
+       "pmid": "43070841",
+       "url": "https://pubmed.ncbi.nlm.nih.gov/43070841/"
       }
      ]
     }
@@ -190,7 +190,7 @@
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Athletic%20Training%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://meridian.allenpress.com/jat",
-     "homepage_status": null,
+     "homepage_status": 403,
      "papers": [
       {
        "title": "Preseason Neck Mobility and Risk of Shoulder and Elbow Injury in College Baseball Pitchers.",
@@ -219,7 +219,7 @@
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Medicine%20and%20Science%20in%20Sports%20and%20Exercise%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://journals.lww.com/acsm-msse",
-     "homepage_status": null,
+     "homepage_status": 403,
      "papers": [
       {
        "title": "Motor Imagery of Yips-Affected Pitching Enhances Corticospinal Excitability in Baseball Players with Yips.",
@@ -242,7 +242,7 @@
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22International%20Journal%20of%20Sports%20Physiology%20and%20Performance%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://journals.humankinetics.com/view/journals/ijspp/ijspp-overview.xml",
-     "homepage_status": null,
+     "homepage_status": 403,
      "papers": [
       {
        "title": "Associations of Countermovement Jump Performance and Body Composition With Baseball-Specific Base-Running Outcomes in Semiprofessional Position Players.",
@@ -265,7 +265,7 @@
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Orthopaedic%20%26%20Sports%20Physical%20Therapy%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://www.jospt.org/",
-     "homepage_status": null,
+     "homepage_status": 403,
      "papers": [
       {
        "title": "Concussion Incidence by Type of Sport: Differences by Sex, Age Groups, Type of Session, and Level of Play An Overview of Systematic Reviews With Meta-analysis.",
