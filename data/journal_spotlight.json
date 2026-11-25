@@ -4,8 +4,8 @@
   "source_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
   "keyless": true,
   "tool_param": "hardball",
-  "pulled_at": "2026-11-23 22:17 UTC",
-  "pulled_date_pt": "2026-11-23",
+  "pulled_at": "2026-11-25 04:20 UTC",
+  "pulled_date_pt": "2026-11-24",
   "selection_rule": "Per journal: 2 most recent PubMed records matching (baseball OR pitching OR pitchers) in that journal, sorted by publication date. Titles and dates verbatim from PubMed; no summaries.",
   "papers_per_journal": 2,
   "link_rule": "Journal heading links its official homepage only when it answered HTTP 200 during this build; otherwise the PubMed journal-filtered search.",
@@ -49,16 +49,16 @@
      "homepage_status": 200,
      "papers": [
       {
+       "title": "Comparison of Biomechanical Variables and Pitching Timing in Professional Baseball Pitchers According to Ball Velocity.",
+       "date": "2026 Dec 1",
+       "pmid": "42562365",
+       "url": "https://pubmed.ncbi.nlm.nih.gov/42562365/"
+      },
+      {
        "title": "Dimensional Analysis and Performance Optimization in Countermovement Jumps.",
        "date": "2026 Nov 19",
        "pmid": "43057221",
        "url": "https://pubmed.ncbi.nlm.nih.gov/43057221/"
-      },
-      {
-       "title": "No Group Differences in Shoulder Joint Position Sense Between Male Baseball and Female Softball Athletes and Controls in Virtual Reality.",
-       "date": "2026 Nov 13",
-       "pmid": "43033812",
-       "url": "https://pubmed.ncbi.nlm.nih.gov/43033812/"
       }
      ]
     },
@@ -92,7 +92,7 @@
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Strength%20and%20Conditioning%20Research%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://journals.lww.com/nsca-jscr",
-     "homepage_status": 403,
+     "homepage_status": null,
      "papers": [
       {
        "title": "An Exploratory Investigation Into the Impact of Bilateral and Unilateral Jump Characteristics on Ground Reaction Force Applications in Baseball Pitching: Erratum.",
@@ -167,7 +167,7 @@
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Orthopaedic%20Journal%20of%20Sports%20Medicine%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://journals.sagepub.com/home/ojs",
-     "homepage_status": 403,
+     "homepage_status": null,
      "papers": [
       {
        "title": "Preserved Active Spin and Reduced Workload After Ulnar Collateral Ligament Reconstruction in Major League Baseball Pitchers: A Propensity-Matched Analysis of 8 Pitch Types.",
@@ -239,10 +239,10 @@
      "name": "International Journal of Sports Physiology and Performance",
      "query": "(\"baseball\" OR \"pitching\" OR \"pitchers\") AND \"International Journal of Sports Physiology and Performance\"[jour]",
      "found": 11,
-     "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22International%20Journal%20of%20Sports%20Physiology%20and%20Performance%22%5Bjour%5D",
-     "link_kind": "pubmed_search",
+     "link": "https://journals.humankinetics.com/view/journals/ijspp/ijspp-overview.xml",
+     "link_kind": "official",
      "homepage": "https://journals.humankinetics.com/view/journals/ijspp/ijspp-overview.xml",
-     "homepage_status": 403,
+     "homepage_status": 200,
      "papers": [
       {
        "title": "Associations of Countermovement Jump Performance and Body Composition With Baseball-Specific Base-Running Outcomes in Semiprofessional Position Players.",
@@ -265,7 +265,7 @@
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Orthopaedic%20%26%20Sports%20Physical%20Therapy%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://www.jospt.org/",
-     "homepage_status": 403,
+     "homepage_status": null,
      "papers": [
       {
        "title": "Concussion Incidence by Type of Sport: Differences by Sex, Age Groups, Type of Session, and Level of Play An Overview of Systematic Reviews With Meta-analysis.",
@@ -288,7 +288,7 @@
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Sports%20Health%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://journals.sagepub.com/home/sph",
-     "homepage_status": null,
+     "homepage_status": 403,
      "papers": [
       {
        "title": "Medical Imaging for Load Monitoring: A Perspective on Imaging's Value for Reducing the Frequency and Severity of Ulnar Collateral Ligament Injuries in Baseball Pitchers.",
@@ -311,7 +311,7 @@
      "link": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Journal%20of%20Applied%20Physiology%22%5Bjour%5D",
      "link_kind": "pubmed_search",
      "homepage": "https://journals.physiology.org/journal/jappl",
-     "homepage_status": 403,
+     "homepage_status": null,
      "papers": [
       {
        "title": "Understanding cognitive performance during exercise in Reserve Officers' Training Corps: establishing the executive function-exercise intensity relationship.",
