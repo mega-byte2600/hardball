@@ -2596,7 +2596,16 @@ def _posted_html():
         "Dataset: data/posted_class_2026.json; leaderboards: "
         "data/npb_leaderboards_2024_2026_raw.csv; computed context: "
         "data/fig23_rebuild_2026.json.</p></div>")
-    return ('<div class="ncards">' + "".join(cards) + "</div>" + clock
+    # Dated status notes (Cycle 161b): a trio member signing before Dec 1
+    # gets a dated note here — the BIS numbers above are never rewritten.
+    update = ""
+    for note in d.get("update_notes", []):
+        update += (
+            '<div class="npbclock"><h3>Update — ' +
+            _html.escape(note["date"]) + "</h3><p>" +
+            _html.escape(note["text"]) + "</p><p>" +
+            _html.escape(note.get("scope", "")) + "</p></div>")
+    return (update + '<div class="ncards">' + "".join(cards) + "</div>" + clock
             + imai + honest)
 
 

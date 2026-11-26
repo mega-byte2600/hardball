@@ -11,6 +11,18 @@
   ]
  },
  "data_status": "VERIFIED — pulled live 2026-11-01 ~22:05 PT from NPB official BIS; cross-checked vs AP wire reports",
+ "update_notes": [
+  {
+   "date": "2026-11-25",
+   "as_of": "2026-11-26",
+   "text": "Teruaki Sato signed with the Chicago Cubs on Nov 25, 2026 — 6 years / $120M (Jeff Passan / ESPN), confirmed by MLB StatsAPI transaction 951127. Kaima Taira and Hiromi Itoh are still unsigned as of Nov 26, 2026.",
+   "sources": [
+    "MLB StatsAPI transactions (txn 951127)",
+    "Jeff Passan / ESPN"
+   ],
+   "scope": "Status note only — no BIS number in this exhibit was changed."
+  }
+ ],
  "figure": 23,
  "players": [
   {
