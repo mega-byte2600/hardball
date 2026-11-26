@@ -3,9 +3,9 @@
   "cycle": 55,
   "architecture": "FastballAPI = census (canonical IL snapshot); Statyx = event layer (recent moves); MLB Stats API = standings of record; FastballAPI standings = validator",
   "baseline_date": "2026-11-02",
-  "current_date": "2026-11-25",
-  "census_pulled_date": "2026-11-25",
-  "moves_pulled_date": "2026-11-25",
+  "current_date": "2026-11-26",
+  "census_pulled_date": "2026-11-26",
+  "moves_pulled_date": "2026-11-26",
   "baseline": {
    "statyx_injuries": {
     "file": "data/raw/statyx/injuries_2026-11-02.json",
@@ -20,14 +20,14 @@
   },
   "current": {
    "statyx_injuries": {
-    "file": "data/raw/statyx/injuries_2026-11-25.json",
-    "fetched_at": "2026-11-25T16:18:10+00:00",
-    "payload_sha256": "a6d2cdbcf7c067e1cac30105c92cd1d223e136fad12da210e5353606a98f9779"
+    "file": "data/raw/statyx/injuries_2026-11-26.json",
+    "fetched_at": "2026-11-26T16:19:07+00:00",
+    "payload_sha256": "40f588e3c4c4cc31ff40f52d90fbc7a28951f53fca1a54d1cf098598298cdec8"
    },
    "fastballapi_injuries": {
-    "file": "data/raw/fastballapi/injuries_2026-11-25.json",
-    "fetched_at": "2026-11-25T16:18:10+00:00",
-    "payload_sha256": "331a36208dc52731629e79229c770cf1ada9a08c66671114a5fe1f0d35634337"
+    "file": "data/raw/fastballapi/injuries_2026-11-26.json",
+    "fetched_at": "2026-11-26T16:19:07+00:00",
+    "payload_sha256": "b0b60452d05b32024a02eaf182bda95b33553498818b368f9c88cbe69566daf3"
    }
   },
   "published_view": "FA pool (251) + scenario-roster players; the full diff is stored in 'events'",
@@ -72,23 +72,23 @@
    },
    "disposition": "raw snapshot retained for provenance; standings of record remain MLB Stats API with FastballAPI as validator (Cycle 51)."
   },
-  "movement_line": "Movement since 2026-11-02: 1 new IL, 10 returned, 1 status changes (FA pool) \u2014 census (FastballAPI) pulled 2026-11-25, moves (Statyx) pulled 2026-11-25."
+  "movement_line": "Movement since 2026-11-02: 0 new IL, 6 returned, 1 status changes (FA pool) \u2014 census (FastballAPI) pulled 2026-11-26, moves (Statyx) pulled 2026-11-26."
  },
  "summary": {
-  "events_total": 165,
-  "new_il": 15,
-  "returned": 59,
+  "events_total": 147,
+  "new_il": 13,
+  "returned": 43,
   "status_change": 91
  },
  "fa_pool_summary": {
-  "events_total": 12,
-  "new_il": 1,
-  "returned": 10,
+  "events_total": 7,
+  "new_il": 0,
+  "returned": 6,
   "status_change": 1
  },
  "events": [
   {
-   "event_id": "2026-11-25:new_il:Alejandro Rosario",
+   "event_id": "2026-11-26:new_il:Alejandro Rosario",
    "player_name": "Alejandro Rosario",
    "event_type": "new_il",
    "feeds": [
@@ -106,10 +106,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:new_il:Brandon Marsh",
+   "event_id": "2026-11-26:new_il:Brandon Marsh",
    "player_name": "Brandon Marsh",
    "event_type": "new_il",
    "feeds": [
@@ -127,10 +127,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:new_il:Braxton Bragg",
+   "event_id": "2026-11-26:new_il:Braxton Bragg",
    "player_name": "Braxton Bragg",
    "event_type": "new_il",
    "feeds": [
@@ -148,31 +148,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:new_il:Brooks Kriske",
-   "player_name": "Brooks Kriske",
-   "event_type": "new_il",
-   "feeds": [
-    "statyx"
-   ],
-   "status_from": null,
-   "status_to": "60-Day-IL",
-   "type_from": null,
-   "type_to": "Shoulder",
-   "detail": "Surgery",
-   "il_date": "2026-09-17",
-   "return_date": "2027-03-01",
-   "statyx_commentary": "The 32-year-old righty made just two relief appearances for the Athletics before landing on the injured list May 13 due to the shoulder injury. After making limited progress over the past few months while he worked his way through a throwing program, Kriske eventually opted for surgery to address the injury. He'll likely be a non-tender candidate heading into the upcoming offseason.",
-   "in_fa_pool": false,
-   "fa_player_id": null,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:new_il:Bryan Rincon",
+   "event_id": "2026-11-26:new_il:Bryan Rincon",
    "player_name": "Bryan Rincon",
    "event_type": "new_il",
    "feeds": [
@@ -190,10 +169,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:new_il:Corbin Carroll",
+   "event_id": "2026-11-26:new_il:Corbin Carroll",
    "player_name": "Corbin Carroll",
    "event_type": "new_il",
    "feeds": [
@@ -211,10 +190,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:new_il:Evan Carter",
+   "event_id": "2026-11-26:new_il:Evan Carter",
    "player_name": "Evan Carter",
    "event_type": "new_il",
    "feeds": [
@@ -232,10 +211,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:new_il:Hunter Goodman",
+   "event_id": "2026-11-26:new_il:Hunter Goodman",
    "player_name": "Hunter Goodman",
    "event_type": "new_il",
    "feeds": [
@@ -253,31 +232,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:new_il:Jalen Beeks",
-   "player_name": "Jalen Beeks",
-   "event_type": "new_il",
-   "feeds": [
-    "statyx"
-   ],
-   "status_from": null,
-   "status_to": "60-Day-IL",
-   "type_from": null,
-   "type_to": "Forearm",
-   "detail": "Surgery",
-   "il_date": "2026-07-21",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "It was announced July 4 that Beeks would miss the rest of the 2026 season due to requiring season-ending surgery to repair a flexor tendon in his left forearm. The status of the surgery is yet to be revealed, which still makes his timeline for getting back to full strength unclear.",
-   "in_fa_pool": true,
-   "fa_player_id": 656222,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:new_il:Jordan Lawlar",
+   "event_id": "2026-11-26:new_il:Jordan Lawlar",
    "player_name": "Jordan Lawlar",
    "event_type": "new_il",
    "feeds": [
@@ -295,10 +253,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:new_il:Levi Wells",
+   "event_id": "2026-11-26:new_il:Levi Wells",
    "player_name": "Levi Wells",
    "event_type": "new_il",
    "feeds": [
@@ -316,10 +274,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:new_il:Luis Gutierrez",
+   "event_id": "2026-11-26:new_il:Luis Gutierrez",
    "player_name": "Luis Gutierrez",
    "event_type": "new_il",
    "feeds": [
@@ -337,10 +295,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:new_il:Max Fried",
+   "event_id": "2026-11-26:new_il:Max Fried",
    "player_name": "Max Fried",
    "event_type": "new_il",
    "feeds": [
@@ -358,10 +316,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:new_il:Seth Halvorsen",
+   "event_id": "2026-11-26:new_il:Seth Halvorsen",
    "player_name": "Seth Halvorsen",
    "event_type": "new_il",
    "feeds": [
@@ -379,10 +337,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:new_il:Travis Sykora",
+   "event_id": "2026-11-26:new_il:Travis Sykora",
    "player_name": "Travis Sykora",
    "event_type": "new_il",
    "feeds": [
@@ -400,31 +358,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Adolis Garcia",
-   "player_name": "Adolis Garcia",
-   "event_type": "returned",
-   "feeds": [
-    "statyx"
-   ],
-   "status_from": "60-Day-IL",
-   "status_to": null,
-   "type_from": "Lat",
-   "type_to": null,
-   "detail": "Surgery",
-   "il_date": "2026-06-24",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "Garcia will face a 6-to-8-month recovery from surgery, which will keep him out for the remainder of the season but give him a good chance at being cleared ahead of spring training in 2027. The 33-year-old is set to become a free agent this winter after he slashed.195/.270/.329 with seven home runs, three stolen bases, 21 RBI and 21 runs over 67 games during his lone season with Philadelphia.",
-   "in_fa_pool": true,
-   "fa_player_id": 666969,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Adrian Houser",
+   "event_id": "2026-11-26:returned:Adrian Houser",
    "player_name": "Adrian Houser",
    "event_type": "returned",
    "feeds": [
@@ -442,10 +379,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Andrew Saalfrank",
+   "event_id": "2026-11-26:returned:Andrew Saalfrank",
    "player_name": "Andrew Saalfrank",
    "event_type": "returned",
    "feeds": [
@@ -463,10 +400,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Anthony Banda",
+   "event_id": "2026-11-26:returned:Anthony Banda",
    "player_name": "Anthony Banda",
    "event_type": "returned",
    "feeds": [
@@ -484,10 +421,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Bailey Horn",
+   "event_id": "2026-11-26:returned:Bailey Horn",
    "player_name": "Bailey Horn",
    "event_type": "returned",
    "feeds": [
@@ -505,10 +442,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Brennen Davis",
+   "event_id": "2026-11-26:returned:Brennen Davis",
    "player_name": "Brennen Davis",
    "event_type": "returned",
    "feeds": [
@@ -526,10 +463,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Brice Matthews",
+   "event_id": "2026-11-26:returned:Brice Matthews",
    "player_name": "Brice Matthews",
    "event_type": "returned",
    "feeds": [
@@ -547,31 +484,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Cal Quantrill",
-   "player_name": "Cal Quantrill",
-   "event_type": "returned",
-   "feeds": [
-    "statyx"
-   ],
-   "status_from": "60-Day-IL",
-   "status_to": null,
-   "type_from": "Lat",
-   "type_to": null,
-   "detail": "Strain",
-   "il_date": "2026-09-22",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "Quantrill will not pitch again this season after being transferred to the 60-day IL Tuesday. The right-hander posted a 2.86 ERA, 1.04 WHIP and 81:25 K:BB across 110 innings this season. Texas activated Michael Helman (hand) from the 60-day IL, replacing Quantrill on both the active and 40-man rosters.",
-   "in_fa_pool": true,
-   "fa_player_id": 615698,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Carter Baumler",
+   "event_id": "2026-11-26:returned:Carter Baumler",
    "player_name": "Carter Baumler",
    "event_type": "returned",
    "feeds": [
@@ -589,32 +505,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Clarke Schmidt",
-   "player_name": "Clarke Schmidt",
-   "event_type": "returned",
-   "feeds": [
-    "fastballapi",
-    "statyx"
-   ],
-   "status_from": "15-Day-IL",
-   "status_to": null,
-   "type_from": "Biceps",
-   "type_to": null,
-   "detail": "Pinched Nerve",
-   "il_date": "2026-09-30",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "Schmidt landed on the injured list shortly before the regular season ended due to right bicep neuritis, and rather than trying to get him ready to contribute to the team's postseason run, the Yankees have decided to focus on getting him fully healthy for 2027. The 30-year-old righty will be entering his final year of arbitration eligibility this winter.",
-   "in_fa_pool": false,
-   "fa_player_id": null,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Cristian Javier",
+   "event_id": "2026-11-26:returned:Cristian Javier",
    "player_name": "Cristian Javier",
    "event_type": "returned",
    "feeds": [
@@ -632,10 +526,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Eduardo Rivera",
+   "event_id": "2026-11-26:returned:Eduardo Rivera",
    "player_name": "Eduardo Rivera",
    "event_type": "returned",
    "feeds": [
@@ -653,31 +547,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Enyel De Los Santos",
-   "player_name": "Enyel De Los Santos",
-   "event_type": "returned",
-   "feeds": [
-    "statyx"
-   ],
-   "status_from": "Out",
-   "status_to": null,
-   "type_from": "Knee",
-   "type_to": null,
-   "detail": "Tendinitis",
-   "il_date": "2026-10-02",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "De Los Santos gave up two runs over two innings during his appearance Friday and now appears to have picked up an injury in the process. His trip to the injured list will rule him out for the rest of the regular season, so he'll finish the campaign with a 4.79 ERA and 1.25 WHIP through 71.1 innings. Logan VanWey was recalled from Triple-A in a corresponding move.",
-   "in_fa_pool": false,
-   "fa_player_id": null,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Fernando Cruz",
+   "event_id": "2026-11-26:returned:Fernando Cruz",
    "player_name": "Fernando Cruz",
    "event_type": "returned",
    "feeds": [
@@ -695,31 +568,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Gavin Lux",
-   "player_name": "Gavin Lux",
-   "event_type": "returned",
-   "feeds": [
-    "statyx"
-   ],
-   "status_from": "60-Day-IL",
-   "status_to": null,
-   "type_from": "Shoulder",
-   "type_to": null,
-   "detail": "Inflammation",
-   "il_date": "2026-09-11",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "Lux has been held out all season by shoulder and ankle injuries, but he seems to be making significant progress in his recovery from left shoulder inflammation that caused him to pause his rehab assignment in mid-July. The Rays still haven't confirmed that Lux will miss the entire 2026 campaign, but with roughly two weeks remaining in the regular season, his chances of returning in time are very slim.",
-   "in_fa_pool": true,
-   "fa_player_id": 666158,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Hunter Harvey",
+   "event_id": "2026-11-26:returned:Hunter Harvey",
    "player_name": "Hunter Harvey",
    "event_type": "returned",
    "feeds": [
@@ -737,32 +589,10 @@
    "fa_player_id": 640451,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:J.T. Ginn",
-   "player_name": "J.T. Ginn",
-   "event_type": "returned",
-   "feeds": [
-    "fastballapi",
-    "statyx"
-   ],
-   "status_from": "60-Day-IL",
-   "status_to": null,
-   "type_from": "Elbow",
-   "type_to": null,
-   "detail": "Soreness",
-   "il_date": "2026-09-22",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "In a pair of corresponding moves Tuesday, the Athletics reinstated Joshua Kuroda-Grauer (groin) from the 60-day injured list and placed Max Muncy (knee) on the 10-day injured list. Ginn faced the possibility of returning at the end of the 2026 season, but he was behind schedule in his recovery program, which inevitably led to his season concluding early. The starting pitcher landed on the 15-day injured list at the beginning of September due to a right elbow impingement.",
-   "in_fa_pool": false,
-   "fa_player_id": null,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Jack Leiter",
+   "event_id": "2026-11-26:returned:Jack Leiter",
    "player_name": "Jack Leiter",
    "event_type": "returned",
    "feeds": [
@@ -780,10 +610,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Jacob Melton",
+   "event_id": "2026-11-26:returned:Jacob Melton",
    "player_name": "Jacob Melton",
    "event_type": "returned",
    "feeds": [
@@ -801,10 +631,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Jacob Misiorowski",
+   "event_id": "2026-11-26:returned:Jacob Misiorowski",
    "player_name": "Jacob Misiorowski",
    "event_type": "returned",
    "feeds": [
@@ -822,10 +652,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Jake Bloss",
+   "event_id": "2026-11-26:returned:Jake Bloss",
    "player_name": "Jake Bloss",
    "event_type": "returned",
    "feeds": [
@@ -843,10 +673,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Jake Cousins",
+   "event_id": "2026-11-26:returned:Jake Cousins",
    "player_name": "Jake Cousins",
    "event_type": "returned",
    "feeds": [
@@ -864,32 +694,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Jake Meyers",
-   "player_name": "Jake Meyers",
-   "event_type": "returned",
-   "feeds": [
-    "fastballapi",
-    "statyx"
-   ],
-   "status_from": "60-Day-IL",
-   "status_to": null,
-   "type_from": "Kneecap",
-   "type_to": null,
-   "detail": null,
-   "il_date": "2026-09-24",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "Meyers suffered a season-ending kneecap injury in mid-September, so the Astros will stash him away on the 60-day IL to free up a 40-man roster spot for Josh Hendrickson. Meyers appeared in 57 games for the Astros this year but slashed just .213/.268/.326 with three homers, 11 RBI and 15 runs scored over 153 plate appearances.",
-   "in_fa_pool": false,
-   "fa_player_id": null,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Jake Miller",
+   "event_id": "2026-11-26:returned:Jake Miller",
    "player_name": "Jake Miller",
    "event_type": "returned",
    "feeds": [
@@ -907,10 +715,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Jesus Rodriguez",
+   "event_id": "2026-11-26:returned:Jesus Rodriguez",
    "player_name": "Jesus Rodriguez",
    "event_type": "returned",
    "feeds": [
@@ -928,10 +736,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Joel Peguero",
+   "event_id": "2026-11-26:returned:Joel Peguero",
    "player_name": "Joel Peguero",
    "event_type": "returned",
    "feeds": [
@@ -949,32 +757,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Joey Bart",
-   "player_name": "Joey Bart",
-   "event_type": "returned",
-   "feeds": [
-    "fastballapi",
-    "statyx"
-   ],
-   "status_from": "10-Day-IL",
-   "status_to": null,
-   "type_from": "Hand",
-   "type_to": null,
-   "detail": "Fracture",
-   "il_date": "2026-08-07",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "Bart's hand was hit by a pitch during Thursday's game against Boston. The veteran catcher is set to be sidelined until at least mid-September, and how he progresses in his recovery program will determine whether he'll be back in action with the White Sox before the conclusion of the 2026 season. With Kyle Teel also sidelined until at least September due to a left high-ankle sprain, Drew Romo and Edgar Quero will handle catching duties for the White Sox moving forward.",
-   "in_fa_pool": false,
-   "fa_player_id": null,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Joey Loperfido",
+   "event_id": "2026-11-26:returned:Joey Loperfido",
    "player_name": "Joey Loperfido",
    "event_type": "returned",
    "feeds": [
@@ -992,10 +778,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Johan Oviedo",
+   "event_id": "2026-11-26:returned:Johan Oviedo",
    "player_name": "Johan Oviedo",
    "event_type": "returned",
    "feeds": [
@@ -1013,54 +799,31 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Jonatan Clase",
-   "player_name": "Jonatan Clase",
+   "event_id": "2026-11-26:returned:Jonathan Heasley",
+   "player_name": "Jonathan Heasley",
    "event_type": "returned",
    "feeds": [
-    "fastballapi",
-    "statyx"
+    "fastballapi"
    ],
    "status_from": "60-Day-IL",
    "status_to": null,
-   "type_from": "Foot",
+   "type_from": "Elbow",
    "type_to": null,
-   "detail": "Plantar Fasciitis",
-   "il_date": "2026-08-27",
+   "detail": "Fracture",
+   "il_date": null,
    "return_date": "2027-02-01",
-   "statyx_commentary": "Clase has been on the injured list since July 22 due to left foot plantar fasciitis. His earliest eligibility to return is Sept. 20, which means there's a chance he will not make another big league appearance in 2026. The outfielder was transferred to the 60-day injured list to make room on the 40-man roster for the signing of Michael Lorenzen.",
+   "statyx_commentary": null,
    "in_fa_pool": false,
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Jose Butto",
-   "player_name": "Jose Butto",
-   "event_type": "returned",
-   "feeds": [
-    "fastballapi",
-    "statyx"
-   ],
-   "status_from": "60-Day-IL",
-   "status_to": null,
-   "type_from": "Arm",
-   "type_to": null,
-   "detail": "Surgery",
-   "il_date": "2026-05-08",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "Butto has already been ruled out for the rest of the season after undergoing surgery Saturday to repair an artery in his arm, so moving to 60-day IL has no impact on his timeline. He'll cede his spot on the 40-man roster to Eric Haase, who was selected from Triple-A Sacramento to replace Daniel Susac (elbow) on the active roster.",
-   "in_fa_pool": false,
-   "fa_player_id": null,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Keaton Winn",
+   "event_id": "2026-11-26:returned:Keaton Winn",
    "player_name": "Keaton Winn",
    "event_type": "returned",
    "feeds": [
@@ -1078,10 +841,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Ky Bush",
+   "event_id": "2026-11-26:returned:Ky Bush",
    "player_name": "Ky Bush",
    "event_type": "returned",
    "feeds": [
@@ -1099,10 +862,31 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Luis Castillo",
+   "event_id": "2026-11-26:returned:Lucas Giolito",
+   "player_name": "Lucas Giolito",
+   "event_type": "returned",
+   "feeds": [
+    "fastballapi"
+   ],
+   "status_from": "60-Day-IL",
+   "status_to": null,
+   "type_from": "Elbow",
+   "type_to": null,
+   "detail": "Inflammation",
+   "il_date": null,
+   "return_date": "2027-02-01",
+   "statyx_commentary": null,
+   "in_fa_pool": true,
+   "fa_player_id": 608337,
+   "scenario_rosters": [],
+   "baseline_date": "2026-11-02",
+   "current_date": "2026-11-26"
+  },
+  {
+   "event_id": "2026-11-26:returned:Luis Castillo",
    "player_name": "Luis Castillo",
    "event_type": "returned",
    "feeds": [
@@ -1120,10 +904,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Luis Severino",
+   "event_id": "2026-11-26:returned:Luis Severino",
    "player_name": "Luis Severino",
    "event_type": "returned",
    "feeds": [
@@ -1141,10 +925,10 @@
    "fa_player_id": 622663,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Luke Raley",
+   "event_id": "2026-11-26:returned:Luke Raley",
    "player_name": "Luke Raley",
    "event_type": "returned",
    "feeds": [
@@ -1162,54 +946,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Matt Vierling",
-   "player_name": "Matt Vierling",
-   "event_type": "returned",
-   "feeds": [
-    "fastballapi",
-    "statyx"
-   ],
-   "status_from": "60-Day-IL",
-   "status_to": null,
-   "type_from": "Thigh",
-   "type_to": null,
-   "detail": "Strain",
-   "il_date": "2026-09-06",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "Vierling initially landed on the IL on July 31 due to a left adductor strain. He then suffered a heel injury in late August, and the pair of issues will result in Vierling being ruled out for the remainder of the regular season. He could theoretically return for the playoffs, but that might be a moot point with Detroit currently 6.5 games back of a wild-card spot.",
-   "in_fa_pool": false,
-   "fa_player_id": null,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Matt Waldron",
-   "player_name": "Matt Waldron",
-   "event_type": "returned",
-   "feeds": [
-    "fastballapi",
-    "statyx"
-   ],
-   "status_from": "60-Day-IL",
-   "status_to": null,
-   "type_from": "Chest",
-   "type_to": null,
-   "detail": "Inflammation",
-   "il_date": "2026-09-12",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "Waldron has pitched 5.2 shutout innings since joining the Nationals in late August, but the team will now be without his services until at least Sept. 20 as he manages his chest injury. Zak Kent will come up from Triple-A Rochester to replenish Washington's reliever depth.",
-   "in_fa_pool": false,
-   "fa_player_id": null,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Max Rajcic",
+   "event_id": "2026-11-26:returned:Max Rajcic",
    "player_name": "Max Rajcic",
    "event_type": "returned",
    "feeds": [
@@ -1227,10 +967,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Mike Burrows",
+   "event_id": "2026-11-26:returned:Mike Burrows",
    "player_name": "Mike Burrows",
    "event_type": "returned",
    "feeds": [
@@ -1248,10 +988,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Mike Paredes",
+   "event_id": "2026-11-26:returned:Mike Paredes",
    "player_name": "Mike Paredes",
    "event_type": "returned",
    "feeds": [
@@ -1269,10 +1009,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Mitch Keller",
+   "event_id": "2026-11-26:returned:Mitch Keller",
    "player_name": "Mitch Keller",
    "event_type": "returned",
    "feeds": [
@@ -1290,10 +1030,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Nick Kurtz",
+   "event_id": "2026-11-26:returned:Nick Kurtz",
    "player_name": "Nick Kurtz",
    "event_type": "returned",
    "feeds": [
@@ -1311,54 +1051,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Nick Mears",
-   "player_name": "Nick Mears",
-   "event_type": "returned",
-   "feeds": [
-    "fastballapi",
-    "statyx"
-   ],
-   "status_from": "60-Day-IL",
-   "status_to": null,
-   "type_from": "Shoulder",
-   "type_to": null,
-   "detail": "Pinched Nerve",
-   "il_date": "2026-08-26",
-   "return_date": "2027-04-01",
-   "statyx_commentary": "Mears has been sidelined since May 29 due to a right shoulder impingement and dealt with multiple setbacks during his rehab, including a right lat strain revealed in mid-July. After progressing to mound work, the right-hander experienced renewed discomfort last week, with subsequent testing revealing thoracic outlet syndrome. Mears will finish his injury-marred first season with the Royals having posted a 5.12 ERA, 1.50 WHIP and 15:11 K:BB across 19.1 innings.",
-   "in_fa_pool": false,
-   "fa_player_id": null,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Parker Meadows",
-   "player_name": "Parker Meadows",
-   "event_type": "returned",
-   "feeds": [
-    "fastballapi",
-    "statyx"
-   ],
-   "status_from": "60-Day-IL",
-   "status_to": null,
-   "type_from": "Arm",
-   "type_to": null,
-   "detail": "Surgery",
-   "il_date": "2026-09-25",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "Meadows doesn't appear to be a realistic candidate to return from the 60-day injured list for the Tigers' final series of the season, but he could be in store for something close to a normal offseason. The 26-year-old outfielder slashed just.250/.308/.333 with three stolen bases, three runs and two RBI over 39 plate appearances with Detroit before hitting the shelf after sustaining a fractured left radius bone in his left arm and concussion during an on-field collision April 9.",
-   "in_fa_pool": false,
-   "fa_player_id": null,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:PJ Poulin",
+   "event_id": "2026-11-26:returned:PJ Poulin",
    "player_name": "PJ Poulin",
    "event_type": "returned",
    "feeds": [
@@ -1376,31 +1072,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Ramon Laureano",
-   "player_name": "Ramon Laureano",
-   "event_type": "returned",
-   "feeds": [
-    "statyx"
-   ],
-   "status_from": "60-Day-IL",
-   "status_to": null,
-   "type_from": "Hip",
-   "type_to": null,
-   "detail": "Surgery",
-   "il_date": "2026-09-12",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "When Laureano underwent right hip surgery in early June, he was given a return timeline of 4-to-5 months. Though the veteran outfielder has been able to work his way up to swinging a bat and doing some throwing, that initial timeline doesn't appear to have changed. It still seems likely that Laureano's next game action won't take place until 2027, though there may be an outside chance he will return in October if San Diego makes a deep run in the playoffs.",
-   "in_fa_pool": true,
-   "fa_player_id": 657656,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:RJ Petit",
+   "event_id": "2026-11-26:returned:RJ Petit",
    "player_name": "RJ Petit",
    "event_type": "returned",
    "feeds": [
@@ -1418,10 +1093,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Rodolfo Duran",
+   "event_id": "2026-11-26:returned:Rodolfo Duran",
    "player_name": "Rodolfo Duran",
    "event_type": "returned",
    "feeds": [
@@ -1439,32 +1114,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Romy Gonzalez",
-   "player_name": "Romy Gonzalez",
-   "event_type": "returned",
-   "feeds": [
-    "fastballapi",
-    "statyx"
-   ],
-   "status_from": "Day-To-Day",
-   "status_to": null,
-   "type_from": "Elbow",
-   "type_to": null,
-   "detail": null,
-   "il_date": "2026-09-29",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "Gonzalez will head back to the minors to help make room on the active roster for the additions Boston made prior to the trade deadline. The 29-year-old utility man has taken a step back in the big leagues this year, slashing just .185/.264/.308 with seven RBI and seven runs scored in 73 plate appearances.",
-   "in_fa_pool": false,
-   "fa_player_id": null,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Rowan Wick",
+   "event_id": "2026-11-26:returned:Rowan Wick",
    "player_name": "Rowan Wick",
    "event_type": "returned",
    "feeds": [
@@ -1482,10 +1135,10 @@
    "fa_player_id": 592858,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Ryan Mountcastle",
+   "event_id": "2026-11-26:returned:Ryan Mountcastle",
    "player_name": "Ryan Mountcastle",
    "event_type": "returned",
    "feeds": [
@@ -1503,53 +1156,10 @@
    "fa_player_id": 663624,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Ryan Thompson",
-   "player_name": "Ryan Thompson",
-   "event_type": "returned",
-   "feeds": [
-    "statyx"
-   ],
-   "status_from": "60-Day-IL",
-   "status_to": null,
-   "type_from": "Back",
-   "type_to": null,
-   "detail": "Strain",
-   "il_date": "2026-09-01",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "Thompson initially landed on the injured list Aug. 5 with a lower-back strain, so his move to the 60-day IL will officially rule him out for the rest of the season. Blake Walston (elbow) will return from the 60-day IL in a corresponding move to claim the open spot on Arizona's 40-man roster.",
-   "in_fa_pool": true,
-   "fa_player_id": 657044,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Steven Cruz",
-   "player_name": "Steven Cruz",
-   "event_type": "returned",
-   "feeds": [
-    "fastballapi",
-    "statyx"
-   ],
-   "status_from": "Out",
-   "status_to": null,
-   "type_from": "Personal",
-   "type_to": null,
-   "detail": "Not Specified",
-   "il_date": "2026-09-29",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "By rule, Cruz will miss the next 1-to-3 games while welcoming a new baby, so he should be back for Sunday's season finale, at minimum. Cruz has registered three of the past four saves for the Royals, which includes his eighth save of the season in Wednesday's win over the White Sox. While Cruz is away, the Royals could turn to Nate Pearson for save chances.",
-   "in_fa_pool": false,
-   "fa_player_id": null,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Trey Sweeney",
+   "event_id": "2026-11-26:returned:Trey Sweeney",
    "player_name": "Trey Sweeney",
    "event_type": "returned",
    "feeds": [
@@ -1567,10 +1177,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Tyler Austin",
+   "event_id": "2026-11-26:returned:Tyler Austin",
    "player_name": "Tyler Austin",
    "event_type": "returned",
    "feeds": [
@@ -1588,32 +1198,10 @@
    "fa_player_id": 592122,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Tyler Locklear",
-   "player_name": "Tyler Locklear",
-   "event_type": "returned",
-   "feeds": [
-    "fastballapi",
-    "statyx"
-   ],
-   "status_from": "60-Day-IL",
-   "status_to": null,
-   "type_from": "Thumb",
-   "type_to": null,
-   "detail": "Fracture",
-   "il_date": "2026-09-12",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "Locklear ended up being a casualty of the 26-man active roster after the Diamondbacks needed to clear a spot for outfielder Jordan Lawlar's (hamstring) return from the 10-day injured list. After being recalled from Reno on July 17, Locklear served mainly as a short-side platoon player during his time with Arizona, batting.278/.357/.444 with one home run, one stolen base, six RBI and eight runs in 15 games. He'll get the chance to play on a more regular basis at Triple-A.",
-   "in_fa_pool": false,
-   "fa_player_id": null,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Tyler O'Neill",
+   "event_id": "2026-11-26:returned:Tyler O'Neill",
    "player_name": "Tyler O'Neill",
    "event_type": "returned",
    "feeds": [
@@ -1631,10 +1219,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Tyron Guerrero",
+   "event_id": "2026-11-26:returned:Tyron Guerrero",
    "player_name": "Tyron Guerrero",
    "event_type": "returned",
    "feeds": [
@@ -1652,31 +1240,53 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Adam Mazur",
+   "event_id": "2026-11-26:returned:Will Wilson",
+   "player_name": "Will Wilson",
+   "event_type": "returned",
+   "feeds": [
+    "fastballapi"
+   ],
+   "status_from": "60-Day-IL",
+   "status_to": null,
+   "type_from": "Thumb",
+   "type_to": null,
+   "detail": "Fracture",
+   "il_date": null,
+   "return_date": "2027-02-01",
+   "statyx_commentary": null,
+   "in_fa_pool": false,
+   "fa_player_id": null,
+   "scenario_rosters": [],
+   "baseline_date": "2026-11-02",
+   "current_date": "2026-11-26"
+  },
+  {
+   "event_id": "2026-11-26:status_change:Adam Mazur",
    "player_name": "Adam Mazur",
    "event_type": "status_change",
    "feeds": [
-    "fastballapi"
+    "fastballapi",
+    "statyx"
    ],
    "status_from": "60-Day-IL",
    "status_to": "Out",
    "type_from": "Elbow",
    "type_to": "Elbow",
    "detail": "Surgery",
-   "il_date": null,
+   "il_date": "2026-09-29",
    "return_date": "2027-05-01",
-   "statyx_commentary": null,
+   "statyx_commentary": "Mazur underwent UCL reconstruction surgery with an internal brace in March. He had been tentatively expected to begin a throwing program in September, though it's unclear whether he's checked that box yet. Mazur might not be an option for the Marlins until around midseason, as he'll likely require time in the minors to knock the rust off.",
    "in_fa_pool": false,
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Addison Barger",
+   "event_id": "2026-11-26:status_change:Addison Barger",
    "player_name": "Addison Barger",
    "event_type": "status_change",
    "feeds": [
@@ -1694,10 +1304,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Andrew Nardi",
+   "event_id": "2026-11-26:status_change:Andrew Nardi",
    "player_name": "Andrew Nardi",
    "event_type": "status_change",
    "feeds": [
@@ -1715,10 +1325,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Angel Zerpa",
+   "event_id": "2026-11-26:status_change:Angel Zerpa",
    "player_name": "Angel Zerpa",
    "event_type": "status_change",
    "feeds": [
@@ -1736,10 +1346,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Anthony Santander",
+   "event_id": "2026-11-26:status_change:Anthony Santander",
    "player_name": "Anthony Santander",
    "event_type": "status_change",
    "feeds": [
@@ -1757,10 +1367,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Ben Brown",
+   "event_id": "2026-11-26:status_change:Ben Brown",
    "player_name": "Ben Brown",
    "event_type": "status_change",
    "feeds": [
@@ -1778,10 +1388,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Ben Casparius",
+   "event_id": "2026-11-26:status_change:Ben Casparius",
    "player_name": "Ben Casparius",
    "event_type": "status_change",
    "feeds": [
@@ -1799,10 +1409,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Blade Tidwell",
+   "event_id": "2026-11-26:status_change:Blade Tidwell",
    "player_name": "Blade Tidwell",
    "event_type": "status_change",
    "feeds": [
@@ -1820,10 +1430,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Bowden Francis",
+   "event_id": "2026-11-26:status_change:Bowden Francis",
    "player_name": "Bowden Francis",
    "event_type": "status_change",
    "feeds": [
@@ -1841,10 +1451,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Brad Keller",
+   "event_id": "2026-11-26:status_change:Brad Keller",
    "player_name": "Brad Keller",
    "event_type": "status_change",
    "feeds": [
@@ -1862,10 +1472,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Brandon Walter",
+   "event_id": "2026-11-26:status_change:Brandon Walter",
    "player_name": "Brandon Walter",
    "event_type": "status_change",
    "feeds": [
@@ -1883,10 +1493,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Brent Rooker",
+   "event_id": "2026-11-26:status_change:Brent Rooker",
    "player_name": "Brent Rooker",
    "event_type": "status_change",
    "feeds": [
@@ -1904,10 +1514,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Brian Fitzpatrick",
+   "event_id": "2026-11-26:status_change:Brian Fitzpatrick",
    "player_name": "Brian Fitzpatrick",
    "event_type": "status_change",
    "feeds": [
@@ -1925,10 +1535,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Bryan Hoeing",
+   "event_id": "2026-11-26:status_change:Bryan Hoeing",
    "player_name": "Bryan Hoeing",
    "event_type": "status_change",
    "feeds": [
@@ -1946,10 +1556,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Cade Horton",
+   "event_id": "2026-11-26:status_change:Cade Horton",
    "player_name": "Cade Horton",
    "event_type": "status_change",
    "feeds": [
@@ -1967,10 +1577,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Cameron Foster",
+   "event_id": "2026-11-26:status_change:Cameron Foster",
    "player_name": "Cameron Foster",
    "event_type": "status_change",
    "feeds": [
@@ -1988,10 +1598,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Carlos Correa",
+   "event_id": "2026-11-26:status_change:Carlos Correa",
    "player_name": "Carlos Correa",
    "event_type": "status_change",
    "feeds": [
@@ -2009,10 +1619,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Carson Whisenhunt",
+   "event_id": "2026-11-26:status_change:Carson Whisenhunt",
    "player_name": "Carson Whisenhunt",
    "event_type": "status_change",
    "feeds": [
@@ -2030,10 +1640,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Casey Schmitt",
+   "event_id": "2026-11-26:status_change:Casey Schmitt",
    "player_name": "Casey Schmitt",
    "event_type": "status_change",
    "feeds": [
@@ -2052,10 +1662,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Chase Dollander",
+   "event_id": "2026-11-26:status_change:Chase Dollander",
    "player_name": "Chase Dollander",
    "event_type": "status_change",
    "feeds": [
@@ -2073,10 +1683,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Cody Ponce",
+   "event_id": "2026-11-26:status_change:Cody Ponce",
    "player_name": "Cody Ponce",
    "event_type": "status_change",
    "feeds": [
@@ -2094,31 +1704,32 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Cole Ragans",
+   "event_id": "2026-11-26:status_change:Cole Ragans",
    "player_name": "Cole Ragans",
    "event_type": "status_change",
    "feeds": [
-    "fastballapi"
+    "fastballapi",
+    "statyx"
    ],
    "status_from": "60-Day-IL",
    "status_to": "Out",
    "type_from": "Elbow",
    "type_to": "Elbow",
    "detail": "Surgery",
-   "il_date": null,
+   "il_date": "2026-07-02",
    "return_date": "2027-08-01",
-   "statyx_commentary": null,
+   "statyx_commentary": "It was unknown what type of procedure Ragans would need when the Royals announced last weekend that he was scheduled for surgery. Now confirmed to have undergone UCL repair surgery, the 28-year-old southpaw will officially miss the remainder of the season and is likely to remain out until midway through the 2027 campaign. He'll close the book on 2026 after putting up a 4.84 ERA and 1.42 WHIP alongside a 45:23 K:BB through 35.1 innings over eight starts.",
    "in_fa_pool": false,
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Cole Sands",
+   "event_id": "2026-11-26:status_change:Cole Sands",
    "player_name": "Cole Sands",
    "event_type": "status_change",
    "feeds": [
@@ -2136,42 +1747,20 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Cole Winn",
+   "event_id": "2026-11-26:status_change:Cole Winn",
    "player_name": "Cole Winn",
    "event_type": "status_change",
    "feeds": [
-    "fastballapi",
-    "statyx"
+    "fastballapi"
    ],
    "status_from": "60-Day-IL",
    "status_to": "Out",
    "type_from": "Shoulder",
    "type_to": "Shoulder",
    "detail": "Strain",
-   "il_date": "2026-09-18",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "Winn was placed on the injured list Aug. 31 with a right rotator cuff strain, and moving to the 60-day IL will ensure he remains out for the rest of the season. His place on the 40-man roster will be given to Michel Otanez, who was selected to the active roster Friday.",
-   "in_fa_pool": false,
-   "fa_player_id": null,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:status_change:Colin Holderman",
-   "player_name": "Colin Holderman",
-   "event_type": "status_change",
-   "feeds": [
-    "fastballapi"
-   ],
-   "status_from": "15-Day-IL",
-   "status_to": "Out",
-   "type_from": "Wrist",
-   "type_to": "Wrist",
-   "detail": "Surgery",
    "il_date": null,
    "return_date": "2027-02-01",
    "statyx_commentary": null,
@@ -2179,10 +1768,32 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Colt Emerson",
+   "event_id": "2026-11-26:status_change:Colin Holderman",
+   "player_name": "Colin Holderman",
+   "event_type": "status_change",
+   "feeds": [
+    "fastballapi",
+    "statyx"
+   ],
+   "status_from": "15-Day-IL",
+   "status_to": "Out",
+   "type_from": "Wrist",
+   "type_to": "Wrist",
+   "detail": "Surgery",
+   "il_date": "2026-10-14",
+   "return_date": "2027-02-01",
+   "statyx_commentary": "The operation was successful, and Holderman is expected to be 100 percent in time for spring training. Holderman posted a 2.73 ERA, 1.04 WHIP and 50:20 K:BB over 52.2 frames for the Guardians this season. The 31-year-old is eligible for salary arbitration this winter.",
+   "in_fa_pool": false,
+   "fa_player_id": null,
+   "scenario_rosters": [],
+   "baseline_date": "2026-11-02",
+   "current_date": "2026-11-26"
+  },
+  {
+   "event_id": "2026-11-26:status_change:Colt Emerson",
    "player_name": "Colt Emerson",
    "event_type": "status_change",
    "feeds": [
@@ -2200,10 +1811,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Cristian Mena",
+   "event_id": "2026-11-26:status_change:Cristian Mena",
    "player_name": "Cristian Mena",
    "event_type": "status_change",
    "feeds": [
@@ -2221,10 +1832,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Daniel Susac",
+   "event_id": "2026-11-26:status_change:Daniel Susac",
    "player_name": "Daniel Susac",
    "event_type": "status_change",
    "feeds": [
@@ -2242,10 +1853,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:David Festa",
+   "event_id": "2026-11-26:status_change:David Festa",
    "player_name": "David Festa",
    "event_type": "status_change",
    "feeds": [
@@ -2263,10 +1874,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Drew Millas",
+   "event_id": "2026-11-26:status_change:Drew Millas",
    "player_name": "Drew Millas",
    "event_type": "status_change",
    "feeds": [
@@ -2284,10 +1895,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Edwin Uceta",
+   "event_id": "2026-11-26:status_change:Edwin Uceta",
    "player_name": "Edwin Uceta",
    "event_type": "status_change",
    "feeds": [
@@ -2305,10 +1916,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Eli White",
+   "event_id": "2026-11-26:status_change:Eli White",
    "player_name": "Eli White",
    "event_type": "status_change",
    "feeds": [
@@ -2326,10 +1937,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Endy Rodriguez",
+   "event_id": "2026-11-26:status_change:Endy Rodriguez",
    "player_name": "Endy Rodriguez",
    "event_type": "status_change",
    "feeds": [
@@ -2347,10 +1958,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Felix Reyes",
+   "event_id": "2026-11-26:status_change:Felix Reyes",
    "player_name": "Felix Reyes",
    "event_type": "status_change",
    "feeds": [
@@ -2368,10 +1979,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Gavin Stone",
+   "event_id": "2026-11-26:status_change:Gavin Stone",
    "player_name": "Gavin Stone",
    "event_type": "status_change",
    "feeds": [
@@ -2389,10 +2000,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Gunnar Hoglund",
+   "event_id": "2026-11-26:status_change:Gunnar Hoglund",
    "player_name": "Gunnar Hoglund",
    "event_type": "status_change",
    "feeds": [
@@ -2410,10 +2021,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Harrison Bader",
+   "event_id": "2026-11-26:status_change:Harrison Bader",
    "player_name": "Harrison Bader",
    "event_type": "status_change",
    "feeds": [
@@ -2431,73 +2042,76 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Hayden Birdsong",
+   "event_id": "2026-11-26:status_change:Hayden Birdsong",
    "player_name": "Hayden Birdsong",
    "event_type": "status_change",
    "feeds": [
-    "fastballapi"
+    "fastballapi",
+    "statyx"
    ],
    "status_from": "60-Day-IL",
    "status_to": "Out",
    "type_from": "Elbow",
    "type_to": "Elbow",
    "detail": "Surgery",
-   "il_date": null,
+   "il_date": "2026-05-08",
    "return_date": "2027-06-01",
-   "statyx_commentary": null,
+   "statyx_commentary": "Birdsong was diagnosed with a sprained UCL in mid-March and elected to go under the knife. The right-hander will miss the entirety of the 2026 campaign and likely at least the first couple months of 2027.",
    "in_fa_pool": false,
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Jacob Wilson",
+   "event_id": "2026-11-26:status_change:Jacob Wilson",
    "player_name": "Jacob Wilson",
    "event_type": "status_change",
    "feeds": [
-    "fastballapi"
+    "fastballapi",
+    "statyx"
    ],
    "status_from": "60-Day-IL",
    "status_to": "Out",
    "type_from": "Shoulder",
    "type_to": "Shoulder",
    "detail": "Surgery",
-   "il_date": null,
+   "il_date": "2026-09-11",
    "return_date": "2027-03-01",
-   "statyx_commentary": null,
+   "statyx_commentary": "Additionally, Wilson was administered a PRP injection Tuesday to combat patellar tendinitis in his right knee. Wilson first injured his shoulder back in early May, and he was ultimately limited to just 80 games in an injury-shortened 2026 campaign. The shortstop could be ready for Opening Day, though he is likely to be slow-played during spring training.",
    "in_fa_pool": false,
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Johan Rojas",
+   "event_id": "2026-11-26:status_change:Johan Rojas",
    "player_name": "Johan Rojas",
    "event_type": "status_change",
    "feeds": [
-    "fastballapi"
+    "fastballapi",
+    "statyx"
    ],
    "status_from": "60-Day-IL",
    "status_to": "Out",
    "type_from": "Elbow",
    "type_to": "Elbow",
    "detail": "Surgery",
-   "il_date": null,
+   "il_date": "2026-06-25",
    "return_date": "2027-02-01",
-   "statyx_commentary": null,
+   "statyx_commentary": "Rojas remains on the restricted list while he serves an 80-game suspension stemming from a positive test for performance-enhancing drugs, but once the ban is lifted Thursday, he's expected to revert to the Phillies' injured list. The 25-year-old outfielder sustained the elbow injury earlier this month while ramping up his baseball activities in anticipation of his return from suspension. The Phillies expect Rojas will be ready to go for the start of the 2026 season, though it's possible that he'll head into spring training under some restrictions with his hitting and throwing.",
    "in_fa_pool": false,
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Jordan Westburg",
+   "event_id": "2026-11-26:status_change:Jordan Westburg",
    "player_name": "Jordan Westburg",
    "event_type": "status_change",
    "feeds": [
@@ -2515,10 +2129,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Jorge Polanco",
+   "event_id": "2026-11-26:status_change:Jorge Polanco",
    "player_name": "Jorge Polanco",
    "event_type": "status_change",
    "feeds": [
@@ -2536,52 +2150,54 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Jose Berrios",
+   "event_id": "2026-11-26:status_change:Jose Berrios",
    "player_name": "Jose Berrios",
    "event_type": "status_change",
    "feeds": [
-    "fastballapi"
+    "fastballapi",
+    "statyx"
    ],
    "status_from": "60-Day-IL",
    "status_to": "Out",
    "type_from": "Elbow",
    "type_to": "Elbow",
    "detail": "Surgery",
-   "il_date": null,
+   "il_date": "2026-05-27",
    "return_date": "2027-08-01",
-   "statyx_commentary": null,
+   "statyx_commentary": "The Blue Jays and Berrios went into the operation unsure whether the pitcher would require a ligament repair, and as it turns out he required a full UCL procedure. Berrios has been sidelined all season with elbow problems and will now likely be shelved until at least the second half of the 2027 campaign.",
    "in_fa_pool": true,
    "fa_player_id": 621244,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Jose Corniell",
+   "event_id": "2026-11-26:status_change:Jose Corniell",
    "player_name": "Jose Corniell",
    "event_type": "status_change",
    "feeds": [
-    "fastballapi"
+    "fastballapi",
+    "statyx"
    ],
    "status_from": "60-Day-IL",
    "status_to": "Out",
    "type_from": "Elbow",
    "type_to": "Elbow",
    "detail": "Strain",
-   "il_date": null,
+   "il_date": "2026-07-30",
    "return_date": "2027-02-01",
-   "statyx_commentary": null,
+   "statyx_commentary": "Corniell gave up five earned runs in just one inning out of the bullpen during Monday's game against the White Sox, and he'll now have to remain on the sidelines until at least Aug. 5 due to his latest injury. The severity of his injury remains unknown, though it's worth noting that the 23-year-old righty underwent Tommy John surgery back in 2024. Marco Gonzales was promoted from Triple-A Round Rock in a corresponding move.",
    "in_fa_pool": false,
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Jurickson Profar",
+   "event_id": "2026-11-26:status_change:Jurickson Profar",
    "player_name": "Jurickson Profar",
    "event_type": "status_change",
    "feeds": [
@@ -2599,10 +2215,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Justin Slaten",
+   "event_id": "2026-11-26:status_change:Justin Slaten",
    "player_name": "Justin Slaten",
    "event_type": "status_change",
    "feeds": [
@@ -2620,10 +2236,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Justin Steele",
+   "event_id": "2026-11-26:status_change:Justin Steele",
    "player_name": "Justin Steele",
    "event_type": "status_change",
    "feeds": [
@@ -2641,10 +2257,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Justin Sterner",
+   "event_id": "2026-11-26:status_change:Justin Sterner",
    "player_name": "Justin Sterner",
    "event_type": "status_change",
    "feeds": [
@@ -2662,10 +2278,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Kerry Carpenter",
+   "event_id": "2026-11-26:status_change:Kerry Carpenter",
    "player_name": "Kerry Carpenter",
    "event_type": "status_change",
    "feeds": [
@@ -2683,10 +2299,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Kervin Castro",
+   "event_id": "2026-11-26:status_change:Kervin Castro",
    "player_name": "Kervin Castro",
    "event_type": "status_change",
    "feeds": [
@@ -2704,10 +2320,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Kris Bryant",
+   "event_id": "2026-11-26:status_change:Kris Bryant",
    "player_name": "Kris Bryant",
    "event_type": "status_change",
    "feeds": [
@@ -2725,10 +2341,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Kutter Crawford",
+   "event_id": "2026-11-26:status_change:Kutter Crawford",
    "player_name": "Kutter Crawford",
    "event_type": "status_change",
    "feeds": [
@@ -2746,10 +2362,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Kyle Bradish",
+   "event_id": "2026-11-26:status_change:Kyle Bradish",
    "player_name": "Kyle Bradish",
    "event_type": "status_change",
    "feeds": [
@@ -2767,10 +2383,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Logan Evans",
+   "event_id": "2026-11-26:status_change:Logan Evans",
    "player_name": "Logan Evans",
    "event_type": "status_change",
    "feeds": [
@@ -2788,10 +2404,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Luinder Avila",
+   "event_id": "2026-11-26:status_change:Luinder Avila",
    "player_name": "Luinder Avila",
    "event_type": "status_change",
    "feeds": [
@@ -2809,10 +2425,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Matt Brash",
+   "event_id": "2026-11-26:status_change:Matt Brash",
    "player_name": "Matt Brash",
    "event_type": "status_change",
    "feeds": [
@@ -2830,10 +2446,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Matt Chapman",
+   "event_id": "2026-11-26:status_change:Matt Chapman",
    "player_name": "Matt Chapman",
    "event_type": "status_change",
    "feeds": [
@@ -2851,10 +2467,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:McCade Brown",
+   "event_id": "2026-11-26:status_change:McCade Brown",
    "player_name": "McCade Brown",
    "event_type": "status_change",
    "feeds": [
@@ -2872,10 +2488,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Mick Abel",
+   "event_id": "2026-11-26:status_change:Mick Abel",
    "player_name": "Mick Abel",
    "event_type": "status_change",
    "feeds": [
@@ -2893,53 +2509,33 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Mitch Spence",
+   "event_id": "2026-11-26:status_change:Mitch Spence",
    "player_name": "Mitch Spence",
    "event_type": "status_change",
    "feeds": [
-    "fastballapi"
+    "fastballapi",
+    "statyx"
    ],
    "status_from": "Day-To-Day",
    "status_to": "Out",
    "type_from": "Undisclosed",
    "type_to": "Undisclosed",
    "detail": "Not Specified",
-   "il_date": null,
+   "il_date": "2026-08-07",
    "return_date": "2027-02-01",
-   "statyx_commentary": null,
+   "statyx_commentary": "Spence's move to the IL represents yet another hit to the Royals' starting pitching depth, as the organization has already lost Cole Ragans, Stephen Kolek, Luinder Avila, Ryan Bergert and Ben Kudrna to season-ending elbow surgeries. The 28-year-old righty has been part of the Royals' 40-man roster throughout the 2026 campaign, logging a 5.35 ERA and 1.41 WHIP over 16 starts with Omaha and yielding 22 earned runs in 9.1 innings over three appearances at the big-league level.",
    "in_fa_pool": false,
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Mitchell Parker",
+   "event_id": "2026-11-26:status_change:Mitchell Parker",
    "player_name": "Mitchell Parker",
-   "event_type": "status_change",
-   "feeds": [
-    "fastballapi"
-   ],
-   "status_from": "60-Day-IL",
-   "status_to": "Out",
-   "type_from": "Elbow",
-   "type_to": "Elbow",
-   "detail": "Surgery",
-   "il_date": null,
-   "return_date": "2027-09-01",
-   "statyx_commentary": null,
-   "in_fa_pool": false,
-   "fa_player_id": null,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:status_change:Nick Davila",
-   "player_name": "Nick Davila",
    "event_type": "status_change",
    "feeds": [
     "fastballapi",
@@ -2947,20 +2543,41 @@
    ],
    "status_from": "60-Day-IL",
    "status_to": "Out",
-   "type_from": "Shoulder",
-   "type_to": "Shoulder",
-   "detail": "Sprain",
-   "il_date": "2026-09-06",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "Davila had just been recalled from Triple-A Tacoma on Sunday, and he hurt himself in an appearance later that day in the Mariners' 7-0 loss to the Blue Jays. Though he will be eligible for activation in mid-September, the nature of the injury points to Davila being out longer than that, possibly for the rest of the season.",
+   "type_from": "Elbow",
+   "type_to": "Elbow",
+   "detail": "Surgery",
+   "il_date": "2026-07-30",
+   "return_date": "2027-09-01",
+   "statyx_commentary": "Parker moved to the 60-day IL at the start of the month after being diagnosed with a Grade 3 UCL sprain, and the procedure will officially keep him out for the remainder of 2026 and most, if not all, of the 2027 campaign, as well.",
    "in_fa_pool": false,
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Pablo Lopez",
+   "event_id": "2026-11-26:status_change:Nick Davila",
+   "player_name": "Nick Davila",
+   "event_type": "status_change",
+   "feeds": [
+    "fastballapi"
+   ],
+   "status_from": "60-Day-IL",
+   "status_to": "Out",
+   "type_from": "Shoulder",
+   "type_to": "Shoulder",
+   "detail": "Sprain",
+   "il_date": null,
+   "return_date": "2027-02-01",
+   "statyx_commentary": null,
+   "in_fa_pool": false,
+   "fa_player_id": null,
+   "scenario_rosters": [],
+   "baseline_date": "2026-11-02",
+   "current_date": "2026-11-26"
+  },
+  {
+   "event_id": "2026-11-26:status_change:Pablo Lopez",
    "player_name": "Pablo Lopez",
    "event_type": "status_change",
    "feeds": [
@@ -2978,10 +2595,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Phil Maton",
+   "event_id": "2026-11-26:status_change:Phil Maton",
    "player_name": "Phil Maton",
    "event_type": "status_change",
    "feeds": [
@@ -2999,10 +2616,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Pierson Ohl",
+   "event_id": "2026-11-26:status_change:Pierson Ohl",
    "player_name": "Pierson Ohl",
    "event_type": "status_change",
    "feeds": [
@@ -3020,10 +2637,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Porter Hodge",
+   "event_id": "2026-11-26:status_change:Porter Hodge",
    "player_name": "Porter Hodge",
    "event_type": "status_change",
    "feeds": [
@@ -3041,10 +2658,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Quinn Priester",
+   "event_id": "2026-11-26:status_change:Quinn Priester",
    "player_name": "Quinn Priester",
    "event_type": "status_change",
    "feeds": [
@@ -3062,31 +2679,32 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Rafael Devers",
+   "event_id": "2026-11-26:status_change:Rafael Devers",
    "player_name": "Rafael Devers",
    "event_type": "status_change",
    "feeds": [
-    "fastballapi"
+    "fastballapi",
+    "statyx"
    ],
    "status_from": "60-Day-IL",
    "status_to": "Out",
    "type_from": "Abdomen",
    "type_to": "Abdomen",
    "detail": "Surgery",
-   "il_date": null,
+   "il_date": "2026-09-13",
    "return_date": "2027-02-01",
-   "statyx_commentary": null,
+   "statyx_commentary": "Devers was placed on the 60-day injured list Sunday due to a core muscle injury, something that has reportedly bothered the 29-year-old slugger for a number of years, though he could be back at full health for the start of training camp. Devers will finish the 2026 regular season with an.865 OPS with 37 home runs and 98 RBI across 633 plate appearances.",
    "in_fa_pool": false,
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Randy Rodriguez",
+   "event_id": "2026-11-26:status_change:Randy Rodriguez",
    "player_name": "Randy Rodriguez",
    "event_type": "status_change",
    "feeds": [
@@ -3104,10 +2722,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Reed Garrett",
+   "event_id": "2026-11-26:status_change:Reed Garrett",
    "player_name": "Reed Garrett",
    "event_type": "status_change",
    "feeds": [
@@ -3125,10 +2743,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Reed Trimble",
+   "event_id": "2026-11-26:status_change:Reed Trimble",
    "player_name": "Reed Trimble",
    "event_type": "status_change",
    "feeds": [
@@ -3146,10 +2764,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Reese Olson",
+   "event_id": "2026-11-26:status_change:Reese Olson",
    "player_name": "Reese Olson",
    "event_type": "status_change",
    "feeds": [
@@ -3167,31 +2785,32 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Richard Fitts",
+   "event_id": "2026-11-26:status_change:Richard Fitts",
    "player_name": "Richard Fitts",
    "event_type": "status_change",
    "feeds": [
-    "fastballapi"
+    "fastballapi",
+    "statyx"
    ],
    "status_from": "Day-To-Day",
    "status_to": "Out",
    "type_from": "Lat",
    "type_to": "Lat",
    "detail": "Surgery",
-   "il_date": null,
+   "il_date": "2026-09-29",
    "return_date": "2027-02-01",
-   "statyx_commentary": null,
+   "statyx_commentary": "Fitts underwent right lat surgery in April after getting hurt while pitching at Triple-A Memphis. It's unclear where Fitts currently is in the rehab process, but Bloom said the righty is \"hellbent on being part of this picture from the jump\" next season. Assuming health, Fitts will be in the mix for a rotation spot next season. However, after all the time off there's a good chance he'll begin the campaign back at Memphis.",
    "in_fa_pool": false,
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Riley Martin",
+   "event_id": "2026-11-26:status_change:Riley Martin",
    "player_name": "Riley Martin",
    "event_type": "status_change",
    "feeds": [
@@ -3209,10 +2828,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Robby Snelling",
+   "event_id": "2026-11-26:status_change:Robby Snelling",
    "player_name": "Robby Snelling",
    "event_type": "status_change",
    "feeds": [
@@ -3230,10 +2849,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Roman Anthony",
+   "event_id": "2026-11-26:status_change:Roman Anthony",
    "player_name": "Roman Anthony",
    "event_type": "status_change",
    "feeds": [
@@ -3251,10 +2870,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Ronny Henriquez",
+   "event_id": "2026-11-26:status_change:Ronny Henriquez",
    "player_name": "Ronny Henriquez",
    "event_type": "status_change",
    "feeds": [
@@ -3272,10 +2891,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Ryan Bergert",
+   "event_id": "2026-11-26:status_change:Ryan Bergert",
    "player_name": "Ryan Bergert",
    "event_type": "status_change",
    "feeds": [
@@ -3293,31 +2912,32 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Ryan Helsley",
+   "event_id": "2026-11-26:status_change:Ryan Helsley",
    "player_name": "Ryan Helsley",
    "event_type": "status_change",
    "feeds": [
-    "fastballapi"
+    "fastballapi",
+    "statyx"
    ],
    "status_from": "60-Day-IL",
    "status_to": "Out",
    "type_from": "Elbow",
    "type_to": "Elbow",
    "detail": "Inflammation",
-   "il_date": null,
+   "il_date": "2026-10-29",
    "return_date": "2027-02-01",
-   "statyx_commentary": null,
+   "statyx_commentary": "Helsley was limited to only 15.1 innings in 2026 because of elbow trouble, making his decision to pick up his player option and remain in Baltimore a fairly easy one. The reliever pitched in a rehab game in September, so he should be healthy for spring training, barring any setbacks. Helsley figures to be in the mix to close games for the Orioles in 2027, though Felix Bautista and/or Rico Garcia are also options for the ninth inning.",
    "in_fa_pool": false,
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Ryan Pepiot",
+   "event_id": "2026-11-26:status_change:Ryan Pepiot",
    "player_name": "Ryan Pepiot",
    "event_type": "status_change",
    "feeds": [
@@ -3335,10 +2955,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Shelby Miller",
+   "event_id": "2026-11-26:status_change:Shelby Miller",
    "player_name": "Shelby Miller",
    "event_type": "status_change",
    "feeds": [
@@ -3356,10 +2976,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Stephen Kolek",
+   "event_id": "2026-11-26:status_change:Stephen Kolek",
    "player_name": "Stephen Kolek",
    "event_type": "status_change",
    "feeds": [
@@ -3377,31 +2997,32 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Trevor McDonald",
+   "event_id": "2026-11-26:status_change:Trevor McDonald",
    "player_name": "Trevor McDonald",
    "event_type": "status_change",
    "feeds": [
-    "fastballapi"
+    "fastballapi",
+    "statyx"
    ],
    "status_from": "60-Day-IL",
    "status_to": "Out",
    "type_from": "Elbow",
    "type_to": "Elbow",
    "detail": "Surgery",
-   "il_date": null,
+   "il_date": "2026-08-13",
    "return_date": "2027-09-01",
-   "statyx_commentary": null,
+   "statyx_commentary": "McDonald was diagnosed with a sprained UCL in his right elbow Friday, and after seeking out a second opinion, he will opt to go under the knife to address the issue. The procedure will end his season early and likely rule him out for most, if not all, of 2027 as well. He'll close the book on 2026 after logging a 5.12 ERA and 1.31 WHIP in 70.1 innings across 14 starts.",
    "in_fa_pool": false,
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Triston Casas",
+   "event_id": "2026-11-26:status_change:Triston Casas",
    "player_name": "Triston Casas",
    "event_type": "status_change",
    "feeds": [
@@ -3419,10 +3040,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Tyler Soderstrom",
+   "event_id": "2026-11-26:status_change:Tyler Soderstrom",
    "player_name": "Tyler Soderstrom",
    "event_type": "status_change",
    "feeds": [
@@ -3440,10 +3061,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Tylor Megill",
+   "event_id": "2026-11-26:status_change:Tylor Megill",
    "player_name": "Tylor Megill",
    "event_type": "status_change",
    "feeds": [
@@ -3461,10 +3082,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Welinton Herrera",
+   "event_id": "2026-11-26:status_change:Welinton Herrera",
    "player_name": "Welinton Herrera",
    "event_type": "status_change",
    "feeds": [
@@ -3482,52 +3103,54 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Wenceel Perez",
+   "event_id": "2026-11-26:status_change:Wenceel Perez",
    "player_name": "Wenceel Perez",
    "event_type": "status_change",
    "feeds": [
-    "fastballapi"
+    "fastballapi",
+    "statyx"
    ],
    "status_from": "60-Day-IL",
    "status_to": "Out",
    "type_from": "Orbital",
    "type_to": "Orbital",
    "detail": "Fracture",
-   "il_date": null,
+   "il_date": "2026-09-11",
    "return_date": "2027-02-01",
-   "statyx_commentary": null,
+   "statyx_commentary": "Perez suffered an orbital fracture and blurred vision back in June when he was struck in the face by an exercise band. He had to be pulled off a rehab assignment in August because his vision still wasn't back to normal, and it seems Perez will run out of time to return before the curtains close on the regular season.",
    "in_fa_pool": false,
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Will Klein",
+   "event_id": "2026-11-26:status_change:Will Klein",
    "player_name": "Will Klein",
    "event_type": "status_change",
    "feeds": [
-    "fastballapi"
+    "fastballapi",
+    "statyx"
    ],
    "status_from": "60-Day-IL",
    "status_to": "Out",
    "type_from": "Elbow",
    "type_to": "Elbow",
    "detail": "Soreness",
-   "il_date": null,
+   "il_date": "2026-10-22",
    "return_date": "2027-02-01",
-   "statyx_commentary": null,
+   "statyx_commentary": "Klein spent the final two months of the season on the injured list due to his elbow, and he's now decided to go under the knife to treat the issue. He's expected to be fully recovered by the time spring training begins and may have to compete for a spot in the Dodgers' bullpen after posting a 3.67 ERA and 1.56 WHIP across 41.2 innings.",
    "in_fa_pool": false,
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Will Vest",
+   "event_id": "2026-11-26:status_change:Will Vest",
    "player_name": "Will Vest",
    "event_type": "status_change",
    "feeds": [
@@ -3546,10 +3169,10 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:William Kempner",
+   "event_id": "2026-11-26:status_change:William Kempner",
    "player_name": "William Kempner",
    "event_type": "status_change",
    "feeds": [
@@ -3567,96 +3190,12 @@
    "fa_player_id": null,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   }
  ],
  "fa_pool_events": [
   {
-   "event_id": "2026-11-25:new_il:Jalen Beeks",
-   "player_name": "Jalen Beeks",
-   "event_type": "new_il",
-   "feeds": [
-    "statyx"
-   ],
-   "status_from": null,
-   "status_to": "60-Day-IL",
-   "type_from": null,
-   "type_to": "Forearm",
-   "detail": "Surgery",
-   "il_date": "2026-07-21",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "It was announced July 4 that Beeks would miss the rest of the 2026 season due to requiring season-ending surgery to repair a flexor tendon in his left forearm. The status of the surgery is yet to be revealed, which still makes his timeline for getting back to full strength unclear.",
-   "in_fa_pool": true,
-   "fa_player_id": 656222,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Adolis Garcia",
-   "player_name": "Adolis Garcia",
-   "event_type": "returned",
-   "feeds": [
-    "statyx"
-   ],
-   "status_from": "60-Day-IL",
-   "status_to": null,
-   "type_from": "Lat",
-   "type_to": null,
-   "detail": "Surgery",
-   "il_date": "2026-06-24",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "Garcia will face a 6-to-8-month recovery from surgery, which will keep him out for the remainder of the season but give him a good chance at being cleared ahead of spring training in 2027. The 33-year-old is set to become a free agent this winter after he slashed.195/.270/.329 with seven home runs, three stolen bases, 21 RBI and 21 runs over 67 games during his lone season with Philadelphia.",
-   "in_fa_pool": true,
-   "fa_player_id": 666969,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Cal Quantrill",
-   "player_name": "Cal Quantrill",
-   "event_type": "returned",
-   "feeds": [
-    "statyx"
-   ],
-   "status_from": "60-Day-IL",
-   "status_to": null,
-   "type_from": "Lat",
-   "type_to": null,
-   "detail": "Strain",
-   "il_date": "2026-09-22",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "Quantrill will not pitch again this season after being transferred to the 60-day IL Tuesday. The right-hander posted a 2.86 ERA, 1.04 WHIP and 81:25 K:BB across 110 innings this season. Texas activated Michael Helman (hand) from the 60-day IL, replacing Quantrill on both the active and 40-man rosters.",
-   "in_fa_pool": true,
-   "fa_player_id": 615698,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Gavin Lux",
-   "player_name": "Gavin Lux",
-   "event_type": "returned",
-   "feeds": [
-    "statyx"
-   ],
-   "status_from": "60-Day-IL",
-   "status_to": null,
-   "type_from": "Shoulder",
-   "type_to": null,
-   "detail": "Inflammation",
-   "il_date": "2026-09-11",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "Lux has been held out all season by shoulder and ankle injuries, but he seems to be making significant progress in his recovery from left shoulder inflammation that caused him to pause his rehab assignment in mid-July. The Rays still haven't confirmed that Lux will miss the entire 2026 campaign, but with roughly two weeks remaining in the regular season, his chances of returning in time are very slim.",
-   "in_fa_pool": true,
-   "fa_player_id": 666158,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Hunter Harvey",
+   "event_id": "2026-11-26:returned:Hunter Harvey",
    "player_name": "Hunter Harvey",
    "event_type": "returned",
    "feeds": [
@@ -3674,10 +3213,31 @@
    "fa_player_id": 640451,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Luis Severino",
+   "event_id": "2026-11-26:returned:Lucas Giolito",
+   "player_name": "Lucas Giolito",
+   "event_type": "returned",
+   "feeds": [
+    "fastballapi"
+   ],
+   "status_from": "60-Day-IL",
+   "status_to": null,
+   "type_from": "Elbow",
+   "type_to": null,
+   "detail": "Inflammation",
+   "il_date": null,
+   "return_date": "2027-02-01",
+   "statyx_commentary": null,
+   "in_fa_pool": true,
+   "fa_player_id": 608337,
+   "scenario_rosters": [],
+   "baseline_date": "2026-11-02",
+   "current_date": "2026-11-26"
+  },
+  {
+   "event_id": "2026-11-26:returned:Luis Severino",
    "player_name": "Luis Severino",
    "event_type": "returned",
    "feeds": [
@@ -3695,31 +3255,10 @@
    "fa_player_id": 622663,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Ramon Laureano",
-   "player_name": "Ramon Laureano",
-   "event_type": "returned",
-   "feeds": [
-    "statyx"
-   ],
-   "status_from": "60-Day-IL",
-   "status_to": null,
-   "type_from": "Hip",
-   "type_to": null,
-   "detail": "Surgery",
-   "il_date": "2026-09-12",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "When Laureano underwent right hip surgery in early June, he was given a return timeline of 4-to-5 months. Though the veteran outfielder has been able to work his way up to swinging a bat and doing some throwing, that initial timeline doesn't appear to have changed. It still seems likely that Laureano's next game action won't take place until 2027, though there may be an outside chance he will return in October if San Diego makes a deep run in the playoffs.",
-   "in_fa_pool": true,
-   "fa_player_id": 657656,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Rowan Wick",
+   "event_id": "2026-11-26:returned:Rowan Wick",
    "player_name": "Rowan Wick",
    "event_type": "returned",
    "feeds": [
@@ -3737,10 +3276,10 @@
    "fa_player_id": 592858,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Ryan Mountcastle",
+   "event_id": "2026-11-26:returned:Ryan Mountcastle",
    "player_name": "Ryan Mountcastle",
    "event_type": "returned",
    "feeds": [
@@ -3758,31 +3297,10 @@
    "fa_player_id": 663624,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:returned:Ryan Thompson",
-   "player_name": "Ryan Thompson",
-   "event_type": "returned",
-   "feeds": [
-    "statyx"
-   ],
-   "status_from": "60-Day-IL",
-   "status_to": null,
-   "type_from": "Back",
-   "type_to": null,
-   "detail": "Strain",
-   "il_date": "2026-09-01",
-   "return_date": "2027-02-01",
-   "statyx_commentary": "Thompson initially landed on the injured list Aug. 5 with a lower-back strain, so his move to the 60-day IL will officially rule him out for the rest of the season. Blake Walston (elbow) will return from the 60-day IL in a corresponding move to claim the open spot on Arizona's 40-man roster.",
-   "in_fa_pool": true,
-   "fa_player_id": 657044,
-   "scenario_rosters": [],
-   "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
-  },
-  {
-   "event_id": "2026-11-25:returned:Tyler Austin",
+   "event_id": "2026-11-26:returned:Tyler Austin",
    "player_name": "Tyler Austin",
    "event_type": "returned",
    "feeds": [
@@ -3800,28 +3318,29 @@
    "fa_player_id": 592122,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   },
   {
-   "event_id": "2026-11-25:status_change:Jose Berrios",
+   "event_id": "2026-11-26:status_change:Jose Berrios",
    "player_name": "Jose Berrios",
    "event_type": "status_change",
    "feeds": [
-    "fastballapi"
+    "fastballapi",
+    "statyx"
    ],
    "status_from": "60-Day-IL",
    "status_to": "Out",
    "type_from": "Elbow",
    "type_to": "Elbow",
    "detail": "Surgery",
-   "il_date": null,
+   "il_date": "2026-05-27",
    "return_date": "2027-08-01",
-   "statyx_commentary": null,
+   "statyx_commentary": "The Blue Jays and Berrios went into the operation unsure whether the pitcher would require a ligament repair, and as it turns out he required a full UCL procedure. Berrios has been sidelined all season with elbow problems and will now likely be shelved until at least the second half of the 2027 campaign.",
    "in_fa_pool": true,
    "fa_player_id": 621244,
    "scenario_rosters": [],
    "baseline_date": "2026-11-02",
-   "current_date": "2026-11-25"
+   "current_date": "2026-11-26"
   }
  ]
 }
