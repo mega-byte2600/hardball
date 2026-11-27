@@ -32,6 +32,17 @@
     "MLB Trade Rumors"
    ],
    "scope": "Status note only — no BIS number in this exhibit was changed."
+  },
+  {
+   "date": "2026-11-27",
+   "as_of": "2026-11-27",
+   "text": "Kaima Taira signed with the Toronto Blue Jays on Nov 27, 2026 — confirmed by MLB StatsAPI transaction 951269. This confirms the Nov 24 reported agreement (5 years / $80M, $5M signing bonus, opt-out after year 3, $13.875M posting fee to the Seibu Lions). This supersedes the Nov 26 note's Taira line; Hiromi Itoh is still unsigned as of Nov 27, 2026.",
+   "sources": [
+    "MLB StatsAPI transactions (txn 951269)",
+    "Jon Heyman / New York Post",
+    "Jeff Passan / ESPN"
+   ],
+   "scope": "Status note only — no BIS number in this exhibit was changed."
   }
  ],
  "figure": 23,
